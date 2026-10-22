@@ -41,6 +41,8 @@ jobs:
           if ($test.ExitCode -ne 0) { throw 'Update safety tests failed.' }
           $test = Start-Process -FilePath release/DirectStrikeCompanion.exe -ArgumentList '--self-test','--accept-alerts-only' -Wait -PassThru
           if ($test.ExitCode -ne 0) { throw 'Notification regression tests failed.' }
+          $test = Start-Process -FilePath release/DirectStrikeCompanion.exe -ArgumentList '--self-test','--nicknames-only' -Wait -PassThru
+          if ($test.ExitCode -ne 0) { throw 'Nickname and account-routing regressions failed.' }
       - name: Publish release asset
         shell: pwsh
         env:

@@ -18,7 +18,7 @@ const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),report={su
   const lobby={phase:'pregame',source:'screen',region:'EU',roster:[alias,'TKnight'],rosterEntries:[],alerts:[],automation:{acceptNeeded:false,status:'Ready'},liveStatus:'Pregame',ocrStatus:'Sample party roster',observedAt:new Date().toISOString(),rosterUpdatedAt:new Date().toISOString()};
   function rebuild(){
    for(const player of players)player.aliases=[player.name,...(library.playerNicknames[player.id]||[])];
-   lobby.rosterEntries=lobby.roster.map(name=>{const matched=players.filter(p=>p.aliases.includes(name)&&p.id.startsWith('2-'));return {name,team:1,marked:false,nameOnly:!matched.length,ambiguous:matched.length>1,candidates:matched.map(p=>({id:p.id,name:p.name,aliases:p.aliases,marked:false,nameOnly:false,list:p.mark?.list}))};});
+   lobby.rosterEntries=lobby.roster.map(name=>{const matched=players.filter(p=>p.aliases.includes(name)&&p.id.startsWith('2-'));const candidates=matched.map(p=>({id:p.id,name:p.name,aliases:p.aliases,marked:false,nameOnly:false,list:p.mark?.list}));if(name===alias)candidates.push({id:'name:'+alias.toLowerCase(),name:alias,aliases:[alias],marked:true,nameOnly:true,list:'friends'});return {name,team:1,marked:name===alias,nameOnly:!matched.length,ambiguous:matched.length>1,candidates};});
   }rebuild();
   await page.route('**/*',route=>{
    const name=new URL(route.request().url()).pathname,json=(body,status=200)=>route.fulfill({status,contentType:'application/json',body:JSON.stringify(body)});

@@ -17,6 +17,7 @@ internal static class PlayerNicknamesTests
             store.Data.Matches.Add(new("nickname-fixture", "fixture", "Direct Strike", "Commanders", DateTime.UtcNow, 600, 1, players));
             store.Data.Marks[eu.Id] = new(eu.Id, eu.Name, "Keep private note", DateTime.UtcNow, "friends");
             store.Data.Settings.ListAlerts["friends"] = true;
+            store.Data.Marks["name:ваня кузьмич"] = new("name:ваня кузьмич", "Ваня Кузьмич", "Keep nickname-only note", DateTime.UtcNow, "friends");
             store.SetPlayerNicknames(eu.Id, [" Ваня Кузьмич ", "Friendly Nick", "friendly nick"]);
             check(store.Data.PlayerNicknames[eu.Id].SequenceEqual(["Ваня Кузьмич", "Friendly Nick"]), "nickname links preserve spaced Unicode names and deduplicate case-insensitively");
             var restored = new Store(path);
@@ -26,6 +27,9 @@ internal static class PlayerNicknamesTests
             lobby.ApplyScreenObservation("", true, DateTime.UtcNow, ["Ваня Кузьмич"], [1], "EU");
             var snapshot = JsonSerializer.SerializeToElement(lobby.Snapshot(), Store.Json).GetProperty("rosterEntries")[0];
             var candidate = snapshot.GetProperty("candidates")[0];
+            check(snapshot.GetProperty("candidates").GetArrayLength() == 1 && !snapshot.GetProperty("ambiguous").GetBoolean()
+                && restored.Data.Marks["name:ваня кузьмич"].Note == "Keep nickname-only note",
+                "a saved name-only friend does not compete with its linked native account; its private note remains intact");
             check(snapshot.GetProperty("name").GetString() == "Ваня Кузьмич" && candidate.GetProperty("id").GetString() == eu.Id
                 && candidate.GetProperty("name").GetString() == "ReplayName" && candidate.GetProperty("list").GetString() == "friends",
                 "custom lobby nickname resolves to the replay account while retaining its displayed nickname and friend mark");
@@ -34,6 +38,10 @@ internal static class PlayerNicknamesTests
             lobby.ApplyScreenObservation("", true, DateTime.UtcNow, ["Friendly Nick"], [1], "Americas");
             check(lobby.Check("Friendly Nick", "SC2 screen · verify name").Count == 0,
                 "a known lobby region cannot trigger the other region's nickname list mark");
+            lobby.ApplyScreenObservation("", true, DateTime.UtcNow, ["Ваня Кузьмич"], [1], "Americas");
+            var opposite = JsonSerializer.SerializeToElement(lobby.Snapshot(), Store.Json).GetProperty("rosterEntries")[0];
+            check(opposite.GetProperty("candidates").GetArrayLength() == 1 && opposite.GetProperty("candidates")[0].GetProperty("nameOnly").GetBoolean(),
+                "a link in a different region cannot suppress the unresolved name-only saved friend");
             check(restored.ResolvePlayerNickname("friendly nick", "EU")?.Id == eu.Id
                 && restored.ResolvePlayerNickname("Friendly Nick", "Americas") == null,
                 "nickname routing never crosses a known lobby region");
@@ -68,6 +76,8 @@ internal static class PlayerNicknamesTests
             restored.SetPlayerNicknames(eu.Id, []);
             check(new Store(path).ResolvePlayerNickname("Second Alias", "EU") == null
                 && !LobbyService.KnownPlayers(restored).Single(player => player.Id == eu.Id).Aliases.Contains("Second Alias"), "removing nickname links takes effect immediately and survives restart");
+            check(LobbyService.KnownPlayers(restored).Any(player => player.Id == "name:ваня кузьмич" && player.NameOnly),
+                "unlinking restores the preserved name-only mark instead of deleting membership or private notes");
             restored.Data.PlayerNicknames["2-S2-1-9999"] = ["Orphan"];
             check(restored.ResolvePlayerNickname("Orphan", "EU") == null, "a link whose replay account is unavailable cannot fabricate an identity");
             restored.SetPlayerNicknames("2-S2-1-9999", []);

@@ -83,8 +83,14 @@ public sealed class LobbyService(Store store, Action<string, string, bool> notif
                 var candidates = known.Where(p => nickname.Length > 0
                     && (rosterRegion == null || SiteSyncService.NativeRegion(p.Id) is not { } nativeRegion || nativeRegion == rosterRegion)
                     && p.Aliases.Any(alias => string.Equals(SiteSyncService.NormalizeName(alias), nickname, StringComparison.OrdinalIgnoreCase))).ToList();
+                var marked = candidates.Any(p => p.Marked);
+                // A name-only saved-list entry is a label, not a competing
+                // account. Keep real regional ambiguity, and keep the label
+                // when no native account matches in this observed region.
+                var identities = candidates.Where(p => !p.NameOnly).ToList();
+                if (identities.Count > 0) candidates = identities;
                 var team = index < rosterTeams.Count && rosterTeams[index] is 1 or 2 ? (int?)rosterTeams[index] : null;
-                return new RosterEntry(name, candidates, candidates.Any(p => p.Marked), candidates.Count == 0 || candidates.All(p => p.NameOnly), candidates.Count(p => !p.NameOnly) > 1, team);
+                return new RosterEntry(name, candidates, marked, candidates.Count == 0 || candidates.All(p => p.NameOnly), candidates.Count(p => !p.NameOnly) > 1, team);
             }).ToList();
             var held = rosterSource == "screen" && (screenHeld || observedAt.HasValue && now - observedAt > ScreenFreshness);
             return new { liveStatus = LiveStatus, ocrStatus = OcrStatus, roster = Roster.ToList(), alerts = alerts.TakeLast(15).Reverse().ToList(), source = rosterSource, region = rosterRegion, phase, observedAt, rosterUpdatedAt, detectionStatus, held, partial = rosterSource is "screen" or "manual", rosterEntries = entries, automation = automation.SnapshotAt(now), reader = new { worker = ocrWorker?.Snapshot, lastRead = lastOcrRead } };

@@ -14,7 +14,15 @@ The public update channel is [`oligaex8-svg/direct-strike-companion`](https://gi
 
 Optional GitHub access remains available for private repositories or higher API rate limits. Credentials are encrypted for the current Windows account and never bundled with the launcher. Invalid old credentials fall back to anonymous public access; they are not silently deleted.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.2` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.3` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — linked friends versus name-only placeholders
+
+Status: Preparing 1.1.2. Two user-directed links were saved through the running app using the latest replay party slots. Their native Friends memberships and existing source caches are present. Two empty duplicate name-only Friends marks were consolidated only after verifying matching native membership and zero note length; other marks were untouched. Local account evidence is in ignored verification reports, not source.
+
+Changed owners: `LobbyService.SnapshotAt` prioritizes native account candidates over saved name-only labels within the observed region. Multiple native matches remain ambiguous; a name-only mark remains visible when its link belongs only to another region. Marks/notes are retained. `groupedLobbyCandidates` defensively handles older server payloads. `liveLobbyCandidate` routes unresolved saved labels through the unknown-row UI, restoring the missing nickname-link action. Native and browser regressions cover the original placeholder-plus-linked-account case. Release CI now requires nickname/account-routing tests.
+
+Checks: [Four EN/RU browser cases](verification/nickname-links-browser.json) passed with both the saved name-only friend and linked native account in the payload; both source ratings render. The live app confirmed saved aliases, native Friends membership and dsstats caches; DSR profiles are available in its site cache while the upstream profile endpoint is unavailable. No Battle.net API mapping or general automatic nickname inference is claimed. Next authorized step: production CI, verified public package and installation preserving data/processes; then observe the next real lobby. No recurring work is authorized.
 
 ## Resume — 22 October 2026 — invite proof and lobby commander selection
 

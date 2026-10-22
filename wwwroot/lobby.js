@@ -599,6 +599,7 @@ function liveLobbyCandidate(candidate, ambiguity, observedName, suppressQuickLis
   const player = findPlayer(candidate.id);
   const nameOnly = candidate.nameOnly || String(candidate.id).startsWith('name:');
   const marked = !!candidate.marked;
+  if(nameOnly)return liveLobbyUnknownRow(observedName||candidate.name,marked,suppressQuickLists);
   const known = !!player && !nameOnly;
   const canPreview = known && !(state.library.settings.selfIds||[]).includes(candidate.id);
   const sample = s => `${num(s?.games ?? 0)} games${s?.unknown?' · '+num(s.unknown)+' undecided':''}`;
