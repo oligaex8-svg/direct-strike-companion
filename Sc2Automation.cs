@@ -13,6 +13,7 @@ public sealed class Sc2Automation
 {
     public static readonly IReadOnlyList<string> Commanders = Array.AsReadOnly(new[] { "Raynor", "Kerrigan", "Artanis", "Swann", "Zagara", "Vorazun", "Karax", "Abathur", "Alarak", "Nova", "Stukov", "Fenix", "Dehaka", "Horner", "Tychus", "Zeratul", "Stetmann", "Mengsk" });
     private static readonly Dictionary<string, string> Labels = CommanderLabels();
+    private static readonly Dictionary<string, string> CompactLabels = Labels.ToDictionary(p => p.Key.Replace(" ", "", StringComparison.Ordinal), p => p.Value, StringComparer.Ordinal);
     private static readonly HashSet<string> MatchHeadings = new(["MATCH FOUND", "МАТЧ НАЙДЕН", "ИГРА НАЙДЕНА", "НАЙДЕН МАТЧ"], StringComparer.Ordinal);
     private static readonly HashSet<string> InviteHeadings = new(["GAME INVITE", "ПРИГЛАШЕНИЕ В ИГРУ", "ПРИГЛАШЕНИЕ НА ИГРУ"], StringComparer.Ordinal);
     private static readonly HashSet<string> PartyInviteContexts = new(["THE PARTY LEADER HAS INVITED YOU TO", "ЛИДЕР ГРУППЫ ПРИГЛАСИЛ ВАС В", "ЛИДЕР ГРУППЫ ПРИГЛАШАЕТ ВАС В"], StringComparer.Ordinal);
@@ -44,6 +45,9 @@ public sealed class Sc2Automation
     private DateTime dropdownAt;
     private string? dropdownIdentity, dropdownPreference;
     private ScreenBox dropdownBounds;
+    private int dropdownOpens, commanderClicks, dropdownScrolls, stalledScrolls;
+    private DateTime commanderInputAt;
+    private string? scrollSignature;
     public Sc2Automation() : this(new WindowsSc2Input()) { }
     internal Sc2Automation(ISc2Input input) => this.input = input;
 
@@ -192,14 +196,27 @@ public sealed class Sc2Automation
                 if (!acceptAllowed || !Sc2ClientUi.IsMenu(clientScreens))
                 { commanderStatus = "Lobby commander selection requires a current SC2 lobby · no action"; return; }
                 var lobby = scene.Lobby;
-                if (pickAttempted) { commanderStatus = "Commander input already attempted · selection not confirmed"; return; }
+                if (lobby.Selected != null && !lobby.HasChoices)
+                {
+                    commanderStatus = lobby.Selected == settings.AutoPickCommander
+                        ? "Commander selected: " + lobby.Selected
+                        : "Commander already selected: " + lobby.Selected + " · no automatic change";
+                    return;
+                }
                 if (!dropdownAttempted)
                 {
-                    // Do not act on a menu that the user has already opened.
-                    if (lobby.HasChoices) { commanderStatus = "Commander dropdown already open · no action"; return; }
+                    dropdownOpens = commanderClicks = dropdownScrolls = stalledScrolls = 0; scrollSignature = null;
+                    dropdownIdentity = lobby.Identity; dropdownPreference = settings.AutoPickCommander; dropdownBounds = lobby.Selector.Bounds;
+                    if (lobby.HasChoices)
+                    {
+                        // An already-open own-row menu needs a second fresh
+                        // observation, just like a menu opened by this tool.
+                        dropdownAttempted = true; dropdownAt = now; commanderInputAt = now;
+                        commanderStatus = "Commander dropdown observed · checking fresh choices"; return;
+                    }
                     var opening = Click(capture, lobby.Selector, now);
                     dropdownAttempted |= opening.Attempted;
-                    if (opening.Attempted) { dropdownAt = now; dropdownIdentity = lobby.Identity; dropdownPreference = settings.AutoPickCommander; dropdownBounds = lobby.Selector.Bounds; }
+                    if (opening.Attempted) { dropdownAt = commanderInputAt = now; dropdownOpens++; }
                     commanderStatus = opening.Sent ? "Commander dropdown opened · waiting for observed choices" : opening.Status;
                     if (opening.Attempted) lastAction = commanderStatus;
                     return;
@@ -207,9 +224,24 @@ public sealed class Sc2Automation
                 if (now - dropdownAt > TimeSpan.FromSeconds(30) || dropdownIdentity != lobby.Identity || dropdownPreference != settings.AutoPickCommander
                     || !SameTarget(dropdownBounds, lobby.Selector.Bounds))
                 { commanderStatus = "Commander dropdown opportunity changed or expired · no action"; return; }
-                if (capture.CapturedAt <= dropdownAt) { commanderStatus = "Waiting for a fresh commander dropdown observation"; return; }
-                if (lobby.Options.TryGetValue(settings.AutoPickCommander, out var option)) Send(capture, option, now, false);
-                else commanderStatus = "Preferred commander choice not observed · no action";
+                if (capture.CapturedAt <= commanderInputAt) { commanderStatus = pickAttempted ? "Commander click sent · selection not confirmed" : "Waiting for a fresh commander dropdown observation"; return; }
+                if (pickAttempted && (commanderClicks >= 3 || now - commanderInputAt < TimeSpan.FromSeconds(2)))
+                { commanderStatus = "Commander click sent · waiting for visible selection confirmation"; return; }
+                if (!lobby.HasChoices)
+                {
+                    if (dropdownOpens >= 3 || now - commanderInputAt < TimeSpan.FromSeconds(2))
+                    { commanderStatus = "Commander dropdown not open · waiting for SC2"; return; }
+                    var opening = Click(capture, lobby.Selector, now);
+                    if (opening.Attempted) { dropdownOpens++; commanderInputAt = now; }
+                    commanderStatus = opening.Sent ? "Commander dropdown reopened · waiting for observed choices" : opening.Status;
+                    return;
+                }
+                if (lobby.Options.TryGetValue(settings.AutoPickCommander, out var option))
+                {
+                    var selection = Send(capture, option, now, false);
+                    if (selection.Attempted) { commanderClicks++; commanderInputAt = now; }
+                }
+                else ScrollCommanderChoices(capture, lobby, settings.AutoPickCommander, now);
                 return;
             }
             commanderStatus = settings.AutoPickCommander == "" ? "Commander selection off" : scene.Commanders.Count < 6 ? "Commander selection layout not recognized · no action" : pickAttempted ? "Commander input already attempted · selection not confirmed" : "Commander selection ready";
@@ -226,9 +258,35 @@ public sealed class Sc2Automation
             }
         }
     }
-    private void Send(ScreenCapture capture, ScreenControl target, DateTime now, bool accept)
+    private void ScrollCommanderChoices(ScreenCapture capture, LobbySelection lobby, string preference, DateTime now)
     {
-        if (now - capture.CapturedAt > InputFreshness) { if (accept) status = "Accept needed · capture too old for input"; else commanderStatus = "Commander capture too old for input · no action"; return; }
+        // The SC2 lobby list is alphabetical, beginning with Random. Scroll
+        // only a proved, ordered menu and observe its next page before picking.
+        var order = new[] { "Random" }.Concat(Commanders.Order(StringComparer.Ordinal)).ToArray();
+        var visible = lobby.Options.OrderBy(p => p.Value.Bounds.CenterY).ToArray();
+        var indices = visible.Select(p => Array.IndexOf(order, p.Key)).ToArray();
+        if (visible.Length < 3 || indices.Any(i => i < 0) || !indices.SequenceEqual(indices.Order()))
+        { commanderStatus = "Commander choices incomplete or unordered · no scroll"; return; }
+        int desired = Array.IndexOf(order, preference);
+        if (desired > indices[0] && desired < indices[^1])
+        { commanderStatus = "Preferred commander text unreadable · no guessed selection"; return; }
+        if (input is not ISc2ScrollInput scrolling || !capture.Foreground)
+        { commanderStatus = "Commander scrolling requires the visible SC2 lobby"; return; }
+        var signature = string.Join('|', visible.Select(p => p.Key));
+        if (signature != scrollSignature) stalledScrolls = 0;
+        else if (now - commanderInputAt < TimeSpan.FromSeconds(1))
+        { commanderStatus = "Waiting for commander dropdown to scroll"; return; }
+        if (dropdownScrolls >= 20 || stalledScrolls >= 2)
+        { commanderStatus = "Commander list did not advance · select it manually"; return; }
+        var middle = visible[visible.Length / 2].Value;
+        var target = middle with { ContextProofs = (middle.ContextProofs ?? []).Concat(visible.Select(p => p.Value.TargetProof)).ToArray() };
+        var result = scrolling.TryScroll(capture, target, desired < indices[0] ? 120 : -120, now);
+        commanderStatus = result.Sent ? "Commander list scrolled · waiting for observed choices" : result.Status;
+        if (result.Attempted) { dropdownScrolls++; stalledScrolls++; scrollSignature = signature; commanderInputAt = now; lastAction = commanderStatus; }
+    }
+    private InputResult Send(ScreenCapture capture, ScreenControl target, DateTime now, bool accept)
+    {
+        if (now - capture.CapturedAt > InputFreshness) { if (accept) status = "Accept needed · capture too old for input"; else commanderStatus = "Commander capture too old for input · no action"; return new(false, false, accept ? status : commanderStatus); }
         var result = Click(capture, target, now, accept);
         if (accept)
         {
@@ -238,6 +296,7 @@ public sealed class Sc2Automation
         }
         else { pickAttempted |= result.Attempted; commanderStatus = result.Sent ? "Commander click sent · selection not confirmed" : result.Status; }
         if (result.Attempted) lastAction = accept ? status : commanderStatus;
+        return result;
     }
     private InputResult Click(ScreenCapture capture, ScreenControl target, DateTime now, bool accept = false) => now - capture.CapturedAt > InputFreshness
         ? new(false, false, "SC2 capture too old for input · no action")
@@ -263,7 +322,7 @@ public sealed class Sc2Automation
         internal bool Valid(WindowBounds window) => Left >= 0 && Top >= 0 && Width is > 0 and <= 2000 && Height is > 0 and <= 256 && (long)Width * Height <= 100000 && (long)Left + Width <= window.Width && (long)Top + Height <= window.Height && Hash is { Length: 64 } && Hash.All(Uri.IsHexDigit);
     }
     internal sealed record ScreenControl(ScreenBox Bounds, RegionProof? HeadingProof, RegionProof? TargetProof, IReadOnlyList<RegionProof?>? ContextProofs = null);
-    internal sealed record LobbySelection(string Identity, ScreenControl Selector, Dictionary<string, ScreenControl> Options, bool HasChoices);
+    internal sealed record LobbySelection(string Identity, ScreenControl Selector, Dictionary<string, ScreenControl> Options, bool HasChoices, string? Selected = null);
     internal sealed record DetectedScene(ScreenControl? Accept, Dictionary<string, ScreenControl> Commanders, bool DirectStrikeCommanders = false, LobbySelection? Lobby = null, string? AcceptKind = null, bool AcceptAbsent = false);
     private sealed record TextBox(string Text, ScreenBox Bounds, RegionProof? Proof, bool Gold);
     internal static bool IsSc2(string name) => name is "SC2" or "SC2_x64";
@@ -306,7 +365,7 @@ public sealed class Sc2Automation
             clearMenu |= lines.Where(l => l.Bounds.Y < capture.Height * .16 && l.Text is "CAMPAIGN" or "CO-OP" or "VERSUS" or "CUSTOM" or "COLLECTION" or "REPLAYS").Select(l => l.Text).Distinct().Count() >= 3
                 || lines.Any(l => l.Text == "DIRECT STRIKE" && l.Bounds.Y < capture.Height * .16)
                 && lines.Any(l => l.Text is "HORDE" or "HOPDE" or "ОРДА") && lines.Any(l => l.Text is "ALLIANCE" or "АЛЬЯНС")
-                && lines.Any(l => Regex.IsMatch(l.Text, @"^(?:3\s*V\s*3\s+(COMMANDERS|COMMARNDEPS|КОМАНДИРЫ)|8\s*V\s*3\s+COMMANDERS)(?: [V▼∨])?$", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100)));
+                && lines.Any(l => Regex.IsMatch(l.Text, @"^(?:3\s*V\s*3\s+(COMMANDERS|COMMARNDEPS|КОМАНДИРЫ)|(?:8\s*V\s*3|3\s*V\s*8)\s+COMMANDERS)(?: [V▼∨])?$", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100)));
             popupVisible |= accepts.Count > 0 || declines.Count > 0;
             if (headings.Count > 0 && (headings.Count > 1 || accepts.Count > 1 || declines.Count > 1)) ambiguous = true;
             ScreenControl? accept = null;
@@ -379,7 +438,20 @@ public sealed class Sc2Automation
             ? new(accepted[0], [], AcceptKind: scenes.First(s => s.Accept != null).AcceptKind) : new(null, []);
         if (grids.Count > 0 && grids.Skip(1).All(g => g.Commanders.Count == grids[0].Commanders.Count && g.Commanders.All(p => grids[0].Commanders.TryGetValue(p.Key, out var b) && Math.Abs(p.Value.Bounds.CenterX - b.Bounds.CenterX) < 12 && Math.Abs(p.Value.Bounds.CenterY - b.Bounds.CenterY) < 12))) return grids[0] with { DirectStrikeCommanders = grids.Any(g => g.DirectStrikeCommanders) };
         if (!popupVisible && lobbies.Count > 0 && lobbies.Skip(1).All(l => l.Identity == lobbies[0].Identity && SameTarget(l.Selector.Bounds, lobbies[0].Selector.Bounds)
-            && l.HasChoices == lobbies[0].HasChoices && l.Options.Count == lobbies[0].Options.Count && l.Options.All(p => lobbies[0].Options.TryGetValue(p.Key, out var b) && SameTarget(p.Value.Bounds, b.Bounds)))) return new(null, [], true, lobbies[0], AcceptAbsent: true);
+            && l.Selected == lobbies[0].Selected && l.HasChoices == lobbies[0].HasChoices))
+        {
+            // One recognizer often misses an English name. Merge agreeing
+            // subsets; contradictory names at one position still block input.
+            var merged = new Dictionary<string, ScreenControl>(StringComparer.Ordinal);
+            foreach (var lobby in lobbies)
+            foreach (var option in lobby.Options)
+            {
+                if (merged.TryGetValue(option.Key, out var previous) && !SameTarget(previous.Bounds, option.Value.Bounds)
+                    || merged.Any(p => p.Key != option.Key && SameTarget(p.Value.Bounds, option.Value.Bounds))) return new(null, []);
+                merged[option.Key] = option.Value;
+            }
+            return new(null, [], true, lobbies[0] with { Options = merged }, AcceptAbsent: true);
+        }
         return new(null, [], AcceptAbsent: clearMenu && !popupVisible);
     }
     private static LobbySelection? DetectLobby(List<TextBox> lines, ScreenCapture capture, IEnumerable<string>? ownNames)
@@ -390,7 +462,7 @@ public sealed class Sc2Automation
         // Supplied lobby OCR reads the visible 3 as 8 in English and
         // Commanders as Commarndeps in Russian. Limit repair to these outputs;
         // map, both roster panels and exact own-row checks still apply.
-        var modes = lines.Where(l => Regex.IsMatch(l.Text, @"^(?:3\s*V\s*3\s+(COMMANDERS|COMMARNDEPS|КОМАНДИРЫ)|8\s*V\s*3\s+COMMANDERS)(?: [V▼∨])?$", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100))).ToList();
+        var modes = lines.Where(l => Regex.IsMatch(l.Text, @"^(?:3\s*V\s*3\s+(COMMANDERS|COMMARNDEPS|КОМАНДИРЫ)|(?:8\s*V\s*3|3\s*V\s*8)\s+COMMANDERS)(?: [V▼∨])?$", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100))).ToList();
         var horde = lines.Where(l => l.Text is "HORDE" or "HOPDE" or "ОРДА").ToList();
         var alliance = lines.Where(l => l.Text is "ALLIANCE" or "АЛЬЯНС").ToList();
         if (map.Count != 1 || modes.Count != 1 || horde.Count != 1 || alliance.Count != 1) return null;
@@ -404,7 +476,9 @@ public sealed class Sc2Automation
             && new[] { first, second }.Any(panel => l.Bounds.Y > panel.Y + gap * .12 && l.Bounds.Y < panel.Y + gap * .86)).ToList();
         if (names.Count != 1) return null;
         var own = names[0];
-        var selectors = lines.Where(l => (l.Text is "SELECT" or "ВЫБРАТЬ") && l.Bounds.X > own.Bounds.X + own.Bounds.Width + capture.Width * .15
+        string SelectorLabel(TextBox l) => Regex.Replace(l.Text, @"\s+[V▼∨]$", "", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100));
+        bool Commander(string text, out string name) => CompactLabels.TryGetValue(text.Replace(" ", "", StringComparison.Ordinal), out name!);
+        var selectors = lines.Where(l => (SelectorLabel(l) is "SELECT" or "ВЫБРАТЬ" || Commander(SelectorLabel(l), out _)) && l.Bounds.X > own.Bounds.X + own.Bounds.Width + capture.Width * .15
             && l.Bounds.CenterX < capture.Width * .82 && Math.Abs(l.Bounds.CenterY - own.Bounds.CenterY) < Math.Max(l.Bounds.Height, own.Bounds.Height) * 1.5).ToList();
         if (selectors.Count != 1) return null;
         var selector = selectors[0];
@@ -412,14 +486,16 @@ public sealed class Sc2Automation
         var control = new ScreenControl(selector.Bounds, own.Proof, selector.Proof, proofs);
         // An expanded list must expose several exact commander labels in one
         // non-overlapping column next to the observed selector, never chat.
-        var options = lines.Where(l => Labels.ContainsKey(l.Text) && l.Bounds.Y > selector.Bounds.Y + selector.Bounds.Height
-            && l.Bounds.CenterY < capture.Height * .95 && Math.Abs(l.Bounds.CenterX - selector.Bounds.CenterX) < capture.Width * .12).ToList();
+        var options = lines.Where(l => Commander(l.Text, out _) && l.Bounds.Y > selector.Bounds.Y + selector.Bounds.Height
+            && l.Bounds.Y < selector.Bounds.Y + capture.Height * .4 && l.Bounds.CenterY < capture.Height * .95
+            && Math.Abs(l.Bounds.X - selector.Bounds.X) < capture.Width * .04).ToList();
         var found = new Dictionary<string, ScreenControl>(StringComparer.Ordinal);
-        if (options.Count >= 6 && options.GroupBy(l => Labels[l.Text]).All(g => g.Count() == 1)
-            && options.Max(l => l.Bounds.CenterX) - options.Min(l => l.Bounds.CenterX) < capture.Width * .05
+        string Choice(TextBox l) { Commander(l.Text, out var name); return name; }
+        if (options.Count >= 3 && options.GroupBy(Choice).All(g => g.Count() == 1)
+            && options.Max(l => l.Bounds.X) - options.Min(l => l.Bounds.X) < capture.Width * .025
             && options.All(a => options.All(b => a == b || Math.Abs(a.Bounds.CenterY - b.Bounds.CenterY) > Math.Max(a.Bounds.Height, b.Bounds.Height))))
-            foreach (var option in options) found[Labels[option.Text]] = new(option.Bounds, own.Proof, option.Proof, proofs.Append(selector.Proof).ToArray());
-        return new(keys[OwnRowKey(own)], control, found, options.Count > 0);
+            foreach (var option in options) found[Choice(option)] = new(option.Bounds, own.Proof, option.Proof, proofs.Append(selector.Proof).ToArray());
+        return new(keys[OwnRowKey(own)], control, found, options.Count > 0, Commander(SelectorLabel(selector), out var selected) ? selected : null);
     }
     private static List<TextBox> ReadLines(JsonElement reading, ScreenCapture capture)
     {
@@ -509,11 +585,12 @@ public sealed class Sc2Automation
         return DeliveryResult(pressed + released, 3);
     }
     internal interface ISc2Input { InputResult TryClick(ScreenCapture capture, ScreenControl target, DateTime now); }
+    internal interface ISc2ScrollInput { InputResult TryScroll(ScreenCapture capture, ScreenControl target, int delta, DateTime now); }
     internal interface ISc2BackgroundInput
     {
         InputResult TryAccept(ScreenCapture capture, ScreenControl target, DateTime now);
     }
-    private sealed class WindowsSc2Input : ISc2Input, ISc2BackgroundInput
+    private sealed class WindowsSc2Input : ISc2Input, ISc2BackgroundInput, ISc2ScrollInput
     {
         public InputResult TryAccept(ScreenCapture capture, ScreenControl target, DateTime now)
         {
@@ -530,8 +607,14 @@ public sealed class Sc2Automation
                 if (reason != null) return new(false, false, reason);
                 using var imageStream = capture.WindowCapture ? new MemoryStream(Sc2WindowCapture.CaptureForInput(handle), false) : null;
                 using var image = imageStream == null ? null : new System.Drawing.Bitmap(imageStream);
-                var proofs = new[] { target.HeadingProof, target.TargetProof }.Concat(target.ContextProofs ?? []);
-                if (proofs.Any(p => p == null || !p.Valid(bounds) || !RegionUnchanged(p, bounds, image))) return new(false, false, "SC2 invite changed after OCR · no action");
+                var proofs = new[] { target.HeadingProof, target.TargetProof }.Concat(target.ContextProofs ?? []).ToArray();
+                for (int i = 0; i < proofs.Length; i++)
+                {
+                    var p = proofs[i];
+                    string region = i == 0 ? "heading" : i == 1 ? "Accept button" : "context " + (i - 1);
+                    if (p == null || !p.Valid(bounds)) return new(false, false, "SC2 invite proof unavailable: " + region + " · no action");
+                    if (!RegionUnchanged(p, bounds, image)) return new(false, false, "SC2 invite pixels changed: " + region + " · no action");
+                }
                 var point = new Point { X = bounds.Left + (int)Math.Round(target.Bounds.CenterX * bounds.Width / capture.Width), Y = bounds.Top + (int)Math.Round(target.Bounds.CenterY * bounds.Height / capture.Height) };
                 if (!ScreenToClient(handle, ref point) || !GetClientRect(handle, out var client) || point.X < 0 || point.Y < 0 || point.X >= client.Right || point.Y >= client.Bottom)
                     return new(false, false, "SC2 invite coordinates unavailable · no action");
@@ -550,7 +633,10 @@ public sealed class Sc2Automation
             catch (Exception ex) when (ex is ArgumentException or InvalidOperationException or ExternalException or OverflowException or OperationCanceledException)
             { return new(false, false, "SC2 window input unavailable · " + ex.Message); }
         }
-        public InputResult TryClick(ScreenCapture capture, ScreenControl target, DateTime now)
+        public InputResult TryClick(ScreenCapture capture, ScreenControl target, DateTime now) => TryMouseAction(capture, target, now, 0);
+        public InputResult TryScroll(ScreenCapture capture, ScreenControl target, int delta, DateTime now) => delta is 120 or -120
+            ? TryMouseAction(capture, target, now, delta) : new(false, false, "Invalid commander scroll · no action");
+        private InputResult TryMouseAction(ScreenCapture capture, ScreenControl target, DateTime now, int wheel)
         {
             try
             {
@@ -577,6 +663,11 @@ public sealed class Sc2Automation
                 if (lastPid != pid || GetForegroundWindow() != handle || DateTime.UtcNow - capture.CapturedAt > InputFreshness || !GetWindowRect(handle, out var last) || last.Left != rect.Left || last.Top != rect.Top || last.Right != rect.Right || last.Bottom != rect.Bottom || !Unobscured(handle, last)) return new(false, false, "SC2 changed before input · no action");
                 if (!RegionUnchanged(target.HeadingProof, bounds) || !RegionUnchanged(target.TargetProof, bounds)
                     || target.ContextProofs != null && target.ContextProofs.Any(p => p == null || !RegionUnchanged(p, bounds))) return new(false, false, "SC2 control changed before input · no action");
+                if (wheel != 0)
+                {
+                    Input[] scroll = [inputs[0], new() { Data = new() { Mouse = new() { MouseData = unchecked((uint)wheel), Flags = 0x800 } } }];
+                    return DeliveryResult(SendInput(2, scroll, Marshal.SizeOf<Input>()), 2);
+                }
                 // Keep down visible across a game frame. A move/down/up batch
                 // can finish before a game polling button state sees the press.
                 return DeliverHardwareClick(count => SendInput(count, count == 2 ? inputs.Take(2).ToArray() : [inputs[2]], Marshal.SizeOf<Input>()), () => Thread.Sleep(80));

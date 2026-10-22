@@ -271,6 +271,9 @@ try {
   $output.capture=$capture
   # Geometry is needed for safe opt-in actions. ImagePath fixtures are explicitly
   # non-live, and bounded lines/words cannot become an input source by themselves.
+  # Versioned colour-support masks are larger than legacy masks. Bound their
+  # combined payload so a text-heavy screen cannot exceed the reader channel.
+  $glyphMaskBudget=524288
   $output.screenReadings=@(foreach ($reading in $readings) {
    @{language=$reading.language;lines=@(foreach ($line in @($reading.lines | Select-Object -First 160)) {
     $entry=@{text=$line.text;words=@($line.words | Select-Object -First 24)}
@@ -286,7 +289,7 @@ try {
       if ($capture.live) {
        $entry.proof=@{left=$proofLeft;top=$proofTop;width=$proofWidth;height=$proofHeight;hash=[DscCapture]::RegionHash($imageBytes,$proofLeft,$proofTop,$proofWidth,$proofHeight)}
        $glyphMask=[DscCapture]::RegionGlyphMask($imageBytes,$proofLeft,$proofTop,$proofWidth,$proofHeight)
-       if ($glyphMask) { $entry.proof.glyphMask=$glyphMask }
+       if ($glyphMask -and $glyphMask.Length -le $glyphMaskBudget) { $entry.proof.glyphMask=$glyphMask; $glyphMaskBudget-=$glyphMask.Length }
       }
       if ($line.text.Trim() -match '^(?i)(Accept|Принять)$') { $entry.acceptGold=[DscCapture]::AcceptGold($imageBytes,$proofLeft,$proofTop,$proofWidth,$proofHeight) }
      }

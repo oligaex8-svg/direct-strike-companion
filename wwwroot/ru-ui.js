@@ -277,6 +277,17 @@ const RU_UI_TEXT=Object.freeze({
   'SC2 is not foreground · input paused':'SC2 не активно · нажатия приостановлены',
   'SC2 did not receive automatic input · no click sent':'SC2 не получила автоматическое нажатие — щелчок не отправлен',
   'Commander dropdown opened · waiting for observed choices':'Список командиров открыт · ожидаются видимые варианты',
+  'Commander dropdown observed · checking fresh choices':'Список командиров найден · проверка свежих вариантов',
+  'Commander click sent · waiting for visible selection confirmation':'Нажатие отправлено · ожидание видимого подтверждения командира',
+  'Commander dropdown not open · waiting for SC2':'Список командиров не открыт · ожидание SC2',
+  'Commander dropdown reopened · waiting for observed choices':'Список командиров открыт повторно · ожидаются варианты',
+  'Commander choices incomplete or unordered · no scroll':'Неполный или неизвестный порядок командиров · без прокрутки',
+  'Preferred commander text unreadable · no guessed selection':'Имя выбранного командира не читается · выбор не угадывается',
+  'Commander scrolling requires the visible SC2 lobby':'Для прокрутки нужно видимое лобби SC2',
+  'Waiting for commander dropdown to scroll':'Ожидание прокрутки списка командиров',
+  'Commander list did not advance · select it manually':'Список командиров не прокрутился · выберите вручную',
+  'Commander list scrolled · waiting for observed choices':'Список командиров прокручен · ожидаются видимые варианты',
+  'Invalid commander scroll · no action':'Неверная прокрутка командиров · без действий',
   'Commander dropdown already open · no action':'Список командиров уже открыт · без нажатий',
   'Commander dropdown opportunity changed or expired · no action':'Список командиров изменился или устарел · без нажатий',
   'Waiting for a fresh commander dropdown observation':'Ожидание свежего чтения списка командиров',
@@ -1138,6 +1149,9 @@ const RU_COMMANDERS=Object.freeze({
 
 // Rules match complete, known UI grammar. Captured names and other user data stay verbatim.
 const RU_UI_RULES=Object.freeze([
+  {pattern:/^Commander selected: ([\s\S]+)$/,translate:(_,n)=>`Выбран командир: ${n}`},
+  {pattern:/^Commander already selected: ([\s\S]+) · no automatic change$/,translate:(_,n)=>`Командир уже выбран: ${n} · без автоматической замены`},
+  {pattern:/^SC2 invite (proof unavailable|pixels changed): (heading|Accept button|context \d+) · no action$/,translate:(_,r,p)=>`Приглашение SC2: ${r==='proof unavailable'?'нет проверки области':'область изменилась'} (${p==='heading'?'заголовок':p==='Accept button'?'кнопка принятия':p.replace('context ','контекст ')}) · без действий`},
   {pattern:/^Analysis paused: system (RAM|CPU) reached its limit\. Completed replays are saved; press Resume when resources are available\.$/,translate:(_,r)=>`Анализ приостановлен: достигнут лимит ${r==='RAM'?'памяти':'процессора'}. Обработанные повторы сохранены; продолжите анализ, когда появятся свободные ресурсы.`},
   {pattern:/^(.*?) · (\d+)\/(\d+) · (\d+) added · (\d+) updated · (\d+) failed$/,translate:(_,phase,c,t,a,u,f)=>`${translateInterfaceText(phase)} · ${c}/${t} · добавлено: ${a} · обновлено: ${u} · ошибок: ${f}`},
   {pattern:/^([\d,\s]+) \/ ([\d,\s]+) replays · ([\d,\s]+) added · ([\d,\s]+) failed$/,translate:(_,c,t,a,f)=>`${c} / ${t} повторов · добавлено: ${a} · ошибок: ${f}`},

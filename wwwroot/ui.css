@@ -5,7 +5,7 @@ body{line-height:1.5;font-size:var(--type-body)}
 input,textarea{caret-color:var(--accent)}
 input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-#accept-alert{position:fixed;top:20px;right:20px;z-index:1000;width:min(520px,calc(100vw - 32px))}
+#accept-alert{position:fixed;top:20px;right:16px;z-index:1000;width:min(520px,calc(100% - 32px))}
 #accept-alert[hidden]{display:none}
 #accept-alert .live-accept-needed{margin:0;box-shadow:0 6px 20px #0006}
 a{text-underline-offset:3px}

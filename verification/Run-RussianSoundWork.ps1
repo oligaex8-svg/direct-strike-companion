@@ -1,4 +1,4 @@
-param([ValidateSet('Extract','Audio','Tests','Browser','Playback','SectionModels','SectionBrowser','SectionTests','AcceptTests','AcceptBrowser','UpdateTests','UpdateBrowser','AcceptFallbackBrowser','RatingEstimatesTests','RatingEstimatesBrowser','AutoUpdateBrowser','ProfilePolishTests','ProfilePolishBrowser','NicknameLinksTests','NicknameLinksBrowser','CompactUiBrowser','AllCategoryBrowser','ProfileReplayBrowser','GraphicalStylesBrowser','GraphicalStylesPreview','FactionConsolesBrowser','FactionConsolesPreview','ConsoleCompositionPreview','MenuConsolePreview','SidebarPreview','HudPreview')][string]$Stage,[ValidatePattern('^(default|protoss|zerg|terran|fenix|classic-terran|classic-protoss|classic-zerg)-(1000-en|375-ru)$')][string]$FactionCase,[switch]$CpuOnly)
+param([ValidateSet('Extract','Audio','Tests','Browser','Playback','SectionModels','SectionBrowser','SectionTests','AcceptTests','AcceptBrowser','UpdateTests','UpdateBrowser','AcceptFallbackBrowser','RatingEstimatesTests','RatingEstimatesBrowser','AutoUpdateBrowser','ProfilePolishTests','ProfilePolishBrowser','NicknameLinksTests','NicknameLinksBrowser','CompactUiBrowser','AllCategoryBrowser','ProfileReplayBrowser','GraphicalStylesBrowser','GraphicalStylesPreview','FactionConsolesBrowser','FactionConsolesPreview','ConsoleCompositionPreview','MenuConsolePreview','SidebarPreview','HudPreview','AutomationChecks')][string]$Stage,[ValidatePattern('^(default|protoss|zerg|terran|fenix|classic-terran|classic-protoss|classic-zerg)-(1000-en|375-ru)$')][string]$FactionCase,[switch]$CpuOnly)
 $ErrorActionPreference='Stop'
 if($CpuOnly -and $Stage -notin @('FactionConsolesBrowser','FactionConsolesPreview','GraphicalStylesBrowser','ProfilePolishTests','CompactUiBrowser','ConsoleCompositionPreview','MenuConsolePreview','SidebarPreview')){throw 'CPU-only exception is restricted to this faction UI verification.'}
 $taskRoot=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
@@ -18,6 +18,7 @@ function Stop-TaskTree([int]$taskId){
 $taskHost=(Get-Process -Id $PID).Path
 $taskNode=(Get-Command node).Source
 $taskJobs=switch($Stage){
+    AutomationChecks {@{name='automation-checks';file=$taskHost;arguments=@('-NoProfile','-File','verification/Run-Sc2AutomationChecks.ps1')}}
     FactionConsolesBrowser {$taskCaseArguments=@('verification/Test-AllCategoryLayout.cjs','--themes');if($FactionCase){$taskCaseArguments+=('--case='+$FactionCase)};@{name='faction-consoles-browser';file=$taskNode;arguments=$taskCaseArguments}}
     Extract {@{name='extract';file=$taskHost;arguments=@('-NoProfile','-File','verification/Extract-RussianSc2Audio.ps1')}}
     Audio {@{name='normalize';file=$taskHost;arguments=@('-NoProfile','-File','verification/Build-RussianSoundLibrary.ps1')}}

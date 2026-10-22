@@ -171,7 +171,7 @@ internal static class SelfTests
             if (dashboard) { DashboardWindowTests.Run(Check); GraphicalStyleTests.Run(Check); }
             if (nicknames) { PlayerNicknamesTests.Run(Check); LobbyRosterTests.Run(Check); SiteSyncTests.Run(Check); DsstatsTests.Run(Check); LiveLobbyRatingsTests.Run(Check); }
             if (ratingEstimates) { RatingChangesTests.Run(Check); SiteSyncTests.Run(Check); }
-            if (acceptAlerts) Sc2AutomationTests.Run(Check);
+            if (acceptAlerts) { Sc2AutomationTests.Run(Check); Sc2TextProofTests.Run(Check); }
             NotificationSoundTests.Run(Check);
             CustomNotificationSoundTests.Run(Check);
             Sc2SoundClipTests.Run(Check);

@@ -36,7 +36,7 @@ const web=path.resolve(__dirname,'../wwwroot'),report={success:false,cases:[],sc
   automation={...automation,acceptNeeded:false};await page.evaluate(()=>refreshLiveData());assert.equal(await page.locator('#accept-alert').isVisible(),false,'Closed invitation clears the prompt');
   automation={...automation,acceptNeeded:true,acceptKind:'party-invite'};await page.evaluate(()=>refreshLiveData());assert.equal(await page.locator('#accept-alert').isVisible(),true);
   await page.locator('button.nav[data-view="lobby"]').click();
-  const box=await page.locator('#accept-alert').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width&&box.y>=0&&box.y<900);
+  const box=await page.locator('#accept-alert').boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width&&box.y>=0&&box.y<900,JSON.stringify({width,language,box}));
   assert.deepEqual(errors,[]);
   const screenshot=path.join(__dirname,`accept-alert-${width}-${language}.png`);await page.screenshot({path:screenshot});
   report.cases.push({width,language,audioDisabled:true,automaticAcceptanceDisabled:true,allPages:true,liveRefresh:true,dismissal:true,nodeContinuity:true,screenshot});await page.close();

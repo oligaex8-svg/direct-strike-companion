@@ -27,7 +27,7 @@ public static class DscCapture {
     if (data.Stride < width * 4) return "";
     var pixels = new byte[data.Stride * height];
     Marshal.Copy(data.Scan0, pixels, 0, pixels.Length);
-    return CreateMask(pixels, width, height, data.Stride);
+    return CreateStableMask(pixels, width, height, data.Stride);
    } finally { crop.UnlockBits(data); }
   }
  }
@@ -53,6 +53,41 @@ public static class DscCapture {
   if (ink < 8 || ink * 2 > width * height) return "";
   return Convert.ToBase64String(mask);
  }
+    // Version 2 stores three color planes, each core followed by its support.
+    // Support lowers intensity only; it never grows or translates glyph geometry.
+    public static string CreateStableMask(byte[] bgra, int width, int height, int stride)
+    {
+        if (bgra == null || width <= 0 || width > 2000 || height <= 0 || height > 256
+            || (long)width * height > 100000 || stride < width * 4
+            || (long)(height - 1) * stride + width * 4 > bgra.Length) return "";
+        int count = (width * height + 7) / 8;
+        var masks = new byte[count * 6];
+        int ink = 0, supportInk = 0;
+        for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
+        {
+            int at = y * stride + x * 4;
+            int b = bgra[at], g = bgra[at + 1], r = bgra[at + 2];
+            int color = -1;
+            bool core = false;
+            if (b >= 150 && g >= 120 && b - r >= 35 && g - r >= 25)
+            { color = 0; core = b >= 180 && g >= 140; }
+            else if (Math.Min(r, Math.Min(g, b)) >= 150
+                && Math.Max(r, Math.Max(g, b)) - Math.Min(r, Math.Min(g, b)) <= 45)
+            { color = 1; core = Math.Min(r, Math.Min(g, b)) >= 180; }
+            else if (r >= 150 && g >= 120 && r - b >= 60 && g - b >= 40)
+            { color = 2; core = r >= 180 && g >= 140; }
+            if (color < 0) continue;
+            int bit = y * width + x;
+            byte flag = (byte)(1 << (bit % 8));
+            masks[(color * 2 + 1) * count + bit / 8] |= flag;
+            supportInk++;
+            if (core) { masks[color * 2 * count + bit / 8] |= flag; ink++; }
+        }
+        if (ink < 8 || supportInk * 2 > width * height) return "";
+        return "g2:" + width.ToString(System.Globalization.CultureInfo.InvariantCulture) + ":"
+            + height.ToString(System.Globalization.CultureInfo.InvariantCulture) + ":" + Convert.ToBase64String(masks);
+    }
+
  public static void ReleaseProof() {
   var image = proofImage; var stream = proofStream;
   proofImage = null; proofStream = null;

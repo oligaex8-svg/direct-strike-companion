@@ -6,7 +6,7 @@ namespace DirectStrikeCompanion;
 
 internal static class Sc2AutomationTests
 {
-    private sealed class FixtureInput : ISc2Input, ISc2BackgroundInput
+    private sealed class FixtureInput : ISc2Input, ISc2BackgroundInput, ISc2ScrollInput
     {
         internal int Clicks;
         internal bool ChangedPixels;
@@ -15,8 +15,17 @@ internal static class Sc2AutomationTests
         internal bool BackgroundEnabled;
         internal int HardwareClicks;
         internal int WindowClicks;
+        internal List<int> Scrolls = [];
         internal List<ScreenBox> Targets = [];
         internal WindowProof Current = new(123, 456, "SC2_x64", "SC2_x64.exe", true, true, false, true, new(0, 0, 1000, 800));
+        public InputResult TryScroll(ScreenCapture capture, ScreenControl target, int delta, DateTime now)
+        {
+            var reason = InputBlockReason(capture, target.Bounds, Current, now);
+            if (reason != null || ChangedPixels || ChangedContext || target.HeadingProof == null || target.TargetProof == null
+                || target.ContextProofs?.Any(p => p == null || !p.Valid(Current.Bounds)) == true)
+                return new(false, false, reason ?? "Changed dropdown proof · no scroll");
+            Scrolls.Add(delta); return new(true, true, "Scroll delivered");
+        }
         public InputResult TryClick(ScreenCapture capture, ScreenControl target, DateTime now)
         {
             var reason = InputBlockReason(capture, target.Bounds, Current, now);
@@ -87,10 +96,10 @@ internal static class Sc2AutomationTests
             Line(russian ? "Лидер группы пригласил вас в" : "The party leader has invited you to", 340, 350, 320),
             Line(russian ? "3v3 Командиры, Direct Strike" : "3V3 Commanders, Direct Strike", 350, 380, 300),
             Line(russian ? "Принять" : "Accept", 340, 460, 80, acceptGold: gold), Line(russian ? "Отклонить" : "Decline", 550, 460, 90)];
-        object[] Lobby(bool expanded = false, bool mode = true, string name = "TKnight", string modeLabel = "3V3 Commanders") => new[] { Line("Direct Strike", 20, 20, 180),
-            Line("Horde", 20, 100), Line("Alliance", 20, 370), Line(name, 80, 210), Line("Select", 680, 220) }
+        object[] Lobby(bool expanded = false, bool mode = true, string name = "TKnight", string modeLabel = "3V3 Commanders", string selected = "Select", string[]? choices = null) => new[] { Line("Direct Strike", 20, 20, 180),
+            Line("Horde", 20, 100), Line("Alliance", 20, 370), Line(name, 80, 210), Line(selected, 680, 220) }
             .Concat(mode ? new[] { Line(modeLabel, 820, 80, 170) } : [])
-            .Concat(expanded ? Commanders.Take(6).Append("Random").Select((c, i) => Line(c, 680, 260 + i * 35)) : []).ToArray();
+            .Concat(expanded ? (choices ?? ["Random", "Abathur", "Alarak", "Artanis", "Dehaka", "Fenix"]).Select((c, i) => Line(c, 680, 260 + i * 35)) : []).ToArray();
         object[] Party(bool gold = true) => [Line("Ваня Кузьмич invited you to a party", 500, 90, 350), Line("Accept", 540, 140, 80, acceptGold: gold), Line("Decline", 740, 140, 80)];
         object[] Menu() => [Line("CAMPAIGN", 10, 30), Line("CO-OP", 180, 30), Line("VERSUS", 360, 30), Line("CUSTOM", 530, 30)];
         object[] Grid(bool mode = true) => new[] { Line("Select Your Commander", 350, 180, 250) }
@@ -355,7 +364,7 @@ internal static class Sc2AutomationTests
         input = new() { ChangedContext = true }; automation = new(input); Client(automation);
         automation.ObserveScreen(Frame(Invite()), new() { AutoAcceptMatch = true }, now);
         assert(input.Clicks == 0, "changed invite map/party context after OCR blocks acceptance");
-        foreach (var preference in new[] { "Random", "Raynor" })
+        foreach (var preference in new[] { "Random", "Artanis" })
         {
             input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
             automation.ObserveScreen(Frame(Lobby()), new() { AutoPickCommander = preference }, now, ["TKnight"]);
@@ -365,7 +374,7 @@ internal static class Sc2AutomationTests
             automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
             automation.ObserveScreen(Frame(Lobby(true), capturedAt: next), new() { AutoPickCommander = preference }, next, ["TKnight"]);
             automation.ObserveScreen(Frame(Lobby(true), capturedAt: next), new() { AutoPickCommander = preference }, next, ["TKnight"]);
-            assert(input.Clicks == 2 && input.Targets[1].CenterY == (preference == "Random" ? 482 : 272)
+            assert(input.Clicks == 2 && input.Targets[1].CenterY == (preference == "Random" ? 272 : 377)
                 && automation.SnapshotAt(next).CommanderStatus.Contains("not confirmed"), "new observed dropdown selects exact configured Random or commander only once and does not claim confirmation");
         }
         foreach (var badLobby in new[] { Lobby(mode: false), Lobby(name: "OtherPlayer"), Lobby().Append(Line("TKnight", 80, 475)).ToArray(), Lobby(true) })
@@ -463,7 +472,7 @@ internal static class Sc2AutomationTests
             automation.ObserveScreen(Frame(popup, capturedAt: at), new() { AutoAcceptMatch = true }, at);
             assert(input.Clicks == 5 && cue.ObserveScreen(Frame(popup, capturedAt: at), true, at), "fresh same-kind invite in the same menu receives a new click and sound after proved dismissal");
         }
-        foreach (var label in new[] { "8V3 Commanders", "3V3 Commarndeps" })
+        foreach (var label in new[] { "8V3 Commanders", "3V8 Commanders", "3V3 Commarndeps" })
         {
             input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
             automation.ObserveScreen(Frame(Lobby(modeLabel: label)), new() { AutoPickCommander = "Random" }, now, ["TKnight"]);
@@ -493,5 +502,82 @@ internal static class Sc2AutomationTests
                 new() { AutoPickCommander = scenario == "preference" ? "Raynor" : "Random" }, next, ["TKnight"]);
             assert(input.Clicks == 1, "dropdown opening cannot authorize missing, old, changed preference/context, expired or replay selection: " + scenario);
         }
+        using (var stream = typeof(Sc2AutomationTests).Assembly.GetManifestResourceStream("DscTest:sc2-commander-dropdown"))
+        {
+            assert(stream != null, "supplied dropdown OCR geometry is bundled as a non-live fixture");
+            using var fixture = JsonDocument.Parse(stream!);
+            var f = fixture.RootElement;
+            var screenshot = new ScreenCapture(false, now, 123, 456, "SC2_x64", false, false,
+                new(0, 0, f.GetProperty("width").GetInt32(), f.GetProperty("height").GetInt32()), f.GetProperty("width").GetInt32(), f.GetProperty("height").GetInt32());
+            var detected = Detect(f, screenshot, ["TKnight"]);
+            assert(detected.Lobby is { HasChoices: true } && detected.Lobby.Options.Keys.Order().SequenceEqual(new[] { "Abathur", "Alarak", "Artanis", "Dehaka", "Fenix", "Random" }),
+                "actual EN/RU screenshot resolves mode 3V8, own T Knight and split Deh aka without requiring equal recognizer subsets");
+        }
+        input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+        automation.ObserveScreen(Frame(Lobby()), new() { AutoPickCommander = "Tychus" }, now, ["TKnight"]);
+        next = now.AddSeconds(1); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+        automation.ObserveScreen(Frame(Lobby(true), capturedAt: next), new() { AutoPickCommander = "Tychus" }, next, ["TKnight"]);
+        automation.ObserveScreen(Frame(Lobby(true), capturedAt: next), new() { AutoPickCommander = "Tychus" }, next, ["TKnight"]);
+        assert(input.Clicks == 1 && input.Scrolls.SequenceEqual(new[] { -120 }), "off-page preferred commander scrolls one proved page, never clicks a guessed row or repeats a stale frame");
+        next = now.AddSeconds(2); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+        automation.ObserveScreen(Frame(Lobby(true, choices: ["Stukov", "Swann", "Tychus", "Vorazun", "Zagara", "Zeratul"]), capturedAt: next), new() { AutoPickCommander = "Tychus" }, next, ["TKnight"]);
+        assert(input.Clicks == 2 && input.Targets.Last().CenterY == 342 && automation.SnapshotAt(next).CommanderStatus.Contains("not confirmed"), "new page clicks the exact observed Tychus text and remains unconfirmed");
+        next = now.AddSeconds(3); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+        automation.ObserveScreen(Frame(Lobby(selected: "Tychus"), capturedAt: next), new() { AutoPickCommander = "Tychus" }, next, ["TKnight"]);
+        assert(input.Clicks == 2 && automation.SnapshotAt(next).CommanderStatus == "Commander selected: Tychus", "closed own-row selector visibly confirms the configured commander without another click");
+        foreach (var scenario in new[] { "stalled", "background", "pixels", "context", "unordered", "missing-label" })
+        {
+            input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+            string wanted = scenario == "missing-label" ? "Artanis" : "Tychus";
+            automation.ObserveScreen(Frame(Lobby()), new() { AutoPickCommander = wanted }, now, ["TKnight"]);
+            input.ChangedPixels = scenario == "pixels"; input.ChangedContext = scenario == "context";
+            for (int tick = 1; tick <= 5; tick++)
+            {
+                next = now.AddSeconds(tick); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+                var choices = scenario == "unordered" ? new[] { "Random", "Fenix", "Abathur" } : scenario == "missing-label" ? ["Random", "Abathur", "Alarak", "Dehaka", "Fenix"] : null;
+                automation.ObserveScreen(Frame(Lobby(true, choices: choices), capturedAt: next, foreground: scenario != "background"), new() { AutoPickCommander = wanted }, next, ["TKnight"]);
+            }
+            assert(input.Clicks == 1 && input.Scrolls.Count == (scenario == "stalled" ? 2 : 0), "bounded scroll never guesses through unchanged pages, background, altered proofs or unreadable/unordered choices: " + scenario);
+        }
+        input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+        automation.ObserveScreen(Frame(Lobby(true)), new() { AutoPickCommander = "Random" }, now, ["TKnight"]);
+        next = now.AddSeconds(1); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+        automation.ObserveScreen(Frame(Lobby(true), capturedAt: next), new() { AutoPickCommander = "Random" }, next, ["TKnight"]);
+        assert(input.Clicks == 1 && input.Targets.Single().CenterY == 272, "already-open own-row dropdown selects only after a second fresh observed page");
+        foreach (int tick in new[] { 2, 3, 5, 7 })
+        {
+            next = now.AddSeconds(tick); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+            automation.ObserveScreen(Frame(Lobby(true), capturedAt: next), new() { AutoPickCommander = "Random" }, next, ["TKnight"]);
+        }
+        assert(input.Clicks == 3 && automation.SnapshotAt(next).CommanderStatus.Contains("confirmation"), "visible unchanged dropdown gets at most three exact-choice attempts and never claims success from delivery alone");
+        input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+        automation.ObserveScreen(Frame(Lobby(selected: "Raynor")), new() { AutoPickCommander = "Random" }, now, ["TKnight"]);
+        assert(input.Clicks == 0 && automation.SnapshotAt(now).CommanderStatus.Contains("Raynor"), "a different already-selected commander is reported without overriding a manual choice");
+        input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+        automation.ObserveScreen(Frame(Lobby()), new() { AutoPickCommander = "Random" }, now, ["TKnight"]);
+        next = now.AddSeconds(1); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+        automation.ObserveScreen(Frame(Lobby(true, choices: ["Tychus", "Vorazun", "Zagara"]), capturedAt: next), new() { AutoPickCommander = "Random" }, next, ["TKnight"]);
+        assert(input.Scrolls.SequenceEqual(new[] { 120 }) && input.Clicks == 1, "a proved lower page scrolls upward for Random without selecting the first visible commander");
+        input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+        automation.ObserveScreen(Frame(Lobby()), new() { AutoPickCommander = "Tychus" }, now, ["TKnight"]);
+        for (int tick = 1; tick <= 22; tick++)
+        {
+            next = now.AddMilliseconds(tick * 200); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+            automation.ObserveScreen(Frame(Lobby(true, choices: tick % 2 == 0 ? ["Artanis", "Dehaka", "Fenix"] : ["Random", "Abathur", "Alarak"]), capturedAt: next), new() { AutoPickCommander = "Tychus" }, next, ["TKnight"]);
+        }
+        assert(input.Scrolls.Count == 20 && input.Clicks == 1, "even changing observed pages cannot exceed the twenty-scroll opportunity budget");
+        input = new(); automation = new(input); Client(automation, ui: Ui("ScreenLobby"));
+        for (int tick = 0; tick <= 8; tick++)
+        {
+            next = now.AddSeconds(tick); automation.ObserveClient(Game(), Ui("ScreenLobby"), true, next);
+            automation.ObserveScreen(Frame(Lobby(), capturedAt: next), new() { AutoPickCommander = "Random" }, next, ["TKnight"]);
+        }
+        assert(input.Clicks == 3 && input.Scrolls.Count == 0, "ignored dropdown-open deliveries retry at two-second spacing with a three-open cap");
+        var disagreement = JsonNode.Parse(Frame(Lobby(true)).GetRawText())!;
+        var conflicting = JsonNode.Parse(Frame(Lobby(true, choices: ["Random", "Fenix", "Alarak", "Artanis", "Dehaka", "Abathur"])).GetRawText())!;
+        disagreement["screenReadings"]!.AsArray().Add(conflicting["screenReadings"]![0]!.DeepClone());
+        var disagreementResult = JsonSerializer.SerializeToElement(disagreement, Store.Json);
+        assert(Detect(disagreementResult, ReadCapture(disagreementResult)!, ["TKnight"]).Lobby == null,
+            "contradictory names at the same bilingual dropdown positions cannot authorize any lobby input");
     }
 }

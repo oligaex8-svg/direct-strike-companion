@@ -90,6 +90,69 @@ internal static class Sc2TextProofTests
         assert(Sc2TextProof.CreateMask(sparse, 16, 1, 64) == "", "isolated bright noise cannot authorize a glyph proof");
         Array.Fill(sparse, (byte)225);
         assert(Sc2TextProof.CreateMask(sparse, 16, 1, 64) == "", "a mostly bright surface cannot authorize a text proof");
+        var stable = Sc2TextProof.CreateStableMask(original, width, height, stride);
+        assert(stable.StartsWith("g2:48:14:", StringComparison.Ordinal)
+            && Sc2TextProof.Matches(stable, Frame(95, a), width, height, stride), "stable proof binds dimensions and ignores dark background changes");
+        var pulse = (byte[])original.Clone();
+        // Keep plenty of core ink while individual pixels cross each color's threshold.
+        int[] pulseAt = [3 * stride + 4 * 4, 3 * stride + 14 * 4, 3 * stride + 24 * 4];
+        (pulse[pulseAt[0]], pulse[pulseAt[0] + 1], pulse[pulseAt[0] + 2]) = (175, 135, 65);
+        (pulse[pulseAt[1]], pulse[pulseAt[1] + 1], pulse[pulseAt[1] + 2]) = (175, 175, 175);
+        (pulse[pulseAt[2]], pulse[pulseAt[2] + 1], pulse[pulseAt[2] + 2]) = (65, 135, 175);
+        var pulseProof = Sc2TextProof.CreateStableMask(pulse, width, height, stride);
+        assert(!Sc2TextProof.Matches(expected, pulse, width, height, stride)
+            && Sc2TextProof.Matches(stable, pulse, width, height, stride)
+            && Sc2TextProof.Matches(pulseProof, original, width, height, stride),
+            "same-position intensity fluctuations across cyan, white and gold core thresholds pass in both directions while legacy stays exact");
+        foreach (var changed in new[] { blank, onePixel, Frame(15, b), Frame(15, a, shift: 1), Frame(15, a, missing: true), Frame(15, a, added: true) })
+            assert(!Sc2TextProof.Matches(stable, changed, width, height, stride), "stable proof rejects blank, removed core, replaced, shifted, missing and added text");
+        var recolored = (byte[])original.Clone();
+        recolored[first] = recolored[first + 1] = recolored[first + 2] = 225;
+        assert(!Sc2TextProof.Matches(stable, recolored, width, height, stride), "support must retain the same glyph color");
+        const string prefix = "g2:48:14:";
+        int planeBytes = (width * height + 7) / 8;
+        var stableBytes = Convert.FromBase64String(stable[prefix.Length..]);
+        var unsupported = (byte[])stableBytes.Clone();
+        unsupported[planeBytes + 3 * width / 8] = 0;
+        var emptyCore = (byte[])stableBytes.Clone();
+        for (int color = 0; color < 3; color++) Array.Clear(emptyCore, color * 2 * planeBytes, planeBytes);
+        foreach (var malformed in new[] { "g3" + stable[2..], stable + "\n", stable[..^4], stable.Replace("48:14", "048:14"),
+            stable.Replace("48:14", "24:28"), prefix + Convert.ToBase64String(unsupported), prefix + Convert.ToBase64String(emptyCore) })
+            assert(!Sc2TextProof.Matches(malformed, original, width, height, stride), "stable malformed, noncanonical, wrong-dimension and unsupported-core proofs fail closed");
+        var oddStable = Sc2TextProof.CreateStableMask(odd, 17, 1, 68);
+        var oddStableBytes = Convert.FromBase64String(oddStable["g2:17:1:".Length..]);
+        oddStableBytes[^1] |= 128;
+        assert(!Sc2TextProof.Matches("g2:17:1:" + Convert.ToBase64String(oddStableBytes), odd, 17, 1, 68), "stable unused support bits fail closed");
+        assert(Sc2TextProof.CreateStableMask(blank, width, height, stride) == ""
+            && Sc2TextProof.CreateStableMask(sparse, 16, 1, 64) == ""
+            && Sc2TextProof.CreateStableMask(new byte[7], width, height, stride) == ""
+            && Sc2TextProof.CreateStableMask(null!, width, height, stride) == "", "stable blank, bright surface and missing pixels fail closed");
+        foreach (var size in new[] { (0, 14, stride), (48, 0, stride), (2001, 1, 8004), (1, 257, 4), (1000, 101, 4000), (48, 14, 191), (48, 14, -stride), (int.MaxValue, int.MaxValue, int.MaxValue) })
+            assert(Sc2TextProof.CreateStableMask(original, size.Item1, size.Item2, size.Item3) == ""
+                && !Sc2TextProof.Matches(stable, original, size.Item1, size.Item2, size.Item3), "stable invalid geometry fails closed");
+        // Invoke only pure byte-array methods; no drawing, capture or window APIs.
+        using (var resource = typeof(Sc2TextProof).Assembly.GetManifestResourceStream("DscTool:DscCaptureHelper.dll"))
+        {
+            assert(resource is not null, "compiled legacy helper is available for proof parity");
+            using var bytes = new MemoryStream();
+            resource!.CopyTo(bytes);
+            var helper = System.Reflection.Assembly.Load(bytes.ToArray()).GetType("DscCapture")!;
+            foreach (var frame in new[] { original, pulse, blank, onePixel, padded, Frame(95, a) })
+            foreach (var method in new[] { "CreateMask", "CreateStableMask" })
+            {
+                var actual = (string)helper.GetMethod(method)!.Invoke(null, [frame, width, height, stride])!;
+                var wanted = method == "CreateMask" ? Sc2TextProof.CreateMask(frame, width, height, stride)
+                    : Sc2TextProof.CreateStableMask(frame, width, height, stride);
+                assert(actual == wanted, "compiled legacy helper and main app emit identical " + method + " proofs");
+            }
+        }
+        var dimSurface = new byte[stride * height];
+        Array.Fill(dimSurface, (byte)145);
+        assert(Sc2TextProof.CreateStableMask(dimSurface, width, height, stride) == ""
+            && !Sc2TextProof.Matches(stable, dimSurface, width, height, stride), "dark surfaces cannot act as glyph support");
+        var sparseStable = new byte[16 * 4];
+        for (int i = 0; i < 7; i++) sparseStable[i * 4] = sparseStable[i * 4 + 1] = sparseStable[i * 4 + 2] = 225;
+        assert(Sc2TextProof.CreateStableMask(sparseStable, 16, 1, 64) == "", "stable proofs require at least eight bright core pixels");
         var maximum = new byte[500 * 200 * 4];
         for (int i = 0; i < 8; i++) maximum[i * 4] = maximum[i * 4 + 1] = maximum[i * 4 + 2] = 225;
         var maximumMask = Sc2TextProof.CreateMask(maximum, 500, 200, 2000);

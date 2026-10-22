@@ -1,0 +1,423 @@
+{
+  "scope": "Non-live OCR geometry from supplied commander dropdown screenshot; only context, own nickname and choices retained",
+  "width": 2511,
+  "height": 1055,
+  "screenReadings": [
+    {
+      "language": "en-GB",
+      "lines": [
+        {
+          "text": "Direct Strike",
+          "words": [
+            {
+              "y": 40,
+              "height": 23,
+              "width": 82,
+              "text": "Direct",
+              "x": 71
+            },
+            {
+              "y": 40,
+              "height": 23,
+              "width": 79,
+              "text": "Strike",
+              "x": 165
+            }
+          ]
+        },
+        {
+          "text": "Horde",
+          "words": [
+            {
+              "y": 136,
+              "height": 13,
+              "width": 73,
+              "text": "Horde",
+              "x": 80
+            }
+          ]
+        },
+        {
+          "text": "T Knight",
+          "words": [
+            {
+              "y": 361,
+              "height": 14,
+              "width": 11,
+              "text": "T",
+              "x": 173
+            },
+            {
+              "y": 361,
+              "height": 18,
+              "width": 52,
+              "text": "Knight",
+              "x": 186
+            }
+          ]
+        },
+        {
+          "text": "Alliance",
+          "words": [
+            {
+              "y": 467,
+              "height": 13,
+              "width": 88,
+              "text": "Alliance",
+              "x": 81
+            }
+          ]
+        },
+        {
+          "text": "3V8 Commanders",
+          "words": [
+            {
+              "y": 206,
+              "height": 13,
+              "width": 32,
+              "text": "3V8",
+              "x": 1623
+            },
+            {
+              "y": 206,
+              "height": 13,
+              "width": 105,
+              "text": "Commanders",
+              "x": 1663
+            }
+          ]
+        },
+        {
+          "text": "Select",
+          "words": [
+            {
+              "y": 375,
+              "height": 13,
+              "width": 51,
+              "text": "Select",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Select",
+          "words": [
+            {
+              "y": 432,
+              "height": 12,
+              "width": 70,
+              "text": "Select",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Random",
+          "words": [
+            {
+              "y": 467,
+              "height": 12,
+              "width": 92,
+              "text": "Random",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Abathur",
+          "words": [
+            {
+              "y": 501,
+              "height": 12,
+              "width": 94,
+              "text": "Abathur",
+              "x": 1173
+            }
+          ]
+        },
+        {
+          "text": "Alarak",
+          "words": [
+            {
+              "y": 536,
+              "height": 12,
+              "width": 71,
+              "text": "Alarak",
+              "x": 1173
+            }
+          ]
+        },
+        {
+          "text": "Artanis",
+          "words": [
+            {
+              "y": 571,
+              "height": 12,
+              "width": 83,
+              "text": "Artanis",
+              "x": 1173
+            }
+          ]
+        },
+        {
+          "text": "Deh aka",
+          "words": [
+            {
+              "y": 606,
+              "height": 12,
+              "width": 43,
+              "text": "Deh",
+              "x": 1172
+            },
+            {
+              "y": 606,
+              "height": 12,
+              "width": 36,
+              "text": "aka",
+              "x": 1218
+            }
+          ]
+        },
+        {
+          "text": "Fenix",
+          "words": [
+            {
+              "y": 641,
+              "height": 12,
+              "width": 58,
+              "text": "Fenix",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Direct Strike",
+          "words": [
+            {
+              "y": 542,
+              "height": 22,
+              "width": 74,
+              "text": "Direct",
+              "x": 1913
+            },
+            {
+              "y": 542,
+              "height": 22,
+              "width": 74,
+              "text": "Strike",
+              "x": 1997
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ru",
+      "lines": [
+        {
+          "text": "Direct Strike",
+          "words": [
+            {
+              "y": 40,
+              "height": 23,
+              "width": 82,
+              "text": "Direct",
+              "x": 71
+            },
+            {
+              "y": 40,
+              "height": 23,
+              "width": 79,
+              "text": "Strike",
+              "x": 165
+            }
+          ]
+        },
+        {
+          "text": "Hopde",
+          "words": [
+            {
+              "y": 136,
+              "height": 13,
+              "width": 73,
+              "text": "Hopde",
+              "x": 80
+            }
+          ]
+        },
+        {
+          "text": "Tknight",
+          "words": [
+            {
+              "y": 361,
+              "height": 18,
+              "width": 65,
+              "text": "Tknight",
+              "x": 173
+            }
+          ]
+        },
+        {
+          "text": "Alliance",
+          "words": [
+            {
+              "y": 467,
+              "height": 13,
+              "width": 88,
+              "text": "Alliance",
+              "x": 81
+            }
+          ]
+        },
+        {
+          "text": "3V3 Commarndeps",
+          "words": [
+            {
+              "y": 206,
+              "height": 13,
+              "width": 32,
+              "text": "3V3",
+              "x": 1623
+            },
+            {
+              "y": 206,
+              "height": 13,
+              "width": 105,
+              "text": "Commarndeps",
+              "x": 1663
+            }
+          ]
+        },
+        {
+          "text": "Select",
+          "words": [
+            {
+              "y": 375,
+              "height": 13,
+              "width": 51,
+              "text": "Select",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Select",
+          "words": [
+            {
+              "y": 432,
+              "height": 12,
+              "width": 70,
+              "text": "Select",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Random",
+          "words": [
+            {
+              "y": 467,
+              "height": 12,
+              "width": 92,
+              "text": "Random",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Abathur",
+          "words": [
+            {
+              "y": 501,
+              "height": 12,
+              "width": 94,
+              "text": "Abathur",
+              "x": 1173
+            }
+          ]
+        },
+        {
+          "text": "ТагаК",
+          "words": [
+            {
+              "y": 536,
+              "height": 12,
+              "width": 71,
+              "text": "ТагаК",
+              "x": 1173
+            }
+          ]
+        },
+        {
+          "text": "Artanis",
+          "words": [
+            {
+              "y": 571,
+              "height": 12,
+              "width": 83,
+              "text": "Artanis",
+              "x": 1173
+            }
+          ]
+        },
+        {
+          "text": "D eh аКа",
+          "words": [
+            {
+              "y": 606,
+              "height": 12,
+              "width": 16,
+              "text": "D",
+              "x": 1172
+            },
+            {
+              "y": 606,
+              "height": 12,
+              "width": 24,
+              "text": "eh",
+              "x": 1191
+            },
+            {
+              "y": 606,
+              "height": 12,
+              "width": 36,
+              "text": "аКа",
+              "x": 1218
+            }
+          ]
+        },
+        {
+          "text": "Fenix",
+          "words": [
+            {
+              "y": 641,
+              "height": 12,
+              "width": 58,
+              "text": "Fenix",
+              "x": 1172
+            }
+          ]
+        },
+        {
+          "text": "Direct Strike",
+          "words": [
+            {
+              "y": 542,
+              "height": 22,
+              "width": 74,
+              "text": "Direct",
+              "x": 1913
+            },
+            {
+              "y": 542,
+              "height": 22,
+              "width": 74,
+              "text": "Strike",
+              "x": 1997
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

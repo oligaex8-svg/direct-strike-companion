@@ -14,7 +14,15 @@ The public update channel is [`oligaex8-svg/direct-strike-companion`](https://gi
 
 Optional GitHub access remains available for private repositories or higher API rate limits. Credentials are encrypted for the current Windows account and never bundled with the launcher. Invalid old credentials fall back to anonymous public access; they are not silently deleted.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.1` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.2` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — invite proof and lobby commander selection
+
+Status: Preparing 1.1.1. Supplied screenshot OCR reproduced `3V8 Commanders`, `T Knight` and split `Deh aka`; exact bounded mode/whitespace handling and agreeing bilingual subsets now recognize its six visible choices. Own-row selection scrolls a proved ordered list for off-page preferences, observes each page, clicks exact text and confirms only a closed selector showing the preference. Opening/click retries and stalled/total scrolling are bounded. Existing manual selections remain unchanged. Invites retain window-addressed messages without focus/cursor fallback.
+
+Changed owners: `Sc2Automation.DetectLobby/ObserveScreen/ScrollCommanderChoices/WindowsSc2Input`, its source tests and sanitized non-live `sc2-commander-dropdown` geometry fixture. `Sc2TextProof` and the legacy capture helper add versioned same-colour core/support proofs: fixed-position glyphs tolerate narrow intensity changes, while moved/replaced/blank text fails. OCR mask payload is bounded; input failures identify heading, button or context. `SelfTests` includes proof regressions in the invitation suite. EN/RU status copy and narrow acceptance-banner clearance are updated.
+
+Checks: [267 focused source checks](verification/automation-source-checks.json) passed with fake input and the installed SDK 9 harness; production remains SDK 10 and awaits CI. Independent review found no concrete unsafe-input defect; added upward, conflicting-language, reopening and total-scroll tests cover its suggested gaps. [Four EN/RU acceptance UI cases](verification/accept-alert-browser.json) passed after correcting narrow viewport scrollbar clipping. No input was sent to SC2; a match was running. Next authorized step: production release checks, verified download and installation preserving data/processes. Live invite acceptance and commander outcome remain unverified; no recurring work is authorized.
 
 ## Resume — 22 October 2026 — public updates and in-game HUD families
 
