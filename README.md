@@ -18,13 +18,13 @@ For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.4` w
 
 ## Resume — 22 October 2026 — clearer material palettes
 
-Status: Prepared 1.0.3 with clearer theme colour roles. Default uses navy/ice blue; Protoss uses deeper blue panels and warm gold; Terran separates cool steel surfaces from mint controls; Zerg uses amethyst/magenta. Text is clearer and less uniformly tinted. Utility controls have explicit theme surfaces and edges, while Friends/Losers retain consistent green/amber roles. Rating-source and win/loss colours are unchanged. No spacing, row-height, navigation or rating logic changed.
+Status: Published and installed 1.0.3 with clearer theme colour roles. Default uses navy/ice blue; Protoss uses deep blue and warm gold; Terran separates cool steel surfaces from mint controls; Zerg uses amethyst/magenta. Text is less uniformly tinted. Utility controls have explicit surfaces/edges; Friends/Losers retain green/amber roles. Rating-source and win/loss colours are unchanged. Spacing, row heights, navigation and rating logic are preserved.
 
 Changed owners: `factions.css`, default tokens in `console-layout.css`, utility tokens in `controls.css` and appearance thumbnails in `themes.css`. `Build-FactionConsoles.cjs` applies one RGB-only SVG matrix to the original Zerg frame, crest, glass and command/control art. Alpha and source contours remain intact; the filter never affects text or portraits. `assets/themes/README.md` records that treatment.
 
-Checks: [eight English/Russian theme cases across all 72 category states](verification/theme-palettes-browser.json) passed, including text contrast on headers/panels, stable data colours, material decoding, frame clearance, list-label containment and keyboard focus. Control text contrast is at least 8.55:1; control edges at least 3.35:1. [Comparison](verification/theme-palettes-preview.png) uses actual tested UI screenshots with sample data. All four desktop styles were visually inspected together.
+Checks: [eight English/Russian cases across 72 category states](verification/theme-palettes-browser.json) passed: header/panel contrast, stable data colours, material decoding, frame clearance, label containment and keyboard focus. Control text contrast is at least 8.55:1; edges at least 3.35:1. [Comparison](verification/theme-palettes-preview.png) uses tested UI with sample data; all four desktop styles were inspected together. [Release CI](https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/39842241204), 1,952 published dashboard checks and profile models passed. [Nine changed embedded assets](verification/theme-palettes-assets.json) match source, allowing Git line-ending conversion.
 
-Next authorized step: publish, verify and install 1.0.3 while preserving running apps and user data. No recurring follow-up is authorized.
+[Installation](verification/theme-palettes-installation.json) matches the published SHA-256 and preserves library, archives and processes. No app was running or launched. Next bounded step: observe these palettes in normal use; visual preference remains the user's judgment. No recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — coherent list controls and header surface
 
