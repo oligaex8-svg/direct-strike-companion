@@ -146,14 +146,15 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
     if(themesRun){
      assert.equal(await page.locator('html').getAttribute('data-graphical-style'),theme);
      const palette=await page.evaluate(()=>{
-      const css=getComputedStyle(document.documentElement),names=['--bg','--surface','--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'];
+      const css=getComputedStyle(document.documentElement),names=['--bg','--surface','--shell-panel','--shell-header','--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'];
       return Object.fromEntries(names.map(name=>[name,css.getPropertyValue(name).trim()]));
      });
      const luminance=color=>{const hex=color.replace('#',''),rgb=color.startsWith('#')?[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)):color.match(/[\d.]+/g).slice(0,3).map(Number);const channels=rgb.map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return channels[0]*.2126+channels[1]*.7152+channels[2]*.0722;};
      const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)+.05)/(Math.min(A,B)+.05);};
      for(const name of ['--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'])assert.ok(contrast(palette[name],palette['--surface'])>=4.5,`${theme}: readable ${name}`);
+     for(const surface of ['--bg','--shell-panel','--shell-header'])for(const text of ['--text','--muted'])assert.ok(contrast(palette[text],palette[surface])>=4.5,`${theme}: readable ${text} on ${surface}`);
      assert.equal(palette['--rating-dsr'],'#59d6ea');assert.equal(palette['--rating-dsstats'],'#c4a7ff');
-     if(theme==='default')assert.equal(palette['--bg'],'#060d17','Default uses the SC2 menu well');
+     if(theme==='default')assert.ok(contrast(palette['--text'],palette['--bg'])>=12,'Default preserves a clear SC2 menu well');
      const button=await page.locator('#import').evaluate(el=>{const c=getComputedStyle(el);return {text:c.color,background:c.backgroundColor,border:c.borderColor};});
      assert.ok(contrast(button.text,button.background)>=4.5,`${theme}: primary button text contrast`);
      if(theme!=='default'){
@@ -162,10 +163,10 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
       assert.ok(consoleFrame.includes(`/themes/${theme}.svg`),'The game frame is painted on the actual panel');
       assert.equal(await page.locator('.profile-favourite').evaluate(el=>getComputedStyle(el).borderImageSource),'none','Commander details do not repeat the outer console frame');
       const construction=await page.evaluate(()=>({control:getComputedStyle(document.querySelector('#import')).borderImageSource,selection:getComputedStyle(document.querySelector('.nav.active')).borderImageSource,crest:getComputedStyle(document.querySelector('.page-head'),'::after').backgroundImage,radius:getComputedStyle(document.querySelector('.profile-commanders')).borderRadius}));
-      assert.ok(construction.control.includes(`/themes/${theme}-command.png`),'Faction controls use the actual command atlas instead of shared blue menu borders');
+       assert.ok(construction.control.includes(`/themes/${theme}-command.${theme==='zerg'?'svg':'png'}`),'Faction controls use their native command atlas with the assigned material palette');
       assert.ok(construction.selection.includes(`/themes/${theme}.svg`)&&construction.crest.includes(`/themes/${theme}-crest.svg`),'Selection and header retain native faction construction');
       entry.factionConstruction=construction;
-      const assets=await page.evaluate(async race=>Promise.all([`${race}.svg`,`${race}-surface.svg`,`${race}-control.png`,`${race}-command.png`,`${race}-crest.svg`].map(async name=>{const image=new Image();image.src='/themes/'+name;await image.decode();return {name,width:image.naturalWidth,height:image.naturalHeight};})),theme);
+       const assets=await page.evaluate(async race=>Promise.all([`${race}.svg`,`${race}-surface.svg`,`${race}-control.${race==='zerg'?'svg':'png'}`,`${race}-command.${race==='zerg'?'svg':'png'}`,`${race}-crest.svg`].map(async name=>{const image=new Image();image.src='/themes/'+name;await image.decode();return {name,width:image.naturalWidth,height:image.naturalHeight};})),theme);
       assert.ok(assets.every(image=>image.width>0&&image.height>0),'Embedded atlas frames and materials decode in the browser');
       entry.consoleAssets=assets;
      }

@@ -2,8 +2,8 @@
    treatment; faction command artwork remains on primary actions and navigation. */
 :root :is(.mark-button,.replay-quick-list,.filter,.button.ghost),
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost){
- --control-text:var(--text);--control-surface:var(--shell-panel);
- --control-hover:var(--raised);--control-edge:color-mix(in srgb,var(--muted) 65%,var(--shell-well));
+ --control-text:var(--text);--control-surface:var(--control-neutral-surface,var(--shell-panel));
+ --control-hover:var(--raised);--control-edge:var(--control-neutral-edge,color-mix(in srgb,var(--muted) 65%,var(--shell-well)));
  --control-focus:var(--shell-light);
  border:1px solid var(--control-edge);border-image:none;border-radius:2px;
  background:var(--control-surface);color:var(--control-text);box-shadow:none;
@@ -14,13 +14,13 @@
 }
 :root :is(.mark-button[data-list=friends],.replay-quick-list[data-quick-player-list=friends].is-selected,.filter[data-list-filter=friends][aria-pressed=true]),
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button[data-list=friends],.replay-quick-list[data-quick-player-list=friends].is-selected,.filter[data-list-filter=friends][aria-pressed=true]){
- --control-text:var(--green);--control-surface:#13291f;--control-hover:#1c392c;
- --control-edge:#518c70;--control-focus:var(--green);
+ --control-text:var(--green);--control-surface:#073326;--control-hover:#104a37;
+ --control-edge:#4bad82;--control-focus:var(--green);
 }
 :root :is(.mark-button[data-list=losers],.replay-quick-list[data-quick-player-list=losers].is-selected,.filter[data-list-filter=losers][aria-pressed=true]),
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button[data-list=losers],.replay-quick-list[data-quick-player-list=losers].is-selected,.filter[data-list-filter=losers][aria-pressed=true]){
- --control-text:var(--amber);--control-surface:#2c2416;--control-hover:#41331c;
- --control-edge:#aa874d;--control-focus:var(--amber);
+ --control-text:var(--amber);--control-surface:#392509;--control-hover:#51370e;
+ --control-edge:#c59749;--control-focus:var(--amber);
 }
 :root :is(.mark-button,.replay-quick-list,.filter,.button.ghost):hover:not(:disabled),
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost):hover:not(:disabled){

@@ -39,14 +39,24 @@ for(const race of ['protoss','terran','zerg']){
  if(width!==300||height!==496)throw Error(`Unexpected ${filename} atlas dimensions: ${width}x${height}`);
  hashes[filename]=crypto.createHash('sha256').update(bytes).digest('hex');
  const texture=`data:image/png;base64,${bytes.toString('base64')}`;
+ // Keep the original sculpted Zerg material, but light it in amethyst rather
+ // than the menu atlas's brown/amber. Alpha and geometric detail are unchanged.
+ const paletteFilter=race==='zerg'?'<filter id="palette" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%"><feColorMatrix type="matrix" values=".68 .12 .12 0 .012 .04 .65 .10 0 .005 .42 .32 .75 0 .018 0 0 0 1 0"/></filter>':'';
+ const paletteDefs=paletteFilter?`<defs>${paletteFilter}</defs>`:'';
+ const paletteAttribute=paletteFilter?' filter="url(#palette)"':'';
+ const tintedControl=(name,imageBytes)=>{
+  const w=imageBytes.readUInt32BE(16),h=imageBytes.readUInt32BE(20);
+  fs.writeFileSync(path.join(output,name),`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">${paletteDefs}<image width="${w}" height="${h}"${paletteAttribute} href="data:image/png;base64,${imageBytes.toString('base64')}"/></svg>\n`);
+ };
  const commandName=`ui_console_commandbutton_normal_default${race}.png`,commandBytes=fs.readFileSync(path.join(source,commandName));
  hashes[commandName]=crypto.createHash('sha256').update(commandBytes).digest('hex');
  fs.writeFileSync(path.join(output,`${race}-command.png`),commandBytes);
+ if(race==='zerg')tintedControl('zerg-command.svg',commandBytes);
  // The atlas's central crown is deliberately retained, rather than replacing
  // all its character with a stretched straight edge.
- fs.writeFileSync(path.join(output,`${race}-crest.svg`),`<svg xmlns="http://www.w3.org/2000/svg" width="96" height="18" viewBox="42 0 64 12"><image width="300" height="496" href="${texture}"/></svg>\n`);
+ fs.writeFileSync(path.join(output,`${race}-crest.svg`),`<svg xmlns="http://www.w3.org/2000/svg" width="96" height="18" viewBox="42 0 64 12">${paletteDefs}<image width="300" height="496"${paletteAttribute} href="${texture}"/></svg>\n`);
  const piece=(x,y,w,h,sx,sy,sw,sh)=>`<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="${sx} ${sy} ${sw} ${sh}" preserveAspectRatio="none" overflow="hidden"><use href="#atlas"/></svg>`;
- const frame=`<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><defs><image id="atlas" width="300" height="${height}" href="${texture}"/></defs>${[
+ const frame=`<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><defs>${paletteFilter}<image id="atlas" width="300" height="${height}"${paletteAttribute} href="${texture}"/></defs>${[
   // Corners keep the sculpted plate / carapace contours and inner light track.
   piece(0,0,32,32,0,0,32,32),piece(96,0,32,32,116,0,32,32),
   piece(0,96,32,32,150,32,32,32),piece(96,96,32,32,266,32,32,32),
@@ -56,8 +66,10 @@ for(const race of ['protoss','terran','zerg']){
  ].join('')}</svg>`;
  fs.writeFileSync(path.join(output,`${race}.svg`),frame+'\n');
  // The atlas glass has fine vertical scoring, kept behind a dark CSS wash.
- fs.writeFileSync(path.join(output,`${race}-surface.svg`),`<svg xmlns="http://www.w3.org/2000/svg" width="256" height="64" viewBox="22 218 256 64"><image width="300" height="${height}" href="${texture}"/></svg>\n`);
- fs.copyFileSync(path.join(source,`ui_console_controlgroupbutton_normal_default${race}.png`),path.join(output,`${race}-control.png`));
+ fs.writeFileSync(path.join(output,`${race}-surface.svg`),`<svg xmlns="http://www.w3.org/2000/svg" width="256" height="64" viewBox="22 218 256 64">${paletteDefs}<image width="300" height="${height}"${paletteAttribute} href="${texture}"/></svg>\n`);
+ const controlBytes=fs.readFileSync(path.join(source,`ui_console_controlgroupbutton_normal_default${race}.png`));
+ fs.writeFileSync(path.join(output,`${race}-control.png`),controlBytes);
+ if(race==='zerg')tintedControl('zerg-control.svg',controlBytes);
 }
 fs.writeFileSync(path.join(__dirname,'faction-texture-sources.json'),JSON.stringify({source:'Blizzard Entertainment / StarCraft II',archive:'https://asset-explorer.sc2arcade.com/ui.html',hashes},null,2)+'\n');
-console.log(JSON.stringify({success:true,races:3,outputs:32,source:'Original SC2 HUD/menu/command atlases; authored navigation glyphs; OFL Michroma title font'}));
+console.log(JSON.stringify({success:true,races:3,outputs:34,source:'Original SC2 HUD/menu/command atlases; amethyst Zerg palette tint; authored navigation glyphs; OFL Michroma title font'}));

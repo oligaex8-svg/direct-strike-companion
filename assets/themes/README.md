@@ -55,3 +55,12 @@ invented raster material is used. `factions.css` owns faction-only corner shapes
 inset edges and plate treatments. Header crowns are decorative and cannot
 intercept input. Names, numbers and table bodies stay clear of the artwork.
 The default menu and source/result colours remain independent of this layer.
+
+## Material palettes — 22 October 2026
+
+Protoss combines deep blue panels with warm gold; Terran uses cool steel with
+mint controls. Zerg uses an amethyst/magenta palette. Its original frame,
+crown, glass and command/control artwork receive one shared SVG colour matrix
+in `Build-FactionConsoles.cjs`; source contours, texture detail and alpha remain
+intact. Filtered command/control SVGs embed the source PNGs for offline use.
+No filter is applied to page text, portraits, ratings or semantic list colours.

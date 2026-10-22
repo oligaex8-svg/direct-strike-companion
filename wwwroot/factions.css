@@ -1,31 +1,35 @@
 /* Faction construction lives on shells and controls. Names, values and table
    bodies keep clean insets. The default Battle.net menu is independent. */
 :root[data-graphical-style=protoss]{
- --bg:#080e19;--surface:#101b2c;--raised:#22324a;--line:#5b513b;
- --text:#fff2d8;--muted:#d0d5df;--accent:#eed08c;
- --console-shell:#0b1320;--console-frame:#b79b60;
- --shell-edge:#967d49;--shell-light:#e0c788;--shell-title:#f7e3b2;
- --shell-well:#070e1a;--shell-panel:#101b2c;--shell-header:#1e2e46;
+ --bg:#060c19;--surface:#122a49;--raised:#1c3e63;--line:#516b89;
+ --text:#f6f5ef;--muted:#becfe3;--accent:#ffda81;
+ --console-shell:#0b1730;--console-frame:#d8bb75;
+ --shell-edge:#aa8b40;--shell-light:#ffe4a6;--shell-title:#fff0c8;
+ --shell-well:#08152b;--shell-panel:#102747;--shell-header:#193c65;
+ --control-neutral-surface:#172d4b;--control-neutral-edge:#6983a3;
  --faction-radius:9px 2px 9px 2px;--faction-button:url('/themes/protoss-command.png');--faction-crest:url('/themes/protoss-crest.svg');
- --faction-inset-edge:#796c47;--faction-detail:#6bb9e5;
+ --faction-inset-edge:#8e7945;--faction-detail:#74d8ff;
 }
 :root[data-graphical-style=zerg]{
- --bg:#100b0a;--surface:#1c1410;--raised:#342519;--line:#5b4534;
- --text:#f7ecdc;--muted:#d8c8b5;--accent:#e9b56c;
- --console-shell:#130e0b;--console-frame:#b18f69;
- --shell-edge:#8d6d4e;--shell-light:#d7b887;--shell-title:#f2d2a2;
- --shell-well:#0f0b09;--shell-panel:#1c1410;--shell-header:#322318;
- --faction-radius:15px 5px 17px 6px;--faction-button:url('/themes/zerg-command.png');--faction-crest:url('/themes/zerg-crest.svg');
- --faction-inset-edge:#735437;--faction-detail:#c0924f;
+ --bg:#0d0715;--surface:#27163c;--raised:#48265e;--line:#754687;
+ --text:#f9efff;--muted:#dac2e8;--accent:#ef9ae5;
+ --console-shell:#1b0d2b;--console-frame:#bc83c4;
+ --shell-edge:#8e529c;--shell-light:#efaceb;--shell-title:#ffe0fb;
+ --shell-well:#140a22;--shell-panel:#241336;--shell-header:#3d2059;
+ --control-neutral-surface:#301b45;--control-neutral-edge:#986aad;
+ --faction-radius:15px 5px 17px 6px;--faction-button:url('/themes/zerg-command.svg');--faction-crest:url('/themes/zerg-crest.svg');
+ --console-control:url('/themes/zerg-control.svg');
+ --faction-inset-edge:#754687;--faction-detail:#e995d9;
 }
 :root[data-graphical-style=terran]{
- --bg:#080d0e;--surface:#131c1e;--raised:#253237;--line:#465458;
- --text:#edf3ed;--muted:#c3d1cc;--accent:#98dfb6;
- --console-shell:#0c1214;--console-frame:#8fa49c;
- --shell-edge:#718580;--shell-light:#bed2c6;--shell-title:#e1ece2;
- --shell-well:#080f10;--shell-panel:#131c1e;--shell-header:#253334;
+ --bg:#060c12;--surface:#101f2a;--raised:#204456;--line:#426b80;
+ --text:#e8f6ff;--muted:#b5cad8;--accent:#79edbb;
+ --console-shell:#0b1721;--console-frame:#82a8ad;
+ --shell-edge:#517d8c;--shell-light:#a3e7cb;--shell-title:#d9fff0;
+ --shell-well:#07121b;--shell-panel:#0e2230;--shell-header:#163c46;
+ --control-neutral-surface:#152c3b;--control-neutral-edge:#587f95;
  --faction-radius:2px;--faction-button:url('/themes/terran-command.png');--faction-crest:url('/themes/terran-crest.svg');
- --faction-inset-edge:#60726c;--faction-detail:#76bb94;--faction-selected-inset:inset 0 -2px #76bb94;
+ --faction-inset-edge:#426b80;--faction-detail:#75efbd;--faction-selected-inset:inset 0 -2px #75efbd;
 }
 :root[data-graphical-style]:not([data-graphical-style=default]){--shell-frame-paint:22px}
 :root[data-graphical-style]:not([data-graphical-style=default]) .page-head{background-image:linear-gradient(180deg,var(--shell-header),var(--shell-well))}
