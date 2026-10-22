@@ -1,6 +1,10 @@
 # Direct Strike Companion
 
-A private Windows companion for StarCraft II **3v3 Commanders**. [Direct Strike Companion.exe](../../Direct%20Strike%20Companion.exe) is a standalone Windows executable with the runtime, dashboard, commander portraits, and OCR script bundled inside. No separate .NET installation is needed.
+[![Download latest launcher for Windows x64](assets/download-windows.svg)](https://github.com/oligaex8-svg/direct-strike-companion/releases/latest/download/DirectStrikeCompanion-win-x64.exe)
+
+Always downloads the latest published version. Sign in to GitHub with access to this private repository. [All releases](https://github.com/oligaex8-svg/direct-strike-companion/releases).
+
+A private Windows companion for StarCraft II **3v3 Commanders**. The launcher is a standalone Windows executable with the runtime, dashboard, commander portraits, and OCR script bundled inside. No separate .NET installation is needed.
 
 This installation lives at `D:/300 Development Folder/Tools/DirectStrikeCompanion`; source and build tools live in `Support/Development`. The former `C:/Users/Admin/Projects/DirectStrikeCompanion` path remains a compatibility junction.
 
