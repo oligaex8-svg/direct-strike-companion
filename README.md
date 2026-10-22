@@ -14,7 +14,15 @@ The private update channel is [`oligaex8-svg/direct-strike-companion`](https://g
 
 For a friend: invite their GitHub account to this private repository. They connect their own token using **Check for updates → Private repository access**. Credentials are encrypted for their Windows account. Without repository access, private updates cannot be downloaded.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.4` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.5` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — continuous console and replay hover
+
+Status: Source-verified 1.0.4 corrects contour seams, black header shoulders and weak replay hover. One `.work-console` assembly now owns the complete outer nine-slice frame; the title band and workspace share its inset. Painted and reserved rail widths match. This retains safe content clearance while removing the header/body atlas restart. Three obsolete nested-atlas rules are removed, preventing old rectangular table/card rails from showing through shaped insets.
+
+Changed owners: `index.html`, `compact-ui.js`, `console-layout.css`, `themes.css` and `factions.css`. Replays use theme-specific raised cell surfaces for hover and keyboard focus, clipped inside the table well. Dark neutral panel bodies, coloured header lips, an offset console shadow, visible inset table shadows and subdued hover define distinct material planes. Typography, compact content density, rating-source and result colours remain intact. No replay, identity or rating calculation changes.
+
+Checks: [Eight EN/RU cases across 72 category states](verification/frame-states-browser.json) passed, including stable geometry, theme text contrast, shared-frame clearance, subdued hover, source colours and refresh continuity. Six compact UI cases also passed. An independent UI reviewer confirmed surface separation and contained hover in [actual sample-data previews](verification/frame-states-preview.png). The layout scan used a parser fallback; rendered checks remain authoritative. Next bounded step: publish the private release, validate its embedded assets and install while preserving user data and processes. This step is authorized; no recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — clearer material palettes
 

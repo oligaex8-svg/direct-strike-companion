@@ -24,6 +24,7 @@
 </aside>
 <main id="main">
   <div id="accept-alert" hidden></div>
+  <div class="work-console">
   <header class="page-head"><div><div class="eyebrow">DIRECT STRIKE · 3V3 COMMANDERS</div><h1>Your replay library</h1><p class="muted">Know the players in your next group.</p></div><div class="header-actions"><button class="button" id="import">Scan replays</button><button class="button ghost" id="notify-test">Test alert</button></div></header>
   <div id="import-progress" class="import-progress" hidden><div class="import-progress-line"><strong id="import-phase"></strong><span id="import-count" class="muted"></span><button id="import-pause" class="button ghost" type="button">Pause</button></div><progress id="import-bar" aria-label="Replay analysis progress"></progress><div id="import-file" class="muted" data-i18n-skip></div></div>
   <section class="metrics" aria-label="Your results"><div><span>YOUR WIN RATE</span><strong id="overall-rate">—</strong><small id="overall-detail">Loading saved replay library…</small></div><div><span>REPLAYS ANALYSED</span><strong id="overall-games">—</strong><small id="unknown-detail">3v3 Commanders</small></div><div><span>PLAYERS SAVED</span><strong id="overall-marks">—</strong><small>Private lists · optional alerts</small></div></section>
@@ -44,6 +45,7 @@
       <div class="screen-setting"><label class="toggle-row"><span>Read the visible SC2 screen</span><input type="checkbox" id="screen-watch" role="switch"></label><p>Live lobby enables local OCR automatically. Keep SC2 visible and unobscured. Chat names can be mistaken for lobby players.</p><small id="ocr-status">Screen reader off</small></div>
       <div class="alert-head"><h3>Recent alerts</h3><span>THIS SESSION</span></div><div id="alerts" class="alerts"><p class="muted">No marked names detected yet.</p></div>
     </aside></details>
+  </div>
   </div>
   <section id="lobby-page-actions" class="lobby-page-actions" aria-label="Replay tools" hidden></section>
   <footer><span id="replay-status" role="status">Loading saved replay library…</span><span class="muted">× exits the app · tray menu: Hide dashboard to keep watching</span></footer>

@@ -101,14 +101,18 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
    const headingState=await page.locator('.page-head h1').evaluate(el=>({text:el.textContent,display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,height:el.getBoundingClientRect().height,parent:el.parentElement.outerHTML}));
    assert.ok(headingState.text&&headingState.height>0&&headingState.visibility==='visible',`Page title remains visible: ${JSON.stringify(headingState)}`);
    const shell=await page.evaluate(()=>{
-    const head=document.querySelector('.page-head'),body=document.querySelector('.workspace'),h=head.getBoundingClientRect(),b=body.getBoundingClientRect();
-    return {x:h.x,width:h.width,height:h.height,bodyX:b.x,bodyWidth:b.width,gap:b.top-h.bottom,gutter:getComputedStyle(document.documentElement).scrollbarGutter,headFrame:getComputedStyle(head).borderImageSource,bodyTopRail:getComputedStyle(body).borderImageWidth.split(' ')[0]};
+    const head=document.querySelector('.page-head'),body=document.querySelector('.workspace'),frame=document.querySelector('.work-console'),h=head.getBoundingClientRect(),b=body.getBoundingClientRect(),css=getComputedStyle(frame);
+    return {x:h.x,width:h.width,height:h.height,bodyX:b.x,bodyWidth:b.width,gap:b.top-h.bottom,gutter:getComputedStyle(document.documentElement).scrollbarGutter,frame:css.borderImageSource,paint:parseFloat(css.borderImageWidth),reserve:parseFloat(css.borderLeftWidth),headFrame:getComputedStyle(head).borderImageSource,bodyFrame:getComputedStyle(body).borderImageSource,shared:head.parentElement===frame&&body.parentElement===frame};
    });
    assert.equal(shell.gutter,'stable','Scrollbar space stays reserved between short and long pages');
    assert.ok(Math.abs(shell.x-shell.bodyX)<1&&Math.abs(shell.width-shell.bodyWidth)<1&&Math.abs(shell.gap)<1,'Header and content share uninterrupted side rails');
-   assert.equal(shell.bodyTopRail,'0','Content does not repeat a top frame beneath the header');
+   assert.ok(shell.shared&&shell.frame.includes('/themes/'),'One assembly owns the complete decorative frame');
+   assert.equal(shell.paint,shell.reserve,'No unpainted black shoulder between frame and header');
+   assert.equal(shell.headFrame,'none','Header cannot restart the shaped outer corners');
+   assert.equal(await page.locator('.page-head').evaluate(el=>parseFloat(getComputedStyle(el).borderBottomWidth)),0,'No old straight plate separator crosses the shared header');
+   assert.equal(shell.bodyFrame,'none','Data well cannot restart or cover the outer rails');
    const headerSurface=await page.locator('.page-head').evaluate(el=>({clip:getComputedStyle(el).backgroundClip,overlay:getComputedStyle(el,'::before').content}));
-   assert.equal(headerSurface.clip,'padding-box','Header surface stays inside its frame');
+   assert.equal(await page.locator('.work-console').evaluate(el=>getComputedStyle(el).backgroundClip),'padding-box','The surface cannot paint rectangular lines behind transparent outer corners');
    assert.equal(headerSurface.overlay,'none','No oversized texture panel intersects the header rails');
    if(width>=1000&&entry.shellLayouts.length){const first=entry.shellLayouts[0];assert.ok(Math.abs(shell.x-first.x)<1&&Math.abs(shell.width-first.width)<1&&Math.abs(shell.height-first.height)<1,`${category}: page switches do not move the header (${JSON.stringify(shell)} vs ${JSON.stringify(first)})`);}
    entry.shellLayouts.push({category,...shell});
@@ -120,8 +124,9 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
      for(const el of children.filter(visible)){const b=el.getBoundingClientRect();result.push({target:el.id||el.className||el.tagName,left:b.left-r.left-edges.left,right:r.right-b.right-edges.right,top:top?b.top-r.top-edges.top:null});}
     };
     const head=document.querySelector('.page-head'),workspace=document.querySelector('.workspace');
-    inspect(head,[head.querySelector('h1'),...head.querySelectorAll('.header-actions>.button')],true);
-    inspect(workspace,[document.querySelector('.library'),...workspace.querySelectorAll('.table-wrap,.player-table-scroll')],false);
+    const frame=document.querySelector('.work-console');
+    inspect(frame,[head.querySelector('h1'),...head.querySelectorAll('.header-actions>.button')],true);
+    inspect(frame,[document.querySelector('.library'),...workspace.querySelectorAll('.table-wrap,.player-table-scroll')],false);
     if(innerWidth>750)inspect(document.querySelector('.sidebar nav'),[...document.querySelectorAll('.sidebar nav>.nav')],true);
     return result;
    });
@@ -146,20 +151,20 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
     if(themesRun){
      assert.equal(await page.locator('html').getAttribute('data-graphical-style'),theme);
      const palette=await page.evaluate(()=>{
-      const css=getComputedStyle(document.documentElement),names=['--bg','--surface','--shell-panel','--shell-header','--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'];
+      const css=getComputedStyle(document.documentElement),names=['--bg','--surface','--shell-panel','--shell-header','--row-hover','--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'];
       return Object.fromEntries(names.map(name=>[name,css.getPropertyValue(name).trim()]));
      });
      const luminance=color=>{const hex=color.replace('#',''),rgb=color.startsWith('#')?[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)):color.match(/[\d.]+/g).slice(0,3).map(Number);const channels=rgb.map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return channels[0]*.2126+channels[1]*.7152+channels[2]*.0722;};
      const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)+.05)/(Math.min(A,B)+.05);};
      for(const name of ['--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'])assert.ok(contrast(palette[name],palette['--surface'])>=4.5,`${theme}: readable ${name}`);
-     for(const surface of ['--bg','--shell-panel','--shell-header'])for(const text of ['--text','--muted'])assert.ok(contrast(palette[text],palette[surface])>=4.5,`${theme}: readable ${text} on ${surface}`);
+     for(const surface of ['--bg','--shell-panel','--shell-header','--row-hover'])for(const text of ['--text','--muted'])assert.ok(contrast(palette[text],palette[surface])>=4.5,`${theme}: readable ${text} on ${surface}`);
      assert.equal(palette['--rating-dsr'],'#59d6ea');assert.equal(palette['--rating-dsstats'],'#c4a7ff');
      if(theme==='default')assert.ok(contrast(palette['--text'],palette['--bg'])>=12,'Default preserves a clear SC2 menu well');
      const button=await page.locator('#import').evaluate(el=>{const c=getComputedStyle(el);return {text:c.color,background:c.backgroundColor,border:c.borderColor};});
      assert.ok(contrast(button.text,button.background)>=4.5,`${theme}: primary button text contrast`);
      if(theme!=='default'){
       assert.ok(contrast(button.border,palette['--surface'])>=3,`${theme}: control frame contrast`);
-      const consoleFrame=await page.locator('.workspace').evaluate(el=>getComputedStyle(el).borderImageSource);
+      const consoleFrame=await page.locator('.work-console').evaluate(el=>getComputedStyle(el).borderImageSource);
       assert.ok(consoleFrame.includes(`/themes/${theme}.svg`),'The game frame is painted on the actual panel');
       assert.equal(await page.locator('.profile-favourite').evaluate(el=>getComputedStyle(el).borderImageSource),'none','Commander details do not repeat the outer console frame');
       const construction=await page.evaluate(()=>({control:getComputedStyle(document.querySelector('#import')).borderImageSource,selection:getComputedStyle(document.querySelector('.nav.active')).borderImageSource,crest:getComputedStyle(document.querySelector('.page-head'),'::after').backgroundImage,radius:getComputedStyle(document.querySelector('.profile-commanders')).borderRadius}));
@@ -171,6 +176,21 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
       entry.consoleAssets=assets;
      }
     }
+    const recent=page.locator('.personal-profile .table-wrap tbody tr').first();
+    const rowBefore=await recent.boundingBox();
+    await recent.locator('td').first().hover();
+    const hoverState=await recent.evaluate(el=>{
+     const well=el.closest('.table-wrap'),r=well.getBoundingClientRect(),frame=document.querySelector('.work-console'),f=frame.getBoundingClientRect(),css=getComputedStyle(frame),paint=parseFloat(css.borderImageWidth);
+     const probe=document.createElement('i');probe.style.background='var(--row-hover)';el.append(probe);const expected=getComputedStyle(probe).backgroundColor;probe.remove();
+     return {left:r.left-f.left-paint,right:f.right-r.right-paint,expected,cells:[...el.cells].map(cell=>getComputedStyle(cell).backgroundColor),art:getComputedStyle(well).borderImageSource,clip:getComputedStyle(well).overflowX,shadow:css.boxShadow};
+    });
+    assert.ok(hoverState.cells.every(color=>color===hoverState.expected),'Replay hover visibly uses each theme dedicated subdued surface across every cell');
+    assert.ok(hoverState.left>=3.5&&hoverState.right>=3.5&&hoverState.art==='none'&&['auto','scroll','hidden','clip'].includes(hoverState.clip),'Hovered rows and their well cannot paint across the outer rails: '+JSON.stringify(hoverState));
+    const rowAfter=await recent.boundingBox();assert.ok(Math.abs(rowAfter.width-rowBefore.width)<1&&Math.abs(rowAfter.height-rowBefore.height)<1,'Hover adds no layout movement');
+    assert.notEqual(hoverState.shadow,'none','Outer assembly has an offset depth shadow');
+    entry.replayHover=hoverState;
+    if(themesRun&&width===1000&&!process.argv.includes('--assertions-only')){const file=path.join(__dirname,`frame-states-${theme}-hover.png`);await page.screenshot({path:file,animations:'disabled'});entry.screenshots.push(file);}
+    await page.mouse.move(0,0);await page.evaluate(()=>scrollTo(0,0));
     assert.equal(await page.locator('.profile-region').count(),2);assert.equal(await page.locator('.profile-region .dsstats-value strong').count(),2);
     if(width>=1000){const boxes=await page.locator('.profile-main-grid').evaluate(el=>[el.querySelector('.profile-commanders'),el.querySelector('.profile-overview')].map(n=>({x:n.getBoundingClientRect().x,y:n.getBoundingClientRect().y})));assert.ok(boxes[0].x<boxes[1].x&&Math.abs(boxes[0].y-boxes[1].y)<1,'Commander and account columns share one composed panel');}
     const main=await page.locator('.profile-favourite').boundingBox(),best=await page.locator('.profile-best-grid').boundingBox();

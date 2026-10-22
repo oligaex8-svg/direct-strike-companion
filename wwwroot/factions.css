@@ -1,37 +1,37 @@
 /* Faction construction lives on shells and controls. Names, values and table
    bodies keep clean insets. The default Battle.net menu is independent. */
 :root[data-graphical-style=protoss]{
- --bg:#060c19;--surface:#122a49;--raised:#1c3e63;--line:#516b89;
+ --bg:#060c19;--surface:#151c28;--raised:#29394b;--line:#516b89;
  --text:#f6f5ef;--muted:#becfe3;--accent:#ffda81;
  --console-shell:#0b1730;--console-frame:#d8bb75;
  --shell-edge:#aa8b40;--shell-light:#ffe4a6;--shell-title:#fff0c8;
- --shell-well:#08152b;--shell-panel:#102747;--shell-header:#193c65;
- --control-neutral-surface:#172d4b;--control-neutral-edge:#6983a3;
+ --shell-well:#0b101a;--shell-panel:#151c28;--shell-header:#192b43;
+ --control-neutral-surface:#192431;--control-neutral-edge:#6983a3;
  --faction-radius:9px 2px 9px 2px;--faction-button:url('/themes/protoss-command.png');--faction-crest:url('/themes/protoss-crest.svg');
  --faction-inset-edge:#8e7945;--faction-detail:#74d8ff;
-}
+--row-hover:#202b3b;}
 :root[data-graphical-style=zerg]{
- --bg:#0d0715;--surface:#27163c;--raised:#48265e;--line:#754687;
+ --bg:#0d0715;--surface:#1b1721;--raised:#382b42;--line:#754687;
  --text:#f9efff;--muted:#dac2e8;--accent:#ef9ae5;
  --console-shell:#1b0d2b;--console-frame:#bc83c4;
  --shell-edge:#8e529c;--shell-light:#efaceb;--shell-title:#ffe0fb;
- --shell-well:#140a22;--shell-panel:#241336;--shell-header:#3d2059;
- --control-neutral-surface:#301b45;--control-neutral-edge:#986aad;
+ --shell-well:#100d15;--shell-panel:#1b1721;--shell-header:#302039;
+ --control-neutral-surface:#241c2d;--control-neutral-edge:#986aad;
  --faction-radius:15px 5px 17px 6px;--faction-button:url('/themes/zerg-command.svg');--faction-crest:url('/themes/zerg-crest.svg');
  --console-control:url('/themes/zerg-control.svg');
  --faction-inset-edge:#754687;--faction-detail:#e995d9;
-}
+--row-hover:#2a2331;}
 :root[data-graphical-style=terran]{
- --bg:#060c12;--surface:#101f2a;--raised:#204456;--line:#426b80;
+ --bg:#060c12;--surface:#151e23;--raised:#2b3d46;--line:#426b80;
  --text:#e8f6ff;--muted:#b5cad8;--accent:#79edbb;
  --console-shell:#0b1721;--console-frame:#82a8ad;
  --shell-edge:#517d8c;--shell-light:#a3e7cb;--shell-title:#d9fff0;
- --shell-well:#07121b;--shell-panel:#0e2230;--shell-header:#163c46;
- --control-neutral-surface:#152c3b;--control-neutral-edge:#587f95;
+ --shell-well:#0a1013;--shell-panel:#151e23;--shell-header:#193239;
+ --control-neutral-surface:#182930;--control-neutral-edge:#587f95;
  --faction-radius:2px;--faction-button:url('/themes/terran-command.png');--faction-crest:url('/themes/terran-crest.svg');
  --faction-inset-edge:#426b80;--faction-detail:#75efbd;--faction-selected-inset:inset 0 -2px #75efbd;
-}
-:root[data-graphical-style]:not([data-graphical-style=default]){--shell-frame-paint:22px}
+--row-hover:#223139;}
+:root[data-graphical-style]:not([data-graphical-style=default]){--shell-frame-paint:var(--shell-frame-size)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .page-head{background-image:linear-gradient(180deg,var(--shell-header),var(--shell-well))}
 :root[data-graphical-style]:not([data-graphical-style=default]) .page-head:before{background:var(--console-material) center/256px 64px repeat-x;opacity:.2}
 :root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{content:'';position:absolute;left:50%;top:calc(1px - var(--shell-frame-size));width:96px;height:14px;transform:translateX(-50%);background:var(--faction-crest) center top/contain no-repeat;pointer-events:none}
@@ -45,7 +45,7 @@
 :root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:hover:after{opacity:.16}
 :root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active{border-image:var(--console-art) 32 / 6px / 0 stretch;background:linear-gradient(180deg,var(--shell-header),var(--shell-well));border-radius:var(--faction-radius);box-shadow:var(--faction-selected-inset,none)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active:after{opacity:.2}
-:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-region,.profile-results,.combat-card,.mark-card,.own-account,.pick-opponent,.pick-recommendation,.sounds-assigned,.sounds-recordings){border-image:none;border:1px solid var(--faction-inset-edge);border-radius:var(--faction-radius);background:var(--shell-panel);box-shadow:inset 0 1px #ffffff0a,inset 0 -2px #0005}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-region,.profile-results,.combat-card,.mark-card,.own-account,.pick-opponent,.pick-recommendation,.sounds-assigned,.sounds-recordings){border-image:none;border:1px solid var(--faction-inset-edge);border-radius:var(--faction-radius);background:var(--shell-panel);box-shadow:inset 0 2px 5px #0005,inset 0 1px #ffffff0a}
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-region h3,.live-team-head){background:linear-gradient(180deg,var(--shell-header),var(--shell-panel));border-bottom:1px solid var(--faction-inset-edge)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .profile-favourite-top{border-radius:var(--faction-radius);border-bottom-left-radius:0;border-bottom-right-radius:0}
 :root[data-graphical-style]:not([data-graphical-style=default]) .profile-region h3{border-radius:var(--faction-radius);border-bottom-left-radius:0;border-bottom-right-radius:0;color:var(--shell-title)}
@@ -61,3 +61,28 @@
  :root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{width:64px;height:12px}
 }
 @media(forced-colors:active){:root[data-graphical-style]:not([data-graphical-style=default]) :is(.page-head,.workspace,.brand,.sidebar nav,.sidebar-bottom,.sidebar .nav.active,.button,.button:not(.ghost),.filter,.mark-button,.profile-commanders,.profile-region,.profile-results,.profile-region h3,.profile-favourite-top){border-image:none;background-image:none;box-shadow:none}:root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{display:none}}
+
+/* Data tables are recessed wells; hover belongs to cells, below their rim. */
+:root :is(.profile-commanders,.profile-region,.profile-results){background-clip:padding-box}
+:root :is(.table-wrap,.player-table-scroll),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.table-wrap,.player-table-scroll){border-image:none;box-shadow:inset 0 2px 5px #0004}
+:root tbody tr:hover{background:transparent}
+:root tbody tr:is(:hover,:focus-within)>td{background:var(--row-hover,var(--raised));box-shadow:inset 0 1px #ffffff09,inset 0 -1px #0007}
+:root tbody tr:is(:hover,:focus-within) .replay-open{color:var(--shell-light);text-decoration:underline;text-underline-offset:3px}
+:root tbody tr>td{background-clip:padding-box}
+@media(forced-colors:active){:root tbody tr:is(:hover,:focus-within)>td{background:Highlight;color:HighlightText}:root tbody tr:is(:hover,:focus-within) .replay-open{color:HighlightText}}
+
+/* The header is part of the shared assembly, never a separate inset plate. */
+:root[data-graphical-style] .work-console>.page-head{border:0;border-image:none;box-shadow:none}
+
+/* Metal catches the light; broad data planes stay neutral and recessed. */
+:root .work-console{box-shadow:0 6px 16px #000a}
+:root[data-graphical-style] .work-console>.page-head{background:linear-gradient(180deg,color-mix(in srgb,var(--shell-header) 78%,var(--shell-panel)),var(--shell-well))}
+:root :is(.profile-commanders,.profile-region,.profile-results),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-region,.profile-results){background:linear-gradient(145deg,var(--shell-panel),var(--shell-well));box-shadow:inset 1px 2px 7px #0009,0 2px 4px #0005}
+:root[data-graphical-style] :is(.profile-favourite-top,.profile-region h3,.live-team-head){background:linear-gradient(180deg,color-mix(in srgb,var(--shell-header) 82%,var(--shell-panel)),var(--shell-panel));box-shadow:inset 0 1px #ffffff12,inset 0 -2px 3px #0007}
+:root .table-wrap{position:relative}
+:root .table-wrap::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;box-shadow:inset 2px 3px 7px #0009,inset -1px -1px #ffffff0a}
+:root thead th{background:linear-gradient(180deg,var(--shell-header),var(--shell-panel));box-shadow:inset 0 1px #ffffff10,inset 0 -2px 3px #0007}
+
+@media(forced-colors:active){:root :is(.work-console,.profile-commanders,.profile-region,.profile-results,.profile-favourite-top,.profile-region h3,.live-team-head,thead th){box-shadow:none;background:Canvas}:root .table-wrap::after{display:none}:root tbody tr:is(:hover,:focus-within)>td{box-shadow:none;background:Highlight;color:HighlightText}}

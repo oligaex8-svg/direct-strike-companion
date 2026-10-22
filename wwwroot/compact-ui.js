@@ -12,7 +12,7 @@
  // Sound previews live in Sounds; profile results already have their own page.
  const retired=document.createElement('div');retired.hidden=true;
  retired.className='retired-header-tools';
- for(const node of [document.getElementById('notify-test'),document.querySelector('main>.metrics'),document.querySelector('main>footer>.muted')])if(node)retired.append(node);
+ for(const node of [document.getElementById('notify-test'),document.querySelector('main .metrics'),document.querySelector('main>footer>.muted')])if(node)retired.append(node);
  document.body.append(retired);
  // Settings is a short task index; keep the existing form inputs connected.
  const settings=document.getElementById('settings-form');

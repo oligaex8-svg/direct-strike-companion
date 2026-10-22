@@ -10,17 +10,17 @@
 .appearance-choice{position:relative;display:grid;grid-template-columns:16px minmax(0,1fr);align-items:center;gap:6px;padding:8px;border:1px solid var(--line);border-radius:5px;font-size:13px;cursor:pointer;min-width:0}
 .appearance-choice input{margin:0;width:15px;height:15px;accent-color:var(--accent)}
 .appearance-choice>span:last-child{min-width:0;overflow-wrap:anywhere}
-.appearance-thumbnail{grid-column:1/-1;grid-row:1;display:grid;gap:4px;height:38px;padding:6px 8px;background:#0b1b2c;border:1px solid #548cb3;border-radius:3px}
+.appearance-thumbnail{grid-column:1/-1;grid-row:1;display:grid;gap:4px;height:38px;padding:6px 8px;background:#101a25;border:1px solid #548cb3;border-radius:3px}
 .appearance-thumbnail i{display:block;width:72%;height:3px;background:#aecde3;opacity:.9}
 .appearance-thumbnail i:first-child{width:40%;background:#72d5ff}
 .appearance-thumbnail i:last-child{width:54%}
-.appearance-choice[data-style-preview=terran] .appearance-thumbnail{background:#0e2230 url('/themes/terran.svg') right/cover;border-color:#82a8ad;border-radius:1px;box-shadow:inset 0 2px #426b80}
+.appearance-choice[data-style-preview=terran] .appearance-thumbnail{background:#151e23 url('/themes/terran.svg') right/cover;border-color:#82a8ad;border-radius:1px;box-shadow:inset 0 2px #426b80}
 .appearance-choice[data-style-preview=terran] i{background:#b5cad8}
 .appearance-choice[data-style-preview=terran] i:first-child{background:#79edbb}
-.appearance-choice[data-style-preview=protoss] .appearance-thumbnail{background:#102747 url('/themes/protoss.svg') right/cover;border-color:#d8bb75;border-radius:8px 1px}
+.appearance-choice[data-style-preview=protoss] .appearance-thumbnail{background:#151c28 url('/themes/protoss.svg') right/cover;border-color:#d8bb75;border-radius:8px 1px}
 .appearance-choice[data-style-preview=protoss] i{background:#becfe3}
 .appearance-choice[data-style-preview=protoss] i:first-child{background:#ffda81}
-.appearance-choice[data-style-preview=zerg] .appearance-thumbnail{background:#241336 url('/themes/zerg.svg') right/cover;border-color:#bc83c4;border-radius:12px 4px}
+.appearance-choice[data-style-preview=zerg] .appearance-thumbnail{background:#1b1721 url('/themes/zerg.svg') right/cover;border-color:#bc83c4;border-radius:12px 4px}
 .appearance-choice[data-style-preview=zerg] i{background:#dac2e8;border-radius:50%}
 .appearance-choice[data-style-preview=zerg] i:first-child{background:#ef9ae5}
 .appearance-choice:has(input:checked){border-color:var(--accent);background:var(--raised)}
@@ -32,7 +32,7 @@
 :root[data-graphical-style]:not([data-graphical-style=default]){scrollbar-color:var(--console-frame) var(--bg)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .sidebar{background:var(--console-shell);border-right-color:var(--console-frame);isolation:isolate}
 :root[data-graphical-style]:not([data-graphical-style=default]) .sidebar:before{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(color-mix(in srgb,var(--console-shell) 85%,transparent),color-mix(in srgb,var(--console-shell) 96%,transparent)),var(--console-material);background-size:auto,256px 64px;pointer-events:none}
-:root[data-graphical-style]:not([data-graphical-style=default]) :is(.page-head,dialog>.dialog-head){border-bottom:1px solid var(--console-frame);padding-bottom:10px}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head{border-bottom:1px solid var(--console-frame);padding-bottom:10px}
 :root[data-graphical-style]:not([data-graphical-style=default]) .brand{color:var(--accent)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .nav{border:1px solid transparent;border-radius:var(--console-radius)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .nav.active{background:var(--raised);border-color:var(--console-frame);box-shadow:inset 0 1px var(--console-trim);color:var(--text)}
@@ -58,10 +58,7 @@
 /* Original atlas rails are nine-sliced: fixed bevels and organic contours.
    Painted borders add no layout space and do not intercept pointer input. */
 :root[data-graphical-style]:not([data-graphical-style=default]) .sidebar:after{content:'';position:absolute;inset:0;z-index:-1;border:1px solid transparent;border-image:var(--console-art) 32 / 16px / 0 stretch;pointer-events:none}
-:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-region,.profile-results,.profile-favourite,.profile-best-card,.profile-average-grid section,.combat-card,.mark-card,.sounds-assigned,.sounds-recordings,.pick-recommendation,.pick-opponent,.match-player,.own-account,.roster-panel,.live-overview,.table-wrap,dialog){border-image-source:var(--console-art);border-image-slice:32;border-image-width:9px;border-image-repeat:stretch}
-:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-favourite,.sounds-assigned,.pick-recommendation,dialog){border-image-width:13px}
 :root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head{background:transparent}
-:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-average-grid section,.profile-best-card,.mark-card,.match-player,.combat-card){border-image-width:7px}
 :root[data-graphical-style]:not([data-graphical-style=default]) .live-team-group{position:relative}
 :root[data-graphical-style]:not([data-graphical-style=default]) .live-team-group:before{content:'';position:absolute;inset:1px;z-index:1;border:1px solid transparent;border-image:var(--console-art) 32 / 8px / 0 stretch;pointer-events:none}
 :root[data-graphical-style]:not([data-graphical-style=default]) .live-team-head{background-image:linear-gradient(color-mix(in srgb,var(--surface) 88%,transparent),var(--surface)),var(--console-material);background-size:auto,256px 64px}
