@@ -1,6 +1,6 @@
 'use strict';
 
-const graphicalStyleLabels=Object.freeze({'default':'Default','protoss':'Protoss','zerg':'Zerg','terran':'Terran','fenix':'Fenix / Purifier','classic-terran':'Classic Terran','classic-protoss':'Classic Protoss','classic-zerg':'Classic Zerg'});
+const graphicalStyleLabels=Object.freeze({'default':'Default','protoss':'Protoss / Nerazim','zerg':'Zerg','terran':'Terran','fenix':'Fenix / Purifier','classic-terran':'Classic Terran','classic-protoss':'Classic Protoss','classic-zerg':'Classic Zerg'});
 const graphicalStyleIds=Object.keys(graphicalStyleLabels);
 const graphicalStyleStorageKey='ds-companion:graphical-style';
 let graphicalStyleRevision=0,graphicalStyleBusy=false,graphicalStyle='default',graphicalStyleRefreshNeeded=false,graphicalStyleFailedChoice=null;

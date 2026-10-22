@@ -1,0 +1,27 @@
+/* Structural gold sweeps, emerald jewels and violet controls from the actual
+   Nerazim console. Fixed shoulders sit above live content; plain rails stretch. */
+:root[data-graphical-style=protoss]{
+ --bg:#0b0a10;--surface:#17151e;--raised:#302b3e;--line:#655b72;--text:#f5f1e8;--muted:#d1c7dc;--accent:#efd08b;
+ --console-shell:#100e16;--console-frame:#d6b776;--console-art:url('/themes/protoss.svg');--work-frame:var(--console-art);
+ --shell-well:#0c0b12;--shell-panel:#17151e;--shell-header:#292338;--shell-edge:#a58b58;--shell-light:#d6c1f3;--shell-title:#f6e5bb;
+ --row-hover:#2b2536;--control-neutral-surface:#201c29;--control-neutral-edge:#8a7c9c;--faction-inset-edge:#6f6379;
+ --nerazim-rule:url('/themes/protoss-nerazim-rule.svg')
+}
+:root[data-graphical-style=protoss] main{padding-top:28px}
+:root[data-graphical-style=protoss] .work-console:before{content:'';position:absolute;top:-34px;left:-22px;right:-22px;height:52px;pointer-events:none;z-index:1;background-image:url('/themes/protoss-nerazim-left.svg'),url('/themes/protoss-nerazim-right.svg'),url('/themes/protoss-nerazim-header-rail.svg');background-size:144px 52px,158px 52px,calc(100% - 282px) 52px;background-position:left top,right top,center top;background-repeat:no-repeat}
+:root[data-graphical-style=protoss]:not([data-graphical-style=default]) .work-console>.page-head{padding-top:18px;min-height:64px}
+:root[data-graphical-style=protoss]:not([data-graphical-style=default]) .work-console>.page-head:after{width:20px;height:22px;top:-8px;background:var(--faction-crest) center/contain no-repeat;pointer-events:none}
+:root[data-graphical-style=protoss]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar-bottom,.brand){border-image-source:url('/themes/protoss-nerazim-rack.svg')}
+:root[data-graphical-style=protoss]:not([data-graphical-style=default]) .profile-portrait-frame{border-image:var(--hud-command-normal) 14 / 7px / 0 stretch;border-radius:2px;background:var(--shell-well)}
+:root[data-graphical-style=protoss] .profile-best-identity .commander-portrait{border-image:var(--hud-command-normal) 14 / 3px / 0 stretch;border-radius:1px}
+:root[data-graphical-style=protoss] .profile-best-heading{border-top-color:transparent;background:var(--nerazim-rule) center top/100% 5px no-repeat}
+:root[data-graphical-style=protoss] :is(.profile-best-card,.profile-favourite-bottom){border-bottom-color:transparent;background:var(--nerazim-rule) center bottom/100% 2px no-repeat}
+:root[data-graphical-style=protoss] .appearance-choice[data-style-preview=protoss] .appearance-thumbnail{background:#17131f url('/themes/protoss-nerazim-left.svg') left top/auto 34px no-repeat;border-image:url('/themes/protoss.svg') 32 / 8px / 0 stretch}
+:root .appearance-choice[data-style-preview=protoss] i:first-child{background:#c1a4f3}
+@media(max-width:750px){
+ :root[data-graphical-style=protoss] main{padding-top:20px}
+ :root[data-graphical-style=protoss] .work-console:before{top:-34px;left:-16px;right:-16px;height:40px;background-size:104px 40px,112px 40px,calc(100% - 204px) 40px}
+ :root[data-graphical-style=protoss]:not([data-graphical-style=default]) .work-console>.page-head{padding-top:8px}
+ :root[data-graphical-style=protoss]:not([data-graphical-style=default]) .work-console>.page-head:after{width:16px;height:18px;top:-8px}
+}
+@media(forced-colors:active){:root[data-graphical-style=protoss] .work-console:before,:root[data-graphical-style=protoss] .work-console:after,:root[data-graphical-style=protoss] .page-head:after{display:none}:root[data-graphical-style=protoss]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar-bottom,.brand,.profile-portrait-frame,.profile-best-identity .commander-portrait){border-image:none}:root[data-graphical-style=protoss] :is(.profile-best-heading,.profile-best-card,.profile-favourite-bottom){background-image:none}}

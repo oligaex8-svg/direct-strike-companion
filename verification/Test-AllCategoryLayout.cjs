@@ -6,7 +6,7 @@ const themeIds=['default','protoss','zerg','terran','fenix','classic-terran','cl
 const themesRun=process.argv.includes('--themes');
 const selectedCase=process.argv.find(arg=>arg.startsWith('--case='))?.slice(7);
 if(selectedCase&&!/^(default|protoss|zerg|terran|fenix|classic-terran|classic-protoss|classic-zerg)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
-const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','purifier-details.css','appearance.js','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
+const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','purifier-details.css','nerazim-console.css','appearance.js','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
 const sourceHash=crypto.createHash('sha256').update(fs.readFileSync(__filename));
 for(const name of sourceFiles)sourceHash.update(name+'\0').update(fs.readFileSync(path.join(web,name)));
 const report={success:false,themeSourceHash:sourceHash.digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[],resumedCases:0};
@@ -125,6 +125,16 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
    assert.equal(headerSurface.overlay,'none','No oversized texture panel intersects the header rails');
    if(width>=1000&&entry.shellLayouts.length){const first=entry.shellLayouts[0];assert.ok(Math.abs(shell.x-first.x)<1&&Math.abs(shell.width-first.width)<1&&Math.abs(shell.height-first.height)<1,`${category}: page switches do not move the header (${JSON.stringify(shell)} vs ${JSON.stringify(first)})`);}
    entry.shellLayouts.push({category,...shell});
+   if(theme==='protoss'){
+    const ornaments=await page.evaluate(()=>{
+     const frame=document.querySelector('.work-console'),r=frame.getBoundingClientRect(),style=getComputedStyle(frame),p=getComputedStyle(frame,'::before'),head=document.querySelector('.page-head');
+     const y=r.top+parseFloat(style.borderTopWidth)+parseFloat(p.top),height=parseFloat(p.height);
+     return {y,height,bottom:y+height,pointer:p.pointerEvents,image:p.backgroundImage,size:p.backgroundSize,content:[...head.querySelectorAll('h1,button')].map(n=>n.getBoundingClientRect()).filter(b=>b.width&&b.height).map(b=>b.top)};
+    });
+    assert.ok(ornaments.pointer==='none'&&ornaments.y>=0&&ornaments.height>=(width===1000?52:40)&&['protoss-nerazim-left','protoss-nerazim-right','protoss-nerazim-header-rail'].every(name=>ornaments.image.includes(name)),'Native shoulders and plain rail form one uninterrupted responsive header');
+    assert.ok(ornaments.content.every(top=>top>=ornaments.bottom),'Entire sculpted header stays above live title and commands: '+JSON.stringify(ornaments));
+    entry.nerazimOrnaments=ornaments;
+   }
    const frameClearance=await page.evaluate(()=>{
     const result=[],visible=el=>!!el&&el.getBoundingClientRect().width>0&&el.getBoundingClientRect().height>0;
     const inspect=(frame,children,top)=>{
@@ -269,10 +279,18 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
     const line=page.locator('.replay-middle-preview').first(),svg=line.locator('svg');
     assert.ok(await svg.isVisible(),'Middle-control timeline is visible in each compact layout');
     assert.equal(await line.locator('rect.team-1').count(),2);assert.equal(await line.locator('rect.team-2').count(),1);
-    const lineBox=await svg.boundingBox(),teamsBox=await page.locator('.replay-teams').first().boundingBox();
+    // Read one DOM generation: automatic site refresh can replace the whole
+    // replay list between separate async boundingBox calls.
+    const geometry=await page.evaluate(()=>{
+     const svg=document.querySelector('.replay-middle-preview svg'),teams=document.querySelector('.replay-teams');
+     if(!svg||!teams)return null;const line=svg.getBoundingClientRect(),group=teams.getBoundingClientRect();
+     return {line:{width:line.width,height:line.height,y:line.y},teams:{width:group.width,height:group.height,y:group.y},players:[...teams.querySelectorAll('.replay-team')].map(n=>{const b=n.getBoundingClientRect();return {x:b.x,y:b.y};})};
+    });
+    assert.ok(geometry,'Timeline and teams remain in the same visible replay');
+    const lineBox=geometry.line,teamsBox=geometry.teams;
     assert.ok(lineBox.height===4&&lineBox.width>=teamsBox.width-2&&lineBox.y>=teamsBox.y+teamsBox.height,'Quiet 4px timeline spans both teams beneath the player rows');
     await page.evaluate(()=>renderLibrary());assert.ok(await page.locator('.replay-middle-preview svg').first().isVisible(),'Timeline survives scheduled refresh');
-    const boxes=await page.locator('.replay-teams').first().locator('.replay-team').evaluateAll(nodes=>nodes.map(n=>({x:n.getBoundingClientRect().x,y:n.getBoundingClientRect().y})));
+    const boxes=geometry.players;
     if(width>=1000)assert.ok(boxes[0].x<boxes[1].x&&Math.abs(boxes[0].y-boxes[1].y)<1,'Both teams stay beside each other in a small desktop replay: '+JSON.stringify(boxes));
    }
    if(category==='marks'){

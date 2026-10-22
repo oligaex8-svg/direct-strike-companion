@@ -1,0 +1,145 @@
+{
+  "scope": "Original Nerazim Protoss console and controls matching the user reference; source pixels preserved",
+  "sources": [
+    {
+      "name": "console-protoss-nerazim",
+      "width": 992,
+      "height": 316,
+      "sha256": "7101b4599e51457a4e4bc2dd7c0506c586a7a27540f7e34aad03f89329568612",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleprotoss_nerazim.png"
+    },
+    {
+      "name": "ui_console_chatbar_background_nerazim",
+      "width": 216,
+      "height": 320,
+      "sha256": "680ff0ea569e4c84205c809903159999af13c3d2210d065913e122c454cf4a47",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_nerazim.png"
+    },
+    {
+      "name": "ui_console_commandbutton_highlighted_nerazim",
+      "width": 76,
+      "height": 76,
+      "sha256": "4d07a38b469479fd30d3faaa3edecf7c23604b559d8eedd5e1e65bc2595b47a4",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_nerazim.png"
+    },
+    {
+      "name": "ui_console_commandbutton_normal_nerazim",
+      "width": 76,
+      "height": 76,
+      "sha256": "3ba9c64b2626fb83065e5c9f188d6b786a7854ed369c2eeaaf4dfd1dab0458a7",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_nerazim.png"
+    },
+    {
+      "name": "ui_console_commandbutton_superhighlighted_nerazim",
+      "width": 76,
+      "height": 76,
+      "sha256": "b83280125833eb5590759ea857d02f11ee6119a5d64ad6bc3c6c9c67bf7a9e1c",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_nerazim.png"
+    },
+    {
+      "name": "ui_console_controlgroupbutton_hover_nerazim",
+      "width": 82,
+      "height": 64,
+      "sha256": "b73b6e20490ceb71a9b8bacb9f4ce92c2db35ab56f21120aa15c147d070313d6",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_nerazim.png"
+    },
+    {
+      "name": "ui_console_controlgroupbutton_normal_nerazim",
+      "width": 82,
+      "height": 64,
+      "sha256": "fceb88ba13b5fab1fb9d0d01ca9c76485a810d4730897025fa349af20f5563fb",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_nerazim.png"
+    },
+    {
+      "name": "ui_console_controlgroupbutton_pressed_nerazim",
+      "width": 82,
+      "height": 64,
+      "sha256": "27931d7e330c86e23ea84d94f6c747acfc533b3af9ed5e9cf449a2d5164dd614",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_nerazim.png"
+    },
+    {
+      "name": "ui_console_helperbutton_background_nerazim",
+      "width": 92,
+      "height": 62,
+      "sha256": "58695a433de9e2adaf959bc74758312d2a440cf477993e8d56cd257ec6437ddb",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_nerazim.png"
+    },
+    {
+      "name": "ui_console_menubar_background_nerazim",
+      "width": 241,
+      "height": 56,
+      "sha256": "6ede9a47eb71ffa2905617b30475f41d1b991693a9f94c7f37e62adee75904b4",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_nerazim.png"
+    },
+    {
+      "name": "ui_console_menubutton_hover_nerazim",
+      "width": 40,
+      "height": 40,
+      "sha256": "492f56e099ab0eb375bef557acd1c3f255062ff252ebf430ef35122c9e3fdd83",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_nerazim.png"
+    },
+    {
+      "name": "ui_console_menubutton_normal_nerazim",
+      "width": 40,
+      "height": 40,
+      "sha256": "8bd724eed2a519db481cf3d0b56371c5a671afd22272e8c6f02ef208e3de93ea",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_nerazim.png"
+    },
+    {
+      "name": "ui_console_menubutton_pressed_nerazim",
+      "width": 40,
+      "height": 40,
+      "sha256": "8cae476813028571b5daff85e8c1ba815de99eaf9bf5dd9c37a0af2ab73ef0c8",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_nerazim.png"
+    },
+    {
+      "name": "ui_console_menubutton_selected_nerazim",
+      "width": 40,
+      "height": 40,
+      "sha256": "2896814af770e9b62d9893fc9b1b13d9837a14feec85bf03cc3d072af3ac8644",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_nerazim.png"
+    },
+    {
+      "name": "ui_console_minimapbutton_hover_nerazim",
+      "width": 42,
+      "height": 42,
+      "sha256": "29bfdc36bbdc56c8f6b2450de808e5c2bdb5c7555b4d3dd9a1afcef70a60fa0f",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_nerazim.png"
+    },
+    {
+      "name": "ui_console_minimapbutton_normal_nerazim",
+      "width": 42,
+      "height": 42,
+      "sha256": "0d64c129b129e7bdefbe1127054ad516e3576d99bf9997b2de1b26b803b20cdf",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_nerazim.png"
+    },
+    {
+      "name": "ui_console_minimapbutton_selected_nerazim",
+      "width": 42,
+      "height": 42,
+      "sha256": "278dd2d2ff2099ba7277a9668f9f8e3cb0da181faac37286d1e6cb802f0e161d",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_nerazim.png"
+    },
+    {
+      "name": "ui_console_panel_unitinfo_nerazim",
+      "width": 96,
+      "height": 300,
+      "sha256": "2911fa461a2da6672b5cc51980fc7c1ed3dc1a6b1955527cea21a4fa60e8f96a",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_nerazim.png"
+    },
+    {
+      "name": "ui_console_timer_background_nerazim",
+      "width": 88,
+      "height": 88,
+      "sha256": "f12d6cd07e83c77e7eee67ab9cdf34ddcccb2e2b30fd8375fa4ca197504a1a11",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_nerazim.png"
+    },
+    {
+      "name": "ui_console_tooltip_background_nerazim",
+      "width": 64,
+      "height": 128,
+      "sha256": "21e738cd6235cab15bafabc4e64b1a971b6e9da95622ccecf290ef5dfb9c641c",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_nerazim.png"
+    }
+  ]
+}

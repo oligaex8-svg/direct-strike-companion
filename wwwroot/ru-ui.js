@@ -10,6 +10,7 @@ const RU_UI_TEXT=Object.freeze({
 "Saved automatically":"Сохраняется автоматически",
 "Default":"По умолчанию",
 "Protoss":"Протоссы",
+"Protoss / Nerazim":"Протоссы / Неразим",
 "Zerg":"Зерги",
 "Terran":"Терраны",
 "Fenix / Purifier":"Феникс / Чистильщики",

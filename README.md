@@ -14,7 +14,15 @@ The public update channel is [`oligaex8-svg/direct-strike-companion`](https://gi
 
 Optional GitHub access remains available for private repositories or higher API rate limits. Credentials are encrypted for the current Windows account and never bundled with the launcher. Invalid old credentials fall back to anonymous public access; they are not silently deleted.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.6` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.7` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — reference-matched Nerazim Protoss
+
+Status: Implemented 1.1.6; final package verification pending. The user's gold/emerald/violet screenshot is Nerazim Protoss. The existing Protoss option now uses that native family, labelled Protoss / Nerazim. Its actual sculpted shoulders and jewel-bearing curves own the header silhouette, while only the plain middle rail stretches. The old straight top frame is absent behind transparent corners. Masks exclude game-command icons and empty game wells; live controls retain their own functions. Native violet menu/command/control-group states, gemmed fields, gold panel lips, portrait housings and unit-info dividers replace the default Protoss assets. Source/result colours and compact content layouts remain independent.
+
+Changed owners: `Build-NerazimConsole.cjs`, its original console/control sources and provenance manifest; common HUD fetch/build mappings; `nerazim-console.css`, `index.html`, appearance label and Russian translation. Other theme assets remain equivalent apart from Git line endings. Fixed shoulder sizes and a consistent desktop header height preserve navigation stability. Forced colours removes decorative imagery.
+
+Checks: Guarded production-browser verification covers all nine categories, header clearance and continuity, native asset decoding, readability, controls, compact replay timelines and refresh behaviour. [Four final browser cases / 36 category states](verification/nerazim-console-browser.json) passed for desktop EN / narrow RU Protoss plus default desktop and Fenix narrow regressions. Independent visual review confirmed the rail gap is closed in the [desktop](verification/graphical-style-protoss-profile-1000-en.png) and [narrow](verification/graphical-style-protoss-profile-375-ru.png) sample UI. The replay geometry probe now reads one DOM generation to avoid refresh races. Next bounded step, authorized: finish target/regression checks, publish, verify the actual package and install without stopping the game or companion. Aesthetic preference remains the user's judgment; no recurring work is authorized.
 
 ## Resume — 22 October 2026 — Purifier rails and filigree
 
