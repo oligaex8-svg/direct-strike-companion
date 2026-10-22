@@ -46,6 +46,7 @@ function fixture(language){
   assert.equal(await page.locator('.live-profile-own .live-profile-link').getAttribute('data-player'),sample.ids[0],'EU peers resolve the EU own account despite AM-first ordering');
   const labels=await page.locator('.live-profile-own .live-rating-label').allTextContents();assert.ok(labels.every(label=>label.includes('EU')));
   const colors=await forecast.locator('.live-forecast-source').evaluateAll(nodes=>nodes.map(n=>getComputedStyle(n.querySelector('strong')).color));assert.notEqual(colors[0],colors[1]);
+  assert.ok(await forecast.locator('.live-forecast-source').evaluateAll(nodes=>nodes.every(n=>{const spans=[...n.children],source=spans[0].getBoundingClientRect(),win=spans[1].getBoundingClientRect();return source.right+6<=win.left;})),'Source label has clearance from its outcome label');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'No horizontal page overflow');
   const screenshot=path.join(__dirname,`lobby-forecast-ready-${width}-${language}.png`);await page.screenshot({path:screenshot});
   const complete=structuredClone(sample.library.dsstatsLookups);

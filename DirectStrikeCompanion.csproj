@@ -4,7 +4,7 @@
     <Title>Direct Strike Companion</Title>
     <AssemblyTitle>Direct Strike Companion</AssemblyTitle>
     <Product>Direct Strike Companion</Product>
-    <Version>1.1.3</Version>
+    <Version>1.1.4</Version>
     <UpdateRepository>oligaex8-svg/direct-strike-companion</UpdateRepository>
     <Description>Direct Strike replay library and live lobby companion</Description>
     <ApplicationIcon>assets\companion.ico</ApplicationIcon>
