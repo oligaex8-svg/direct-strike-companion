@@ -6,7 +6,7 @@ const themeIds=['default','protoss','zerg','terran','fenix','classic-terran','cl
 const themesRun=process.argv.includes('--themes');
 const selectedCase=process.argv.find(arg=>arg.startsWith('--case='))?.slice(7);
 if(selectedCase&&!/^(default|protoss|zerg|terran|fenix|classic-terran|classic-protoss|classic-zerg)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
-const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','appearance.js','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
+const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','purifier-details.css','appearance.js','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
 const sourceHash=crypto.createHash('sha256').update(fs.readFileSync(__filename));
 for(const name of sourceFiles)sourceHash.update(name+'\0').update(fs.readFileSync(path.join(web,name)));
 const report={success:false,themeSourceHash:sourceHash.digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[],resumedCases:0};
@@ -179,7 +179,16 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
       assert.equal(await page.locator('.profile-favourite').evaluate(el=>getComputedStyle(el).borderImageSource),'none','Commander details do not repeat the outer console frame');
       const construction=await page.evaluate(()=>({control:getComputedStyle(document.querySelector('#import')).borderImageSource,selection:getComputedStyle(document.querySelector('.nav.active')).borderImageSource,crest:getComputedStyle(document.querySelector('.page-head'),'::after').backgroundImage,radius:getComputedStyle(document.querySelector('.profile-commanders')).borderRadius}));
        assert.ok(construction.control.includes(`/themes/${theme}-hud-command-normal.svg`),'Faction controls use their native command atlas with the assigned material palette');
-      assert.ok(construction.selection.includes(`/themes/${theme}-hud-nav-selected.svg`)&&(['fenix','classic-terran','classic-protoss','classic-zerg'].includes(theme)?construction.crest==='none':construction.crest.includes(`/themes/${theme}-crest.svg`)),'Selection and header retain native faction construction');
+      assert.ok(construction.selection.includes(`/themes/${theme}-hud-nav-selected.svg`)&&(theme==='fenix'?construction.crest.includes('/themes/fenix-divider.svg'):['classic-terran','classic-protoss','classic-zerg'].includes(theme)?construction.crest==='none':construction.crest.includes(`/themes/${theme}-crest.svg`)),'Selection and header retain native faction construction');
+      if(theme==='fenix'){
+       const details=await page.evaluate(async()=>{
+        const names=['fenix-rack','fenix-filigree','fenix-divider','fenix-rule'];await Promise.all(names.map(async name=>{const img=new Image();img.src='/themes/'+name+'.svg';await img.decode();}));
+        const head=document.querySelector('.page-head'),rule=getComputedStyle(head,'::after'),r=head.getBoundingClientRect();
+        return {panel:getComputedStyle(document.querySelector('.profile-commanders')).borderImageSource,rack:getComputedStyle(document.querySelector('.sidebar nav')).borderImageSource,divider:getComputedStyle(document.querySelector('.profile-best-heading')).backgroundImage,rule:{height:parseFloat(rule.height),bottom:parseFloat(rule.bottom),pointerEvents:rule.pointerEvents},clearance:[...head.querySelectorAll('h1,button')].map(el=>r.bottom-el.getBoundingClientRect().bottom)};
+       });
+       assert.ok(details.panel.includes('fenix-filigree')&&details.rack.includes('fenix-rack')&&details.divider.includes('fenix-divider'),'Purifier armour, filigree brackets and section dividers have distinct native roles: '+JSON.stringify(details));
+       assert.ok(details.rule.pointerEvents==='none'&&details.clearance.every(gap=>gap>=details.rule.height+details.rule.bottom),'Header filigree cannot cross title or command controls');entry.purifierDetails=details;
+      }
       const hud=await page.evaluate(()=>Object.fromEntries([['field','#search'],['panel-head','.profile-favourite-top'],['helper','.profile-results']].map(([key,selector])=>[key,getComputedStyle(document.querySelector(selector)).borderImageSource])));
       assert.ok(Object.entries(hud).every(([role,url])=>url.includes('/themes/'+theme+'-hud-'+role+'.svg')),'Field, header and helper panel use distinct native component regions: '+JSON.stringify(hud));
       entry.hudComponents=hud;
@@ -264,7 +273,7 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
     assert.ok(lineBox.height===4&&lineBox.width>=teamsBox.width-2&&lineBox.y>=teamsBox.y+teamsBox.height,'Quiet 4px timeline spans both teams beneath the player rows');
     await page.evaluate(()=>renderLibrary());assert.ok(await page.locator('.replay-middle-preview svg').first().isVisible(),'Timeline survives scheduled refresh');
     const boxes=await page.locator('.replay-teams').first().locator('.replay-team').evaluateAll(nodes=>nodes.map(n=>({x:n.getBoundingClientRect().x,y:n.getBoundingClientRect().y})));
-    if(width>=1000)assert.ok(boxes[0].x<boxes[1].x&&Math.abs(boxes[0].y-boxes[1].y)<1,'Both teams stay beside each other in a small desktop replay');
+    if(width>=1000)assert.ok(boxes[0].x<boxes[1].x&&Math.abs(boxes[0].y-boxes[1].y)<1,'Both teams stay beside each other in a small desktop replay: '+JSON.stringify(boxes));
    }
    if(category==='marks'){
     await page.locator('[data-list-filter="all"]').click();

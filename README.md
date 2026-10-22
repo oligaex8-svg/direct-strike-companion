@@ -14,7 +14,15 @@ The public update channel is [`oligaex8-svg/direct-strike-companion`](https://gi
 
 Optional GitHub access remains available for private repositories or higher API rate limits. Credentials are encrypted for the current Windows account and never bundled with the launcher. Invalid old credentials fall back to anonymous public access; they are not silently deleted.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.5` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.6` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — Purifier rails and filigree
+
+Status: Implemented 1.1.5; package verification pending. Fenix uses more of its original in-game construction: matching ivory console-deck rails retain the dark recess; the lower reactor and separate iris crest occupy reserved frame space. Navigation racks use a control-side sample. Co-op filigree provides distinct inner panel brackets, curved heading joins and energy-line dividers for subordinate commander rows and utility sections. Existing native command/menu/field states, compact layout, source-rating colours and win/loss colours remain independent. Other themes are unchanged.
+
+Changed owners: `Build-PurifierDetails.cjs` adapts six original co-op/story-mode textures and the console render into six offline SVGs. Source PNGs and exact provenance/hashes are retained in `assets/themes/purifier-detail-sources.json`; `Build-HudComponents.cjs` invokes the same generator. `purifier-details.css` scopes artwork to Fenix and supplies forced-colours fallback; `index.html` loads it. Matching frame bounds prevent disconnected joins; decorative artwork cannot intercept input.
+
+Checks: [Four browser cases across 36 category states](verification/purifier-details-browser.json) passed at 1000 EN / 375 RU for Fenix and default. They cover frame clearance, header stability, panel roles, asset decoding, compact replay timelines, controls, translations and refresh behaviour. Independent screenshot/static review found no concrete overlap or readability defect in six fresh profile/picks/replay views. [Actual sample UI](verification/graphical-style-fenix-profile-1000-en.png) records the result. Next bounded step, authorized: publish, verify the package and install while preserving running processes. Aesthetic preference remains the user's judgment; no recurring work is authorized.
 
 ## Resume — 22 October 2026 — visible live rating forecasts
 

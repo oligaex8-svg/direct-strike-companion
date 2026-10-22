@@ -1,0 +1,54 @@
+{
+  "scope": "Fenix/Purifier SC2 console and co-op top-bar decorative regions; original images preserved",
+  "sources": [
+    {
+      "name": "console-fenix",
+      "width": 992,
+      "height": 316,
+      "sha256": "1c4e6cd92ee9cb5d29ec1ee46b76a8fc043c82754e1f79083a9eafc776ace2da",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_fenix_consoleprotoss.png"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_bottom",
+      "width": 128,
+      "height": 5,
+      "sha256": "0aa80c00d5bf0a61186c35717b6f0383582fb341594bf017ca35e5924b532050",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_bottom.png"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_bottomcorner",
+      "width": 85,
+      "height": 48,
+      "sha256": "de22341802cdaefa1f5975c2d40f898e6b4f95af55bad76abc5ec1bbfdb66db5",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_bottomcorner.png"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_top",
+      "width": 60,
+      "height": 15,
+      "sha256": "a742603d185055c5f31bad6158b368acfa9ba01c372bcb6b40e3ec2e7dd53174",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_top.png"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_topcorner",
+      "width": 35,
+      "height": 63,
+      "sha256": "f9dc4c450598bd0e56889ddb7cf1dab02b81ac3c316643a134fcb5b03d2760e7",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_topcorner.png"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_bar_full_underlay",
+      "width": 72,
+      "height": 5,
+      "sha256": "08b92fb679a662c8caa86a6bb632953dd4c7cd5f048bbe5daebf628a8e5cd8fb",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_bar_full_underlay.png"
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_purifier_underline",
+      "width": 359,
+      "height": 38,
+      "sha256": "d8a76c1b0f2a65dc4cab875863606b6eb6e05260e35baf35c10e6506dd003889",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_purifier_underline.png"
+    }
+  ]
+}

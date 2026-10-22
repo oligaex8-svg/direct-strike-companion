@@ -1,0 +1,32 @@
+/* Fenix's own co-op filigree and sculpted console, rather than repeated plates.
+   Rail/corner artwork occupies reserved insets. Data and semantic colours stay live. */
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]){--purifier-filigree:url('/themes/fenix-filigree.svg');--purifier-divider:url('/themes/fenix-divider.svg');--purifier-rule:url('/themes/fenix-rule.svg')}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar-bottom,.brand){border-image-source:url('/themes/fenix-rack.svg')}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .work-console>.page-head:after{
+ content:'';position:absolute;inset:auto 4px 0;width:auto;height:10px;transform:none;background:var(--purifier-divider) center/100% 10px no-repeat;pointer-events:none
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-commanders,.combat-card,.mark-card,.own-account,.pick-opponent,.sounds-assigned,.sounds-recordings){
+ border-image:var(--purifier-filigree) 32 / 9px / 0 stretch;border-radius:0
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .profile-best-heading{
+ border-top-color:transparent;background:var(--purifier-divider) center top/100% 7px no-repeat
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-best-card,.profile-favourite-bottom,.profile-last-played){
+ border-color:transparent;background-image:var(--purifier-rule);background-position:center bottom;background-size:100% 3px;background-repeat:no-repeat
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .profile-last-played{background-position:center top}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-region h3,.live-team-head){
+ position:relative
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-region h3,.live-team-head):after{
+ content:'';position:absolute;left:9px;right:9px;bottom:0;height:3px;background:var(--purifier-rule) center/100% 3px no-repeat;pointer-events:none
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.pick-controls-help,.sounds-results-head,.replay-middle-preview){
+ background-image:var(--purifier-rule);background-position:center bottom;background-size:100% 3px;background-repeat:no-repeat
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .toolbar{border-image:var(--purifier-filigree) 32 / 7px / 0 stretch}
+@media(forced-colors:active){:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-commanders,.combat-card,.mark-card,.own-account,.pick-opponent,.sounds-assigned,.sounds-recordings,.toolbar,.sidebar nav,.sidebar-bottom,.brand){border-image:none}:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-best-heading,.profile-best-card,.profile-favourite-bottom,.profile-last-played,.pick-controls-help,.sounds-results-head,.replay-middle-preview){background-image:none}:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.page-head,.profile-favourite-top,.profile-region h3,.live-team-head):after{display:none}}
+
+:root[data-graphical-style=fenix] .work-console:before{content:'';position:absolute;right:-15px;top:-22px;width:48px;height:22px;background:url('/themes/fenix-iris.svg') center/contain no-repeat;pointer-events:none}
+@media(max-width:750px){:root[data-graphical-style=fenix] .work-console:before{right:-11px;top:-16px;width:36px;height:16px}}
+@media(forced-colors:active){:root[data-graphical-style=fenix] .work-console:before{display:none}}
