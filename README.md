@@ -14,7 +14,15 @@ The public update channel is [`oligaex8-svg/direct-strike-companion`](https://gi
 
 Optional GitHub access remains available for private repositories or higher API rate limits. Credentials are encrypted for the current Windows account and never bundled with the launcher. Invalid old credentials fall back to anonymous public access; they are not silently deleted.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.3` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.4` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — visible live rating forecasts
+
+Status: Implemented 1.1.3; release verification pending. Approximate own Win/Loss stays above the roster during pregame and match-loaded phases. Each site retains its own scale and colour. With no team evidence, the forecast follows the same provisional first-three/last-three groups already displayed and labels them Estimated teams. Partial assignments remain pending. An observed region wins; otherwise at least two agreeing single-region native peers can suggest a region, visibly labelled Region inferred. Contradictory peers never use majority voting. Inferred hints do not persist identities or team choices.
+
+Changed owners: `lobby-forecast.js` owns eligibility, region hints and scenario labels; `lobby.js` uses the same effective region for candidate selection, own account and displayed ratings. `lobby.css` and `ru-ui.js` keep the context compact and translated. Rating formulas and saved account mappings are unchanged.
+
+Checks: Nineteen forecast, twelve DSR and fifteen dsstats model groups passed. Independent static review found no actionable regression. [Four EN/RU production-browser cases](verification/lobby-forecast-browser.json) passed at 1000/375 pixels, including AM-first own-account ordering, separate source loading, partial teams, contradictory region evidence, stale rosters and replay/finished suppression. [Sample UI](verification/lobby-forecast-ready-1000-en.png) shows both source estimates. Read-only current app summary calculation also produced both estimates from cached real source state; it did not send game input or save hints. Next bounded step, authorized: publish, verify the actual package and install without stopping the app. Live site deltas remain approximations.
 
 ## Resume — 22 October 2026 — linked friends versus name-only placeholders
 

@@ -58,9 +58,9 @@ check('Missing one DSR player cannot produce a tiny default-2000 forecast',f=>{
  for(const lookup of Object.values(f.state.library.siteLookups))for(const profile of lookup.profiles||[])if(ids.has(profile.profileId)){profile.rating=null;profile.estimatedRating=null;profile.searchRating=null;}
  f.state.library={...f.state.library};const value=f.forecast();assert.equal(value.dsr.win,null);assert.equal(value.dsr.status,'missing-ratings');assert.ok(value.dsstats.win>0);
 });
-check('Five-player and unconfirmed display groups do not fabricate a full rated matchup',f=>{
+check('Five-player lobbies wait; six unconfirmed display groups produce a labelled scenario without assigning teams',f=>{
  f.state.lobby.rosterEntries.pop();assert.match(f.forecast().reason,/six/);
- f=fixture();f.state.lobby.rosterEntries.forEach(entry=>entry.team=0);assert.match(f.forecast().reason,/confirmed/);
+ f=fixture();f.state.lobby.rosterEntries.forEach(entry=>entry.team=0);const before=JSON.stringify(f.state);assert.ok(f.forecast().dsstats.win>0);assert.equal(f.forecast().estimatedTeams,true);assert.equal(JSON.stringify(f.state),before);assert.match(f.run('renderLiveLobbyForecast(state.lobby.rosterEntries)'),/Estimated teams/);
  f.run('state.lobby.rosterEntries.forEach((entry,index)=>liveLobbyTeamChoices.set(index,index<3?1:2))');assert.ok(f.forecast().dsstats.win>0);
 });
 check('Own aliases strip the displayed clan tag without changing saved identities',f=>{
@@ -69,14 +69,15 @@ check('Own aliases strip the displayed clan tag without changing saved identitie
 check('A duplicate own-name row or an unresolved regional account is not guessed',f=>{
  f.state.lobby.rosterEntries[1].name=f.name;assert.match(f.forecast().reason,/account/);
  f=fixture();const second=f.id.replace(/^2-/,'1-');f.state.library.settings.selfIds.push(second);f.state.library.accounts.push({id:second,name:f.name});delete f.state.lobby.region;
- assert.match(f.forecast().reason,/account/);f.state.lobby.region='EU';assert.ok(f.forecast().dsr.win>0);
+ assert.match(f.forecast().reason,/region/);f.state.lobby.region='EU';assert.ok(f.forecast().dsr.win>0);
 });
 check('A new nickname can identify the unique exact own candidate without alias guessing',f=>{
  f.state.lobby.rosterEntries[0]={name:'NewOwnName',team:1,candidates:[{id:f.id,nameOnly:false}]};assert.equal(f.run('liveForecastOwnEntry(state.lobby.rosterEntries,"EU").id'),f.id);
 });
-check('Retained, replay, disconnected and empty rosters suppress stale win/loss numbers',f=>{
- f.state.lobby.held=true;assert.equal(f.forecast().hidden,true);f.state.lobby.held=false;
- for(const phase of ['replay','disconnected','finished','match']){f.state.lobby.phase=phase;assert.equal(f.forecast().hidden,true);}
+check('Retained rosters show a reason, match-loaded keeps estimates, replay/disconnected/empty rosters suppress numbers',f=>{
+ f.state.lobby.held=true;assert.match(f.forecast().reason,/fresh/);f.state.lobby.held=false;
+ f.state.lobby.phase='match';assert.ok(f.forecast().dsr.win>0);
+ for(const phase of ['replay','disconnected','finished']){f.state.lobby.phase=phase;assert.equal(f.forecast().hidden,true);}
  f.state.lobby.phase='pregame';f.state.lobby.rosterEntries=[];assert.equal(f.forecast().hidden,true);
 });
 check('Non-self live candidates may reuse the displayed name/region primary while own accounts stay exact-native',f=>{
@@ -95,5 +96,21 @@ check('A transient selected DSR account drives both displayed rating and the for
 });
 check('Forecast calculation leaves team assignments, sources, own IDs and profiles unchanged',f=>{
  const before=JSON.stringify(f.state);f.forecast();f.run('renderLiveLobbyForecast(state.lobby.rosterEntries)');assert.equal(JSON.stringify(f.state),before);
+});
+check('Two agreeing native peers resolve same-name EU/AM own accounts without choosing the first saved profile',f=>{
+ const second=f.id.replace(/^2-/,'1-');f.state.library.settings.selfIds.unshift(second);f.state.library.accounts.unshift({id:second,name:f.name});delete f.state.lobby.region;
+ f.state.lobby.phase='match';f.state.lobby.rosterEntries.forEach((entry,index)=>{entry.team=0;const profile=f.state.library.dsstatsLookups['name:EU:'+entry.name.toLowerCase()].profiles[0];entry.candidates=index===0?[{id:second,nameOnly:false},{id:f.id,nameOnly:false}]:[{id:profile.nativeId,nameOnly:false}];});
+ const before=JSON.stringify(f.state),value=f.forecast();assert.equal(value.region,'EU');assert.equal(value.inferredRegion,true);assert.equal(value.estimatedTeams,true);assert.ok(value.dsr.win>0&&value.dsstats.win>0);assert.equal(JSON.stringify(f.state),before);
+ assert.match(f.run('renderLiveLobbyForecast(state.lobby.rosterEntries)'),/Region inferred/);
+});
+check('Contradictory or insufficient peer regions never decide an ambiguous own account by majority',f=>{
+ const second=f.id.replace(/^2-/,'1-');f.state.library.settings.selfIds.unshift(second);f.state.library.accounts.unshift({id:second,name:f.name});delete f.state.lobby.region;
+ f.state.lobby.rosterEntries[1].candidates=[{id:'2-S2-1-99999991',nameOnly:false}];assert.match(f.forecast().reason,/region/);
+ f.state.lobby.rosterEntries[2].candidates=[{id:'1-S2-1-99999992',nameOnly:false}];assert.match(f.forecast().reason,/region/);
+ f.state.lobby.rosterEntries[3].candidates=[{id:'2-S2-1-99999993',nameOnly:false}];assert.match(f.forecast().reason,/region/);
+ f.state.lobby.region='EU';assert.ok(f.forecast().dsr.win>0,'Observed region takes precedence over peer history');
+});
+check('Partly assigned teams do not get silently filled from display order',f=>{
+ f.state.lobby.rosterEntries.forEach(entry=>entry.team=0);f.state.lobby.rosterEntries[0].team=1;assert.match(f.forecast().reason,/complete/);
 });
 const report={success:true,checks};fs.writeFileSync(path.join(__dirname,'live-lobby-forecast-model-tests.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

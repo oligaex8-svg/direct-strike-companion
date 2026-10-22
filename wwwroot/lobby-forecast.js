@@ -1,6 +1,20 @@
 'use strict';
 
 // Site choices are temporary display evidence. They never become replay identities.
+function liveLobbyRegionContext(entries=state?.lobby?.rosterEntries||[]){
+ const observed=state?.lobby?.region;
+ if(['EU','Americas'].includes(observed))return {region:observed,inferred:false};
+ const self=new Set(state?.library?.settings?.selfIds||[]),regions=new Set();let peers=0;
+ for(const entry of entries){
+  const known=new Set((entry.candidates||[]).filter(c=>!c.nameOnly&&!self.has(c.id)).map(c=>dsstatsNativeRegion(c.id)).filter(Boolean));
+  if(known.size===1){regions.add([...known][0]);peers++;}
+ }
+ // Corroborating known peers can suggest a region, never persist an identity.
+ // Contradictory regions cannot be settled by a majority or account ordering.
+ if(peers>=2&&regions.size===1)return {region:[...regions][0],inferred:true};
+ const own=liveForecastOwnEntry(entries,null);
+ return {region:own?dsstatsNativeRegion(own.id):null,inferred:!!own};
+}
 function liveForecastOwnEntry(entries,region){
  const ids=(state.library.settings.selfIds||[]).filter(id=>!region||dsstatsNativeRegion(id)===region);
  const records=ids.map(id=>{
@@ -24,16 +38,21 @@ function liveForecastDsstatsProfile(id,name,region,allowNameFallback=false){
   .sort((a,b)=>activity(b)-activity(a)||b.games-a.games||String(a.nativeId).localeCompare(String(b.nativeId)))[0]||null;
 }
 function liveLobbyForecast(entries){
- const lobby=state.lobby||{},hidden=!entries.length||lobby.held||!['pregame','manual'].includes(lobby.phase);
+ const lobby=state.lobby||{},hidden=!entries.length||!['pregame','manual','match'].includes(lobby.phase);
  if(hidden)return {hidden:true};
- let region=['EU','Americas'].includes(lobby.region)?lobby.region:null;
+ if(lobby.held)return {reason:'Waiting for a fresh lobby roster.'};
+ const context=liveLobbyRegionContext(entries);let region=context.region;
  const own=liveForecastOwnEntry(entries,region);
- if(!own)return {reason:'Your lobby account is not identified yet.'};
+ if(!own)return {reason:region?'Your lobby account is not identified yet.':'Waiting for the lobby region.'};
  region=region||dsstatsNativeRegion(own.id);
  if(!region)return {reason:'Waiting for the lobby region.'};
  if(entries.length!==6)return {reason:'Waiting for all six players.'};
- const teams=entries.map((entry,index)=>liveLobbyTeam(entry,index));
- if(teams.filter(team=>team===1).length!==3||teams.filter(team=>team===2).length!==3)return {reason:'Waiting for confirmed lobby teams.'};
+ let teams=entries.map((entry,index)=>liveLobbyTeam(entry,index));
+ const estimatedTeams=teams.every(team=>team===0);
+ // Match the two provisional groups already shown in the roster. This is a
+ // scenario, not team evidence, and never writes manual teammate selections.
+ if(estimatedTeams)teams=entries.map((_,index)=>index<3?1:2);
+ if(teams.filter(team=>team===1).length!==3||teams.filter(team=>team===2).length!==3)return {reason:'Waiting for complete lobby teams.'};
  const players=[],basis=new Map(),mainBasis=new Map(),dsPlayers=[],ratings=new Map(),ratingState=new Map();
  entries.forEach((entry,index)=>{
   const candidates=(entry.candidates||[]).filter(candidate=>!candidate.nameOnly&&dsstatsNativeRegion(candidate.id)===region);
@@ -54,7 +73,7 @@ function liveLobbyForecast(entries){
  const win=dsstatsReplayChanges(match,ratings,ratingState).get(dsPlayers[own.index].id);
  const lose=dsstatsReplayChanges({...match,winner:teams[own.index]===1?2:1},ratings,ratingState).get(dsPlayers[own.index].id);
  const stateReady=win?.status==='ready'&&lose?.status==='ready'&&win.basis==='site-state'&&lose.basis==='site-state';
- return {dsr,dsstats:stateReady?{win:win.delta,loss:lose.delta,basis:win.basis}:null,dsstatsPendingState:!stateReady&&win?.status==='ready'};
+ return {region,inferredRegion:context.inferred,estimatedTeams,dsr,dsstats:stateReady?{win:win.delta,loss:lose.delta,basis:win.basis}:null,dsstatsPendingState:!stateReady&&win?.status==='ready'};
 }
 function renderLiveLobbyForecast(entries){
  const forecast=liveLobbyForecast(entries);
@@ -68,5 +87,6 @@ function renderLiveLobbyForecast(entries){
   const pending=key==='dsstats'&&forecast.dsstatsPendingState?'Loading rating data…':'Waiting for ratings…';
   return `<div class="live-forecast-source" data-rating-source="${key}" title="${esc(ready?detail:'Waiting for the required site ratings. Name matches and team groups need verification.')}" role="group" aria-label="${key==='dsr'?(result?.scope==='main_current'?'DSR Main':'DSR 3v3'):'dsstats'}"><span class="rating-source-label" data-i18n-skip>${key==='dsr'?(result?.scope==='main_current'?'DSR Main':'DSR 3v3'):'dsstats'}</span>${ready?`<span><span>Win</span> <strong>${value(result.win)}</strong></span><span><span>Loss</span> <strong>${value(result.loss)}</strong></span>`:`<span class="live-forecast-missing">${pending}</span>`}</div>`;
  };
- return `<section class="live-rating-forecast" aria-label="Your rating change">${heading}${source('dsr',forecast.dsr)}${source('dsstats',forecast.dsstats)}</section>`;
+ const context=[forecast.region,forecast.inferredRegion?'Region inferred':'',forecast.estimatedTeams?'Estimated teams':''].filter(Boolean).map(esc).join(' · ');
+ return `<section class="live-rating-forecast" aria-label="Your rating change">${heading}${source('dsr',forecast.dsr)}${source('dsstats',forecast.dsstats)}<span class="live-forecast-context">${context}</span></section>`;
 }

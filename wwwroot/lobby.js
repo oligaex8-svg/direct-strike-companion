@@ -420,7 +420,9 @@ function liveLobbyQuickListButtons(id,name,nameOnly=false){
 }
 
 function liveLobbyCard(entry, index) {
-  const candidates = Array.isArray(entry.candidates) ? entry.candidates : [];
+  const all = Array.isArray(entry.candidates) ? entry.candidates : [];
+  const region=typeof liveLobbyRegionContext==='function'?liveLobbyRegionContext().region:state?.lobby?.region;
+  const candidates=region?all.filter(c=>c.nameOnly||!dsstatsNativeRegion(c.id)||dsstatsNativeRegion(c.id)===region):all;
   const marked = !!entry.marked || candidates.some(c => c.marked);
   const displayed=groupedLobbyCandidates(candidates);
   const ambiguity = displayed.length > 1;
@@ -557,7 +559,7 @@ function liveLobbyRatingSummary(source,region,rating,profile,lookup,url){
  return `<span class="live-rating-summary${source==='dsstats'?' dsstats-rating':''}" data-rating-source="${source==='ds-rating.com'?'dsr':'dsstats'}" title="${esc(title)}"><span class="live-rating-label" data-i18n-skip>${esc(label)} · ${region==='Americas'?'AM':esc(region)}</span>${url?`<a class="live-rating-value" href="${esc(url)}" target="_blank" rel="noreferrer" aria-label="${esc(title)}">${number}</a>`:`<span class="live-rating-value">${number}</span>`}${stats?`<span class="live-rating-stats">${stats}</span>`:''}</span>`;
 }
 function liveLobbyRatings(id,player,own=false,observedName=''){
- const name=observedName||player?.name||'',current=state?.lobby?.region||(/^2-S2-/.test(id)?'EU':/^1-S2-/.test(id)?'Americas':null);
+ const name=observedName||player?.name||'',current=(typeof liveLobbyRegionContext==='function'?liveLobbyRegionContext().region:null)||state?.lobby?.region||(/^2-S2-/.test(id)?'EU':/^1-S2-/.test(id)?'Americas':null);
  const regions=current?[current]:['EU','Americas'];
  return `<div class="live-row-ratings live-rating-columns">${regions.map(region=>{
   const linked=own?ownRegionalRating(id,region):player?regionRating(player,region):null;
@@ -578,7 +580,7 @@ function liveLobbyRatings(id,player,own=false,observedName=''){
 }
 
 function liveLobbyUnknownRow(name,marked=false,suppressQuickLists=false){
- const region=state?.lobby?.region,lookup=siteLookupForName(name,region),profiles=lookup?.profiles||[],ambiguous=/ambig/i.test(lookup?.status||'');
+ const region=typeof liveLobbyRegionContext==='function'?liveLobbyRegionContext().region:state?.lobby?.region,lookup=siteLookupForName(name,region),profiles=lookup?.profiles||[],ambiguous=/ambig/i.test(lookup?.status||'');
  const regional=sitePreferredProfiles(region?profiles.filter(profile=>profile.region===region):profiles);
  // A presentation priority supplies one account's stats, without linking a
  // native replay identity or merging histories from other matching accounts.
@@ -590,7 +592,9 @@ function liveLobbyUnknownRow(name,marked=false,suppressQuickLists=false){
 }
 
 function liveLobbyOwnCandidate(group,observedName,candidates,suppressQuickLists=false){
- const ids=group.profiles.map(profile=>profile.id),matched=candidates.find(candidate=>ids.includes(candidate.id)),id=matched?.id||ids[0];
+ const ids=group.profiles.map(profile=>profile.id),region=typeof liveLobbyRegionContext==='function'?liveLobbyRegionContext().region:state?.lobby?.region;
+ const regional=region?group.profiles.filter(profile=>profile.region===region):[];
+ const matched=candidates.find(candidate=>ids.includes(candidate.id)),id=regional.length===1?regional[0].id:matched?.id||ids[0];
  const history=buildLiveLobbyHistory(ids);
  return `<section class="live-profile live-profile-own" aria-label="Your linked regional accounts"><div class="live-row"><header class="live-slot-head"><div class="live-profile-name"><button class="player-name live-profile-link" type="button" data-player="${esc(id)}" title="Linked local accounts · verify name">${esc(lobbyPlayerDisplayName(id,observedName))}</button></div>${suppressQuickLists||ids.some(profileId=>(state.library.settings.selfIds||[]).includes(profileId))?'':liveLobbyQuickListButtons(id,observedName)}</header>${liveLobbyRatings(id,null,true,observedName)}${liveLobbyHistoryCells(history)}</div><details class="live-profile-details" data-lobby-details-id="${esc('own:'+group.key)}"><summary>Details</summary><div class="live-rating-evidence">${liveLobbyRatingDetails(id,null,true,observedName)}</div>${ownLobbyCandidate(group)}</details></section>`;
 }
