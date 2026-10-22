@@ -1,0 +1,61 @@
+.pick-page .metrics{display:none}.pick-page .page-head{margin-bottom:34px}
+.pick-controls{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:24px 0 14px}
+.pick-controls label{display:block;font-size:.8rem;color:var(--text);min-width:0}
+.pick-controls select{display:block;max-width:none;width:100%;margin-top:10px;font-size:.83rem;padding:12px}
+.pick-controls small{display:block;margin-top:8px;font-size:.71rem;line-height:1.6;color:var(--muted)}
+.pick-data-status{font-size:.75rem;line-height:1.7;color:var(--muted);margin:0 0 24px}
+.pick-section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.pick-section-head h3{font-size:1.02rem;margin:0;font-weight:600;line-height:1.5}
+.pick-section-head>span{font-size:.71rem;line-height:1.5;color:var(--muted)}
+.pick-opponent{padding:24px;border:1px solid var(--line);border-radius:7px;background:var(--surface);margin-bottom:28px}
+.pick-opponent .pick-section-head h3{font-size:1.6rem;letter-spacing:-.025em;margin:6px 0}
+.pick-frequency-list{display:flex;flex-wrap:wrap;gap:12px}
+.pick-frequency-item{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#0b1521;border:1px solid var(--line);border-radius:5px;min-width:150px;flex:1}
+.pick-frequency-item>span{font-size:.8rem;min-width:0;line-height:1.4;flex:1}
+.pick-frequency-item small{display:block;color:var(--muted);font-size:.65rem;margin-top:4px;white-space:nowrap}
+.pick-frequency-item>strong{font-size:1.13rem;font-weight:500;color:var(--accent)}
+.pick-all-frequencies{margin-top:18px}.pick-all-frequencies summary,.pick-evidence summary{color:var(--accent);font-size:.74rem;cursor:pointer;line-height:1.6}
+.pick-all-frequencies[open]{display:block}.pick-all-frequencies .pick-frequency-item{margin-top:8px}
+.pick-recommendation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pick-recommendation{padding:24px;border:1px solid #365469;border-radius:7px;background:linear-gradient(140deg,#142a36,#111b29 70%);position:relative;min-width:0}
+.pick-card-head{display:flex;align-items:center;gap:13px;padding-right:20px;min-height:50px}
+.pick-card-head h4{font-size:1.05rem;margin:0;font-weight:600;line-height:1.4}
+.pick-score{display:flex;align-items:center;gap:10px;margin:23px 0 12px}
+.pick-score>strong{font-size:3rem;font-weight:500;color:var(--green);letter-spacing:-.04em;line-height:1}
+.pick-score>span{font-size:.7rem;color:var(--muted);line-height:1.6}
+.pick-recommendation>p{font-size:.78rem;line-height:1.7;margin:12px 0;color:var(--text)}
+.pick-recommendation>small{display:block;font-size:.71rem;line-height:1.7;color:var(--muted)}
+.pick-recommendation>.profile-text-action{display:block;margin:20px 0}
+.pick-evidence ul{padding-left:18px;margin:12px 0 0}.pick-evidence li{font-size:.72rem;color:var(--muted);line-height:1.8;margin-bottom:9px}
+.pick-explanation{font-size:.75rem;line-height:1.8;color:var(--muted);max-width:1000px;margin:21px 0}
+.pick-prediction{border:1px solid var(--line);border-radius:6px;padding:20px;margin:18px 0;background:#0e1724}
+.pick-prediction>p{font-size:.72rem;line-height:1.7;color:var(--muted);margin:14px 0}
+.pick-prediction-compact{padding:15px;margin:18px 0 0;background:transparent}
+.pick-prediction-compact .pick-section-head h3{font-size:.83rem}
+.pick-prediction-compact .pick-frequency-list{display:block}
+.pick-prediction-compact .pick-frequency-item{padding:9px 0;border:0;background:transparent}
+.pick-prediction-compact .pick-frequency-item>strong{font-size:1rem}
+.pick-prediction-compact .pick-frequency-item .commander-portrait{width:30px;height:30px}
+.pick-prediction-compact .pick-frequency-item small{display:none}
+@media(max-width:1100px){.pick-recommendation{padding:18px}.pick-card-head{flex-direction:column;align-items:flex-start}.pick-card-head h4{font-size:.95rem}.pick-frequency-item{min-width:180px}}
+@media(max-width:750px){.pick-controls{grid-template-columns:1fr;gap:20px}.pick-recommendation-grid{grid-template-columns:1fr}.pick-card-head{flex-direction:row;align-items:center}.pick-section-head{align-items:flex-start;flex-wrap:wrap}.pick-opponent{padding:18px}.pick-frequency-item{min-width:135px;padding:12px}.pick-prediction{padding:16px}.pick-prediction-compact{padding:12px}}
+
+.pick-controls input[type="search"]{display:block;width:100%;margin:10px 0 0;padding:12px;font-size:.83rem}
+.pick-player-controls>label[for="pick-opponent"]{margin-top:16px}
+
+.pick-option-label{display:block;font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:12px}
+.pick-card-head h4>span{font-weight:400}
+.pick-against-label{font-size:.75rem!important;color:var(--muted)!important;margin:18px 0 10px!important}
+.pick-matchup-list{display:grid;gap:10px}
+.pick-matchup-list>div{display:flex;align-items:center;gap:9px}
+.pick-matchup-list b{font-size:.85rem;font-weight:600}
+.pick-matchup-list small{display:block;font-size:.72rem;color:var(--muted);margin-top:3px}
+.pick-support{margin:18px 0;font-size:.8rem}.pick-support>strong{color:var(--accent)}
+.pick-support>small{display:block;font-size:.72rem;color:var(--muted);margin-top:5px}
+.pick-evidence p,.pick-evidence>small{font-size:.72rem;line-height:1.6;color:var(--muted)}
+.pick-known-enemy{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:6px;margin-bottom:24px;background:var(--surface)}
+.pick-known-enemy>span,.pick-known-enemy>small{font-size:.75rem;color:var(--muted)}
+.pick-enemy-heading{font-size:.8rem;font-weight:500;color:var(--muted);margin:16px 0 10px}
+.pick-explanation>summary{cursor:pointer;color:var(--accent);font-size:.78rem}.pick-explanation p{margin-top:10px}
+
+.pick-target-label{color:var(--muted);font-size:.85rem;line-height:1.5;margin:8px 0 0}

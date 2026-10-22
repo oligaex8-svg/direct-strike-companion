@@ -1,0 +1,60 @@
+name: Publish Windows release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+concurrency:
+  group: windows-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+      - name: Validate private release and version
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          PRIVATE_REPOSITORY: ${{ github.event.repository.private }}
+        run: |
+          if ($env:PRIVATE_REPOSITORY -ne 'true') { throw 'This publishing workflow is for the private repository.' }
+          if ($env:RELEASE_TAG -notmatch '^v\d+\.\d+\.\d+$') { throw 'Use a stable version such as v1.0.1.' }
+          "RELEASE_VERSION=$($env:RELEASE_TAG.Substring(1))" >> $env:GITHUB_ENV
+      - name: Build self-contained Windows app
+        shell: pwsh
+        env:
+          UPDATE_REPOSITORY: ${{ github.repository }}
+        run: |
+          dotnet restore DirectStrikeCompanion.csproj -r win-x64 --locked-mode
+          if ($LASTEXITCODE -ne 0) { throw 'Restore failed.' }
+          dotnet publish DirectStrikeCompanion.csproj -c Release -r win-x64 --self-contained true --no-restore -o release -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=embedded "-p:Version=$env:RELEASE_VERSION" "-p:UpdateRepository=$env:UPDATE_REPOSITORY"
+          if ($LASTEXITCODE -ne 0) { throw 'Publish failed.' }
+      - name: Test before publishing
+        shell: pwsh
+        run: |
+          $test = Start-Process -FilePath release/DirectStrikeCompanion.exe -ArgumentList '--self-test','--updates-only' -Wait -PassThru
+          if ($test.ExitCode -ne 0) { throw 'Update safety tests failed.' }
+          $test = Start-Process -FilePath release/DirectStrikeCompanion.exe -ArgumentList '--self-test','--accept-alerts-only' -Wait -PassThru
+          if ($test.ExitCode -ne 0) { throw 'Notification regression tests failed.' }
+      - name: Publish private release asset
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          Copy-Item release/DirectStrikeCompanion.exe release/DirectStrikeCompanion-win-x64.exe
+          gh release create $env:RELEASE_TAG release/DirectStrikeCompanion-win-x64.exe --verify-tag --title "Direct Strike Companion $env:RELEASE_VERSION" --generate-notes
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
+          $release = gh api "repos/$env:GH_REPO/releases/tags/$env:RELEASE_TAG" | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Could not verify the published release.' }
+          $asset = @($release.assets | Where-Object name -eq 'DirectStrikeCompanion-win-x64.exe')
+          $expected = 'sha256:' + (Get-FileHash release/DirectStrikeCompanion-win-x64.exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($asset.Count -ne 1 -or $asset[0].digest -ne $expected) { throw 'Published GitHub digest differs from the tested EXE.' }

@@ -1,0 +1,23 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const app=fs.readFileSync(path.join(__dirname,'../wwwroot/app.js'),'utf8'),checks=[],elements=new Map();
+const $=id=>elements.get(id)||elements.set(id,{hidden:false,disabled:false,textContent:'',setAttribute(name,value){this[name]=value;},removeAttribute(name){delete this[name];}}).get(id);
+let timer,cleared=0,requests=0;
+const context=vm.createContext({AbortController,setTimeout(fn){timer=fn;return 1;},clearTimeout(){cleared++;},fetch:async(url,options)=>{requests++;return await new Promise((resolve,reject)=>options.signal.addEventListener('abort',()=>{const error=Error('aborted');error.name='AbortError';reject(error);},{once:true}));},$,num:String,state:{busy:true,importProgress:{busy:true,phase:'Decoding replay',total:4000,completed:27,added:27,failed:0,currentFile:'Direct Strike.SC2Replay'}}});
+vm.runInContext(app.slice(app.indexOf('async function api('),app.indexOf('function stats(')),context);
+const run=code=>vm.runInContext(code,context),check=(name,fn)=>{fn();checks.push(name);};
+(async()=>{
+ const pending=run("api('state')");timer();await assert.rejects(pending,/timed out.*Saved replays/);
+ check('A stalled state request aborts and releases its timeout for future polls',()=>assert.equal(cleared,1));
+ context.fetch=async()=>({ok:true,text:async()=>'{"recovered":true}'});
+ check('A later poll can recover after timeout',()=>{});assert.equal((await run("api('state')")).recovered,true);assert.equal(cleared,2);
+ run('renderImportProgress()');
+ check('Active analysis shows bounded progress, the current file and an enabled Pause control',()=>{assert.equal($('import-progress').hidden,false);assert.equal($('import-bar').max,4000);assert.equal($('import-bar').value,27);assert.match($('import-count').textContent,/27 \/ 4000/);assert.equal($('import-file').textContent,'Direct Strike.SC2Replay');assert.equal($('import-pause').disabled,false);assert.equal($('import').disabled,true);});
+ context.state={busy:false,importProgress:{busy:false,paused:true,phase:'Paused',total:4000,completed:27,message:'Completed replays saved'}};run('renderImportProgress()');
+ check('Paused analysis offers Resume and retains its completed count',()=>{assert.equal($('import').textContent,'Resume analysis');assert.equal($('import').disabled,false);assert.equal($('import-pause').hidden,true);assert.equal($('import-bar').value,27);});
+ run('renderImportProgress(true)');
+ check('Disconnected UI hides stale progress and shows Reopen app',()=>{assert.equal($('import-progress').hidden,true);assert.equal($('import').textContent,'Reopen app');});
+ context.state={busy:false,importProgress:{busy:false,paused:false,phase:'Completed'}};run('renderImportProgress()');
+ check('Completed scan restores normal scan control without an obsolete progress panel',()=>{assert.equal($('import-progress').hidden,true);assert.equal($('import').textContent,'Scan replays');assert.equal($('import').disabled,false);});
+ fs.writeFileSync(path.join(__dirname,'import-recovery-ui-tests.json'),JSON.stringify({success:true,checks},null,2)+'\n');console.log(JSON.stringify({success:true,checks}));
+})().catch(error=>{console.error(error);process.exitCode=1;});

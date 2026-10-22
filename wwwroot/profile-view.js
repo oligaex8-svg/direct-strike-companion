@@ -1,0 +1,43 @@
+'use strict';
+
+function profileRows(id) {
+ const seen=new Set(),source=id==='@own'?combatOwnRows:combatRowsByPlayer.get(id)||[];
+ return source.filter(row=>{const key=row.match.hash||row.match;if(seen.has(key))return false;seen.add(key);return true;}).sort((a,b)=>new Date(b.match.time)-new Date(a.match.time));
+}
+function profileSample(item){return `<span class="profile-wins">${esc(num(item.wins))} wins</span> / <span class="profile-losses">${esc(num(item.losses))} losses</span>${item.unknown?' · '+esc(num(item.unknown))+' undecided':''}`;}
+function profileCommanderShowcase(rows,id) {
+ const summary=buildPlayerShowcase(rows),most=summary.mostPlayed,latest=rows[0];
+ const kills=most?averageCombat(rows.filter(row=>row.player.commander===most.commander),'UnitKills'):null;
+ return `<section class="profile-showcase" aria-label="Commander highlights">
+  <article class="profile-favourite">
+   <div class="profile-favourite-top"><span class="profile-kicker">Most played commander</span><span class="profile-scope">3v3 Commanders</span></div>
+   ${most?`<div class="profile-favourite-main"><div class="profile-portrait-frame">${commanderPortrait(most.commander,'large')}</div><div class="profile-favourite-name"><h3>${esc(commanderName(most.commander))}</h3><p>${num(most.games)} games · ${rate(most.share)} of this replay history</p><span>${profileSample(most)}</span></div><div class="profile-favourite-rate"><strong>${rate(most.winRate)}</strong><span>Win rate</span></div></div>
+    <div class="profile-favourite-bottom"><div><span>Average enemy kills</span><strong>${formatCombat(kills.value,'UnitKills')}<small>${kills.count} games available</small></strong></div><button type="button" class="profile-text-action" data-combat-id="${esc(id)}" data-commander="${esc(most.commander)}">Explore commander stats <span aria-hidden="true">↗</span></button></div>`:`<div class="profile-favourite-empty"><h3>Your signature commander</h3><p>Import a replay with a selected commander to fill this frame.</p></div>`}
+  </article>
+  <div class="profile-best-heading"><h3>Best played commanders</h3><span>By win rate · at least ${summary.bestMinimum} decided games</span></div>
+  <div class="profile-best-grid">${Array.from({length:Math.max(1,Math.min(3,summary.bestPlayed.length))},(_,index)=>{const item=summary.bestPlayed[index];return item?`<article class="profile-best-card"><span class="profile-rank">0${index+1}</span><div class="profile-best-identity">${commanderPortrait(item.commander,'large')}<h4>${esc(commanderName(item.commander))}</h4></div><strong class="profile-best-rate">${rate(item.winRate)}</strong><p>${profileSample(item)}</p><small>${num(item.games)} games played</small><button type="button" class="profile-text-action" data-combat-id="${esc(id)}" data-commander="${esc(item.commander)}" aria-label="View ${esc(commanderName(item.commander))} averages">Commander stats <span aria-hidden="true">↗</span></button></article>`:`<article class="profile-best-card profile-best-empty"><span class="profile-rank">0${index+1}</span><h4>More games needed</h4><p>A commander appears here after ${summary.bestMinimum} wins or losses are recorded.</p></article>`;}).join('')}</div>
+  ${latest?`<div class="profile-last-played"><span>Last game commander</span>${commanderBadge(latest.player.commander)}<span>${date(latest.match.time)} · ${time(latest.match.time)}</span><button type="button" class="profile-text-action" data-match="${esc(latest.match.hash)}">Open game <span aria-hidden="true">↗</span></button></div>`:''}
+ </section>`;
+}
+function profileRecentGames(rows){return `<div class="table-wrap"><table><thead><tr><th>DATE</th><th>COMMANDER</th><th>RESULT</th><th>RATING / CHANGE</th><th>KILLS</th></tr></thead><tbody>${rows.slice(0,6).map(row=>{const result=playerOutcome(row.match,row.player);return `<tr><td><button type="button" class="replay-open" data-match="${esc(row.match.hash)}">${date(row.match.time)}</button><span class="meta">${time(row.match.time)}</span></td><td>${commanderBadge(row.player.commander)}</td><td><span class="pill ${result===false?'loss':result===null?'unknown':''}">${result===true?'Win':result===false?'Loss':'Undecided'}</span></td><td>${ratingChangeCell(row.match,row.player.id)}</td><td>${formatCombat(combatValue(row,'UnitKills'),'UnitKills')}</td></tr>`;}).join('')}</tbody></table></div>`;}
+function profileRegionCard(region){
+ const prefix=region==='EU'?'2-S2-':'1-S2-',ids=state.library.settings.selfIds.filter(id=>id.startsWith(prefix));
+ return `<section class="profile-region"><h3>${region}</h3>${ids.length?ids.map(id=>{
+  const player=findPlayer(id)||{id},name=ownProfileFor(id)?.name||player.name||'',target=ratingTargetId(id,region),rating=regionRating(player,region),display=siteLinkedRatingDisplay(target,name,region,rating);
+  return `<div class="profile-account"><div class="profile-account-head"><span class="profile-account-name"${name?' data-i18n-skip':''}>${esc(displayPlayerName(id,name||'Account name unavailable'))}</span><button type="button" class="profile-text-action" data-player="${esc(id)}">Account details <span aria-hidden="true">↗</span></button></div><div class="profile-region-data" data-site-player="${esc(target)}"><span class="profile-source-label">DSR</span>${display.html}</div><small class="profile-rating-scope">${esc(display.label)}</small></div>`;
+ }).join(''):'<p class="muted">No regional account detected</p>'}</section>`;
+}
+function profileDisclosure(key,title,body,opened){return `<details class="profile-disclosure" data-profile-detail="${key}"${opened?.has(key)?' open':''}><summary>${title}</summary><div>${body}</div></details>`;}
+function renderMyProfile(){
+ const rows=profileRows('@own'),summary=buildPlayerShowcase(rows),opened=new Set([...document.querySelectorAll('#library-content details[open][data-profile-detail]')].map(detail=>detail.dataset.profileDetail));
+ const names=[...new Set(state.library.settings.selfIds.map(id=>playerNameParts(displayPlayerName(id,ownProfileFor(id)?.name||findPlayer(id)?.name)).name).filter(name=>name&& !/^\d-S2-/.test(name)))];
+ const averages=['UnitKills','MineralsKilledArmy','CombatDeaths','APM'];
+ return `<div class="personal-profile"><div class="profile-intro"><div><h3${names.length?' data-i18n-skip':''}>${esc(names.join(' / ')||'Your profile')}</h3><p>All selected accounts · ${num(summary.total)} imported 3v3 Commanders games</p></div><div class="profile-page-actions"><button type="button" class="button" data-view="picks">Suggest counterpicks</button><button type="button" class="button ghost" data-combat-id="@own">All replay averages</button><button type="button" class="button ghost" data-view="matches">Replay history</button></div></div>
+ <div class="profile-main-grid"><div class="profile-commanders">${profileCommanderShowcase(rows,'@own')}</div><aside class="profile-overview" aria-label="Your results and regional ratings"><section class="profile-results"><span class="profile-kicker">Your overall win rate</span><strong>${rate(summary.winRate)}</strong><div><span class="profile-wins">${num(summary.wins)} wins</span> <span>·</span> <span class="profile-losses">${num(summary.losses)} losses</span></div><p>${num(summary.total)} games${summary.unknown?' · '+num(summary.unknown)+' undecided<br>Undecided games stay outside the win rate.':''}</p></section><div class="profile-region-grid">${profileRegionCard('EU')}${profileRegionCard('Americas')}</div></aside></div>
+ <div class="profile-average-grid">${averages.map(key=>{const sample=averageCombat(rows,key);return `<section><span>${esc(combatLabel(key))}</span><strong>${formatCombat(sample.value,key)}</strong><small>${num(sample.count)} games available</small></section>`;}).join('')}</div>
+ <section class="profile-history"><div class="profile-section-heading"><h3>Recent games</h3><span>From your replay library</span></div>${rows.length?profileRecentGames(rows):empty('Your first game starts here','Check your account IDs and replay folders in Settings, then scan replays.')}</section>
+ ${profileDisclosure('commanders','Performance by commander',combatCommanderTable(rows,'@own'),opened)}
+ ${profileDisclosure('metrics','All replay averages, gas and economy',combatDetails(rows)+combatExplanation(),opened)}
+ ${profileDisclosure('accounts','Your regional accounts and rating links',ownAccountsPanel(),opened)}
+ <p class="profile-data-note">Commander highlights use your imported replays. Best played ranks by win rate, then sample size and recency. Regional ratings load from ds-rating.com.</p></div>`;
+}

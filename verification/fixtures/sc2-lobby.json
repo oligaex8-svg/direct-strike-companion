@@ -1,0 +1,250 @@
+{
+  "capture": {
+    "live": false,
+    "width": 2558,
+    "height": 1438
+  },
+  "screenReadings": [
+    {
+      "language": "en-GB",
+      "lines": [
+        {
+          "text": "Direct Strike o",
+          "words": [
+            {
+              "y": 110,
+              "height": 23,
+              "width": 82,
+              "text": "Direct",
+              "x": 119
+            },
+            {
+              "y": 110,
+              "height": 23,
+              "width": 79,
+              "text": "Strike",
+              "x": 213
+            },
+            {
+              "y": 112,
+              "height": 18,
+              "width": 18,
+              "text": "o",
+              "x": 313
+            }
+          ]
+        },
+        {
+          "text": "Horde",
+          "words": [
+            {
+              "y": 206,
+              "height": 13,
+              "width": 73,
+              "text": "Horde",
+              "x": 128
+            }
+          ]
+        },
+        {
+          "text": "T Knight",
+          "words": [
+            {
+              "y": 348,
+              "height": 14,
+              "width": 11,
+              "text": "T",
+              "x": 221
+            },
+            {
+              "y": 348,
+              "height": 18,
+              "width": 52,
+              "text": "Knight",
+              "x": 234
+            }
+          ]
+        },
+        {
+          "text": "Alliance",
+          "words": [
+            {
+              "y": 537,
+              "height": 13,
+              "width": 88,
+              "text": "Alliance",
+              "x": 129
+            }
+          ]
+        },
+        {
+          "text": "Select",
+          "words": [
+            {
+              "y": 363,
+              "height": 13,
+              "width": 51,
+              "text": "Select",
+              "x": 1220
+            }
+          ]
+        },
+        {
+          "text": "8V3 Commanders",
+          "words": [
+            {
+              "y": 276,
+              "height": 13,
+              "width": 32,
+              "text": "8V3",
+              "x": 1671
+            },
+            {
+              "y": 276,
+              "height": 13,
+              "width": 105,
+              "text": "Commanders",
+              "x": 1711
+            }
+          ]
+        },
+        {
+          "text": "Direct Strike",
+          "words": [
+            {
+              "y": 612,
+              "height": 22,
+              "width": 74,
+              "text": "Direct",
+              "x": 1961
+            },
+            {
+              "y": 612,
+              "height": 22,
+              "width": 74,
+              "text": "Strike",
+              "x": 2045
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ru",
+      "lines": [
+        {
+          "text": "Direct Strike о",
+          "words": [
+            {
+              "y": 110,
+              "height": 23,
+              "width": 82,
+              "text": "Direct",
+              "x": 119
+            },
+            {
+              "y": 110,
+              "height": 23,
+              "width": 79,
+              "text": "Strike",
+              "x": 213
+            },
+            {
+              "y": 112,
+              "height": 18,
+              "width": 18,
+              "text": "о",
+              "x": 313
+            }
+          ]
+        },
+        {
+          "text": "Hopde",
+          "words": [
+            {
+              "y": 206,
+              "height": 13,
+              "width": 73,
+              "text": "Hopde",
+              "x": 128
+            }
+          ]
+        },
+        {
+          "text": "Select",
+          "words": [
+            {
+              "y": 363,
+              "height": 13,
+              "width": 51,
+              "text": "Select",
+              "x": 1220
+            }
+          ]
+        },
+        {
+          "text": "Tknight",
+          "words": [
+            {
+              "y": 348,
+              "height": 18,
+              "width": 65,
+              "text": "Tknight",
+              "x": 221
+            }
+          ]
+        },
+        {
+          "text": "Alliance",
+          "words": [
+            {
+              "y": 537,
+              "height": 13,
+              "width": 88,
+              "text": "Alliance",
+              "x": 129
+            }
+          ]
+        },
+        {
+          "text": "3V3 Commarndeps",
+          "words": [
+            {
+              "y": 276,
+              "height": 13,
+              "width": 32,
+              "text": "3V3",
+              "x": 1671
+            },
+            {
+              "y": 276,
+              "height": 13,
+              "width": 105,
+              "text": "Commarndeps",
+              "x": 1711
+            }
+          ]
+        },
+        {
+          "text": "Direct Strike",
+          "words": [
+            {
+              "y": 612,
+              "height": 22,
+              "width": 74,
+              "text": "Direct",
+              "x": 1961
+            },
+            {
+              "y": 612,
+              "height": 22,
+              "width": 74,
+              "text": "Strike",
+              "x": 2045
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

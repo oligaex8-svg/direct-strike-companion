@@ -1,0 +1,21 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),source=fs.readFileSync(path.join(root,'wwwroot','app.js'),'utf8'),checks=[],calls=[];
+const matches=Array.from({length:4000},(_,index)=>({hash:String(index)}));let resolve;
+const context=vm.createContext({state:{library:{matches,settings:{},ratings:{}},lobby:{}},playerRows:[{id:'2-S2-1-1'}],detailId:null,matchSelection:null,$:()=>({open:false}),liveGameSoundRevision:0,queueMicrotask,setTimeout:()=>{},TextDecoder,fetch:null,api:route=>{calls.push(route);return new Promise(done=>{resolve=done;});},renderLibrary:()=>calls.push('render'),maintainAutomaticData:async()=>{},syncLiveTeammates:()=>{}});
+vm.runInContext(source.slice(source.indexOf('let refreshPending='),source.indexOf('function render(updateLibrary=')),context);
+const run=code=>vm.runInContext(code,context);
+(async()=>{
+ const first=run('refreshLiveData()');assert.deepEqual(calls,['live-state']);
+ await run('refreshLiveData()');await run('refreshLiveData()');assert.equal(calls.length,1);
+ const update={lobby:{region:'EU'},site:{siteLookups:{'name:EU:foo':{profiles:[]}},ratings:{'2-S2-1-1':{eu:{value:3000}}},siteHistories:{},siteGames:{}},lobbyPreferences:{}};
+ resolve(update);await first;await new Promise(done=>setImmediate(done));
+ assert.deepEqual(calls,['live-state','render','live-state']);checks.push('A pushed update uses only the lightweight endpoint; concurrent events coalesce into one retained follow-up');
+ assert.strictEqual(context.state.library.matches,matches);assert.equal(context.playerRows[0].ratings.eu.value,3000);assert.equal(context.state.lobby.region,'EU');checks.push('All 4000 replay references remain untouched while regional ratings and lobby update');
+ const second=resolve;second(update);await new Promise(done=>setImmediate(done));assert.equal(run('refreshPending'),false);checks.push('Lightweight rendering releases refresh admission after the retained follow-up');
+ let pushes=0;context.refreshLiveData=async()=>{pushes++;};
+ const chunks=['data: up','date\n\ndata: update\n\n'];context.fetch=async()=>({ok:true,body:{getReader(){let index=0;return{read:async()=>index<chunks.length?{done:false,value:new TextEncoder().encode(chunks[index++])}:{done:true}};}}});
+ void run('listenForLiveUpdates()');await new Promise(done=>setImmediate(done));
+ assert.equal(pushes,2);checks.push('The actual stream reader handles split network chunks and multiple complete pushed events');
+ const result={success:true,checks};fs.writeFileSync(path.join(__dirname,'live-update-ui-tests.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+})().catch(error=>{console.error(error);process.exitCode=1;});

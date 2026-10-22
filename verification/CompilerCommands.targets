@@ -1,0 +1,5 @@
+<Project>
+  <Target Name="WriteBoundedCompilerCommands" AfterTargets="CoreCompile" Condition="'$(ProvideCommandLineArgs)' == 'true'">
+    <WriteLinesToFile File="$(MSBuildProjectDirectory)/verification/import-recovery-compiler.rsp" Lines="@(CscCommandLineArgs)" Overwrite="true" Encoding="UTF-8" />
+  </Target>
+</Project>

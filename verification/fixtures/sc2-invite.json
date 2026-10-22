@@ -1,0 +1,202 @@
+{
+  "capture": {
+    "live": false,
+    "width": 1399,
+    "height": 1004
+  },
+  "screenReadings": [
+    {
+      "language": "en-GB",
+      "lines": [
+        {
+          "text": "GAME INVITE",
+          "words": [
+            {
+              "y": 216,
+              "height": 19,
+              "width": 116,
+              "text": "GAME",
+              "x": 566
+            },
+            {
+              "y": 216,
+              "height": 19,
+              "width": 123,
+              "text": "INVITE",
+              "x": 692
+            }
+          ]
+        },
+        {
+          "text": "The party leader has invited you to",
+          "words": [
+            {
+              "y": 453,
+              "height": 15,
+              "width": 32,
+              "text": "The",
+              "x": 536
+            },
+            {
+              "y": 455,
+              "height": 18,
+              "width": 46,
+              "text": "party",
+              "x": 576
+            },
+            {
+              "y": 453,
+              "height": 15,
+              "width": 56,
+              "text": "leader",
+              "x": 629
+            },
+            {
+              "y": 453,
+              "height": 15,
+              "width": 31,
+              "text": "has",
+              "x": 692
+            },
+            {
+              "y": 453,
+              "height": 15,
+              "width": 55,
+              "text": "invited",
+              "x": 730
+            },
+            {
+              "y": 458,
+              "height": 14,
+              "width": 30,
+              "text": "you",
+              "x": 792
+            },
+            {
+              "y": 455,
+              "height": 13,
+              "width": 19,
+              "text": "to",
+              "x": 828
+            }
+          ]
+        },
+        {
+          "text": "3V3 Commanders, Direct Strike",
+          "words": [
+            {
+              "y": 482,
+              "height": 15,
+              "width": 40,
+              "text": "3V3",
+              "x": 537
+            },
+            {
+              "y": 482,
+              "height": 18,
+              "width": 130,
+              "text": "Commanders,",
+              "x": 585
+            },
+            {
+              "y": 482,
+              "height": 15,
+              "width": 59,
+              "text": "Direct",
+              "x": 723
+            },
+            {
+              "y": 482,
+              "height": 15,
+              "width": 57,
+              "text": "Strike",
+              "x": 787
+            }
+          ]
+        },
+        {
+          "acceptGold": true,
+          "words": [
+            {
+              "y": 578,
+              "height": 15,
+              "width": 120,
+              "text": "ACCEPT",
+              "x": 456
+            }
+          ],
+          "text": "ACCEPT"
+        },
+        {
+          "text": "DECLINE",
+          "words": [
+            {
+              "y": 580,
+              "height": 15,
+              "width": 126,
+              "text": "DECLINE",
+              "x": 799
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ru",
+      "lines": [
+        {
+          "text": "GAME INVITE",
+          "words": [
+            {
+              "y": 216,
+              "height": 19,
+              "width": 116,
+              "text": "GAME",
+              "x": 566
+            },
+            {
+              "y": 216,
+              "height": 19,
+              "width": 123,
+              "text": "INVITE",
+              "x": 692
+            }
+          ]
+        },
+        {
+          "text": "3V3 Commanders, Direct Strike",
+          "words": [
+            {
+              "y": 482,
+              "height": 15,
+              "width": 40,
+              "text": "3V3",
+              "x": 537
+            },
+            {
+              "y": 482,
+              "height": 18,
+              "width": 130,
+              "text": "Commanders,",
+              "x": 585
+            },
+            {
+              "y": 482,
+              "height": 15,
+              "width": 59,
+              "text": "Direct",
+              "x": 723
+            },
+            {
+              "y": 482,
+              "height": 15,
+              "width": 57,
+              "text": "Strike",
+              "x": 787
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

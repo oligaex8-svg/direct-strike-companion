@@ -1,0 +1,13 @@
+.player-nickname-editor{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+.player-nickname-editor>summary{cursor:pointer;color:var(--muted);font-size:var(--type-sm);padding:6px 0}
+.player-nickname-editor form{padding-top:8px}
+.player-nickname-editor textarea{width:100%;box-sizing:border-box}
+.player-nickname-editor p{font-size:var(--type-xs);color:var(--muted)}
+.nickname-save-status{font-size:var(--type-xs);margin-left:10px;color:var(--muted)}
+.live-nickname-account{display:block;font-size:var(--type-xs);color:var(--muted);font-weight:400;margin-top:2px}
+.nickname-link-action{margin:10px 0;min-height:36px;font-size:var(--type-xs)}
+#nickname-link-dialog{max-width:560px}
+#nickname-link-form>input,#nickname-link-form>select{width:100%;box-sizing:border-box}
+#nickname-link-form>input{border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--text);padding:12px 14px;font:inherit}
+#nickname-link-form>select{max-width:none}
+#nickname-link-form>p{font-size:var(--type-sm)}

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0-windows10.0.22621": {
+      "Microsoft.Web.WebView2": {
+        "type": "Direct",
+        "requested": "[1.0.4191.47, )",
+        "resolved": "1.0.4191.47",
+        "contentHash": "Snb6mlTpuz6ZFjWMwIdg28Xp6kAUMy3zaLUyGbFSaw+/AJKlwoX8EiaWJ1eUMfKyJHksPkFjJHl1LIB7kX+0AQ=="
+      },
+      "s2protocol.NET": {
+        "type": "Direct",
+        "requested": "[0.9.6, )",
+        "resolved": "0.9.6",
+        "contentHash": "2IjG/plvwnQyQIVGsd2BiI/9rnw8WYWXcg4Kyb25eB46XbWbt6OstoNYmxpW7ILuWL1JqnciZGGuUBrsBmIWAA==",
+        "dependencies": {
+          "SharpZipLib": "1.4.2"
+        }
+      },
+      "Sc2DirectStrike.Parser": {
+        "type": "Direct",
+        "requested": "[0.2.6, )",
+        "resolved": "0.2.6",
+        "contentHash": "6FQ92AHR/3jFbb+p96T6r+hZL3iDCMEKYxS0b1GptyG7LObUfG3QSBU7kM+U69gEoQpDgZ8H16dlqPYgBqsKYQ==",
+        "dependencies": {
+          "s2protocol.NET": "0.9.6"
+        }
+      },
+      "SharpZipLib": {
+        "type": "Transitive",
+        "resolved": "1.4.2",
+        "contentHash": "yjj+3zgz8zgXpiiC3ZdF/iyTBbz2fFvMxZFEBPUcwZjIvXOf37Ylm+K58hqMfIBt5JgU/Z2uoUS67JmTLe973A=="
+      }
+    },
+    "net10.0-windows10.0.22621/win-x64": {
+      "Microsoft.Web.WebView2": {
+        "type": "Direct",
+        "requested": "[1.0.4191.47, )",
+        "resolved": "1.0.4191.47",
+        "contentHash": "Snb6mlTpuz6ZFjWMwIdg28Xp6kAUMy3zaLUyGbFSaw+/AJKlwoX8EiaWJ1eUMfKyJHksPkFjJHl1LIB7kX+0AQ=="
+      }
+    }
+  }
+}

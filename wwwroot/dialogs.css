@@ -1,0 +1,28 @@
+/* Keep the title and close control outside each dialog's scrolling content. */
+dialog{--dialog-padding:28px;max-height:85vh;max-height:85dvh;overflow:hidden;padding:0}
+dialog[open]{display:flex;flex-direction:column}
+dialog#player-dialog{--dialog-padding:30px;padding:0}
+dialog>.dialog-head{flex:none;margin:0;padding:20px var(--dialog-padding);border-bottom:1px solid var(--line);gap:16px;background:var(--surface)}
+.dialog-head>div{min-width:0}
+.dialog-head h2{margin:0;font-size:1.3rem;line-height:1.4;overflow-wrap:anywhere}
+.dialog-head .close{flex:none;width:44px;height:44px;border:1px solid var(--line);color:var(--text)}
+.dialog-head .close:hover{background:var(--line)}
+.dialog-body{min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;padding:22px var(--dialog-padding) var(--dialog-padding);scrollbar-color:var(--muted) var(--surface)}
+.dialog-body:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+#player-editor{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.player-actions{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.player-actions .player-list-field{margin:0;flex:1;max-width:260px;min-width:170px}
+.player-actions .field-label{margin:0}
+.player-actions .dialog-actions{margin:0;gap:10px}
+.player-note-editor{margin-top:17px}
+.player-note-editor>summary{font-size:.72rem;color:var(--muted);cursor:pointer;line-height:1.5;width:fit-content;padding:4px 0}
+.player-note-editor[open]>summary{margin-bottom:10px}
+@media(max-width:750px){
+ dialog,dialog#player-dialog{--dialog-padding:20px}
+ dialog>.dialog-head{padding-top:14px;padding-bottom:14px}
+ .dialog-head h2{font-size:1.2rem}
+ .dialog-body{padding-top:18px}
+ .player-actions .player-list-field{max-width:none;flex-basis:100%}
+ .player-actions .dialog-actions{width:100%;justify-content:flex-start;gap:8px}
+ .player-actions .button{flex:1;white-space:normal;line-height:1.4}
+}

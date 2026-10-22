@@ -1,0 +1,280 @@
+{
+  "capture": {
+    "live": false,
+    "width": 1284,
+    "height": 791
+  },
+  "screenReadings": [
+    {
+      "lines": [
+        {
+          "text": "GAME INVITE",
+          "words": [
+            {
+              "y": 147,
+              "height": 19,
+              "width": 116,
+              "text": "GAME",
+              "x": 455
+            },
+            {
+              "y": 147,
+              "height": 19,
+              "width": 123,
+              "text": "INVITE",
+              "x": 581
+            }
+          ]
+        },
+        {
+          "text": "The party leader has invited you to",
+          "words": [
+            {
+              "y": 384,
+              "height": 15,
+              "width": 32,
+              "text": "The",
+              "x": 425
+            },
+            {
+              "y": 386,
+              "height": 18,
+              "width": 46,
+              "text": "party",
+              "x": 465
+            },
+            {
+              "y": 384,
+              "height": 15,
+              "width": 56,
+              "text": "leader",
+              "x": 518
+            },
+            {
+              "y": 384,
+              "height": 15,
+              "width": 31,
+              "text": "has",
+              "x": 581
+            },
+            {
+              "y": 384,
+              "height": 15,
+              "width": 55,
+              "text": "invited",
+              "x": 619
+            },
+            {
+              "y": 389,
+              "height": 15,
+              "width": 30,
+              "text": "you",
+              "x": 681
+            },
+            {
+              "y": 386,
+              "height": 13,
+              "width": 19,
+              "text": "to",
+              "x": 717
+            }
+          ]
+        },
+        {
+          "text": "3V3 Commanders, Direct Strike",
+          "words": [
+            {
+              "y": 413,
+              "height": 15,
+              "width": 40,
+              "text": "3V3",
+              "x": 426
+            },
+            {
+              "y": 413,
+              "height": 18,
+              "width": 130,
+              "text": "Commanders,",
+              "x": 474
+            },
+            {
+              "y": 413,
+              "height": 15,
+              "width": 59,
+              "text": "Direct",
+              "x": 612
+            },
+            {
+              "y": 413,
+              "height": 15,
+              "width": 57,
+              "text": "Strike",
+              "x": 676
+            }
+          ]
+        },
+        {
+          "acceptGold": true,
+          "words": [
+            {
+              "y": 509,
+              "height": 15,
+              "width": 120,
+              "text": "ACCEPT",
+              "x": 345
+            }
+          ],
+          "text": "ACCEPT"
+        },
+        {
+          "text": "DECLINE",
+          "words": [
+            {
+              "y": 511,
+              "height": 15,
+              "width": 126,
+              "text": "DECLINE",
+              "x": 688
+            }
+          ]
+        }
+      ],
+      "language": "en-GB"
+    },
+    {
+      "lines": [
+        {
+          "text": "GAME INVITE",
+          "words": [
+            {
+              "y": 147,
+              "height": 19,
+              "width": 116,
+              "text": "GAME",
+              "x": 455
+            },
+            {
+              "y": 147,
+              "height": 19,
+              "width": 123,
+              "text": "INVITE",
+              "x": 581
+            }
+          ]
+        },
+        {
+          "text": "The рагђу leadep has invited уои to",
+          "words": [
+            {
+              "y": 384,
+              "height": 15,
+              "width": 32,
+              "text": "The",
+              "x": 425
+            },
+            {
+              "y": 386,
+              "height": 18,
+              "width": 46,
+              "text": "рагђу",
+              "x": 465
+            },
+            {
+              "y": 384,
+              "height": 15,
+              "width": 56,
+              "text": "leadep",
+              "x": 518
+            },
+            {
+              "y": 384,
+              "height": 15,
+              "width": 31,
+              "text": "has",
+              "x": 581
+            },
+            {
+              "y": 384,
+              "height": 15,
+              "width": 55,
+              "text": "invited",
+              "x": 619
+            },
+            {
+              "y": 389,
+              "height": 15,
+              "width": 30,
+              "text": "уои",
+              "x": 681
+            },
+            {
+              "y": 386,
+              "height": 13,
+              "width": 19,
+              "text": "to",
+              "x": 717
+            }
+          ]
+        },
+        {
+          "text": "3V3 Commanders, Direct Strike",
+          "words": [
+            {
+              "y": 413,
+              "height": 15,
+              "width": 40,
+              "text": "3V3",
+              "x": 426
+            },
+            {
+              "y": 413,
+              "height": 18,
+              "width": 130,
+              "text": "Commanders,",
+              "x": 474
+            },
+            {
+              "y": 413,
+              "height": 15,
+              "width": 59,
+              "text": "Direct",
+              "x": 612
+            },
+            {
+              "y": 413,
+              "height": 15,
+              "width": 57,
+              "text": "Strike",
+              "x": 676
+            }
+          ]
+        },
+        {
+          "text": "АССЕРТ",
+          "words": [
+            {
+              "y": 509,
+              "height": 15,
+              "width": 120,
+              "text": "АССЕРТ",
+              "x": 345
+            }
+          ]
+        },
+        {
+          "text": "OECUNE",
+          "words": [
+            {
+              "y": 511,
+              "height": 15,
+              "width": 126,
+              "text": "OECUNE",
+              "x": 688
+            }
+          ]
+        }
+      ],
+      "language": "ru"
+    }
+  ]
+}

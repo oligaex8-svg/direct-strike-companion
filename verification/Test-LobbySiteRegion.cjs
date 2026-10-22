@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),checks=[];
+const context=vm.createContext({document:{addEventListener(){}},state:{library:{settings:{selfIds:[]}},lobby:{}},num:n=>n??'—',esc:s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'),findPlayer:()=>({clanTag:'OldClan'})});
+for(const file of ['sound-library.js','player-names.js','replays.js','lobby.js','site-data.js'])vm.runInContext(fs.readFileSync(path.join(root,'wwwroot',file),'utf8'),context);
+const run=code=>vm.runInContext(code,context);
+run(`siteIdentityKey=p=>'site:'+p.region+':'+p.profileId;siteLookupForName=()=>fixtureLookup;siteLobbyUnknown=()=>'';liveReplayWinRate=()=>'';buildLiveLobbyHistory=ids=>{fixtureHistoryIds=ids;return null;};liveLobbyHistoryCells=(_history,id)=>'<span data-history="'+(id||'')+'"></span>';`);
+const eu={profileId:'1',region:'EU',name:'<OldClan> Nick',rating:6000},am={profileId:'2',region:'Americas',name:'Nick',rating:7000};
+function render(region,profiles,choice,status='Candidates'){context.state.lobby={region};context.fixtureLookup={status,profiles};run('liveSiteProfileChoices.clear();fixtureHistoryIds=[]');if(choice){context.choice=choice;run("liveSiteProfileChoices.set('Nick',choice)");}return run("liveLobbyUnknownRow('Nick')");}
+for(const [region,id] of [['EU','1'],['Americas','2']]){const html=render(region,[eu,am]);assert.match(html,new RegExp(`data-history="site:${region}:${id}"`));assert.doesNotMatch(html.split('</header>')[0],/&lt;OldClan&gt;/);checks.push(region+' lobby loads only its unique regional profile history and keeps the observed nickname');}
+assert.match(render(null,[eu,am]),/data-history=""/);checks.push('Unknown region keeps equally named regional profiles separate');
+assert.match(render('Americas',[eu]),/data-history=""/);checks.push('A known Americas lobby never borrows the sole EU profile');
+const grouped=render('EU',[eu,{...eu,profileId:'3',rating:6500,lastPlayed:'2026-10-09'},am]);assert.match(grouped,/data-history="site:EU:3"/);assert.match(grouped,/<strong>6000<\/strong>/);assert.match(grouped,/<strong>6500<\/strong>/);assert.doesNotMatch(grouped,/7000|Choose site profile|choose below/);checks.push('Most recent current-region account supplies its own history; other matching accounts stay available without merging histories');
+assert.match(render('Americas',[eu,am],'site:EU:1'),/data-history="site:Americas:2"/);checks.push('An old history selection from another region cannot override the current lobby region');
+assert.match(render(null,[am]),/data-history="site:Americas:2"/);checks.push('A single global profile remains usable when server region is unavailable');
+const ambiguous=render('Americas',[am],null,'Ambiguous (first 128 of 140 candidates shown)');assert.match(ambiguous,/data-history="site:Americas:2"/);assert.match(ambiguous,/<strong>7000<\/strong>/);assert.match(ambiguous,/first 128 of 140/);checks.push('Truncated results show one priority account history with a clear limit and no native identity binding');
+assert.match(render('Americas',[am],'site:Americas:2','Ambiguous (first 8 candidates shown)'),/data-history="site:Americas:2"/);checks.push('An explicit choice can use a retained profile despite an ambiguous search');
+for(const [status,fields,text] of [['Candidates',{},'Not loaded'],['Candidates',{profileChecked:new Date().toISOString(),profileStatsVersion:1},'No site rating'],['Candidates; rating pending',{},'Loading…'],['Candidates; rating unavailable',{},'Unavailable']])assert.ok(render('EU',[{...eu,rating:null,...fields}],null,status).includes(text));checks.push('Unchecked, verified empty, loading and unavailable ratings use distinct compact labels');
+assert.match(render('EU',[{...eu,rating:0}]),/<strong>0<\/strong>/);checks.push('A real zero rating remains a number');
+fs.writeFileSync(path.join(__dirname,'lobby-site-region-tests.json'),JSON.stringify({success:true,checks},null,2)+'\n');console.log(JSON.stringify({success:true,checks}));

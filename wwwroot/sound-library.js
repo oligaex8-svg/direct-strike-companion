@@ -1,0 +1,1178 @@
+'use strict';
+// Generated from assets/audio/catalog.json by the StarCraft audio builders.
+const starcraftSoundLibrary={
+  "categories": [
+    {
+      "ru": "StarCraft I · Уведомления",
+      "key": "sc1-alerts",
+      "en": "StarCraft I · Alerts"
+    },
+    {
+      "ru": "StarCraft I · Голоса терранов",
+      "key": "sc1-terran-units",
+      "en": "StarCraft I · Terran voices"
+    },
+    {
+      "ru": "StarCraft I · Голоса протоссов",
+      "key": "sc1-protoss-units",
+      "en": "StarCraft I · Protoss voices"
+    },
+    {
+      "ru": "StarCraft II · Уведомления терранов",
+      "key": "sc2-terran-alerts",
+      "en": "StarCraft II · Terran alerts"
+    },
+    {
+      "ru": "StarCraft II · Уведомления протоссов",
+      "key": "sc2-protoss-alerts",
+      "en": "StarCraft II · Protoss alerts"
+    },
+    {
+      "ru": "StarCraft II · Уведомления зергов",
+      "key": "sc2-zerg-alerts",
+      "en": "StarCraft II · Zerg alerts"
+    },
+    {
+      "ru": "StarCraft II · Юниты терранов",
+      "key": "sc2-terran-units",
+      "en": "StarCraft II · Terran units"
+    },
+    {
+      "ru": "StarCraft II · Юниты протоссов",
+      "key": "sc2-protoss-units",
+      "en": "StarCraft II · Protoss units"
+    },
+    {
+      "key": "sc2-ru-terran-alerts",
+      "en": "Russian · StarCraft II · Terran alerts",
+      "ru": "Русские · StarCraft II · Уведомления терранов"
+    },
+    {
+      "key": "sc2-ru-protoss-alerts",
+      "en": "Russian · StarCraft II · Protoss alerts",
+      "ru": "Русские · StarCraft II · Уведомления протоссов"
+    },
+    {
+      "key": "sc2-ru-zerg-alerts",
+      "en": "Russian · StarCraft II · Zerg alerts",
+      "ru": "Русские · StarCraft II · Уведомления зергов"
+    },
+    {
+      "key": "sc2-ru-terran-units",
+      "en": "Russian · StarCraft II · Terran units",
+      "ru": "Русские · StarCraft II · Юниты терранов"
+    },
+    {
+      "key": "sc2-ru-protoss-units",
+      "en": "Russian · StarCraft II · Protoss units",
+      "ru": "Русские · StarCraft II · Юниты протоссов"
+    }
+  ],
+  "sounds": [
+    {
+      "preset": "sc1-nuclear",
+      "en": "SC1 · Nuclear launch",
+      "ru": "SC1 · Ядерный запуск",
+      "category": "sc1-alerts",
+      "sha256": "FC7DF9B7AF556106D7E14B33D869AA0F3367A282293CCE4285138D14D04335ED"
+    },
+    {
+      "preset": "sc1-research",
+      "en": "SC1 · Research complete",
+      "ru": "SC1 · Исследование завершено",
+      "category": "sc1-alerts",
+      "sha256": "E4E746866EEAF765F873E6DDA771C3A1B7AA00251DC4953D4DE8E6AFC709B0E3"
+    },
+    {
+      "preset": "sc1-upgrade",
+      "en": "SC1 · Upgrade complete",
+      "ru": "SC1 · Улучшение завершено",
+      "category": "sc1-alerts",
+      "sha256": "B69CEEAE55A84929E179B013BF72DDF5144DFB1403AC995DAEED379983652F9C"
+    },
+    {
+      "preset": "sc1-pylons",
+      "en": "SC1 · Additional pylons",
+      "ru": "SC1 · Дополнительные пилоны",
+      "category": "sc1-alerts",
+      "sha256": "5E330AAE6230617509ED283868826F01201106EE5BAAE40AF767944160083285"
+    },
+    {
+      "preset": "sc1-warp",
+      "en": "SC1 · Awaiting instructions",
+      "ru": "SC1 · Ожидаю указаний",
+      "category": "sc1-protoss-units",
+      "sha256": "844E68CC398DF4826AAD8496636492F84BE95C90FC13B67BB42866928FBCB45A"
+    },
+    {
+      "preset": "sc1-evolution",
+      "en": "SC1 · Evolution complete",
+      "ru": "SC1 · Эволюция завершена",
+      "category": "sc1-alerts",
+      "sha256": "E7A0FB78510A002634B032DCEAB0ED7DF99B0813956E0D35807638D0664673C3"
+    },
+    {
+      "preset": "sc2-nuclear",
+      "en": "SC2 · Nuclear launch",
+      "ru": "SC2 · Ядерный запуск",
+      "category": "sc2-terran-alerts",
+      "sha256": "0C89DC7B866BC47AF2F3E6E9A28EEA8F8EBC582F00EE84F4513A0957046452C0"
+    },
+    {
+      "preset": "sc2-research",
+      "en": "SC2 · Research complete",
+      "ru": "SC2 · Исследование завершено",
+      "category": "sc2-terran-alerts",
+      "sha256": "416AF5D80C753E661422BC471EA118CCE95D45F12B56F78C84018070BFF932A2"
+    },
+    {
+      "preset": "sc2-upgrade",
+      "en": "SC2 · Upgrade complete",
+      "ru": "SC2 · Улучшение завершено",
+      "category": "sc2-terran-alerts",
+      "sha256": "D42E9C19FEF2DD6006EB54B45E8B286B83991506FDC1C91487ABD057C9648D70"
+    },
+    {
+      "preset": "sc2-pylons",
+      "en": "SC2 · Additional pylons",
+      "ru": "SC2 · Дополнительные пилоны",
+      "category": "sc2-protoss-alerts",
+      "sha256": "6953E9EC843DAB737C4E2058C55C2258B6123027C99B03001977B2F1E1614CED"
+    },
+    {
+      "preset": "sc2-warp",
+      "en": "SC2 · Warp-in complete",
+      "ru": "SC2 · Варп завершён",
+      "category": "sc2-protoss-alerts",
+      "sha256": "DC5A1A54D5C748844C5543A2A08662786A438F0B22C0AD2017BE5824017B51AD"
+    },
+    {
+      "preset": "sc2-evolution",
+      "en": "SC2 · Evolution complete",
+      "ru": "SC2 · Эволюция завершена",
+      "category": "sc2-zerg-alerts",
+      "sha256": "E8C2E063DF3948284B82ADA076200D24D17543B6F0F69A961332F07830B37209"
+    },
+    {
+      "preset": "sc1-affirmative",
+      "en": "SC1 · Affirmative, sir",
+      "ru": "SC1 · Так точно",
+      "category": "sc1-terran-units",
+      "sha256": "2B2CBB03FFF2BE2A10ED2739F24FBBBD674D89C19B69BDEF38B9834F06006FA2"
+    },
+    {
+      "preset": "sc1-ready",
+      "en": "SC1 · Anytime you are ready",
+      "ru": "SC1 · В любой момент",
+      "category": "sc1-terran-units",
+      "sha256": "5EAAC12D3A23B2A055054E8BBFF956ED40BC2544321462FA38F6CAAC50F49BBC"
+    },
+    {
+      "preset": "sc1-right-away",
+      "en": "SC1 · Right away, sir",
+      "ru": "SC1 · Немедленно, сэр",
+      "category": "sc1-terran-units",
+      "sha256": "FD0F6D7C68D60B238E789AFFBF1E3B5967EF948EDBBFA753E4346F25DBDBE086"
+    },
+    {
+      "preset": "sc1-roll-out",
+      "en": "SC1 · Ready to roll out",
+      "ru": "SC1 · Готов к выезду",
+      "category": "sc1-terran-units",
+      "sha256": "04FB9F61042876BDE6398930375308CFD941FD2CE32AB1D812518C08364CF26D"
+    },
+    {
+      "preset": "sc1-reporting",
+      "en": "SC1 · Reporting for duty",
+      "ru": "SC1 · Готов к службе",
+      "category": "sc1-terran-units",
+      "sha256": "5BF37D6727908453CC86BF35741F93F51828BF3BDDF0505E768DBE3BCEE871D5"
+    },
+    {
+      "preset": "sc1-scv-ready",
+      "en": "SC1 · SCV ready",
+      "ru": "SC1 · КСМ готов",
+      "category": "sc1-terran-units",
+      "sha256": "C7A7D9D6BA98BEE382D0B40385EA3377D2BD905CE4A7FAD332B2A57B40A25B8B"
+    },
+    {
+      "preset": "sc1-orders",
+      "en": "SC1 · Orders, captain",
+      "ru": "SC1 · Приказы, капитан",
+      "category": "sc1-terran-units",
+      "sha256": "8B990CE9EB8361FE337A081A8322A5A507A8AC13F01973761CD28A9219C772A6"
+    },
+    {
+      "preset": "sc1-acknowledgement",
+      "en": "SC1 · Acknowledgement",
+      "ru": "SC1 · Подтверждение",
+      "category": "sc1-terran-units",
+      "sha256": "491F9EB6AA852EE7ABAB8FCDB2DE86077618C847011E61577B11EDECA81C3BEF"
+    },
+    {
+      "preset": "sc1-help",
+      "en": "SC1 · How may I help you?",
+      "ru": "SC1 · Чем могу помочь?",
+      "category": "sc1-protoss-units",
+      "sha256": "7682D63869AF0428CBA2874704BC981441E9F6DD65C8F48AD765C95E3D099597"
+    },
+    {
+      "preset": "sc1-vengeance",
+      "en": "SC1 · For vengeance",
+      "ru": "SC1 · Во имя мести",
+      "category": "sc1-protoss-units",
+      "sha256": "328F66E7960D89156603073C1E30E20EF95776B43BAB1AA0972434035A2B700B"
+    },
+    {
+      "preset": "sc1-fear-no-enemy",
+      "en": "SC1 · I fear no enemy",
+      "ru": "SC1 · Мне не страшен враг",
+      "category": "sc1-protoss-units",
+      "sha256": "ADAF844342F55271CE807C7906329BAB6EC9F391537F7ECF530AAA88FA54D0C5"
+    },
+    {
+      "preset": "sc1-confirmed",
+      "en": "SC1 · Confirmed / initiated",
+      "ru": "SC1 · Подтверждено / начато",
+      "category": "sc1-protoss-units",
+      "sha256": "79303C1606DE577911421470B46AEDE612AA2F16911865F3A45EC9B064A5AF1B"
+    },
+    {
+      "preset": "sc2-terran-base-under-attack",
+      "en": "SC2 · Terran — Base under attack",
+      "ru": "SC2 · Терраны — База атакована",
+      "category": "sc2-terran-alerts",
+      "sha256": "07C69473D4062EDFB7806DDC431714F56CB4DF440EC18C7E6D455FB43B29A56B"
+    },
+    {
+      "preset": "sc2-terran-forces-under-attack",
+      "en": "SC2 · Terran — Forces under attack",
+      "ru": "SC2 · Терраны — Войска атакованы",
+      "category": "sc2-terran-alerts",
+      "sha256": "8DCB21A1F4E5B13DE3AE8828AA00D8E38987897B69639F0DB935325369AB7CBF"
+    },
+    {
+      "preset": "sc2-terran-need-more-gas",
+      "en": "SC2 · Terran — More vespene gas",
+      "ru": "SC2 · Терраны — Нужен веспен",
+      "category": "sc2-terran-alerts",
+      "sha256": "C01F829C8F07526012319CBDD166C7DBB073C2E02C7171721CD44974B202D500"
+    },
+    {
+      "preset": "sc2-terran-need-more-minerals",
+      "en": "SC2 · Terran — More minerals",
+      "ru": "SC2 · Терраны — Нужны минералы",
+      "category": "sc2-terran-alerts",
+      "sha256": "F71BC1ECC8FD7EEDC5A4375E8105D6E093A65D9EE37B93A65C593F66ED379FEB"
+    },
+    {
+      "preset": "sc2-terran-not-enough-energy",
+      "en": "SC2 · Terran — Not enough energy",
+      "ru": "SC2 · Терраны — Недостаточно энергии",
+      "category": "sc2-terran-alerts",
+      "sha256": "CF971EC9605826239A4A9080396E75A6E0C16C1860245DDFDBC45C18254301FB"
+    },
+    {
+      "preset": "sc2-terran-game-paused",
+      "en": "SC2 · Terran — Game paused",
+      "ru": "SC2 · Терраны — Игра приостановлена",
+      "category": "sc2-terran-alerts",
+      "sha256": "BF6B0587BBD5CE43B7BC86F1851ACD12E2EB4AC627E73D5E7922AEFEEB80207F"
+    },
+    {
+      "preset": "sc2-terran-game-resumed",
+      "en": "SC2 · Terran — Game resumed",
+      "ru": "SC2 · Терраны — Игра продолжена",
+      "category": "sc2-terran-alerts",
+      "sha256": "10CB8BAB5AD68B89C828A4CF22DDD8E903C2D8E19663A4D6BF002A2F94EB4493"
+    },
+    {
+      "preset": "sc2-terran-minerals-depleted",
+      "en": "SC2 · Terran — Minerals depleted",
+      "ru": "SC2 · Терраны — Минералы исчерпаны",
+      "category": "sc2-terran-alerts",
+      "sha256": "B0ACECD527BFE84147EC46AB3587ACEB3C5ABB3D452C190076FCFD26BF74384C"
+    },
+    {
+      "preset": "sc2-protoss-base-under-attack",
+      "en": "SC2 · Protoss — Base under attack",
+      "ru": "SC2 · Протоссы — База атакована",
+      "category": "sc2-protoss-alerts",
+      "sha256": "4E9FF220AD1C0A8FF48D5E697CC9BF0A5FE2342822C593118C0060E91D5ADD9B"
+    },
+    {
+      "preset": "sc2-protoss-forces-under-attack",
+      "en": "SC2 · Protoss — Forces under attack",
+      "ru": "SC2 · Протоссы — Войска атакованы",
+      "category": "sc2-protoss-alerts",
+      "sha256": "5E5FC4569771FA8C889282AF9CAF548443EDCF730E3438397B95F18301CC4B68"
+    },
+    {
+      "preset": "sc2-protoss-need-more-gas",
+      "en": "SC2 · Protoss — More vespene gas",
+      "ru": "SC2 · Протоссы — Нужен веспен",
+      "category": "sc2-protoss-alerts",
+      "sha256": "63A452627C111C7BAC6AF791266916C6742FF39916C8C139EEB99C2E3F820490"
+    },
+    {
+      "preset": "sc2-protoss-need-more-minerals",
+      "en": "SC2 · Protoss — More minerals",
+      "ru": "SC2 · Протоссы — Нужны минералы",
+      "category": "sc2-protoss-alerts",
+      "sha256": "F2BAC0C05371F0A2A30EE109B5DE664F751CA0571079AE82D4D37C928B7382A0"
+    },
+    {
+      "preset": "sc2-protoss-not-enough-energy",
+      "en": "SC2 · Protoss — Not enough energy",
+      "ru": "SC2 · Протоссы — Недостаточно энергии",
+      "category": "sc2-protoss-alerts",
+      "sha256": "599EE7A428C26FDC98B7651919D70F7A46982417AF38A77199AE9E97F13CC6F4"
+    },
+    {
+      "preset": "sc2-protoss-game-paused",
+      "en": "SC2 · Protoss — Game paused",
+      "ru": "SC2 · Протоссы — Игра приостановлена",
+      "category": "sc2-protoss-alerts",
+      "sha256": "7D1277C9661F9C4DFC0EE2E44069B7F740F7684AA90AD54CE49726D3B3BEAC30"
+    },
+    {
+      "preset": "sc2-protoss-game-resumed",
+      "en": "SC2 · Protoss — Game resumed",
+      "ru": "SC2 · Протоссы — Игра продолжена",
+      "category": "sc2-protoss-alerts",
+      "sha256": "930C806C0CB13F0BD7B2841444C0942E3D0F35A226365371CC76BEA8D0FBCBDB"
+    },
+    {
+      "preset": "sc2-protoss-minerals-depleted",
+      "en": "SC2 · Protoss — Minerals depleted",
+      "ru": "SC2 · Протоссы — Минералы исчерпаны",
+      "category": "sc2-protoss-alerts",
+      "sha256": "72DFBB68E0AC1CCA23E711711A0FFC72A5C032CC04E75F6C1400354C1A9701E5"
+    },
+    {
+      "preset": "sc2-zerg-base-under-attack",
+      "en": "SC2 · Zerg — Base under attack",
+      "ru": "SC2 · Зерги — База атакована",
+      "category": "sc2-zerg-alerts",
+      "sha256": "B806B04F0688D9E19F84C8CEE81C2831AA43DACAE1664CA957D8CF7EA35E5DF8"
+    },
+    {
+      "preset": "sc2-zerg-forces-under-attack",
+      "en": "SC2 · Zerg — Forces under attack",
+      "ru": "SC2 · Зерги — Войска атакованы",
+      "category": "sc2-zerg-alerts",
+      "sha256": "8748EA81E7D620D9CACDD02AA61459A8E0CABA3E5B0A4758F34C3720F878B0CA"
+    },
+    {
+      "preset": "sc2-zerg-need-more-gas",
+      "en": "SC2 · Zerg — More vespene gas",
+      "ru": "SC2 · Зерги — Нужен веспен",
+      "category": "sc2-zerg-alerts",
+      "sha256": "62BD4DCE46C01EBFD41491595294EA9070DD11A91F5ADF529528BC441EBA86FF"
+    },
+    {
+      "preset": "sc2-zerg-need-more-minerals",
+      "en": "SC2 · Zerg — More minerals",
+      "ru": "SC2 · Зерги — Нужны минералы",
+      "category": "sc2-zerg-alerts",
+      "sha256": "38C030DEE0715C3AD3EDCD46DF6ECBB7EE9988E76D7AD9E4A12D37B41C8A523A"
+    },
+    {
+      "preset": "sc2-zerg-not-enough-energy",
+      "en": "SC2 · Zerg — Not enough energy",
+      "ru": "SC2 · Зерги — Недостаточно энергии",
+      "category": "sc2-zerg-alerts",
+      "sha256": "4AE7528388A034B7019E4A78076F828901A00753DB2485021E8E882E249D618D"
+    },
+    {
+      "preset": "sc2-zerg-game-paused",
+      "en": "SC2 · Zerg — Game paused",
+      "ru": "SC2 · Зерги — Игра приостановлена",
+      "category": "sc2-zerg-alerts",
+      "sha256": "717C2D676976ACC88B59862E4B636180330AE592BCBBC1DD28CA103CFDE97328"
+    },
+    {
+      "preset": "sc2-zerg-game-resumed",
+      "en": "SC2 · Zerg — Game resumed",
+      "ru": "SC2 · Зерги — Игра продолжена",
+      "category": "sc2-zerg-alerts",
+      "sha256": "D425306E440924AE97C1AF4790D6E5E23CABAC2596C5A58B1F01E91219E601DB"
+    },
+    {
+      "preset": "sc2-zerg-minerals-depleted",
+      "en": "SC2 · Zerg — Minerals depleted",
+      "ru": "SC2 · Зерги — Минералы исчерпаны",
+      "category": "sc2-zerg-alerts",
+      "sha256": "4E3DE5F24DD562BC6ACC899440CD6B4A4B90C539B0A890DE9082126BA931141E"
+    },
+    {
+      "preset": "sc2-terran-add-on-complete",
+      "en": "SC2 · Terran — Add-on complete",
+      "ru": "SC2 · Терраны — Модуль готов",
+      "category": "sc2-terran-alerts",
+      "sha256": "151029801F2093D17BBD27EB23ECF36A308B7B7961E6922F17CD1C4C2D65F98B"
+    },
+    {
+      "preset": "sc2-terran-nuke-ready",
+      "en": "SC2 · Terran — Nuclear missile ready",
+      "ru": "SC2 · Терраны — Ядерная ракета готова",
+      "category": "sc2-terran-alerts",
+      "sha256": "BA90E2068A27E2C83D7987D3D6BDA67AA6BB30B51A176A9882C7C4040A184DF9"
+    },
+    {
+      "preset": "sc2-terran-need-more-food",
+      "en": "SC2 · Terran — More supply depots",
+      "ru": "SC2 · Терраны — Нужны склады",
+      "category": "sc2-terran-alerts",
+      "sha256": "ED967ECFEAAFFE6583CC9B48EC3BE6319065D870058135EC61A921BE1876B8DA"
+    },
+    {
+      "preset": "sc2-terran-salvage-complete",
+      "en": "SC2 · Terran — Salvage complete",
+      "ru": "SC2 · Терраны — Переработка завершена",
+      "category": "sc2-terran-alerts",
+      "sha256": "5F374A7301F4695B8DBC8913E5CD68FFA553D6119D4CD270280A78480C70BEE7"
+    },
+    {
+      "preset": "sc2-protoss-research-complete",
+      "en": "SC2 · Protoss — Research complete",
+      "ru": "SC2 · Протоссы — Исследование завершено",
+      "category": "sc2-protoss-alerts",
+      "sha256": "4E3E642621C5DC527F872BD3F043956712093101B3B789E6772E5A00EEC55FB5"
+    },
+    {
+      "preset": "sc2-protoss-upgrade-complete",
+      "en": "SC2 · Protoss — Upgrade complete",
+      "ru": "SC2 · Протоссы — Улучшение завершено",
+      "category": "sc2-protoss-alerts",
+      "sha256": "D9B965F1CF76A7A4DCAC856AED36DBDFCA344D0D1680E0E4ADC8A05526127798"
+    },
+    {
+      "preset": "sc2-protoss-calldown-launch",
+      "en": "SC2 · Protoss — Nuclear launch",
+      "ru": "SC2 · Протоссы — Ядерный запуск",
+      "category": "sc2-protoss-alerts",
+      "sha256": "A70BFA0FD394877AE2CB209F26EB522E5A73D14385F05BA0C21FBC9D199D62C0"
+    },
+    {
+      "preset": "sc2-zerg-new-queen",
+      "en": "SC2 · Zerg — New queen",
+      "ru": "SC2 · Зерги — Новая королева",
+      "category": "sc2-zerg-alerts",
+      "sha256": "B4900C23B9BF59A75C4C802DCB21729C397F54A11DF37AF83979554250989915"
+    },
+    {
+      "preset": "sc2-zerg-mutation-complete",
+      "en": "SC2 · Zerg — Mutation complete",
+      "ru": "SC2 · Зерги — Мутация завершена",
+      "category": "sc2-zerg-alerts",
+      "sha256": "5354B073383375041186CC776293B0DC22B26AB5E3CABC030A9C439A951B1BED"
+    },
+    {
+      "preset": "sc2-zerg-need-more-food",
+      "en": "SC2 · Zerg — More overlords",
+      "ru": "SC2 · Зерги — Нужны надзиратели",
+      "category": "sc2-zerg-alerts",
+      "sha256": "733E16BE29098B9AE22BF57E7F200482E3000687881118B349A7DD53EA3EF435"
+    },
+    {
+      "preset": "sc2-marine-ready",
+      "en": "SC2 · Marine — Ready",
+      "ru": "SC2 · Морпех — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "7FD48EAC417364BDC95790603173DACC0A8FA6EDA2CCCC03864599545FF4177E"
+    },
+    {
+      "preset": "sc2-marine-what",
+      "en": "SC2 · Marine — Orders",
+      "ru": "SC2 · Морпех — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "B576BD5A310912BF02E236755B00EC01A5A2CA24882551703AEE1C15F99329BF"
+    },
+    {
+      "preset": "sc2-marine-attack",
+      "en": "SC2 · Marine — Attack",
+      "ru": "SC2 · Морпех — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "89CCDE579F0862EB377135A7985061791495E0B8E48D0E07648B55B5F42C329A"
+    },
+    {
+      "preset": "sc2-marauder-ready",
+      "en": "SC2 · Marauder — Ready",
+      "ru": "SC2 · Мародёр — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "6B2F8EA641AA7386D6D09D270EEB0744B3D1E9B994DE70400A0C472B4BF09B39"
+    },
+    {
+      "preset": "sc2-marauder-what",
+      "en": "SC2 · Marauder — Orders",
+      "ru": "SC2 · Мародёр — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "A57E3B7082CC6E346A3FDF4B2815616529C736F39E9FC76B77461A07A6D252CB"
+    },
+    {
+      "preset": "sc2-marauder-attack",
+      "en": "SC2 · Marauder — Attack",
+      "ru": "SC2 · Мародёр — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "F3468CF5D4810B496126AC7D0051944A22EA21D0218C4E17F26472A9C17CCF74"
+    },
+    {
+      "preset": "sc2-ghost-ready",
+      "en": "SC2 · Ghost — Ready",
+      "ru": "SC2 · Призрак — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "B02258000CAE3917C7C7F9D63940D48C48E0B68130070F8B04513090ED77D47E"
+    },
+    {
+      "preset": "sc2-ghost-what",
+      "en": "SC2 · Ghost — Orders",
+      "ru": "SC2 · Призрак — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "BA207595E7981729D150E887690F1F04E989433E9F81D896157CA8F247B4941E"
+    },
+    {
+      "preset": "sc2-ghost-attack",
+      "en": "SC2 · Ghost — Attack",
+      "ru": "SC2 · Призрак — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "04328CD9F6F914DA3AD24552271693DF29BA03E766732792745A489A250CE3B7"
+    },
+    {
+      "preset": "sc2-scv-ready",
+      "en": "SC2 · SCV — Ready",
+      "ru": "SC2 · КСМ — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "BB6CB1CFF6349F526C6969AC933AD1E5D5B49A48E0E7A6380DB38C853C4268A3"
+    },
+    {
+      "preset": "sc2-scv-what",
+      "en": "SC2 · SCV — Orders",
+      "ru": "SC2 · КСМ — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "A76804065D4DB01D48041BE4459287CC936CB0286726DBD123116D8F74333F0B"
+    },
+    {
+      "preset": "sc2-scv-attack",
+      "en": "SC2 · SCV — Attack",
+      "ru": "SC2 · КСМ — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "604BC8B2AB791EBDF98006C7B26B089A2F5C16EB30C14E786159C4771768E31D"
+    },
+    {
+      "preset": "sc2-siegetank-ready",
+      "en": "SC2 · Siege tank — Ready",
+      "ru": "SC2 · Осадный танк — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "76B5F65A40D80BD24FA9F2E94BEF6F52ACA78C5E79ECFD123EF9BBB6C1DDFBA6"
+    },
+    {
+      "preset": "sc2-siegetank-what",
+      "en": "SC2 · Siege tank — Orders",
+      "ru": "SC2 · Осадный танк — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "405FA1A122CBBDB148AC40D96574DCF43815648C1221681965C86E36C7283672"
+    },
+    {
+      "preset": "sc2-siegetank-attack",
+      "en": "SC2 · Siege tank — Attack",
+      "ru": "SC2 · Осадный танк — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "606088A9C49D7F24BB3BF4A0F7137FF09F411534D52552E252DD95C6E0B29C7F"
+    },
+    {
+      "preset": "sc2-thor-ready",
+      "en": "SC2 · Thor — Ready",
+      "ru": "SC2 · Тор — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "A88A17F8DB2B5048DCF440F6DE2DDA26AEF07E04E722C383177A51979195194C"
+    },
+    {
+      "preset": "sc2-thor-what",
+      "en": "SC2 · Thor — Orders",
+      "ru": "SC2 · Тор — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "42A25504A8B241E9DC8BCA572C49F34D5508D32A31E05E384D063B71D48E70CD"
+    },
+    {
+      "preset": "sc2-thor-attack",
+      "en": "SC2 · Thor — Attack",
+      "ru": "SC2 · Тор — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "7C06846AFF04EE61E604B6990C896C898788596635E5A0FF4328A16D67F9A690"
+    },
+    {
+      "preset": "sc2-battlecruiser-ready",
+      "en": "SC2 · Battlecruiser — Ready",
+      "ru": "SC2 · Линейный крейсер — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "11CB1104D5403060D15159B713C5A6E59D39098AB5A0030C18A3306EA567623D"
+    },
+    {
+      "preset": "sc2-battlecruiser-what",
+      "en": "SC2 · Battlecruiser — Orders",
+      "ru": "SC2 · Линейный крейсер — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "BBE20ED832A422A68E4E616E03264BCBF03F6018D5BC0DBC8B433B7EA2DFC804"
+    },
+    {
+      "preset": "sc2-battlecruiser-attack",
+      "en": "SC2 · Battlecruiser — Attack",
+      "ru": "SC2 · Линейный крейсер — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "AF4ECA042874709054E08E2B9C130243A49FA3A3A912907CFEFA255DE5546E9F"
+    },
+    {
+      "preset": "sc2-medivac-ready",
+      "en": "SC2 · Medivac — Ready",
+      "ru": "SC2 · Медэвак — Готов",
+      "category": "sc2-terran-units",
+      "sha256": "75355DAA8FB8F417771DBA1E22E8BA9BBE59BC181F7A219164C626F3B7B8B65E"
+    },
+    {
+      "preset": "sc2-medivac-what",
+      "en": "SC2 · Medivac — Orders",
+      "ru": "SC2 · Медэвак — Приказы",
+      "category": "sc2-terran-units",
+      "sha256": "18624284BE8C17811357A98C088234AB4604E5C1269FCE29D07944C02C5B4219"
+    },
+    {
+      "preset": "sc2-medivac-attack",
+      "en": "SC2 · Medivac — Attack",
+      "ru": "SC2 · Медэвак — Атака",
+      "category": "sc2-terran-units",
+      "sha256": "5B3B33489620EC34979D234B27B19B9F5CAB95C2B5BAE5E95ABF34307D55F7C2"
+    },
+    {
+      "preset": "sc2-zealot-ready",
+      "en": "SC2 · Zealot — Ready",
+      "ru": "SC2 · Зилот — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "591D743C4DFBA63CB0E3E53EEAA6832B5C483BEC95AB6D3D39FD6246002532CF"
+    },
+    {
+      "preset": "sc2-zealot-what",
+      "en": "SC2 · Zealot — Orders",
+      "ru": "SC2 · Зилот — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "5E3F45E73D0F5F37D4228E0722D11A7344C03D47C2B74621AF7FBB906B1F40CA"
+    },
+    {
+      "preset": "sc2-zealot-attack",
+      "en": "SC2 · Zealot — Attack",
+      "ru": "SC2 · Зилот — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "D6547D782CA3454DC2D708AB885EFE4D9C60B084E93D9A1D92DD9908459F9E1C"
+    },
+    {
+      "preset": "sc2-stalker-ready",
+      "en": "SC2 · Stalker — Ready",
+      "ru": "SC2 · Сталкер — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "ABD23C387E6C0FC1CE66EF65995AC02598FAD27EC0235CECBE8E15E2938F08FD"
+    },
+    {
+      "preset": "sc2-stalker-what",
+      "en": "SC2 · Stalker — Orders",
+      "ru": "SC2 · Сталкер — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "5D4E2E9A2384FA73D9FF00CD5696A36D421858DA699A0960C069FC85A54DB44F"
+    },
+    {
+      "preset": "sc2-stalker-attack",
+      "en": "SC2 · Stalker — Attack",
+      "ru": "SC2 · Сталкер — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "02F9397638F249D340A158D71943C223555030FBB2E42E3784BB057953233515"
+    },
+    {
+      "preset": "sc2-hightemplar-ready",
+      "en": "SC2 · High templar — Ready",
+      "ru": "SC2 · Высший тамплиер — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "7AC65E9DB0965B774FE11D44F48433CBF18151B383D82416996C6ABB788D5B0A"
+    },
+    {
+      "preset": "sc2-hightemplar-what",
+      "en": "SC2 · High templar — Orders",
+      "ru": "SC2 · Высший тамплиер — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "D4DCC8610259CB22778A54E638699DC1B684EB00A6B71FDA178EF3A1D25C51F8"
+    },
+    {
+      "preset": "sc2-hightemplar-attack",
+      "en": "SC2 · High templar — Attack",
+      "ru": "SC2 · Высший тамплиер — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "D42EB5D51A83B5E84CED8733AD38B0FFA43A9A24DA7328FE4C60F1882D3FA6BB"
+    },
+    {
+      "preset": "sc2-darktemplar-ready",
+      "en": "SC2 · Dark templar — Ready",
+      "ru": "SC2 · Тёмный тамплиер — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "9B6F17704A4AD7FDAB6D47DC1EC9954E943AE0F5B7FD8A32918B534F407FAB57"
+    },
+    {
+      "preset": "sc2-darktemplar-what",
+      "en": "SC2 · Dark templar — Orders",
+      "ru": "SC2 · Тёмный тамплиер — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "C807BD94EAE2DF3F390790225EF0018ACCC312CEE5BA23270D576CA2144BED46"
+    },
+    {
+      "preset": "sc2-darktemplar-attack",
+      "en": "SC2 · Dark templar — Attack",
+      "ru": "SC2 · Тёмный тамплиер — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "955964EBBD5F3583CB64469BD38DD5F8ABE0CE0B561622068B06D5161C1EE269"
+    },
+    {
+      "preset": "sc2-archon-ready",
+      "en": "SC2 · Archon — Ready",
+      "ru": "SC2 · Архонт — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "88E8EDAE391EF51658D20EDC4B8FE844FC82CEA5379F1F74C569AA6E1AD2F406"
+    },
+    {
+      "preset": "sc2-archon-what",
+      "en": "SC2 · Archon — Orders",
+      "ru": "SC2 · Архонт — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "7FFAF6BE07DBDC537E0AA4FD4D949835B1F72B0387BA22EEE5E78C39496A64D2"
+    },
+    {
+      "preset": "sc2-archon-attack",
+      "en": "SC2 · Archon — Attack",
+      "ru": "SC2 · Архонт — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "2B07B7712B305FF6112C6380D845B8CBD835B21373F39277407ABB8FF36D88AC"
+    },
+    {
+      "preset": "sc2-carrier-ready",
+      "en": "SC2 · Carrier — Ready",
+      "ru": "SC2 · Авианосец — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "8598FF9FD64884C433639A93A4DDFF8FF768947CBFEBD9ABD6BD35824043ECD1"
+    },
+    {
+      "preset": "sc2-carrier-what",
+      "en": "SC2 · Carrier — Orders",
+      "ru": "SC2 · Авианосец — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "6AA359AA0B0824BFA68D8DD7FA1AEA3C3789882A03FC572F390D84AD3C49340C"
+    },
+    {
+      "preset": "sc2-carrier-attack",
+      "en": "SC2 · Carrier — Attack",
+      "ru": "SC2 · Авианосец — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "4D6AB867593FA605A67966684248EE1FA437B7C52366DCB0AB010A1BB2A8D3D2"
+    },
+    {
+      "preset": "sc2-immortal-ready",
+      "en": "SC2 · Immortal — Ready",
+      "ru": "SC2 · Бессмертный — Готов",
+      "category": "sc2-protoss-units",
+      "sha256": "E94A02B6EED53BB0D328CE9992F61B5CADC33B691031F4A5AC0CE22A79FAAAC6"
+    },
+    {
+      "preset": "sc2-immortal-what",
+      "en": "SC2 · Immortal — Orders",
+      "ru": "SC2 · Бессмертный — Приказы",
+      "category": "sc2-protoss-units",
+      "sha256": "74B611D33392B54FFCBA3AA1A2ED6BC23791E96E26910BCEA24001612EF866A2"
+    },
+    {
+      "preset": "sc2-immortal-attack",
+      "en": "SC2 · Immortal — Attack",
+      "ru": "SC2 · Бессмертный — Атака",
+      "category": "sc2-protoss-units",
+      "sha256": "A560DC4F5AD6F20CEB41EA9E042AC2EA5D19780849643C9914DD8AED1D56F285"
+    },
+    {
+      "preset": "sc2-ru-nuclear",
+      "en": "SC2 RU · Nuclear launch",
+      "ru": "SC2 RU · Ядерный запуск",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "23A1F0FCB674B8025C53773D72E63B2AEC5808F71B91EAFC4266CD154423CA4B",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-research",
+      "en": "SC2 RU · Research complete",
+      "ru": "SC2 RU · Исследование завершено",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "B617911DAFCFB6E10ABCE0634241314566E619BD42B036854571677B3A595524",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-upgrade",
+      "en": "SC2 RU · Upgrade complete",
+      "ru": "SC2 RU · Улучшение завершено",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "A470470427CE2E033302D6A486835A91465051BC749C8C3215802AE1F1FF2BAC",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-pylons",
+      "en": "SC2 RU · Additional pylons",
+      "ru": "SC2 RU · Дополнительные пилоны",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "835DB4A9747AAF16ECF87274EB7D6EE0906D12D7C642DA86FE1FE65C261E23F6",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-warp",
+      "en": "SC2 RU · Warp-in complete",
+      "ru": "SC2 RU · Варп завершён",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "AB771EE7411A92C43800D5E72E4CA41738640E9F0BA2B66C9EDB57CF508921F0",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-evolution",
+      "en": "SC2 RU · Evolution complete",
+      "ru": "SC2 RU · Эволюция завершена",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "08F064E8A200729A844F7E320D5C0C9684EEA541AE240805D4D84462FB605C1E",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-base-under-attack",
+      "en": "SC2 RU · Terran — Base under attack",
+      "ru": "SC2 RU · Терраны — База атакована",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "F12BDF950A53CC4AAE44246C48EBF7F8EE1D0BD2DF9EC1B805357BD22FE7A7A0",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-forces-under-attack",
+      "en": "SC2 RU · Terran — Forces under attack",
+      "ru": "SC2 RU · Терраны — Войска атакованы",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "82496C012A7EA9081CEABE9BB262EEC1C79C923561C14F8A8CBD90DC8CBFF384",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-need-more-gas",
+      "en": "SC2 RU · Terran — More vespene gas",
+      "ru": "SC2 RU · Терраны — Нужен веспен",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "38F36089158CD1072700B0E93845FF2FBD23F081136896989A32C5977622525C",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-need-more-minerals",
+      "en": "SC2 RU · Terran — More minerals",
+      "ru": "SC2 RU · Терраны — Нужны минералы",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "51C77F6D0155B81F1CB020DBDB503F4DDCAE6CBE9EDCE4730EA92695F0E83138",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-not-enough-energy",
+      "en": "SC2 RU · Terran — Not enough energy",
+      "ru": "SC2 RU · Терраны — Недостаточно энергии",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "40AEBED9F6C5BBADC50A93178A7672F331D4EC419C824685205F349CD82966B8",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-game-paused",
+      "en": "SC2 RU · Terran — Game paused",
+      "ru": "SC2 RU · Терраны — Игра приостановлена",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "48C48DD8DA93208DA4514AC24B9A1E6E9F45CC5E63098EF1268A9C3485AE984B",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-game-resumed",
+      "en": "SC2 RU · Terran — Game resumed",
+      "ru": "SC2 RU · Терраны — Игра продолжена",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "0E691CC6779D5B97C7048826F866342E4D154CB109D21A0CCBA21F4D09148F71",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-minerals-depleted",
+      "en": "SC2 RU · Terran — Minerals depleted",
+      "ru": "SC2 RU · Терраны — Минералы исчерпаны",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "5670AF6EC643A0758330C47E76513B6C828CF5F373CE98936EA6D287F7E57232",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-base-under-attack",
+      "en": "SC2 RU · Protoss — Base under attack",
+      "ru": "SC2 RU · Протоссы — База атакована",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "7B3E088B2D6C6B6925308A674DF55AE68A04A932DBB8AD43BEDEDA79C9E84082",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-forces-under-attack",
+      "en": "SC2 RU · Protoss — Forces under attack",
+      "ru": "SC2 RU · Протоссы — Войска атакованы",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "EBC8C151EDCE16B4529B758FE1CED9EF240AE141952712549383A07B0149F5C0",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-need-more-gas",
+      "en": "SC2 RU · Protoss — More vespene gas",
+      "ru": "SC2 RU · Протоссы — Нужен веспен",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "0FCB97A26031DA6AF51B1EA89E7D41DBF833E936B4F973217BDFA565D535A51A",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-need-more-minerals",
+      "en": "SC2 RU · Protoss — More minerals",
+      "ru": "SC2 RU · Протоссы — Нужны минералы",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "81A353FF9677E7A32D7F207106246A20D532A1F9A42BDC7117360715F4B02091",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-not-enough-energy",
+      "en": "SC2 RU · Protoss — Not enough energy",
+      "ru": "SC2 RU · Протоссы — Недостаточно энергии",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "C37AB67A7C88F3F07BE2D1425D77EC55206A86FC03103CB293E7D55AB9D2996A",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-game-paused",
+      "en": "SC2 RU · Protoss — Game paused",
+      "ru": "SC2 RU · Протоссы — Игра приостановлена",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "92DED51102EE2419ED4F3C3343D8000C87C0F025D296555492514237909FBED0",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-game-resumed",
+      "en": "SC2 RU · Protoss — Game resumed",
+      "ru": "SC2 RU · Протоссы — Игра продолжена",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "D702A11417732C4D45B898D0ADACCCBEF9CAE8F184B0E643486CC73292990CB1",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-minerals-depleted",
+      "en": "SC2 RU · Protoss — Minerals depleted",
+      "ru": "SC2 RU · Протоссы — Минералы исчерпаны",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "268E651E8702702A87FBA0C684116592B5A701C3304ABAEB01E1FD17C74E4250",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-base-under-attack",
+      "en": "SC2 RU · Zerg — Base under attack",
+      "ru": "SC2 RU · Зерги — База атакована",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "B926C5C122A47CC1473926756F7DD96585F57307B732F0C382D77DA995B46DCB",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-forces-under-attack",
+      "en": "SC2 RU · Zerg — Forces under attack",
+      "ru": "SC2 RU · Зерги — Войска атакованы",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "4E4E622F6E5421CA401C5BDA645611D0D2B157FC65D6ACCD6212DA7DAC3A2975",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-need-more-gas",
+      "en": "SC2 RU · Zerg — More vespene gas",
+      "ru": "SC2 RU · Зерги — Нужен веспен",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "BF568A19EBCCE07AF034B8A00F4AF75C82634D302626BF51BC7B1A61C5C50458",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-need-more-minerals",
+      "en": "SC2 RU · Zerg — More minerals",
+      "ru": "SC2 RU · Зерги — Нужны минералы",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "BB8DEFEBE8A34E93F37BD3B7A283555F73D60EC0DC42E6C63CD61EE6D9B54039",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-not-enough-energy",
+      "en": "SC2 RU · Zerg — Not enough energy",
+      "ru": "SC2 RU · Зерги — Недостаточно энергии",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "A0C2A3B316766B43718818352975C1487B98F9BCCC6A7EF64DD800C0FD409D2E",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-game-paused",
+      "en": "SC2 RU · Zerg — Game paused",
+      "ru": "SC2 RU · Зерги — Игра приостановлена",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "6198BB7040AD5C5C30FC9D8ADBF842ACC01F3C90E2CDB7A5F704FF4609C2BC3D",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-game-resumed",
+      "en": "SC2 RU · Zerg — Game resumed",
+      "ru": "SC2 RU · Зерги — Игра продолжена",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "5A5E4819710FB4410A3B4A2D240823FB8A409376E84C97B4B423B8B77B0B5A6C",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-minerals-depleted",
+      "en": "SC2 RU · Zerg — Minerals depleted",
+      "ru": "SC2 RU · Зерги — Минералы исчерпаны",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "937200E9DBF59CA1E9913E31CF7CAA77F7213BC4A81F90783CC15B83DA9ABA55",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-add-on-complete",
+      "en": "SC2 RU · Terran — Add-on complete",
+      "ru": "SC2 RU · Терраны — Модуль готов",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "8CD67226CCE4F438ACD754926E7BEEDC23AE0CFD60AC4EBBF7F76F02B5D5F7A7",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-nuke-ready",
+      "en": "SC2 RU · Terran — Nuclear missile ready",
+      "ru": "SC2 RU · Терраны — Ядерная ракета готова",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "87BE335038319F3F6B9E0FBCE295D91FC74CE92167DCDD6E8EC812A49744323B",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-need-more-food",
+      "en": "SC2 RU · Terran — More supply depots",
+      "ru": "SC2 RU · Терраны — Нужны склады",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "4F1C8EAC9ED6A15D59DB1134768667F5F65D46256E59E60C9639491688EFE299",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-terran-salvage-complete",
+      "en": "SC2 RU · Terran — Salvage complete",
+      "ru": "SC2 RU · Терраны — Переработка завершена",
+      "category": "sc2-ru-terran-alerts",
+      "sha256": "53AB6EA285C5ABF638D3D153AF7134C660075AB2A36BA857747C4630E6C6E6E5",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-research-complete",
+      "en": "SC2 RU · Protoss — Research complete",
+      "ru": "SC2 RU · Протоссы — Исследование завершено",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "90AEC378E141310808EE2B18CB03895A5B24E5E851BD0A5B446382B3FF0F6E26",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-upgrade-complete",
+      "en": "SC2 RU · Protoss — Upgrade complete",
+      "ru": "SC2 RU · Протоссы — Улучшение завершено",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "F0F6252195947CF75E283AC1DA835816DA388AEEF6512CD4A9963AE010483B82",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-protoss-calldown-launch",
+      "en": "SC2 RU · Protoss — Nuclear launch",
+      "ru": "SC2 RU · Протоссы — Ядерный запуск",
+      "category": "sc2-ru-protoss-alerts",
+      "sha256": "FD56D96FE132B8DD0A80B51A646FD82BF5845AC84DEF4408452F621662259390",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-new-queen",
+      "en": "SC2 RU · Zerg — New queen",
+      "ru": "SC2 RU · Зерги — Новая королева",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "29A0167C63FB2FD8E09C18D17157C488ECFBFF93B4C44DF7AD370D3B7974D5FB",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-mutation-complete",
+      "en": "SC2 RU · Zerg — Mutation complete",
+      "ru": "SC2 RU · Зерги — Мутация завершена",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "019CDCDD0F70358AC0F46E8311FA8E876D94459C7F260394FBAF112731C45C42",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zerg-need-more-food",
+      "en": "SC2 RU · Zerg — More overlords",
+      "ru": "SC2 RU · Зерги — Нужны надзиратели",
+      "category": "sc2-ru-zerg-alerts",
+      "sha256": "96DCB78F1F2C4FCEE6040AFE2D8FAD55663B908F9CFD7EA93BBF2958766FF8C2",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-marine-ready",
+      "en": "SC2 RU · Marine — Ready",
+      "ru": "SC2 RU · Морпех — Готов",
+      "category": "sc2-ru-terran-units",
+      "sha256": "B3BCFE0851CB89F0A09CBB7E698F0D81B702EB86BC66A40A7B234D123F6FBF21",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-marine-what",
+      "en": "SC2 RU · Marine — Orders",
+      "ru": "SC2 RU · Морпех — Приказы",
+      "category": "sc2-ru-terran-units",
+      "sha256": "6BEE2EBE7AFC7F17D084C50D8B6A399FD7B149644E6187C2C9D08674DFABC739",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-scv-ready",
+      "en": "SC2 RU · SCV — Ready",
+      "ru": "SC2 RU · КСМ — Готов",
+      "category": "sc2-ru-terran-units",
+      "sha256": "10D4802112D32E6ECAC8D8850B76E43D780AE4764B2B9B47040B53817EE7808A",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-scv-what",
+      "en": "SC2 RU · SCV — Orders",
+      "ru": "SC2 RU · КСМ — Приказы",
+      "category": "sc2-ru-terran-units",
+      "sha256": "EE9D576C52376C1ACEC3698E3BE2AFAF016C72EF449B798A7BE27C6FF1DAE50C",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zealot-ready",
+      "en": "SC2 RU · Zealot — Ready",
+      "ru": "SC2 RU · Зилот — Готов",
+      "category": "sc2-ru-protoss-units",
+      "sha256": "21FBEDCC237573467ADDC68FC98074B27F4E37C15EA4742F0BF4C03FBC100620",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-zealot-what",
+      "en": "SC2 RU · Zealot — Orders",
+      "ru": "SC2 RU · Зилот — Приказы",
+      "category": "sc2-ru-protoss-units",
+      "sha256": "2AEDF2C01141BFF13AAB0C1567919A3FE65575A504BA4FFD0118A232874F8CE4",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-stalker-ready",
+      "en": "SC2 RU · Stalker — Ready",
+      "ru": "SC2 RU · Сталкер — Готов",
+      "category": "sc2-ru-protoss-units",
+      "sha256": "666C0A98481DD65094CAE15E54EDEDE7C3934E039FDBF7512647880DC1E2997A",
+      "language": "ru"
+    },
+    {
+      "preset": "sc2-ru-stalker-what",
+      "en": "SC2 RU · Stalker — Orders",
+      "ru": "SC2 RU · Сталкер — Приказы",
+      "category": "sc2-ru-protoss-units",
+      "sha256": "7959E4AA10DB4AB46ED3F955BC007AB31CDEAF4B5F85418639F4E8313A8B8E77",
+      "language": "ru"
+    }
+  ]
+};

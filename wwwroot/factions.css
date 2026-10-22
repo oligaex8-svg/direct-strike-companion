@@ -1,0 +1,59 @@
+/* Faction construction lives on shells and controls. Names, values and table
+   bodies keep clean insets. The default Battle.net menu is independent. */
+:root[data-graphical-style=protoss]{
+ --bg:#080e19;--surface:#101b2c;--raised:#22324a;--line:#5b513b;
+ --text:#fff2d8;--muted:#d0d5df;--accent:#eed08c;
+ --console-shell:#0b1320;--console-frame:#b79b60;
+ --shell-edge:#967d49;--shell-light:#e0c788;--shell-title:#f7e3b2;
+ --shell-well:#070e1a;--shell-panel:#101b2c;--shell-header:#1e2e46;
+ --faction-radius:9px 2px 9px 2px;--faction-button:url('/themes/protoss-command.png');--faction-crest:url('/themes/protoss-crest.svg');
+ --faction-inset-edge:#796c47;--faction-detail:#6bb9e5;
+}
+:root[data-graphical-style=zerg]{
+ --bg:#100b0a;--surface:#1c1410;--raised:#342519;--line:#5b4534;
+ --text:#f7ecdc;--muted:#d8c8b5;--accent:#e9b56c;
+ --console-shell:#130e0b;--console-frame:#b18f69;
+ --shell-edge:#8d6d4e;--shell-light:#d7b887;--shell-title:#f2d2a2;
+ --shell-well:#0f0b09;--shell-panel:#1c1410;--shell-header:#322318;
+ --faction-radius:15px 5px 17px 6px;--faction-button:url('/themes/zerg-command.png');--faction-crest:url('/themes/zerg-crest.svg');
+ --faction-inset-edge:#735437;--faction-detail:#c0924f;
+}
+:root[data-graphical-style=terran]{
+ --bg:#080d0e;--surface:#131c1e;--raised:#253237;--line:#465458;
+ --text:#edf3ed;--muted:#c3d1cc;--accent:#98dfb6;
+ --console-shell:#0c1214;--console-frame:#8fa49c;
+ --shell-edge:#718580;--shell-light:#bed2c6;--shell-title:#e1ece2;
+ --shell-well:#080f10;--shell-panel:#131c1e;--shell-header:#253334;
+ --faction-radius:2px;--faction-button:url('/themes/terran-command.png');--faction-crest:url('/themes/terran-crest.svg');
+ --faction-inset-edge:#60726c;--faction-detail:#76bb94;--faction-selected-inset:inset 0 -2px #76bb94;
+}
+:root[data-graphical-style]:not([data-graphical-style=default]){--shell-frame-paint:22px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .page-head{background:linear-gradient(180deg,transparent 55%,var(--shell-well)),linear-gradient(90deg,var(--shell-header),var(--console-shell))}
+:root[data-graphical-style]:not([data-graphical-style=default]) .page-head:before{background:var(--console-material) center/256px 64px repeat-x;opacity:.2}
+:root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{content:'';position:absolute;left:50%;top:calc(1px - var(--shell-frame-size));width:96px;height:14px;transform:translateX(-50%);background:var(--faction-crest) center top/contain no-repeat;pointer-events:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .brand{border-image-width:10px;background:var(--shell-header)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .brand-mark{width:28px;height:28px;flex-basis:28px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .brand:before{background:var(--console-material) center/256px 64px;opacity:.18}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar-bottom){border-image-width:12px;background:var(--shell-well)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar-bottom{border-image-width:8px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav{border-radius:var(--faction-radius);background:linear-gradient(180deg,var(--shell-panel),var(--shell-well));border-color:var(--line)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:after{background:var(--console-material) center/256px 64px;opacity:0}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:hover:after{opacity:.16}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active{border-image:var(--console-art) 32 / 6px / 0 stretch;background:linear-gradient(180deg,var(--shell-header),var(--shell-well));border-radius:var(--faction-radius);box-shadow:var(--faction-selected-inset,none)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active:after{opacity:.2}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-region,.profile-results,.combat-card,.mark-card,.own-account,.pick-opponent,.pick-recommendation,.sounds-assigned,.sounds-recordings){border-image:none;border:1px solid var(--faction-inset-edge);border-radius:var(--faction-radius);background:var(--shell-panel);box-shadow:inset 0 1px #ffffff0a,inset 0 -2px #0005}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-region h3,.live-team-head){background:linear-gradient(180deg,var(--shell-header),var(--shell-panel));border-bottom:1px solid var(--faction-inset-edge)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-favourite-top{border-radius:var(--faction-radius);border-bottom-left-radius:0;border-bottom-right-radius:0}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-region h3{border-radius:var(--faction-radius);border-bottom-left-radius:0;border-bottom-right-radius:0;color:var(--shell-title)}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.button,.button:not(.ghost),.filter,.mark-button,.replay-quick-list){border:1px solid var(--console-frame);border-image:var(--faction-button) 12 fill / 6px / 0 stretch;border-radius:var(--faction-radius);background:var(--shell-well);color:var(--text);box-shadow:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.button,.filter,.mark-button):hover{background:var(--shell-header)}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(select,input:not([type=checkbox],[type=radio],[type=range]),textarea){border-radius:var(--faction-radius);border-color:var(--faction-inset-edge);background:var(--shell-well)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-portrait-frame{border-image-width:9px;padding:4px;background:var(--shell-well)}
+:root[data-graphical-style=protoss] :is(.profile-favourite-top,.profile-region h3){box-shadow:inset 0 1px var(--faction-detail)}
+:root[data-graphical-style=terran] :is(.profile-favourite-top,.profile-region h3){border-top:2px solid var(--faction-inset-edge)}
+@media(max-width:750px){
+ :root[data-graphical-style]:not([data-graphical-style=default]){--shell-frame-paint:16px}
+ :root[data-graphical-style]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar-bottom){border-image-width:8px}
+ :root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{width:64px;height:12px}
+}
+@media(forced-colors:active){:root[data-graphical-style]:not([data-graphical-style=default]) :is(.page-head,.workspace,.brand,.sidebar nav,.sidebar-bottom,.sidebar .nav.active,.button,.button:not(.ghost),.filter,.mark-button,.profile-commanders,.profile-region,.profile-results,.profile-region h3,.profile-favourite-top){border-image:none;background-image:none;box-shadow:none}:root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{display:none}}

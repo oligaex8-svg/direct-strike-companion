@@ -1,0 +1,52 @@
+/* Compact SC2 navigation rack. Labels remain ordinary readable text; original
+   menu art defines the selected tab, and authored glyphs aid quick scanning. */
+.sidebar,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar{padding:12px 10px;border-right:1px solid var(--shell-edge);background:linear-gradient(90deg,#0007,transparent 24%,#0004),var(--console-shell);box-shadow:inset -3px 0 0 #0007}
+.brand,:root[data-graphical-style]:not([data-graphical-style=default]) .brand{position:relative;min-height:54px;padding:3px;gap:5px;border:10px solid var(--shell-edge);border-image:var(--work-frame) 24 / 8px / 0 stretch;background:var(--shell-header);font-size:9px;line-height:1.7}
+.brand:before{content:'';position:absolute;inset:3px;background:url('/themes/menu-hex.png') right/auto 96px no-repeat;opacity:.12;pointer-events:none}
+.brand-mark{width:28px;height:28px;flex-basis:28px}
+.brand span:not(.brand-mark){font-size:9px;letter-spacing:.1em}
+.language-switch{margin-top:12px}
+.language-switch label{font-size:12px;color:var(--muted)}
+.language-switch select,:root[data-graphical-style]:not([data-graphical-style=default]) .language-switch select{min-height:32px;padding:6px 9px;border:1px solid var(--shell-edge);border-radius:0;background:var(--shell-well)}
+.sidebar nav{display:grid;gap:3px;margin-top:12px;padding:4px;background:var(--shell-well);border:12px solid var(--shell-edge);border-image:var(--work-frame) 24 / 8px / 0 stretch;box-shadow:inset 0 2px 6px #0008}
+.sidebar .nav,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav{position:relative;isolation:isolate;display:grid;grid-template-columns:16px minmax(0,1fr) auto;align-items:center;gap:4px;min-height:36px;width:100%;margin:0;padding:7px 9px;border:1px solid var(--line);border-image:none;border-radius:0;background:linear-gradient(180deg,var(--shell-panel),var(--shell-well));box-shadow:inset 0 1px #ffffff08;color:var(--muted);font-size:13px;text-align:left;line-height:1.3}
+.sidebar .nav:before,.sidebar-settings:before{content:'';display:block;width:16px;height:16px;flex:0 0 16px;background:currentColor;mask:var(--nav-icon) center/contain no-repeat;opacity:.8;pointer-events:none}
+.sidebar .nav:before{grid-column:1;grid-row:1}
+.sidebar .nav:after{content:'';position:absolute;inset:0;z-index:-1;background:url('/themes/nav-selected.png') center/100% 100% no-repeat;opacity:0;pointer-events:none}
+.sidebar .nav:hover,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:hover{border-color:var(--shell-edge);color:var(--text)}
+.sidebar .nav:hover:after{opacity:.1}
+.sidebar .nav.active,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active{padding:7px 9px;border:1px solid var(--shell-light);border-image:none;background:linear-gradient(90deg,var(--shell-header),var(--shell-panel));color:var(--shell-title);font-weight:600;box-shadow:inset 2px 0 var(--shell-light)}
+.sidebar .nav.active:after{opacity:.2}
+.sidebar .nav.active:before{opacity:1}
+.sidebar .nav span{grid-column:3;grid-row:1;min-width:20px;padding:2px;border:1px solid var(--line);background:var(--shell-well);color:var(--muted);font-size:11px;line-height:1.2;text-align:center;font-variant-numeric:tabular-nums}
+.sidebar .nav.active span{color:var(--shell-title);border-color:var(--shell-edge)}
+.nav[data-view=lobby]{--nav-icon:url('/themes/nav-lobby.svg')}
+.nav[data-view=profile]{--nav-icon:url('/themes/nav-profile.svg')}
+.nav[data-view=players]{--nav-icon:url('/themes/nav-players.svg')}
+.nav[data-view=friends]{--nav-icon:url('/themes/nav-friends.svg')}
+.nav[data-view=picks]{--nav-icon:url('/themes/nav-picks.svg')}
+.nav[data-view=stats]{--nav-icon:url('/themes/nav-stats.svg')}
+.nav[data-view=matches]{--nav-icon:url('/themes/nav-matches.svg')}
+.nav[data-view=marks]{--nav-icon:url('/themes/nav-marks.svg')}
+.nav[data-view=sounds]{--nav-icon:url('/themes/nav-sounds.svg')}
+.sidebar-bottom{display:grid;gap:3px;margin-top:auto;padding:3px;border:8px solid var(--shell-edge);border-image:var(--work-frame) 24 / 8px / 0 stretch;background:var(--shell-well)}
+.sidebar-bottom>a{padding:4px 7px 7px;border-bottom:1px solid var(--line);font-size:12px;line-height:1.4}
+.sidebar-bottom .sidebar-settings,.sidebar-bottom #sidebar-updates{display:flex;align-items:center;gap:6px;min-height:34px;margin:0;padding:6px 5px;border:1px solid transparent;background:var(--shell-panel);color:var(--text);font-size:13px;line-height:1.4;text-align:left;flex-wrap:nowrap}
+#settings-open{--nav-icon:url('/themes/nav-settings.svg')}
+#sidebar-updates{--nav-icon:url('/themes/nav-updates.svg')}
+#sidebar-updates>span:first-child{flex:1;min-width:0}
+.sidebar-bottom .sidebar-settings:hover{border-color:var(--shell-edge);background:var(--shell-header)}
+.sidebar :is(.nav,.sidebar-settings,select,a):focus-visible{outline:2px solid var(--shell-light);outline-offset:2px}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar-bottom,.brand){border-image-slice:32}
+@media(min-width:751px){.sidebar nav{margin-bottom:12px}}
+@media(max-width:750px){
+ .sidebar,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar{gap:8px;padding:10px;border-right:0;border-bottom:1px solid var(--shell-edge);box-shadow:none}
+ .brand,:root[data-graphical-style]:not([data-graphical-style=default]) .brand{grid-column:1/-1;min-height:48px;padding:3px;border-width:8px}
+ .language-switch{margin:0}
+ .sidebar nav{display:flex;gap:4px;padding:4px;margin:0;border-width:8px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--shell-edge) var(--shell-well);scroll-padding:6px}
+ .sidebar nav .nav,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar nav .nav{grid-template-columns:16px auto auto;flex:0 0 auto;width:auto;min-height:44px;padding:8px 10px;white-space:nowrap}
+ .sidebar-bottom{grid-column:1/-1;grid-row:4;grid-template-columns:repeat(2,minmax(0,1fr));margin:0;padding:3px;border-width:8px}
+ .sidebar-bottom>a{grid-column:1/-1;padding:2px 7px 5px}
+ .sidebar-bottom .sidebar-settings,.sidebar-bottom #sidebar-updates{min-height:40px;padding:6px 7px;grid-column:auto;grid-row:auto;text-align:left}
+}
+@media(forced-colors:active){.sidebar,.sidebar nav,.sidebar .nav,.sidebar .nav.active,.sidebar-bottom,.brand,:root[data-graphical-style] :is(.sidebar,.sidebar .nav,.sidebar .nav.active,.brand){border-image:none;background-image:none;box-shadow:none}.sidebar .nav.active{outline:1px solid Highlight;outline-offset:-3px}.sidebar .nav:after,.brand:before{display:none}}

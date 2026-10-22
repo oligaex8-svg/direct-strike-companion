@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),checks=[],calls=[];
+const id='2-S2-1-123',self='2-S2-1-99';
+const context=vm.createContext({state:{library:{settings:{selfIds:[self]},marks:[{id,name:'Pangu',list:'losers',note:'Keep this private note'}],matches:[{hash:'game',players:[{id,name:'Pangu'},{id:self,name:'Me'}]}],siteLookups:{'name:EU:pangu':{status:'Candidates',profiles:[{profileId:'42',name:'Pangu (Pangú)',region:'EU',rating:3000,checked:'2026-10-10'}]}}},lobby:{region:'EU'}},document:{addEventListener(){},querySelectorAll(){return[];},getElementById(){return{open:false};}},esc:s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'),num:n=>n??'—',findPlayer:()=>null,regionRating:()=>null,api:async(url,data)=>{calls.push({url,data});},refresh:async()=>{},renderLibrary(){},toast(){},siteRatingStatus:()=>'',date:s=>s,time:s=>s});
+for(const file of ['site-data.js','replays.js','sound-library.js','lobby.js'])vm.runInContext(fs.readFileSync(path.join(root,'wwwroot',file),'utf8'),context);
+const run=code=>vm.runInContext(code,context);
+assert.match(run(`liveLobbyRatings('${id}',{id:'${id}',name:'Pangu'})`),/<strong>3000<\/strong>/);checks.push('A known replay player immediately displays a numeric name-cache rating before native lookup completes');
+assert.match(run(`replayPlayerRating({id:'${id}',name:'Pangu'})`),/<strong>3000<\/strong>/);checks.push('Replay names reuse the same regional cached rating');
+assert.equal(run("siteLookupForName('Pangú','EU').profiles.length"),1);checks.push('Current and complete legacy site nicknames share the cached candidates');
+assert.equal(run("siteLookupForName('Pangu','Americas').profiles.length"),0);checks.push('Known region never borrows an account from another region');
+assert.match(run(`replayQuickListButtons({id:'${id}',name:'Pangu'})`),/data-quick-player-list="friends"/);assert.doesNotMatch(run(`replayQuickListButtons({id:'${id}',name:'Pangu'})`),/blocked/);assert.equal(run(`replayQuickListButtons({id:'${self}',name:'Me'})`),'');checks.push('Direct Friends/Losers actions appear for other players without a Blocked action');
+(async()=>{
+ await run(`quickPlayerList('${id}','friends')`);
+ assert.deepEqual(JSON.parse(JSON.stringify(calls)),[{url:'mark/list',data:{id,name:'Pangu',list:'friends'}}]);
+ assert.equal(run('state.library.marks[0].list'),'friends');assert.equal(run('state.library.marks[0].note'),'Keep this private note');checks.push('One direct click saves the list, preserves the private note and immediately updates selected state');
+ await run(`quickPlayerList('${id}','friends')`);assert.equal(calls.length,1);checks.push('Clicking the already selected list makes no duplicate request');
+ calls.length=0;context.api=async()=>{throw new Error('Offline');};await run(`quickPlayerList('${id}','losers')`);assert.equal(run('state.library.marks[0].list'),'friends');assert.equal(run('quickPlayerListPending.size'),0);checks.push('A failed save leaves the previous list intact and releases the button');
+ const result={success:true,checks};fs.writeFileSync(path.join(__dirname,'grouped-rating-ui-tests.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+})().catch(error=>{console.error(error);process.exitCode=1;});

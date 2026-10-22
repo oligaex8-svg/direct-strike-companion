@@ -1,0 +1,45 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),checks=[];
+const eu='2-S2-1-7408040',us='1-S2-1-13373014',kr='3-S2-1-99';
+const group={key:'sc2-account:416014729',canAutoLink:true,evidence:'Local folder fixture',warnings:[],profiles:[
+ {id:eu,region:'EU',name:'EuropeNick',nameSource:'Imported replay'},
+ {id:us,region:'Americas',name:'AmericaNick',nameSource:'SC2 profile shortcut'}
+]};
+const rating=(name,value)=>({profileName:name,value,url:'https://ds-rating.com/fixture/'+name});
+const library={ownAccountGroups:[group],settings:{autoDetectSelf:true},ratings:{[eu]:{eu:rating('eu-profile',2500)},[us]:{americas:rating('us-profile',2300)}}};
+const context=vm.createContext({state:{library},esc:s=>String(s??''),num:n=>n??'—',findPlayer:id=>group.profiles.find(p=>p.id===id)});
+vm.runInContext(fs.readFileSync(path.join(root,'wwwroot/player-names.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(root,'wwwroot/own-accounts.js'),'utf8'),context);
+const run=expression=>vm.runInContext(expression,context);
+const check=(expression,description)=>{assert.equal(run(expression),true,description);checks.push(description);};
+context.eu=eu;context.us=us;
+check('ratingTargetId(us,"EU")===eu && ratingTargetId(eu,"Americas")===us','Own ratings route to the corresponding regional identity');
+check('ownRegionalRating(eu,"EU").value===2500 && ownRegionalRating(eu,"Americas").value===2300 && ownRegionalRating(us,"EU").value===2500','Both own profiles show the same regional pair with independent values');
+check('ratingTargetId("unrelated","EU")==="unrelated" && ownRegionalRating("unrelated","EU")===null','Other players never inherit an own-account link');
+check('ownAccountPanel(ownAccountGroups()[0]).includes("EuropeNick") && ownAccountPanel(ownAccountGroups()[0]).includes("AmericaNick")','Different regional nicknames display side by side');
+check('groupedLobbyCandidates([{id:eu},{id:us}]).length===1','Same-name own regional candidates form one local account group');
+check('groupedLobbyCandidates([{id:eu},{id:us},{id:"other",name:"EuropeNick"}]).length===2','Unrelated same-name player remains a separate lobby candidate');
+check('!/<button(?![^>]*type="button")/.test(ownAccountPanel(ownAccountGroups()[0]))','Account panel buttons do not submit settings form');
+group.canAutoLink=false;
+check('ratingTargetId(eu,"Americas")===eu && groupedLobbyCandidates([{id:eu},{id:us}]).length===2','Conflicted local groups never condense identities or route ratings');
+group.canAutoLink=true;
+library.ratings[eu].americas=rating('legacy-americas',2100);delete library.ratings[us].americas;
+check('ownRegionalRating(us,"Americas").value===2100 && ratingTargetId(us,"Americas")===eu','An existing cross-region link remains visible and actions retain its storage identity');
+check('ownRatingSearchName(eu,"Americas")==="AmericaNick"','Legacy storage identity still searches the correct regional nickname');
+delete library.ratings[eu].americas;
+check('ownRegionalRating(us,"Americas")===null && ratingTargetId(eu,"Americas")===us','Unlinking an earlier slot permits a fresh link at the regional identity without resurrection');
+library.ratings[us].americas=rating('us-profile',2300);library.ratings[eu].americas=rating('legacy-americas',2100);
+check('ownRegionalRating(eu,"Americas").value===2300 && ownEarlierRatings(ownAccountGroups()[0]).includes("legacy-americas")','Canonical rating is preferred while other saved links remain available for review');
+check('ownEarlierRatings(ownAccountGroups()[0]).includes(`data-unlink-rating="${eu}"`) && ownEarlierRatings(ownAccountGroups()[0]).includes(`data-refresh-rating="${eu}"`)','Earlier-link refresh and unlink actions target the actual stored slot');
+group.profiles.push({id:kr,region:'Korea',name:'ThirdNick',nameSource:'Imported replay'});
+library.ratings[kr]={americas:rating('second-legacy',2000)};delete library.ratings[us].americas;
+check('ownRegionalRating(us,"Americas")===null && ownEarlierRatings(ownAccountGroups()[0]).includes("legacy-americas") && ownEarlierRatings(ownAccountGroups()[0]).includes("second-legacy")','Multiple earlier links are surfaced without guessing which one represents the new regional profile');
+check('ownRegionalRating(ownAccountGroups()[0].profiles[2].id,"Korea")===null','Unsupported rating regions never borrow an Americas value');
+vm.runInContext(fs.readFileSync(path.join(root,'wwwroot/site-data.js'),'utf8'),context);
+library.siteLookups={[eu]:{status:'Name match',profiles:[{profileId:'auto-eu',region:'EU',rating:7600}]},[us]:{status:'Name match',profiles:[{profileId:'auto-us',region:'Americas',rating:7000}]}};
+check('ownRegionalRating(eu,"EU").value===2500','A selected profile takes precedence over an automatic site match');
+library.ratings={};
+check('ownRegionalRating(us,"EU").value===7600 && ownRegionalRating(eu,"Americas").value===7000','Automatic ratings use the correct own sibling identity and separate regional values');
+check('ownRegionalRating("unrelated","EU")===null','Automatic own ratings never transfer to an unrelated player');
+const result={success:true,checks};fs.writeFileSync(path.join(__dirname,'own-accounts-ui-tests.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

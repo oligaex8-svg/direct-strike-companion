@@ -1,0 +1,153 @@
+/* SC2 command-panel composition, not a frame around every statistic.
+   The page header and primary work areas carry the faction's construction.
+   Data inside shares aligned columns, quiet separators and familiar controls.
+   Profile: commander + subordinate roster on the left; account telemetry on
+   the right. Small windows stack the same reading order without smaller type. */
+.page-head{padding:10px 12px;margin-bottom:12px;border:1px solid var(--line);background:var(--surface);min-height:54px}
+.page-head h1,html[lang=ru] .page-head h1{font-size:23px;letter-spacing:0;line-height:1.2}
+.page-head .page-heading>p[hidden]{display:none}
+.profile-intro{margin:0 0 10px;align-items:center}
+.profile-intro h3{font-size:20px}
+.profile-main-grid{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(270px,.95fr);align-items:start;gap:16px;padding:14px;border:1px solid var(--line);background:var(--surface)}
+.profile-commanders{min-width:0}
+.profile-overview{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;border-left:1px solid var(--line);padding-left:14px}
+.personal-profile .profile-results{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px;padding:0 0 10px;border:0;border-bottom:1px solid var(--line);background:transparent}
+.profile-results>.profile-kicker{grid-column:1/-1;font-size:12px;letter-spacing:0;margin-bottom:2px}
+.personal-profile .profile-results>strong{grid-column:1;grid-row:2/4;font-size:32px;line-height:1.15;margin:0;align-self:center}
+.profile-results>div{align-self:end;font-size:12px}
+.profile-results p{margin:0;font-size:12px;line-height:1.4}
+.profile-region-grid{display:grid;grid-template-columns:minmax(0,1fr);margin:0;gap:10px}
+.profile-region{padding:0 0 10px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.profile-region:last-child{padding-bottom:0;border-bottom:0}
+.profile-region h3{font-size:13px;padding:4px 0;margin:0 0 5px;color:var(--text)}
+.profile-account-head{margin-bottom:6px;gap:8px;background:none}
+.profile-account-head .profile-text-action{font-size:12px;min-height:26px}
+.profile-favourite{padding:0;border:0;border-radius:0;background:transparent;min-height:0;box-shadow:none}
+.profile-favourite-top{padding:0 0 8px;border-bottom:1px solid var(--line)}
+.profile-favourite-top .profile-kicker{font-size:13px;letter-spacing:0;text-transform:none;color:var(--text)}
+.profile-favourite-main{padding:12px 0;gap:10px;flex-wrap:wrap}
+.profile-portrait-frame{padding:3px}
+.profile-portrait-frame .commander-portrait{width:58px;height:58px}
+.profile-favourite-name h3{font-size:23px;margin-bottom:5px}
+.profile-favourite-name{flex-basis:130px}
+.profile-favourite-name p{font-size:12px;line-height:1.45}
+.profile-favourite-rate strong{font-size:26px}
+.profile-favourite-bottom{padding:8px 0;gap:8px}
+.profile-favourite-bottom small{display:none}
+.profile-favourite-bottom .profile-text-action{font-size:12px;min-height:26px}
+.profile-best-heading{margin:10px 0 4px;padding:7px 0;border-top:1px solid var(--line)}
+.profile-best-heading h3{font-size:13px}
+.profile-best-heading>span{display:none}
+.profile-best-grid{grid-template-columns:minmax(0,1fr);gap:0}
+.profile-best-card{display:grid;grid-template-columns:minmax(0,1fr) auto 28px;gap:2px 10px;align-items:center;padding:8px 0;min-height:0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.profile-best-identity{grid-column:1;grid-row:1;gap:8px}
+.profile-best-identity .commander-portrait{width:30px;height:30px}
+.profile-best-identity h4{font-size:13px}
+.profile-best-rate{grid-column:2;grid-row:1;font-size:19px;margin:0}
+.profile-best-card p{grid-column:1;grid-row:2;padding-left:38px;font-size:12px;line-height:1.4;margin:0}
+.profile-best-card>small{grid-column:2;grid-row:2;font-size:12px;line-height:1.4}
+.profile-best-card .profile-text-action{grid-column:3;grid-row:1/3;min-height:34px;min-width:28px;padding:0;font-size:0;justify-content:center;margin:0}
+.profile-best-card .profile-text-action span{font-size:17px}
+.profile-best-empty p{padding-left:0}
+.profile-last-played{gap:6px 10px;padding:8px 0 0;font-size:12px}
+.profile-last-played .profile-text-action{min-height:26px}
+.personal-profile>.profile-average-grid{gap:0;margin:12px 0;border:1px solid var(--line);background:var(--surface)}
+.profile-average-grid section{padding:10px 12px;border:0;border-right:1px solid var(--line);border-radius:0;background:transparent}
+.profile-average-grid section:last-child{border-right:0}
+.profile-average-grid section>strong{font-size:21px;margin:3px 0}
+
+/* Faction materials form a hierarchy: outer panel, header rail, data inset. */
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar:after{display:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar{border-right:1px solid var(--line)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .brand{padding-bottom:12px;border-bottom:1px solid var(--console-frame)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .nav{border-radius:2px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .nav.active{padding:7px 10px;border:1px solid var(--console-frame);border-image:var(--console-art) 32 / 6px / 0 stretch;border-radius:2px;background:var(--raised);box-shadow:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .page-head{padding:10px 12px;border:1px solid var(--console-frame);border-image:var(--console-art) 32 / 10px / 0 stretch;background-image:linear-gradient(90deg,color-mix(in srgb,var(--console-shell) 45%,transparent),var(--console-shell)),var(--console-material);background-size:auto,256px 64px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-main-grid{border-image:var(--console-art) 32 / 11px / 0 stretch;background:var(--surface)}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-region,.profile-results,.profile-favourite,.profile-best-card,.profile-average-grid section,.combat-card,.mark-card,.match-player,.own-account){border-image:none;background-image:none;border-radius:0}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-region,.profile-results,.profile-favourite,.profile-best-card,.profile-average-grid section){background-color:transparent}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-account-head{background:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-favourite{border:0}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-favourite-top{background-image:linear-gradient(90deg,color-mix(in srgb,var(--console-frame) 16%,transparent),transparent);padding:6px 8px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .profile-region h3{color:var(--accent);border-bottom:1px solid var(--line)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .live-team-group:before{height:30px;bottom:auto;border-image-width:6px}
+:root[data-graphical-style]:not([data-graphical-style=default]) .live-team-head{background-image:linear-gradient(90deg,color-mix(in srgb,var(--console-shell) 65%,transparent),var(--console-shell)),var(--console-material)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .button:not(.ghost){border-image:var(--console-art) 32 / 6px / 0 stretch}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.table-wrap,.sounds-assigned,.sounds-recordings,.pick-recommendation,.roster-panel){border-image-width:8px}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog{border-image:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog:after{content:'';position:absolute;inset:0;z-index:3;border:1px solid transparent;border-image:var(--console-art) 32 / 10px / 0 stretch;pointer-events:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog .dialog-head{border-bottom:1px solid var(--console-frame);background:var(--raised)}
+
+@container(max-width:679px){
+ .profile-main-grid{grid-template-columns:minmax(0,1fr);gap:12px;padding:12px}
+ .profile-overview{border-left:0;border-top:1px solid var(--line);padding:12px 0 0;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .profile-overview>.profile-results{grid-column:1/-1}
+ .profile-region-grid{display:contents}
+ .profile-region{padding-bottom:0;border-bottom:0}
+}
+@container(max-width:440px){
+ .profile-overview{grid-template-columns:minmax(0,1fr)}
+ .profile-region{padding-bottom:10px;border-bottom:1px solid var(--line)}
+ .profile-favourite-rate{margin-left:auto}
+ .profile-average-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .profile-average-grid section{border-bottom:1px solid var(--line)}
+ .profile-average-grid section:nth-child(2n){border-right:0}
+ .profile-average-grid section:nth-last-child(-n+2){border-bottom:0}
+}
+@media(max-width:750px){.page-head{flex-wrap:wrap;gap:8px}.page-head h1,html[lang=ru] .page-head h1{font-size:22px}.page-head .header-actions{margin-left:auto}}
+/* A joined menu console, rather than independent web cards. Frame pixels stay
+   on the outer work area; all data surfaces inside are recessed and unframed. */
+@font-face{font-family:SC2Menu;src:url('/themes/Michroma-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+:root{scrollbar-gutter:stable;--shell-frame-size:22px;--shell-frame-paint:14px;--shell-safe-space:8px;--shell-head-size:76px;--menu-frame:url('/themes/menu-frame.png');--work-frame:var(--menu-frame);--menu-button:url('/themes/menu-button.svg');--shell-edge:#365f7f;--shell-light:#8fcbea;--shell-title:#c9ebff;--shell-well:#05101c;--shell-panel:#0a1929;--shell-header:#0b2943}
+:root[data-graphical-style=default]{--bg:#060d17;--surface:#0a1929;--raised:#10273d;--line:#284157;--muted:#a9bfd0;--accent:#85cfee;--console-shell:#071421;--console-frame:#6da5c7}
+:root[data-graphical-style=terran]{--bg:#080e10;--surface:#101c1e;--raised:#1c3030;--line:#334a4a;--console-shell:#0a1417;--shell-edge:#56696a;--shell-light:#b2ccbd;--shell-title:#d3e6db;--shell-well:#080f12;--shell-panel:#101c1e;--shell-header:#172c2c;--work-frame:var(--console-art)}
+:root[data-graphical-style=protoss]{--bg:#090e18;--surface:#111b2a;--raised:#202d40;--line:#4d463b;--console-shell:#0c1522;--shell-edge:#8c754a;--shell-light:#d5c38c;--shell-title:#f5dfac;--shell-well:#080f1c;--shell-panel:#111b2a;--shell-header:#1c2940;--work-frame:var(--console-art)}
+:root[data-graphical-style=zerg]{--bg:#100c12;--surface:#1b1420;--raised:#302333;--line:#50394c;--console-shell:#140f19;--shell-edge:#7f5c72;--shell-light:#c5a1b3;--shell-title:#edcfb7;--shell-well:#100b15;--shell-panel:#1b1420;--shell-header:#2a1c2d;--work-frame:var(--console-art)}
+body{background:var(--bg)}
+main{padding:14px 16px;max-width:1800px}
+.sidebar,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar{background:linear-gradient(90deg,#0005,transparent 14%,#0005),var(--console-shell);border-right:1px solid var(--shell-edge);padding:16px 12px}
+.sidebar:before,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar:before{display:none}
+.brand,:root[data-graphical-style]:not([data-graphical-style=default]) .brand{padding-bottom:14px;border-bottom:1px solid var(--shell-edge);font-family:SC2Menu,'Segoe UI',sans-serif;font-size:10px;line-height:1.6;letter-spacing:.02em;color:var(--shell-title)}
+.brand span:not(.brand-mark){font-family:'Segoe UI',sans-serif;font-size:10px;letter-spacing:.14em}
+.sidebar nav{padding:5px;background:var(--shell-well);border:1px solid var(--line);box-shadow:inset 0 2px 5px #0008}
+.sidebar .nav,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav{min-height:35px;margin:2px 0;padding:7px 9px;border:1px solid transparent;border-image:none;border-radius:0;box-shadow:none;font-size:13px;background:none;color:var(--muted)}
+.sidebar .nav:hover{background:var(--shell-panel);color:var(--text)}
+.sidebar .nav.active,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active{border:1px solid var(--shell-edge);border-image:var(--menu-button) 12 fill / 6px / 0 stretch;background:linear-gradient(180deg,var(--shell-header),var(--shell-well));color:var(--shell-title);box-shadow:none;padding:7px 9px}
+.page-head,:root[data-graphical-style]:not([data-graphical-style=default]) .page-head{position:relative;padding:8px var(--shell-safe-space) 10px;min-height:var(--shell-head-size);margin-bottom:0;border-style:solid;border-color:var(--shell-edge);border-width:var(--shell-frame-size) var(--shell-frame-size) 0;border-image:var(--work-frame) 24 / var(--shell-frame-paint) var(--shell-frame-paint) 0 / 0 stretch;background:linear-gradient(180deg,transparent calc(100% - 18px),var(--shell-well)),linear-gradient(90deg,var(--shell-header),var(--console-shell) 72%);border-radius:0;isolation:isolate}
+:root[data-graphical-style]:not([data-graphical-style=default]) .page-head{border-image-slice:32}
+.page-head:before{content:'';position:absolute;inset:0;z-index:-1;background:url('/themes/menu-hex.png') center right/auto 128px no-repeat;opacity:.15;pointer-events:none}
+.page-head,.profile-page .page-head,.pick-page .page-head,main[data-view=lobby]>.page-head{margin-bottom:0}
+.page-head h1,html[lang=ru] .page-head h1{font:400 18px/1.4 SC2Menu,'Segoe UI',sans-serif;letter-spacing:.035em;text-transform:uppercase;color:var(--shell-title)}
+html[lang=ru] .page-head h1{font-family:'Segoe UI',sans-serif;font-size:21px;font-weight:600}
+.workspace{padding:10px var(--shell-safe-space) var(--shell-safe-space);gap:10px;background:var(--shell-well);border-style:solid;border-color:var(--shell-edge);border-width:0 var(--shell-frame-size) var(--shell-frame-size);border-image:var(--work-frame) 24 / 0 var(--shell-frame-paint) var(--shell-frame-paint) / 0 stretch}
+:root[data-graphical-style]:not([data-graphical-style=default]) .workspace{border-image-slice:32}
+.profile-main-grid,:root[data-graphical-style]:not([data-graphical-style=default]) .profile-main-grid{border:0;border-image:none;padding:0;background:transparent}
+.profile-commanders{background:var(--shell-panel);padding:12px;border:1px solid var(--line);box-shadow:inset 0 1px 4px #0006}
+.profile-overview{border:0;padding:0;gap:12px}
+.personal-profile .profile-results,.profile-region,:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-results,.profile-region){background:var(--shell-panel);padding:10px 12px;border:1px solid var(--line);box-shadow:inset 0 1px 4px #0006}
+.profile-region-grid{gap:8px}
+.profile-commanders,.personal-profile .profile-results,.profile-region{border-radius:0}
+.profile-region:last-child{padding:10px 12px;border-bottom:1px solid var(--line)}
+.profile-region h3,:root[data-graphical-style]:not([data-graphical-style=default]) .profile-region h3{margin:-10px -12px 8px;padding:7px 12px;background:var(--shell-header);border-bottom:1px solid var(--line);color:var(--shell-title)}
+.profile-favourite-top,:root[data-graphical-style]:not([data-graphical-style=default]) .profile-favourite-top{margin:-12px -12px 0;padding:8px 12px;background:var(--shell-header);border-bottom:1px solid var(--line)}
+.profile-favourite-top .profile-kicker{color:var(--shell-title)}
+.profile-best-heading{margin-top:6px;padding-top:9px}
+.profile-page-actions .button{min-height:32px;padding:6px 9px}
+.toolbar,:root[data-graphical-style]:not([data-graphical-style=default]) .toolbar{border:1px solid var(--line);border-radius:0;background:var(--shell-panel);padding:7px}
+.table-wrap,:root[data-graphical-style]:not([data-graphical-style=default]) .table-wrap{border:1px solid var(--line);border-image:none;border-radius:0;background:var(--shell-well)}
+thead th,.player-table thead th,:root[data-graphical-style]:not([data-graphical-style=default]) .player-table thead th{background:var(--shell-header);color:var(--shell-title)}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--shell-panel) 65%,transparent)}
+.live-team-group{border-width:1px;border-radius:0;background:var(--shell-well)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .live-team-group:before{display:none}
+.live-team-head,:root[data-graphical-style]:not([data-graphical-style=default]) .live-team-head{background:var(--shell-header);border-bottom:1px solid var(--line)}
+.live-lobby .live-slot,:root[data-graphical-style]:not([data-graphical-style=default]) .live-lobby .live-slot{background:var(--shell-panel)}
+.live-lobby .live-slot-empty{background:var(--shell-well)}
+.button,.filter,.page-tools>summary,.mark-button,:root[data-graphical-style]:not([data-graphical-style=default]) :is(.button,.filter,.page-tools>summary,.mark-button){border:1px solid var(--console-frame);border-image:var(--menu-button) 12 / 6px / 0 stretch;border-radius:0;background:linear-gradient(180deg,var(--shell-header),var(--shell-well));color:var(--text);box-shadow:none}
+.button:not(.ghost),:root[data-graphical-style]:not([data-graphical-style=default]) .button:not(.ghost){border-image:var(--menu-button) 12 / 6px / 0 stretch;background:linear-gradient(180deg,var(--shell-header),var(--shell-well));background-color:var(--shell-header);color:var(--text);box-shadow:none}
+.button:hover,.filter:hover,.page-tools>summary:hover{background:var(--raised)}
+dialog,:root[data-graphical-style]:not([data-graphical-style=default]) dialog{background:var(--shell-well);border:12px solid var(--shell-edge);border-image:var(--work-frame) 24 / 12px / 0 stretch;border-radius:0}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog:after{display:none}
+dialog .dialog-head,:root[data-graphical-style]:not([data-graphical-style=default]) dialog .dialog-head{background:var(--shell-header);border-bottom:1px solid var(--line)}
+@media(max-width:750px){:root{--shell-frame-size:16px;--shell-frame-paint:14px;--shell-safe-space:6px;--shell-head-size:78px}main{padding:10px 8px}.page-head h1,html[lang=ru] .page-head h1{font-size:17px}.sidebar,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar{padding:10px}.sidebar .nav,:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav{min-height:34px}.profile-overview{padding:0}.profile-main-grid{padding:0}}
+@media(forced-colors:active){.workspace,.page-head,.sidebar,dialog,:root[data-graphical-style] :is(.workspace,.page-head,.profile-main-grid,.nav.active,.button,dialog){border-image:none;background-image:none;box-shadow:none}.page-head:before{display:none}}
+@supports not (scrollbar-gutter:stable){html{overflow-y:scroll}}

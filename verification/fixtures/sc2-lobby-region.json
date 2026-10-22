@@ -1,0 +1,1241 @@
+{
+    "rosterNames":  [
+                        "Ваня Кузьмич",
+                        "T Knight",
+                        "Dagasman"
+                    ],
+    "rosterTeams":  [
+                        1,
+                        1,
+                        1
+                    ],
+    "region":  "Americas",
+    "screenReadings":  [
+                           {
+                               "lines":  [
+                                             {
+                                                 "text":  "CAMPAIGN",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  34,
+                                                                   "height":  17,
+                                                                   "width":  182,
+                                                                   "text":  "CAMPAIGN",
+                                                                   "x":  135
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Direct Strike o",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  110,
+                                                                   "height":  23,
+                                                                   "width":  82,
+                                                                   "text":  "Direct",
+                                                                   "x":  119
+                                                               },
+                                                               {
+                                                                   "y":  110,
+                                                                   "height":  23,
+                                                                   "width":  79,
+                                                                   "text":  "Strike",
+                                                                   "x":  213
+                                                               },
+                                                               {
+                                                                   "y":  112,
+                                                                   "height":  18,
+                                                                   "width":  18,
+                                                                   "text":  "o",
+                                                                   "x":  313
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Horde",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  206,
+                                                                   "height":  13,
+                                                                   "width":  73,
+                                                                   "text":  "Horde",
+                                                                   "x":  128
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "CO-OP",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  34,
+                                                                   "height":  17,
+                                                                   "width":  105,
+                                                                   "text":  "CO-OP",
+                                                                   "x":  394
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "37",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  28,
+                                                                   "height":  13,
+                                                                   "width":  21,
+                                                                   "text":  "37",
+                                                                   "x":  2517
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Bay-IA KY3bMhH(Host)",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  277,
+                                                                   "height":  14,
+                                                                   "width":  41,
+                                                                   "text":  "Bay-IA",
+                                                                   "x":  221
+                                                               },
+                                                               {
+                                                                   "y":  277,
+                                                                   "height":  18,
+                                                                   "width":  128,
+                                                                   "text":  "KY3bMhH(Host)",
+                                                                   "x":  270
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "4",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  304,
+                                                                   "height":  9,
+                                                                   "width":  8,
+                                                                   "text":  "4",
+                                                                   "x":  186
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "T Knight",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  348,
+                                                                   "height":  14,
+                                                                   "width":  11,
+                                                                   "text":  "T",
+                                                                   "x":  221
+                                                               },
+                                                               {
+                                                                   "y":  348,
+                                                                   "height":  18,
+                                                                   "width":  52,
+                                                                   "text":  "Knight",
+                                                                   "x":  234
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Dagasman",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  443,
+                                                                   "height":  18,
+                                                                   "width":  91,
+                                                                   "text":  "Dagasman",
+                                                                   "x":  221
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Alliance",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  537,
+                                                                   "height":  13,
+                                                                   "width":  88,
+                                                                   "text":  "Alliance",
+                                                                   "x":  129
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "WAITING FOR HOST",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  117,
+                                                                   "text":  "WAITING",
+                                                                   "x":  159
+                                                               },
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  53,
+                                                                   "text":  "FOR",
+                                                                   "x":  284
+                                                               },
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  74,
+                                                                   "text":  "HOST",
+                                                                   "x":  346
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Select",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  363,
+                                                                   "height":  13,
+                                                                   "width":  51,
+                                                                   "text":  "Select",
+                                                                   "x":  1220
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Settings",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  206,
+                                                                   "height":  17,
+                                                                   "width":  100,
+                                                                   "text":  "Settings",
+                                                                   "x":  1427
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Mode",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  273,
+                                                                   "height":  13,
+                                                                   "width":  48,
+                                                                   "text":  "Mode",
+                                                                   "x":  1439
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Commander LJnits",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  343,
+                                                                   "height":  13,
+                                                                   "width":  106,
+                                                                   "text":  "Commander",
+                                                                   "x":  1439
+                                                               },
+                                                               {
+                                                                   "y":  343,
+                                                                   "height":  13,
+                                                                   "width":  44,
+                                                                   "text":  "LJnits",
+                                                                   "x":  1550
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Game Server",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  413,
+                                                                   "height":  13,
+                                                                   "width":  49,
+                                                                   "text":  "Game",
+                                                                   "x":  1439
+                                                               },
+                                                               {
+                                                                   "y":  413,
+                                                                   "height":  13,
+                                                                   "width":  58,
+                                                                   "text":  "Server",
+                                                                   "x":  1493
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "8V3 Commanders",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  276,
+                                                                   "height":  13,
+                                                                   "width":  32,
+                                                                   "text":  "8V3",
+                                                                   "x":  1671
+                                                               },
+                                                               {
+                                                                   "y":  276,
+                                                                   "height":  13,
+                                                                   "width":  105,
+                                                                   "text":  "Commanders",
+                                                                   "x":  1711
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Commanders",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  345,
+                                                                   "height":  13,
+                                                                   "width":  105,
+                                                                   "text":  "Commanders",
+                                                                   "x":  1671
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Eastern I-Jnited States",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  400,
+                                                                   "height":  13,
+                                                                   "width":  63,
+                                                                   "text":  "Eastern",
+                                                                   "x":  1646
+                                                               },
+                                                               {
+                                                                   "y":  400,
+                                                                   "height":  13,
+                                                                   "width":  52,
+                                                                   "text":  "I-Jnited",
+                                                                   "x":  1716
+                                                               },
+                                                               {
+                                                                   "y":  400,
+                                                                   "height":  13,
+                                                                   "width":  55,
+                                                                   "text":  "States",
+                                                                   "x":  1774
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "[93ms)",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  424,
+                                                                   "height":  17,
+                                                                   "width":  59,
+                                                                   "text":  "[93ms)",
+                                                                   "x":  1647
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Add A.I.",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  13,
+                                                                   "width":  31,
+                                                                   "text":  "Add",
+                                                                   "x":  2058
+                                                               },
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  13,
+                                                                   "width":  23,
+                                                                   "text":  "A.I.",
+                                                                   "x":  2095
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Direct Strike",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  612,
+                                                                   "height":  22,
+                                                                   "width":  74,
+                                                                   "text":  "Direct",
+                                                                   "x":  1961
+                                                               },
+                                                               {
+                                                                   "y":  612,
+                                                                   "height":  22,
+                                                                   "width":  74,
+                                                                   "text":  "Strike",
+                                                                   "x":  2045
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Tya",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  651,
+                                                                   "height":  18,
+                                                                   "width":  33,
+                                                                   "text":  "Tya",
+                                                                   "x":  1961
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Add Player",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  13,
+                                                                   "width":  31,
+                                                                   "text":  "Add",
+                                                                   "x":  2286
+                                                               },
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  17,
+                                                                   "width":  48,
+                                                                   "text":  "Player",
+                                                                   "x":  2324
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "MORE",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  714,
+                                                                   "height":  12,
+                                                                   "width":  45,
+                                                                   "text":  "MORE",
+                                                                   "x":  2334
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "MAKE PUBLIC",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  78,
+                                                                   "text":  "MAKE",
+                                                                   "x":  550
+                                                               },
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  97,
+                                                                   "text":  "PUBLIC",
+                                                                   "x":  636
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "aurr",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  63,
+                                                                   "text":  "aurr",
+                                                                   "x":  963
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Bay-IA KY3bMhH has joined the lobby",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  14,
+                                                                   "width":  41,
+                                                                   "text":  "Bay-IA",
+                                                                   "x":  1431
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  18,
+                                                                   "width":  72,
+                                                                   "text":  "KY3bMhH",
+                                                                   "x":  1480
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  14,
+                                                                   "width":  29,
+                                                                   "text":  "has",
+                                                                   "x":  1559
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  18,
+                                                                   "width":  51,
+                                                                   "text":  "joined",
+                                                                   "x":  1593
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  14,
+                                                                   "width":  26,
+                                                                   "text":  "the",
+                                                                   "x":  1651
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  18,
+                                                                   "width":  45,
+                                                                   "text":  "lobby",
+                                                                   "x":  1684
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "You joined [Lobby]",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1301,
+                                                                   "height":  14,
+                                                                   "width":  32,
+                                                                   "text":  "You",
+                                                                   "x":  1432
+                                                               },
+                                                               {
+                                                                   "y":  1301,
+                                                                   "height":  18,
+                                                                   "width":  51,
+                                                                   "text":  "joined",
+                                                                   "x":  1469
+                                                               },
+                                                               {
+                                                                   "y":  1301,
+                                                                   "height":  18,
+                                                                   "width":  62,
+                                                                   "text":  "[Lobby]",
+                                                                   "x":  1527
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Dagasman has joined the lobby",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  18,
+                                                                   "width":  91,
+                                                                   "text":  "Dagasman",
+                                                                   "x":  1431
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  14,
+                                                                   "width":  29,
+                                                                   "text":  "has",
+                                                                   "x":  1529
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  18,
+                                                                   "width":  51,
+                                                                   "text":  "joined",
+                                                                   "x":  1563
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  14,
+                                                                   "width":  26,
+                                                                   "text":  "the",
+                                                                   "x":  1621
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  18,
+                                                                   "width":  45,
+                                                                   "text":  "lobby",
+                                                                   "x":  1654
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Press Enter to chat or / for commands",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  48,
+                                                                   "text":  "Press",
+                                                                   "x":  1480
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  45,
+                                                                   "text":  "Enter",
+                                                                   "x":  1536
+                                                               },
+                                                               {
+                                                                   "y":  1399,
+                                                                   "height":  13,
+                                                                   "width":  16,
+                                                                   "text":  "to",
+                                                                   "x":  1588
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  36,
+                                                                   "text":  "chat",
+                                                                   "x":  1611
+                                                               },
+                                                               {
+                                                                   "y":  1402,
+                                                                   "height":  10,
+                                                                   "width":  16,
+                                                                   "text":  "or",
+                                                                   "x":  1654
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  6,
+                                                                   "text":  "/",
+                                                                   "x":  1676
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  23,
+                                                                   "text":  "for",
+                                                                   "x":  1687
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  93,
+                                                                   "text":  "commands",
+                                                                   "x":  1717
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "21",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  13,
+                                                                   "width":  19,
+                                                                   "text":  "21",
+                                                                   "x":  2469
+                                                               }
+                                                           ]
+                                             }
+                                         ],
+                               "language":  "en-GB"
+                           },
+                           {
+                               "lines":  [
+                                             {
+                                                 "text":  "CAMPAlGN",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  34,
+                                                                   "height":  17,
+                                                                   "width":  182,
+                                                                   "text":  "CAMPAlGN",
+                                                                   "x":  135
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Direct Strike о",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  110,
+                                                                   "height":  23,
+                                                                   "width":  82,
+                                                                   "text":  "Direct",
+                                                                   "x":  119
+                                                               },
+                                                               {
+                                                                   "y":  110,
+                                                                   "height":  23,
+                                                                   "width":  79,
+                                                                   "text":  "Strike",
+                                                                   "x":  213
+                                                               },
+                                                               {
+                                                                   "y":  112,
+                                                                   "height":  18,
+                                                                   "width":  18,
+                                                                   "text":  "о",
+                                                                   "x":  313
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Hopde",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  206,
+                                                                   "height":  13,
+                                                                   "width":  73,
+                                                                   "text":  "Hopde",
+                                                                   "x":  128
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Ваня",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  277,
+                                                                   "height":  14,
+                                                                   "width":  41,
+                                                                   "text":  "Ваня",
+                                                                   "x":  221
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "СО- ОР",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  34,
+                                                                   "height":  17,
+                                                                   "width":  56,
+                                                                   "text":  "СО-",
+                                                                   "x":  394
+                                                               },
+                                                               {
+                                                                   "y":  34,
+                                                                   "height":  17,
+                                                                   "width":  46,
+                                                                   "text":  "ОР",
+                                                                   "x":  453
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "37",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  28,
+                                                                   "height":  13,
+                                                                   "width":  21,
+                                                                   "text":  "37",
+                                                                   "x":  2517
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Select",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  363,
+                                                                   "height":  13,
+                                                                   "width":  51,
+                                                                   "text":  "Select",
+                                                                   "x":  1220
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Settings",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  206,
+                                                                   "height":  17,
+                                                                   "width":  100,
+                                                                   "text":  "Settings",
+                                                                   "x":  1427
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Mode",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  273,
+                                                                   "height":  13,
+                                                                   "width":  48,
+                                                                   "text":  "Mode",
+                                                                   "x":  1439
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Commandep Units",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  343,
+                                                                   "height":  13,
+                                                                   "width":  106,
+                                                                   "text":  "Commandep",
+                                                                   "x":  1439
+                                                               },
+                                                               {
+                                                                   "y":  343,
+                                                                   "height":  13,
+                                                                   "width":  44,
+                                                                   "text":  "Units",
+                                                                   "x":  1550
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Game Sewer•",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  413,
+                                                                   "height":  13,
+                                                                   "width":  49,
+                                                                   "text":  "Game",
+                                                                   "x":  1439
+                                                               },
+                                                               {
+                                                                   "y":  413,
+                                                                   "height":  13,
+                                                                   "width":  58,
+                                                                   "text":  "Sewer•",
+                                                                   "x":  1493
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Tknight",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  348,
+                                                                   "height":  18,
+                                                                   "width":  65,
+                                                                   "text":  "Tknight",
+                                                                   "x":  221
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Dagasman",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  443,
+                                                                   "height":  18,
+                                                                   "width":  91,
+                                                                   "text":  "Dagasman",
+                                                                   "x":  221
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Alliance",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  537,
+                                                                   "height":  13,
+                                                                   "width":  88,
+                                                                   "text":  "Alliance",
+                                                                   "x":  129
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "WAITING F-oa HOST",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  117,
+                                                                   "text":  "WAITING",
+                                                                   "x":  159
+                                                               },
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  53,
+                                                                   "text":  "F-oa",
+                                                                   "x":  284
+                                                               },
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  74,
+                                                                   "text":  "HOST",
+                                                                   "x":  346
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "3V3 Commarndeps",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  276,
+                                                                   "height":  13,
+                                                                   "width":  32,
+                                                                   "text":  "3V3",
+                                                                   "x":  1671
+                                                               },
+                                                               {
+                                                                   "y":  276,
+                                                                   "height":  13,
+                                                                   "width":  105,
+                                                                   "text":  "Commarndeps",
+                                                                   "x":  1711
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Commarndeps",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  345,
+                                                                   "height":  13,
+                                                                   "width":  105,
+                                                                   "text":  "Commarndeps",
+                                                                   "x":  1671
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Eastern United States",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  400,
+                                                                   "height":  13,
+                                                                   "width":  63,
+                                                                   "text":  "Eastern",
+                                                                   "x":  1646
+                                                               },
+                                                               {
+                                                                   "y":  400,
+                                                                   "height":  13,
+                                                                   "width":  52,
+                                                                   "text":  "United",
+                                                                   "x":  1716
+                                                               },
+                                                               {
+                                                                   "y":  400,
+                                                                   "height":  13,
+                                                                   "width":  55,
+                                                                   "text":  "States",
+                                                                   "x":  1774
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "[93ms]",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  424,
+                                                                   "height":  17,
+                                                                   "width":  59,
+                                                                   "text":  "[93ms]",
+                                                                   "x":  1647
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Add д].",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  13,
+                                                                   "width":  31,
+                                                                   "text":  "Add",
+                                                                   "x":  2058
+                                                               },
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  13,
+                                                                   "width":  23,
+                                                                   "text":  "д].",
+                                                                   "x":  2095
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "73",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  296,
+                                                                   "height":  25,
+                                                                   "width":  33,
+                                                                   "text":  "73",
+                                                                   "x":  2075
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Direct Strike",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  612,
+                                                                   "height":  22,
+                                                                   "width":  74,
+                                                                   "text":  "Direct",
+                                                                   "x":  1961
+                                                               },
+                                                               {
+                                                                   "y":  612,
+                                                                   "height":  22,
+                                                                   "width":  74,
+                                                                   "text":  "Strike",
+                                                                   "x":  2045
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "туа",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  651,
+                                                                   "height":  18,
+                                                                   "width":  33,
+                                                                   "text":  "туа",
+                                                                   "x":  1961
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Add Р[ауег",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  13,
+                                                                   "width":  31,
+                                                                   "text":  "Add",
+                                                                   "x":  2286
+                                                               },
+                                                               {
+                                                                   "y":  145,
+                                                                   "height":  17,
+                                                                   "width":  48,
+                                                                   "text":  "Р[ауег",
+                                                                   "x":  2324
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "моа€",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  714,
+                                                                   "height":  12,
+                                                                   "width":  45,
+                                                                   "text":  "моа€",
+                                                                   "x":  2334
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "МАКЕ РИВИС",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  78,
+                                                                   "text":  "МАКЕ",
+                                                                   "x":  550
+                                                               },
+                                                               {
+                                                                   "y":  1163,
+                                                                   "height":  13,
+                                                                   "width":  97,
+                                                                   "text":  "РИВИС",
+                                                                   "x":  636
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Ваня Кузьмич has joined the lobby",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  14,
+                                                                   "width":  41,
+                                                                   "text":  "Ваня",
+                                                                   "x":  1431
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  18,
+                                                                   "width":  72,
+                                                                   "text":  "Кузьмич",
+                                                                   "x":  1480
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  14,
+                                                                   "width":  29,
+                                                                   "text":  "has",
+                                                                   "x":  1559
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  18,
+                                                                   "width":  51,
+                                                                   "text":  "joined",
+                                                                   "x":  1593
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  14,
+                                                                   "width":  26,
+                                                                   "text":  "the",
+                                                                   "x":  1651
+                                                               },
+                                                               {
+                                                                   "y":  1273,
+                                                                   "height":  18,
+                                                                   "width":  45,
+                                                                   "text":  "lobby",
+                                                                   "x":  1684
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Уои joined [Lobby]",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1301,
+                                                                   "height":  14,
+                                                                   "width":  32,
+                                                                   "text":  "Уои",
+                                                                   "x":  1432
+                                                               },
+                                                               {
+                                                                   "y":  1301,
+                                                                   "height":  18,
+                                                                   "width":  51,
+                                                                   "text":  "joined",
+                                                                   "x":  1469
+                                                               },
+                                                               {
+                                                                   "y":  1301,
+                                                                   "height":  18,
+                                                                   "width":  62,
+                                                                   "text":  "[Lobby]",
+                                                                   "x":  1527
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Dagasman has joined the Iobby",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  18,
+                                                                   "width":  91,
+                                                                   "text":  "Dagasman",
+                                                                   "x":  1431
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  14,
+                                                                   "width":  29,
+                                                                   "text":  "has",
+                                                                   "x":  1529
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  18,
+                                                                   "width":  51,
+                                                                   "text":  "joined",
+                                                                   "x":  1563
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  14,
+                                                                   "width":  26,
+                                                                   "text":  "the",
+                                                                   "x":  1621
+                                                               },
+                                                               {
+                                                                   "y":  1329,
+                                                                   "height":  18,
+                                                                   "width":  45,
+                                                                   "text":  "Iobby",
+                                                                   "x":  1654
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "Press Enter to chat or / for commands",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  48,
+                                                                   "text":  "Press",
+                                                                   "x":  1480
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  45,
+                                                                   "text":  "Enter",
+                                                                   "x":  1536
+                                                               },
+                                                               {
+                                                                   "y":  1399,
+                                                                   "height":  13,
+                                                                   "width":  16,
+                                                                   "text":  "to",
+                                                                   "x":  1588
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  36,
+                                                                   "text":  "chat",
+                                                                   "x":  1611
+                                                               },
+                                                               {
+                                                                   "y":  1402,
+                                                                   "height":  10,
+                                                                   "width":  16,
+                                                                   "text":  "or",
+                                                                   "x":  1654
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  6,
+                                                                   "text":  "/",
+                                                                   "x":  1676
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  23,
+                                                                   "text":  "for",
+                                                                   "x":  1687
+                                                               },
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  14,
+                                                                   "width":  93,
+                                                                   "text":  "commands",
+                                                                   "x":  1717
+                                                               }
+                                                           ]
+                                             },
+                                             {
+                                                 "text":  "21",
+                                                 "words":  [
+                                                               {
+                                                                   "y":  1398,
+                                                                   "height":  13,
+                                                                   "width":  19,
+                                                                   "text":  "21",
+                                                                   "x":  2469
+                                                               }
+                                                           ]
+                                             }
+                                         ],
+                               "language":  "ru"
+                           }
+                       ],
+    "capture":  {
+                    "live":  false,
+                    "width":  2558,
+                    "height":  1438
+                }
+}
