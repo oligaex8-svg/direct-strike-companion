@@ -18,13 +18,13 @@ For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.3` w
 
 ## Resume — 22 October 2026 — coherent list controls and header surface
 
-Status: Prepared 1.0.2 with quiet utility controls and consistent membership colours. Friends use green text, fill, border and keyboard focus; Losers use amber. Ordinary list actions, secondary buttons and filters use a single neutral border without command-frame artwork. Primary command controls and navigation retain their SC2 treatment. Selected list filters remain identifiable. The header no longer paints an oversized tinted texture through its rails; a single inset surface fades into the workspace.
+Status: Published and installed 1.0.2 with consistent membership colours. Friends use green text, fill, border and keyboard focus; Losers use amber. List actions, secondary buttons and filters use a neutral border without command-frame artwork. Primary controls and navigation retain their SC2 treatment. Selected filters remain identifiable. The header no longer paints a tinted texture through its rails; one inset surface fades into the workspace.
 
 Changed owners: `wwwroot/controls.css` supplies shared control roles after faction styling; `index.html` loads it. `console-layout.css` and `factions.css` own the header correction. `compact-ui.css` reserves room for complete list labels and removes the commander summary's fixed minimum width, preventing adjacent-cell overlap. Project metadata advances to 1.0.2.
 
-Checks: [eight EN/RU theme cases across all 72 category states](verification/controls-header-browser.json) passed, including frame clearance, header joins, list-label containment, commander-cell containment, keyboard focus and unchanged control dimensions. Measured minimum text contrast is 9.02:1 and border contrast 3.91:1. [Directory](verification/controls-header-preview.png) and [advisor header](verification/controls-header-picks.png) previews use isolated sample data. No private library was read by browser tests.
+Checks: [eight EN/RU theme cases across 72 category states](verification/controls-header-browser.json) passed: frame clearance, header joins, label/cell containment, keyboard focus and stable control dimensions. Minimum text contrast is 9.02:1; border contrast is 3.91:1. [Directory](verification/controls-header-preview.png) and [advisor](verification/controls-header-picks.png) previews use sample data. [Release CI](https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/39839995004), 1,952 published dashboard checks and profile models passed. [Changed embedded assets](verification/controls-header-assets.json) match source, allowing Git line-ending conversion.
 
-Next authorized step: publish, verify and install 1.0.2 while preserving running apps and user data. No recurring follow-up is authorized.
+[Installation](verification/controls-header-installation.json) matches the release SHA-256 and preserves library, archives and processes. No companion was running or launched. Next bounded step: observe the installed controls and header in normal use. No recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — private update channel connection
 
