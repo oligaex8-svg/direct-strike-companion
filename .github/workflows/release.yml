@@ -18,13 +18,11 @@ jobs:
       - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
         with:
           global-json-file: global.json
-      - name: Validate private release and version
+      - name: Validate release version
         shell: pwsh
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          PRIVATE_REPOSITORY: ${{ github.event.repository.private }}
         run: |
-          if ($env:PRIVATE_REPOSITORY -ne 'true') { throw 'This publishing workflow is for the private repository.' }
           if ($env:RELEASE_TAG -notmatch '^v\d+\.\d+\.\d+$') { throw 'Use a stable version such as v1.0.1.' }
           "RELEASE_VERSION=$($env:RELEASE_TAG.Substring(1))" >> $env:GITHUB_ENV
       - name: Build self-contained Windows app
@@ -43,7 +41,7 @@ jobs:
           if ($test.ExitCode -ne 0) { throw 'Update safety tests failed.' }
           $test = Start-Process -FilePath release/DirectStrikeCompanion.exe -ArgumentList '--self-test','--accept-alerts-only' -Wait -PassThru
           if ($test.ExitCode -ne 0) { throw 'Notification regression tests failed.' }
-      - name: Publish private release asset
+      - name: Publish release asset
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}

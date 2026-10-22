@@ -2,17 +2,24 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {chromium}=require(require.resolve('playwright',{paths:['C:/Users/Admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules']}));
 const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot');
+const themeIds=['default','protoss','zerg','terran','fenix','classic-terran','classic-protoss','classic-zerg'];
 const themesRun=process.argv.includes('--themes');
 const selectedCase=process.argv.find(arg=>arg.startsWith('--case='))?.slice(7);
-if(selectedCase&&!/^(default|protoss|zerg|terran)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
-const baselineReport=selectedCase?JSON.parse(fs.readFileSync(path.join(__dirname,'graphical-styles-browser.json'),'utf8')):null;
-const report={success:false,themeSourceHash:crypto.createHash('sha256').update(['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css'].map(name=>fs.readFileSync(path.join(web,name))).join('\n')).digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[]};
+if(selectedCase&&!/^(default|protoss|zerg|terran|fenix|classic-terran|classic-protoss|classic-zerg)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
+const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','appearance.js','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
+const sourceHash=crypto.createHash('sha256').update(fs.readFileSync(__filename));
+for(const name of sourceFiles)sourceHash.update(name+'\0').update(fs.readFileSync(path.join(web,name)));
+const report={success:false,themeSourceHash:sourceHash.digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[],resumedCases:0};
 const luminance=color=>{const hex=color.replace('#',''),rgb=color.startsWith('#')?[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)):color.match(/[\d.]+/g).slice(0,3).map(Number);const channels=rgb.map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return channels[0]*.2126+channels[1]*.7152+channels[2]*.0722;};
 const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)+.05)/(Math.min(A,B)+.05);};
 (async()=>{let browser;try{
  browser=await chromium.launch({channel:'msedge',headless:true,args:['--disable-gpu']});
- for(const width of (themesRun?[1000,375]:[1280,1000,820,375]))for(const language of (themesRun?[width===1000?'en':'ru']:['en','ru']))for(const theme of (themesRun?['default','protoss','zerg','terran']:['default'])){
+ const browserVersion=browser.version(),verifiedCases=[];
+ if(themesRun)for(const name of fs.readdirSync(__dirname).filter(name=>/^hud-case-[a-z0-9-]+\.json$/.test(name))){try{const saved=JSON.parse(fs.readFileSync(path.join(__dirname,name),'utf8'));if(saved.success&&saved.themeSourceHash===report.themeSourceHash&&saved.browserVersion===browserVersion)verifiedCases.push(saved.entry);}catch{/* Incomplete checkpoint is rerun. */}}
+ for(const width of (themesRun?[1000,375]:[1280,1000,820,375]))for(const language of (themesRun?[width===1000?'en':'ru']:['en','ru']))for(const theme of (themesRun?themeIds:['default'])){
   if(selectedCase&&selectedCase!==`${theme}-${width}-${language}`)continue;
+  const verified=verifiedCases.find(c=>c.theme===theme&&c.width===width&&c.language===language);
+  if(themesRun&&!selectedCase&&verified){report.cases.push(verified);report.resumedCases++;continue;}
   const page=await browser.newPage({viewport:{width,height:width===1000?700:width===820?650:800}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   const ids=['2-S2-1-123','1-S2-1-456'];
   const players=ids.map((id,i)=>({id,name:'TKnight',clanTag:i?'IPVGI':'Expend',region:i?'Americas':'EU',race:'Protoss',aliases:[]}));
@@ -164,16 +171,21 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
      assert.ok(contrast(button.text,button.background)>=4.5,`${theme}: primary button text contrast`);
      if(theme!=='default'){
       assert.ok(contrast(button.border,palette['--surface'])>=3,`${theme}: control frame contrast`);
+       const assets=await page.evaluate(async race=>Promise.all([`${race}.svg`,`${race}-crest.svg`,...['nav-normal','nav-hover','nav-pressed','nav-selected','command-normal','command-hover','command-pressed','field','toolbar','panel-head','helper','timer','tooltip','group-normal','group-hover','group-pressed','small-normal','small-hover'].map(role=>`${race}-hud-${role}.svg`)].map(async name=>{const image=new Image();image.src='/themes/'+name;await image.decode();return {name,width:image.naturalWidth,height:image.naturalHeight};})),theme);
+      assert.ok(assets.every(image=>image.width>0&&image.height>0),'Embedded atlas frames and materials decode in the browser');
+      entry.consoleAssets=assets;
       const consoleFrame=await page.locator('.work-console').evaluate(el=>getComputedStyle(el).borderImageSource);
       assert.ok(consoleFrame.includes(`/themes/${theme}.svg`),'The game frame is painted on the actual panel');
       assert.equal(await page.locator('.profile-favourite').evaluate(el=>getComputedStyle(el).borderImageSource),'none','Commander details do not repeat the outer console frame');
       const construction=await page.evaluate(()=>({control:getComputedStyle(document.querySelector('#import')).borderImageSource,selection:getComputedStyle(document.querySelector('.nav.active')).borderImageSource,crest:getComputedStyle(document.querySelector('.page-head'),'::after').backgroundImage,radius:getComputedStyle(document.querySelector('.profile-commanders')).borderRadius}));
-       assert.ok(construction.control.includes(`/themes/${theme}-command.${theme==='zerg'?'svg':'png'}`),'Faction controls use their native command atlas with the assigned material palette');
-      assert.ok(construction.selection.includes(`/themes/${theme}.svg`)&&construction.crest.includes(`/themes/${theme}-crest.svg`),'Selection and header retain native faction construction');
+       assert.ok(construction.control.includes(`/themes/${theme}-hud-command-normal.svg`),'Faction controls use their native command atlas with the assigned material palette');
+      assert.ok(construction.selection.includes(`/themes/${theme}-hud-nav-selected.svg`)&&(['fenix','classic-terran','classic-protoss','classic-zerg'].includes(theme)?construction.crest==='none':construction.crest.includes(`/themes/${theme}-crest.svg`)),'Selection and header retain native faction construction');
+      const hud=await page.evaluate(()=>Object.fromEntries([['field','#search'],['panel-head','.profile-favourite-top'],['helper','.profile-results']].map(([key,selector])=>[key,getComputedStyle(document.querySelector(selector)).borderImageSource])));
+      assert.ok(Object.entries(hud).every(([role,url])=>url.includes('/themes/'+theme+'-hud-'+role+'.svg')),'Field, header and helper panel use distinct native component regions: '+JSON.stringify(hud));
+      entry.hudComponents=hud;
+      const command=page.locator('#import');await command.hover();assert.ok((await command.evaluate(el=>getComputedStyle(el).borderImageSource)).includes('-hud-command-hover.svg'),'Native command hover is a separate game texture');await page.mouse.move(0,0);
       entry.factionConstruction=construction;
-       const assets=await page.evaluate(async race=>Promise.all([`${race}.svg`,`${race}-surface.svg`,`${race}-control.${race==='zerg'?'svg':'png'}`,`${race}-command.${race==='zerg'?'svg':'png'}`,`${race}-crest.svg`].map(async name=>{const image=new Image();image.src='/themes/'+name;await image.decode();return {name,width:image.naturalWidth,height:image.naturalHeight};})),theme);
-      assert.ok(assets.every(image=>image.width>0&&image.height>0),'Embedded atlas frames and materials decode in the browser');
-      entry.consoleAssets=assets;
+
      }
     }
     const recent=page.locator('.personal-profile .table-wrap tbody tr').first();
@@ -269,11 +281,11 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
    }
    const measure=await page.locator('#library-content').evaluate(el=>({height:Math.round(el.getBoundingClientRect().height),top:Math.round(el.getBoundingClientRect().top)}));
    if(themesRun&&theme!=='default'){
-    const baseline=[...report.cases,...(baselineReport?.cases||[])].find(item=>item.width===width&&item.language===language&&item.theme==='default')?.views.find(item=>item.category===category);
+    const baseline=[...report.cases,...verifiedCases].find(item=>item.width===width&&item.language===language&&item.theme==='default')?.views.find(item=>item.category===category);
     if(baseline)assert.ok(Math.abs(measure.height-baseline.height)<=16,`${theme}: ${category} frames retain compact content height (${measure.height} vs ${baseline.height})`);
    }
    entry.views.push({category,...measure});
-   }catch(error){(report.failures??=[]).push({width,language,category,error:error.message});}
+   }catch(error){(report.failures??=[]).push({width,language,theme,category,error:error.message});}
    await page.evaluate(()=>scrollTo(0,0));await capture(category);
   }
   await page.locator('#settings-open').click();assert.equal(await page.locator('#settings-form>.settings-group').count(),4);
@@ -283,11 +295,11 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
   await page.locator('#folders').fill('Unsent sample folder');await page.evaluate(()=>renderLibrary());assert.equal(await page.locator('#folders').inputValue(),'Unsent sample folder');
   await folderGroup.locator('summary').click();await capture('settings');await page.keyboard.press('Escape');
   if(themesRun){
-   await page.locator('#settings-open').click();assert.equal(await page.locator('[name="graphical-style"]').count(),4);
-   const next=theme==='terran'?'protoss':'terran';
+   await page.locator('#settings-open').click();assert.equal(await page.locator('[name="graphical-style"]').count(),themeIds.length);
+   const next=theme==='terran'?'protoss':'terran',appearanceRequestStart=appearanceStateRequests.length;
    await page.locator(`[name="graphical-style"][value="${next}"]`).check();
    await page.waitForFunction(()=>!graphicalStyleBusy&&!graphicalStyleRefreshNeeded&&!refreshPending);assert.equal(settings.graphicalStyle,next);assert.equal(appearanceCalls.at(-1).style,next);
-   assert.equal(appearanceStateRequests.at(-1),'','Appearance save is reconciled with an unconditional library refresh');
+   assert.ok(appearanceStateRequests.slice(appearanceRequestStart).includes(''),'Appearance save includes an unconditional library refresh even when a later timer poll follows');
    assert.equal(await page.evaluate(()=>localStorage.getItem(graphicalStyleStorageKey)),next);
    const stale=await page.evaluate(()=>{const stale={graphicalStyle:'zerg'};mergeGraphicalStyleSettings(stale,graphicalStyleRevision-1);return {value:stale.graphicalStyle,actual:graphicalStyle};});
    assert.equal(stale.value,next);assert.equal(stale.actual,next,'Late state responses cannot undo a recent choice');
@@ -302,7 +314,9 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
   await page.locator('nav [data-view="friends"]').click();await page.locator('.player-table .player-name').first().click();
   assert.ok(await page.locator('#player-dialog').isVisible());const close=await page.locator('#player-dialog .close').boundingBox();assert.ok(close.y>=0&&close.y+close.height<(width===1000?700:width===820?650:800),'Player dialog close remains visible');
   await capture('player-dialog');await page.keyboard.press('Escape');
-  assert.deepEqual(errors,[]);report.cases.push(entry);await page.close();
+  assert.deepEqual(errors,[]);report.cases.push(entry);
+  if(themesRun){const failures=(report.failures||[]).filter(f=>f.theme===theme&&f.width===width&&f.language===language);fs.writeFileSync(path.join(__dirname,`hud-case-${theme}-${width}-${language}.json`),JSON.stringify({success:!failures.length,themeSourceHash:report.themeSourceHash,browserVersion,entry,failures},null,2)+'\n');console.log(JSON.stringify({case:theme+'-'+width+'-'+language,success:!failures.length}));}
+  await page.close();
  }
  report.success=!report.failures?.length;if(!report.success)throw new Error(JSON.stringify(report.failures));
 }catch(error){report.error=error.stack;throw error;}finally{await browser?.close();fs.writeFileSync(path.join(__dirname,selectedCase?`faction-console-${selectedCase}.json`:themesRun?'graphical-styles-browser.json':process.argv.includes('--profile-replay')?'profile-replay-browser.json':'all-category-layout-browser.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({success:report.success,cases:report.cases.length,error:report.error}));}})().catch(e=>{console.error(e);process.exitCode=1;});

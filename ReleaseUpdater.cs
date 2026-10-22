@@ -42,7 +42,7 @@ internal sealed class ReleaseUpdater
         this.credentialPath = credentialPath ?? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
             "DirectStrikeCompanion", "UpdateAccess", Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(this.repository))) + ".bin");
         status = new(this.current.ToString(), this.repository, File.Exists(this.credentialPath), "idle",
-            this.repository.Length == 0 ? "Update repository is not configured." : "Connect GitHub to check private releases.");
+            this.repository.Length == 0 ? "Update repository is not configured." : "Check for updates from GitHub.");
         if (credentialPath == null) CleanOldStages();
     }
     internal SoftwareUpdateStatus Snapshot() { lock (gate) return status; }
@@ -77,7 +77,13 @@ internal sealed class ReleaseUpdater
             throw new InvalidDataException("Release has no valid size and GitHub SHA-256 digest. Publish a fresh release asset.");
         return new(ParseVersion(tag).ToString(), id, size, digest[7..].ToUpperInvariant());
     }
-    private string Token() => Encoding.UTF8.GetString(UpdateSecret.Unprotect(File.ReadAllBytes(credentialPath)));
+    private string? Token()
+    {
+        // Stored access is optional for public releases. Preserve an unreadable
+        // credential so a transient file or Windows-account issue cannot erase it.
+        try { return File.Exists(credentialPath) ? Encoding.UTF8.GetString(UpdateSecret.Unprotect(File.ReadAllBytes(credentialPath))) : null; }
+        catch (Exception error) when (error is IOException or UnauthorizedAccessException or CryptographicException) { return null; }
+    }
     internal async Task ConnectAsync(string token, CancellationToken cancel)
     {
         if (repository.Length == 0) throw new InvalidOperationException("Update repository is not configured.");
@@ -87,7 +93,7 @@ internal sealed class ReleaseUpdater
         try
         {
             using var deadline = CancellationTokenSource.CreateLinkedTokenSource(cancel); deadline.CancelAfter(TimeSpan.FromSeconds(20)); cancel = deadline.Token;
-            using var response = await SendAsync(new($"https://api.github.com/repos/{repository}"), token, false, cancel);
+            using var response = await SendAsync(new($"https://api.github.com/repos/{repository}"), token, false, cancel, optionalCredential: false);
             await ReadLimitedAsync(response, 65536, cancel);
             var directory = Path.GetDirectoryName(credentialPath)!; Directory.CreateDirectory(directory); EnsureNoLinks(directory);
             var encrypted = UpdateSecret.Protect(Encoding.UTF8.GetBytes(token));
@@ -117,7 +123,6 @@ internal sealed class ReleaseUpdater
         {
             available = null;
             if (repository.Length == 0) { Set("idle", "Update repository is not configured."); return Snapshot(); }
-            if (!File.Exists(credentialPath)) { Set("idle", "Connect GitHub to check private releases."); return Snapshot(); }
             Set("checking", "Checking GitHub releases…");
             using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancel); timeout.CancelAfter(TimeSpan.FromSeconds(20));
             using var response = await SendAsync(new($"https://api.github.com/repos/{repository}/releases/latest"), Token(), false, timeout.Token);
@@ -132,7 +137,7 @@ internal sealed class ReleaseUpdater
         finally { operation.Release(); }
         return Snapshot();
     }
-    private async Task<HttpResponseMessage> SendAsync(Uri url, string token, bool binary, CancellationToken cancel)
+    private async Task<HttpResponseMessage> SendAsync(Uri url, string? token, bool binary, CancellationToken cancel, bool optionalCredential = true)
     {
         // The credential goes only to api.github.com, never to an asset CDN redirect.
         for (var hop = 0; hop < 4; hop++)
@@ -143,10 +148,16 @@ internal sealed class ReleaseUpdater
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(binary ? "application/octet-stream" : "application/vnd.github+json"));
             if (url.Host == "api.github.com")
             {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                if (token != null) request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 request.Headers.Add("X-GitHub-Api-Version", "2022-11-28");
             }
             var response = await http.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancel);
+            if (optionalCredential && token != null && url.Host == "api.github.com" && response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                // Retry once anonymously without consuming a redirect hop. The
+                // same path covers release metadata and verified asset downloads.
+                response.Dispose(); token = null; hop--; continue;
+            }
             if (response.StatusCode is HttpStatusCode.MovedPermanently or HttpStatusCode.Found or HttpStatusCode.TemporaryRedirect or HttpStatusCode.PermanentRedirect)
             {
                 var location = response.Headers.Location; response.Dispose();
@@ -157,7 +168,7 @@ internal sealed class ReleaseUpdater
             {
                 var code = response.StatusCode; response.Dispose();
                 throw new InvalidDataException(code is HttpStatusCode.Unauthorized or HttpStatusCode.Forbidden or HttpStatusCode.NotFound
-                    ? "GitHub access denied, or no release exists. Use your own token with access to this private repository."
+                    ? "GitHub access denied, rate limited, or no release exists. Try later, or connect optional repository access."
                     : "GitHub request failed. Try again later.");
             }
             return response;
@@ -198,16 +209,7 @@ internal sealed class ReleaseUpdater
             Directory.CreateDirectory(stage); EnsureNoLinks(stage);
             var download = Path.Combine(stage, "download.exe");
             Set("downloading", "Downloading and verifying the update…", release.Version);
-            using var response = await SendAsync(new($"https://api.github.com/repos/{repository}/releases/assets/{release.AssetId}"), Token(), true, cancel);
-            await using (var input = await response.Content.ReadAsStreamAsync(cancel))
-            await using (var output = new FileStream(download, FileMode.CreateNew, FileAccess.Write, FileShare.None, 65536, true))
-            {
-                var buffer = new byte[65536]; long total = 0; int count;
-                while ((count = await input.ReadAsync(buffer, cancel)) > 0)
-                { total += count; if (total > release.Size) throw new InvalidDataException("Update exceeded its declared size."); await output.WriteAsync(buffer.AsMemory(0, count), cancel); }
-                if (total != release.Size) throw new InvalidDataException("Update download was incomplete.");
-            }
-            VerifyExecutable(download, release.Sha256, release.Size, release.Version);
+            await DownloadAsync(release, download, cancel);
             var helper = Path.Combine(stage, "updater.exe"); File.Copy(target, helper);
             using var parent = Process.GetCurrentProcess();
             var ticket = new UpdateInstallTicket(target, download, release.Sha256, release.Size, release.Version, parent.Id, parent.StartTime.ToUniversalTime().Ticks);
@@ -229,6 +231,19 @@ internal sealed class ReleaseUpdater
             throw new InvalidOperationException(Snapshot().Message);
         }
         finally { operation.Release(); }
+    }
+    internal async Task DownloadAsync(ReleaseDownload release, string download, CancellationToken cancel)
+    {
+        using var response = await SendAsync(new($"https://api.github.com/repos/{repository}/releases/assets/{release.AssetId}"), Token(), true, cancel);
+        await using (var input = await response.Content.ReadAsStreamAsync(cancel))
+        await using (var output = new FileStream(download, FileMode.CreateNew, FileAccess.Write, FileShare.None, 65536, true))
+        {
+            var buffer = new byte[65536]; long total = 0; int count;
+            while ((count = await input.ReadAsync(buffer, cancel)) > 0)
+            { total += count; if (total > release.Size) throw new InvalidDataException("Update exceeded its declared size."); await output.WriteAsync(buffer.AsMemory(0, count), cancel); }
+            if (total != release.Size) throw new InvalidDataException("Update download was incomplete.");
+        }
+        VerifyExecutable(download, release.Sha256, release.Size, release.Version);
     }
     internal static void EnsureNoLinks(string path)
     {

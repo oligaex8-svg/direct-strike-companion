@@ -2,27 +2,35 @@
 
 [![Download latest launcher for Windows x64](assets/download-windows.svg)](https://github.com/oligaex8-svg/direct-strike-companion/releases/latest/download/DirectStrikeCompanion-win-x64.exe)
 
-Always downloads the latest published version. Sign in to GitHub with access to this private repository. [All releases](https://github.com/oligaex8-svg/direct-strike-companion/releases).
+Always downloads the latest published version. No GitHub account or token is required. [All releases](https://github.com/oligaex8-svg/direct-strike-companion/releases).
 
-A private Windows companion for StarCraft II **3v3 Commanders**. The launcher is a standalone Windows executable with the runtime, dashboard, commander portraits, and OCR script bundled inside. No separate .NET installation is needed.
+A local Windows companion for StarCraft II **3v3 Commanders**. The launcher is a standalone Windows executable with the runtime, dashboard, commander portraits, and OCR script bundled inside. No separate .NET installation is needed.
 
 This installation lives at `D:/300 Development Folder/Tools/DirectStrikeCompanion`; source and build tools live in `Support/Development`. The former `C:/Users/Admin/Projects/DirectStrikeCompanion` path remains a compatibility junction.
 
 ## GitHub updates
 
-The private update channel is [`oligaex8-svg/direct-strike-companion`](https://github.com/oligaex8-svg/direct-strike-companion). The app checks on startup and every 30 minutes, then offers **Update now / Later**. Updating replaces the executable and preserves local data. Sharing an executable never shares the owner's GitHub credentials.
+The public update channel is [`oligaex8-svg/direct-strike-companion`](https://github.com/oligaex8-svg/direct-strike-companion). Anyone can download the launcher. The app checks on startup and every 30 minutes, then offers **Update now / Later**. Updating replaces the executable and preserves local data. No GitHub token is needed for public updates.
 
-For a friend: invite their GitHub account to this private repository. They connect their own token using **Check for updates → Private repository access**. Credentials are encrypted for their Windows account. Without repository access, private updates cannot be downloaded.
+Optional GitHub access remains available for private repositories or higher API rate limits. Credentials are encrypted for the current Windows account and never bundled with the launcher. Invalid old credentials fall back to anonymous public access; they are not silently deleted.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.6` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.1.1` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — public updates and in-game HUD families
+
+Status: The repository is public. Preparing 1.1.0 with anonymous release checks/downloads, consent-based update prompts, Fenix/Purifier and three Classic StarCraft options. Existing preferences remain valid. Invalid saved credentials fall back to public access without deletion; explicit token connection still requires authentication. Native menu, command, control-group, field, timer, helper, tooltip and small-button art now have separate roles and interaction states. Table headers keep their neutral steel distinction from hover.
+
+Changed owners: `ReleaseUpdater.cs`, updater/browser tests, public release scripts, `GraphicalStyles.cs`, appearance tests/picker/translations, and `hud-assets.css`/`hud-components.css`. `Fetch-HudComponents.cjs`/`Build-HudComponents.cjs` record and adapt original console textures; the Classic panel contours come from console-render previews. Generated assets are bundled offline. `assets/themes/hud-sources.json` and its README retain provenance.
+
+Checks: Source-level updater review found and resolved stale-credential migration; reviewer confirmed bounded anonymous retry and unchanged binary validation/consent paths. [Sixteen EN/RU cases across 144 category states](verification/native-hud-browser.json), [public update controls](verification/software-updates-browser.json) and [automatic consent prompts](verification/auto-software-updates-browser.json) passed. Independent visual review confirmed the four new desktop renders after correcting cropped ornaments and a helper-panel override. The [sample-data gallery](verification/native-hud-preview.png) shows the actual production UI. Native theme persistence and update safety are the next release checks. Next bounded step: publish, verify the anonymous executable download and install 1.1.0 while preserving user data/processes. This step is authorized; no recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — distinct table headers
 
-Status: Source-verified 1.0.5 separates table labels from row hover. Headers use a neutral steel surface, neutral text and a visible bottom divider; hover keeps its darker faction tint. The same rule owns pinned and scrolling header cells, avoiding the old faction first-column override. Other panel, frame, source-rating and result colours remain unchanged. The running installation was confirmed to still serve the older bright-purple palette; this is separate from the additional header correction.
+Status: Published and installed 1.0.5 separates table labels from row hover. Headers use a neutral steel surface, neutral text and a visible bottom divider; hover keeps its darker faction tint. The same rule owns pinned and scrolling header cells, avoiding the old faction first-column override. Other panel, frame, source-rating and result colours remain unchanged. The running installation was confirmed to still serve the older bright-purple palette; this is separate from the additional header correction.
 
 Changed owners: `console-layout.css` and `themes.css` retire competing header fills; `factions.css` owns the shared table-head roles. `Test-AllCategoryLayout.cjs` compares actual computed header/hover colours, checks neutral label contrast and pinned columns, and captures the exact Zerg recent-games state.
 
-Checks: [Eight EN/RU cases across 72 category states](verification/table-contrast-browser.json) passed. Header/hover surface contrast is at least 1.6:1 in every theme; this is a project distinction check, separate from text readability. The focused [actual sample-data screenshot](verification/table-contrast-zerg.png) shows the header, hovered row and ordinary row together. One screenshot locator needed correction; its case was rerun with the same UI source hash. Next bounded step: publish, verify and install the private release while preserving data and the running app. This step is authorized; no recurring follow-up is authorized.
+Checks: [Eight EN/RU cases across 72 category states](verification/table-contrast-browser.json) passed. Header/hover surface contrast is at least 1.6:1 in every theme; this is a project distinction check, separate from text readability. The focused [actual sample-data screenshot](verification/table-contrast-zerg.png) shows the header, hovered row and ordinary row together. One screenshot locator needed correction; its case was rerun with the same UI source hash. [Release CI](https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/39846819051), 1,952 packaged dashboard checks and thirteen profile models passed. [Three embedded assets](verification/table-contrast-assets.json) match source, allowing Git line-ending conversion. [Installation](verification/table-contrast-installation.json) preserved data and processes. No companion was running at installation. Next bounded step: observe normal use; no recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — continuous console and replay hover
 

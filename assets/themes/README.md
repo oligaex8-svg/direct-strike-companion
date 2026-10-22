@@ -64,3 +64,11 @@ crown, glass and command/control artwork receive one shared SVG colour matrix
 in `Build-FactionConsoles.cjs`; source contours, texture detail and alpha remain
 intact. Filtered command/control SVGs embed the source PNGs for offline use.
 No filter is applied to page text, portraits, ratings or semantic list colours.
+
+## In-game HUD component families — 22 October 2026
+
+`hud-sources.json` records the archive URL, dimensions and SHA-256 for 72 original control textures (18 states/roles across default Protoss, Terran, Zerg and Purifier) and four original console-render previews. `Fetch-HudComponents.cjs` fetches these public catalogs and images; `Build-HudComponents.cjs` adapts their documented regions into offline SVG assets and emits `hud-assets.css`. Source PNGs are retained unchanged.
+
+Menu buttons, command slots, control groups, chat fields, menu strips, helper panels, timers, tooltip trims and small controls have separate assets. Modern HUDs use their original normal/hover/pressed/selected images. Text remains live, unfiltered and independently readable; optional dark image wells retain the bevels. The original Zerg family keeps its image-only amethyst treatment. Data tables retain neutral steel headers and independent rating/result colours.
+
+Fenix uses the game's Purifier control family and the Fenix console-render panel. The Classic Terran, Protoss and Zerg variants use their corresponding console-render minimap contours and command-slot regions, plus race-matched 2-D control textures for compact fields and labels. Plain rail samples stretch; ornamental corners do not. Exact black in the render previews is keyed as the viewing matte while original alpha and non-black pixels remain. Classic command-slot hover/press uses a restrained image-only brightness change. These are companion adaptations of the game HUD, not interactive minimaps or game command panels.

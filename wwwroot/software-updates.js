@@ -10,7 +10,7 @@ function rememberSoftwareUpdate(status){
 }
 function maybePromptSoftwareUpdate(){
  const status=softwareUpdateLastStatus,prompt=document.getElementById('update-prompt-dialog');
- if(!status?.connected||status.state!=='available'||!status.availableVersion||!prompt||softwareUpdateUiBusy
+ if(!status||status.state!=='available'||!status.availableVersion||!prompt||softwareUpdateUiBusy
   ||document.visibilityState!=='visible'||['match','loading','replay'].includes(state?.lobby?.phase)
   ||document.querySelector('dialog[open]')||softwareUpdateNotices.has(status.repository+'|'+status.availableVersion))return;
  document.getElementById('update-prompt-version').textContent=updateText('Available version')+': '+status.availableVersion;
@@ -31,7 +31,7 @@ function renderSoftwareUpdateStatus(value){
   rememberSoftwareUpdate(status);
  }else if(prompt.open&&!busy)prompt.close();
  const badge=document.getElementById('update-available');badge.hidden=!status.availableVersion;badge.textContent=' · '+updateText('New version');
- document.getElementById('updates-check').disabled=busy||!status.connected;
+ document.getElementById('updates-check').disabled=busy||!status.repository;
  document.getElementById('updates-install').hidden=!status.availableVersion;
  document.getElementById('updates-install').disabled=busy||status.state!=='available';
  for(const button of document.querySelectorAll('#updates-connect button'))button.disabled=busy;
@@ -50,7 +50,7 @@ async function softwareUpdateAction(action){
 }
 function openSoftwareUpdates(){
  document.getElementById('updates-dialog').showModal();
- void softwareUpdateAction(async()=>{const status=await api('software-updates/status');document.getElementById('updates-access').open=!status.connected;return status.connected?api('software-updates/check',{}):status;});
+ void softwareUpdateAction(async()=>{const status=await api('software-updates/status');document.getElementById('updates-access').open=false;return status.repository?api('software-updates/check',{}):status;});
 }
 document.getElementById('updates-open').addEventListener('click',openSoftwareUpdates);
 document.getElementById('sidebar-updates').addEventListener('click',openSoftwareUpdates);

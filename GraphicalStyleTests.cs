@@ -24,7 +24,7 @@ internal static class GraphicalStyleTests
             var preserved = WithoutAppearance(store.Data);
             int signals = 0;
             store.Changed += () => signals++;
-            foreach (var style in new[] { "default", "protoss", "zerg", "terran" })
+            foreach (var style in new[] { "default", "protoss", "zerg", "terran", "fenix", "classic-terran", "classic-protoss", "classic-zerg" })
             {
                 var before = store.Snapshot();
                 var response = JsonSerializer.SerializeToElement(new GraphicalStyleRequest(style).Apply(store), Store.Json);
@@ -37,16 +37,16 @@ internal static class GraphicalStyleTests
                 assert(restored.Data.Settings.GraphicalStyle == style && WithoutAppearance(restored.Data) == preserved,
                     "appearance survives reload and preserves all other library data: " + style);
             }
-            assert(signals == 4, "successful appearance saves notify live dashboard subscribers");
+            assert(signals == 8, "successful appearance saves notify live dashboard subscribers");
 
             var durable = File.ReadAllText(Path.Combine(directory, "library.json"));
             var version = store.Snapshot().Version;
-            foreach (string? style in new string?[] { null, "", "Terran", " terran ", "unknown", "../zerg" })
+            foreach (string? style in new string?[] { null, "", "Terran", " terran ", "unknown", "../zerg", "Fenix", "classic-protoss ", "classic_zerg" })
             {
                 bool rejected = false;
                 try { new GraphicalStyleRequest(style).Apply(store); } catch (ArgumentException) { rejected = true; }
-                assert(rejected && store.Data.Settings.GraphicalStyle == "terran" && store.Snapshot().Version == version
-                    && File.ReadAllText(Path.Combine(directory, "library.json")) == durable && signals == 4,
+                assert(rejected && store.Data.Settings.GraphicalStyle == "classic-zerg" && store.Snapshot().Version == version
+                    && File.ReadAllText(Path.Combine(directory, "library.json")) == durable && signals == 8,
                     "invalid appearance request leaves memory disk and published state unchanged: " + (style ?? "null"));
             }
 

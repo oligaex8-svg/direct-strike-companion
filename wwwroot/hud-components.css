@@ -1,0 +1,63 @@
+/* In-game HUD families: component-specific art, independent of data colours. */
+:root[data-graphical-style=fenix]{
+ --bg:#0b0e13;--surface:#15191e;--raised:#343e46;--line:#53606a;--text:#f1ede4;--muted:#c6c8ca;--accent:#ffb65c;
+ --console-shell:#10151a;--console-frame:#d5b57a;--shell-well:#0c1116;--shell-panel:#15191e;--shell-header:#30373c;--shell-edge:#aa8b55;--shell-light:#ffe3b3;--shell-title:#fff1d6;
+ --row-hover:#2e2b24;--faction-radius:3px;--faction-inset-edge:#6f6b59;--control-neutral-surface:#1d252b;--control-neutral-edge:#8a9ba5;
+ --console-art:url('/themes/fenix.svg');--work-frame:var(--console-art);--console-material:url('/themes/fenix-surface.svg');--console-control:url('/themes/fenix-control.svg');--faction-button:url('/themes/fenix-command.svg');--faction-crest:url('/themes/fenix-crest.svg')
+}
+:root[data-graphical-style=classic-terran]{
+ --bg:#080c0e;--surface:#161d23;--raised:#2d414b;--line:#4d626e;--text:#e7eef2;--muted:#b6c7ce;--accent:#8bd4ae;
+ --console-shell:#10171b;--console-frame:#87959c;--shell-well:#0a1013;--shell-panel:#161d23;--shell-header:#273038;--shell-edge:#687e84;--shell-light:#c2dfd5;--shell-title:#e0efdf;
+ --row-hover:#223139;--faction-radius:1px;--faction-inset-edge:#5a7077;--control-neutral-surface:#1b2b32;--control-neutral-edge:#729392;
+ --console-art:url('/themes/classic-terran.svg');--work-frame:var(--console-art);--console-material:url('/themes/classic-terran-surface.svg');--console-control:url('/themes/classic-terran-control.svg');--faction-button:url('/themes/classic-terran-command.svg');--faction-crest:url('/themes/classic-terran-crest.svg')
+}
+:root[data-graphical-style=classic-protoss]{
+ --bg:#0b1012;--surface:#151e23;--raised:#293f4e;--line:#546c79;--text:#eef0e8;--muted:#b9c9d0;--accent:#80ceef;
+ --console-shell:#111a20;--console-frame:#d0b76b;--shell-well:#0b1118;--shell-panel:#151e23;--shell-header:#25333c;--shell-edge:#bca45d;--shell-light:#e9d79b;--shell-title:#f1e6bb;
+ --row-hover:#222c36;--faction-radius:5px 2px;--faction-inset-edge:#7e7959;--control-neutral-surface:#1c2c37;--control-neutral-edge:#819cae;
+ --console-art:url('/themes/classic-protoss.svg');--work-frame:var(--console-art);--console-material:url('/themes/classic-protoss-surface.svg');--console-control:url('/themes/classic-protoss-control.svg');--faction-button:url('/themes/classic-protoss-command.svg');--faction-crest:url('/themes/classic-protoss-crest.svg')
+}
+:root[data-graphical-style=classic-zerg]{
+ --bg:#110c0a;--surface:#1d1815;--raised:#443024;--line:#7a5b45;--text:#f1e7d8;--muted:#cabdad;--accent:#e5ad67;
+ --console-shell:#1b130f;--console-frame:#c99769;--shell-well:#110e0c;--shell-panel:#1d1815;--shell-header:#33261e;--shell-edge:#a47a50;--shell-light:#f0c492;--shell-title:#fae1ba;
+ --row-hover:#302620;--faction-radius:10px 4px;--faction-inset-edge:#795b43;--control-neutral-surface:#30251d;--control-neutral-edge:#ad8c6b;
+ --console-art:url('/themes/classic-zerg.svg');--work-frame:var(--console-art);--console-material:url('/themes/classic-zerg-surface.svg');--console-control:url('/themes/classic-zerg-control.svg');--faction-button:url('/themes/classic-zerg-command.svg');--faction-crest:url('/themes/classic-zerg-crest.svg')
+}
+
+/* Navigation uses the game's menu-button states, not the outer panel atlas. */
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav{
+ border:1px solid transparent;border-image:var(--hud-nav-normal) 9 fill / 5px / 0 stretch;border-radius:0;background:var(--shell-well) padding-box;box-shadow:none
+}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:hover{border-image-source:var(--hud-nav-hover)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav.active{border-image:var(--hud-nav-selected) 9 fill / 5px / 0 stretch;box-shadow:none;background:var(--shell-well) padding-box}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:active{border-image-source:var(--hud-nav-pressed)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sidebar .nav:after{content:none}
+
+/* A command slot, a text field, and a menu strip have different native shapes. */
+:root[data-graphical-style]:not([data-graphical-style=default]) .button:not(.ghost){border-image:var(--hud-command-normal) 14 fill / 6px / 0 stretch;background:var(--shell-well);filter:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .button:not(.ghost):hover{border-image-source:var(--hud-command-hover)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .button:not(.ghost):active{border-image-source:var(--hud-command-pressed)}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(input:not([type=checkbox],[type=radio],[type=range]),select,textarea){border-image:var(--hud-field) 12 fill / 6px / 0 stretch;background:var(--shell-well);border-radius:0}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-region h3,.live-team-head){border:1px solid transparent;border-image:var(--hud-panel-head) 10 fill / 5px / 0 stretch;background:var(--shell-well);border-radius:0;box-shadow:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .personal-profile .profile-results{border:8px solid transparent;border-image:var(--hud-helper) 15 fill / 8px / 0 stretch;padding:4px 6px;background:var(--shell-well) padding-box;box-shadow:none}
+:root[data-graphical-style]:not([data-graphical-style=default]) .scope-chip{border:1px solid transparent;border-image:var(--hud-timer) 10 fill / 5px / 0 stretch;padding:6px 10px;background:var(--shell-well);color:var(--text)}
+:root[data-graphical-style]:not([data-graphical-style=default]) [data-stats-scope],
+:root[data-graphical-style]:not([data-graphical-style=default]) .sounds-target{border:1px solid transparent;border-image:var(--hud-group-normal) 12 fill / 5px / 0 stretch;background:var(--shell-well);color:var(--text)}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is([data-stats-scope],.sounds-target):hover{border-image-source:var(--hud-group-hover)}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is([data-stats-scope],.sounds-target)[aria-pressed=true]{border-image-source:var(--hud-group-pressed)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sounds-language button{border:1px solid transparent;border-image:var(--hud-small-normal) 9 fill / 5px / 0 stretch;background:var(--shell-well);color:var(--text)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .sounds-language button:hover{border-image-source:var(--hud-small-hover)}
+:root[data-graphical-style]:not([data-graphical-style=default]) .toolbar{background:linear-gradient(180deg,#0005,#000b),var(--hud-toolbar) center/100% 100%;box-shadow:inset 0 2px 5px #0006}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog .dialog-head{position:relative}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog .dialog-head::after{content:'';position:absolute;right:42px;top:-3px;width:42px;height:20px;background:var(--hud-tooltip) center/contain no-repeat;pointer-events:none}
+
+.appearance-options{grid-template-columns:repeat(4,minmax(0,1fr))}
+.appearance-choice[data-style-preview=fenix] .appearance-thumbnail{background:#15191e url('/themes/fenix.svg') center/cover;border-color:#d5b57a}
+.appearance-choice[data-style-preview=classic-terran] .appearance-thumbnail{background:#161d23 url('/themes/classic-terran.svg') center/cover;border-color:#87959c}
+.appearance-choice[data-style-preview=classic-protoss] .appearance-thumbnail{background:#151e23 url('/themes/classic-protoss.svg') center/cover;border-color:#d0b76b}
+.appearance-choice[data-style-preview=classic-zerg] .appearance-thumbnail{background:#1d1815 url('/themes/classic-zerg.svg') center/cover;border-color:#c99769}
+/* The native remastered corners already contain their ornaments. Do not add
+   a second cropped plate across their top rail. */
+:root:is([data-graphical-style=fenix],[data-graphical-style^=classic-]) .page-head:after{content:none;background-image:none}
+@media(max-width:520px){.appearance-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(forced-colors:active){:root[data-graphical-style]:not([data-graphical-style=default]) :is(.sidebar .nav,.sidebar .nav.active,.button:not(.ghost),input,select,textarea,.profile-favourite-top,.profile-region h3,.live-team-head,.profile-results,.scope-chip,[data-stats-scope],.sounds-target,.sounds-language button,.toolbar){border-image:none;background:Canvas;box-shadow:none}:root[data-graphical-style]:not([data-graphical-style=default]) dialog .dialog-head::after{display:none}}

@@ -1,0 +1,766 @@
+{
+  "source": "Blizzard Entertainment / StarCraft II in-game console textures and console render previews",
+  "archive": "https://asset-explorer.sc2arcade.com/",
+  "sources": [
+    {
+      "file": "console-classic-protoss.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleprotoss_classic.png",
+      "role": "original HUD console render",
+      "family": "classic-protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleprotoss_classic.png",
+      "sha256": "56962fdfff918964c8b981f0092e81875d831d81e1c51a7d25e23376adb1d073",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-classic-terran.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleterran_classic.png",
+      "role": "original HUD console render",
+      "family": "classic-terran",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_classic.png",
+      "sha256": "97a8bac80a95c87ca906bb43ae69e31e062529b335f473a25c0cc0d2fc9745e1",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-classic-zerg.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consolezerg_classic.png",
+      "role": "original HUD console render",
+      "family": "classic-zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolezerg_classic.png",
+      "sha256": "7616fdd62df2eb9b33731b5240096dbc5feefd50e8860f20ed715e1d2bfe4bf2",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-fenix.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_fenix_consoleprotoss.png",
+      "role": "original HUD console render",
+      "family": "fenix",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_fenix_consoleprotoss.png",
+      "sha256": "1c4e6cd92ee9cb5d29ec1ee46b76a8fc043c82754e1f79083a9eafc776ace2da",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "ui_console_chatbar_background_defaultprotoss.png",
+      "image": "ui-png/ui_console_chatbar_background_defaultprotoss.png",
+      "role": "chatbar_background",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_defaultprotoss.png",
+      "sha256": "30f9e23dd03d0daa251690aa674e3376e949c728ba7c5535c22bd39f38f64964",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_defaultterran.png",
+      "image": "ui-png/ui_console_chatbar_background_defaultterran.png",
+      "role": "chatbar_background",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_defaultterran.png",
+      "sha256": "fd915cfab404d2e61c115290357deff77cc87791bd80015787c5e27d822f804f",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_defaultzerg.png",
+      "image": "ui-png/ui_console_chatbar_background_defaultzerg.png",
+      "role": "chatbar_background",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_defaultzerg.png",
+      "sha256": "a9d9d5c8d457dbeb46c0116322b76f00bf9c6b2df733f0dd53132b32d035c0a8",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_purifier.png",
+      "image": "ui-png/ui_console_chatbar_background_purifier.png",
+      "role": "chatbar_background",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_purifier.png",
+      "sha256": "68dab914c7c76beea3d76cae5c56682c9c3531357d02561a8529e647f2f72b02",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_defaultprotoss.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_defaultprotoss.png",
+      "role": "commandbutton_highlighted",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_defaultprotoss.png",
+      "sha256": "b502d66f6b07dd5977c619fb4bc79a2e615e3cc1c7e467d62bbbf69bf9651f43",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_defaultterran.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_defaultterran.png",
+      "role": "commandbutton_highlighted",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_defaultterran.png",
+      "sha256": "d16fbf66bd1985b33fcffb94b55419ba6dc1fc8a0566cadccca0aa084cf8c86a",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_defaultzerg.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_defaultzerg.png",
+      "role": "commandbutton_highlighted",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_defaultzerg.png",
+      "sha256": "e6a7c0578a007e2a6a7a09995a6dfa0f761567d76f571e43fd2f560d868b7078",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_purifier.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_purifier.png",
+      "role": "commandbutton_highlighted",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_purifier.png",
+      "sha256": "62dcbe3e2eb5446ff5a54197380375a4df9b8133b79b67489207ef63abced4ec",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_defaultprotoss.png",
+      "image": "ui-png/ui_console_commandbutton_normal_defaultprotoss.png",
+      "role": "commandbutton_normal",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_defaultprotoss.png",
+      "sha256": "982f2816a33c18ac41e8aa4eae616ef865033c2505b34effb8d2af7ce6fb601c",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_defaultterran.png",
+      "image": "ui-png/ui_console_commandbutton_normal_defaultterran.png",
+      "role": "commandbutton_normal",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_defaultterran.png",
+      "sha256": "aaffe22defa7b02b0a6ea0ce3f9d3e5871060ca9a68e783465071df39b22bb3c",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_defaultzerg.png",
+      "image": "ui-png/ui_console_commandbutton_normal_defaultzerg.png",
+      "role": "commandbutton_normal",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_defaultzerg.png",
+      "sha256": "0e9549af7a2c220680db3d2b5ff34dff0e0943bf832f8f8c8c1ddebae53212c7",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_purifier.png",
+      "image": "ui-png/ui_console_commandbutton_normal_purifier.png",
+      "role": "commandbutton_normal",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_purifier.png",
+      "sha256": "c0c3b9b74b864c23024d4d1ae6fd9395b536655bcb018d79916016c0c542c6bc",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_defaultprotoss.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_defaultprotoss.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_defaultprotoss.png",
+      "sha256": "c7d4650020fc92485e9c18b405a862a47ae17c7685f0f42c08ad537ea84eb4a5",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_defaultterran.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_defaultterran.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_defaultterran.png",
+      "sha256": "82953dd8f86e67fcf7eeecef64e92b2126a6a08e36e17711916412e191cfdb9d",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_defaultzerg.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_defaultzerg.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_defaultzerg.png",
+      "sha256": "ea475953cc0cabdddbbccecb1c1cfa8b6e6d9b2a460c6a661ed7e8f245faa1f6",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_purifier.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_purifier.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_purifier.png",
+      "sha256": "4c37ac36745d2428c8a909630a1473512024fe3ac466e2352df1c56d62736522",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_defaultprotoss.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_defaultprotoss.png",
+      "role": "controlgroupbutton_hover",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_defaultprotoss.png",
+      "sha256": "e6c1f0dce27320c8943c81e7f2d49e25eff103a5ae17d7f84d99300f4c306fb1",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_defaultterran.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_defaultterran.png",
+      "role": "controlgroupbutton_hover",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_defaultterran.png",
+      "sha256": "c1fa96408b70e97fa4df3c2297c229ce56d6bfa0f9b1fb89fc71bbab41b56a71",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_defaultzerg.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_defaultzerg.png",
+      "role": "controlgroupbutton_hover",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_defaultzerg.png",
+      "sha256": "3301e19a0bedd9f385f7ddf9a8b131d2b8f6be7268bbf5dac0403f2a663bbe5d",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_purifier.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_purifier.png",
+      "role": "controlgroupbutton_hover",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_purifier.png",
+      "sha256": "270a795b0a2c75eaadd6d272a9cc332cbb523fdb756fcdbc8894e51cd5d970cf",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_defaultprotoss.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_defaultprotoss.png",
+      "role": "controlgroupbutton_normal",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_defaultprotoss.png",
+      "sha256": "0a013fdcc5a3bab4b8909031f1b8fa1d3bdae3ec326382b34b66250e09de1abe",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_defaultterran.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_defaultterran.png",
+      "role": "controlgroupbutton_normal",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_defaultterran.png",
+      "sha256": "c55f15a4e80d0ecb4a4a151f9227b2193a97242a3ad969794578e5e2eb265e9d",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_defaultzerg.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_defaultzerg.png",
+      "role": "controlgroupbutton_normal",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_defaultzerg.png",
+      "sha256": "dc5d48b36ac906a86e7a3c5bc89415b1645bf5dc763d26a0fb5c5265246e48cf",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_purifier.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_purifier.png",
+      "role": "controlgroupbutton_normal",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_purifier.png",
+      "sha256": "153afc8a464da100bcd0672120ec062b44afe41adf19bcb520b7afb2409d1a92",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_defaultprotoss.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_defaultprotoss.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_defaultprotoss.png",
+      "sha256": "c0069fc586aa29a05648473a970d0d7a300299bef47015f3262f26253c59888c",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_defaultterran.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_defaultterran.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_defaultterran.png",
+      "sha256": "bb7a383cd89000bf9390e61df2ca3deaa81fd8166ca6cca11d21a78e975c99c3",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_defaultzerg.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_defaultzerg.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_defaultzerg.png",
+      "sha256": "69563aa57ddb261ca5991c2d6d5aecd4b16e84c3b4d53822e12cdad45ececb81",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_purifier.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_purifier.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_purifier.png",
+      "sha256": "a7368854b792e6de8fabbe3fc87c77a4f6f64c830171cb8d44c273e0c16aef3c",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_helperbutton_background_defaultprotoss.png",
+      "image": "ui-png/ui_console_helperbutton_background_defaultprotoss.png",
+      "role": "helperbutton_background",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_defaultprotoss.png",
+      "sha256": "fc7a14098953f42bf274cd8fb7ff40f42da0007ec46a3c615ecc7e920ba246f0",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_defaultterran.png",
+      "image": "ui-png/ui_console_helperbutton_background_defaultterran.png",
+      "role": "helperbutton_background",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_defaultterran.png",
+      "sha256": "2e58669d7fc4c466fb74aee62140d7f2b28c3588565e7de028bd3c37f58c5e26",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_defaultzerg.png",
+      "image": "ui-png/ui_console_helperbutton_background_defaultzerg.png",
+      "role": "helperbutton_background",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_defaultzerg.png",
+      "sha256": "a02e328f12c929fc7ea2e113110c35a1f71c4be2db6948529725938d967c8c98",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_purifier.png",
+      "image": "ui-png/ui_console_helperbutton_background_purifier.png",
+      "role": "helperbutton_background",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_purifier.png",
+      "sha256": "04c4b12881394b794f4f1726ccfff6ec74ab6cd0fc9da056981dd5fcd6c50235",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_menubar_background_defaultprotoss.png",
+      "image": "ui-png/ui_console_menubar_background_defaultprotoss.png",
+      "role": "menubar_background",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_defaultprotoss.png",
+      "sha256": "be3cc8678b238e76a0f92e60f8af0b8c482bd46688108f5aa7f53ac4ea18d342",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_defaultterran.png",
+      "image": "ui-png/ui_console_menubar_background_defaultterran.png",
+      "role": "menubar_background",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_defaultterran.png",
+      "sha256": "fc48bc96ecdb083c68f8e7a45988d407ca36c036c23c7095a30bc73f5e4cb7b4",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_defaultzerg.png",
+      "image": "ui-png/ui_console_menubar_background_defaultzerg.png",
+      "role": "menubar_background",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_defaultzerg.png",
+      "sha256": "f73c90d77b71076a0b29c6ed85c994ecb1c7af2798cedb4dc2ec7f2be2793564",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_purifier.png",
+      "image": "ui-png/ui_console_menubar_background_purifier.png",
+      "role": "menubar_background",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_purifier.png",
+      "sha256": "c3c75e650ba414ac24bd39861a7794cced52c34df09eaf4da73fcd67a3da5d12",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubutton_hover_defaultprotoss.png",
+      "image": "ui-png/ui_console_menubutton_hover_defaultprotoss.png",
+      "role": "menubutton_hover",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_defaultprotoss.png",
+      "sha256": "b4b633dbe29079d508596f5e46888bde6dd07e5708d1bc05616c543dc29a395b",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_defaultterran.png",
+      "image": "ui-png/ui_console_menubutton_hover_defaultterran.png",
+      "role": "menubutton_hover",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_defaultterran.png",
+      "sha256": "6378b55e9495e05c6cb8b5ab6f205d36d3df232be8890a27ee0d94469ecb29f9",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_defaultzerg.png",
+      "image": "ui-png/ui_console_menubutton_hover_defaultzerg.png",
+      "role": "menubutton_hover",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_defaultzerg.png",
+      "sha256": "4ca2d6174e5c128bb093c44c7e8abc1fd6826036030c10cc260112e30f1d3dab",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_purifier.png",
+      "image": "ui-png/ui_console_menubutton_hover_purifier.png",
+      "role": "menubutton_hover",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_purifier.png",
+      "sha256": "1316d1d57a6194d2e05eb2e6df63faf71e8ae4713bb990580fce3043cef79b81",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_defaultprotoss.png",
+      "image": "ui-png/ui_console_menubutton_normal_defaultprotoss.png",
+      "role": "menubutton_normal",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_defaultprotoss.png",
+      "sha256": "2a8666df74d52e70f41f442e7f11847adba621f3d377cbe28dd5f5cc927ae89f",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_defaultterran.png",
+      "image": "ui-png/ui_console_menubutton_normal_defaultterran.png",
+      "role": "menubutton_normal",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_defaultterran.png",
+      "sha256": "458711ed4f7afebf72c6f6b1d801e8977894dca4d8b87b896dc2c474d3e0763a",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_defaultzerg.png",
+      "image": "ui-png/ui_console_menubutton_normal_defaultzerg.png",
+      "role": "menubutton_normal",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_defaultzerg.png",
+      "sha256": "99ab995fb3e126ba3687a44ae06b9a2cdb61b33d533ec2ae6112f868429aa29a",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_purifier.png",
+      "image": "ui-png/ui_console_menubutton_normal_purifier.png",
+      "role": "menubutton_normal",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_purifier.png",
+      "sha256": "c30a1cd2fe0baa70eeffa25b9fbf0121a73bb5cc954111ace273a0ccc40e6219",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_defaultprotoss.png",
+      "image": "ui-png/ui_console_menubutton_pressed_defaultprotoss.png",
+      "role": "menubutton_pressed",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_defaultprotoss.png",
+      "sha256": "eed65fd9541bc15c92d232edcd50f9b9c067ad88f4fa9f13d47729f0d7c5d27d",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_defaultterran.png",
+      "image": "ui-png/ui_console_menubutton_pressed_defaultterran.png",
+      "role": "menubutton_pressed",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_defaultterran.png",
+      "sha256": "532578af7592ea6c160ad944b35c660b28c9d17c5d839a905de17df12359e502",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_defaultzerg.png",
+      "image": "ui-png/ui_console_menubutton_pressed_defaultzerg.png",
+      "role": "menubutton_pressed",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_defaultzerg.png",
+      "sha256": "caaffce43d675d715a0aed86c8125475cbfbd6c3536cddf2c5754a971d3a9909",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_purifier.png",
+      "image": "ui-png/ui_console_menubutton_pressed_purifier.png",
+      "role": "menubutton_pressed",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_purifier.png",
+      "sha256": "bf0a0f4d8c9929cd056ccea751c88011c9efbb8fd30032bedf51e309e2927fc4",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_defaultprotoss.png",
+      "image": "ui-png/ui_console_menubutton_selected_defaultprotoss.png",
+      "role": "menubutton_selected",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_defaultprotoss.png",
+      "sha256": "8f1d4a57bed91cb7375a8711a2d1f2bb47ea345971d511e4e63b0d74e11a6cd9",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_defaultterran.png",
+      "image": "ui-png/ui_console_menubutton_selected_defaultterran.png",
+      "role": "menubutton_selected",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_defaultterran.png",
+      "sha256": "2b863676038199e5a3bf900f27fb941c7e70df49693da74862d4b315dc9f284e",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_defaultzerg.png",
+      "image": "ui-png/ui_console_menubutton_selected_defaultzerg.png",
+      "role": "menubutton_selected",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_defaultzerg.png",
+      "sha256": "4251bdc36927675ea5b47e0d437c8ec4c6983b4bcdb953736593b8f4922363a5",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_purifier.png",
+      "image": "ui-png/ui_console_menubutton_selected_purifier.png",
+      "role": "menubutton_selected",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_purifier.png",
+      "sha256": "2870917e62ea04e6a50a6879f2d2946eee93d03b99470d4ff9f538bff33ef6d5",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_defaultprotoss.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_defaultprotoss.png",
+      "role": "minimapbutton_hover",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_defaultprotoss.png",
+      "sha256": "4a4aa949ac8e7999f852b43820c5e0a86fe48fdee071c94a058285f44d384bdc",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_defaultterran.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_defaultterran.png",
+      "role": "minimapbutton_hover",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_defaultterran.png",
+      "sha256": "0775b5420601ea716583efb0cefb645df89260093891153b012be89721ca34e0",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_defaultzerg.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_defaultzerg.png",
+      "role": "minimapbutton_hover",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_defaultzerg.png",
+      "sha256": "747928369646a36019bddd60f339374b094cad0dcab1e09392a8f2edcea1c189",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_purifier.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_purifier.png",
+      "role": "minimapbutton_hover",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_purifier.png",
+      "sha256": "c034fb18b2ab952d13ce6808d357d5f0d7c6f5a5e77d19d0f66474f5e0cd1d0b",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_defaultprotoss.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_defaultprotoss.png",
+      "role": "minimapbutton_normal",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_defaultprotoss.png",
+      "sha256": "4894df0a4295c0b1c1dcab3d323555e767cf739613b0c5953fdf275c5ca031f2",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_defaultterran.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_defaultterran.png",
+      "role": "minimapbutton_normal",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_defaultterran.png",
+      "sha256": "799789f228d742884e2e82846ad74a4908c8cfcbd90fca3db0537653e60d3983",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_defaultzerg.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_defaultzerg.png",
+      "role": "minimapbutton_normal",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_defaultzerg.png",
+      "sha256": "a7b7f5086154b6d41e5b13bbd7ce15d739915e2d9f368bcf477c020f5c134587",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_purifier.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_purifier.png",
+      "role": "minimapbutton_normal",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_purifier.png",
+      "sha256": "bb0fe37da86552ee870744a5515f47923b9d23006315bb0da4ec7d0178ea9da7",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_defaultprotoss.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_defaultprotoss.png",
+      "role": "minimapbutton_selected",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_defaultprotoss.png",
+      "sha256": "ee91152865bab1ba61f30aac7e19e021d1d3d545d37bec38c8a0477b9c53562a",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_defaultterran.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_defaultterran.png",
+      "role": "minimapbutton_selected",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_defaultterran.png",
+      "sha256": "3ac31aadd3e34afa94b14dc46de5f80c9d83d8c402b53685c4d05d287a468c49",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_defaultzerg.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_defaultzerg.png",
+      "role": "minimapbutton_selected",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_defaultzerg.png",
+      "sha256": "306e651bbdd1dff3d176947ac632fd7d45480b6694374018f2615a4b1d64a1f2",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_purifier.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_purifier.png",
+      "role": "minimapbutton_selected",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_purifier.png",
+      "sha256": "306e651bbdd1dff3d176947ac632fd7d45480b6694374018f2615a4b1d64a1f2",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_timer_background_defaultprotoss.png",
+      "image": "ui-png/ui_console_timer_background_defaultprotoss.png",
+      "role": "timer_background",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_defaultprotoss.png",
+      "sha256": "924fdc6d7aa0e49caab319845fa4f38e67a157d1f6d5622de62256cd698017ec",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_defaultterran.png",
+      "image": "ui-png/ui_console_timer_background_defaultterran.png",
+      "role": "timer_background",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_defaultterran.png",
+      "sha256": "d03d86d2c22567ed590840acbb222dae3cbea2b9873f97c6bd96b938ec731a3c",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_defaultzerg.png",
+      "image": "ui-png/ui_console_timer_background_defaultzerg.png",
+      "role": "timer_background",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_defaultzerg.png",
+      "sha256": "124eb179fcda512a5111d8aa45c71fc1d6862a23109e76a78267d25dacb72649",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_purifier.png",
+      "image": "ui-png/ui_console_timer_background_purifier.png",
+      "role": "timer_background",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_purifier.png",
+      "sha256": "fdd05607764ec4296d4ae166379cea5a1da4b463c85f2943256afe0d6b7e2a82",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_tooltip_background_defaultprotoss.png",
+      "image": "ui-png/ui_console_tooltip_background_defaultprotoss.png",
+      "role": "tooltip_background",
+      "family": "defaultprotoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_defaultprotoss.png",
+      "sha256": "f1521abe34aa363654bb0873e35b8235e087d3d91587eccbbc22e129f1be1a4a",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_defaultterran.png",
+      "image": "ui-png/ui_console_tooltip_background_defaultterran.png",
+      "role": "tooltip_background",
+      "family": "defaultterran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_defaultterran.png",
+      "sha256": "c61cfc28b55c68dbbd2d975f5243fcecaf94d254aab63626652707d76f9feaf8",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_defaultzerg.png",
+      "image": "ui-png/ui_console_tooltip_background_defaultzerg.png",
+      "role": "tooltip_background",
+      "family": "defaultzerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_defaultzerg.png",
+      "sha256": "9b33f8f0e752114c242fb86ef4212eb99e542dd58e370d4efbb328597ee7497d",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_purifier.png",
+      "image": "ui-png/ui_console_tooltip_background_purifier.png",
+      "role": "tooltip_background",
+      "family": "purifier",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_purifier.png",
+      "sha256": "a4d5f36ce4e9b866e14ccbea867602a78a3ec3b7f6ac8e54376e605993e22913",
+      "width": 64,
+      "height": 128
+    }
+  ]
+}

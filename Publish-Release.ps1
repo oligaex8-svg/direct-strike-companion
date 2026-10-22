@@ -7,7 +7,6 @@ if (@($taskStatus).Count -ne 0) { throw 'Commit your source changes before publi
 $taskRepoText=gh repo view --json nameWithOwner,isPrivate
 if ($LASTEXITCODE -ne 0) { throw 'Sign in with gh auth login before publishing.' }
 $taskRepo=$taskRepoText | ConvertFrom-Json
-if (!$taskRepo.isPrivate) { throw 'Expected a private GitHub repository.' }
 $taskProject=[xml](Get-Content -LiteralPath DirectStrikeCompanion.csproj -Raw)
 if ($taskProject.Project.PropertyGroup.UpdateRepository -ne $taskRepo.nameWithOwner) { throw 'The repository does not match the configured update channel.' }
 if ([version]$Version -lt [version]$taskProject.Project.PropertyGroup.Version) { throw 'Release versions cannot go backwards.' }

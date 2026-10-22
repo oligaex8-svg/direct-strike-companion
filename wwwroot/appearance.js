@@ -1,6 +1,7 @@
 'use strict';
 
-const graphicalStyleIds=['default','protoss','zerg','terran'];
+const graphicalStyleLabels=Object.freeze({'default':'Default','protoss':'Protoss','zerg':'Zerg','terran':'Terran','fenix':'Fenix / Purifier','classic-terran':'Classic Terran','classic-protoss':'Classic Protoss','classic-zerg':'Classic Zerg'});
+const graphicalStyleIds=Object.keys(graphicalStyleLabels);
 const graphicalStyleStorageKey='ds-companion:graphical-style';
 let graphicalStyleRevision=0,graphicalStyleBusy=false,graphicalStyle='default',graphicalStyleRefreshNeeded=false,graphicalStyleFailedChoice=null;
 const canonicalGraphicalStyle=value=>graphicalStyleIds.includes(value)?value:'default';
@@ -42,7 +43,7 @@ async function saveGraphicalStyle(value){
  const language=document.getElementById('settings-language');
  if(language){
   const picker=document.createElement('fieldset');picker.className='appearance-picker';
-  picker.innerHTML=`<legend><span>Graphical style</span> <small>Saved automatically</small></legend><div class="appearance-options">${graphicalStyleIds.map((id,index)=>`<label class="appearance-choice" data-style-preview="${id}"><input type="radio" name="graphical-style" value="${id}"><span class="appearance-thumbnail" aria-hidden="true"><i></i><i></i><i></i></span><span>${['Default','Protoss','Zerg','Terran'][index]}</span></label>`).join('')}</div><p id="appearance-status" role="status" aria-live="polite"></p>`;
+  picker.innerHTML=`<legend><span>Graphical style</span> <small>Saved automatically</small></legend><div class="appearance-options">${graphicalStyleIds.map(id=>`<label class="appearance-choice" data-style-preview="${id}"><input type="radio" name="graphical-style" value="${id}"><span class="appearance-thumbnail" aria-hidden="true"><i></i><i></i><i></i></span><span>${graphicalStyleLabels[id]}</span></label>`).join('')}</div><p id="appearance-status" role="status" aria-live="polite"></p>`;
   language.after(picker);
   picker.addEventListener('change',event=>{if(event.target.name==='graphical-style')void saveGraphicalStyle(event.target.value);});
  }

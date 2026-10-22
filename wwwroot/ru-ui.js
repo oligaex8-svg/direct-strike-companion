@@ -2,12 +2,21 @@
 
 // Exact canonical UI text. Player names, notes, identities and URLs are never keys.
 const RU_UI_TEXT=Object.freeze({
+"Optional GitHub access":"Доступ к GitHub (необязательно)",
+"Public downloads and updates work without signing in. Add your own token only for private repositories or higher GitHub rate limits. Never share tokens.":"Общедоступные загрузки и обновления работают без входа. Личный токен нужен только для закрытых репозиториев или увеличения лимитов GitHub. Не передавайте токены другим.",
+"Check for updates from GitHub.":"Проверить обновления на GitHub.",
+"GitHub access denied, rate limited, or no release exists. Try later, or connect optional repository access.":"GitHub отклонил запрос, достигнут лимит или выпуск отсутствует. Повторите позже или настройте дополнительный доступ к репозиторию.",
 "Graphical style":"Графический стиль",
 "Saved automatically":"Сохраняется автоматически",
 "Default":"По умолчанию",
 "Protoss":"Протоссы",
 "Zerg":"Зерги",
 "Terran":"Терраны",
+"Fenix / Purifier":"Феникс / Чистильщики",
+"Classic Terran":"Классические терраны",
+"Classic Protoss":"Классические протоссы",
+"Classic Zerg":"Классические зерги",
+"Choose a supported graphical style.":"Выберите поддерживаемый стиль оформления.",
 "The appearance could not be saved.":"Не удалось сохранить оформление.",
 "About this view":"Об этом разделе",
 "Tools":"Инструменты",

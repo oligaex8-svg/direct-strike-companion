@@ -2,7 +2,7 @@ namespace DirectStrikeCompanion;
 
 internal static class GraphicalStyles
 {
-    internal static bool IsSupported(string? style) => style is "default" or "protoss" or "zerg" or "terran";
+    internal static bool IsSupported(string? style) => style is "default" or "protoss" or "zerg" or "terran" or "fenix" or "classic-terran" or "classic-protoss" or "classic-zerg";
 
     // Old libraries have no appearance field; unknown saved values must not
     // prevent the companion from opening its existing library.
@@ -21,7 +21,7 @@ public sealed partial class Store
 {
     public string SetGraphicalStyle(string? style)
     {
-        if (!GraphicalStyles.IsSupported(style)) throw new ArgumentException("Choose default, protoss, zerg or terran.");
+        if (!GraphicalStyles.IsSupported(style)) throw new ArgumentException("Choose a supported graphical style.");
         lock (Gate)
         {
             var previous = Data.Settings.GraphicalStyle;
