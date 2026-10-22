@@ -7,6 +7,8 @@ const selectedCase=process.argv.find(arg=>arg.startsWith('--case='))?.slice(7);
 if(selectedCase&&!/^(default|protoss|zerg|terran)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
 const baselineReport=selectedCase?JSON.parse(fs.readFileSync(path.join(__dirname,'graphical-styles-browser.json'),'utf8')):null;
 const report={success:false,themeSourceHash:crypto.createHash('sha256').update(['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css'].map(name=>fs.readFileSync(path.join(web,name))).join('\n')).digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[]};
+const luminance=color=>{const hex=color.replace('#',''),rgb=color.startsWith('#')?[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)):color.match(/[\d.]+/g).slice(0,3).map(Number);const channels=rgb.map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return channels[0]*.2126+channels[1]*.7152+channels[2]*.0722;};
+const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)+.05)/(Math.min(A,B)+.05);};
 (async()=>{let browser;try{
  browser=await chromium.launch({channel:'msedge',headless:true,args:['--disable-gpu']});
  for(const width of (themesRun?[1000,375]:[1280,1000,820,375]))for(const language of (themesRun?[width===1000?'en':'ru']:['en','ru']))for(const theme of (themesRun?['default','protoss','zerg','terran']:['default'])){
@@ -154,8 +156,6 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
       const css=getComputedStyle(document.documentElement),names=['--bg','--surface','--shell-panel','--shell-header','--row-hover','--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'];
       return Object.fromEntries(names.map(name=>[name,css.getPropertyValue(name).trim()]));
      });
-     const luminance=color=>{const hex=color.replace('#',''),rgb=color.startsWith('#')?[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)):color.match(/[\d.]+/g).slice(0,3).map(Number);const channels=rgb.map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return channels[0]*.2126+channels[1]*.7152+channels[2]*.0722;};
-     const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)+.05)/(Math.min(A,B)+.05);};
      for(const name of ['--text','--muted','--rating-dsr','--rating-dsstats','--green','--red'])assert.ok(contrast(palette[name],palette['--surface'])>=4.5,`${theme}: readable ${name}`);
      for(const surface of ['--bg','--shell-panel','--shell-header','--row-hover'])for(const text of ['--text','--muted'])assert.ok(contrast(palette[text],palette[surface])>=4.5,`${theme}: readable ${text} on ${surface}`);
      assert.equal(palette['--rating-dsr'],'#59d6ea');assert.equal(palette['--rating-dsstats'],'#c4a7ff');
@@ -182,14 +182,17 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
     const hoverState=await recent.evaluate(el=>{
      const well=el.closest('.table-wrap'),r=well.getBoundingClientRect(),frame=document.querySelector('.work-console'),f=frame.getBoundingClientRect(),css=getComputedStyle(frame),paint=parseFloat(css.borderImageWidth);
      const probe=document.createElement('i');probe.style.background='var(--row-hover)';el.append(probe);const expected=getComputedStyle(probe).backgroundColor;probe.remove();
-     return {left:r.left-f.left-paint,right:f.right-r.right-paint,expected,cells:[...el.cells].map(cell=>getComputedStyle(cell).backgroundColor),art:getComputedStyle(well).borderImageSource,clip:getComputedStyle(well).overflowX,shadow:css.boxShadow};
+     return {left:r.left-f.left-paint,right:f.right-r.right-paint,expected,cells:[...el.cells].map(cell=>getComputedStyle(cell).backgroundColor),header:[...well.querySelectorAll('thead th')].map(th=>{const c=getComputedStyle(th);return {background:c.backgroundColor,text:c.color,divider:c.borderBottomColor,border:parseFloat(c.borderBottomWidth)};}),art:getComputedStyle(well).borderImageSource,clip:getComputedStyle(well).overflowX,shadow:css.boxShadow};
     });
     assert.ok(hoverState.cells.every(color=>color===hoverState.expected),'Replay hover visibly uses each theme dedicated subdued surface across every cell');
     assert.ok(hoverState.left>=3.5&&hoverState.right>=3.5&&hoverState.art==='none'&&['auto','scroll','hidden','clip'].includes(hoverState.clip),'Hovered rows and their well cannot paint across the outer rails: '+JSON.stringify(hoverState));
     const rowAfter=await recent.boundingBox();assert.ok(Math.abs(rowAfter.width-rowBefore.width)<1&&Math.abs(rowAfter.height-rowBefore.height)<1,'Hover adds no layout movement');
     assert.notEqual(hoverState.shadow,'none','Outer assembly has an offset depth shadow');
+    assert.ok(hoverState.header.every(head=>contrast(head.background,hoverState.expected)>=1.6),'Table header remains visibly separate from hovered data, including every gradient-free column');
+    assert.ok(hoverState.header.every(head=>contrast(head.text,head.background)>=4.5&&head.border>=1),'Neutral table labels and divider stay readable');
     entry.replayHover=hoverState;
     if(themesRun&&width===1000&&!process.argv.includes('--assertions-only')){const file=path.join(__dirname,`frame-states-${theme}-hover.png`);await page.screenshot({path:file,animations:'disabled'});entry.screenshots.push(file);}
+    if(themesRun&&theme==='zerg'&&width===1000&&!process.argv.includes('--assertions-only')){const r=await page.locator('.personal-profile .table-wrap').first().boundingBox();const file=path.join(__dirname,'table-contrast-zerg.png');await page.screenshot({path:file,animations:'disabled',clip:{x:r.x,y:Math.max(0,r.y),width:r.width,height:Math.min(260,700-Math.max(0,r.y))}});entry.screenshots.push(file);}
     await page.mouse.move(0,0);await page.evaluate(()=>scrollTo(0,0));
     assert.equal(await page.locator('.profile-region').count(),2);assert.equal(await page.locator('.profile-region .dsstats-value strong').count(),2);
     if(width>=1000){const boxes=await page.locator('.profile-main-grid').evaluate(el=>[el.querySelector('.profile-commanders'),el.querySelector('.profile-overview')].map(n=>({x:n.getBoundingClientRect().x,y:n.getBoundingClientRect().y})));assert.ok(boxes[0].x<boxes[1].x&&Math.abs(boxes[0].y-boxes[1].y)<1,'Commander and account columns share one composed panel');}
@@ -203,6 +206,9 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
    }
    if(category==='players'||category==='friends'){
     assert.ok(await page.locator('.player-table tbody tr').count()>0);
+    const heads=await page.locator('.player-table thead th').evaluateAll(nodes=>nodes.map(th=>getComputedStyle(th).backgroundColor));
+    const hoverToken=await page.evaluate(()=>{const p=document.createElement('i');p.style.background='var(--row-hover)';document.body.append(p);const c=getComputedStyle(p).backgroundColor;p.remove();return c;});
+    assert.ok(heads.every(color=>color===heads[0]&&contrast(color,hoverToken)>=1.6),'Pinned and scrolling directory headers share the same distinct steel surface');
     if(width>=1000)assert.ok(await page.locator('.player-table-scroll').evaluate(el=>el.scrollWidth<=el.clientWidth+1),'Directory fits a normal small desktop window');
     assert.ok(await page.locator('.player-table .most-played-cell').evaluateAll(nodes=>nodes.every(el=>el.scrollWidth<=el.clientWidth+1&&el.getBoundingClientRect().right<=el.closest('td').getBoundingClientRect().right)),'Commander summaries fit their own cells without running into the adjacent win rate');
     const membership=await page.locator('.player-table .mark-button').evaluateAll(nodes=>nodes.map(el=>{

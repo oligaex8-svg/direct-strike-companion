@@ -137,7 +137,6 @@ html[lang=ru] .page-head h1{font-family:'Segoe UI',sans-serif;font-size:21px;fon
 .profile-page-actions .button{min-height:32px;padding:6px 9px}
 .toolbar,:root[data-graphical-style]:not([data-graphical-style=default]) .toolbar{border:1px solid var(--line);border-radius:0;background:var(--shell-panel);padding:7px}
 .table-wrap,:root[data-graphical-style]:not([data-graphical-style=default]) .table-wrap{border:1px solid var(--line);border-image:none;border-radius:0;background:var(--shell-well)}
-thead th,.player-table thead th,:root[data-graphical-style]:not([data-graphical-style=default]) .player-table thead th{background:var(--shell-header);color:var(--shell-title)}
 tbody tr:nth-child(even){background:color-mix(in srgb,var(--shell-panel) 65%,transparent)}
 .live-team-group{border-width:1px;border-radius:0;background:var(--shell-well)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .live-team-group:before{display:none}

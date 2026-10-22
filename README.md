@@ -14,7 +14,15 @@ The private update channel is [`oligaex8-svg/direct-strike-companion`](https://g
 
 For a friend: invite their GitHub account to this private repository. They connect their own token using **Check for updates → Private repository access**. Credentials are encrypted for their Windows account. Without repository access, private updates cannot be downloaded.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.5` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.6` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — distinct table headers
+
+Status: Source-verified 1.0.5 separates table labels from row hover. Headers use a neutral steel surface, neutral text and a visible bottom divider; hover keeps its darker faction tint. The same rule owns pinned and scrolling header cells, avoiding the old faction first-column override. Other panel, frame, source-rating and result colours remain unchanged. The running installation was confirmed to still serve the older bright-purple palette; this is separate from the additional header correction.
+
+Changed owners: `console-layout.css` and `themes.css` retire competing header fills; `factions.css` owns the shared table-head roles. `Test-AllCategoryLayout.cjs` compares actual computed header/hover colours, checks neutral label contrast and pinned columns, and captures the exact Zerg recent-games state.
+
+Checks: [Eight EN/RU cases across 72 category states](verification/table-contrast-browser.json) passed. Header/hover surface contrast is at least 1.6:1 in every theme; this is a project distinction check, separate from text readability. The focused [actual sample-data screenshot](verification/table-contrast-zerg.png) shows the header, hovered row and ordinary row together. One screenshot locator needed correction; its case was rerun with the same UI source hash. Next bounded step: publish, verify and install the private release while preserving data and the running app. This step is authorized; no recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — continuous console and replay hover
 

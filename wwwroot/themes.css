@@ -40,7 +40,6 @@
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.profile-favourite,.sounds-assigned,.pick-recommendation){background-image:linear-gradient(180deg,color-mix(in srgb,var(--surface) 90%,transparent),var(--surface)),var(--console-material);background-size:auto,256px 64px}
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(dialog,dialog>.dialog-head,.table-wrap,.roster-tools[open],.page-help>p.muted,.page-tools-panel,.lobby-pick-preview){background:var(--console-shell);border-color:var(--console-frame)}
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.live-lobby .live-slot,.live-team-head){background:var(--surface)}
-:root[data-graphical-style]:not([data-graphical-style=default]) :is(.player-table thead th,.player-table th:first-child){background:var(--raised)}
 :root[data-graphical-style]:not([data-graphical-style=default]) .player-table td:first-child{background:var(--bg)}
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(input:not([type=checkbox],[type=radio],[type=range]),select,textarea,#settings-language,.language-switch select){background-color:var(--bg);color:var(--text);border-color:var(--console-frame);border-radius:var(--console-radius)}
 :root[data-graphical-style]:not([data-graphical-style=default]) :is(.button,.filter,.mark-button,.page-tools>summary,.sounds-language button,.sounds-recording-preview,.replay-quick-list){border-color:var(--console-frame);border-radius:var(--console-radius)}

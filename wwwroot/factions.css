@@ -83,6 +83,10 @@
 :root[data-graphical-style] :is(.profile-favourite-top,.profile-region h3,.live-team-head){background:linear-gradient(180deg,color-mix(in srgb,var(--shell-header) 82%,var(--shell-panel)),var(--shell-panel));box-shadow:inset 0 1px #ffffff12,inset 0 -2px 3px #0007}
 :root .table-wrap{position:relative}
 :root .table-wrap::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;box-shadow:inset 2px 3px 7px #0009,inset -1px -1px #ffffff0a}
-:root thead th{background:linear-gradient(180deg,var(--shell-header),var(--shell-panel));box-shadow:inset 0 1px #ffffff10,inset 0 -2px 3px #0007}
+/* Table labels are a steel rim, distinct from the faction-tinted hover well.
+   Include the pinned first column so its older sticky surface cannot win. */
+:root{--table-head:#47515c;--table-head-text:#f1f5f8;--table-head-edge:#71808e}
+:root :is(thead th,.player-table thead th,.player-table th:first-child),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(thead th,.player-table thead th,.player-table th:first-child){background:var(--table-head);color:var(--table-head-text);border-bottom:1px solid var(--table-head-edge);box-shadow:inset 0 1px #ffffff14,inset 0 -1px #0005}
 
 @media(forced-colors:active){:root :is(.work-console,.profile-commanders,.profile-region,.profile-results,.profile-favourite-top,.profile-region h3,.live-team-head,thead th){box-shadow:none;background:Canvas}:root .table-wrap::after{display:none}:root tbody tr:is(:hover,:focus-within)>td{box-shadow:none;background:Highlight;color:HighlightText}}
