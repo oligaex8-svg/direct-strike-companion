@@ -14,11 +14,13 @@ For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.2` w
 
 ## Resume — 22 October 2026 — private update channel connection
 
-Status: GitHub CLI authenticated as `oligaex8-svg`, and the private repository was created and verified. The project now embeds the repository channel and version 1.0.1. The release workflow is pinned to verified action commit hashes; version tags trigger a self-contained Windows build, updater/notification regressions, publication and GitHub SHA-256 asset verification. The existing updater checks stable releases and asks before downloading/restarting.
+Status: Connected and installed the published 1.0.1 private update channel. GitHub CLI authenticated as `oligaex8-svg`; the repository and its private visibility were verified. The project embeds this channel and version. Version tags trigger a self-contained Windows build, updater/notification regressions, publication and GitHub SHA-256 asset verification. The existing updater checks at startup/every 30 minutes and asks before downloading/restarting.
 
 Changed owners: `DirectStrikeCompanion.csproj`, `.github/workflows/release.yml` and this publishing/access guide. The source-only Git allowlist excludes libraries, generated diagnostics, builds and credential files. A bounded scan of 559 eligible source/assets found no GitHub-token, AWS-key or private-key pattern matches; this is not a claim of a complete security audit.
 
-Acceptance pending: workflow authorization, initial source push, successful v1.0.1 publication, verified executable installation and encrypted local updater access. No token will be stored in Git or shared packages. Friends require their own access to this private repository and their own token. Next bounded step is publishing and checking this channel under the user's explicit connection request. No recurring work is authorized.
+Checks: [release workflow](https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/39833755171) passed all build, test, publish and digest steps. The actual downloaded release passed 1,907 updater checks locally. Its SHA-256, size and version match [published metadata](verification/github-channel-published.json). [Installation](verification/github-channel-installation.json) preserved the library, archives and processes. An earlier local test was stopped at 95% total CPU; the later guarded run passed. Local updater credentials are Windows-user encrypted, and a read through those stored credentials confirmed private repository access. No credential entered Git or shared packages.
+
+Next bounded step: observe the next normal app launch, then publish a newer version when changes are ready. A live upgrade/restart between two published versions was not exercised. Friends need their own repository access and token. No recurring work is authorized.
 
 ## Resume — 22 October 2026 — frame clearance and remembered window size
 
