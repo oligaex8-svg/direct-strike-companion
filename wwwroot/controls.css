@@ -1,0 +1,40 @@
+/* Utility actions use quiet surfaces. List membership owns its whole colour
+   treatment; faction command artwork remains on primary actions and navigation. */
+:root :is(.mark-button,.replay-quick-list,.filter,.button.ghost),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost){
+ --control-text:var(--text);--control-surface:var(--shell-panel);
+ --control-hover:var(--raised);--control-edge:color-mix(in srgb,var(--muted) 65%,var(--shell-well));
+ --control-focus:var(--shell-light);
+ border:1px solid var(--control-edge);border-image:none;border-radius:2px;
+ background:var(--control-surface);color:var(--control-text);box-shadow:none;
+}
+:root .filter[aria-pressed=true],
+:root[data-graphical-style]:not([data-graphical-style=default]) .filter[aria-pressed=true]{
+ --control-surface:var(--raised);--control-text:var(--shell-title);--control-edge:var(--shell-light);font-weight:600;
+}
+:root :is(.mark-button[data-list=friends],.replay-quick-list[data-quick-player-list=friends].is-selected,.filter[data-list-filter=friends][aria-pressed=true]),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button[data-list=friends],.replay-quick-list[data-quick-player-list=friends].is-selected,.filter[data-list-filter=friends][aria-pressed=true]){
+ --control-text:var(--green);--control-surface:#13291f;--control-hover:#1c392c;
+ --control-edge:#518c70;--control-focus:var(--green);
+}
+:root :is(.mark-button[data-list=losers],.replay-quick-list[data-quick-player-list=losers].is-selected,.filter[data-list-filter=losers][aria-pressed=true]),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button[data-list=losers],.replay-quick-list[data-quick-player-list=losers].is-selected,.filter[data-list-filter=losers][aria-pressed=true]){
+ --control-text:var(--amber);--control-surface:#2c2416;--control-hover:#41331c;
+ --control-edge:#aa874d;--control-focus:var(--amber);
+}
+:root :is(.mark-button,.replay-quick-list,.filter,.button.ghost):hover:not(:disabled),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost):hover:not(:disabled){
+ background:var(--control-hover);border-color:var(--control-edge);color:var(--control-text);
+}
+:root :is(.mark-button,.replay-quick-list,.filter,.button.ghost):focus-visible,
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost):focus-visible{
+ outline:2px solid var(--control-focus);outline-offset:2px;
+}
+:root :is(.mark-button,.replay-quick-list,.filter,.button.ghost):active:not(:disabled),
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost):active:not(:disabled){
+ background:var(--control-hover);box-shadow:inset 0 1px 3px #0005;
+}
+@media(forced-colors:active){
+ :root :is(.mark-button,.replay-quick-list,.filter,.button.ghost),:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost){forced-color-adjust:auto;border-color:ButtonText;background:ButtonFace;color:ButtonText;box-shadow:none}
+ :root :is(.mark-button,.replay-quick-list,.filter,.button.ghost):focus-visible,:root[data-graphical-style]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost):focus-visible{outline-color:Highlight}
+}

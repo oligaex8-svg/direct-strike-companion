@@ -14,7 +14,17 @@ The private update channel is [`oligaex8-svg/direct-strike-companion`](https://g
 
 For a friend: invite their GitHub account to this private repository. They connect their own token using **Check for updates → Private repository access**. Credentials are encrypted for their Windows account. Without repository access, private updates cannot be downloaded.
 
-For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.2` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+For the owner: commit changes, then run `./Publish-Release.ps1 -Version 1.0.3` with a new version. The script pushes source and a version tag; GitHub Actions builds, tests and publishes the Windows executable. Ordinary source pushes do not publish an update. Never commit tokens or the private replay library.
+
+## Resume — 22 October 2026 — coherent list controls and header surface
+
+Status: Prepared 1.0.2 with quiet utility controls and consistent membership colours. Friends use green text, fill, border and keyboard focus; Losers use amber. Ordinary list actions, secondary buttons and filters use a single neutral border without command-frame artwork. Primary command controls and navigation retain their SC2 treatment. Selected list filters remain identifiable. The header no longer paints an oversized tinted texture through its rails; a single inset surface fades into the workspace.
+
+Changed owners: `wwwroot/controls.css` supplies shared control roles after faction styling; `index.html` loads it. `console-layout.css` and `factions.css` own the header correction. `compact-ui.css` reserves room for complete list labels and removes the commander summary's fixed minimum width, preventing adjacent-cell overlap. Project metadata advances to 1.0.2.
+
+Checks: [eight EN/RU theme cases across all 72 category states](verification/controls-header-browser.json) passed, including frame clearance, header joins, list-label containment, commander-cell containment, keyboard focus and unchanged control dimensions. Measured minimum text contrast is 9.02:1 and border contrast 3.91:1. [Directory](verification/controls-header-preview.png) and [advisor header](verification/controls-header-picks.png) previews use isolated sample data. No private library was read by browser tests.
+
+Next authorized step: publish, verify and install 1.0.2 while preserving running apps and user data. No recurring follow-up is authorized.
 
 ## Resume — 22 October 2026 — private update channel connection
 

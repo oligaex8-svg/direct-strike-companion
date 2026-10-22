@@ -28,7 +28,7 @@
  --faction-inset-edge:#60726c;--faction-detail:#76bb94;--faction-selected-inset:inset 0 -2px #76bb94;
 }
 :root[data-graphical-style]:not([data-graphical-style=default]){--shell-frame-paint:22px}
-:root[data-graphical-style]:not([data-graphical-style=default]) .page-head{background:linear-gradient(180deg,transparent 55%,var(--shell-well)),linear-gradient(90deg,var(--shell-header),var(--console-shell))}
+:root[data-graphical-style]:not([data-graphical-style=default]) .page-head{background-image:linear-gradient(180deg,var(--shell-header),var(--shell-well))}
 :root[data-graphical-style]:not([data-graphical-style=default]) .page-head:before{background:var(--console-material) center/256px 64px repeat-x;opacity:.2}
 :root[data-graphical-style]:not([data-graphical-style=default]) .page-head:after{content:'';position:absolute;left:50%;top:calc(1px - var(--shell-frame-size));width:96px;height:14px;transform:translateX(-50%);background:var(--faction-crest) center top/contain no-repeat;pointer-events:none}
 :root[data-graphical-style]:not([data-graphical-style=default]) .brand{border-image-width:10px;background:var(--shell-header)}

@@ -6,7 +6,7 @@ const themesRun=process.argv.includes('--themes');
 const selectedCase=process.argv.find(arg=>arg.startsWith('--case='))?.slice(7);
 if(selectedCase&&!/^(default|protoss|zerg|terran)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
 const baselineReport=selectedCase?JSON.parse(fs.readFileSync(path.join(__dirname,'graphical-styles-browser.json'),'utf8')):null;
-const report={success:false,themeSourceHash:crypto.createHash('sha256').update(['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css'].map(name=>fs.readFileSync(path.join(web,name))).join('\n')).digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[]};
+const report={success:false,themeSourceHash:crypto.createHash('sha256').update(['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css'].map(name=>fs.readFileSync(path.join(web,name))).join('\n')).digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[]};
 (async()=>{let browser;try{
  browser=await chromium.launch({channel:'msedge',headless:true,args:['--disable-gpu']});
  for(const width of (themesRun?[1000,375]:[1280,1000,820,375]))for(const language of (themesRun?[width===1000?'en':'ru']:['en','ru']))for(const theme of (themesRun?['default','protoss','zerg','terran']:['default'])){
@@ -63,8 +63,9 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
   const entry={width,language,theme,views:[],screenshots:[],shellLayouts:[]};
   const capture=async name=>{
    if(process.argv.includes('--assertions-only'))return;
+   if(name==='players')await page.locator('.player-table-scroll').evaluate(el=>{el.scrollTop=0;});
    if(themesRun){
-    if(!['lobby','profile','picks','matches','settings'].includes(name))return;
+    if(!['lobby','profile','players','picks','matches','settings'].includes(name))return;
     const file=path.join(__dirname,`graphical-style-${theme}-${name}-${width}-${language}.png`);await page.screenshot({path:file,animations:'disabled'});entry.screenshots.push(file);
     if(name==='profile'){const aside=path.join(__dirname,`sidebar-${theme}-${width}-${language}.png`);await page.locator('.sidebar').screenshot({path:aside,animations:'disabled'});entry.screenshots.push(aside);}
     return;
@@ -106,6 +107,9 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
    assert.equal(shell.gutter,'stable','Scrollbar space stays reserved between short and long pages');
    assert.ok(Math.abs(shell.x-shell.bodyX)<1&&Math.abs(shell.width-shell.bodyWidth)<1&&Math.abs(shell.gap)<1,'Header and content share uninterrupted side rails');
    assert.equal(shell.bodyTopRail,'0','Content does not repeat a top frame beneath the header');
+   const headerSurface=await page.locator('.page-head').evaluate(el=>({clip:getComputedStyle(el).backgroundClip,overlay:getComputedStyle(el,'::before').content}));
+   assert.equal(headerSurface.clip,'padding-box','Header surface stays inside its frame');
+   assert.equal(headerSurface.overlay,'none','No oversized texture panel intersects the header rails');
    if(width>=1000&&entry.shellLayouts.length){const first=entry.shellLayouts[0];assert.ok(Math.abs(shell.x-first.x)<1&&Math.abs(shell.width-first.width)<1&&Math.abs(shell.height-first.height)<1,`${category}: page switches do not move the header (${JSON.stringify(shell)} vs ${JSON.stringify(first)})`);}
    entry.shellLayouts.push({category,...shell});
    const frameClearance=await page.evaluate(()=>{
@@ -179,6 +183,24 @@ const report={success:false,themeSourceHash:crypto.createHash('sha256').update([
    if(category==='players'||category==='friends'){
     assert.ok(await page.locator('.player-table tbody tr').count()>0);
     if(width>=1000)assert.ok(await page.locator('.player-table-scroll').evaluate(el=>el.scrollWidth<=el.clientWidth+1),'Directory fits a normal small desktop window');
+    assert.ok(await page.locator('.player-table .most-played-cell').evaluateAll(nodes=>nodes.every(el=>el.scrollWidth<=el.clientWidth+1&&el.getBoundingClientRect().right<=el.closest('td').getBoundingClientRect().right)),'Commander summaries fit their own cells without running into the adjacent win rate');
+    const membership=await page.locator('.player-table .mark-button').evaluateAll(nodes=>nodes.map(el=>{
+     const s=getComputedStyle(el),rgb=value=>{const n=value.match(/[\d.]+/g).slice(0,3).map(Number);return value.startsWith('color(srgb')?n.map(v=>v*255):n;},luminance=value=>rgb(value).map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4).reduce((sum,n,i)=>sum+n*[.2126,.7152,.0722][i],0),contrast=(a,b)=>{const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+     return {list:el.dataset.list,frame:s.borderImageSource,fill:s.backgroundImage,text:rgb(s.color),edge:rgb(s.borderTopColor),textContrast:contrast(s.color,s.backgroundColor),edgeContrast:contrast(s.borderTopColor,s.backgroundColor),fits:el.scrollWidth<=el.clientWidth+1,height:el.getBoundingClientRect().height,singleLineHeight:Math.max(parseFloat(s.minHeight)||0,parseFloat(s.lineHeight)+parseFloat(s.paddingTop)+parseFloat(s.paddingBottom)+parseFloat(s.borderTopWidth)+parseFloat(s.borderBottomWidth))};
+    }));
+    assert.ok(membership.every(s=>s.frame==='none'&&s.fill==='none'&&s.textContrast>=4.5&&s.edgeContrast>=3),`List actions have readable flat surfaces and visible single borders, without theme artwork: ${JSON.stringify(membership)}`);
+    assert.ok(membership.every(s=>s.fits&&(!s.list||s.height<=s.singleLineHeight+1)),'List labels fit without clipping or splitting membership names across lines');
+    const friend=membership.find(s=>s.list==='friends');assert.ok(friend&&friend.text[1]>friend.text[0]&&friend.edge[1]>friend.edge[0]&&friend.edge[1]>friend.edge[2],'Friends text and border share the green membership role');
+    if(category==='players'){
+     assert.ok(membership.some(s=>s.list==='')&&membership.some(s=>s.list==='losers'),'Directory covers unmarked and Losers controls');
+     const control=page.locator('.player-table .mark-button[data-list=friends]').first();
+     const before=await control.boundingBox();await control.hover();await control.focus();await page.keyboard.press('Tab');await page.keyboard.press('Shift+Tab');
+     const focus=await control.evaluate(el=>({frame:getComputedStyle(el).borderImageSource,ring:getComputedStyle(el).outlineColor,text:getComputedStyle(el).color}));
+     assert.equal(focus.frame,'none');assert.equal(focus.ring,focus.text,'Friends keyboard focus uses the same semantic colour');
+     const after=await control.boundingBox();assert.equal(after.width,before.width);assert.equal(after.height,before.height,'Hover and focus never change button dimensions');
+     await page.locator('.page-head h1').click();
+     entry.listControls=membership;
+    }
    }
    if(category==='picks'){
     await page.locator('#pick-enemy-commander').selectOption('Dehaka');

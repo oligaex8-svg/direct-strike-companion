@@ -135,13 +135,14 @@ main>footer{margin-top:12px;padding-top:10px;font-size:12px}
 
 /* Player directories, lists, advisor and statistics share the same row rhythm. */
 .player-table{min-width:700px;table-layout:fixed}
-.player-table th:first-child,.player-table td:first-child{width:19%;min-width:0}
+.player-table th:first-child,.player-table td:first-child{width:17%;min-width:0}
 .player-table th:nth-child(2){width:18%}
-.player-table th:nth-child(3),.player-table th:nth-child(4){width:8%}
-.player-table th:nth-child(5),.player-table th:nth-child(6){width:18%}
-.player-table th:last-child{width:11%}
+.player-table th:nth-child(3){width:10%}
+.player-table th:nth-child(4){width:11%}
+.player-table th:nth-child(5),.player-table th:nth-child(6){width:14%}
+.player-table th:last-child{width:16%}
 .player-table th,.player-table td{padding:8px}
-.player-table th{white-space:normal;overflow-wrap:anywhere;line-height:1.3}
+.player-table th{white-space:normal;overflow-wrap:normal;line-height:1.3}
 .directory-rating [data-site-player]{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:12px;overflow-wrap:anywhere}
 .directory-rating [data-site-player]>.stat{font-size:14px;color:var(--rating-dsr)}
 .directory-rating [data-site-player]>.stat:before{content:'DSR ';font-size:12px;font-weight:400}
@@ -155,10 +156,12 @@ main>footer{margin-top:12px;padding-top:10px;font-size:12px}
 .directory-rating .dsstats-value strong{font-size:14px}
 .directory-rating .dsstats-status{font-size:12px;color:var(--muted)}
 .player-table .player-name{font-size:14px;min-height:24px;text-align:left}
-.player-table .most-played-cell{gap:6px;align-items:center}
+.player-table .most-played-cell{min-width:0;gap:6px;align-items:center}
+.player-table .most-played-cell>div{min-width:0}
+.player-table .most-played-cell .commander-name{white-space:normal}
 .player-table .commander-portrait{width:28px;height:28px}
 .player-table .sample,.player-table .meta{font-size:12px;white-space:normal;overflow-wrap:anywhere}
-.player-table .mark-button{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.player-table .mark-button{max-width:100%;padding:6px;white-space:normal;overflow-wrap:normal}
 .directory-pager,.replay-pager{margin:8px 0;gap:8px}
 .directory-pager>div,.replay-pager>div{gap:8px}
 .list-tabs{margin-bottom:8px;gap:6px}
