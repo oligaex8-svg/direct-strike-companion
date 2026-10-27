@@ -8,6 +8,11 @@ A local Windows companion for StarCraft II **3v3 Commanders**. The launcher is a
 
 This installation lives at `D:/300 Development Folder/Tools/DirectStrikeCompanion`; source and build tools live in `Support/Development`. The former `C:/Users/Admin/Projects/DirectStrikeCompanion` path remains a compatibility junction.
 
+## Update-window release — 1.1.8, 27 October 2026
+
+The owner authorized a small visible update and publication so an existing 1.1.7 installation can exercise the in-app updater. The update window now states that public updates need no GitHub account or token, labels installation **Update now**, and explicitly says the app restarts afterward. English and Russian translations are included. These changes belong to `wwwroot/index.html` and `wwwroot/ru-ui.js`; updater transport, credential handling, themes and data storage are unchanged.
+
+Verification owner: `verification/Test-SoftwareUpdatesBrowser.cjs` exercises 1.1.7 discovering 1.1.8 in both languages at desktop and narrow widths, including optional access, token clearing and explicit installation. Its report and screenshots remain local under `verification/software-updates-*`. After an initial GPU-limit interruption, all four browser cases passed, including public checks and explicit installation with no connected token. The stable-release CI suites and anonymous download verification remain the final publication checks. The user's actual PC update is still a separate acceptance step: Check for updates → Update & restart, then confirm installed version 1.1.8. Further releases require owner instruction.
 ## Published release — 27 October 2026
 
 The owner authorized public visibility and publication of the current work on 27 October 2026. Version 1.1.7 promotes the local.54 UI and fixes to the stable update channel. The source commit includes runtime atlases, native-theme provenance and authoring scripts; raw model extractions, Blender workspaces, private libraries and diagnostic captures remain local. The loopback preview uses synthetic data and disables updates/game integration.

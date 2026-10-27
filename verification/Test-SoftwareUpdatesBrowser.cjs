@@ -7,7 +7,7 @@ const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),report={su
  for(const width of [1440,375])for(const language of ['en','ru']){
   const page=await browser.newPage({viewport:{width,height:1000}}),errors=[],calls=[];page.on('pageerror',error=>errors.push(error.message));
   const settings={language,selfIds:[],replayFolders:[],autoDetectSelf:false,liveWatch:false,screenWatch:false,sound:false,autoAcceptMatch:false,autoPickCommander:'',notificationSoundPreset:'sc2-nuclear',notificationSoundVolume:55,notificationSoundStyles:{}};
-  let update={currentVersion:'1.0.0',repository:'oligaex8-svg/direct-strike-companion',connected:false,state:'idle',message:'Check for updates from GitHub.'},fail=false;
+  let update={currentVersion:'1.1.7',repository:'oligaex8-svg/direct-strike-companion',connected:false,state:'idle',message:'Check for updates from GitHub.'},fail=false;
   const lobby={phase:'pregame',roster:[],rosterEntries:[],alerts:[],automation:{acceptNeeded:false,status:'Ready'},liveStatus:'SC2 ready',ocrStatus:'Screen reader off'};
   await page.route('**/*',route=>{
    const name=new URL(route.request().url()).pathname;
@@ -22,7 +22,7 @@ const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),report={su
      if(fail){fail=false;return json({error:'Fixture access denied'},400);}
      update={...update,availableVersion:null,connected:method!=='DELETE',state:'idle',message:method==='DELETE'?'GitHub disconnected.':'GitHub connected. Check for updates.'};return json(update);
     }
-    if(api==='software-updates/check'){update={...update,state:'available',availableVersion:'1.1.0',message:'An update is available.'};return json(update);}
+    if(api==='software-updates/check'){update={...update,state:'available',availableVersion:'1.1.8',message:'An update is available.'};return json(update);}
     if(api==='software-updates/install')return json({restarting:true});
     return json({});
    }
@@ -34,6 +34,9 @@ const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),report={su
   await page.locator('#settings-open').click();await page.locator('#updates-open').click();
   const dialog=page.locator('#updates-dialog'),token=page.locator('#updates-token');await page.waitForFunction(()=>!softwareUpdateUiBusy);
   assert.equal(await dialog.isVisible(),true);assert.equal(await page.locator('#updates-check').isDisabled(),false,'Public checks need no token');assert.equal(await page.locator('#updates-install').isVisible(),true,'Public release can be installed without connecting');
+  assert.equal(await page.locator('#updates-public-info').textContent(),language==='ru'?'Для общедоступных обновлений не нужны аккаунт GitHub или токен.':'No GitHub account or token is needed for public updates.');
+  assert.equal(await page.locator('#updates-public-info').isVisible(),true,'No-account guidance remains visible outside optional access');
+  assert.equal(await page.locator('#updates-install').textContent(),language==='ru'?'Обновить сейчас':'Update now');
   assert.equal(update.connected,false);assert.equal(calls.filter(call=>call.api==='software-updates/install').length,0,'Public discovery never downloads or restarts automatically');
   assert.equal(await page.locator('#updates-access').evaluate(node=>node.open),false,'Optional access starts collapsed');await page.locator('#updates-access summary').click();
   assert.equal(await token.getAttribute('type'),'password');await token.fill('test-only-token-not-real-12345');fail=true;
@@ -43,7 +46,7 @@ const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),report={su
   assert.equal(await token.inputValue(),'');assert.equal(await page.locator('#updates-check').isDisabled(),false);
   await page.locator('#updates-check').click();await page.waitForFunction(()=>!softwareUpdateUiBusy);
   assert.equal(await page.locator('#updates-install').isVisible(),true);assert.equal(await page.locator('#update-available').isVisible(),true);
-  assert.match(await page.locator('#updates-version').textContent(),/1\.1\.0/);
+  assert.match(await page.locator('#updates-version').textContent(),/1\.1\.8/);
   const installs=()=>calls.filter(call=>call.api==='software-updates/install').length;
   assert.equal(installs(),0,'Checking and connecting never restart the application');
   await token.fill('unsaved-secret');await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.getElementById('updates-dialog').open&&document.getElementById('updates-token').value==='');assert.equal(await token.inputValue(),'');
@@ -55,7 +58,7 @@ const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),report={su
   await page.locator('#updates-access summary').click();
   const box=await dialog.boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width);assert.deepEqual(errors,[]);
   const screenshot=path.join(__dirname,`software-updates-${width}-${language}.png`);await page.screenshot({path:screenshot});
-  await page.locator('#updates-install').click();await page.waitForFunction(()=>!softwareUpdateUiBusy);assert.equal(installs(),1,'Installation requires the explicit Update & restart action');
+  await page.locator('#updates-install').click();await page.waitForFunction(()=>!softwareUpdateUiBusy);assert.equal(installs(),1,'Installation requires the explicit Update now action');
   report.cases.push({width,language,publicWithoutToken:true,credentialsCleared:true,accessRecovery:true,explicitInstall:true,nestedFocus:true,screenshot});await page.close();
  }
  report.success=true;

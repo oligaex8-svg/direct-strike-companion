@@ -2,6 +2,8 @@
 
 // Exact canonical UI text. Player names, notes, identities and URLs are never keys.
 const RU_UI_TEXT=Object.freeze({
+  "No GitHub account or token is needed for public updates.":"Для общедоступных обновлений не нужны аккаунт GitHub или токен.",
+  "The app restarts after updating.":"После обновления приложение перезапустится.",
   "Rating gain / loss":"Прирост / потеря рейтинга",
   "Match watch is off.":"Отслеживание матча выключено.",
   "Replay viewing: waiting for a live lobby.":"Просмотр повтора: ожидание текущего лобби.",
