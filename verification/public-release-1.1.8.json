@@ -1,0 +1,14 @@
+{
+  "Success": true,
+  "Anonymous": true,
+  "Version": "v1.1.8",
+  "PreviousVersion": "1.1.7",
+  "Release": "https://github.com/oligaex8-svg/direct-strike-companion/releases/tag/v1.1.8",
+  "Download": "https://github.com/oligaex8-svg/direct-strike-companion/releases/download/v1.1.8/DirectStrikeCompanion-win-x64.exe",
+  "Bytes": 443836953,
+  "SHA256": "2bd0b9348c179eee9ebe63977113a7d40bdf4df29e8ed48490183b8e6ecca8ca",
+  "ProductVersion": "1.1.8+22f4126072f1f3dbee7c1df15ea60a25d44f1ea8",
+  "Workflow": "https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/40525561116",
+  "SourceCommit": "22f4126072f1f3dbee7c1df15ea60a25d44f1ea8",
+  "VerifiedAt": "2026-10-27T14:57:44.7213132Z"
+}
