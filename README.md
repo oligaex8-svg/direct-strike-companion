@@ -8,11 +8,11 @@ A local Windows companion for StarCraft II **3v3 Commanders**. The launcher is a
 
 This installation lives at `D:/300 Development Folder/Tools/DirectStrikeCompanion`; source and build tools live in `Support/Development`. The former `C:/Users/Admin/Projects/DirectStrikeCompanion` path remains a compatibility junction.
 
-## Release preparation — 27 October 2026
+## Published release — 27 October 2026
 
 The owner authorized public visibility and publication of the current work on 27 October 2026. Version 1.1.7 promotes the local.54 UI and fixes to the stable update channel. The source commit includes runtime atlases, native-theme provenance and authoring scripts; raw model extractions, Blender workspaces, private libraries and diagnostic captures remain local. The loopback preview uses synthetic data and disables updates/game integration.
 
-Release acceptance requires the tagged clean-checkout workflow to build the stable Windows executable, pass updater/notification/nickname/dashboard tests, and verify the uploaded SHA-256. After publication, verify the anonymous latest-release API and downloaded executable digest before declaring users can update. Earlier local-only notes below are historical and are superseded by this authorization for this release. Future releases still require owner instruction.
+Acceptance passed: the [tagged clean-checkout workflow](https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/40521455030) built stable 1.1.7, passed updater/notification/nickname/dashboard tests and verified the uploaded SHA-256. [Anonymous download verification](verification/public-release-1.1.7.json) confirms the public latest-release endpoint, the complete 443,836,953-byte Windows executable and matching digest. Source publication checks found no private data paths or credential patterns. The installed 1.1.6 update contract accepts this stable version and asset; an independent user-PC installation has not been exercised here. Earlier local-only notes are historical and superseded for this release. Next bounded step: users choose Check for updates → Update now; future releases require owner instruction.
 ### Current theme resume — 26 October 2026, local.54
 
 Status: all fifteen remaining themes now have distinct original SC2 equipment rendered with their native animation clips: Nerazim, Alarak, Ihan-rii, Nova, Mira, Machined, Tyrador, Abathur, Dehaka, Cerberus, Mecha, Arcade and the three Classic themes. Original model/texture hashes, exact clip choices and material adaptations are documented in [native54 provenance](assets/themes/native54/README.md). These are original models, not generated surrounds. Default geometry, restored borders and the five approved themes are preserved.
