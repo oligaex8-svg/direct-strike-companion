@@ -1,12 +1,20 @@
 # Direct Strike Companion
 
-[![Download latest launcher for Windows x64](assets/download-windows.svg)](https://github.com/oligaex8-svg/direct-strike-companion/releases/latest/download/DirectStrikeCompanion-win-x64.exe)
+[![Download latest launcher for Windows x64](assets/download-windows.svg)](https://github.com/oligaex8-svg/direct-strike-companion/releases/latest/download/DirectStrikeCompanion.exe)
 
 Public downloads and in-app updates are available through GitHub Releases. [All releases](https://github.com/oligaex8-svg/direct-strike-companion/releases).
 
 A local Windows companion for StarCraft II **3v3 Commanders**. The launcher is a standalone Windows executable with the runtime, dashboard, commander portraits, and OCR script bundled inside. No separate .NET installation is needed.
 
 This installation lives at `D:/300 Development Folder/Tools/DirectStrikeCompanion`; source and build tools live in `Support/Development`. The former `C:/Users/Admin/Projects/DirectStrikeCompanion` path remains a compatibility junction.
+
+## Portable updater repair — 1.1.9, 27 October 2026
+
+The owner reported 1.1.7 failing before installation and confirmed launching `DirectStrikeCompanion-win-x64 (1).exe`. Both preparation and the helper previously accepted only two canonical filenames, excluding the published asset itself. `ReleaseUpdater.cs` now accepts EXE filenames while retaining link rejection, protected tickets, target/helper content identity, download digest/version/product checks and rollback. Preparation errors retain useful causes; `wwwroot/ru-ui.js` translates the new messages. `ReleaseUpdaterTests.cs` covers downloaded/duplicate/renamed filenames and error handling.
+
+Acceptance: `verification/Test-PortableUpdate.ps1` and its separately compiled `PortableUpdateHarness.cs` exercised the production updater from the duplicate filename, with an anonymous public download, real helper replacement and restart into released 1.1.8. The unchanged public 1.1.7 also upgraded after its filename-only workaround. Reports: [fixed updater](verification/portable-update-result.json), [original release](verification/portable-update-result-original.json). Both verified the released SHA-256, restarted API version, Russian language, saved friend note and a data sentinel. Fixture libraries and EXEs are isolated; the released app still shares per-user updater cache/credentials and the global mutex, so the harness refuses to start alongside a running Companion.
+
+[Local build](verification/portable-update-build.json) identifies `Support/UpdaterFix-1.1.8/DirectStrikeCompanion.exe`, version `1.1.8-local.updater.1`; its updater suite passed. The owner authorized publishing this repair as 1.1.9. The primary download is now `DirectStrikeCompanion.exe`; the identical `DirectStrikeCompanion-win-x64.exe` asset remains for installed clients. The release workflow verifies both digests. Existing broken clients must first rename their executable to `DirectStrikeCompanion.exe`, or download the fixed version manually. Next acceptance step: verify the tagged release and a full-app upgrade to its published executable.
 
 ## Update-window release — 1.1.8, 27 October 2026
 

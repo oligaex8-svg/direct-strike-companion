@@ -2,6 +2,16 @@
 
 // Exact canonical UI text. Player names, notes, identities and URLs are never keys.
 const RU_UI_TEXT=Object.freeze({
+  "Update installation could not be prepared. The installed app is unchanged.":"Не удалось подготовить обновление. Установленное приложение не изменено.",
+  "Run the Windows executable to install updates.":"Для установки обновлений запустите Windows-приложение (EXE).",
+  "Update preparation timed out or was cancelled. The installed app is unchanged. Try again.":"Время подготовки обновления истекло или операция отменена. Приложение не изменено. Повторите попытку.",
+  "The update could not be downloaded. The installed app is unchanged. Check your connection and try again.":"Не удалось скачать обновление. Приложение не изменено. Проверьте подключение и повторите попытку.",
+  "Windows denied access to the update files. The installed app is unchanged. Check folder permissions.":"Windows запретила доступ к файлам обновления. Приложение не изменено. Проверьте права доступа к папке.",
+  "The update files could not be prepared. The installed app is unchanged. Check free disk space and folder access.":"Не удалось подготовить файлы обновления. Приложение не изменено. Проверьте свободное место на диске и доступ к папке.",
+  "Update download was incomplete.":"Обновление скачано не полностью. Повторите попытку.",
+  "Update exceeded its declared size.":"Размер обновления превышает заявленный. Установка отменена.",
+  "Update checksum or size does not match GitHub.":"Контрольная сумма или размер обновления не совпадают с данными GitHub. Установка отменена.",
+  "The downloaded app version does not match the release.":"Версия скачанного приложения не совпадает с версией выпуска. Установка отменена.",
   "No GitHub account or token is needed for public updates.":"Для общедоступных обновлений не нужны аккаунт GitHub или токен.",
   "The app restarts after updating.":"После обновления приложение перезапустится.",
   "Rating gain / loss":"Прирост / потеря рейтинга",

@@ -20,6 +20,7 @@
 !/verification/*.ps1
 !/verification/*.targets
 !/verification/*.py
+!/verification/PortableUpdateHarness.cs
 !/verification/fixtures/
 **/bin/
 **/obj/

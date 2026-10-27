@@ -24,10 +24,30 @@ internal static class ReleaseUpdaterTests
         foreach (var url in new[] { "http://api.github.com/x", "https://api.github.com.evil.test/x", "https://evil.test/x", "https://user@api.github.com/x", "https://api.github.com:8443/x" })
             Reject(() => ReleaseUpdater.ValidateDownloadHost(new(url)), "update redirects reject insecure/foreign/credentialed hosts");
         ReleaseUpdater.ValidateDownloadHost(new("https://release-assets.githubusercontent.com/example"));
+        foreach (var name in new[] { "DirectStrikeCompanion.exe", "Direct Strike Companion.exe", ReleaseUpdater.AssetName,
+            "DirectStrikeCompanion-win-x64 (1).exe", "DirectStrikeCompanion (2).exe", "My companion.EXE" })
+        {
+            ReleaseUpdater.ValidateInstallTarget(Path.Combine(Path.GetTempPath(), name));
+            check(true, "portable updater accepts executable filename: " + name);
+        }
+        try { ReleaseUpdater.ValidateInstallTarget(Path.Combine(Path.GetTempPath(), "DirectStrikeCompanion.dll")); check(false, "DLL host cannot self-update"); }
+        catch (InvalidOperationException) { check(true, "DLL host cannot self-update"); }
+        check(ReleaseUpdater.PreparationFailureMessage(new InvalidDataException("Update download was incomplete.")) == "Update download was incomplete.",
+            "preparation preserves a specific verification failure instead of hiding it");
+        check(!ReleaseUpdater.PreparationFailureMessage(new HttpRequestException("private request URL")).Contains("private request URL"),
+            "preparation network errors do not expose request details");
         JsonElement Release(string digest, long size = 4096, string tag = "v1.2.0", bool draft = false) => JsonSerializer.SerializeToElement(new
         { tag_name = tag, draft, prerelease = false, assets = new[] { new { id = 42, name = ReleaseUpdater.AssetName, size, digest } } });
         var sha = new string('A', 64);
         check(ReleaseUpdater.ReadRelease(Release("sha256:" + sha), new(1, 1, 0)).AssetId == 42, "stable newer release selects the exact x64 asset and trusted GitHub digest");
+        var compatibleRelease = JsonSerializer.SerializeToElement(new
+        {
+            tag_name = "v1.2.0", draft = false, prerelease = false,
+            assets = new[] { new { id = 41, name = "DirectStrikeCompanion.exe", size = 4096, digest = "sha256:" + sha },
+                new { id = 42, name = ReleaseUpdater.AssetName, size = 4096, digest = "sha256:" + sha } }
+        });
+        check(ReleaseUpdater.ReadRelease(compatibleRelease, new(1, 1, 0)).AssetId == 42,
+            "user-facing executable alias does not disrupt existing updater asset selection");
         foreach (var digest in new[] { "", "sha256:123", "md5:" + sha }) Reject(() => ReleaseUpdater.ReadRelease(Release(digest), new(1, 1, 0)), "missing or unsupported digest cannot authorize installation");
         Reject(() => ReleaseUpdater.ReadRelease(Release("sha256:" + sha, ReleaseUpdater.MaximumDownload + 1), new(1, 1, 0)), "oversized asset cannot authorize download");
         Reject(() => ReleaseUpdater.ReadRelease(Release("sha256:" + sha, tag: "v1.0.0"), new(1, 1, 0)), "downgrade cannot authorize installation");

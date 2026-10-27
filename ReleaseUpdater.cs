@@ -200,9 +200,7 @@ internal sealed class ReleaseUpdater
             if (ParseVersion(expectedVersion ?? "").ToString() != release.Version)
                 throw new InvalidOperationException("The offered update changed. Check for updates again.");
             var target = Environment.ProcessPath ?? throw new InvalidOperationException("Application path unavailable.");
-            if (!target.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || Path.GetFileName(target) is not ("Direct Strike Companion.exe" or "DirectStrikeCompanion.exe"))
-                throw new InvalidOperationException("Run the installed Windows application to update it.");
-            EnsureNoLinks(target);
+            ValidateInstallTarget(target);
             var stagingRoot = StagingRoot;
             Directory.CreateDirectory(stagingRoot); EnsureNoLinks(stagingRoot);
             stage = Path.Combine(stagingRoot, Guid.NewGuid().ToString("N"));
@@ -220,18 +218,36 @@ internal sealed class ReleaseUpdater
             using var worker = Process.Start(start) ?? throw new IOException("Could not start the update installer.");
             Set("restarting", "Restarting to install the verified update…", release.Version);
         }
-        catch
+        catch (Exception error)
         {
-            Set("error", "Update installation could not be prepared. The installed app is unchanged.", available?.Version);
+            Set("error", PreparationFailureMessage(error), available?.Version);
             if (stage != null && Directory.Exists(stage))
             {
                 try { EnsureNoLinks(stage); if (Path.GetDirectoryName(stage) == StagingRoot) Directory.Delete(stage, true); }
-                catch (IOException) { /* A running installer or changed path is left for safe cleanup. */ }
+                catch (Exception cleanupError) when (cleanupError is IOException or UnauthorizedAccessException) { /* Preserve the original preparation error if cleanup is unavailable. */ }
             }
-            throw new InvalidOperationException(Snapshot().Message);
+            throw new InvalidOperationException(Snapshot().Message, error);
         }
         finally { operation.Release(); }
     }
+    internal static void ValidateInstallTarget(string target)
+    {
+        // Portable downloads may retain the release asset name, a browser's
+        // duplicate suffix, or a user-chosen name. Apply authenticates the
+        // target by comparing its contents with this running helper's copy.
+        if (!Path.GetExtension(target).Equals(".exe", StringComparison.OrdinalIgnoreCase))
+            throw new InvalidOperationException("Run the Windows executable to install updates.");
+        EnsureNoLinks(target);
+    }
+    internal static string PreparationFailureMessage(Exception error) => error switch
+    {
+        OperationCanceledException => "Update preparation timed out or was cancelled. The installed app is unchanged. Try again.",
+        HttpRequestException => "The update could not be downloaded. The installed app is unchanged. Check your connection and try again.",
+        UnauthorizedAccessException => "Windows denied access to the update files. The installed app is unchanged. Check folder permissions.",
+        InvalidDataException or InvalidOperationException => error.Message,
+        IOException => "The update files could not be prepared. The installed app is unchanged. Check free disk space and folder access.",
+        _ => "Update installation could not be prepared. The installed app is unchanged."
+    };
     internal async Task DownloadAsync(ReleaseDownload release, string download, CancellationToken cancel)
     {
         using var response = await SendAsync(new($"https://api.github.com/repos/{repository}/releases/assets/{release.AssetId}"), Token(), true, cancel);
@@ -288,9 +304,8 @@ internal sealed class ReleaseUpdater
             var stage = Path.GetDirectoryName(Environment.ProcessPath!)!;
             if (Path.GetFullPath(ticketPath) != Path.Combine(stage, "install.bin")) throw new InvalidDataException("Invalid installer ticket location.");
             var ticket = JsonSerializer.Deserialize<UpdateInstallTicket>(UpdateSecret.Unprotect(File.ReadAllBytes(ticketPath))) ?? throw new InvalidDataException("Invalid update ticket.");
-            EnsureNoLinks(ticket.Target); EnsureNoLinks(ticket.Download);
+            ValidateInstallTarget(ticket.Target); EnsureNoLinks(ticket.Download);
             if (ticket.Download != Path.Combine(stage, "download.exe") || ticket.Target == Environment.ProcessPath
-                || Path.GetFileName(ticket.Target) is not ("Direct Strike Companion.exe" or "DirectStrikeCompanion.exe")
                 || FileHash(ticket.Target) != FileHash(Environment.ProcessPath!)) throw new InvalidDataException("The installed application changed. Retry the update.");
             VerifyExecutable(ticket.Download, ticket.Sha256, ticket.Size, ticket.Version);
             try

@@ -54,10 +54,14 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           Copy-Item release/DirectStrikeCompanion.exe release/DirectStrikeCompanion-win-x64.exe
-          gh release create $env:RELEASE_TAG release/DirectStrikeCompanion-win-x64.exe --verify-tag --title "Direct Strike Companion $env:RELEASE_VERSION" --generate-notes
+          # Keep the legacy asset for already-installed updaters. The main
+          # user-facing download uses the same normal name as the running app.
+          gh release create $env:RELEASE_TAG release/DirectStrikeCompanion.exe release/DirectStrikeCompanion-win-x64.exe --verify-tag --title "Direct Strike Companion $env:RELEASE_VERSION" --generate-notes
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
           $release = gh api "repos/$env:GH_REPO/releases/tags/$env:RELEASE_TAG" | ConvertFrom-Json
           if ($LASTEXITCODE -ne 0) { throw 'Could not verify the published release.' }
-          $asset = @($release.assets | Where-Object name -eq 'DirectStrikeCompanion-win-x64.exe')
-          $expected = 'sha256:' + (Get-FileHash release/DirectStrikeCompanion-win-x64.exe -Algorithm SHA256).Hash.ToLowerInvariant()
-          if ($asset.Count -ne 1 -or $asset[0].digest -ne $expected) { throw 'Published GitHub digest differs from the tested EXE.' }
+          $expected = 'sha256:' + (Get-FileHash release/DirectStrikeCompanion.exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          foreach ($name in @('DirectStrikeCompanion.exe', 'DirectStrikeCompanion-win-x64.exe')) {
+            $asset = @($release.assets | Where-Object name -eq $name)
+            if ($asset.Count -ne 1 -or $asset[0].digest -ne $expected) { throw "Published GitHub digest differs from the tested EXE: $name" }
+          }
