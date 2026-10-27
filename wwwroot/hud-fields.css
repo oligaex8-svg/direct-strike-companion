@@ -1,0 +1,36 @@
+/* Native field caps attach to repeat-only straight rails. The unpainted
+   centre belongs to live text, never the atlas's ribbed decorative interior. */
+/* BEGIN GENERATED FIELD FAMILIES */
+:root[data-graphical-style=protoss]{--hud-field-frame:url('/themes/protoss-hud-field-frame.png')}
+:root[data-graphical-style=nerazim]{--hud-field-frame:url('/themes/nerazim-hud-field-frame.png')}
+:root[data-graphical-style=alarak]{--hud-field-frame:url('/themes/alarak-hud-field-frame.png')}
+:root[data-graphical-style=ihanrii]{--hud-field-frame:url('/themes/ihanrii-hud-field-frame.png')}
+:root[data-graphical-style=terran]{--hud-field-frame:url('/themes/terran-hud-field-frame.png')}
+:root[data-graphical-style=nova]{--hud-field-frame:url('/themes/nova-hud-field-frame.png')}
+:root[data-graphical-style=mira]{--hud-field-frame:url('/themes/mira-hud-field-frame.png')}
+:root[data-graphical-style=machined]{--hud-field-frame:url('/themes/machined-hud-field-frame.png')}
+:root[data-graphical-style=tyrador]{--hud-field-frame:url('/themes/tyrador-hud-field-frame.png')}
+:root[data-graphical-style=zerg]{--hud-field-frame:url('/themes/zerg-hud-field-frame.png')}
+:root[data-graphical-style=abathur]{--hud-field-frame:url('/themes/abathur-hud-field-frame.png')}
+:root[data-graphical-style=dehaka]{--hud-field-frame:url('/themes/dehaka-hud-field-frame.png')}
+:root[data-graphical-style=cerberus]{--hud-field-frame:url('/themes/cerberus-hud-field-frame.png')}
+:root[data-graphical-style=mecha]{--hud-field-frame:url('/themes/mecha-hud-field-frame.png')}
+:root[data-graphical-style=fenix]{--hud-field-frame:url('/themes/fenix-hud-field-frame.png')}
+:root[data-graphical-style=arcade]{--hud-field-frame:url('/themes/arcade-hud-field-frame.png')}
+:root[data-graphical-style=classic-terran]{--hud-field-frame:url('/themes/classic-terran-hud-field-frame.png')}
+:root[data-graphical-style=classic-protoss]{--hud-field-frame:url('/themes/classic-protoss-hud-field-frame.png')}
+:root[data-graphical-style=classic-zerg]{--hud-field-frame:url('/themes/classic-zerg-hud-field-frame.png')}
+/* END GENERATED FIELD FAMILIES */
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(input:not([type=checkbox],[type=radio],[type=range],[type=color],[type=hidden]),select,textarea){
+ box-sizing:border-box;min-height:38px;min-width:0;padding:10px 16px;border:1px solid transparent;border-image:var(--hud-field-frame) 24 / 11px / 0 repeat;border-radius:0;background:var(--shell-well,#0a0c12);background-image:none;color:var(--text);box-shadow:none;line-height:1.35
+}
+:root[data-graphical-style]:not([data-graphical-style=default]) textarea{min-height:84px;resize:vertical}
+:root[data-graphical-style]:not([data-graphical-style=default]) select{padding-right:32px;appearance:auto}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(input,select,textarea):focus-visible{outline:2px solid var(--shell-light,var(--accent));outline-offset:2px}
+:root[data-graphical-style]:not([data-graphical-style=default]) :is(input,textarea)::placeholder{color:var(--muted);opacity:1}
+/* A toolbar is a shared work surface, not an enlarged chat-field atlas. */
+:root[data-graphical-style]:not([data-graphical-style=default]) .toolbar{background:var(--shell-panel);background-image:none;border:1px solid var(--line);border-image:none;box-shadow:none}
+@media(forced-colors:active){
+ :root[data-graphical-style]:not([data-graphical-style=default]) :is(input:not([type=hidden]),select,textarea){border:1px solid CanvasText;border-image:none;background:Canvas;color:CanvasText}
+ :root[data-graphical-style]:not([data-graphical-style=default]) :is(input,select,textarea):focus-visible{outline-color:Highlight}
+}

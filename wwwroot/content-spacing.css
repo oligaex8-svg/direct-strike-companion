@@ -1,0 +1,14 @@
+/* Shared reading clearance. Default and every skin keep the same composition;
+   text sits inside each heading surface and beyond sculpted table corners. */
+:root .work-console .profile-section-heading{
+ padding:7px 12px!important;min-width:0;flex-wrap:wrap;row-gap:4px!important
+}
+:root .work-console .profile-section-heading>span{margin-left:auto}
+:root .work-console .profile-average-grid section{padding:12px 14px!important}
+:root .work-console .table-wrap th{padding:12px 14px!important}
+:root .work-console .table-wrap td{padding-inline:14px!important}
+:root .work-console .table-wrap :is(th,td):first-child{padding-left:18px!important}
+:root .work-console .table-wrap :is(th,td):last-child{padding-right:18px!important}
+:root .work-console .table-wrap tbody>tr:last-child>td{padding-bottom:14px!important}
+:root .work-console .profile-best-heading{padding:9px 10px!important}
+.encounter-source-part{display:inline-block;white-space:nowrap}

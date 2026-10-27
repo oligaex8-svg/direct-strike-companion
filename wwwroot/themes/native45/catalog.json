@@ -1,0 +1,103 @@
+{
+  "version": 45,
+  "objects": {
+    "sensor": {
+      "frames": 192,
+      "columns": 16,
+      "rows": 12,
+      "tile": [
+        130,
+        293
+      ],
+      "duration": 8000,
+      "atlas": "/themes/native45/sensor-atlas.webp",
+      "poster": "/themes/native45/sensor-poster.webp",
+      "decodedMiB": 27.89794921875,
+      "atlasSHA256": "48ee70061f572d5d8cd20f3daa6828ed9b5914243399907a70bc4ecf1712412c",
+      "posterSHA256": "e37d3f9d6facdcd7d051d165a59cdf414432ede5ba10283a06a2a242020d5b43",
+      "crop": {
+        "left": 63,
+        "top": 24,
+        "width": 130,
+        "height": 293
+      },
+      "source": {
+        "device": "sensor",
+        "frames": 192,
+        "width": 256,
+        "height": 320,
+        "duration": 8000,
+        "sourceSHA256": "d9a161552ae16c27a011fd4d1132cb76c31d395cd286ac107332269d0b2800a2",
+        "sourceModelSHA256": "d9a161552ae16c27a011fd4d1132cb76c31d395cd286ac107332269d0b2800a2",
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local45-terran\\sensor\\frames-1d1be7df358e",
+        "fingerprint": "1d1be7df358e9821c548e332617bf5e694039d8bb764489914cc4ef8d1adaff5",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 4000
+        },
+        "provenance": {
+          "geometry": "Unchanged Blizzard SC2 native mesh, rigid bone partition, native corner normals and UV0/UV1",
+          "animation": "Native selected sequence bone location/quaternion/scale tracks; no actor rotation assumed; authored Top assembly 8s scan revolution enabled",
+          "presentation": "Authored fixed camera, lights, PBR translation; native particles not reproduced; additive warning glow approximated for RGBA"
+        },
+        "frameCount": 192,
+        "fps": 24,
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "meshVertices": 3265,
+        "triangles": 1644,
+        "sensorScanAuthored": true
+      }
+    },
+    "reactor": {
+      "frames": 160,
+      "columns": 16,
+      "rows": 10,
+      "tile": [
+        235,
+        198
+      ],
+      "duration": 6666.666666666667,
+      "atlas": "/themes/native45/reactor-atlas.webp",
+      "poster": "/themes/native45/reactor-poster.webp",
+      "decodedMiB": 28.399658203125,
+      "atlasSHA256": "94c12754d3054641487d0b356beca5b093d18a6fec5852c03874576c56ddfb15",
+      "posterSHA256": "d957f379e8875dc85271ca4b4540577836196d76e4dcb41cf5701c041279d60f",
+      "crop": {
+        "left": 12,
+        "top": 74,
+        "width": 235,
+        "height": 198
+      },
+      "source": {
+        "device": "reactor",
+        "frames": 160,
+        "width": 256,
+        "height": 320,
+        "duration": 6666.666666666667,
+        "sourceSHA256": "3001804906998e440c8622163c4b52c5e3d6db1dd7b67f5eb5ccb87795d882d1",
+        "sourceModelSHA256": "3001804906998e440c8622163c4b52c5e3d6db1dd7b67f5eb5ccb87795d882d1",
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local45-terran\\reactor\\frames-35b68e39c464",
+        "fingerprint": "35b68e39c4643d0a3899e5fd63994ba0a4e571b61d00a52bb11b32ced835723b",
+        "nativeSequence": {
+          "name": "Stand Attached Work",
+          "start": 0,
+          "end": 6667
+        },
+        "provenance": {
+          "geometry": "Unchanged Blizzard SC2 native mesh, rigid bone partition, native corner normals and UV0/UV1",
+          "animation": "Native selected sequence bone location/quaternion/scale tracks; no actor rotation assumed; no additional controller",
+          "presentation": "Authored fixed camera, lights, PBR translation; native particles not reproduced; additive warning glow approximated for RGBA"
+        },
+        "frameCount": 160,
+        "fps": 24,
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "meshVertices": 3181,
+        "triangles": 1722,
+        "sensorScanAuthored": false
+      }
+    }
+  }
+}

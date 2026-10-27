@@ -1,0 +1,52 @@
+{
+  "version": 47,
+  "provenance": "Native Protoss inlay/field/ripple pixels with authored charge and warp timing. No game-engine capture.",
+  "frames": {
+    "shell": {
+      "source": "/themes/protoss-console-shell-frame.png",
+      "sha256": "f3f1f132abe41f05d0d921ad4d38ad36d72734d726d06c887ff9d079d89ca3bb",
+      "layers": [
+        "/themes/protoss47/shell-0.webp",
+        "/themes/protoss47/shell-1.webp",
+        "/themes/protoss47/shell-2.webp"
+      ]
+    },
+    "well": {
+      "source": "/themes/motion37/well-protoss.png",
+      "sha256": "4982e509b1a2f602a82735d37b4b633eaadbaed022c7e0c9a62be085a0443f33",
+      "layers": [
+        "/themes/protoss47/well-0.webp",
+        "/themes/protoss47/well-1.webp",
+        "/themes/protoss47/well-2.webp"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "assets/themes/protoss42/textures/pylonradius1d_512.png",
+      "sha256": "f6f99cafa048886f96391fffaf196d59eb7c2f2b29eb7f530124a546aa1f7ba7"
+    },
+    {
+      "path": "assets/themes/protoss42/textures/shockwave_blackring1.png",
+      "sha256": "d88fb1ea9b5d5a754fc2da3ca2cdc62fb4113a6e84f6c874b5a40daf613d80bd"
+    },
+    {
+      "path": "assets/themes/protoss42/textures/glow_blue2.png",
+      "sha256": "e1a5d9a5944a26b59f39819738c863b965b63ef12425608d1ab3ebf16638820f"
+    }
+  ],
+  "field": {
+    "atlas": "/themes/protoss47/field-atlas.webp",
+    "poster": "/themes/protoss47/field-poster.webp",
+    "tile": [
+      192,
+      96
+    ],
+    "columns": 16,
+    "rows": 10,
+    "count": 160,
+    "duration": 8000,
+    "decodedMiB": 11.25,
+    "atlasSHA256": "25184a6eb7c5a515326f9f639c9763df3e5835274b13ef4a0b56705f52a0d11a"
+  }
+}

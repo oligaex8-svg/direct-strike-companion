@@ -1,0 +1,186 @@
+[
+  {
+    "sha256": "c423d1b5570271f621d9b907ed49b515c7a7ff46558f2b53421409bcd8abad48",
+    "png": "textures/abathur_ui_diff.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/abathur_ui_diff.dds",
+    "file": "abathur_ui_diff.dds",
+    "pngSHA256": "8b66f645123f366ef10c9d4defbf5644435676f199d7fe30d7b946dc326a06d0",
+    "reference": "Assets/Textures/Abathur_UI_diff.dds"
+  },
+  {
+    "sha256": "107924499e4f206180af09663b19148ce2ff59c388b33bbb6259edaa06b4a017",
+    "png": "textures/abathur_ui_emiss.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/abathur_ui_emiss.dds",
+    "file": "abathur_ui_emiss.dds",
+    "pngSHA256": "f8d64416c7c998e1f26c92da7dcb5fc8f93d2f42e484e57b53d6233a14598703",
+    "reference": "Assets/Textures/Abathur_UI_emiss.dds"
+  },
+  {
+    "sha256": "4ec7114d75f423046c3f7bbd9ed5aea8183c6952ef6474cbb4a81830ab7c9e7b",
+    "png": "textures/abathur_ui_norm.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/abathur_ui_norm.dds",
+    "file": "abathur_ui_norm.dds",
+    "pngSHA256": "f2ca471a9526a6bece9a86c13d81fd888c6d6e7272a832b6dd7ad566fc474a29",
+    "reference": "Assets/Textures/Abathur_UI_norm.dds"
+  },
+  {
+    "sha256": "7e7bf04c3a05cc87df7ad75d7efa1dc2bdfbc0408d4e32430bda4a210bdbaef1",
+    "png": "textures/abathur_ui_spec.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/abathur_ui_spec.dds",
+    "file": "abathur_ui_spec.dds",
+    "pngSHA256": "d7dd80931b90b6b096814a036f497d73e5cd0dd4edb8560f4e35fecad579b026",
+    "reference": "Assets/Textures/Abathur_UI_spec.dds"
+  },
+  {
+    "sha256": "6b609c38600854de9e81971bb8bdcb4ffed50593760a7ce3ebaf7ab5637643b9",
+    "png": "textures/bloodybuildingguts.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/bloodybuildingguts.dds",
+    "file": "bloodybuildingguts.dds",
+    "pngSHA256": "6ba039361ae3fb8500f82ca27a436a7c60406846c5336daca0aa2b93b7a19892",
+    "reference": "Assets/Textures/BloodyBuildingGuts.dds"
+  },
+  {
+    "sha256": "750cd71f17e3093d3af9d92dc75e5592995775a70a1102a6b34e9ee8c2309a53",
+    "png": "textures/bloodybuildingguts_normal.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/bloodybuildingguts_normal.dds",
+    "file": "bloodybuildingguts_normal.dds",
+    "pngSHA256": "69081cda281945e3c186a1dcf79d73b50205a9b918b1898b28ee06eed8a0b550",
+    "reference": "Assets/Textures/BloodyBuildingGuts_Normal.dds"
+  },
+  {
+    "sha256": "a9cf66523e995fa74b719f5c4b196f17e629caccc752f0ce78e69b3eaf228083",
+    "png": "textures/consoleterran_emiss.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/consoleterran_emiss.dds",
+    "file": "consoleterran_emiss.dds",
+    "pngSHA256": "63c2ddd44119d39540470a94402e75a931063f2a00a945280c503ca69ce178ea",
+    "reference": "Assets/Textures/ConsoleTerran_emiss.dds"
+  },
+  {
+    "sha256": "5aa8e1d4e8f78b6238a95413b68066e10f76261e5ac5c600dcf5a7b0c8962c75",
+    "png": "textures/grittygradient.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/grittygradient.dds",
+    "file": "grittygradient.dds",
+    "pngSHA256": "f2918d9cd3856b434bc54f443f07c5af7fe2c806094c1f1a591bad21c12019c5",
+    "reference": "Assets/Textures/GrittyGradient.dds"
+  },
+  {
+    "sha256": "2a80e625c040264ee285f135296b9b5b3a309f1bd1263ef2decc313d355f5933",
+    "png": "textures/zergconsole-metal_diffuse.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-metal_diffuse.dds",
+    "file": "zergconsole-metal_diffuse.dds",
+    "pngSHA256": "c1649fc2897166d07d3aec786c8f1760358c60eeae6e48e179955eef39d97b0f",
+    "reference": "Assets/Textures/ZergConsole-Metal_Diffuse.dds"
+  },
+  {
+    "sha256": "3642e540793a87179bd842e3ce2d32a96ce41873597c0488600265dc54665337",
+    "png": "textures/zergconsole-metal_normal.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-metal_normal.dds",
+    "file": "zergconsole-metal_normal.dds",
+    "pngSHA256": "9a90d4250ef8ead7bf0e7e20e6827d46424edb0ea2f8e1488e5fcd36fbd7bc8e",
+    "reference": "Assets/Textures/ZergConsole-Metal_Normal.dds"
+  },
+  {
+    "sha256": "873cf501e4d2367b6dd7bfd8b85842f734371758b33dd3ba04aa0a79a7fd0978",
+    "png": "textures/zergconsole-stukov_diff.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-stukov_diff.dds",
+    "file": "zergconsole-stukov_diff.dds",
+    "pngSHA256": "73ebf5a9992bdb4a535408f02ee8042e189e68fae82ab1d11a8129b13cfa24b8",
+    "reference": "Assets/Textures/ZergConsole-Stukov_Diff.dds"
+  },
+  {
+    "sha256": "aa80b78758355b3592e3e78af7eee031a09596b1efc6823b2bd91f02f9b5e29b",
+    "png": "textures/zergconsole-stukov_emiss.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-stukov_emiss.dds",
+    "file": "zergconsole-stukov_emiss.dds",
+    "pngSHA256": "a655cafd79d1e9b640ec01a1d6911a8ffeffc67460c2b60f9162f6f58439da73",
+    "reference": "Assets/Textures/ZergConsole-Stukov_Emiss.dds"
+  },
+  {
+    "sha256": "cc44c663596929a2dfd09be7e62e8ae5f9eabf8bc129aff1ccdf2a189a000411",
+    "png": "textures/zergconsole-stukov_metal_diff.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-stukov_metal_diff.dds",
+    "file": "zergconsole-stukov_metal_diff.dds",
+    "pngSHA256": "f9aa06e99906af1f12cccdbc9d6f4363cbeaf03330776dcf2950f42ea8eee750",
+    "reference": "Assets/Textures/ZergConsole-Stukov_Metal_Diff.dds"
+  },
+  {
+    "sha256": "32bd25487742f598aa23924c509655778cc25bcc935c243456d06244930e9181",
+    "png": "textures/zergconsole-stukov_norm.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-stukov_norm.dds",
+    "file": "zergconsole-stukov_norm.dds",
+    "pngSHA256": "8ee9171fdd7726dd56201ab4ad9ffbe5982f462b76e7d3ccdb1ba2de0760771c",
+    "reference": "Assets/Textures/ZergConsole-Stukov_Norm.dds"
+  },
+  {
+    "sha256": "6a850772d78930faef3ad7a5999a37e0802d1ba3ab0aaad5fc7552fa651f6520",
+    "png": "textures/zergconsole-stukov_spec.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-stukov_spec.dds",
+    "file": "zergconsole-stukov_spec.dds",
+    "pngSHA256": "fcde119fc01d2f69197525db6deea20852ed019f6c9ac2ceb9eae1dce5952b98",
+    "reference": "Assets/Textures/ZergConsole-Stukov_Spec.dds"
+  },
+  {
+    "sha256": "cc14cf4bd85023d83c7d688de721fd74862a3cfd1a54b3fb0cb2772bc94b5412",
+    "png": "textures/dehaka_console_diff.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_console_diff.dds",
+    "file": "dehaka_console_diff.dds",
+    "pngSHA256": "799e7bc44f0c947ed3e5c0deb56ab576cffcf2859837b86633336ed398aa85a6",
+    "reference": "Assets/Textures/Dehaka_Console_Diff.dds"
+  },
+  {
+    "sha256": "de27ccfe9190b196900d589ad29f95e7609a20642ae46f1f382e2fca11240f66",
+    "png": "textures/dehaka_console_zergpiece_diff.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_console_zergpiece_diff.dds",
+    "file": "dehaka_console_zergpiece_diff.dds",
+    "pngSHA256": "50028a72d48a97d3e1ccc1563b8f2203f132a3ece6445d68000fc3e20bbeca0c",
+    "reference": "Assets/Textures/Dehaka_Console_ZergPiece_Diff.dds"
+  },
+  {
+    "sha256": "eb64c1d7147c6f0b22fc1edd7b1f5dc38a3299eb34e093e8e2eaf981c0893c39",
+    "png": "textures/dehaka_metalconsole_diff.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_metalconsole_diff.dds",
+    "file": "dehaka_metalconsole_diff.dds",
+    "pngSHA256": "12b412f3f2ce991f7e3daae0fab4b593dbae4e4906cb09b9fd0b838adab829ae",
+    "reference": "Assets/Textures/Dehaka_MetalConsole_Diff.dds"
+  },
+  {
+    "sha256": "f86145f7e7795d963e4bfdfc48f37e0149dcc9df6839555c1ea77fd961c9f7bd",
+    "png": "textures/zergconsole-flesh-emissive.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-flesh-emissive.dds",
+    "file": "zergconsole-flesh-emissive.dds",
+    "pngSHA256": "1eea9d3b88ec93f414b65a5da23c87c081ab71c63afe41138a59c3171cd4975b",
+    "reference": "Assets/Textures/ZergConsole-Flesh-Emissive.dds"
+  },
+  {
+    "sha256": "32bd25487742f598aa23924c509655778cc25bcc935c243456d06244930e9181",
+    "png": "textures/zergconsole-flesh-normal.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-flesh-normal.dds",
+    "file": "zergconsole-flesh-normal.dds",
+    "pngSHA256": "8ee9171fdd7726dd56201ab4ad9ffbe5982f462b76e7d3ccdb1ba2de0760771c",
+    "reference": "Assets/Textures/ZergConsole-Flesh-Normal.dds"
+  },
+  {
+    "sha256": "4e3fa4e3ad6ac9dfdeb75f063ec526967e27c3c3ffa95868dece4db7c46f566a",
+    "png": "textures/zergconsole-flesh-specular.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergconsole-flesh-specular.dds",
+    "file": "zergconsole-flesh-specular.dds",
+    "pngSHA256": "92670e0f07e83592f0b79ce9b92177893e2093182fcd8b67d9f7b3235d9e4c7a",
+    "reference": "Assets/Textures/ZergConsole-Flesh-Specular.dds"
+  },
+  {
+    "sha256": "68cba5c1441c710e9efbd1c44cb695d4c914d2d4fa2dbd56dae4f9acd2d61385",
+    "png": "textures/smx1_primal1_body1_norm.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/smx1_primal1_body1_norm.dds",
+    "file": "smx1_primal1_body1_norm.dds",
+    "pngSHA256": "c254adba1335021261dd3d36d0dc45da9cc3146e4df4d5bc8f5c2d5517ee7c95",
+    "reference": "Assets/Textures/smx1_primal1_body1_norm.dds"
+  },
+  {
+    "sha256": "22d7c69c66bcee12db7184318990ee37e35261be6b1b264bde5353b096f78853",
+    "png": "textures/smx1_primal1_body1_spec.png",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/smx1_primal1_body1_spec.dds",
+    "file": "smx1_primal1_body1_spec.dds",
+    "pngSHA256": "233fcfb4f3830decb757055800e46ffa69aa5586c3b74a92a47c4a48331962eb",
+    "reference": "Assets/Textures/smx1_primal1_body1_spec.dds"
+  }
+]

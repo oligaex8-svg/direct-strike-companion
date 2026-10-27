@@ -39,7 +39,10 @@ function liveForecastDsstatsProfile(id,name,region,allowNameFallback=false){
 }
 function liveLobbyForecast(entries){
  const lobby=state.lobby||{},hidden=!entries.length||!['pregame','manual','match'].includes(lobby.phase);
- if(hidden)return {hidden:true};
+ if(hidden){
+  const reasons={off:'Match watch is off.',replay:'Replay viewing: waiting for a live lobby.',finished:'Match complete: waiting for a fresh lobby.',disconnected:'SC2 client is unavailable.'};
+  return {hidden:true,reason:reasons[lobby.phase]||'Waiting for a live lobby roster.'};
+ }
  if(lobby.held)return {reason:'Waiting for a fresh lobby roster.'};
  const context=liveLobbyRegionContext(entries);let region=context.region;
  const own=liveForecastOwnEntry(entries,region);
@@ -77,16 +80,14 @@ function liveLobbyForecast(entries){
 }
 function renderLiveLobbyForecast(entries){
  const forecast=liveLobbyForecast(entries);
- if(forecast.hidden)return '<section class="live-rating-forecast" hidden></section>';
- const heading='<h3>Your rating change</h3>';
- if(forecast.reason)return `<section class="live-rating-forecast live-forecast-pending" aria-label="Your rating change">${heading}<span>${esc(forecast.reason)}</span></section>`;
+ const heading='<h3>Rating gain / loss</h3>';
  const source=(key,result)=>{
   const ready=typeof result?.win==='number'&&Number.isFinite(result.win)&&typeof result?.loss==='number'&&Number.isFinite(result.loss);
   const value=number=>'~'+(number<0?'-':'+')+num(Math.round(Math.abs(number)));
   const detail=key==='dsr'?result?.scope==='main_current'?'DSR main projection uses all six general site ratings and available game counts; assumes no leavers.':'DSR 3v3 projection requires all six Commanders ratings; current commander mirrors and mode experience may be unknown.':'dsstats projection uses current ratings, player consistency and team-relative confidence; assumes no leavers.';
-  const pending=key==='dsstats'&&forecast.dsstatsPendingState?'Loading rating data…':'Waiting for ratings…';
-  return `<div class="live-forecast-source" data-rating-source="${key}" title="${esc(ready?detail:'Waiting for the required site ratings. Name matches and team groups need verification.')}" role="group" aria-label="${key==='dsr'?(result?.scope==='main_current'?'DSR Main':'DSR 3v3'):'dsstats'}"><span class="rating-source-label" data-i18n-skip>${key==='dsr'?(result?.scope==='main_current'?'DSR Main':'DSR 3v3'):'dsstats'}</span>${ready?`<span><span>Win</span> <strong>${value(result.win)}</strong></span><span><span>Loss</span> <strong>${value(result.loss)}</strong></span>`:`<span class="live-forecast-missing">${pending}</span>`}</div>`;
+  const pending=forecast.reason||(key==='dsstats'?forecast.dsstatsPendingState?'Loading rating data…':'Waiting for all six dsstats ratings.':result?.status==='invalid-basis'?'DSR rating data is invalid.':'Waiting for all six DSR ratings.');
+  return `<div class="live-forecast-source" data-rating-source="${key}" title="${esc(ready?detail:pending)}" role="group" aria-label="${key==='dsr'?'DSR':'dsstats'}"><span class="rating-source-label" data-i18n-skip>${key==='dsr'?'DSR':'dsstats'}</span><span><span>Win</span> <strong>${ready?value(result.win):'—'}</strong></span><span><span>Loss</span> <strong>${ready?value(result.loss):'—'}</strong></span>${!ready&&!forecast.reason?`<span class="live-forecast-missing">${esc(pending)}</span>`:''}</div>`;
  };
- const context=[forecast.region,forecast.inferredRegion?'Region inferred':'',forecast.estimatedTeams?'Estimated teams':''].filter(Boolean).map(esc).join(' · ');
- return `<section class="live-rating-forecast" aria-label="Your rating change">${heading}${source('dsr',forecast.dsr)}${source('dsstats',forecast.dsstats)}<span class="live-forecast-context">${context}</span></section>`;
+ const context=[forecast.reason,forecast.region,forecast.inferredRegion?'Region inferred':'',forecast.estimatedTeams?'Estimated teams':'',forecast.dsr?.scope==='main_current'?'DSR Main':forecast.dsr?'DSR 3v3':''].filter(Boolean).map(esc).join(' · ');
+ return `<section class="live-rating-forecast" aria-label="Rating gain / loss">${heading}${source('dsr',forecast.dsr)}${source('dsstats',forecast.dsstats)}${context?`<span class="live-forecast-context">${context}</span>`:''}</section>`;
 }

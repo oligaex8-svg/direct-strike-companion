@@ -1,0 +1,1728 @@
+{
+  "version": 41,
+  "generatorHash": "17fd611212141ce15cedd7b396614054c03c64f54be7c99923d2eb9245adb6c8",
+  "provenance": "New image-generated surface artwork; shading-derived heuristic normal and material maps. Not native game animation exports or recovered geometric normals.",
+  "atlasLayout": {
+    "expectedDimensions": [
+      1536,
+      1024
+    ],
+    "dimensions": "Read actual image metadata; each theme records its source dimensions.",
+    "columns": 2,
+    "rows": 3,
+    "order": "row-major",
+    "tileMarginPixels": 2,
+    "bounds": "round(column*actualWidth/2), round(row*actualHeight/3); inset 2 pixels on all four tile edges"
+  },
+  "channels": {
+    "normal": {
+      "format": "linear RGBA8 PNG",
+      "R": "tangent normal X encoded [-1,1] to [0,1]",
+      "G": "tangent normal Y encoded [-1,1] to [0,1]",
+      "B": "positive tangent normal Z encoded [-1,1] to [0,1]",
+      "A": "255",
+      "axes": "+X right; +Y up; input image row coordinates increase down",
+      "decode": "normalize(texture.rgb*2.0-1.0)"
+    },
+    "mask": {
+      "format": "linear RGBA8 PNG",
+      "R": "emission confidence, 0–255",
+      "G": "soft/translucent material motion eligibility, 0–255",
+      "B": "seamless smooth four-octave turbulent value noise, unique theme seed, normalized 0–255",
+      "A": "255"
+    },
+    "sampling": "Normal/mask are data, not sRGB colour. Do not apply colour-space conversion. Clamp edges; use linear filtering. Colour field uses sRGB. Sample mask.rg at fixed source UV; only mask.b may use fract(animatedUv) for periodic noise. Opposite noise edge texels match exactly."
+  },
+  "themes": {
+    "terran": {
+      "id": "terran",
+      "source": {
+        "family": "terran",
+        "atlas": "assets/themes/surfaces41/terran-atlas.png",
+        "sha256": "065592526561c1d385dcd2bcf44c1d4c478b5e880ace2bccd8e64c29f74056fb",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          0,
+          0
+        ],
+        "cellBounds": [
+          0,
+          0,
+          768,
+          341
+        ],
+        "crop": {
+          "left": 2,
+          "top": 2,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/terran-field.webp",
+        "sha256": "ada3d96472832eae7aaa0e7ef32544eaaa6cba22e469c72d0557d05c4ee70eae"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/terran-normal.png",
+        "sha256": "f84cd5522bb88aec321444ed9627cfe0178b4145444106e951788325de1578f0"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/terran-mask.png",
+        "sha256": "c52159fc362641890aee15761b8dcc76e54c9e257472c276f1f1d68e918a5b35"
+      },
+      "material": {
+        "type": "metal",
+        "effect": "recessed-power-and-thermal-light",
+        "palette": [
+          "#5f766d",
+          "#72bd98",
+          "#c49a4a"
+        ],
+        "hues": [
+          [
+            65,
+            170
+          ],
+          [
+            28,
+            60
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 2.8,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.00793496667547035,
+        "softnessCoverageAt32": 0.018192552084142496,
+        "normalDetailCoverage": 0.11712523498065779,
+        "meanEmission": 0.0041090206442256395,
+        "meanSoftness": 0.0065395425193315385,
+        "left60MeanLinearLuminance": 0.003552551068199293,
+        "right40MeanLinearLuminance": 0.04323796218177027,
+        "noise": {
+          "seed": 4022195841,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "nova": {
+      "id": "nova",
+      "source": {
+        "family": "terran",
+        "atlas": "assets/themes/surfaces41/terran-atlas.png",
+        "sha256": "065592526561c1d385dcd2bcf44c1d4c478b5e880ace2bccd8e64c29f74056fb",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          1,
+          0
+        ],
+        "cellBounds": [
+          768,
+          0,
+          1536,
+          341
+        ],
+        "crop": {
+          "left": 770,
+          "top": 2,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/nova-field.webp",
+        "sha256": "52826072e92160a607607062c583d84b911ab8e5bbba1d7d4172c8b69664eb99"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/nova-normal.png",
+        "sha256": "d82b29eff675c200824e2a6ba1b33c19c6db23f35f20277a88360d059eb4e13f"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/nova-mask.png",
+        "sha256": "f3dd1c05f816019cf3f7726fed440ed4274e914b81b692cde8fe96c29b276d64"
+      },
+      "material": {
+        "type": "glass-metal",
+        "effect": "cyan-glass-refraction",
+        "palette": [
+          "#172b3b",
+          "#42c7e8",
+          "#9de4ed"
+        ],
+        "hues": [
+          [
+            170,
+            215
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 1.8,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.0018215855951030809,
+        "softnessCoverageAt32": 0.194960150387621,
+        "normalDetailCoverage": 0.05315223639442571,
+        "meanEmission": 0.0010366163814430488,
+        "meanSoftness": 0.08938345710691446,
+        "left60MeanLinearLuminance": 0.005327314039833464,
+        "right40MeanLinearLuminance": 0.023976423115118904,
+        "noise": {
+          "seed": 2173952735,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "mira": {
+      "id": "mira",
+      "source": {
+        "family": "terran",
+        "atlas": "assets/themes/surfaces41/terran-atlas.png",
+        "sha256": "065592526561c1d385dcd2bcf44c1d4c478b5e880ace2bccd8e64c29f74056fb",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          0,
+          1
+        ],
+        "cellBounds": [
+          0,
+          341,
+          768,
+          683
+        ],
+        "crop": {
+          "left": 2,
+          "top": 343,
+          "width": 764,
+          "height": 338
+        }
+      },
+      "width": 764,
+      "height": 338,
+      "aspectRatio": 2.260355029585799,
+      "field": {
+        "url": "/themes/surfaces41/mira-field.webp",
+        "sha256": "771faf005b9d3c6bbb84058b0c60046b6fd1678a07236e0b8283a89d97a87861"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/mira-normal.png",
+        "sha256": "ba3e0b3ca166e6941c8f31998d16415272ad7cce17ac44e43b51214be85e0e3b"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/mira-mask.png",
+        "sha256": "5493e8d306a93d1b595c18b0fd54ee4109f61c051274598ca6ba7ddd847692a3"
+      },
+      "material": {
+        "type": "salvage-metal",
+        "effect": "warm-recess-convection",
+        "palette": [
+          "#75534c",
+          "#c98241",
+          "#bd6488"
+        ],
+        "hues": [
+          [
+            22,
+            55
+          ],
+          [
+            315,
+            345
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 3,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.005576380928777223,
+        "softnessCoverageAt32": 0.014440503113479351,
+        "normalDetailCoverage": 0.12554602063260945,
+        "meanEmission": 0.002405805393221128,
+        "meanSoftness": 0.004982489542795597,
+        "left60MeanLinearLuminance": 0.003895613717328414,
+        "right40MeanLinearLuminance": 0.0384136975706024,
+        "noise": {
+          "seed": 1519665766,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "machined": {
+      "id": "machined",
+      "source": {
+        "family": "terran",
+        "atlas": "assets/themes/surfaces41/terran-atlas.png",
+        "sha256": "065592526561c1d385dcd2bcf44c1d4c478b5e880ace2bccd8e64c29f74056fb",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          1,
+          1
+        ],
+        "cellBounds": [
+          768,
+          341,
+          1536,
+          683
+        ],
+        "crop": {
+          "left": 770,
+          "top": 343,
+          "width": 764,
+          "height": 338
+        }
+      },
+      "width": 764,
+      "height": 338,
+      "aspectRatio": 2.260355029585799,
+      "field": {
+        "url": "/themes/surfaces41/machined-field.webp",
+        "sha256": "1797ebf44a1e8abf0dc24eb11a23cd8ad9b21c13b8e5fa72083258ee6cfc6865"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/machined-normal.png",
+        "sha256": "e7d5a5875c2ae0c0db3506e7016d23ccb545144e87d373fbd9f5916941b37760"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/machined-mask.png",
+        "sha256": "b7e7c374a6f87077d7011d86a69ae97f125e4f9e2d18878f1b789c7503e948d7"
+      },
+      "material": {
+        "type": "metal",
+        "effect": "vent-heat-refraction",
+        "palette": [
+          "#52646c",
+          "#be8741",
+          "#e9b55e"
+        ],
+        "hues": [
+          [
+            24,
+            58
+          ]
+        ],
+        "minValue": 0.73,
+        "minSaturation": 0.3,
+        "normalStrength": 3,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.00447659469004616,
+        "softnessCoverageAt32": 0.013263267139626382,
+        "normalDetailCoverage": 0.1693477183308033,
+        "meanEmission": 0.0031395537645825984,
+        "meanSoftness": 0.004576844770973626,
+        "left60MeanLinearLuminance": 0.01124907983349858,
+        "right40MeanLinearLuminance": 0.035200940951057955,
+        "noise": {
+          "seed": 1111519678,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "tyrador": {
+      "id": "tyrador",
+      "source": {
+        "family": "terran",
+        "atlas": "assets/themes/surfaces41/terran-atlas.png",
+        "sha256": "065592526561c1d385dcd2bcf44c1d4c478b5e880ace2bccd8e64c29f74056fb",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          0,
+          2
+        ],
+        "cellBounds": [
+          0,
+          683,
+          768,
+          1024
+        ],
+        "crop": {
+          "left": 2,
+          "top": 685,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/tyrador-field.webp",
+        "sha256": "41ed96c63c609c19420049c02690b397561a5f2151b33df2e296cb446443566f"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/tyrador-normal.png",
+        "sha256": "a24c885b07e762a2c10d28db559575fec2924a34cdfb99591bb230b80b5b4b0b"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/tyrador-mask.png",
+        "sha256": "591a29b5c46926d33bb08b59747f8e2d342fcd17736a45dd6a219dc40d91d6e0"
+      },
+      "material": {
+        "type": "ceramic-glass",
+        "effect": "violet-glass-depth",
+        "palette": [
+          "#69597e",
+          "#b47be0",
+          "#cdd8eb"
+        ],
+        "hues": [
+          [
+            262,
+            305
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 1.6,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.004435502664408781,
+        "softnessCoverageAt32": 0.46299734335917475,
+        "normalDetailCoverage": 0.17077850451318222,
+        "meanEmission": 0.0013912315388911053,
+        "meanSoftness": 0.1606148565774483,
+        "left60MeanLinearLuminance": 0.0125553219175627,
+        "right40MeanLinearLuminance": 0.1568710279052635,
+        "noise": {
+          "seed": 1281236152,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "classic-terran": {
+      "id": "classic-terran",
+      "source": {
+        "family": "terran",
+        "atlas": "assets/themes/surfaces41/terran-atlas.png",
+        "sha256": "065592526561c1d385dcd2bcf44c1d4c478b5e880ace2bccd8e64c29f74056fb",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          1,
+          2
+        ],
+        "cellBounds": [
+          768,
+          683,
+          1536,
+          1024
+        ],
+        "crop": {
+          "left": 770,
+          "top": 685,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/classic-terran-field.webp",
+        "sha256": "675bd5d64c61d48148f2b2d97f31dfc708bc7befc2e3bd862a26d1984c49debd"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/classic-terran-normal.png",
+        "sha256": "93bbb485e1af872696e2d4f75e487af004609862ef78a35cd8edac91d3ae3a51"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/classic-terran-mask.png",
+        "sha256": "a74fb4503cb8057a24d4468f80321a04f5d3f8c27bfbf5151388fd3cebb3c7a6"
+      },
+      "material": {
+        "type": "metal",
+        "effect": "phosphor-and-amber-status-depth",
+        "palette": [
+          "#58645e",
+          "#72cb89",
+          "#ddb34a"
+        ],
+        "hues": [
+          [
+            78,
+            155
+          ],
+          [
+            32,
+            60
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 2.8,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.0019186850404710489,
+        "softnessCoverageAt32": 0.004858856246213122,
+        "normalDetailCoverage": 0.12648950549194463,
+        "meanEmission": 0.0013380919066552492,
+        "meanSoftness": 0.0017797619679457807,
+        "left60MeanLinearLuminance": 0.011537685927874367,
+        "right40MeanLinearLuminance": 0.030161015805803063,
+        "noise": {
+          "seed": 599522030,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "protoss": {
+      "id": "protoss",
+      "source": {
+        "family": "protoss",
+        "atlas": "assets/themes/surfaces41/protoss-atlas.png",
+        "sha256": "cb70fe293a013183708b35d6caea5bc8bf85ffbcbddce70cbb7e7f9666b85fe3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          0,
+          0
+        ],
+        "cellBounds": [
+          0,
+          0,
+          768,
+          341
+        ],
+        "crop": {
+          "left": 2,
+          "top": 2,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/protoss-field.webp",
+        "sha256": "a98efbd03a6ecf8fd544d3eae34f5acfd91b89f7ec47abc92b94104c48d5036b"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/protoss-normal.png",
+        "sha256": "ff30020d7914c1570568e5a99cd03e624a1c1f6ef1129a1d5743fc16fd8e50ce"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/protoss-mask.png",
+        "sha256": "1c0aca6eb391c5d620ce7207247d562a4de0d2cd03883df874d9c9e70efef605"
+      },
+      "material": {
+        "type": "crystal-metal",
+        "effect": "blue-crystal-caustics",
+        "palette": [
+          "#8b713f",
+          "#42b4eb",
+          "#bbecff"
+        ],
+        "hues": [
+          [
+            175,
+            235
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 1.7,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.02359128124660152,
+        "softnessCoverageAt32": 0.11297714667453819,
+        "normalDetailCoverage": 0.278252054624264,
+        "meanEmission": 0.012548310784517056,
+        "meanSoftness": 0.0808149584315267,
+        "left60MeanLinearLuminance": 0.005737552426493668,
+        "right40MeanLinearLuminance": 0.2421217452586574,
+        "noise": {
+          "seed": 2447558415,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "nerazim": {
+      "id": "nerazim",
+      "source": {
+        "family": "protoss",
+        "atlas": "assets/themes/surfaces41/protoss-atlas.png",
+        "sha256": "cb70fe293a013183708b35d6caea5bc8bf85ffbcbddce70cbb7e7f9666b85fe3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          1,
+          0
+        ],
+        "cellBounds": [
+          768,
+          0,
+          1536,
+          341
+        ],
+        "crop": {
+          "left": 770,
+          "top": 2,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/nerazim-field.webp",
+        "sha256": "f24ea51cec1349b363af0107d85c1439286b10b22ba0e32c3504a50b93cafc6a"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/nerazim-normal.png",
+        "sha256": "c348c4f902b670296bbaeb06c5f44f6d7aeb57fd0e17a7e6dfd9d6b34ff8d641"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/nerazim-mask.png",
+        "sha256": "26d73c6a4d585e55324c49381ea45465e9d2470ce09f06aa12aba95d4048c14e"
+      },
+      "material": {
+        "type": "void-glass",
+        "effect": "green-void-refraction",
+        "palette": [
+          "#4d3c64",
+          "#43bf8f",
+          "#8bebc3"
+        ],
+        "hues": [
+          [
+            100,
+            172
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 1.5,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.0024236021563844826,
+        "softnessCoverageAt32": 0.06392250687464074,
+        "normalDetailCoverage": 0.07232355088787733,
+        "meanEmission": 0.001240084029121796,
+        "meanSoftness": 0.044638730486511694,
+        "left60MeanLinearLuminance": 0.0031177302437100235,
+        "right40MeanLinearLuminance": 0.0312172591311394,
+        "noise": {
+          "seed": 51655775,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "alarak": {
+      "id": "alarak",
+      "source": {
+        "family": "protoss",
+        "atlas": "assets/themes/surfaces41/protoss-atlas.png",
+        "sha256": "cb70fe293a013183708b35d6caea5bc8bf85ffbcbddce70cbb7e7f9666b85fe3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          0,
+          1
+        ],
+        "cellBounds": [
+          0,
+          341,
+          768,
+          683
+        ],
+        "crop": {
+          "left": 2,
+          "top": 343,
+          "width": 764,
+          "height": 338
+        }
+      },
+      "width": 764,
+      "height": 338,
+      "aspectRatio": 2.260355029585799,
+      "field": {
+        "url": "/themes/surfaces41/alarak-field.webp",
+        "sha256": "78c4e6d093a4bae2fd4e475550ee4cbff3401a8af69564478c252f15b1bcda7c"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/alarak-normal.png",
+        "sha256": "7dc5fd8be893a4668c4e10b6695e14c3a8ca772c747097e713408c0ca73a2d9f"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/alarak-mask.png",
+        "sha256": "9adbae00937636f1e5747ae763f386846cf39c4ba077117e8c34f684b61eea07"
+      },
+      "material": {
+        "type": "plasma-metal",
+        "effect": "sealed-red-plasma",
+        "palette": [
+          "#2e2026",
+          "#cc3f32",
+          "#fc7650"
+        ],
+        "hues": [
+          [
+            345,
+            360
+          ],
+          [
+            0,
+            25
+          ]
+        ],
+        "minValue": 0.72,
+        "minSaturation": 0.48,
+        "normalStrength": 2,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.008786672449580223,
+        "softnessCoverageAt32": 0.16867003314848664,
+        "normalDetailCoverage": 0.08586464884290096,
+        "meanEmission": 0.005109276905280736,
+        "meanSoftness": 0.10722211470946734,
+        "left60MeanLinearLuminance": 0.0023060841415884054,
+        "right40MeanLinearLuminance": 0.031248813283891973,
+        "noise": {
+          "seed": 2269614631,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "ihanrii": {
+      "id": "ihanrii",
+      "source": {
+        "family": "protoss",
+        "atlas": "assets/themes/surfaces41/protoss-atlas.png",
+        "sha256": "cb70fe293a013183708b35d6caea5bc8bf85ffbcbddce70cbb7e7f9666b85fe3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          1,
+          1
+        ],
+        "cellBounds": [
+          768,
+          341,
+          1536,
+          683
+        ],
+        "crop": {
+          "left": 770,
+          "top": 343,
+          "width": 764,
+          "height": 338
+        }
+      },
+      "width": 764,
+      "height": 338,
+      "aspectRatio": 2.260355029585799,
+      "field": {
+        "url": "/themes/surfaces41/ihanrii-field.webp",
+        "sha256": "4509cc7efeefa6f83aeb4800edeb339e39096a2fc6e59aa4bf816dc28a90d2dc"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/ihanrii-normal.png",
+        "sha256": "e3732c6726d58dd6ae1e02ff87e07137ff4749bf135f197122961a295bd9908f"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/ihanrii-mask.png",
+        "sha256": "bfa5610d7ef395cf18554509f07baf0d031fc0824af8c96a32660ec64a904c18"
+      },
+      "material": {
+        "type": "crystal-stone",
+        "effect": "jade-inset-refraction",
+        "palette": [
+          "#607777",
+          "#40b697",
+          "#acf0d3"
+        ],
+        "hues": [
+          [
+            125,
+            185
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 2,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.00887961213172651,
+        "softnessCoverageAt32": 0.124674711112488,
+        "normalDetailCoverage": 0.36747575823290685,
+        "meanEmission": 0.005525667421092712,
+        "meanSoftness": 0.0832690048410455,
+        "left60MeanLinearLuminance": 0.020103875764631005,
+        "right40MeanLinearLuminance": 0.17175496216483108,
+        "noise": {
+          "seed": 2145683957,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "classic-protoss": {
+      "id": "classic-protoss",
+      "source": {
+        "family": "protoss",
+        "atlas": "assets/themes/surfaces41/protoss-atlas.png",
+        "sha256": "cb70fe293a013183708b35d6caea5bc8bf85ffbcbddce70cbb7e7f9666b85fe3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          0,
+          2
+        ],
+        "cellBounds": [
+          0,
+          683,
+          768,
+          1024
+        ],
+        "crop": {
+          "left": 2,
+          "top": 685,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/classic-protoss-field.webp",
+        "sha256": "728b75f75c20b17eac229cd39501bb5cc19e359f7d4d0dfe670f6cb7b4d5aecc"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/classic-protoss-normal.png",
+        "sha256": "5102b2e2aff2b3fe29aeec75f293ef4e555229a1327ad2efcc07fb2e14c7de37"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/classic-protoss-mask.png",
+        "sha256": "1d96a3b7e2ab1ca1cb7cb51be69779be472b09847332583f759ff21fb6d3e628"
+      },
+      "material": {
+        "type": "crystal-metal",
+        "effect": "cyan-crystal-depth",
+        "palette": [
+          "#ad913b",
+          "#39b9dc",
+          "#b7f4ff"
+        ],
+        "hues": [
+          [
+            170,
+            230
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 2,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.004905463979989746,
+        "softnessCoverageAt32": 0.049470225426072365,
+        "normalDetailCoverage": 0.23513990088088615,
+        "meanEmission": 0.003200803436420388,
+        "meanSoftness": 0.03609413936974159,
+        "left60MeanLinearLuminance": 0.013613934876523065,
+        "right40MeanLinearLuminance": 0.13025690547503838,
+        "noise": {
+          "seed": 1482145182,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "arcade": {
+      "id": "arcade",
+      "source": {
+        "family": "protoss",
+        "atlas": "assets/themes/surfaces41/protoss-atlas.png",
+        "sha256": "cb70fe293a013183708b35d6caea5bc8bf85ffbcbddce70cbb7e7f9666b85fe3",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "cell": [
+          1,
+          2
+        ],
+        "cellBounds": [
+          768,
+          683,
+          1536,
+          1024
+        ],
+        "crop": {
+          "left": 770,
+          "top": 685,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/arcade-field.webp",
+        "sha256": "b28e93c43917bdaeb5f1b9bc6e5fe9e63496f70e2bc1ff71c02ec55fb6dac71a"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/arcade-normal.png",
+        "sha256": "ce9a60e7f34ce2c2a12151ed425110a3bf27f83ab700e71c8c2db7d5807b812c"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/arcade-mask.png",
+        "sha256": "0d46eb93f3ce35a7096a813146300112fdf59e8819ce935beb0e3d400e22e6c3"
+      },
+      "material": {
+        "type": "glass-metal",
+        "effect": "violet-phosphor-depth",
+        "palette": [
+          "#594a70",
+          "#b748e4",
+          "#e4a4fa"
+        ],
+        "hues": [
+          [
+            215,
+            325
+          ]
+        ],
+        "minValue": 0.68,
+        "minSaturation": 0.3,
+        "normalStrength": 1.6,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.07346544036540463,
+        "softnessCoverageAt32": 0.668820979694564,
+        "normalDetailCoverage": 0.08313266114623953,
+        "meanEmission": 0.038059698633431185,
+        "meanSoftness": 0.4957513082168362,
+        "left60MeanLinearLuminance": 0.006316061624202418,
+        "right40MeanLinearLuminance": 0.044366139300801376,
+        "noise": {
+          "seed": 1295314465,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "zerg": {
+      "id": "zerg",
+      "source": {
+        "family": "organic",
+        "atlas": "assets/themes/surfaces41/organic-atlas.png",
+        "sha256": "af67a9575e5c0e864f7e9c3626ed68b5c6ea33477aa16ef2d166467176be4fb8",
+        "dimensions": [
+          1537,
+          1023
+        ],
+        "cell": [
+          0,
+          0
+        ],
+        "cellBounds": [
+          0,
+          0,
+          769,
+          341
+        ],
+        "crop": {
+          "left": 2,
+          "top": 2,
+          "width": 765,
+          "height": 337
+        }
+      },
+      "width": 765,
+      "height": 337,
+      "aspectRatio": 2.2700296735905043,
+      "field": {
+        "url": "/themes/surfaces41/zerg-field.webp",
+        "sha256": "bedafeef2348def1d8da0c8ab670850fb87a8187695eddd2ad1902c3e952592f"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/zerg-normal.png",
+        "sha256": "83ccd17194de34e605d951266ff57936cbece9fe4caf7b91ae186020900df8db"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/zerg-mask.png",
+        "sha256": "c218a1f4ab57fefd82a5205dbda7290beef66cc958dc270ffbb6b3a27cd452b3"
+      },
+      "material": {
+        "type": "organic",
+        "effect": "subsurface-violet-fluid",
+        "palette": [
+          "#4d263c",
+          "#82458d",
+          "#c57bd4"
+        ],
+        "hues": [
+          [
+            270,
+            322
+          ]
+        ],
+        "minValue": 0.76,
+        "minSaturation": 0.42,
+        "normalStrength": 2.3,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0,
+        "softnessCoverageAt32": 0.4371870211981924,
+        "normalDetailCoverage": 0.11510249995151374,
+        "meanEmission": 7.240987141588052e-9,
+        "meanSoftness": 0.31177069852352784,
+        "left60MeanLinearLuminance": 0.002345882451634955,
+        "right40MeanLinearLuminance": 0.02898174543771316,
+        "noise": {
+          "seed": 2473587707,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "abathur": {
+      "id": "abathur",
+      "source": {
+        "family": "organic",
+        "atlas": "assets/themes/surfaces41/organic-atlas.png",
+        "sha256": "af67a9575e5c0e864f7e9c3626ed68b5c6ea33477aa16ef2d166467176be4fb8",
+        "dimensions": [
+          1537,
+          1023
+        ],
+        "cell": [
+          1,
+          0
+        ],
+        "cellBounds": [
+          769,
+          0,
+          1537,
+          341
+        ],
+        "crop": {
+          "left": 771,
+          "top": 2,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/abathur-field.webp",
+        "sha256": "49072487be6f099afc2d873190dd0ffc91107e73f5a0229b0c15ba4afe6b7f04"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/abathur-normal.png",
+        "sha256": "ee38b19425f43341f6cfb5f6470997b703e05e6e42b7c827a824ef2affb215bb"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/abathur-mask.png",
+        "sha256": "14603a689131468b8781866d99ab859e07cbe5afd7fb210de4e69485e926a759"
+      },
+      "material": {
+        "type": "organic",
+        "effect": "green-gland-diffusion",
+        "palette": [
+          "#354332",
+          "#769b39",
+          "#c8e168"
+        ],
+        "hues": [
+          [
+            65,
+            130
+          ]
+        ],
+        "minValue": 0.76,
+        "minSaturation": 0.42,
+        "normalStrength": 2.2,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.0015225193033697392,
+        "softnessCoverageAt32": 0.33251899265151397,
+        "normalDetailCoverage": 0.13656065996551028,
+        "meanEmission": 0.0006098797316996604,
+        "meanSoftness": 0.20079555324347767,
+        "left60MeanLinearLuminance": 0.006366953849194812,
+        "right40MeanLinearLuminance": 0.04120365736283995,
+        "noise": {
+          "seed": 848394966,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "dehaka": {
+      "id": "dehaka",
+      "source": {
+        "family": "organic",
+        "atlas": "assets/themes/surfaces41/organic-atlas.png",
+        "sha256": "af67a9575e5c0e864f7e9c3626ed68b5c6ea33477aa16ef2d166467176be4fb8",
+        "dimensions": [
+          1537,
+          1023
+        ],
+        "cell": [
+          0,
+          1
+        ],
+        "cellBounds": [
+          0,
+          341,
+          769,
+          682
+        ],
+        "crop": {
+          "left": 2,
+          "top": 343,
+          "width": 765,
+          "height": 337
+        }
+      },
+      "width": 765,
+      "height": 337,
+      "aspectRatio": 2.2700296735905043,
+      "field": {
+        "url": "/themes/surfaces41/dehaka-field.webp",
+        "sha256": "d608b10c660d296e0f991652ce4c3c8d67974882d9e490044e74b1c8143a5022"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/dehaka-normal.png",
+        "sha256": "1cc45dffea0205d319a0f202d8a0407dfe5af9614246118873c3fc43a5c065a1"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/dehaka-mask.png",
+        "sha256": "5a20515bc44172144fe19c0c63bbed681cc12080a09f0a01993f1450be6f934d"
+      },
+      "material": {
+        "type": "organic-bone",
+        "effect": "primal-wet-tissue",
+        "palette": [
+          "#4e5041",
+          "#779057",
+          "#b8cc79"
+        ],
+        "hues": [
+          [
+            60,
+            135
+          ]
+        ],
+        "minValue": 0.8,
+        "minSaturation": 0.42,
+        "normalStrength": 2.6,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0,
+        "softnessCoverageAt32": 0.03315296444987491,
+        "normalDetailCoverage": 0.17201373130854716,
+        "meanEmission": 6.385861801127192e-11,
+        "meanSoftness": 0.05406737154236423,
+        "left60MeanLinearLuminance": 0.0043605004557042025,
+        "right40MeanLinearLuminance": 0.04041237867796959,
+        "noise": {
+          "seed": 2659717577,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "cerberus": {
+      "id": "cerberus",
+      "source": {
+        "family": "organic",
+        "atlas": "assets/themes/surfaces41/organic-atlas.png",
+        "sha256": "af67a9575e5c0e864f7e9c3626ed68b5c6ea33477aa16ef2d166467176be4fb8",
+        "dimensions": [
+          1537,
+          1023
+        ],
+        "cell": [
+          1,
+          1
+        ],
+        "cellBounds": [
+          769,
+          341,
+          1537,
+          682
+        ],
+        "crop": {
+          "left": 771,
+          "top": 343,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/cerberus-field.webp",
+        "sha256": "6d0f991121dca4a6a9a43b80c454eb58275dcf706814ab5a6dab718fc0a148ee"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/cerberus-normal.png",
+        "sha256": "6ebc2524b90ad00899c0380c74a51298c0b356baa95eb245d7e7bbf67359c9a3"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/cerberus-mask.png",
+        "sha256": "b6fdc07774bb106848ee1a7378229b720353c0f3ddb2be00af590fd5af7c1966"
+      },
+      "material": {
+        "type": "organic-metal",
+        "effect": "contained-biological-fluid",
+        "palette": [
+          "#5b6e65",
+          "#975b55",
+          "#63bdbb"
+        ],
+        "hues": [
+          [
+            160,
+            205
+          ]
+        ],
+        "minValue": 0.79,
+        "minSaturation": 0.4,
+        "normalStrength": 2.5,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0,
+        "softnessCoverageAt32": 0.42563347678158064,
+        "normalDetailCoverage": 0.14537340562710707,
+        "meanEmission": 2.1053820002284835e-8,
+        "meanSoftness": 0.19972525077203213,
+        "left60MeanLinearLuminance": 0.0066602208376677,
+        "right40MeanLinearLuminance": 0.03278537167643905,
+        "noise": {
+          "seed": 4222185950,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "mecha": {
+      "id": "mecha",
+      "source": {
+        "family": "organic",
+        "atlas": "assets/themes/surfaces41/organic-atlas.png",
+        "sha256": "af67a9575e5c0e864f7e9c3626ed68b5c6ea33477aa16ef2d166467176be4fb8",
+        "dimensions": [
+          1537,
+          1023
+        ],
+        "cell": [
+          0,
+          2
+        ],
+        "cellBounds": [
+          0,
+          682,
+          769,
+          1023
+        ],
+        "crop": {
+          "left": 2,
+          "top": 684,
+          "width": 765,
+          "height": 337
+        }
+      },
+      "width": 765,
+      "height": 337,
+      "aspectRatio": 2.2700296735905043,
+      "field": {
+        "url": "/themes/surfaces41/mecha-field.webp",
+        "sha256": "d94b62e11f3ed745d3d0ec725d0329efe15a6422eadb5f1f20d71ab0ea54cb76"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/mecha-normal.png",
+        "sha256": "92889e885ebe5bef2acdad867b4837bf0c5041d7672dbf9bb92dfcccc433505a"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/mecha-mask.png",
+        "sha256": "74ee6278b7814895c684fee467bd560875be727eca6864b7f9e9ade0cc44a808"
+      },
+      "material": {
+        "type": "metal",
+        "effect": "amber-recess-refraction",
+        "palette": [
+          "#536c7e",
+          "#b8cbd5",
+          "#edaa46"
+        ],
+        "hues": [
+          [
+            26,
+            58
+          ]
+        ],
+        "minValue": 0.74,
+        "minSaturation": 0.3,
+        "normalStrength": 2.8,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.003021663660518609,
+        "softnessCoverageAt32": 0.014817400748627838,
+        "normalDetailCoverage": 0.19873935726615077,
+        "meanEmission": 0.0017214648467630976,
+        "meanSoftness": 0.005007282180129994,
+        "left60MeanLinearLuminance": 0.0044333066008781325,
+        "right40MeanLinearLuminance": 0.0775334104695544,
+        "noise": {
+          "seed": 1667174903,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    },
+    "classic-zerg": {
+      "id": "classic-zerg",
+      "source": {
+        "family": "organic",
+        "atlas": "assets/themes/surfaces41/organic-atlas.png",
+        "sha256": "af67a9575e5c0e864f7e9c3626ed68b5c6ea33477aa16ef2d166467176be4fb8",
+        "dimensions": [
+          1537,
+          1023
+        ],
+        "cell": [
+          1,
+          2
+        ],
+        "cellBounds": [
+          769,
+          682,
+          1537,
+          1023
+        ],
+        "crop": {
+          "left": 771,
+          "top": 684,
+          "width": 764,
+          "height": 337
+        }
+      },
+      "width": 764,
+      "height": 337,
+      "aspectRatio": 2.2670623145400595,
+      "field": {
+        "url": "/themes/surfaces41/classic-zerg-field.webp",
+        "sha256": "4682555053ad9acc13d920c547d68a1700f47fa6b68524175ce8fed1bc275b8f"
+      },
+      "normal": {
+        "url": "/themes/surfaces41/classic-zerg-normal.png",
+        "sha256": "7fc542580b6c72d3e553ad4002c803159d3c8f501518656bcfddfba3d3954b68"
+      },
+      "mask": {
+        "url": "/themes/surfaces41/classic-zerg-mask.png",
+        "sha256": "8374b622b74d2359d495393235a49a7ff1a77fbbe3edbdb7ae398c2dbe609289"
+      },
+      "material": {
+        "type": "organic",
+        "effect": "wet-muscle-and-amber-inclusions",
+        "palette": [
+          "#783b31",
+          "#bd7750",
+          "#e0b561"
+        ],
+        "hues": [
+          [
+            35,
+            68
+          ]
+        ],
+        "minValue": 0.84,
+        "minSaturation": 0.5,
+        "normalStrength": 2.4,
+        "classification": "heuristic; inspect RGB artwork and channel previews before treating masks as material truth",
+        "suggestedUvDisplacementMax": 0.003,
+        "suggestedRelightGain": 0.18
+      },
+      "statistics": {
+        "emissionCoverageAt32": 0.000042723755961905946,
+        "softnessCoverageAt32": 0.6971157580747899,
+        "normalDetailCoverage": 0.1757732999829105,
+        "meanEmission": 0.00002011197274328367,
+        "meanSoftness": 0.5188460590285771,
+        "left60MeanLinearLuminance": 0.007713115098118318,
+        "right40MeanLinearLuminance": 0.040994732895167675,
+        "noise": {
+          "seed": 3586862480,
+          "octaves": 4,
+          "periods": [
+            4,
+            8,
+            16,
+            32
+          ],
+          "weights": [
+            0.55,
+            0.25,
+            0.13,
+            0.07
+          ],
+          "interpolation": "quintic periodic value noise",
+          "normalization": "per-theme min/max to 0–255",
+          "oppositeEdgeMaxDifference": 0
+        }
+      },
+      "warnings": []
+    }
+  }
+}

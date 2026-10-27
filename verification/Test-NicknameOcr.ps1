@@ -17,7 +17,7 @@ $taskParseErrors=$null;$taskTokens=$null
 $taskAst=[Management.Automation.Language.Parser]::ParseInput($taskSource,[ref]$taskTokens,[ref]$taskParseErrors)
 if($taskParseErrors.Count){throw 'Production OCR script has parse errors'}
 foreach($taskFunction in $taskAst.FindAll({param($node) $node -is [Management.Automation.Language.FunctionDefinitionAst]},$true)){
- if($taskFunction.Name -in @('Await-Dsc','Join-DscNameLines','Read-NameLine','Remove-HostLabel','Select-DscNameReading')){Invoke-Expression $taskFunction.Extent.Text}
+ if($taskFunction.Name -in @('Await-Dsc','Join-DscNameLines','Get-DscNameReadingKey','Test-DscNameRetry','Select-DscNameRetry','Read-NameLine','Remove-HostLabel','Test-DscCyrillicGlyphReading','Select-DscNameReading')){Invoke-Expression $taskFunction.Extent.Text}
 }
 $taskLanguages=@([Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages | Where-Object {$_.LanguageTag -match '^(en|ru)'})
 $taskEngines=@(foreach($taskLanguage in $taskLanguages){@{language=$taskLanguage.LanguageTag;engine=[Windows.Media.Ocr.OcrEngine]::TryCreateFromLanguage($taskLanguage)}})
@@ -51,7 +51,9 @@ $taskCases=@(
  @{Name='TKnight';Left=215;Top=206;Width=94;Height=27;Raw='Tknight'},
  @{Name='miggy';Left=215;Top=301;Width=90;Height=29;Raw='rnggy'},
  @{Name='BOOMBACLAT';Left=215;Top=466;Width=147;Height=31;Raw='BOOMBACILT'},
- @{Name='jejo';Left=213;Top=689;Width=41;Height=26;Raw='jejo';Image='six-player-lobby.png'}
+ @{Name='jejo';Left=213;Top=689;Width=41;Height=26;Raw='jejo';Image='six-player-lobby.png'},
+ @{Name='Александр';Left=215;Top=262;Width=112;Height=27;Raw='AneKcaHAp';Image='ambiguous-scripts-lobby.png'},
+ @{Name='ZhinGarello';Left=215;Top=191;Width=112;Height=27;Raw='ZhinGare110';Image='ambiguous-scripts-lobby.png'}
 )
 $taskClock=[Diagnostics.Stopwatch]::StartNew()
 $taskResults=@(foreach($taskCase in $taskCases){
@@ -83,16 +85,41 @@ $taskSelectionCases=@(
  @{Raw='<tag> Nick';Expected='Nick';En='Nick';Ru=''},
  @{Raw='Nick';Expected='Nick';En='';Ru=''},
  @{Raw='KOHCTaHThH fOcynoB';Expected='Константин Юсупов';En='KOHCTaHTVIH IOcynoB';Ru='Константин Юсупов'},
- @{Raw='Mila Smith';Expected='Mila Smith';En='Mila Smith';Ru='Мила Смит'}
+ @{Raw='Mila Smith';Expected='Mila Smith';En='Mila Smith';Ru='Мила Смит'},
+ @{Raw='AneKcaHAp';Expected='Александр';En='AneKcaHAp';Ru='Александр'},
+ @{Raw='АпеКсаНАр';Expected='Александр';En='AneKcaHAp';Ru='Александр'},
+ @{Raw='MiLa';Expected='MiLa';En='MiLa';Ru='Мила'},
+ @{Raw='MiLaNa';Expected='MiLaNa';En='MiLaNa';Ru='Милана'},
+ @{Raw='LoGiN';Expected='LoGiN';En='LoGiN';Ru='Логин'},
+ @{Raw='McDonald';Expected='McDonald';En='McDonald';Ru='Макдональд'},
+ @{Raw='SТALKER';Expected='SТALKER';En='STALKER';Ru='SТALKER'},
+ @{Raw='ZhinGare110';Expected='ZhinGare110';En='ZhinGare110';Ru='ZhinGareIIo'}
 )
 $taskSelectionResults=@(foreach($taskCase in $taskSelectionCases){
  $taskSelected=Select-DscNameReading $taskCase.Raw @(@{language='en-GB';text=$taskCase.En},@{language='ru';text=$taskCase.Ru})
  [pscustomobject]@{Raw=$taskCase.Raw;Expected=$taskCase.Expected;Selected=$taskSelected;Passed=$taskSelected -ceq $taskCase.Expected}
 })
-$taskPassed=@($taskResults | Where-Object {$_.Variant -eq 'Production' -and -not $_.Passed}).Count -eq 0 -and @($taskSelectionResults | Where-Object {-not $_.Passed}).Count -eq 0
+$taskRetryCases=@(
+ @{Before=@('Handle110','HandleIIo');After=@('Handlello','Handlello');Expected='Handlello';Retry=$true},
+ @{Before=@('Handle110','HandleIIo');After=@('Handlello','HandleIIo');Expected='Handle110';Retry=$true},
+ @{Before=@('Handle110','HandleIIo');After=@('HandlelIo','Handlello');Expected='Handle110';Retry=$true},
+ @{Before=@('Handle110','HandleIIo');After=@('Otherllo','Otherllo');Expected='Handle110';Retry=$true},
+ @{Before=@('Handle110','HandleIIo');After=@('Handlelo','Handlelo');Expected='Handle110';Retry=$true},
+ @{Before=@('Handle110','Handle110');After=@('Handlello','Handlello');Expected='Handle110';Retry=$false},
+ @{Before=@('Player1','Player7');After=@('Playerl','Playerl');Expected='Player1';Retry=$false},
+ @{Before=@('SТALKER1','STALKERl');After=@('STALKERl','STALKERl');Expected='SТALKER1';Retry=$false}
+)
+$taskRetryResults=@(foreach($taskCase in $taskRetryCases){
+ $taskBefore=@(@{language='en-GB';text=$taskCase.Before[0]},@{language='ru';text=$taskCase.Before[1]})
+ $taskAfter=@(@{language='en-GB';text=$taskCase.After[0]},@{language='ru';text=$taskCase.After[1]})
+ $taskRetried=Test-DscNameRetry $taskBefore
+ $taskSelected=@(Select-DscNameRetry $taskBefore $taskAfter)[0].text
+ [pscustomobject]@{Before=$taskCase.Before;After=$taskCase.After;Expected=$taskCase.Expected;Selected=$taskSelected;Retry=$taskRetried;Passed=$taskSelected -ceq $taskCase.Expected -and $taskRetried -eq $taskCase.Retry}
+})
+$taskPassed=@($taskResults | Where-Object {$_.Variant -eq 'Production' -and -not $_.Passed}).Count -eq 0 -and @($taskSelectionResults | Where-Object {-not $_.Passed}).Count -eq 0 -and @($taskRetryResults | Where-Object {-not $_.Passed}).Count -eq 0
 $taskHasher=[Security.Cryptography.SHA256]::Create()
 try{$taskScriptHash=[BitConverter]::ToString($taskHasher.ComputeHash([IO.File]::ReadAllBytes($ScriptPath))).Replace('-','')}finally{$taskHasher.Dispose()}
-$taskReport=[pscustomobject]@{At=[DateTime]::UtcNow.ToString('o');ScriptSha256=$taskScriptHash;Source='Actual supplied screenshot name crops; host crop has an explicitly known host label';Explore=[bool]$Explore;Success=$taskPassed;Seconds=$taskClock.Elapsed.TotalSeconds;Cases=$taskResults;SelectionCases=$taskSelectionResults}
+$taskReport=[pscustomobject]@{At=[DateTime]::UtcNow.ToString('o');ScriptSha256=$taskScriptHash;Source='Actual supplied screenshot name crops; host crop has an explicitly known host label';Explore=[bool]$Explore;Success=$taskPassed;Seconds=$taskClock.Elapsed.TotalSeconds;Cases=$taskResults;SelectionCases=$taskSelectionResults;RetryCases=$taskRetryResults}
 $taskReport | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $PSScriptRoot 'nickname-ocr-readings.json') -Encoding UTF8
 $taskReport | ConvertTo-Json -Depth 8 -Compress
 if(-not $taskPassed){throw 'Nickname OCR regression failed'}

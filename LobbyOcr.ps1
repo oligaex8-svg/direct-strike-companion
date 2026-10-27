@@ -29,7 +29,31 @@ function Await-Dsc($operation,$type) {
 function Join-DscNameLines([string[]]$Lines) {
  (($Lines | Where-Object {$_.Trim() -notmatch '^(?:(?:<[^<>]+>|\[[^\[\]]+\])\s*)+$'}) -join ' ').Trim()
 }
-function Read-NameLine($bytes, $engines) {
+function Get-DscNameReadingKey([string]$Name) {
+ # These are glyph alternatives, never a key for resolving an account.
+ (($Name -replace '\s','').ToLowerInvariant() -replace '[1il]','l' -replace '[0o]','o')
+}
+function Test-DscNameRetry([object[]]$Readings) {
+ $texts=@($Readings | Where-Object {$_.language -match '^(en|ru)' -and $_.text} | ForEach-Object {$_.text.Trim()})
+ # Retry only a digit/letter disagreement on an otherwise identical Latin
+ # handle. Agreeing names, Cyrillic and genuinely different readings stay put.
+ $texts.Count -eq 2 -and @($Readings | Where-Object {$_.language -like 'en*'}).Count -eq 1 -and
+  @($Readings | Where-Object {$_.language -like 'ru*'}).Count -eq 1 -and
+  $texts[0] -match '^[A-Za-z0-9_.-]+$' -and $texts[1] -match '^[A-Za-z0-9_.-]+$' -and
+  $texts[0] -ine $texts[1] -and ($texts -join '') -match '[01]' -and
+  (Get-DscNameReadingKey $texts[0]) -ceq (Get-DscNameReadingKey $texts[1])
+}
+function Select-DscNameRetry([object[]]$Readings, [object[]]$RetryReadings) {
+ if(Test-DscNameRetry $Readings){
+  $texts=@($RetryReadings | Where-Object {$_.language -match '^(en|ru)' -and $_.text} | ForEach-Object {$_.text.Trim()})
+  if($texts.Count -eq 2 -and @($RetryReadings | Where-Object {$_.language -like 'en*'}).Count -eq 1 -and
+     @($RetryReadings | Where-Object {$_.language -like 'ru*'}).Count -eq 1 -and $texts[0] -ceq $texts[1] -and
+     $texts[0].Length -eq $Readings[0].text.Trim().Length -and
+     (Get-DscNameReadingKey $texts[0]) -ceq (Get-DscNameReadingKey $Readings[0].text)) {return $RetryReadings}
+ }
+ return $Readings
+}
+function Read-NameLine($bytes, $engines, [switch]$NoRetry) {
  $nameStream=New-Object Windows.Storage.Streams.InMemoryRandomAccessStream
  $nameImage=$null
  try {
@@ -42,12 +66,32 @@ function Read-NameLine($bytes, $engines) {
   $nameStream.Seek(0)
   $nameDecoder=Await-Dsc ([Windows.Graphics.Imaging.BitmapDecoder]::CreateAsync($nameStream)) ([Windows.Graphics.Imaging.BitmapDecoder])
   $nameImage=Await-Dsc ($nameDecoder.GetSoftwareBitmapAsync()) ([Windows.Graphics.Imaging.SoftwareBitmap])
-  foreach ($item in $engines) {
+  $readings=@(foreach ($item in $engines) {
    $nameResult=Await-Dsc ($item.engine.RecognizeAsync($nameImage)) ([Windows.Media.Ocr.OcrResult])
    # Ignore complete bracketed tag lines in a name crop; never infer a tag
    # from a bare word, which may be part of a player's spaced nickname.
    @{language=$item.language;text=(Join-DscNameLines @($nameResult.Lines | ForEach-Object {$_.Text}))}
+  })
+  if(-not $NoRetry -and (Test-DscNameRetry $readings)){
+   # A second, bounded 3x view separates thin l/I strokes from 1. Require
+   # both languages to agree and preserve every non-confusable glyph.
+   $inputImage=New-Object IO.MemoryStream(,$bytes)
+   $bitmap=$null;$enlarged=$null;$graphics=$null;$outputImage=$null
+   try {
+    $bitmap=New-Object Drawing.Bitmap($inputImage)
+    $enlarged=New-Object Drawing.Bitmap([int]($bitmap.Width*1.5),[int]($bitmap.Height*1.5))
+    $graphics=[Drawing.Graphics]::FromImage($enlarged)
+    $graphics.InterpolationMode=[Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $graphics.DrawImage($bitmap,0,0,$enlarged.Width,$enlarged.Height)
+    $outputImage=New-Object IO.MemoryStream
+    $enlarged.Save($outputImage,[Drawing.Imaging.ImageFormat]::Png)
+    $readings=@(Select-DscNameRetry $readings @(Read-NameLine $outputImage.ToArray() $engines -NoRetry))
+   } finally {
+    if($outputImage){$outputImage.Dispose()};if($graphics){$graphics.Dispose()}
+    if($enlarged){$enlarged.Dispose()};if($bitmap){$bitmap.Dispose()};$inputImage.Dispose()
+   }
   }
+  $readings
  } finally {
   if ($nameImage) {$nameImage.Dispose()}
   $nameStream.Dispose()
@@ -142,6 +186,18 @@ function Remove-HostLabel([string]$value) {
  $value=($value -replace '\s*\((?:Host|Хозяин|Создатель)\)\s*$','').Trim()
  ($value -replace '^(?:(?:<[^<>]+>|\[[^\[\]]+\])\s*)+','').Trim()
 }
+function Test-DscCyrillicGlyphReading([string]$Latin, [string]$Cyrillic) {
+ # Compare complete visible glyphs, not pronunciation. The SC2 font also
+ # lets the English engine read lowercase л as n and д as A.
+ $glyphs='авекмнорстухлд';$alternatives='abekmhopctyxna'
+ $mapped=''
+ foreach($letter in $Cyrillic.ToLowerInvariant().ToCharArray()){
+  $index=$glyphs.IndexOf($letter)
+  if($index -lt 0){return $false}
+  $mapped+=$alternatives[$index]
+ }
+ $mapped.Length -gt 0 -and $mapped.Equals($Latin,[StringComparison]::OrdinalIgnoreCase)
+}
 function Select-DscNameReading([string]$Raw, [object[]]$Readings) {
  $original=Remove-HostLabel $Raw
  $english=@($Readings | Where-Object {$_.language -like 'en*' -and $_.text} | Select-Object -First 1)
@@ -159,11 +215,19 @@ function Select-DscNameReading([string]$Raw, [object[]]$Readings) {
   # Russian phrase when its case and glyph evidence explain that artifact.
   $phraseEvidence=$candidate -cmatch '^[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)+$' -and
       $name -cmatch '[A-Z]{3,}' -and $name -cmatch '[a-z]' -and $distinctive -ge 2
+  # One Russian name can also be rendered as a mixed-case Latin artifact
+  # (for example uppercase homographs inside lowercase text). Whole-frame
+  # agreement with that artifact must not veto the full Russian reading.
+  # Every letter must explain the same visible glyph; mixed capitalization
+  # alone also occurs in legitimate Latin handles.
+  $wordEvidence=$candidate -cmatch '^[А-ЯЁ][а-яё]{3,}$' -and $name -cmatch '^[A-Za-z]+$' -and
+      $name -cmatch '[a-z]' -and [regex]::Matches($name,'[A-Z]').Count -ge 3 -and $distinctive -ge 2 -and
+      (Test-DscCyrillicGlyphReading $name $candidate)
   # A lone misread Cyrillic letter in an otherwise Latin name is insufficient.
   # Also reject a language engine that dropped most of the observed line.
   $coverage=($candidate -replace '\s','').Length -ge ($name -replace '\s','').Length*.65
-  if(( -not $latinAgreement -or $phraseEvidence) -and $coverage -and
-     ($originalCyrillic -or $phraseEvidence -or ($distinctive -ge 2 -and $distinctive -ge $letterCount*.3))){$name=$candidate}
+  if(( -not $latinAgreement -or $phraseEvidence -or $wordEvidence) -and $coverage -and
+     ($originalCyrillic -or $phraseEvidence -or $wordEvidence -or ($distinctive -ge 2 -and $distinctive -ge $letterCount*.3))){$name=$candidate}
  }
  if($originalCyrillic -and $name -notmatch '[\p{IsCyrillic}]'){return $original}
  # Recognition may repair glyphs and case, but must not silently discard a

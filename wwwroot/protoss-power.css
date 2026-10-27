@@ -1,0 +1,9 @@
+.protoss-power47{display:block;position:absolute;margin:0;padding:0;border:0;pointer-events:none!important;user-select:none;contain:style}
+.protoss-power47[hidden]{display:none!important}
+.protoss-inlay47{inset:0;z-index:3;background:none}
+.protoss-inlay-light47{display:block;position:absolute;margin:0;padding:0;border-style:solid;border-color:transparent;background:none;box-sizing:border-box;pointer-events:none;mix-blend-mode:screen}
+/* The projected field is registered to the existing rendered ground ellipse. */
+.protoss-field47{left:0;top:165px;width:192px;height:96px;transform:scale(1.28125,1.1458333);transform-origin:0 0;overflow:hidden;contain:paint;z-index:0;mix-blend-mode:screen}
+.protoss-field-atlas47{display:block;position:absolute;left:0;top:0;background-repeat:no-repeat}
+:root[data-graphical-style=protoss] .pylon-viewport42,:root[data-graphical-style=protoss] .pylon-poster42{z-index:1}
+@media(prefers-reduced-motion:reduce),(forced-colors:active){.protoss-power47{display:none!important}}

@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SM_HyperionArmoryConsole.m3",
+    "path": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/StoryModeSets/Terran/SM_HyperionArmoryConsole/SM_HyperionArmoryConsole.m3",
+    "sha256": "cad4f16c230c0f66fc89968744e60d6a85f27ff4f2bac46333abc273a14fc0e5"
+  },
+  {
+    "file": "SM_HyperionBridgeHolomap.m3",
+    "path": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/StoryModeSets/Terran/SM_HyperionBridgeHolomap/SM_HyperionBridgeHolomap.m3",
+    "sha256": "94da2c9f5372db8665c8f4ffc737316a89b32f40a3e1d775e54a3fba4e4030ad"
+  },
+  {
+    "file": "SMX1_LeviathanFloorTentacle.m3",
+    "path": "campaigns/swarm.sc2campaign/base.sc2assets/Assets/StoryModeSets/Zerg/SMX1_LeviathanFloorTentacle/SMX1_LeviathanFloorTentacle.m3",
+    "sha256": "fcce03734a97dacb662ee1c599f6df8e20698f52385b971dea58cfcb9b77c01b"
+  },
+  {
+    "file": "SMX2_Bridge_Communicator.m3",
+    "path": "campaigns/void.sc2campaign/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_Bridge_Communicator/SMX2_Bridge_Communicator.m3",
+    "sha256": "2b23339a86ffc61cf7e273bd25d753c862f0714f8702efbae96bcbf8dd0db551"
+  },
+  {
+    "file": "SMX2_ShipRoom_CoreLock.m3",
+    "path": "campaigns/void.sc2campaign/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom_CoreLock/SMX2_ShipRoom_CoreLock.m3",
+    "sha256": "758660efc9425b0ec4b5ed51cb10342eff6b66e08de93384bdb1a0de0d2baa59"
+  },
+  {
+    "file": "SMX2_SpearOfAdunUI.m3",
+    "path": "campaigns/void.sc2campaign/base.sc2assets/Assets/UI/Console/Protoss/SMX2_SpearOfAdunUI/SMX2_SpearOfAdunUI.m3",
+    "sha256": "0a278db4789453c0635998528018b896ec691a621be7a9549c7f0cb4676d3aa3"
+  },
+  {
+    "file": "SMX2_ShipRoom_SunCore.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom_SunCore/SMX2_ShipRoom_SunCore.m3",
+    "sha256": "3c7e53de7ee6fa5c91c8b1fde0e1cda3a30b90eca4b1a820af515af7bd8c5e51"
+  },
+  {
+    "file": "SM_HyperionBridgeCommConsole.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Terran/SM_HyperionBridgeCommConsole/SM_HyperionBridgeCommConsole.m3",
+    "sha256": "dd90f787d7d2e655632e5464d7107e52d0f24c2b4c11031c0369c74f4bca2d6c"
+  },
+  {
+    "file": "SMX1_EggRoomSet_Low_00.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Zerg/SMX1_EggRoomSet/SMX1_EggRoomSet_Low_00.m3",
+    "sha256": "ea354175d0af57f26420bff5288f37d260c7cfa796e60a3058c3752a9802c065"
+  },
+  {
+    "file": "SM_HyperionBridgeStarmap.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Terran/SM_HyperionBridgeStarmap/SM_HyperionBridgeStarmap.m3",
+    "sha256": "ad0aff858688052e3f83df63b97b347c724ba48cd6713faad326d9334a27b6d1"
+  },
+  {
+    "file": "SMX2_ShipRoom_00.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom/SMX2_ShipRoom_00.m3",
+    "sha256": "71370e351027ce86d8b4e819f6219448619af3691871ca8d66f9c7dc40a2a0dc"
+  },
+  {
+    "file": "SMX2_ShipRoom_01.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom/SMX2_ShipRoom_01.m3",
+    "sha256": "fa870141a0573e8ffd14f185ea38dd822dbdd094c85a7454b33d38b4891dd6ce"
+  },
+  {
+    "file": "SMX2_ShipRoom_02.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom/SMX2_ShipRoom_02.m3",
+    "sha256": "a8ac3962ba6fdc8ae2f0f58b98a5958ba8ec13698b39a63af41002be519c54c1"
+  },
+  {
+    "file": "SMX2_ShipRoom_03.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom/SMX2_ShipRoom_03.m3",
+    "sha256": "643caad19cfd739b0007a066f7957453dbc45f55baf49124168bafb300fc3e2d"
+  },
+  {
+    "file": "SMX2_ShipRoom_04.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom/SMX2_ShipRoom_04.m3",
+    "sha256": "12f344a90ddfeb0ff8d4f6f0d894011b7bbc954602d17246a912d686f5de549d"
+  },
+  {
+    "file": "SMX2_ShipRoom_05.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Protoss/SMX2_ShipRoom/SMX2_ShipRoom_05.m3",
+    "sha256": "a8e8d425c5db79d0833ac751a68b572622a947f95a2b08575a1eeb6b795a2f5d"
+  },
+  {
+    "sha256": "b95079c305903c10f18631b133e9f42e684416d48820e7d57740fc650c10433f",
+    "file": "SMX1_EggRoomZerglingEgg.m3",
+    "path": "campaigns/swarm.sc2campaign/base.sc2assets/Assets/StoryModeCharacters/Zerg/SMX1_EggRoomZerglingEgg/SMX1_EggRoomZerglingEgg.m3"
+  }
+]

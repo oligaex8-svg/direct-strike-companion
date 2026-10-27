@@ -1,0 +1,51 @@
+/* Reconstructed own-console turns own the outer shell. Only the straight
+   adjoining cross-sections extend; sculpture keeps one uniform scale. */
+:root[data-native-console]{--skin-panel-paint:26px;--skin-shell-scale:.40;--skin-shell-rise:12px}
+/* Keep the complete long fang above Default's fixed Scan control. */
+:root[data-graphical-style=abathur]{--skin-shell-scale:.34}
+:root[data-graphical-style=fenix]{--skin-shell-scale:.5}
+:root[data-native-console] .work-console{--shell-frame-size:inherit!important}
+:root[data-native-console]:not([data-graphical-style=default]) .work-console{border-image:none!important;border-color:transparent;background:linear-gradient(180deg,var(--shell-header) 20px,var(--shell-well) var(--shell-head-size));background-clip:border-box;isolation:isolate}
+/* One continuous surface under the crown and header. An inset header fill
+   otherwise leaves a dark rectangular step between the two upper shoulders. */
+:root[data-native-console]:not([data-graphical-style=default]) .work-console>.page-head{background:none!important}
+:root[data-native-console] .work-console::before{
+ content:'';position:absolute;pointer-events:none;z-index:1;inset:calc(0px - var(--shell-frame-size));top:calc(0px - var(--shell-frame-size) - var(--skin-shell-rise));width:auto;height:auto;
+ border:1px solid transparent;border-image:var(--skin-shell-frame) var(--skin-shell-slice) / calc(var(--skin-shell-y) * var(--skin-shell-scale) * 1px) calc(var(--skin-shell-x) * var(--skin-shell-scale) * 1px) calc(var(--skin-shell-bottom) * var(--skin-shell-scale) * 1px) calc(var(--skin-shell-left) * var(--skin-shell-scale) * 1px) / 0 stretch;background:none;transform:none
+}
+:root[data-native-console] .work-console::after{content:none!important;background:none!important}
+/* The native Purifier rim surrounds one continuous material surface, including
+   the existing upper gutter. Its backing follows the authored chamfer. */
+:root[data-graphical-style=fenix] .work-console{background:none!important}
+:root[data-graphical-style=fenix] .work-console::after{
+ content:''!important;position:absolute;pointer-events:none;z-index:-1;
+ inset:calc(0px - var(--shell-frame-size));top:calc(0px - var(--shell-frame-size) - var(--skin-shell-rise));
+ width:auto;height:auto;transform:none;border:none;
+ background:linear-gradient(180deg,var(--shell-header) 20px,var(--shell-well) var(--shell-head-size))!important;
+ clip-path:var(--skin-shell-outline)
+}
+/* Native wells sit on existing borders; no additional parent frame is invented. */
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card){position:relative!important;border-color:transparent!important;border-image:none;background-clip:border-box}
+/* Default's border widths still reserve the same space. Native frame artwork
+   owns these edges, so the restored solid borders must not add a second rim. */
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-portrait-frame,.profile-portrait-frame .commander-portrait,.profile-best-identity .commander-portrait,.live-lobby .native-command-deck .commander-portrait){border-color:transparent!important}
+/* The complete16px native corners render at1.625x; visible material is6–8px.
+   Two pixels paint outward into the existing gaps, preserving text clearance. */
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card)::before{content:'';display:block;position:absolute;inset:-3px;z-index:2;pointer-events:none;border:1px solid transparent;border-image:var(--skin-panel-frame) 16 / var(--skin-panel-paint) / 0 stretch;background:none;transform:none;width:auto;height:auto}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-overview{border-image:none;background:none;box-shadow:none}
+:root[data-native-console] .sidebar nav::before{content:none}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.sidebar nav,.sidebar .sidebar-bottom,.sidebar>.brand,dialog,dialog#player-dialog){border-color:transparent;border-image:var(--skin-panel-frame) 16 / var(--skin-panel-paint) / 0 stretch}
+/* A complete console is reserved for the outer shell. Miniature console plates
+   and bracket pairs beneath headings looked like cropped controls. */
+:root[data-native-console]:not([data-graphical-style=default]) :is(.work-console>.page-head,.profile-favourite-top,.profile-best-heading,.profile-region h3,.profile-section-heading,.profile-average-heading,.pick-section-head,.sounds-results-head,.live-team-head)::after{content:none!important;background:none}
+:root[data-native-console] :is(.profile-favourite-main,.profile-favourite-bottom,.profile-best-grid,.profile-best-card,.profile-last-played,.pick-controls-help,.sounds-results-head,.replay-middle-preview){background-image:none!important}
+:root[data-native-console] .profile-best-card{border-image:none}
+:root[data-native-console] .profile-section-heading{background:linear-gradient(180deg,var(--section-head),var(--section-well));border-image:none}
+:root[data-native-console] :is(.profile-favourite-top,.profile-region h3,.live-team-head){background:var(--skin-header-band) center bottom / calc(100% - 12px) 4px no-repeat,linear-gradient(180deg,var(--section-head),var(--section-well)) center / auto no-repeat!important}
+@media(max-width:750px){:root[data-native-console]{--skin-panel-paint:24px;--skin-shell-scale:.23;--skin-shell-rise:8px}:root[data-graphical-style=fenix]{--skin-shell-scale:.32}}
+@media(forced-colors:active){
+ :root[data-native-console] .work-console::before,:root[data-native-console] .work-console::after{display:none}
+ :root[data-native-console] :is(.profile-favourite-top,.profile-region h3,.live-team-head){background:Canvas!important}
+ :root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card)::before{display:none}
+ :root[data-native-console]:not([data-graphical-style=default]) :is(.work-console,.profile-commanders,.profile-results,.profile-region,.live-team-group,.table-wrap,.profile-average-grid,.sidebar nav,.sidebar .sidebar-bottom,dialog,.profile-portrait-frame,.profile-portrait-frame .commander-portrait,.profile-best-identity .commander-portrait,.live-lobby .native-command-deck .commander-portrait){border-image:none!important;border-color:CanvasText!important;background:Canvas;box-shadow:none}
+}

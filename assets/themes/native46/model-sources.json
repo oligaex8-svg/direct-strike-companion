@@ -1,0 +1,32 @@
+[
+  {
+    "sha256": "1e42b05775eb97fc071e14718807b04711e5e2be47c1171152db93b344da298d",
+    "file": "SMX1_EggMonsterT1.m3",
+    "path": "campaigns/swarm.sc2campaign/base.sc2assets/Assets/StoryModeCharacters/Zerg/SMX1_EggMonsterT1/SMX1_EggMonsterT1.m3"
+  },
+  {
+    "sha256": "b95079c305903c10f18631b133e9f42e684416d48820e7d57740fc650c10433f",
+    "file": "SMX1_EggRoomZerglingEgg.m3",
+    "path": "campaigns/swarm.sc2campaign/base.sc2assets/Assets/StoryModeCharacters/Zerg/SMX1_EggRoomZerglingEgg/SMX1_EggRoomZerglingEgg.m3"
+  },
+  {
+    "sha256": "c2a786296a213c2590a331ae8b16f8778d438429cd298504a0bb5549b338ceed",
+    "file": "EvolutionChamber.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Zerg/EvolutionChamber/EvolutionChamber.m3"
+  },
+  {
+    "sha256": "a152673fd1948b7d991c835a2f91f7b734bdc9f0e6c8ee9e8abd78d41130fa45",
+    "file": "Egg_00.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Units/Zerg/Egg/Egg_00.m3"
+  },
+  {
+    "sha256": "67670ad2dca2b5147278226b90c5eb4e95f6b065a0496f327b9a3bd2ce230f86",
+    "file": "Egg_01.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Units/Zerg/Egg/Egg_01.m3"
+  },
+  {
+    "sha256": "2eae66d1ca6c135f7b7bc0f368313bd997a4d07b6b918d5bc2f03a535cd4815e",
+    "file": "Egg_02.m3",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Units/Zerg/Egg/Egg_02.m3"
+  }
+]

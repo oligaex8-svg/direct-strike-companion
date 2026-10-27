@@ -1,0 +1,21 @@
+/* The selected console material continues through the shell and utility dock.
+   Fixed native caps stay on the content frame; these quiet surfaces carry depth. */
+:root[data-native-console] body{background:var(--shell-header);caret-color:var(--accent)}
+:root[data-native-console] .app{min-height:100vh;background:linear-gradient(180deg,var(--shell-header),var(--shell-well) 180px)}
+:root[data-native-console] main{background:linear-gradient(90deg,#0003,transparent 18px),linear-gradient(180deg,var(--shell-header),var(--shell-well) 180px)}
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar nav{background:var(--shell-header);box-shadow:0 4px 10px #0005}
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar .sidebar-bottom{padding:5px;border:6px solid transparent;border-image:var(--native-info-frame) 32 / 6px / 0 round;background:linear-gradient(180deg,var(--shell-panel),var(--shell-well));box-shadow:0 5px 14px #0006;gap:2px}
+:root[data-native-console] .sidebar-bottom>a{display:block;padding:5px 4px}
+:root[data-native-console] .sidebar-bottom .sidebar-settings,:root[data-native-console] .sidebar-bottom #sidebar-updates{width:100%;min-height:32px;padding:5px 3px;gap:4px;font-size:12px;text-align:left}
+:root[data-native-console] main>footer{padding:8px 10px;margin-top:10px;min-height:34px;border:0;border-top:1px solid var(--shell-edge);border-bottom:1px solid color-mix(in srgb,var(--shell-edge) 45%,transparent);background:linear-gradient(180deg,var(--shell-header),var(--shell-well));box-shadow:0 5px 12px #0004;color:var(--muted)}
+:root[data-native-console] .lobby-page-actions{margin-top:10px;padding:7px 10px;background:var(--shell-header);border-top:1px solid var(--shell-edge)}
+:root[data-native-console] ::selection{background:color-mix(in srgb,var(--accent) 30%,var(--shell-well));color:var(--text)}
+:root[data-native-console]{scrollbar-color:color-mix(in srgb,var(--shell-edge) 75%,var(--shell-panel)) var(--shell-well)}
+@media(max-width:750px){
+ :root[data-native-console]:not([data-graphical-style=default]) .sidebar .sidebar-bottom{padding:3px;border-width:4px;border-image-width:4px;box-shadow:none}
+ :root[data-native-console] .sidebar-bottom>a{padding:3px}
+ :root[data-native-console] main>footer{padding:7px 8px}
+}
+@media(forced-colors:active){
+ :root[data-native-console] :is(body,.app,main,.sidebar,.sidebar nav,.sidebar-bottom,main>footer,.lobby-page-actions){background:Canvas;box-shadow:none;color:CanvasText;border-image:none}
+}

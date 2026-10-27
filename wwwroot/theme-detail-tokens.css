@@ -1,0 +1,20 @@
+/* Generated original per-skin section details. Render whole with contain; never stretch. Source mapping/provenance: theme-detail-sources.json and generator report. */
+:root[data-graphical-style=protoss]{--theme-section-detail:url('/themes/protoss-section-detail.png');--theme-section-detail-size:207px 20px}
+:root[data-graphical-style=nerazim]{--theme-section-detail:url('/themes/nerazim-section-detail.png');--theme-section-detail-size:69px 20px}
+:root[data-graphical-style=alarak]{--theme-section-detail:url('/themes/alarak-section-detail.png');--theme-section-detail-size:189px 20px}
+:root[data-graphical-style=ihanrii]{--theme-section-detail:url('/themes/ihanrii-section-detail.png');--theme-section-detail-size:240px 9px}
+:root[data-graphical-style=terran]{--theme-section-detail:url('/themes/terran-section-detail.png');--theme-section-detail-size:240px 17px}
+:root[data-graphical-style=nova]{--theme-section-detail:url('/themes/nova-section-detail.png');--theme-section-detail-size:191px 20px}
+:root[data-graphical-style=mira]{--theme-section-detail:url('/themes/mira-section-detail.png');--theme-section-detail-size:161px 20px}
+:root[data-graphical-style=machined]{--theme-section-detail:url('/themes/machined-section-detail.png');--theme-section-detail-size:184px 20px}
+:root[data-graphical-style=tyrador]{--theme-section-detail:url('/themes/tyrador-section-detail.png');--theme-section-detail-size:240px 17px}
+:root[data-graphical-style=zerg]{--theme-section-detail:url('/themes/zerg-section-detail.png');--theme-section-detail-size:195px 20px}
+:root[data-graphical-style=abathur]{--theme-section-detail:url('/themes/abathur-section-detail.png');--theme-section-detail-size:138px 20px}
+:root[data-graphical-style=dehaka]{--theme-section-detail:url('/themes/dehaka-section-detail.png');--theme-section-detail-size:176px 20px}
+:root[data-graphical-style=cerberus]{--theme-section-detail:url('/themes/cerberus-section-detail.png');--theme-section-detail-size:240px 16px}
+:root[data-graphical-style=mecha]{--theme-section-detail:url('/themes/mecha-section-detail.png');--theme-section-detail-size:83px 20px}
+:root[data-graphical-style=fenix]{--theme-section-detail:url('/themes/fenix-section-detail.png');--theme-section-detail-size:240px 20px}
+:root[data-graphical-style=arcade]{--theme-section-detail:url('/themes/arcade-section-detail.png');--theme-section-detail-size:223px 20px}
+:root[data-graphical-style=classic-terran]{--theme-section-detail:url('/themes/classic-terran-section-detail.png');--theme-section-detail-size:213px 20px}
+:root[data-graphical-style=classic-protoss]{--theme-section-detail:url('/themes/classic-protoss-section-detail.png');--theme-section-detail-size:202px 20px}
+:root[data-graphical-style=classic-zerg]{--theme-section-detail:url('/themes/classic-zerg-section-detail.png');--theme-section-detail-size:160px 20px}

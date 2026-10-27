@@ -1,0 +1,10 @@
+{
+  "created": "2026-10-23",
+  "method": "Built-in image generation, targeted top-perimeter redraw",
+  "classification": "Authored Purifier-style artwork; not an original SC2 export",
+  "source": "authored-fenix-frame-v2.png",
+  "sha256": "c3d1f2706f409e06f6c49e9b46250c439706b65e40745b0aa6dd6be6a2782b4d",
+  "editTarget": "authored-fenix-frame-v1.png",
+  "styleReference": "console-fenix.png",
+  "prompts": "authored-fenix-frame-v2.prompt.txt"
+}

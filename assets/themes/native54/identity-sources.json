@@ -1,0 +1,26 @@
+[
+  {
+    "source": "mods/liberty.sc2mod/base.sc2data/GameData/ConsoleSkinData.xml",
+    "file": "identity-mods_liberty.sc2mod_base.sc2data_GameData_ConsoleSkinData.xml"
+  },
+  {
+    "source": "mods/liberty.sc2mod/base.sc2data/GameData/ModelData.xml",
+    "file": "identity-mods_liberty.sc2mod_base.sc2data_GameData_ModelData.xml"
+  },
+  {
+    "source": "mods/warcoop/warclassic.sc2mod/base.sc2data/GameData/ModelData.xml",
+    "file": "identity-mods_warcoop_warclassic.sc2mod_base.sc2data_GameData_ModelData.xml"
+  },
+  {
+    "source": "mods/starcoop/starcoop.sc2mod/base.sc2data/GameData/ModelData.xml",
+    "file": "identity-mods_starcoop_starcoop.sc2mod_base.sc2data_GameData_ModelData.xml"
+  },
+  {
+    "source": "mods/starcoop/commanders/arcturusmengsk.sc2mod/base.sc2data/GameData/ModelData.xml",
+    "file": "identity-mods_starcoop_commanders_arcturusmengsk.sc2mod_base.sc2data_GameData_ModelData.xml"
+  },
+  {
+    "source": "mods/voidmulti.sc2mod/base.sc2data/GameData/ModelData.xml",
+    "file": "identity-mods_voidmulti.sc2mod_base.sc2data_GameData_ModelData.xml"
+  }
+]

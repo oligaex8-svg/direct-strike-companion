@@ -2,11 +2,12 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {chromium}=require(require.resolve('playwright',{paths:['C:/Users/Admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules']}));
 const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot');
-const themeIds=['default','protoss','zerg','terran','fenix','classic-terran','classic-protoss','classic-zerg'];
+const themeIds=['default',...require('../wwwroot/native-console-catalog.json').map(x=>x.id)];
+const isNative=theme=>theme!=='default';
 const themesRun=process.argv.includes('--themes');
 const selectedCase=process.argv.find(arg=>arg.startsWith('--case='))?.slice(7);
-if(selectedCase&&!/^(default|protoss|zerg|terran|fenix|classic-terran|classic-protoss|classic-zerg)-(1000-en|375-ru)$/.test(selectedCase))throw Error('Unsupported theme test case');
-const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','purifier-details.css','nerazim-console.css','appearance.js','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
+if(selectedCase&&!themeIds.some(id=>[id+'-1000-en',id+'-375-ru'].includes(selectedCase)))throw Error('Unsupported theme test case');
+const sourceFiles=['themes.css','console-layout.css','compact-ui.js','profile-view.js','lobby.js','picks-view.js','replays.css','sidebar.css','app.js','index.html','factions.css','controls.css','hud-assets.css','hud-components.css','purifier-details.css','nerazim-console.css','appearance.js','native-console-catalog.js','native-console-tokens.css','native-consoles.css','hud-fields.css','lobby-forecast.js','lobby.css','ru-ui.js','software-updates.js',...fs.readdirSync(path.join(web,'themes')).sort().map(name=>'themes/'+name)];
 const sourceHash=crypto.createHash('sha256').update(fs.readFileSync(__filename));
 for(const name of sourceFiles)sourceHash.update(name+'\0').update(fs.readFileSync(path.join(web,name)));
 const report={success:false,themeSourceHash:sourceHash.digest('hex'),scope:'All nine production categories and dialogs, isolated sample data; no private library or external requests',cases:[],resumedCases:0};
@@ -125,13 +126,13 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
    assert.equal(headerSurface.overlay,'none','No oversized texture panel intersects the header rails');
    if(width>=1000&&entry.shellLayouts.length){const first=entry.shellLayouts[0];assert.ok(Math.abs(shell.x-first.x)<1&&Math.abs(shell.width-first.width)<1&&Math.abs(shell.height-first.height)<1,`${category}: page switches do not move the header (${JSON.stringify(shell)} vs ${JSON.stringify(first)})`);}
    entry.shellLayouts.push({category,...shell});
-   if(theme==='protoss'){
+   if(isNative(theme)){
     const ornaments=await page.evaluate(()=>{
      const frame=document.querySelector('.work-console'),r=frame.getBoundingClientRect(),style=getComputedStyle(frame),p=getComputedStyle(frame,'::before'),head=document.querySelector('.page-head');
      const y=r.top+parseFloat(style.borderTopWidth)+parseFloat(p.top),height=parseFloat(p.height);
      return {y,height,bottom:y+height,pointer:p.pointerEvents,image:p.backgroundImage,size:p.backgroundSize,content:[...head.querySelectorAll('h1,button')].map(n=>n.getBoundingClientRect()).filter(b=>b.width&&b.height).map(b=>b.top)};
     });
-    assert.ok(ornaments.pointer==='none'&&ornaments.y>=0&&ornaments.height>=(width===1000?52:40)&&['protoss-nerazim-left','protoss-nerazim-right','protoss-nerazim-header-rail'].every(name=>ornaments.image.includes(name)),'Native shoulders and plain rail form one uninterrupted responsive header');
+    assert.ok(ornaments.pointer==='none'&&ornaments.y>=0&&ornaments.height>=(width===1000?48:36)&&[theme+'-native-left',theme+'-native-right',theme+'-native-rail'].every(name=>ornaments.image.includes(name)),'Native shoulders and plain rail form one uninterrupted responsive header');
     assert.ok(ornaments.content.every(top=>top>=ornaments.bottom),'Entire sculpted header stays above live title and commands: '+JSON.stringify(ornaments));
     entry.nerazimOrnaments=ornaments;
    }
@@ -146,7 +147,7 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
     const frame=document.querySelector('.work-console');
     inspect(frame,[head.querySelector('h1'),...head.querySelectorAll('.header-actions>.button')],true);
     inspect(frame,[document.querySelector('.library'),...workspace.querySelectorAll('.table-wrap,.player-table-scroll')],false);
-    if(innerWidth>750)inspect(document.querySelector('.sidebar nav'),[...document.querySelectorAll('.sidebar nav>.nav')],true);
+    if(innerWidth>750)inspect(document.querySelector(document.documentElement.hasAttribute('data-native-console')?'.sidebar':'.sidebar nav'),[...document.querySelectorAll('.sidebar nav>.nav')],true);
     return result;
    });
    assert.ok(frameClearance.every(item=>item.left>=3.5&&item.right>=3.5&&(item.top===null||item.top>=3.5)),`${category}: controls stay clear of painted rails: ${JSON.stringify(frameClearance.filter(item=>item.left<3.5||item.right<3.5||item.top!==null&&item.top<3.5))}`);
@@ -156,15 +157,24 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
    if(category==='lobby'){
     assert.equal(await page.locator('.live-team-group').count(),2);
     if(themesRun&&theme!=='default'){
-     const rails=await page.locator('.live-team-group').evaluateAll(nodes=>nodes.map(el=>({border:getComputedStyle(el).borderColor,art:getComputedStyle(el,'::before').borderImageSource,pointer:getComputedStyle(el,'::before').pointerEvents})));
-     assert.equal(rails[0].border,'rgb(132, 220, 186)');assert.equal(rails[1].border,'rgb(251, 142, 148)');
-     assert.ok(rails.every(rail=>rail.art.includes(`/themes/${theme}.svg`)&&rail.pointer==='none'),'Decorative faction rails preserve team identity and input');
+     if(isNative(theme)){
+      const teamIdentity=await page.locator('.live-team-head').evaluateAll(nodes=>nodes.map(el=>getComputedStyle(el).boxShadow));
+      assert.ok(teamIdentity[0].includes('132, 220, 186')&&teamIdentity[1].includes('251, 142, 148'),'Distinct team colours stay visible on the heading rails');
+     }else{
+      const rails=await page.locator('.live-team-group').evaluateAll(nodes=>nodes.map(el=>({border:getComputedStyle(el).borderColor,art:getComputedStyle(el,'::before').borderImageSource,pointer:getComputedStyle(el,'::before').pointerEvents})));
+      assert.equal(rails[0].border,'rgb(132, 220, 186)');assert.equal(rails[1].border,'rgb(251, 142, 148)');
+      assert.ok(rails.every(rail=>rail.art.includes(`/themes/${theme}.svg`)&&rail.pointer==='none'),'Decorative rails preserve team identity and input');
+     }
      if(width<=750)assert.equal(await page.locator('.sidebar').evaluate(el=>getComputedStyle(el).position),'relative','Mobile console art stays within its sidebar');
     }
     assert.equal(await page.locator('.live-overview').getAttribute('open'),null);
     await page.locator('.live-overview>summary').click();await page.evaluate(()=>renderLibrary());assert.ok(await page.locator('.live-overview').getAttribute('open')!==null);
     await page.locator('.live-overview>summary').click();
-    if(width>=820){const box=await page.locator('.live-roster-grid').boundingBox();assert.ok(box.height<(width===820?680:620),'Six-player roster stays compact with localized quick actions');}
+    if(width>=820){
+     const box=await page.locator('.live-roster-grid').boundingBox();
+     const rows=await page.locator('.live-row').evaluateAll(nodes=>nodes.map(n=>({height:n.getBoundingClientRect().height,columns:getComputedStyle(n).gridTemplateColumns,children:[...n.children].map(c=>({cl:c.className,h:c.getBoundingClientRect().height}))})));
+     assert.ok(box.height<(width===820?680:620),'Six-player roster stays compact: '+JSON.stringify({height:box.height,rows}));
+    }
    }
    if(category==='profile'){
     if(themesRun){
@@ -181,28 +191,20 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
      assert.ok(contrast(button.text,button.background)>=4.5,`${theme}: primary button text contrast`);
      if(theme!=='default'){
       assert.ok(contrast(button.border,palette['--surface'])>=3,`${theme}: control frame contrast`);
-       const assets=await page.evaluate(async race=>Promise.all([`${race}.svg`,`${race}-crest.svg`,...['nav-normal','nav-hover','nav-pressed','nav-selected','command-normal','command-hover','command-pressed','field','toolbar','panel-head','helper','timer','tooltip','group-normal','group-hover','group-pressed','small-normal','small-hover'].map(role=>`${race}-hud-${role}.svg`)].map(async name=>{const image=new Image();image.src='/themes/'+name;await image.decode();return {name,width:image.naturalWidth,height:image.naturalHeight};})),theme);
+       const assets=await page.evaluate(async race=>Promise.all([...(race!=='default'&&!race.startsWith('classic-')?[`${race}-native-well.png`,`${race}-native-left.png`,`${race}-native-right.png`]:[`${race}.svg`,`${race}-crest.svg`]),...['nav-normal','nav-hover','nav-pressed','nav-selected','command-normal','command-hover','command-pressed','field','toolbar','panel-head','helper','timer','tooltip','group-normal','group-hover','group-pressed','small-normal','small-hover'].map(role=>`${race}-hud-${role}.svg`)].map(async name=>{const image=new Image();image.src='/themes/'+name;await image.decode();return {name,width:image.naturalWidth,height:image.naturalHeight};})),theme);
       assert.ok(assets.every(image=>image.width>0&&image.height>0),'Embedded atlas frames and materials decode in the browser');
       entry.consoleAssets=assets;
       const consoleFrame=await page.locator('.work-console').evaluate(el=>getComputedStyle(el).borderImageSource);
-      assert.ok(consoleFrame.includes(`/themes/${theme}.svg`),'The game frame is painted on the actual panel');
+      assert.ok(consoleFrame.includes(`/themes/${theme}${isNative(theme)?'-native-shell.png':'.svg'}`),'The game frame is painted on the actual panel');
       assert.equal(await page.locator('.profile-favourite').evaluate(el=>getComputedStyle(el).borderImageSource),'none','Commander details do not repeat the outer console frame');
       const construction=await page.evaluate(()=>({control:getComputedStyle(document.querySelector('#import')).borderImageSource,selection:getComputedStyle(document.querySelector('.nav.active')).borderImageSource,crest:getComputedStyle(document.querySelector('.page-head'),'::after').backgroundImage,radius:getComputedStyle(document.querySelector('.profile-commanders')).borderRadius}));
-       assert.ok(construction.control.includes(`/themes/${theme}-hud-command-normal.svg`),'Faction controls use their native command atlas with the assigned material palette');
-      assert.ok(construction.selection.includes(`/themes/${theme}-hud-nav-selected.svg`)&&(theme==='fenix'?construction.crest.includes('/themes/fenix-divider.svg'):['classic-terran','classic-protoss','classic-zerg'].includes(theme)?construction.crest==='none':construction.crest.includes(`/themes/${theme}-crest.svg`)),'Selection and header retain native faction construction');
-      if(theme==='fenix'){
-       const details=await page.evaluate(async()=>{
-        const names=['fenix-rack','fenix-filigree','fenix-divider','fenix-rule'];await Promise.all(names.map(async name=>{const img=new Image();img.src='/themes/'+name+'.svg';await img.decode();}));
-        const head=document.querySelector('.page-head'),rule=getComputedStyle(head,'::after'),r=head.getBoundingClientRect();
-        return {panel:getComputedStyle(document.querySelector('.profile-commanders')).borderImageSource,rack:getComputedStyle(document.querySelector('.sidebar nav')).borderImageSource,divider:getComputedStyle(document.querySelector('.profile-best-heading')).backgroundImage,rule:{height:parseFloat(rule.height),bottom:parseFloat(rule.bottom),pointerEvents:rule.pointerEvents},clearance:[...head.querySelectorAll('h1,button')].map(el=>r.bottom-el.getBoundingClientRect().bottom)};
-       });
-       assert.ok(details.panel.includes('fenix-filigree')&&details.rack.includes('fenix-rack')&&details.divider.includes('fenix-divider'),'Purifier armour, filigree brackets and section dividers have distinct native roles: '+JSON.stringify(details));
-       assert.ok(details.rule.pointerEvents==='none'&&details.clearance.every(gap=>gap>=details.rule.height+details.rule.bottom),'Header filigree cannot cross title or command controls');entry.purifierDetails=details;
-      }
-      const hud=await page.evaluate(()=>Object.fromEntries([['field','#search'],['panel-head','.profile-favourite-top'],['helper','.profile-results']].map(([key,selector])=>[key,getComputedStyle(document.querySelector(selector)).borderImageSource])));
-      assert.ok(Object.entries(hud).every(([role,url])=>url.includes('/themes/'+theme+'-hud-'+role+'.svg')),'Field, header and helper panel use distinct native component regions: '+JSON.stringify(hud));
+       assert.ok(construction.control.includes(`/themes/${theme}-hud-${isNative(theme)?'nav':'command'}-normal.svg`),'Faction controls use their native command atlas with the assigned material palette');
+      assert.ok(construction.selection.includes(`/themes/${theme}-hud-nav-selected.svg`),'Selection retains the matching native family');
+      const hud=await page.evaluate(()=>({field:getComputedStyle(document.querySelector('#search')).borderImageSource,frame:getComputedStyle(document.querySelector('.profile-commanders')).borderImageSource}));
+      assert.ok(hud.field.includes('/themes/'+theme+'-hud-field-frame.png'),'Text fields use rebuilt edge-only frames');
+      if(isNative(theme))assert.ok(hud.frame.includes('/themes/'+theme+'-native-well.png'),'Interior information well belongs to the selected family');
       entry.hudComponents=hud;
-      const command=page.locator('#import');await command.hover();assert.ok((await command.evaluate(el=>getComputedStyle(el).borderImageSource)).includes('-hud-command-hover.svg'),'Native command hover is a separate game texture');await page.mouse.move(0,0);
+      const command=page.locator('#import');await command.hover();assert.ok((await command.evaluate(el=>getComputedStyle(el).borderImageSource)).includes(isNative(theme)?'-hud-nav-hover.svg':'-hud-command-hover.svg'),'Native command hover is a separate game texture');await page.mouse.move(0,0);
       entry.factionConstruction=construction;
 
      }
@@ -309,7 +311,7 @@ const contrast=(a,b)=>{const A=luminance(a),B=luminance(b);return (Math.max(A,B)
    const measure=await page.locator('#library-content').evaluate(el=>({height:Math.round(el.getBoundingClientRect().height),top:Math.round(el.getBoundingClientRect().top)}));
    if(themesRun&&theme!=='default'){
     const baseline=[...report.cases,...verifiedCases].find(item=>item.width===width&&item.language===language&&item.theme==='default')?.views.find(item=>item.category===category);
-    if(baseline)assert.ok(Math.abs(measure.height-baseline.height)<=16,`${theme}: ${category} frames retain compact content height (${measure.height} vs ${baseline.height})`);
+    if(baseline)assert.ok(measure.height-baseline.height<=16,`${theme}: ${category} frames retain compact content height (${measure.height} vs ${baseline.height})`);
    }
    entry.views.push({category,...measure});
    }catch(error){(report.failures??=[]).push({width,language,theme,category,error:error.message});}

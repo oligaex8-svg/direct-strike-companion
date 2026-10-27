@@ -1,0 +1,50 @@
+{
+  "version": 44,
+  "provenance": "Pixel-registered emission masks derived from the existing SC2 UI and composed native information-well art. No new perimeter, added gadgets or geometry changes.",
+  "entries": {
+    "well": {
+      "source": "/themes/motion37/well-protoss.png",
+      "sha256": "4982e509b1a2f602a82735d37b4b633eaadbaed022c7e0c9a62be085a0443f33",
+      "layers": [
+        "/themes/protoss44/well-0.png",
+        "/themes/protoss44/well-1.png",
+        "/themes/protoss44/well-2.png"
+      ],
+      "width": 988,
+      "height": 988
+    },
+    "selected": {
+      "source": "/themes/protoss-hud-nav-selected.svg",
+      "sha256": "7d6974a213a9f2a59c0cc947e0e96cf0c4303ded2570ba6194a5bb2a8f45d720",
+      "layers": [
+        "/themes/protoss44/selected-0.png",
+        "/themes/protoss44/selected-1.png",
+        "/themes/protoss44/selected-2.png"
+      ],
+      "width": 40,
+      "height": 40
+    },
+    "control": {
+      "source": "/themes/protoss-hud-nav-normal.svg",
+      "sha256": "f8da14ae9d399aacb5cf86ea03da6769be57eb9adfbac1c690fc63e01349f7d0",
+      "layers": [
+        "/themes/protoss44/control-0.png",
+        "/themes/protoss44/control-1.png",
+        "/themes/protoss44/control-2.png"
+      ],
+      "width": 40,
+      "height": 40
+    },
+    "dialog": {
+      "source": "/themes/protoss-console-panel-frame.png",
+      "sha256": "644dc442b2705e4ad77ff53f8f127626368eda06c803182bc60b93af312c8514",
+      "layers": [
+        "/themes/protoss44/dialog-0.png",
+        "/themes/protoss44/dialog-1.png",
+        "/themes/protoss44/dialog-2.png"
+      ],
+      "width": 92,
+      "height": 62
+    }
+  }
+}

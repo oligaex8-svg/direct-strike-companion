@@ -1,0 +1,15 @@
+/* Photometric overlays register to the existing native artwork, not new borders. */
+:root[data-graphical-style=protoss]{--protoss-feedback-ease:cubic-bezier(.23,1,.32,1)}
+[data-protoss44-control]{position:relative!important}
+.protoss-response44{position:absolute;display:block;inset:0;padding:0;margin:0;border:0;pointer-events:none!important;user-select:none;z-index:4;background:none;contain:style}
+.protoss-response44[hidden]{display:none!important}
+.protoss-emission44{position:absolute;display:block;padding:0;margin:0;border-style:solid;border-color:transparent;background:none;opacity:0;pointer-events:none!important;mix-blend-mode:screen;box-sizing:border-box;transform:none}
+.protoss-transport44{inset:auto;overflow:hidden;z-index:3;mix-blend-mode:screen}
+.protoss-charge44{position:absolute;display:block;inset:-10px auto -10px 0;width:18%;background:url('/themes/protoss44/energy.webp') center/100% 100% no-repeat;opacity:0;pointer-events:none}
+:root[data-graphical-style=protoss] #import-progress{position:relative}
+/* Replace the old broad hover wash with source-registered energy in the bezel. */
+:root[data-graphical-style=protoss] :is(.profile-commanders,.profile-region,.live-team-group,.pick-opponent)::after{content:none!important}
+@media(prefers-reduced-motion:reduce){.protoss-transport44{display:none!important}}
+@media(forced-colors:active){.protoss-response44{display:none!important}}
+.protoss-response44[data-protoss44-static=true] .protoss-emission44{opacity:.32!important}
+.protoss-response44[data-protoss44-static=true][data-protoss44-kind=control],.protoss-response44[data-protoss44-static=true][data-protoss44-kind=dialog]{display:none!important}

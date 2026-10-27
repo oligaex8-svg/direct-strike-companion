@@ -1,0 +1,222 @@
+[
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Classic/ConsoleProtoss_Classic_00.m3",
+    "file": "ConsoleProtoss_Classic_00.m3",
+    "sha256": "df47edef324a5da1583246cce3b54191fd52cabf93f8515c8b5679f7cd5ead2b"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Classic/ConsoleProtoss_Classic_01.m3",
+    "file": "ConsoleProtoss_Classic_01.m3",
+    "sha256": "1b40a64c3cc10a84f697b8ec505d081e17257a6f102d5ea6c93e10b46cfdb648"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Classic/ConsoleProtoss_Classic_02.m3",
+    "file": "ConsoleProtoss_Classic_02.m3",
+    "sha256": "0b9a01d1970cb4deca75f00bc7e070c10e23f6e9e1c34a6e0dde0dbb2126eea2"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Purifier/ConsoleProtoss_Purifier_00.m3",
+    "file": "ConsoleProtoss_Purifier_00.m3",
+    "sha256": "1aa1afa445cd1b460213b1673809aa70f38d25d9012ffc0d15c73dbfe2df737b"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Purifier/ConsoleProtoss_Purifier_01.m3",
+    "file": "ConsoleProtoss_Purifier_01.m3",
+    "sha256": "c2a93f3907c4cf21535abf6acc7f461f87234a71dbafe5a60be6f296e1f40673"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Purifier/ConsoleProtoss_Purifier_02.m3",
+    "file": "ConsoleProtoss_Purifier_02.m3",
+    "sha256": "0eeb0498dedc8d3cb032fab819457c78d108dd3b55129e969756559fa6837b1f"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Purifier/ConsoleProtoss_Purifier.m3",
+    "file": "ConsoleProtoss_Purifier.m3",
+    "sha256": "f6ed40868eff94f51df79fa860a6dd660afb7a304a7a9db51cf217558903415e"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Taldarim/ConsoleProtoss_Taldarim_00.m3",
+    "file": "ConsoleProtoss_Taldarim_00.m3",
+    "sha256": "1d0eb5673a1824aa9a434ae86697bbfbb9282909831df5811c83285ec2ab1192"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Taldarim/ConsoleProtoss_Taldarim_01.m3",
+    "file": "ConsoleProtoss_Taldarim_01.m3",
+    "sha256": "9e5781d5db184550ae9af75d0c679bc93b2367d09b0d79f3d609b4a1d23de34f"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss_Taldarim/ConsoleProtoss_Taldarim_02.m3",
+    "file": "ConsoleProtoss_Taldarim_02.m3",
+    "sha256": "f35c1c0e32a9bb7b0fc5738d10cf3359b1b8e03b2d28604c947d5efed23a7daf"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss/ConsoleProtoss_00.m3",
+    "file": "ConsoleProtoss_00.m3",
+    "sha256": "bf0e0aca068fc43697c4dbb02efa753799fdae71494dac5a20fe1b2eb55c6d44"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss/ConsoleProtoss_01.m3",
+    "file": "ConsoleProtoss_01.m3",
+    "sha256": "08bfa8b9ab7c534231863663a0aeacf4da8f726f56bc901dec80afc9852e8716"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Protoss/ConsoleProtoss/ConsoleProtoss_02.m3",
+    "file": "ConsoleProtoss_02.m3",
+    "sha256": "3c641ab1104927f6a06fbcaf9114f502df60171f7677ded5dc68addfb59ae656"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Classic/ConsoleTerran_Classic_00.m3",
+    "file": "ConsoleTerran_Classic_00.m3",
+    "sha256": "ff470faf081069f731d69b8fa3777d7c03d759ee0da9e1170ebea7fcb2600bf9"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Classic/ConsoleTerran_Classic_01.m3",
+    "file": "ConsoleTerran_Classic_01.m3",
+    "sha256": "7735193c98eeb448aa1b8e5c25f256cc5f7afb25740e1ce1032533df6d202354"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Classic/ConsoleTerran_Classic_02.m3",
+    "file": "ConsoleTerran_Classic_02.m3",
+    "sha256": "0aeaf05f93395db58ad5ea1601f30c4614f9dfc3b5f2e2256172cbb82d4a0f7b"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Construction/ConsoleTerran_Construction_00.m3",
+    "file": "ConsoleTerran_Construction_00.m3",
+    "sha256": "e85445f068fa73eec44f75ae612ef76f746b3e5a7f521210e429b6b9337c251b"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Construction/ConsoleTerran_Construction_01.m3",
+    "file": "ConsoleTerran_Construction_01.m3",
+    "sha256": "852e2991062c01c0d6699cfb79234a993b232b3d189fe94be319e98e6c93b149"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Construction/ConsoleTerran_Construction_02.m3",
+    "file": "ConsoleTerran_Construction_02.m3",
+    "sha256": "51c6694aa7127e567acf413e9ae6c3562251a39f65a614d15b213f28bd032d80"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Junker/ConsoleTerran_Junker_00.m3",
+    "file": "ConsoleTerran_Junker_00.m3",
+    "sha256": "1e9e454869a3e0e7a06d0b3e8fc9dd0cb1013ab59dda897bb926edb92d5b83aa"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Junker/ConsoleTerran_Junker_01.m3",
+    "file": "ConsoleTerran_Junker_01.m3",
+    "sha256": "2f83c7ffb03c546e3b732f407e2c5db13a4a36ecb7678017c2d6a02210c0011c"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Junker/ConsoleTerran_Junker_02.m3",
+    "file": "ConsoleTerran_Junker_02.m3",
+    "sha256": "4493521b56dd2fad1e9eeb256d9adf559734ceed76efda7a039465f3da842fe5"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Junker/ConsoleTerran_Junker.m3",
+    "file": "ConsoleTerran_Junker.m3",
+    "sha256": "e21366c1a35c7ee4cc06c70d8066c76ec11431ffd8f63e1c1ae183dd136ce1c6"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Nova/ConsoleTerran_Nova_00.m3",
+    "file": "ConsoleTerran_Nova_00.m3",
+    "sha256": "0cafea5d5abf94ebd67716270fb5de684dc0ecea679494cda9791bb9a95ba5dd"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Nova/ConsoleTerran_Nova_01.m3",
+    "file": "ConsoleTerran_Nova_01.m3",
+    "sha256": "b208844f6c149f55a1c984a6e9ebf9553d1d6cf3cf62130681f6786d395c4b0c"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran_Nova/ConsoleTerran_Nova_02.m3",
+    "file": "ConsoleTerran_Nova_02.m3",
+    "sha256": "b58021fd53d7a0b47563154e17374ee78cb684f3f6ff3c5bd5b836c9b4903c83"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran/ConsoleTerran_00.m3",
+    "file": "ConsoleTerran_00.m3",
+    "sha256": "1529ad463e873d5af810d2700726eab3dfc882c5f7110279840e9444bacf7211"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran/ConsoleTerran_01.m3",
+    "file": "ConsoleTerran_01.m3",
+    "sha256": "9d05bd4bdc8e2b6351e7cfe97f2ae8768db023d2f84e06605968b1f8e12ccd75"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Terran/ConsoleTerran/ConsoleTerran_02.m3",
+    "file": "ConsoleTerran_02.m3",
+    "sha256": "940cba97855f3474efb079c7a2aec7265d1f896ea205dbd316e048c3e23e7fe1"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Abathur_ConsoleZerg/Abathur_ConsoleZerg_00.m3",
+    "file": "Abathur_ConsoleZerg_00.m3",
+    "sha256": "b82cb92256405ed7a15ba10e4221cd244f8d34bb69ea3cea8cdc7240cb0ff0d3"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Abathur_ConsoleZerg/Abathur_ConsoleZerg_01.m3",
+    "file": "Abathur_ConsoleZerg_01.m3",
+    "sha256": "85d983cbf52019b25836b0ea149e11f9106d06a706acfbe4741c94ffc9981aea"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Abathur_ConsoleZerg/Abathur_ConsoleZerg_02.m3",
+    "file": "Abathur_ConsoleZerg_02.m3",
+    "sha256": "7eae243c6d7e2893849e11aa5d9665fcbb7a6ef569f4c8355c5e8132b168b341"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/ConsoleZerg_Classic/ConsoleZerg_Classic_00.m3",
+    "file": "ConsoleZerg_Classic_00.m3",
+    "sha256": "7638a10e1a93e0725d54a99488771e0a0f7cddc8126758a41b90cde66d82c46a"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/ConsoleZerg_Classic/ConsoleZerg_Classic_01.m3",
+    "file": "ConsoleZerg_Classic_01.m3",
+    "sha256": "b599c97d19643387f7207347a6aaeb29937f20b466ee8e691e8f093478b915ef"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/ConsoleZerg_Classic/ConsoleZerg_Classic_02.m3",
+    "file": "ConsoleZerg_Classic_02.m3",
+    "sha256": "f2bb888169faddc696e8ff1cc7ae4a69d3c5febd4713e6d0e36215baa0d3f9ca"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/ConsoleZerg/ConsoleZerg_00.m3",
+    "file": "ConsoleZerg_00.m3",
+    "sha256": "0bad27f2a440285fc4221f8fd7ec17a7971da610f614d2f96f5f2fc1b01380ee"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/ConsoleZerg/ConsoleZerg_01.m3",
+    "file": "ConsoleZerg_01.m3",
+    "sha256": "5263a70fab52a1c0cec6ccba1f9334edefb1ddb2cd70acb5302deda3fe1fc0be"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/ConsoleZerg/ConsoleZerg_02.m3",
+    "file": "ConsoleZerg_02.m3",
+    "sha256": "4542ebbc1b1112cfb9fc350434ae215306b177d4d187abd399cdc4f02768688e"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Dehaka_ConsoleZerg/Dehaka_ConsoleZerg_00.m3",
+    "file": "Dehaka_ConsoleZerg_00.m3",
+    "sha256": "50b995709e06c56f6ebd04692b08ade7d8d8e713f4105064e658cc189af2e11d"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Dehaka_ConsoleZerg/Dehaka_ConsoleZerg_01.m3",
+    "file": "Dehaka_ConsoleZerg_01.m3",
+    "sha256": "f9dafd72f796fc704b3bb79ab05ec133fa927dc6013d0709ef29b7c170be8255"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Dehaka_ConsoleZerg/Dehaka_ConsoleZerg_02.m3",
+    "file": "Dehaka_ConsoleZerg_02.m3",
+    "sha256": "f4c843773a414668200df82b0bacbeaa9dc6296bbbc9270a3002c1ec62ddb883"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Zagara_ConsoleZerg/Zagara_ConsoleZerg_00.m3",
+    "file": "Zagara_ConsoleZerg_00.m3",
+    "sha256": "a68a6dd580a3be4f83993f3c9fa6bf2799098fc4edf8899417c1135b67622d7e"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Zagara_ConsoleZerg/Zagara_ConsoleZerg_01.m3",
+    "file": "Zagara_ConsoleZerg_01.m3",
+    "sha256": "c15cefb9a26e1639045db0f2632af94fd4f3f6323c8b87a4d438391ffa463272"
+  },
+  {
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/UI/Console/Zerg/Zagara_ConsoleZerg/Zagara_ConsoleZerg_02.m3",
+    "file": "Zagara_ConsoleZerg_02.m3",
+    "sha256": "fe575311c1e77e6ab3980e3748f202480db0a5786c48de907bfecd86c1b57143"
+  }
+]

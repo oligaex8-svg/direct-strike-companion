@@ -1,0 +1,10 @@
+/* Inert original models; no layout, casing or information-panel changes. */
+.character54-object{display:block;position:absolute;inset:auto;z-index:0;transform-origin:0 0;overflow:hidden;contain:paint;pointer-events:none!important;user-select:none;margin:0;padding:0;border:0}
+.character54-object[hidden],.character54-poster[hidden],.character54-viewport[hidden]{display:none!important}
+.character54-poster,.character54-viewport{display:block;position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;padding:0;border:0;pointer-events:none}
+.character54-viewport{overflow:hidden;contain:paint}
+.character54-atlas{display:block;position:absolute;left:0;top:0;background-repeat:no-repeat;margin:0;padding:0;border:0}
+:root .appearance-effects-stage[data-character54-preview]::before,:root .appearance-effects-stage[data-character54-preview]::after{content:none!important}
+:root .appearance-effects-stage[data-character54-preview]>*:not(.character54-object){display:none!important}
+@media(forced-colors:active){.character54-object{display:none!important}}
+:root .appearance-effects-stage[data-character54-preview]{background:#080d13!important}

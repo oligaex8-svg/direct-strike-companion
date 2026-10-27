@@ -1,0 +1,3464 @@
+{
+  "version": 38,
+  "frames": 160,
+  "columns": 16,
+  "rows": 10,
+  "themes": {
+    "protoss": {
+      "id": "protoss",
+      "duration": 6400,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-protoss.png",
+          "hash": "4982e509b1a2f602a82735d37b4b633eaadbaed022c7e0c9a62be085a0443f33",
+          "dimensions": [
+            988,
+            988
+          ],
+          "slice": [
+            302,
+            302,
+            302,
+            302
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/protoss-console-shell-frame.png",
+          "hash": "f3f1f132abe41f05d0d921ad4d38ad36d72734d726d06c887ff9d079d89ca3bb",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/protoss-well-top-left.png",
+          "hash": "ab8c98bc454ed221b7b2c696f5a66b8e6c7ab08bb3c09493b8b1598d9dd95845",
+          "poster": "/themes/material38/protoss-well-top-left-poster.png",
+          "crop": [
+            44,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                91,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 423574,
+            "maxAdjacentComponentStep": 14,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/protoss-well-top-right.png",
+          "hash": "65bf845654decf4e5a847b2d08d990817d3857f38f2b4529afc9647a0f8cd2dd",
+          "poster": "/themes/material38/protoss-well-top-right-poster.png",
+          "crop": [
+            849,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                896,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 421802,
+            "maxAdjacentComponentStep": 13,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/protoss-shell-top-left.png",
+          "hash": "16136876aa7dd41e4e89788844c96f041b64a90859c59f2633ecca8c07c88c87",
+          "poster": "/themes/material38/protoss-shell-top-left-poster.png",
+          "crop": [
+            36,
+            58,
+            82,
+            16
+          ],
+          "tile": [
+            82,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-left-energy-crystal",
+              "mode": "refraction",
+              "center": [
+                77,
+                66
+              ],
+              "radius": [
+                38,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 270539,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/protoss-shell-top-right.png",
+          "hash": "839c60e05cdf1670bcb864070f57efb1c5422630782690393d27d554d01125da",
+          "poster": "/themes/material38/protoss-shell-top-right-poster.png",
+          "crop": [
+            418,
+            58,
+            82,
+            16
+          ],
+          "tile": [
+            82,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-right-energy-crystal",
+              "mode": "refraction",
+              "center": [
+                459,
+                66
+              ],
+              "radius": [
+                38,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 271378,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "nerazim": {
+      "id": "nerazim",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-nerazim.png",
+          "hash": "c18e4616f3c4051f95cf3b35c63b902a51899749908f0e233b22bbc751c9bbbd",
+          "dimensions": [
+            988,
+            988
+          ],
+          "slice": [
+            302,
+            302,
+            302,
+            302
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/nerazim-console-shell-frame.png",
+          "hash": "50486f84135a1e745af8976963982862ce873166ba001c6b45c8b72a3b7cbd08",
+          "dimensions": [
+            600,
+            272
+          ],
+          "slice": [
+            128,
+            292,
+            128,
+            292
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/nerazim-well-top-left.png",
+          "hash": "35e8c195c40917142ed896ed0ea894c33a3bafb4dbc8f0ce4f42ad553e2d3b83",
+          "poster": "/themes/material38/nerazim-well-top-left-poster.png",
+          "crop": [
+            44,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                91,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 429441,
+            "maxAdjacentComponentStep": 15,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/nerazim-well-top-right.png",
+          "hash": "853987063802b0a216f388f1a131da0c9b992c5b76d31124efa516e9789733ad",
+          "poster": "/themes/material38/nerazim-well-top-right-poster.png",
+          "crop": [
+            849,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                896,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 434974,
+            "maxAdjacentComponentStep": 13,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/nerazim-shell-top-left.png",
+          "hash": "c06f348a43acc631c464b265d9fee142458e5168be5c5822bd893043369e9880",
+          "poster": "/themes/material38/nerazim-shell-top-left-poster.png",
+          "crop": [
+            20,
+            50,
+            119,
+            37
+          ],
+          "tile": [
+            119,
+            37
+          ],
+          "features": [
+            {
+              "name": "native-void-gem",
+              "mode": "refraction",
+              "center": [
+                126,
+                63
+              ],
+              "radius": [
+                10,
+                10
+              ]
+            },
+            {
+              "name": "native-sculpted-eyes",
+              "mode": "lamp",
+              "center": [
+                39,
+                80
+              ],
+              "radius": [
+                16,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 226268,
+            "maxAdjacentComponentStep": 7,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/nerazim-shell-top-right.png",
+          "hash": "7c8797e88999a927612941b0c7e22243be2d811a6f0d202b00293cd096c740f1",
+          "poster": "/themes/material38/nerazim-shell-top-right-poster.png",
+          "crop": [
+            458,
+            50,
+            26,
+            26
+          ],
+          "tile": [
+            26,
+            26
+          ],
+          "features": [
+            {
+              "name": "native-right-void-gem",
+              "mode": "refraction",
+              "center": [
+                471,
+                63
+              ],
+              "radius": [
+                10,
+                10
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 142332,
+            "maxAdjacentComponentStep": 10,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "alarak": {
+      "id": "alarak",
+      "duration": 5600,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-alarak.png",
+          "hash": "2094db20e1eb5245e307f78fcb742d428bc3faafa0f7b42f9591211595f3fd0c",
+          "dimensions": [
+            988,
+            988
+          ],
+          "slice": [
+            302,
+            302,
+            302,
+            302
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/alarak-console-shell-frame.png",
+          "hash": "00f5f2c3c2377309d254630c62be3410d0e6c7c7765433be193399326f7b33ae",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/alarak-well-top-left.png",
+          "hash": "8b3d247ef0e1a85c84e292b21b17845c049d01ce4eaddf7c136c35b1ff7a7b37",
+          "poster": "/themes/material38/alarak-well-top-left-poster.png",
+          "crop": [
+            44,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                91,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 437187,
+            "maxAdjacentComponentStep": 16,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/alarak-well-top-right.png",
+          "hash": "997c16b751501f17aee182bf2a7b668404d3de1b6ec26602f0591daea9eea55e",
+          "poster": "/themes/material38/alarak-well-top-right-poster.png",
+          "crop": [
+            849,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                896,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 436830,
+            "maxAdjacentComponentStep": 15,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/alarak-shell-top-left.png",
+          "hash": "22e4fc3fa0b8d1bbdf29bc8a7559380511ce170dc2e7ee0418978e3d90440d2b",
+          "poster": "/themes/material38/alarak-shell-top-left-poster.png",
+          "crop": [
+            74,
+            40,
+            62,
+            20
+          ],
+          "tile": [
+            62,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-sealed-facet",
+              "mode": "refraction",
+              "center": [
+                105,
+                50
+              ],
+              "radius": [
+                28,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 173548,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/alarak-shell-top-right.png",
+          "hash": "dd5d5eb0691c2308b06be22dd499430e59d94719f0a5be9ee59dca9d12429791",
+          "poster": "/themes/material38/alarak-shell-top-right-poster.png",
+          "crop": [
+            400,
+            40,
+            62,
+            20
+          ],
+          "tile": [
+            62,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-sealed-facet",
+              "mode": "refraction",
+              "center": [
+                431,
+                50
+              ],
+              "radius": [
+                28,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 171876,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "ihanrii": {
+      "id": "ihanrii",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-ihanrii.png",
+          "hash": "6316375cae8049fa5442cab08695606316ecd896cec336f538009d7a008071da",
+          "dimensions": [
+            988,
+            988
+          ],
+          "slice": [
+            302,
+            302,
+            302,
+            302
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/ihanrii-console-shell-frame.png",
+          "hash": "2c62b863707f7d3c161eed1faf26411201164cad1e68f363a5d7299349bafa0c",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/ihanrii-well-top-left.png",
+          "hash": "9ba21501f1c56ba1fdbeb70067e0aef87d5e462907af10d17c2e569e4eb53694",
+          "poster": "/themes/material38/ihanrii-well-top-left-poster.png",
+          "crop": [
+            44,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                91,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 437620,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/ihanrii-well-top-right.png",
+          "hash": "70f1f4e1b30e4dfad7da412b41ecac9f9f2976d3ad4e2594f5224c2a40f370dd",
+          "poster": "/themes/material38/ihanrii-well-top-right-poster.png",
+          "crop": [
+            849,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                896,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 432191,
+            "maxAdjacentComponentStep": 9,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/ihanrii-shell-top-left.png",
+          "hash": "d13d968642e0953fa179b6f222cb43499ed896b252a38a3c57ecd87c7411636f",
+          "poster": "/themes/material38/ihanrii-shell-top-left-poster.png",
+          "crop": [
+            0,
+            50,
+            22,
+            20
+          ],
+          "tile": [
+            22,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-recessed-cell",
+              "mode": "lamp",
+              "center": [
+                10,
+                60
+              ],
+              "radius": [
+                9,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 84089,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/ihanrii-shell-top-right.png",
+          "hash": "c24a00d135243ed57f0fe09102a8b7503bf8095246edd49ab80c3b2191171981",
+          "poster": "/themes/material38/ihanrii-shell-top-right-poster.png",
+          "crop": [
+            516,
+            50,
+            24,
+            20
+          ],
+          "tile": [
+            24,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-recessed-cell",
+              "mode": "lamp",
+              "center": [
+                528,
+                60
+              ],
+              "radius": [
+                9,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 83785,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "terran": {
+      "id": "terran",
+      "duration": 6400,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-terran.png",
+          "hash": "9eed632c3a076e9dc982f1b72016cf41eea298a926e450e95603a7d784384386",
+          "dimensions": [
+            980,
+            980
+          ],
+          "slice": [
+            298,
+            298,
+            298,
+            298
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/terran-console-shell-frame.png",
+          "hash": "5b42fe69c96e3230c774b0a2f4d3a819d58634b7cc1610ff3b021239314b31b7",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/terran-well-top-left.png",
+          "hash": "1d3827419878000f3bd72edc2494e5b4f75dc1e3cf90251b6e807448e73058ca",
+          "poster": "/themes/material38/terran-well-top-left-poster.png",
+          "crop": [
+            60,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-left-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                76,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 88718,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/terran-well-top-right.png",
+          "hash": "3ac17c7c3d82ade6a72b540bfdcb4e1eb5f6736aa2e7e23591ce4138d1bf7193",
+          "poster": "/themes/material38/terran-well-top-right-poster.png",
+          "crop": [
+            887,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-right-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                903,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 87113,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/terran-shell-top-left.png",
+          "hash": "b7fada2d1815969a501d52ea0235fc2f44527caa7f24db44d76bcaa07ae043e1",
+          "poster": "/themes/material38/terran-shell-top-left-poster.png",
+          "crop": [
+            29,
+            61,
+            96,
+            14
+          ],
+          "tile": [
+            96,
+            14
+          ],
+          "features": [
+            {
+              "name": "native-left-console-optics",
+              "mode": "refraction",
+              "center": [
+                77,
+                68
+              ],
+              "radius": [
+                45,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 245516,
+            "maxAdjacentComponentStep": 4,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/terran-shell-top-right.png",
+          "hash": "bf3fe024dccf0239316d90190b00355410b29f01484902b7c3d8d0056e09aa2f",
+          "poster": "/themes/material38/terran-shell-top-right-poster.png",
+          "crop": [
+            410,
+            61,
+            96,
+            14
+          ],
+          "tile": [
+            96,
+            14
+          ],
+          "features": [
+            {
+              "name": "native-right-console-optics",
+              "mode": "refraction",
+              "center": [
+                458,
+                68
+              ],
+              "radius": [
+                45,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 246370,
+            "maxAdjacentComponentStep": 4,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "nova": {
+      "id": "nova",
+      "duration": 7200,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-nova.png",
+          "hash": "b5334bdbb5b3ddf37219baa8ca100998580310839bbc22c4f900b4a2a5c40710",
+          "dimensions": [
+            980,
+            980
+          ],
+          "slice": [
+            298,
+            298,
+            298,
+            298
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/nova-console-shell-frame.png",
+          "hash": "7ab09698ba635a80e8622cf8b669286aa5e566bee38606a5045f97cf2b04ed80",
+          "dimensions": [
+            550,
+            272
+          ],
+          "slice": [
+            128,
+            267,
+            128,
+            267
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/nova-well-top-left.png",
+          "hash": "0f91cf096c480d12b9dd927e760b4c41064c427b0326f33d9e31f45a8e413c6a",
+          "poster": "/themes/material38/nova-well-top-left-poster.png",
+          "crop": [
+            60,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-left-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                76,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 89664,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/nova-well-top-right.png",
+          "hash": "6ec4b4d68991972ea72978282eecb9f37c42ba5089ccb55493104b5b3b09e986",
+          "poster": "/themes/material38/nova-well-top-right-poster.png",
+          "crop": [
+            887,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-right-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                903,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 88772,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/nova-shell-top-left.png",
+          "hash": "bb588f8355012dcab44a023d1233377737ad1d9b04dfb060d0690118c7f1faa4",
+          "poster": "/themes/material38/nova-shell-top-left-poster.png",
+          "crop": [
+            31,
+            52,
+            54,
+            14
+          ],
+          "tile": [
+            54,
+            14
+          ],
+          "features": [
+            {
+              "name": "native-blue-optical-bank",
+              "mode": "refraction",
+              "center": [
+                58,
+                59
+              ],
+              "radius": [
+                24,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 99225,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/nova-shell-top-right.png",
+          "hash": "6803951b1b7b7e6f3abe15282d04b6cc65fab05881a8f2120ea3cee213c48a5d",
+          "poster": "/themes/material38/nova-shell-top-right-poster.png",
+          "crop": [
+            464,
+            52,
+            54,
+            14
+          ],
+          "tile": [
+            54,
+            14
+          ],
+          "features": [
+            {
+              "name": "native-right-blue-optical-bank",
+              "mode": "refraction",
+              "center": [
+                491,
+                59
+              ],
+              "radius": [
+                24,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 100265,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "mira": {
+      "id": "mira",
+      "duration": 7200,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-mira.png",
+          "hash": "4fbe9e8e75c39f35c73b93cc8b05ea1e56c44a7799391b3cd7970755c3d4081b",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/mira-console-shell-frame.png",
+          "hash": "1d8977de466f1d1e00f05fa5fce4f92955fa3b480f8bf26a0d777fdff62d503d",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/mira-well-top-left.png",
+          "hash": "12fa5dac13cf5a74beedf5a12be16cbecc2711f592e61dbfbd77ffe6d38f7a8e",
+          "poster": "/themes/material38/mira-well-top-left-poster.png",
+          "crop": [
+            33,
+            83,
+            38,
+            38
+          ],
+          "tile": [
+            38,
+            38
+          ],
+          "features": [
+            {
+              "name": "salvage-bearing",
+              "mode": "bearing",
+              "center": [
+                52,
+                102
+              ],
+              "radius": [
+                16,
+                16
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 301112,
+            "maxAdjacentComponentStep": 14,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/mira-well-top-right.png",
+          "hash": "aaa1dcb7cc7ed89975f8a7513aff445f6f3c57ebedd3f3585ed11870c3eb9225",
+          "poster": "/themes/material38/mira-well-top-right-poster.png",
+          "crop": [
+            1397,
+            51,
+            74,
+            30
+          ],
+          "tile": [
+            74,
+            30
+          ],
+          "features": [
+            {
+              "name": "armoured-hose-bellows",
+              "mode": "bellows",
+              "center": [
+                1434,
+                66
+              ],
+              "radius": [
+                34,
+                12
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 475177,
+            "maxAdjacentComponentStep": 19,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/mira-shell-top-left.png",
+          "hash": "a13b63db3c0ae7c84856e9da3921bbf1dc2aa921d6e740a655bb731f078a828e",
+          "poster": "/themes/material38/mira-shell-top-left-poster.png",
+          "crop": [
+            26,
+            46,
+            78,
+            52
+          ],
+          "tile": [
+            78,
+            52
+          ],
+          "features": [
+            {
+              "name": "native-left-hose",
+              "mode": "bellows",
+              "center": [
+                65,
+                72
+              ],
+              "radius": [
+                36,
+                23
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 694350,
+            "maxAdjacentComponentStep": 13,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/mira-shell-top-right.png",
+          "hash": "b79017e82a233adfd066b63e23d78233388fd4d0606c7f6ecddd0d83def7910d",
+          "poster": "/themes/material38/mira-shell-top-right-poster.png",
+          "crop": [
+            434,
+            46,
+            78,
+            52
+          ],
+          "tile": [
+            78,
+            52
+          ],
+          "features": [
+            {
+              "name": "native-right-hose",
+              "mode": "bellows",
+              "center": [
+                473,
+                72
+              ],
+              "radius": [
+                36,
+                23
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 680479,
+            "maxAdjacentComponentStep": 11,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "machined": {
+      "id": "machined",
+      "duration": 6400,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-machined.png",
+          "hash": "b3462ca6064003292b7d18829c13139a97f13ff3ad00e054710176c840534ca1",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/machined-console-shell-frame.png",
+          "hash": "ca9fee9b74775686a04d5f3ac52606beda46c67efe857f9d162a3c743971b3d4",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/machined-well-top-left.png",
+          "hash": "0ee38469b55c78267e955790bc460230dbe22363a9c60009fed5a0bd167ed370",
+          "poster": "/themes/material38/machined-well-top-left-poster.png",
+          "crop": [
+            102,
+            38,
+            116,
+            66
+          ],
+          "tile": [
+            116,
+            66
+          ],
+          "features": [
+            {
+              "name": "diagonal-vent-shutters",
+              "mode": "shutter",
+              "center": [
+                154,
+                58
+              ],
+              "radius": [
+                49,
+                17
+              ]
+            },
+            {
+              "name": "furnace-aperture",
+              "mode": "heat",
+              "center": [
+                184,
+                96
+              ],
+              "radius": [
+                31,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 1087589,
+            "maxAdjacentComponentStep": 14,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "bottom-right",
+          "url": "/themes/material38/machined-well-bottom-right.png",
+          "hash": "c486e15fd87b326544ebe9719aa8cfc5b8bb7b26a7d37b704ea51ddf4980acf5",
+          "poster": "/themes/material38/machined-well-bottom-right-poster.png",
+          "crop": [
+            1409,
+            908,
+            92,
+            22
+          ],
+          "tile": [
+            92,
+            22
+          ],
+          "features": [
+            {
+              "name": "lower-heat-exchanger",
+              "mode": "heat",
+              "center": [
+                1455,
+                919
+              ],
+              "radius": [
+                43,
+                8
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 467403,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/machined-shell-top-left.png",
+          "hash": "125b374e9c9a8a0896f9830524061d40aa26572c8e43565906fc890b44bcc551",
+          "poster": "/themes/material38/machined-shell-top-left-poster.png",
+          "crop": [
+            0,
+            56,
+            20,
+            62
+          ],
+          "tile": [
+            20,
+            62
+          ],
+          "features": [
+            {
+              "name": "native-left-vent",
+              "mode": "shutter",
+              "center": [
+                10,
+                87
+              ],
+              "radius": [
+                7,
+                28
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 202237,
+            "maxAdjacentComponentStep": 4,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/machined-shell-top-right.png",
+          "hash": "0ee2e2a03bc7de361f95553c85ea0271965a199dbb352487d0d32577c9d694d2",
+          "poster": "/themes/material38/machined-shell-top-right-poster.png",
+          "crop": [
+            518,
+            56,
+            20,
+            62
+          ],
+          "tile": [
+            20,
+            62
+          ],
+          "features": [
+            {
+              "name": "native-right-vent",
+              "mode": "shutter",
+              "center": [
+                528,
+                87
+              ],
+              "radius": [
+                7,
+                28
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 199733,
+            "maxAdjacentComponentStep": 4,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "tyrador": {
+      "id": "tyrador",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-tyrador.png",
+          "hash": "8bd8595dd97e1735f6b5839a9a2c5cb30de28e2b7a87649d7c1b946b1d56ec2e",
+          "dimensions": [
+            980,
+            980
+          ],
+          "slice": [
+            298,
+            298,
+            298,
+            298
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/tyrador-console-shell-frame.png",
+          "hash": "1d1afd778c83435c962fe7c8b084685b5574e15f36081ea528e0475607695aa5",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/tyrador-well-top-left.png",
+          "hash": "c4cc8ca99e8896554b84434fab2489199082596ae536d9588fe0a9be78c6648e",
+          "poster": "/themes/material38/tyrador-well-top-left-poster.png",
+          "crop": [
+            60,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-left-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                76,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 89611,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/tyrador-well-top-right.png",
+          "hash": "97a5a6450cb0f1ab09a415f4dfcbe1efdea9fd3b4c849d83133d1e08a5e789a1",
+          "poster": "/themes/material38/tyrador-well-top-right-poster.png",
+          "crop": [
+            887,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-right-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                903,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 89185,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/tyrador-shell-top-left.png",
+          "hash": "e7cdd68a4bed1f93dadb15113769ed238b99310093b0065809abf0e4751278ac",
+          "poster": "/themes/material38/tyrador-shell-top-left-poster.png",
+          "crop": [
+            20,
+            54,
+            78,
+            18
+          ],
+          "tile": [
+            78,
+            18
+          ],
+          "features": [
+            {
+              "name": "native-violet-ceramic-cell",
+              "mode": "refraction",
+              "center": [
+                59,
+                63
+              ],
+              "radius": [
+                36,
+                6
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 307232,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/tyrador-shell-top-right.png",
+          "hash": "585522d3bd6be8173fe7a24241969242fa8ce615512e828ea42812e9cf1bc71c",
+          "poster": "/themes/material38/tyrador-shell-top-right-poster.png",
+          "crop": [
+            439,
+            54,
+            78,
+            18
+          ],
+          "tile": [
+            78,
+            18
+          ],
+          "features": [
+            {
+              "name": "native-right-violet-ceramic-cell",
+              "mode": "refraction",
+              "center": [
+                478,
+                63
+              ],
+              "radius": [
+                36,
+                6
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 309126,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "zerg": {
+      "id": "zerg",
+      "duration": 6400,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-zerg.png",
+          "hash": "263ed29ea7ef137f3def2ae82378c5f90b05145bbb5ba7e83695901716ccd65d",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/zerg-console-shell-frame.png",
+          "hash": "858aa8ec15f36d679fa93423a65e17c56c06fffbb8e39ee40f56a678b8922f32",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/zerg-well-top-left.png",
+          "hash": "0c198c91e2cae418e23b94cfc460d569d86a7009ffa189fa3070615b1db7f535",
+          "poster": "/themes/material38/zerg-well-top-left-poster.png",
+          "crop": [
+            82,
+            72,
+            115,
+            94
+          ],
+          "tile": [
+            115,
+            94
+          ],
+          "features": [
+            {
+              "name": "upper-glossy-lobe",
+              "mode": "membrane",
+              "center": [
+                170,
+                95
+              ],
+              "radius": [
+                24,
+                20
+              ]
+            },
+            {
+              "name": "side-glossy-lobe",
+              "mode": "membrane",
+              "center": [
+                104,
+                134
+              ],
+              "radius": [
+                19,
+                29
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 1058782,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "bottom-right",
+          "url": "/themes/material38/zerg-well-bottom-right.png",
+          "hash": "ebbe59ff60721f4d293488c75323eacf1976d34a62a46b3bf8a69b5c53286a12",
+          "poster": "/themes/material38/zerg-well-bottom-right-poster.png",
+          "crop": [
+            1364,
+            869,
+            76,
+            40
+          ],
+          "tile": [
+            76,
+            40
+          ],
+          "features": [
+            {
+              "name": "lower-glossy-lobe",
+              "mode": "membrane",
+              "center": [
+                1402,
+                889
+              ],
+              "radius": [
+                35,
+                17
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 599074,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/zerg-shell-top-left.png",
+          "hash": "19c6dbfeddbe2bd1220c97fecdab5cb32fd2470874104f19edc89e7de3ec8808",
+          "poster": "/themes/material38/zerg-shell-top-left-poster.png",
+          "crop": [
+            1,
+            59,
+            20,
+            50
+          ],
+          "tile": [
+            20,
+            50
+          ],
+          "features": [
+            {
+              "name": "native-left-tissue-root",
+              "mode": "membrane",
+              "center": [
+                11,
+                84
+              ],
+              "radius": [
+                7,
+                22
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 133446,
+            "maxAdjacentComponentStep": 2,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/zerg-shell-top-right.png",
+          "hash": "48b1fd49c58d531e6ab5497c371f0ab759852faf73e2453d8f4d83402cfdda73",
+          "poster": "/themes/material38/zerg-shell-top-right-poster.png",
+          "crop": [
+            517,
+            59,
+            20,
+            50
+          ],
+          "tile": [
+            20,
+            50
+          ],
+          "features": [
+            {
+              "name": "native-right-tissue-root",
+              "mode": "membrane",
+              "center": [
+                527,
+                84
+              ],
+              "radius": [
+                7,
+                22
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 120859,
+            "maxAdjacentComponentStep": 2,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "abathur": {
+      "id": "abathur",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-abathur.png",
+          "hash": "c5dd00bc835fa74476454b4c1f96d1223a2e41a865184a38ff4716cd3e8348df",
+          "dimensions": [
+            994,
+            994
+          ],
+          "slice": [
+            305,
+            305,
+            305,
+            305
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/abathur-console-shell-frame.png",
+          "hash": "39021bbbb63b443cacf4ba452d191dce11292df28f4795f0c6e0f9d0037c3568",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/abathur-well-top-left.png",
+          "hash": "ec8fed83684ed294a40ac8d9bf6b873d4201239a78c3e0164d6bd5054361c242",
+          "poster": "/themes/material38/abathur-well-top-left-poster.png",
+          "crop": [
+            20,
+            26,
+            34,
+            142
+          ],
+          "tile": [
+            34,
+            142
+          ],
+          "features": [
+            {
+              "name": "native-green-gland",
+              "mode": "membrane",
+              "center": [
+                33,
+                36
+              ],
+              "radius": [
+                8,
+                7
+              ]
+            },
+            {
+              "name": "native-green-gland-lower",
+              "mode": "membrane",
+              "center": [
+                43,
+                70
+              ],
+              "radius": [
+                8,
+                12
+              ]
+            },
+            {
+              "name": "native-violet-membrane",
+              "mode": "membrane",
+              "center": [
+                35,
+                124
+              ],
+              "radius": [
+                12,
+                41
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 707191,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/abathur-shell-top-left.png",
+          "hash": "c4b7eb17a819a58c75f33aa6a8107c5fdd4af1dd1f20048f8bec78832a41db9c",
+          "poster": "/themes/material38/abathur-shell-top-left-poster.png",
+          "crop": [
+            45,
+            46,
+            24,
+            18
+          ],
+          "tile": [
+            24,
+            18
+          ],
+          "features": [
+            {
+              "name": "native-left-green-gland",
+              "mode": "membrane",
+              "center": [
+                57,
+                55
+              ],
+              "radius": [
+                9,
+                6
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 58724,
+            "maxAdjacentComponentStep": 3,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/abathur-shell-top-right.png",
+          "hash": "fa9031569240baded59ac8fc4a682ee0ce59d003fa2c97ef120f5bcf52acf8bc",
+          "poster": "/themes/material38/abathur-shell-top-right-poster.png",
+          "crop": [
+            470,
+            46,
+            24,
+            18
+          ],
+          "tile": [
+            24,
+            18
+          ],
+          "features": [
+            {
+              "name": "native-right-green-gland",
+              "mode": "membrane",
+              "center": [
+                482,
+                55
+              ],
+              "radius": [
+                9,
+                6
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 54366,
+            "maxAdjacentComponentStep": 2,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "dehaka": {
+      "id": "dehaka",
+      "duration": 9600,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-dehaka.png",
+          "hash": "40c493c03c7e9f7ce9bab59369dfb6a9775700616bb1632d6011c6976a1362b5",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/dehaka-console-shell-frame.png",
+          "hash": "97b6a9a0f47d3ca2997cd464fe96e3b3b7b9762d408b6a0a17be909dc4af84e2",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/dehaka-well-top-left.png",
+          "hash": "e971437aaba01e5452cb42d0955021a2cdf211d9eb9775915944903ec627ffe3",
+          "poster": "/themes/material38/dehaka-well-top-left-poster.png",
+          "crop": [
+            10,
+            65,
+            186,
+            82
+          ],
+          "tile": [
+            144,
+            63
+          ],
+          "features": [
+            {
+              "name": "wet-shoulder-seam",
+              "mode": "membrane",
+              "center": [
+                143,
+                76
+              ],
+              "radius": [
+                50,
+                8
+              ]
+            },
+            {
+              "name": "primal-side-pore",
+              "mode": "membrane",
+              "center": [
+                21,
+                130
+              ],
+              "radius": [
+                8,
+                14
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 332680,
+            "maxAdjacentComponentStep": 7,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "bottom-right",
+          "url": "/themes/material38/dehaka-well-bottom-right.png",
+          "hash": "5971bbed9f661f182d4a69aadb4f64fb24b82a3b5939d56d328919f6f3dfe6ac",
+          "poster": "/themes/material38/dehaka-well-bottom-right-poster.png",
+          "crop": [
+            1407,
+            914,
+            96,
+            24
+          ],
+          "tile": [
+            96,
+            24
+          ],
+          "features": [
+            {
+              "name": "lower-bone-seam",
+              "mode": "membrane",
+              "center": [
+                1455,
+                926
+              ],
+              "radius": [
+                45,
+                9
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 408613,
+            "maxAdjacentComponentStep": 9,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/dehaka-shell-top-left.png",
+          "hash": "e6c4ff6314e5f25ad8cbd0facffa58969a9c32c0edf20be01c57e02d18eaaa67",
+          "poster": "/themes/material38/dehaka-shell-top-left-poster.png",
+          "crop": [
+            1,
+            60,
+            18,
+            46
+          ],
+          "tile": [
+            18,
+            46
+          ],
+          "features": [
+            {
+              "name": "native-left-wet-root",
+              "mode": "membrane",
+              "center": [
+                10,
+                83
+              ],
+              "radius": [
+                6,
+                20
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 80116,
+            "maxAdjacentComponentStep": 1,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/dehaka-shell-top-right.png",
+          "hash": "b4588e5ef27cbb62840dc7115701225935abdf63160242b4e107163a4fb9c004",
+          "poster": "/themes/material38/dehaka-shell-top-right-poster.png",
+          "crop": [
+            519,
+            60,
+            18,
+            46
+          ],
+          "tile": [
+            18,
+            46
+          ],
+          "features": [
+            {
+              "name": "native-right-wet-root",
+              "mode": "membrane",
+              "center": [
+                528,
+                83
+              ],
+              "radius": [
+                6,
+                20
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 69726,
+            "maxAdjacentComponentStep": 1,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "cerberus": {
+      "id": "cerberus",
+      "duration": 7200,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-cerberus.png",
+          "hash": "9b5d7a249395abd45a1382d718d9ef4ddafd1377d33c419d57ea0da694a7d07a",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/cerberus-console-shell-frame.png",
+          "hash": "6b47677d7cc1f750a1bdbc52a7e5330551552743007f9b439066a012b6ec3da4",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/cerberus-well-top-left.png",
+          "hash": "838bc73e1c246b028961aef4d74ba1d7efbfd9c4dc636bc5198159150cd20996",
+          "poster": "/themes/material38/cerberus-well-top-left-poster.png",
+          "crop": [
+            93,
+            37,
+            100,
+            46
+          ],
+          "tile": [
+            100,
+            46
+          ],
+          "features": [
+            {
+              "name": "contained-tissue",
+              "mode": "membrane",
+              "center": [
+                143,
+                59
+              ],
+              "radius": [
+                47,
+                19
+              ]
+            },
+            {
+              "name": "hybrid-gland",
+              "mode": "membrane",
+              "center": [
+                115,
+                71
+              ],
+              "radius": [
+                11,
+                9
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 1075095,
+            "maxAdjacentComponentStep": 12,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "bottom-right",
+          "url": "/themes/material38/cerberus-well-bottom-right.png",
+          "hash": "88b6cfa4c814e8f1ebdd6b6f3c04ac099d29361a8ca0ea0286a19753fd448778",
+          "poster": "/themes/material38/cerberus-well-bottom-right-poster.png",
+          "crop": [
+            1522,
+            926,
+            36,
+            28
+          ],
+          "tile": [
+            36,
+            28
+          ],
+          "features": [
+            {
+              "name": "lower-contained-gland",
+              "mode": "membrane",
+              "center": [
+                1540,
+                940
+              ],
+              "radius": [
+                15,
+                11
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 178917,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/cerberus-shell-top-left.png",
+          "hash": "0e5db79cb3e14d157e76aafeee54cefb690f2e4fc487265cfdbdf5b569884c79",
+          "poster": "/themes/material38/cerberus-shell-top-left-poster.png",
+          "crop": [
+            0,
+            47,
+            48,
+            28
+          ],
+          "tile": [
+            48,
+            28
+          ],
+          "features": [
+            {
+              "name": "native-left-muscle-coupling",
+              "mode": "peristalsis",
+              "center": [
+                23,
+                61
+              ],
+              "radius": [
+                22,
+                11
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 205870,
+            "maxAdjacentComponentStep": 13,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/cerberus-shell-top-right.png",
+          "hash": "9194e61a46c5084aae3059f2135372e681eb76d37b9886bc82562aa9aba12a20",
+          "poster": "/themes/material38/cerberus-shell-top-right-poster.png",
+          "crop": [
+            490,
+            47,
+            50,
+            28
+          ],
+          "tile": [
+            50,
+            28
+          ],
+          "features": [
+            {
+              "name": "native-right-muscle-coupling",
+              "mode": "peristalsis",
+              "center": [
+                515,
+                61
+              ],
+              "radius": [
+                22,
+                11
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 200353,
+            "maxAdjacentComponentStep": 12,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "mecha": {
+      "id": "mecha",
+      "duration": 4800,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-mecha.png",
+          "hash": "de2db35e7b6063fae6cd2c87fea301eb5965811a906a1aff4487ee044e9d0214",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/mecha-console-shell-frame.png",
+          "hash": "0412e55462b502ed608561d51179d9253061f21ffae7d049f9641b17a7ee61a4",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/mecha-well-top-left.png",
+          "hash": "1e4df445e6dfa52b9f0f349bfad9a4c839bbd77168ed61fb6b4f862355b8ca0c",
+          "poster": "/themes/material38/mecha-well-top-left-poster.png",
+          "crop": [
+            52,
+            68,
+            142,
+            52
+          ],
+          "tile": [
+            142,
+            52
+          ],
+          "features": [
+            {
+              "name": "recessed-bearing",
+              "mode": "bearing",
+              "center": [
+                78,
+                94
+              ],
+              "radius": [
+                23,
+                23
+              ]
+            },
+            {
+              "name": "amber-status-glass",
+              "mode": "lamp",
+              "center": [
+                182,
+                107
+              ],
+              "radius": [
+                9,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 637390,
+            "maxAdjacentComponentStep": 14,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "bottom-right",
+          "url": "/themes/material38/mecha-well-bottom-right.png",
+          "hash": "fc9e9495680b2319db5042bdc75b7349d33486f70ab2b82fcd400ebc5e5a177a",
+          "poster": "/themes/material38/mecha-well-bottom-right-poster.png",
+          "crop": [
+            1406,
+            891,
+            24,
+            14
+          ],
+          "tile": [
+            24,
+            14
+          ],
+          "features": [
+            {
+              "name": "lower-amber-status-glass",
+              "mode": "lamp",
+              "center": [
+                1418,
+                898
+              ],
+              "radius": [
+                9,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 39476,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/mecha-shell-top-left.png",
+          "hash": "ad1f2a24eddfbf255b65749757fe8d8e1927ffba6f6a75116a7ed5d4307f0abd",
+          "poster": "/themes/material38/mecha-shell-top-left-poster.png",
+          "crop": [
+            7,
+            48,
+            74,
+            26
+          ],
+          "tile": [
+            74,
+            26
+          ],
+          "features": [
+            {
+              "name": "native-left-flexible-coupling",
+              "mode": "bellows",
+              "center": [
+                44,
+                61
+              ],
+              "radius": [
+                34,
+                10
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 259629,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/mecha-shell-top-right.png",
+          "hash": "00a2ae193a1bb31a8599a7043af770ae2cf81bfcfe911ebc7c0ff4adf676efb3",
+          "poster": "/themes/material38/mecha-shell-top-right-poster.png",
+          "crop": [
+            457,
+            48,
+            74,
+            26
+          ],
+          "tile": [
+            74,
+            26
+          ],
+          "features": [
+            {
+              "name": "native-right-flexible-coupling",
+              "mode": "bellows",
+              "center": [
+                494,
+                61
+              ],
+              "radius": [
+                34,
+                10
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 260091,
+            "maxAdjacentComponentStep": 5,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "arcade": {
+      "id": "arcade",
+      "duration": 4800,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-arcade.png",
+          "hash": "21430600b6b987dba86e005781233d443db148259b433ec1f6d98456cdbba465",
+          "dimensions": [
+            980,
+            980
+          ],
+          "slice": [
+            298,
+            298,
+            298,
+            298
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/arcade-console-shell-frame.png",
+          "hash": "1a9f5fb4c49a08ae7e96bcae9e0ee0020f61ac8f18977ef652903972c6ecee01",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/arcade-well-top-left.png",
+          "hash": "7e52ff50161303de5164054e061a141c34e108cf92db6707e6598589735cdbb4",
+          "poster": "/themes/material38/arcade-well-top-left-poster.png",
+          "crop": [
+            60,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-left-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                76,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 89667,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/arcade-well-top-right.png",
+          "hash": "9d3018342dbfe098b6d3cc520e26e1eccd4940ab412b2eda84c5d16b6f3392e2",
+          "poster": "/themes/material38/arcade-well-top-right-poster.png",
+          "crop": [
+            887,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-right-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                903,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 88879,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/arcade-shell-top-left.png",
+          "hash": "b1f34dd87b1f33ff77775ab1792e98db682fed9c3f03ab86191bd265c27785b5",
+          "poster": "/themes/material38/arcade-shell-top-left-poster.png",
+          "crop": [
+            0,
+            57,
+            9,
+            18
+          ],
+          "tile": [
+            9,
+            18
+          ],
+          "features": [
+            {
+              "name": "native-left-purple-button",
+              "mode": "lamp",
+              "center": [
+                3,
+                66
+              ],
+              "radius": [
+                3,
+                6
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 19849,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/arcade-shell-top-right.png",
+          "hash": "5d582ec754c4e3e5309c8dd700a4b8e015106695deb42e6f1fd6cc88ae3ae08d",
+          "poster": "/themes/material38/arcade-shell-top-right-poster.png",
+          "crop": [
+            529,
+            57,
+            11,
+            18
+          ],
+          "tile": [
+            11,
+            18
+          ],
+          "features": [
+            {
+              "name": "native-right-purple-button",
+              "mode": "lamp",
+              "center": [
+                535,
+                66
+              ],
+              "radius": [
+                3,
+                6
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 23646,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "classic-terran": {
+      "id": "classic-terran",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-classic-terran.png",
+          "hash": "9eed632c3a076e9dc982f1b72016cf41eea298a926e450e95603a7d784384386",
+          "dimensions": [
+            980,
+            980
+          ],
+          "slice": [
+            298,
+            298,
+            298,
+            298
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/classic-terran-console-shell-frame.png",
+          "hash": "e8bc43afdb2a36061f7a028fbf7324aba2ba6820df7d8ac525bcc856453f8856",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/classic-terran-well-top-left.png",
+          "hash": "1d3827419878000f3bd72edc2494e5b4f75dc1e3cf90251b6e807448e73058ca",
+          "poster": "/themes/material38/classic-terran-well-top-left-poster.png",
+          "crop": [
+            60,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-left-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                76,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 88718,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/classic-terran-well-top-right.png",
+          "hash": "3ac17c7c3d82ade6a72b540bfdcb4e1eb5f6736aa2e7e23591ce4138d1bf7193",
+          "poster": "/themes/material38/classic-terran-well-top-right-poster.png",
+          "crop": [
+            887,
+            3,
+            32,
+            16
+          ],
+          "tile": [
+            32,
+            16
+          ],
+          "features": [
+            {
+              "name": "native-right-indicator-inlay",
+              "mode": "lamp",
+              "center": [
+                903,
+                11
+              ],
+              "radius": [
+                13,
+                5
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 87113,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/classic-terran-shell-top-left.png",
+          "hash": "20a07f84943468635ae27e6d13ccfb0bb3d00f66dcf5f9b1d5e76ca8a6f4820d",
+          "poster": "/themes/material38/classic-terran-shell-top-left-poster.png",
+          "crop": [
+            125,
+            57,
+            18,
+            14
+          ],
+          "tile": [
+            18,
+            14
+          ],
+          "features": [
+            {
+              "name": "native-left-green-status-lamp",
+              "mode": "lamp",
+              "center": [
+                134,
+                64
+              ],
+              "radius": [
+                6,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 32171,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/classic-terran-shell-top-right.png",
+          "hash": "5a3dbe00b39a4f8a0c8e71d5d2e95195b4b6aae34dc3e243359a6089fcadf9e8",
+          "poster": "/themes/material38/classic-terran-shell-top-right-poster.png",
+          "crop": [
+            396,
+            57,
+            18,
+            14
+          ],
+          "tile": [
+            18,
+            14
+          ],
+          "features": [
+            {
+              "name": "native-right-green-status-lamp",
+              "mode": "lamp",
+              "center": [
+                405,
+                64
+              ],
+              "radius": [
+                6,
+                4
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 32049,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "classic-protoss": {
+      "id": "classic-protoss",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-classic-protoss.png",
+          "hash": "4982e509b1a2f602a82735d37b4b633eaadbaed022c7e0c9a62be085a0443f33",
+          "dimensions": [
+            988,
+            988
+          ],
+          "slice": [
+            302,
+            302,
+            302,
+            302
+          ],
+          "provenance": "original-sc2-race-frame-existing-flavour-adaptation"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/classic-protoss-console-shell-frame.png",
+          "hash": "cefcc49432bcabbcf2e9899a976365d74a2f295d7df4675784245e66fb16702b",
+          "dimensions": [
+            540,
+            272
+          ],
+          "slice": [
+            128,
+            262,
+            128,
+            262
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/classic-protoss-well-top-left.png",
+          "hash": "ab8c98bc454ed221b7b2c696f5a66b8e6c7ab08bb3c09493b8b1598d9dd95845",
+          "poster": "/themes/material38/classic-protoss-well-top-left-poster.png",
+          "crop": [
+            44,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                91,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 423574,
+            "maxAdjacentComponentStep": 14,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "top-right",
+          "url": "/themes/material38/classic-protoss-well-top-right.png",
+          "hash": "65bf845654decf4e5a847b2d08d990817d3857f38f2b4529afc9647a0f8cd2dd",
+          "poster": "/themes/material38/classic-protoss-well-top-right-poster.png",
+          "crop": [
+            849,
+            21,
+            94,
+            20
+          ],
+          "tile": [
+            94,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-crystal-bank",
+              "mode": "refraction",
+              "center": [
+                896,
+                31
+              ],
+              "radius": [
+                44,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 421802,
+            "maxAdjacentComponentStep": 13,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/classic-protoss-shell-top-left.png",
+          "hash": "fccaf662a4ba075f57504453bb0deb6003629001af7142b9d9442c79f0cbec2a",
+          "poster": "/themes/material38/classic-protoss-shell-top-left-poster.png",
+          "crop": [
+            73,
+            39,
+            64,
+            20
+          ],
+          "tile": [
+            64,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-left-gold-crystal-face",
+              "mode": "refraction",
+              "center": [
+                105,
+                49
+              ],
+              "radius": [
+                29,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 261950,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/classic-protoss-shell-top-right.png",
+          "hash": "f3f2de80fc0d16f5f7d4b4fce3420b8f836c4a99b2da8fb10dd5a204aa01a75e",
+          "poster": "/themes/material38/classic-protoss-shell-top-right-poster.png",
+          "crop": [
+            401,
+            39,
+            64,
+            20
+          ],
+          "tile": [
+            64,
+            20
+          ],
+          "features": [
+            {
+              "name": "native-right-gold-crystal-face",
+              "mode": "refraction",
+              "center": [
+                433,
+                49
+              ],
+              "radius": [
+                29,
+                7
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 265793,
+            "maxAdjacentComponentStep": 6,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    },
+    "classic-zerg": {
+      "id": "classic-zerg",
+      "duration": 8000,
+      "sources": [
+        {
+          "kind": "well",
+          "url": "/themes/motion37/well-classic-zerg.png",
+          "hash": "e02d14516a65e0e3d264dc4657b13e1a22dd9bcc1267bfa163fc75166a18fb88",
+          "dimensions": [
+            1600,
+            1000
+          ],
+          "slice": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "provenance": "existing-authored-detailed-art32-frame"
+        },
+        {
+          "kind": "shell",
+          "url": "/themes/classic-zerg-console-shell-frame.png",
+          "hash": "8f046f07860e2e836c078cbbe4407275b3463111c6b7972f3bd04757f1d4a7aa",
+          "dimensions": [
+            456,
+            272
+          ],
+          "slice": [
+            128,
+            220,
+            128,
+            220
+          ],
+          "provenance": "original-sc2-own-console-frame"
+        }
+      ],
+      "patches": [
+        {
+          "kind": "well",
+          "corner": "top-left",
+          "url": "/themes/material38/classic-zerg-well-top-left.png",
+          "hash": "c47ba09e3a8c77553add090746f887f2f3e6bddcc3304d8855be648dcef2372c",
+          "poster": "/themes/material38/classic-zerg-well-top-left-poster.png",
+          "crop": [
+            29,
+            32,
+            240,
+            253
+          ],
+          "tile": [
+            137,
+            144
+          ],
+          "features": [
+            {
+              "name": "ribbed-upper-muscle",
+              "mode": "peristalsis",
+              "center": [
+                201,
+                48
+              ],
+              "radius": [
+                65,
+                13
+              ]
+            },
+            {
+              "name": "ribbed-side-muscle",
+              "mode": "peristalsis",
+              "center": [
+                45,
+                242
+              ],
+              "radius": [
+                13,
+                40
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 514871,
+            "maxAdjacentComponentStep": 13,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "well",
+          "corner": "bottom-right",
+          "url": "/themes/material38/classic-zerg-well-bottom-right.png",
+          "hash": "b4ac62187d2695ddb096fe4fdc613412ee89200d62b9f2b6bfb31161fb42ef2b",
+          "poster": "/themes/material38/classic-zerg-well-bottom-right-poster.png",
+          "crop": [
+            1335,
+            934,
+            134,
+            32
+          ],
+          "tile": [
+            134,
+            32
+          ],
+          "features": [
+            {
+              "name": "lower-muscle",
+              "mode": "peristalsis",
+              "center": [
+                1402,
+                950
+              ],
+              "radius": [
+                64,
+                13
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 969542,
+            "maxAdjacentComponentStep": 19,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-left",
+          "url": "/themes/material38/classic-zerg-shell-top-left.png",
+          "hash": "f995c41c26ced0b6f7d1fe5d952814008f7f0f312e755beb64504e638a806ba3",
+          "poster": "/themes/material38/classic-zerg-shell-top-left-poster.png",
+          "crop": [
+            29,
+            34,
+            126,
+            38
+          ],
+          "tile": [
+            126,
+            38
+          ],
+          "features": [
+            {
+              "name": "native-left-ribbed-sinew",
+              "mode": "peristalsis",
+              "center": [
+                92,
+                53
+              ],
+              "radius": [
+                60,
+                16
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 840945,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        },
+        {
+          "kind": "shell",
+          "corner": "top-right",
+          "url": "/themes/material38/classic-zerg-shell-top-right.png",
+          "hash": "135a764b3d88e82a31cae677edc54aee47c3c3283682617caf02fbdd4eb9fa6f",
+          "poster": "/themes/material38/classic-zerg-shell-top-right-poster.png",
+          "crop": [
+            299,
+            34,
+            126,
+            38
+          ],
+          "tile": [
+            126,
+            38
+          ],
+          "features": [
+            {
+              "name": "native-right-ribbed-sinew",
+              "mode": "peristalsis",
+              "center": [
+                362,
+                53
+              ],
+              "radius": [
+                60,
+                16
+              ]
+            }
+          ],
+          "verification": {
+            "exactLoop": true,
+            "changedComponents": 839323,
+            "maxAdjacentComponentStep": 8,
+            "stationaryCoverage": true
+          }
+        }
+      ]
+    }
+  },
+  "provenance": "Companion-authored material deformation of existing source artwork, not native game animation exports."
+}

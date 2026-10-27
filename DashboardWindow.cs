@@ -14,7 +14,7 @@ internal sealed record DashboardWindowStatus(bool Ready, bool Visible, string Ti
 internal sealed class DashboardWindow : Form
 {
     private static readonly Color DashboardBackground = Color.FromArgb(11, 17, 27);
-    private static readonly Color DashboardCaptionBackground = Color.FromArgb(34, 50, 71);
+    private string graphicalStyle = "default";
     private readonly Uri dashboardUri;
     private readonly string language;
     private readonly Icon windowIcon;
@@ -35,11 +35,12 @@ internal sealed class DashboardWindow : Form
 
     internal DashboardWindowStatus Status => Volatile.Read(ref status);
 
-    internal DashboardWindow(string url, string language, string? placementPath = null)
+    internal DashboardWindow(string url, string language, string? placementPath = null, string? graphicalStyle = null)
     {
         dashboardUri = ValidateDashboardUri(url);
         this.placementPath = placementPath ?? DashboardPlacementPreferences.DefaultPath;
         this.language = language;
+        this.graphicalStyle = GraphicalStyles.NormalizeStored(graphicalStyle);
         windowIcon = AppBranding.LoadIcon();
         Text = AppBranding.Name;
         Icon = windowIcon;
@@ -299,7 +300,7 @@ internal sealed class DashboardWindow : Form
     protected override void OnHandleCreated(EventArgs e)
     {
         base.OnHandleCreated(e);
-        ApplyNativeTheme(Handle, SystemInformation.HighContrast);
+        ApplyNativeTheme(Handle, SystemInformation.HighContrast, graphicalStyle);
         Publish(Status with { WindowHandle = Handle.ToInt64() });
     }
 
@@ -309,14 +310,23 @@ internal sealed class DashboardWindow : Form
         // Reapply after Windows theme/accessibility changes, without replacing
         // the native caption, resize borders, system menu or Snap controls.
         if ((message.Msg is 0x001A or 0x031A) && IsHandleCreated && !Disposing)
-            ApplyNativeTheme(Handle, SystemInformation.HighContrast);
+            ApplyNativeTheme(Handle, SystemInformation.HighContrast, graphicalStyle);
     }
 
-    internal static bool ApplyNativeTheme(nint handle, bool highContrast)
+    // Called on the Forms thread after the appearance preference has persisted.
+    internal void SetGraphicalStyle(string? style)
     {
+        if (closing || IsDisposed || Disposing) return;
+        graphicalStyle = GraphicalStyles.NormalizeStored(style);
+        if (IsHandleCreated) ApplyNativeTheme(Handle, SystemInformation.HighContrast, graphicalStyle);
+    }
+
+    internal static bool ApplyNativeTheme(nint handle, bool highContrast, string? style = null)
+    {
+        var palette = DashboardCaptionPalette.ForStyle(style);
         var dark = highContrast ? 0 : 1;
-        var caption = highContrast ? -1 : ColorTranslator.ToWin32(DashboardCaptionBackground);
-        var text = highContrast ? -1 : ColorTranslator.ToWin32(Color.FromArgb(226, 234, 244));
+        var caption = highContrast ? -1 : ColorTranslator.ToWin32(palette.Background);
+        var text = highContrast ? -1 : ColorTranslator.ToWin32(palette.Text);
         // Unsupported attributes return an HRESULT; older Windows keeps its
         // normal frame. COLOR_DEFAULT restores accessibility theme ownership.
         var darkResult = DwmSetWindowAttribute(handle, 20, ref dark, sizeof(int));

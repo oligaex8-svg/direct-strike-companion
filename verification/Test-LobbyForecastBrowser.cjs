@@ -40,6 +40,9 @@ function fixture(language){
   });
   await page.goto('http://forecast.test/');await page.waitForFunction(()=>!!state?.library);await page.locator('nav [data-view="lobby"]').click();
   const forecast=page.locator('.live-rating-forecast');await forecast.waitFor({state:'visible'});
+  const values=source=>forecast.locator((source?'[data-rating-source="'+source+'"] ':'')+'strong').allTextContents();
+  const pending=async()=>{assert.equal(await forecast.isVisible(),true);assert.deepEqual(await values(),['—','—','—','—']);assert.equal(await forecast.locator('[data-rating-source]').count(),2);};
+  assert.match(await forecast.textContent(),language==='en'?/Rating gain \/ loss/:/Прирост \/ потеря рейтинга/);
   assert.equal(await forecast.locator('strong').count(),4,'Both sites show approximate Win/Loss in match-loaded phase');
   assert.match(await forecast.textContent(),language==='en'?/Estimated teams/:/Предполагаемые команды/);
   assert.match(await forecast.textContent(),language==='en'?/Region inferred/:/Регион определён косвенно/);
@@ -51,13 +54,15 @@ function fixture(language){
   const screenshot=path.join(__dirname,`lobby-forecast-ready-${width}-${language}.png`);await page.screenshot({path:screenshot});
   const complete=structuredClone(sample.library.dsstatsLookups);
   for(const lookup of Object.values(sample.library.dsstatsLookups))for(const p of lookup.profiles)if(p.nativeId===sample.ids[3])delete p.confidence;
-  await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.locator('[data-rating-source="dsr"] strong').count(),2);assert.equal(await forecast.locator('[data-rating-source="dsstats"] strong').count(),0);assert.match(await forecast.textContent(),language==='en'?/Loading rating data/:/Загрузка данных рейтинга/);
+  await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.locator('[data-rating-source="dsr"] strong').count(),2);assert.deepEqual(await values('dsstats'),['—','—']);assert.match(await forecast.textContent(),language==='en'?/Loading rating data/:/Загрузка данных рейтинга/);
   sample.library.dsstatsLookups=complete;await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.locator('strong').count(),4);
-  sample.lobby.rosterEntries[1].team=1;await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.locator('strong').count(),0);assert.match(await forecast.textContent(),language==='en'?/complete lobby teams/:/полного состава команд/);sample.lobby.rosterEntries[1].team=0;
-  sample.lobby.rosterEntries[3].candidates=[{id:'1-S2-1-104',nameOnly:false}];await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.locator('strong').count(),0);assert.match(await forecast.textContent(),language==='en'?/lobby region/:/региона лобби/);sample.lobby.rosterEntries[3].candidates=[{id:sample.ids[3],nameOnly:false}];
-  sample.lobby.held=true;await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.locator('strong').count(),0);assert.match(await forecast.textContent(),language==='en'?/fresh lobby roster/:/свежего состава/);sample.lobby.held=false;
-  for(const phase of ['replay','finished']){sample.lobby.phase=phase;await page.evaluate(()=>refreshLiveData());assert.equal(await forecast.isVisible(),false);}
-  assert.deepEqual(errors,[]);report.cases.push({width,language,screenshot,matchLoaded:true,bothSources:true,regionalOwnAccount:true,independentLoading:true,partialTeamsPending:true,conflictingRegionsPending:true,staleRosterPending:true});await page.close();
+  sample.lobby.rosterEntries[1].team=1;await page.evaluate(()=>refreshLiveData());await pending();assert.match(await forecast.textContent(),language==='en'?/complete lobby teams/:/полного состава команд/);sample.lobby.rosterEntries[1].team=0;
+  sample.lobby.rosterEntries[3].candidates=[{id:'1-S2-1-104',nameOnly:false}];await page.evaluate(()=>refreshLiveData());await pending();assert.match(await forecast.textContent(),language==='en'?/lobby region/:/региона лобби/);sample.lobby.rosterEntries[3].candidates=[{id:sample.ids[3],nameOnly:false}];
+  sample.lobby.held=true;await page.evaluate(()=>refreshLiveData());await pending();assert.match(await forecast.textContent(),language==='en'?/fresh lobby roster/:/свежего состава/);sample.lobby.held=false;
+  for(const phase of ['off','waiting','replay','finished','disconnected']){sample.lobby.phase=phase;await page.evaluate(()=>refreshLiveData());await pending();}
+  sample.lobby.phase='pregame';sample.lobby.roster=[];sample.lobby.rosterEntries=[];await page.evaluate(()=>refreshLiveData());await pending();
+  const pendingScreenshot=path.join(__dirname,`lobby-forecast-pending-${width}-${language}.png`);await page.screenshot({path:pendingScreenshot});
+  assert.deepEqual(errors,[]);report.cases.push({width,language,screenshot,pendingScreenshot,permanentWaitingPanel:true,matchLoaded:true,bothSources:true,regionalOwnAccount:true,independentLoading:true,partialTeamsPending:true,conflictingRegionsPending:true,staleRosterPending:true});await page.close();
  }
  report.success=true;
 }catch(error){report.error=error.stack;throw error;}finally{await browser?.close();fs.writeFileSync(path.join(__dirname,'lobby-forecast-browser.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));}})().catch(e=>{console.error(e);process.exitCode=1;});

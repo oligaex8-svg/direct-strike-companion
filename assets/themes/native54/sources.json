@@ -1,0 +1,82 @@
+[
+  {
+    "file": "Dark_Templar_Pylon.m3",
+    "sha256": "8c35afb8ecf0790406a167453ce427778c3a7b6bd561d39b03fa99a395002a41",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Protoss/Dark_Templar_Pylon/Dark_Templar_Pylon.m3"
+  },
+  {
+    "file": "Pylon_Taldarim.m3",
+    "sha256": "bd72fc0d60beacaa5b84170cbce683470d4d95075f61b09c71812b4ad030df4f",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Protoss/Pylon_Taldarim/Pylon_Taldarim.m3"
+  },
+  {
+    "file": "Pylon_Ihanrii.m3",
+    "sha256": "08704329b22fded759a38e3e9aa757aee53dd3f1b7b575e5fce4f25726b32292",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Protoss/Pylon_Ihanrii/Pylon_Ihanrii.m3"
+  },
+  {
+    "file": "SensorTower_CovertOps.m3",
+    "sha256": "a438681721ee9584549b92d62a6107abf0a830cdf897768defd090d1cf56831e",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/SensorTower_CovertOps/SensorTower_CovertOps.m3"
+  },
+  {
+    "file": "TechLab_HornerHan_Coop.m3",
+    "sha256": "1a809ff10369fe9648c2aeea0b13417a2634dc94692dfe1e88faf508bf0859e4",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/TechLab_HornerHan_Coop/TechLab_HornerHan_Coop.m3"
+  },
+  {
+    "file": "Factory.m3",
+    "sha256": "ec3a44ea2677b1e17c910b192daa955deaf71e92c5a57b711e2a2bf96c64e672",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/Factory/Factory.m3"
+  },
+  {
+    "file": "SensorTower_Silver.m3",
+    "sha256": "ba675734b0425928310fc870e1f4a8b68def2611a4bbbc5de669d20e2210dbca",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/SensorTower_Silver/SensorTower_Silver.m3"
+  },
+  {
+    "file": "EvolutionChamber.m3",
+    "sha256": "c2a786296a213c2590a331ae8b16f8778d438429cd298504a0bb5549b338ceed",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Zerg/EvolutionChamber/EvolutionChamber.m3"
+  },
+  {
+    "file": "Dehaka_Primal_Barracks_Coop.m3",
+    "sha256": "46c3bf7f163d38dad8262883068351fae234e13446dbe0533b2fec0a359018e6",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Zerg/Dehaka_Primal_Barracks_Coop/Dehaka_Primal_Barracks_Coop.m3"
+  },
+  {
+    "file": "CerberusConstructionLarge.m3",
+    "sha256": "b9dfad41c2aeaffff177ac5bd2e124e5af9338ab8e49bab7b3671bf7a7ecaf78",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Doodads/CerberusConstructionLarge/CerberusConstructionLarge.m3"
+  },
+  {
+    "file": "EvolutionChamber_RCZ.m3",
+    "sha256": "85f487bee51281b5578cb4674c62425497777ad1b244ad699e79a87a8f9244c1",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Zerg/EvolutionChamber_RCZ/EvolutionChamber_RCZ.m3"
+  },
+  {
+    "file": "EvolutionChamber_Mecha.m3",
+    "sha256": "8b6d2cdab95b60663d509829ed7b151b2b7754c089190d9e18c7c3fe10a509b9",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Zerg/EvolutionChamber_Mecha/EvolutionChamber_Mecha.m3"
+  },
+  {
+    "file": "CommandCenter_Remastered.m3",
+    "sha256": "92ff73a7b4717c7b570bb71b3104c0a73be8f944549795e51d53d03f5f2fbc6c",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/CommandCenter_Remastered/CommandCenter_Remastered.m3"
+  },
+  {
+    "file": "Nexus_Remastered.m3",
+    "sha256": "9d3f4972beb3aa1f00efdad42febae0bbcd6a75f1986a2284b6ae73ab5a993f1",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Protoss/Nexus_Remastered/Nexus_Remastered.m3"
+  },
+  {
+    "file": "Hatchery_Remastered.m3",
+    "sha256": "71b246bf98be89f142c509aebc3cd341656ffb9639e77f84c2d45502c11d1548",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Zerg/Hatchery_Remastered/Hatchery_Remastered.m3"
+  },
+  {
+    "file": "SM_MarSaraBarJukebox.m3",
+    "sha256": "d88bce678c78bd66ed82eec28a96d0e45d471d55cbce2f9177fa4f10198aef12",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/StoryModeSets/Terran/SM_MarSaraBarJukebox/SM_MarSaraBarJukebox.m3"
+  }
+]

@@ -1,0 +1,74 @@
+/* Fenix projection surfaces. Paint only: Default owns all boxes and text.
+   Amber lattice follows the original console and Purifier story-mode screen. */
+:root[data-graphical-style=fenix]{
+ --purifier-matrix:url('/themes/fenix-matrix.svg');
+ --purifier-circuits:url('/themes/fenix-circuit-light.svg');
+ --purifier-inset-frame:url('/themes/fenix-inset-frame.svg');
+ --purifier-divider-color:#73807555;
+ --purifier-energy:url('/themes/fenix-energy-gradient.png');
+ --purifier-projection:repeating-linear-gradient(0deg,#e6d6ab05 0 1px,transparent 1px 4px)
+}
+:root[data-graphical-style=fenix] .work-console::after{
+ background:linear-gradient(180deg,#10181900 0,#090f14aa 134px,#080e13 360px),var(--purifier-matrix) right top / 480px 240px repeat-x,radial-gradient(ellipse at 78% 0,#b17c2934,transparent 60%),linear-gradient(180deg,#162127,#080e13 350px)!important
+}
+:root[data-graphical-style=fenix] .page-head h1{text-shadow:0 0 15px #efb45730}
+:root[data-graphical-style=fenix] .sidebar{
+ background:linear-gradient(180deg,#0b1116dd 0,#10191a66 52%,#080d12dd 100%),var(--purifier-matrix) right center / 480px 240px repeat,radial-gradient(ellipse at center,#42432d,#080e13 70%)!important
+}
+@media(min-width:751px) and (min-height:900px){
+ :root[data-graphical-style=fenix]:not([data-graphical-style=default]) .sidebar::after{content:'';display:block;position:absolute;pointer-events:none;z-index:0;top:auto;left:25px;right:25px;bottom:164px;width:auto;height:174px;border:0;border-image:none;background:url('/themes/fenix-purifier-sigil.png') center top 8px / 100px 129px no-repeat,url('/themes/fenix-projector.svg') center / contain no-repeat;opacity:.42;filter:drop-shadow(0 0 9px #ffc46d26)}
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-results,.profile-region,.profile-average-grid,.live-team-group,.pick-opponent,.combat-card,.mark-card,.sounds-assigned,.sounds-recordings){
+ background:linear-gradient(90deg,#0a1118ed,transparent 78%),var(--purifier-projection),var(--purifier-matrix) right top / 480px 240px no-repeat,radial-gradient(ellipse at 100% 0,#c9a34e16,transparent 70%),linear-gradient(155deg,#202b2b,#101d26 45%,#091119)!important;
+ box-shadow:inset 0 3px 9px #0009,inset 0 -1px #cfb77e19,0 2px 5px #0004
+}
+/* Information wells sit inside the sculpted shell. Their complete chamfered
+   bezel has a dark upper lip, rather than repeating the raised outer armour.
+   Paint only: Default still owns every panel and text rectangle. */
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card)::before{
+ border-image-source:var(--purifier-inset-frame);border-image-width:18px
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-results,.profile-region,.profile-average-grid,.table-wrap)::before{border-image-width:14px}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-region h3,.live-team-head,.profile-best-heading,.profile-section-heading,.pick-section-head,.sounds-results-head){
+ background:linear-gradient(90deg,#ab8d5130,#d1ab6460 60%,#ab8d511a) center bottom / calc(100% - 12px) 1px no-repeat,var(--purifier-energy) right bottom / 240px 21px no-repeat,linear-gradient(180deg,#0d171cc4,#1a2321aa)!important;
+ box-shadow:inset 0 1px #0007;border-color:var(--purifier-divider-color)
+}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.profile-best-card,.profile-favourite-bottom,.profile-last-played,.profile-average-grid>div,.live-lobby .live-slot){border-color:var(--purifier-divider-color)}
+:root[data-graphical-style=fenix] .profile-average-grid>div{background:linear-gradient(180deg,#10191b00,#10171e85)!important}
+:root[data-graphical-style=fenix] .profile-portrait-frame{box-shadow:0 0 14px #e4a54224,inset 0 0 10px #0007}
+/* The co-op command socket is complete; the hollow centre never veils a face. */
+:root[data-graphical-style=fenix] .profile-portrait-frame{position:relative}
+:root[data-graphical-style=fenix] .profile-portrait-frame::after{content:'';position:absolute;inset:-3px;border:1px solid transparent;border-image:url('/themes/fenix-command-glow.png') 22 / 10px / 0 stretch;pointer-events:none;opacity:.35;transition:none}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.toolbar,.live-overview-tools){background:linear-gradient(90deg,#101619ee,#171e1a99),var(--purifier-matrix) right center / 480px 240px no-repeat!important;box-shadow:inset 0 1px #ffe0a61c,inset 0 -8px 14px #0004}
+/* Default owns the lobby columns and compact history strips. Legacy command
+   banks and stretched separator art must not cover those existing boxes. */
+:root[data-graphical-style=fenix] .live-lobby .live-hero-strip{border-image:none!important;background:none!important;box-shadow:none}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .live-lobby .live-slot{background-image:none!important;border-image:none}
+/* Team frames paint into the existing inter-team gutter. Default's clipping
+   was cutting off the native corners and putting the foot over the last row. */
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .live-lobby .live-team-group{overflow:visible!important}
+:root[data-graphical-style=fenix]:not([data-graphical-style=default]) .live-lobby .live-team-group::before{inset:-5px}
+:root[data-graphical-style=fenix] :is(.profile-commanders,.profile-results,.profile-region,.live-team-group,.pick-opponent)::after{
+ content:'';position:absolute;inset:5px;pointer-events:none;border:0;background:var(--purifier-circuits) right -5px top -5px / 480px 240px no-repeat,linear-gradient(90deg,transparent,#ffcf7970,transparent) center top / 70% 1px no-repeat,linear-gradient(180deg,#f7b4420c,transparent 75px);opacity:0;transition:none
+}
+/* Feedback only: no recurring animation across data the user is reading. */
+@media(hover:hover) and (pointer:fine){
+ :root[data-graphical-style=fenix] :is(.profile-commanders,.profile-results,.profile-region,.live-team-group,.pick-opponent)::after{transition:opacity 160ms ease}
+ :root[data-graphical-style=fenix] :is(.profile-commanders,.profile-results,.profile-region,.live-team-group,.pick-opponent):hover::after{opacity:1}
+ :root[data-graphical-style=fenix] .profile-portrait-frame::after{transition:opacity 160ms ease}
+ :root[data-graphical-style=fenix] .profile-commanders:hover .profile-portrait-frame::after{opacity:.72}
+}
+:root[data-graphical-style=fenix] :is(.profile-commanders,.profile-results,.profile-region,.live-team-group,.pick-opponent):focus-within::after{opacity:1;transition:none}
+@media(prefers-reduced-motion:reduce){
+ :root[data-graphical-style=fenix] :is(.profile-commanders,.profile-results,.profile-region,.live-team-group,.pick-opponent)::after{transition:none}
+ :root[data-graphical-style=fenix] .profile-portrait-frame::after{transition:none}
+}
+@media(forced-colors:active){
+ :root[data-graphical-style=fenix]{--purifier-matrix:none;--purifier-circuits:none;--purifier-energy:none;--purifier-projection:none}
+ :root[data-graphical-style=fenix]:not([data-graphical-style=default]) .sidebar::after{display:none}
+ :root[data-graphical-style=fenix] .profile-portrait-frame::after{display:none}
+ :root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.work-console>.page-head,.toolbar,.live-overview-tools){background:Canvas!important;box-shadow:none}
+ :root[data-graphical-style=fenix] :is(.profile-commanders,.profile-results,.profile-region,.live-team-group,.pick-opponent)::after{display:none}
+ :root[data-graphical-style=fenix]:not([data-graphical-style=default]) :is(.sidebar,.profile-commanders,.profile-results,.profile-region,.profile-average-grid,.live-team-group,.pick-opponent,.combat-card,.mark-card,.sounds-assigned,.sounds-recordings,.profile-favourite-top,.profile-region h3,.live-team-head,.profile-best-heading,.profile-section-heading,.pick-section-head,.sounds-results-head){background:Canvas!important;box-shadow:none}
+ :root[data-graphical-style=fenix] .page-head h1{text-shadow:none}
+}

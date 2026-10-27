@@ -1,0 +1,15 @@
+/* Keep native contours and sculpture, with quieter secondary reading surfaces.
+   Default geometry and the separately approved Purifier treatment stay intact. */
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-favourite-top,.profile-best-heading,.profile-region h3,.profile-section-heading,.pick-section-head,.sounds-results-head){
+ background:linear-gradient(90deg,#070b11b8,color-mix(in srgb,var(--identity-dark) 78%,transparent))!important;
+ box-shadow:inset 0 1px color-mix(in srgb,var(--identity-light) 12%,transparent)
+}
+/* Fade all four scenery edges into the sidebar rather than exposing a sprite box. */
+@media(min-width:751px) and (min-height:1000px){
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .sidebar::after{
+  mask-image:radial-gradient(ellipse at center,#000 24%,#000b 48%,transparent 73%);opacity:.55
+ }
+}
+@media(forced-colors:active){
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-favourite-top,.profile-best-heading,.profile-region h3,.profile-section-heading,.pick-section-head,.sounds-results-head){background:Canvas!important;box-shadow:none}
+}

@@ -1,6 +1,6 @@
 'use strict';
 
-const graphicalStyleLabels=Object.freeze({'default':'Default','protoss':'Protoss / Nerazim','zerg':'Zerg','terran':'Terran','fenix':'Fenix / Purifier','classic-terran':'Classic Terran','classic-protoss':'Classic Protoss','classic-zerg':'Classic Zerg'});
+const graphicalStyleLabels=Object.freeze({default:'Default',...Object.fromEntries(nativeConsoleCatalog.map(x=>[x.id,x.label]))});
 const graphicalStyleIds=Object.keys(graphicalStyleLabels);
 const graphicalStyleStorageKey='ds-companion:graphical-style';
 let graphicalStyleRevision=0,graphicalStyleBusy=false,graphicalStyle='default',graphicalStyleRefreshNeeded=false,graphicalStyleFailedChoice=null;
@@ -8,6 +8,8 @@ const canonicalGraphicalStyle=value=>graphicalStyleIds.includes(value)?value:'de
 function applyGraphicalStyle(value){
  graphicalStyle=canonicalGraphicalStyle(value);
  document.documentElement.dataset.graphicalStyle=graphicalStyle;
+ if(nativeConsoleCatalog.some(x=>x.id===graphicalStyle))document.documentElement.dataset.nativeConsole=graphicalStyle;
+ else delete document.documentElement.dataset.nativeConsole;
  try{localStorage.setItem(graphicalStyleStorageKey,graphicalStyle);}catch{/* Server settings remain authoritative without browser storage. */}
  document.querySelectorAll('[name="graphical-style"]').forEach(input=>{input.checked=input.value===graphicalStyle;input.disabled=graphicalStyleBusy;});
 }
@@ -43,7 +45,8 @@ async function saveGraphicalStyle(value){
  const language=document.getElementById('settings-language');
  if(language){
   const picker=document.createElement('fieldset');picker.className='appearance-picker';
-  picker.innerHTML=`<legend><span>Graphical style</span> <small>Saved automatically</small></legend><div class="appearance-options">${graphicalStyleIds.map(id=>`<label class="appearance-choice" data-style-preview="${id}"><input type="radio" name="graphical-style" value="${id}"><span class="appearance-thumbnail" aria-hidden="true"><i></i><i></i><i></i></span><span>${graphicalStyleLabels[id]}</span></label>`).join('')}</div><p id="appearance-status" role="status" aria-live="polite"></p>`;
+  const effects=`<div class="appearance-effects-preview"><div class="appearance-effects-heading"><span>Live theme effects</span><button type="button" class="button ghost" data-ui-motion-preview>Preview theme effects</button></div><div class="appearance-effects-stage" data-theme-vfx-preview aria-hidden="true"></div><small>Effects pause outside the active window and follow system motion settings</small></div>`;
+  picker.innerHTML=`<legend><span>Graphical style</span> <small>Saved automatically</small></legend>${effects}<div class="appearance-options">${graphicalStyleIds.map(id=>`<label class="appearance-choice" data-style-preview="${id}"><input type="radio" name="graphical-style" value="${id}"><span class="appearance-thumbnail" aria-hidden="true"><img src="/themes/previews/${id}.webp" alt="" width="600" height="336" decoding="async"></span><span>${graphicalStyleLabels[id]}</span></label>`).join('')}</div><p id="appearance-status" role="status" aria-live="polite"></p>`;
   language.after(picker);
   picker.addEventListener('change',event=>{if(event.target.name==='graphical-style')void saveGraphicalStyle(event.target.value);});
  }

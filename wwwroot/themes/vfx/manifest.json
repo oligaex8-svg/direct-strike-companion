@@ -1,0 +1,1670 @@
+{
+  "provenance": "Authored offline procedural raster materials; not native SC2 exports",
+  "generator": "Build-ThemeVfx.cjs",
+  "revision": 3,
+  "dimensions": [
+    480,
+    240
+  ],
+  "format": "png",
+  "alpha": "straight RGBA",
+  "runtime": "Cached PNG layers; CSS transform/opacity only; no runtime pixel generation",
+  "themes": [
+    {
+      "id": "default",
+      "label": "Instrument orbit",
+      "intent": "Cool instrument-light atmosphere and dispersed neutral ion dust",
+      "motion": "vfx-orbit",
+      "nodesMotion": "vfx-signal",
+      "cycle": 10,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 2200329046,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Cool instrument-light atmosphere and dispersed neutral ion dust",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "372ecf6702ff2fbcec54f5c3175d3c2ae5755430e2ac80853fe54dafcb0ae6c8"
+    },
+    {
+      "id": "fenix",
+      "label": "Purifier holographic matrix currents",
+      "intent": "Filled amber holographic panes, charged interference interiors and golden caustics",
+      "motion": "vfx-current",
+      "nodesMotion": "vfx-matrix",
+      "cycle": 7,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 3512257311,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Filled amber holographic panes, charged interference interiors and golden caustics",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "ae4551cafefd461ca1008f6de74b5a2a59c2bcb4b2d4bec9a1d244586a9baffd"
+    },
+    {
+      "id": "protoss",
+      "label": "Khala conduits",
+      "intent": "Filled refractive crystal-light facets, cyan plasma and gold prismatic caustics",
+      "motion": "vfx-conduit",
+      "nodesMotion": "vfx-resonate",
+      "cycle": 8,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 1134089303,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Filled refractive crystal-light facets, cyan plasma and gold prismatic caustics",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "121dc0d96ab584e5040e8ba43517c005069b9cb2e73a6d43d9b609388c974735"
+    },
+    {
+      "id": "nerazim",
+      "label": "Void wisps",
+      "intent": "Violet void haze, curling mint wisps and isolated cold motes",
+      "motion": "vfx-wisp",
+      "nodesMotion": "vfx-resonate",
+      "cycle": 10,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 2787843207,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Violet void haze, curling mint wisps and isolated cold motes",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "f8fdf3b26e4ae8130c8899240d39afb4a0fde450dc2a52f1196fa430c6202a57"
+    },
+    {
+      "id": "alarak",
+      "label": "Tal’darim blade energy",
+      "intent": "Dense red plasma, split hot updrafts and molten embers",
+      "motion": "vfx-blade",
+      "nodesMotion": "vfx-signal",
+      "cycle": 6,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 2636668255,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Dense red plasma, split hot updrafts and molten embers",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "f295621775b64de0b0a4a0ec2aa7ff8a2a9aadee90a72f3fa3677f5f4facec39"
+    },
+    {
+      "id": "ihanrii",
+      "label": "Ihan-rii rune activation",
+      "intent": "Broad teal dielectric mineral sheets and subsurface scintillation",
+      "motion": "vfx-rune",
+      "nodesMotion": "vfx-matrix",
+      "cycle": 9,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 1974643821,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Broad teal dielectric mineral sheets and subsurface scintillation",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "0e7a90d5f5cb267cab60ed92dc69b261c8e30d13dd220d0003fb8fdaaaa4a893"
+    },
+    {
+      "id": "terran",
+      "label": "Tactical scanner and status lamps",
+      "intent": "Flat green radar light wash, granular phosphor surface and equipment-light scatter",
+      "motion": "vfx-scan",
+      "nodesMotion": "vfx-signal",
+      "cycle": 6,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 4284535081,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Flat green radar light wash, granular phosphor surface and equipment-light scatter",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "1c264061e28b64b2de38894e4106911c3dcfd357c3096f2d664a8eb8bfd26661"
+    },
+    {
+      "id": "nova",
+      "label": "Covert targeting reticle",
+      "intent": "Flat cyan polarized optical coating, spectral shimmer and micro-scintillation",
+      "motion": "vfx-reticle",
+      "nodesMotion": "vfx-signal",
+      "cycle": 7,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 1735623479,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Flat cyan polarized optical coating, spectral shimmer and micro-scintillation",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "bdaf32ceb2b60f7a4c90d969266c271bd3f41204f065fc468da39635a3d2811e"
+    },
+    {
+      "id": "mira",
+      "label": "Salvage sparks",
+      "intent": "Localized welded-seam ember plume, warm dust and seam-bound hot sparks",
+      "motion": "vfx-sparks",
+      "nodesMotion": "vfx-embers",
+      "cycle": 5,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 3262139390,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Localized welded-seam ember plume, warm dust and seam-bound hot sparks",
+        "particles": 38,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "d5e923c16993f50ec762fbefe45dbd928d4d48a8539be44d50a59bb1dfb4f061"
+    },
+    {
+      "id": "machined",
+      "label": "Reactor induction rings",
+      "intent": "Shielded foundry heat core, concentrated hot lobes and localized thermal bleed",
+      "motion": "vfx-orbit",
+      "nodesMotion": "vfx-resonate",
+      "cycle": 10,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 1184624598,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Shielded foundry heat core, concentrated hot lobes and localized thermal bleed",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "d51eafe080d74443e350c5be2d9a3c77115005d482eb03219de88ca50920a868"
+    },
+    {
+      "id": "tyrador",
+      "label": "Luxury telemetry ribbon",
+      "intent": "Broad lavender pearlescent wave curtains, opalescent sheen and crystalline dust",
+      "motion": "vfx-telemetry",
+      "nodesMotion": "vfx-matrix",
+      "cycle": 8,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 935058144,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Broad lavender pearlescent wave curtains, opalescent sheen and crystalline dust",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "f56a76a15e95c47296fa8ffa188d40418c6cd1cb6be216c2be23750455667230"
+    },
+    {
+      "id": "zerg",
+      "label": "Hive bioluminescent veins",
+      "intent": "Purple biological fluid, irregular membranes and bioluminescent inclusions",
+      "motion": "vfx-veins",
+      "nodesMotion": "vfx-resonate",
+      "cycle": 9,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 2842821571,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Purple biological fluid, irregular membranes and bioluminescent inclusions",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "a6a8e7dae9380628da5ec8636eb233b4f34bff6d0ab475f89716b0e8655ae632"
+    },
+    {
+      "id": "abathur",
+      "label": "Evolution vesicles",
+      "intent": "Acid-green translucent sacs, suspended fluid and luminous vesicle nuclei",
+      "motion": "vfx-vesicles",
+      "nodesMotion": "vfx-resonate",
+      "cycle": 8,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 300945326,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Acid-green translucent sacs, suspended fluid and luminous vesicle nuclei",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.48,
+            0.05,
+            0.26,
+            0.36
+          ],
+          [
+            0,
+            -0.38,
+            0.31,
+            0.37
+          ],
+          [
+            0.45,
+            0.11,
+            0.29,
+            0.37
+          ],
+          [
+            0,
+            0.53,
+            0.23,
+            0.25
+          ]
+        ]
+      },
+      "compositionSignature": "aeb635e3bc9a5c07dbd53473a133bd4390264b6917310ea9896c3caba53ffa69"
+    },
+    {
+      "id": "dehaka",
+      "label": "Primal spores",
+      "intent": "Amber primal dust, drifting spore volume and warm organic motes",
+      "motion": "vfx-spores",
+      "nodesMotion": "vfx-embers",
+      "cycle": 10,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 2070503009,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Amber primal dust, drifting spore volume and warm organic motes",
+        "particles": 38,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "c0382b75703e59bc021c52a3901f23c3d8737ff0af6dce88297eb9b3c28fa8cc"
+    },
+    {
+      "id": "cerberus",
+      "label": "Infested containment",
+      "intent": "Localized infested vent leak, organic seam intrusion and contaminated plasma",
+      "motion": "vfx-containment",
+      "nodesMotion": "vfx-signal",
+      "cycle": 6,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 3100037462,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Localized infested vent leak, organic seam intrusion and contaminated plasma",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "0c1e686ebea872a139505408845ea3100799ffb7622c798b31c115ab1e7ee45b"
+    },
+    {
+      "id": "mecha",
+      "label": "Synthetic cell sequencing",
+      "intent": "Uneven cooled synthetic plasma, recessed charge pockets and a soft transfer flow",
+      "motion": "vfx-cells",
+      "nodesMotion": "vfx-matrix",
+      "cycle": 7,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 1846234399,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Uneven cooled synthetic plasma, recessed charge pockets and a soft transfer flow",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "9feca3d23b3bec81722653359d89bd7305399831423076be89cbfaf255aa6f27"
+    },
+    {
+      "id": "arcade",
+      "label": "Neon pixel cascade",
+      "intent": "Granular purple-cyan pixel phosphor surface and quantized glow particles",
+      "motion": "vfx-pixels",
+      "nodesMotion": "vfx-pixels",
+      "cycle": 5,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 754169369,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Granular purple-cyan pixel phosphor surface and quantized glow particles",
+        "particles": 38,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "62b972462e60a7fed6a5db0d60d81583188a4b806646141cacc2d1de2b6432b9"
+    },
+    {
+      "id": "classic-terran",
+      "label": "CRT phosphor sweep",
+      "intent": "Coarse green CRT phosphor, low-frequency light wash and aged sensor bloom",
+      "motion": "vfx-crt",
+      "nodesMotion": "vfx-signal",
+      "cycle": 8,
+      "composition": {
+        "revision": 2,
+        "kind": "filled-optical-surface",
+        "seed": 1576046662,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Coarse green CRT phosphor, low-frequency light wash and aged sensor bloom",
+        "particles": 23,
+        "envelopePower": 4,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "1c9ce0a81aa9b7c1e8d5bb75b924b544a841f69b24e5b720de19f6c3f4ad5dbb"
+    },
+    {
+      "id": "classic-protoss",
+      "label": "Psionic resonance",
+      "intent": "Soft cyan psionic volume, gold light refraction and diffuse psychic motes",
+      "motion": "vfx-psionic",
+      "nodesMotion": "vfx-resonate",
+      "cycle": 10,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 1392173910,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Soft cyan psionic volume, gold light refraction and diffuse psychic motes",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "07804a46eb525e2b1851c18239659839e0dcd8ff12adc775e3903533818494f5"
+    },
+    {
+      "id": "classic-zerg",
+      "label": "Organic nerve tendrils",
+      "intent": "Ochre organic fluid, swollen membrane folds and warm cellular emission",
+      "motion": "vfx-tendrils",
+      "nodesMotion": "vfx-embers",
+      "cycle": 9,
+      "composition": {
+        "revision": 2,
+        "kind": "noise-shaped-biological-volume",
+        "seed": 737859592,
+        "center": [
+          240,
+          120
+        ],
+        "intent": "Ochre organic fluid, swollen membrane folds and warm cellular emission",
+        "particles": 23,
+        "envelopePower": 2,
+        "sacs": [
+          [
+            -0.52,
+            0.2,
+            0.32,
+            0.32
+          ],
+          [
+            -0.2,
+            -0.35,
+            0.37,
+            0.3
+          ],
+          [
+            0.32,
+            -0.25,
+            0.34,
+            0.38
+          ],
+          [
+            0.45,
+            0.38,
+            0.3,
+            0.28
+          ],
+          [
+            0,
+            0.4,
+            0.32,
+            0.3
+          ]
+        ]
+      },
+      "compositionSignature": "89bd50f6dea8fb407f75d412eb1c8deb2a922120926f415de05a22f9072f794a"
+    }
+  ],
+  "assets": [
+    {
+      "theme": "default",
+      "layer": "field",
+      "file": "default-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "52f85ef168500060250a528652b3d5bd2b3ed8f478d1fa769774dc976c2d0094",
+      "rgbaSha256": "3f2238ce54cee8a10ffcd715ee0cf2f221b1e1e5a46f1642aec50b24b7f5c247"
+    },
+    {
+      "theme": "default",
+      "layer": "flow",
+      "file": "default-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "36f9ed293d7b734b21140c83a2bb16c7b4b633271436225605577f47fd49c0c9",
+      "rgbaSha256": "3e05a6fd3e78007f0091a59686e9d942472fedca93fe48e1912b48f6e5101234"
+    },
+    {
+      "theme": "default",
+      "layer": "nodes",
+      "file": "default-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "dc6e0b14e515ea8a8bab112c3549861ca26cadff54e38cad2d86bfb8d1274196",
+      "rgbaSha256": "9b2c57710f682ced36446a0b66c3df9193ba5d5e92c19ec6b3e537e4ed333019"
+    },
+    {
+      "theme": "fenix",
+      "layer": "field",
+      "file": "fenix-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "7cbe09675afc2bd76469f286ade1ae61fc318df0d08f180e05fd2e0b68132f54",
+      "rgbaSha256": "81ae2ebe65356aa2fe6d082f7264a18f22b98fd57331fbd843f0e7946ecada44"
+    },
+    {
+      "theme": "fenix",
+      "layer": "flow",
+      "file": "fenix-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "83c3da8ba7118b18aebff9fa722de22f4756c1e203a30fe8a2dac032cccf9b2c",
+      "rgbaSha256": "c9a2587a87bdac57ec42ee076a92b140cbe2f539f8eb04aaa2f6a2b0201588f6"
+    },
+    {
+      "theme": "fenix",
+      "layer": "nodes",
+      "file": "fenix-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "1ff7104796b4ac514b4d2672ab0f339324cb848460d0e45dccfccd34be93c9d6",
+      "rgbaSha256": "2d958b4bf3f6abeed6caf98b807fc03211b6cfa35b6b7b752768e225a34ae106"
+    },
+    {
+      "theme": "protoss",
+      "layer": "field",
+      "file": "protoss-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "17c671d39d968d7ec286f09423c36b908340eded3785ad3a384e3638052ca5bc",
+      "rgbaSha256": "4ea0ca28b37a565be8f091e916536b8994671552c5766da67823fbbb9fdaee23"
+    },
+    {
+      "theme": "protoss",
+      "layer": "flow",
+      "file": "protoss-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "770ed48b948b5edb63719f37ece21a42365528f85be0d54dd5229197c8b5928d",
+      "rgbaSha256": "855d759d5d56c8ef379fcb67237efe82b888a705e85e8999d0f3410e028f8185"
+    },
+    {
+      "theme": "protoss",
+      "layer": "nodes",
+      "file": "protoss-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "b0eae6334bd684fbb6a555f9ca77a898ae78ac15ffd3c76db2e6a2873d54cc22",
+      "rgbaSha256": "550f836d205411a11fc088d92531aecc8e80f70542506e488ac5e64533ac3009"
+    },
+    {
+      "theme": "nerazim",
+      "layer": "field",
+      "file": "nerazim-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "850f8b5bcd2f798f558ad43583438d1bcbee9972aa87636313ec870ae8538e82",
+      "rgbaSha256": "888e1642f5c8b40a35931287bc867236fe6cc306e2f4d0bb2e694e3b6171fc3d"
+    },
+    {
+      "theme": "nerazim",
+      "layer": "flow",
+      "file": "nerazim-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "8373571b8d2a519fd88bf8c90677f44b51341dbe6e57a186a2b178ecad91f36c",
+      "rgbaSha256": "17c18c956f4069b5160f12afb46c0d66cbc0a38fddfd840fa28c5289ae8d8ced"
+    },
+    {
+      "theme": "nerazim",
+      "layer": "nodes",
+      "file": "nerazim-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "999c2504c2bd647a8250ead80e25da5fa0e31a64c32a42c2358b3d832d8ce560",
+      "rgbaSha256": "2d571aa57703f56bc8e5e53c7ca1e82e9b91b4d1a4588c2e7cb968d180a346bd"
+    },
+    {
+      "theme": "alarak",
+      "layer": "field",
+      "file": "alarak-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "6bd2eaf4b419d1c8f2d7ad56de1ba96880ecb086e23b102ed610c9385461ca9b",
+      "rgbaSha256": "9c58e6760dbea6052aaf58706d3cbce114311d785d217946df158baaf3ba6f4e"
+    },
+    {
+      "theme": "alarak",
+      "layer": "flow",
+      "file": "alarak-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "60067faad66aad1a970810a989c3113532744e15b438790d3c1dac0386217cce",
+      "rgbaSha256": "ddd4800071df5b16c31a2b2dcf736139a2f00c08b1278452ea73a4b0d30dc80c"
+    },
+    {
+      "theme": "alarak",
+      "layer": "nodes",
+      "file": "alarak-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3a83ca03e93417c8b3112905d254cbb6b17c35503fffad85a6a66fd3b02b094a",
+      "rgbaSha256": "58cbf26dee8ea4265ad8f40db4205e4c44603df5ccd3099d5f38f3f7e09e0432"
+    },
+    {
+      "theme": "ihanrii",
+      "layer": "field",
+      "file": "ihanrii-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "e00404682c536d08ef12ab84b3437bd50d55ddbc1ae75f393336922679dceb19",
+      "rgbaSha256": "41ba2b4360df1d5c9acf08856dc5bb52516da5025f110d0434edf540653de2f1"
+    },
+    {
+      "theme": "ihanrii",
+      "layer": "flow",
+      "file": "ihanrii-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "6e66c3c846aaab680e046617a654ff2cef2841f01e354b41b19b288cb07035fd",
+      "rgbaSha256": "e9b7991fa13d2dc2e6443ef8d86e307b2ed9a5ee19e7f6eb7bbc7dfbee9119e0"
+    },
+    {
+      "theme": "ihanrii",
+      "layer": "nodes",
+      "file": "ihanrii-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "584fa07c7d7c518aa8c57dbfa1a25975bd62caefacba4ec6a728d9e7a2d4842d",
+      "rgbaSha256": "5f45b94f03d3fa5fab5fb1b94ef3abd26ff956bfd1dec611501e0a01954ea4fa"
+    },
+    {
+      "theme": "terran",
+      "layer": "field",
+      "file": "terran-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "bb0d989ed76e9f153614776ec7960dd7e45bc47f838d94890389de2ee6d85101",
+      "rgbaSha256": "b5cacc10617ff280894f16a14f2a20e832c6069d5748cc270e88c7d1d1ad163b"
+    },
+    {
+      "theme": "terran",
+      "layer": "flow",
+      "file": "terran-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "312c0ea1c9dabb428edb38dbb46cd365d72fa7fa56c135dae7b439da10e800fa",
+      "rgbaSha256": "417c1f10623a529a48f7cf1b9eb24409fa4b7e31a19882f139c0cbe8e03bbaa8"
+    },
+    {
+      "theme": "terran",
+      "layer": "nodes",
+      "file": "terran-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "f2667f94b005fa0a0c44fd29ebc89adaf00dd1c47724792f6b252c30c5cb71fb",
+      "rgbaSha256": "337b93cce44fdcc16718d1d7eb9b3c388e6782ea83692b25a561108ed5b6a484"
+    },
+    {
+      "theme": "nova",
+      "layer": "field",
+      "file": "nova-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "daa8e1e1672d760dea6bf26b1cf6a75e64f23d777a2dc68f10887c209c91bafe",
+      "rgbaSha256": "804a7ec91fe13b687f2960d6e3629ec60c0bcf2912c0db667f1318126a1e0763"
+    },
+    {
+      "theme": "nova",
+      "layer": "flow",
+      "file": "nova-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "b2b06e53cc4c793d7e3ba4f44e043603b99e2592f642cd0941a189c2aa4a0260",
+      "rgbaSha256": "ceb0bb0bde4d595c8e766a319f6ef8b0cf81967840cb8c540626ce876836df93"
+    },
+    {
+      "theme": "nova",
+      "layer": "nodes",
+      "file": "nova-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "64db230c5f81b121f64f93524c555534b8c93d39355f93066c058049f54ecb56",
+      "rgbaSha256": "87e35a54f301f0d5bb88327d8894f4efe06359703aec23cb32e2e4a2e5f732d5"
+    },
+    {
+      "theme": "mira",
+      "layer": "field",
+      "file": "mira-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3b46fa57c4e4aa49d10b2788e1527235ee8da9891fb3adc9ef07b0bdf9623c2d",
+      "rgbaSha256": "12d8f2f4748776d85d3c2d31a601e483d148f4872dc19545f716e05e45c18f52"
+    },
+    {
+      "theme": "mira",
+      "layer": "flow",
+      "file": "mira-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "a4775a6a7fcbe9e64486cce19baaf5f778c2abd8871ef4b11c05e63a006ef307",
+      "rgbaSha256": "62be7724f16465e57c372566009315260c279e574f6d43efdafff8ae52c0d32d"
+    },
+    {
+      "theme": "mira",
+      "layer": "nodes",
+      "file": "mira-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3d5d275ac9e7d76828484a861d4b5a94baa14fd148a5c00c8190d83e315fbc3b",
+      "rgbaSha256": "93e6b19660be536a2233ac9560de7520155f2b34ef0db748e22e7dfc9e7c3713"
+    },
+    {
+      "theme": "machined",
+      "layer": "field",
+      "file": "machined-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "1da760ffd0f9ad82faec9e6f08590c15d31df36c0afb54b522548fdeb3346b25",
+      "rgbaSha256": "2fbaa1fa640dfe08bfe1ede6b8b2ee5dadd497ed3b1024b5c0aeb497e16481ec"
+    },
+    {
+      "theme": "machined",
+      "layer": "flow",
+      "file": "machined-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "71007547469e54b72069f8b8ea133aa51e9425050bb44dc88ceb080409d612b1",
+      "rgbaSha256": "d930795f4803ff17391e73a39e1790a928c4920cfb465112cee185a6d0c291aa"
+    },
+    {
+      "theme": "machined",
+      "layer": "nodes",
+      "file": "machined-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "ef9256cb726c092f763e47d09cb10da5ac922d21b9753f2dab176f3a4757bb93",
+      "rgbaSha256": "92d6a3726734ce62a79c63296a4ec95658620c1a0287212ff090b66114c9ed24"
+    },
+    {
+      "theme": "tyrador",
+      "layer": "field",
+      "file": "tyrador-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "f2c5ff5b05bfae4143b0d50938d6d9a36482ba17808b7dfbf2c8774e0bc2fb91",
+      "rgbaSha256": "3522b3fc80c2c82a3e9b5bfcbd22c6bc16e65b50cae65e6b302765be23a3db9e"
+    },
+    {
+      "theme": "tyrador",
+      "layer": "flow",
+      "file": "tyrador-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "01fa2399b9ae7d00c3765803d19c95bbcda28eaa983a0dbe427bb65763416ef0",
+      "rgbaSha256": "7c7bb1ae2486b05893beed0ef7338ebb83c9668a1dbefd7cec9b06892b11b7af"
+    },
+    {
+      "theme": "tyrador",
+      "layer": "nodes",
+      "file": "tyrador-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "ae0f77162a34220675c7ca2fb931c583c565560c1c71be586e0f417108f729d6",
+      "rgbaSha256": "e3613f76a756ff290d85b25a52028bd0ceb9f335df7b0d6a696cdfa90e9700ae"
+    },
+    {
+      "theme": "zerg",
+      "layer": "field",
+      "file": "zerg-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "d7731557d7a6459f3c78ff8bff8ab547b9f71d24d6db9005477c4022b8ba5cc5",
+      "rgbaSha256": "99edcde441a71e782b01be7d2320d47433f1d5e0e59fe1a3a34959da05a305aa"
+    },
+    {
+      "theme": "zerg",
+      "layer": "flow",
+      "file": "zerg-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "8ef2a81ae6519ba01b16448a596c76d6d8a950a12e224fd8de27414384f2067e",
+      "rgbaSha256": "a8711ae2d6b73130f2189bb0dbce629201637af17b9a986461bb47ce2522336a"
+    },
+    {
+      "theme": "zerg",
+      "layer": "nodes",
+      "file": "zerg-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "4dcd2286ecdb2f1e822910d78c692e86eb8deec86730e463f47e9ed8946371e0",
+      "rgbaSha256": "e594dc6c5682c1fcf917eb056924399202f2e23a05921d869597918e3a329daf"
+    },
+    {
+      "theme": "abathur",
+      "layer": "field",
+      "file": "abathur-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "0aaf25be8d89e05b159e15ae100d115a7ae7c8a7ec5cdf90fc561f72ec2d449e",
+      "rgbaSha256": "70fee0e1acbe81c2b204d71c663015943b5c3ad22553801030671fc40af5aa6f"
+    },
+    {
+      "theme": "abathur",
+      "layer": "flow",
+      "file": "abathur-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "38cbcc1589f2dd0b30a1bb3d4ae146b58110591c5b1ca3ad000b16294deb4307",
+      "rgbaSha256": "de8250bc3a951b230d9fd21655dac4531dbbf02a31260a16e6b52a18a977f2df"
+    },
+    {
+      "theme": "abathur",
+      "layer": "nodes",
+      "file": "abathur-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "b340119496df46bc78c2d5ca10c6546f3e0cdc2bc1b755492b3480473e396ba8",
+      "rgbaSha256": "6565100cb492241184c0e97de7cf145897d184213065053ad5a8cf81e4de870f"
+    },
+    {
+      "theme": "dehaka",
+      "layer": "field",
+      "file": "dehaka-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3eeda731e608eada110b35b16737da925b6076424698c7914fdfb74b23b16d2e",
+      "rgbaSha256": "7ab93756bc454b76c1af7c7c9c59e80329b571703f5c9b3f9a0406f36b94b018"
+    },
+    {
+      "theme": "dehaka",
+      "layer": "flow",
+      "file": "dehaka-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "5b25f8f00ad6918853e792b0d48e872319145ba94446b5253e736592c07458b0",
+      "rgbaSha256": "ed960932fe461bfe67d011e204a2750ec7ad5038cf6c0caed47cbbfe37f772ad"
+    },
+    {
+      "theme": "dehaka",
+      "layer": "nodes",
+      "file": "dehaka-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3ad8834ab583e4cd23bfb407695a8c8f13c9cc3ce43e3823089168abbfc27f23",
+      "rgbaSha256": "7accfecd15fb82c80532e8f030facb2ebd213c5ec69cf60b36f20d45d6afdc54"
+    },
+    {
+      "theme": "cerberus",
+      "layer": "field",
+      "file": "cerberus-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "bc4448da45101f5b90fd996c8ec104bd9b83402f8d1e9e0c2148ce977f932377",
+      "rgbaSha256": "9d65a94d40e9a80d2975def095a8224bc262149f883ddbe0b47026adbb560a72"
+    },
+    {
+      "theme": "cerberus",
+      "layer": "flow",
+      "file": "cerberus-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "555eb02b51fbf14408c4213297e1b1cae1bdba79d487ceed540bfe1819812149",
+      "rgbaSha256": "f0d6163c7d69912fccf8bb67475e02fd2c93e556484a7c0e343a57d0de9ec250"
+    },
+    {
+      "theme": "cerberus",
+      "layer": "nodes",
+      "file": "cerberus-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "5e541c6d8c0d22759c105760c12cf8e79530e3e5b09c42001e4a031b2e470ada",
+      "rgbaSha256": "cfe441787caf27fc1b104e140e74fa38fd89800b998854f19f2a318fe269381a"
+    },
+    {
+      "theme": "mecha",
+      "layer": "field",
+      "file": "mecha-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "7c8d9aca87e1901820516c8320808e7c31fc0b1a291ab7cc0927185a2f465077",
+      "rgbaSha256": "e55f620c53feefe9a2be155bddd652a4b2af9f46fac15737e8541223f803cdb5"
+    },
+    {
+      "theme": "mecha",
+      "layer": "flow",
+      "file": "mecha-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3307997669de08069abe51470d3e86bad1b7d46f570371e0469742fe25936fea",
+      "rgbaSha256": "8e2d5527dc5a4ed73efa4c3705d87cd4dbb42f4fb9e0fce9328cbce2f2d04ce6"
+    },
+    {
+      "theme": "mecha",
+      "layer": "nodes",
+      "file": "mecha-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "bcd08a11e9a445d8a9866856435580d5ad64024ab9143c3ed163ab873ac86cee",
+      "rgbaSha256": "7e2ac44dbf3d2c68b63ab4515db69cd43ac4e6ddaf72e2c23e6fe7b21f3a8f78"
+    },
+    {
+      "theme": "arcade",
+      "layer": "field",
+      "file": "arcade-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "7b9a47cfa29cd7bbfc95b3c2b0cbe83b5c455f4ce56f56edaa882b9d73da4482",
+      "rgbaSha256": "7227646ba39472619a05c8cb954eaa3d5e4d0ddb93efd5a4f18f5bc4f562adb6"
+    },
+    {
+      "theme": "arcade",
+      "layer": "flow",
+      "file": "arcade-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "56e373017167b60432b4830a8853b8ddb87b9f930daa7333fc54616f62912a76",
+      "rgbaSha256": "139d46c008b4042767859befdaa903a7de17c8afae6d641381a3fdd31c1f4ce2"
+    },
+    {
+      "theme": "arcade",
+      "layer": "nodes",
+      "file": "arcade-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "6caa72d79f0f474b62e2108eda8993b8112382a928c0d30c16cfd61582110840",
+      "rgbaSha256": "79ad962439558abed9a9a2037025d48bdbaba00366a061423517845adcc4a051"
+    },
+    {
+      "theme": "classic-terran",
+      "layer": "field",
+      "file": "classic-terran-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "3f7487378910dbfe96d53113da76bb92cd1e4320fdfcce92b5a299009b028754",
+      "rgbaSha256": "98de27a729c73e7fed03a78ba0bcd376007ce3b3d2788833910c9ef5cde6c24a"
+    },
+    {
+      "theme": "classic-terran",
+      "layer": "flow",
+      "file": "classic-terran-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "bc195e32cb1da5615f722675b5b2325ee39df0fec05e3b1f067d419c38d5ac28",
+      "rgbaSha256": "36dadcff431d76a105f73fc9898e1c2b68818d50dbaa7a01c864afe9a129d0c4"
+    },
+    {
+      "theme": "classic-terran",
+      "layer": "nodes",
+      "file": "classic-terran-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "e6b7d136c3491332018b2a8201c7fd224003ec7274d018bdec9ab4fadaf0b36f",
+      "rgbaSha256": "5e75dce946c4bb91d22f5c041202bbc55eadb556df54251597f1f35104da2cf9"
+    },
+    {
+      "theme": "classic-protoss",
+      "layer": "field",
+      "file": "classic-protoss-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "88dc5a15887cd23e5970c4a365a15bc3f1fb49469635546b09afa88204ac7694",
+      "rgbaSha256": "e530c1a5add816f64965e68474c5b23c8b973347d691fa8f8f16a4c510b6125b"
+    },
+    {
+      "theme": "classic-protoss",
+      "layer": "flow",
+      "file": "classic-protoss-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "06338507ec75811b3a27bac9d6a082438fa7d4ee3d0e62b647be6a86d97d9955",
+      "rgbaSha256": "de404f781b6a97d49fe4443e0d96698245bacbc10e15efb6c8f33f8a2cc718cf"
+    },
+    {
+      "theme": "classic-protoss",
+      "layer": "nodes",
+      "file": "classic-protoss-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "074bc559d82741d79a4c7855d156f23b36dd04fd6938299016eb558fd78db4f5",
+      "rgbaSha256": "569f2d9b0dc4492b1bb760bf5d811325bf107fbe65bb134ade5e40f7ff9c40f8"
+    },
+    {
+      "theme": "classic-zerg",
+      "layer": "field",
+      "file": "classic-zerg-field.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "654a0ef5050d848cbfa8d0fa9ad6ade700fe1af39a90b396c83db91323543fc8",
+      "rgbaSha256": "411d3ab215d6c400d50f3e7cf47e0136f23aad7e5191ff99184d7173de1505bf"
+    },
+    {
+      "theme": "classic-zerg",
+      "layer": "flow",
+      "file": "classic-zerg-flow.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "c01cdecd6ea730b62e5cce393af7dee37f890d6cbacc59ff0cb4f7399c1f4784",
+      "rgbaSha256": "2318ccd2b3129e1ee0732f6214aa4d9bfbd523dbf0c58bfe0b09c7e19f63a587"
+    },
+    {
+      "theme": "classic-zerg",
+      "layer": "nodes",
+      "file": "classic-zerg-nodes.png",
+      "format": "png",
+      "width": 480,
+      "height": 240,
+      "sha256": "b9870b082e1b680897910e24404f26fc1edeca814f21f9be672fe3058f7e3b50",
+      "rgbaSha256": "048c53ee82029f529c379ef0091a07b21b85cbd41837e87732f25a62abeefa7a"
+    }
+  ]
+}

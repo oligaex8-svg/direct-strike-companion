@@ -1,0 +1,93 @@
+{
+  "version": "local.32",
+  "scope": "Authored textured information-well frames; native source console PNGs remain unchanged",
+  "canvas": [
+    1600,
+    1000
+  ],
+  "logical": [
+    160,
+    100
+  ],
+  "slice": 32,
+  "transition": 6,
+  "profiles": [
+    {
+      "id": "zerg",
+      "scale": 1.008064516129,
+      "qx": 0.4,
+      "qy": 0.5,
+      "kind": "layered plum-black chitin",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-684b94a2-cdf1-46d4-a53e-a67ff3e890f0.png",
+      "source": "assets/themes/art32/zerg-inset-source-v1.png",
+      "reference": "assets/themes/console-zerg.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    },
+    {
+      "id": "mecha",
+      "scale": 0.68,
+      "qx": 0.46,
+      "qy": 0.41,
+      "kind": "recessed blue-gray ceramic armour",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-44f482cb-7415-4210-8f6a-917956c4d0c5.png",
+      "source": "assets/themes/art32/mecha-inset-source-v1.png",
+      "reference": "assets/themes/console-mecha.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    },
+    {
+      "id": "machined",
+      "scale": 0.68,
+      "qx": 0.46,
+      "qy": 0.49,
+      "kind": "heat-stained foundry steel",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-02171ad1-2e70-47f1-bfad-5f67e7ed0957.png",
+      "source": "assets/themes/art32/machined-inset-source-v1.png",
+      "reference": "assets/themes/console-machined.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    },
+    {
+      "id": "mira",
+      "scale": 0.56,
+      "qx": 0.46,
+      "qy": 0.48,
+      "kind": "welded salvage and corrugated conduit",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-6c44f69c-445e-4f1b-b894-fc2e54ef0781.png",
+      "source": "assets/themes/art32/mira-inset-source-v1.png",
+      "reference": "assets/themes/console-mira.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    },
+    {
+      "id": "cerberus",
+      "scale": 0.5,
+      "qx": 0.46,
+      "qy": 0.43,
+      "kind": "teal containment metal with living intrusion",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-6df9d63f-9a85-46bd-98ef-86fe8ac15371.png",
+      "source": "assets/themes/art32/cerberus-inset-source-v1.png",
+      "reference": "assets/themes/console-cerberus.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    },
+    {
+      "id": "dehaka",
+      "scale": 0.53,
+      "qx": 0.46,
+      "qy": 0.5,
+      "kind": "matte charcoal primal plates",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-5401fa29-a39b-4185-80b1-7022dc2bd090.png",
+      "source": "assets/themes/art32/dehaka-inset-source-v1.png",
+      "reference": "assets/themes/console-dehaka.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    },
+    {
+      "id": "classic-zerg",
+      "scale": 0.6,
+      "qx": 0.46,
+      "qy": 0.5,
+      "kind": "swollen reddish chitin and nerve channels",
+      "generatedSource": "C:\\Users\\Admin\\.codex\\generated_images\\01a11248-d9fc-79e1-a16a-73b9633f8190\\exec-c90d0b95-e313-4aed-9190-b32eddee1bd0.png",
+      "source": "assets/themes/art32/classic-zerg-inset-source-v1.png",
+      "reference": "assets/themes/console-classic-zerg.png",
+      "authoring": "New image_gen artwork matched to the original SC2 console material; not exported game artwork"
+    }
+  ]
+}

@@ -24,12 +24,16 @@ function build(){
  save('fenix',def,armour());save('fenix-rack',def,armour(true));
  save('fenix-iris',def,slice('console',[898,105,94,44],[0,0,94,44]),94,44);
  const allDefs=pictures.map(p=>native(p,ids.get(p.name))).join(''),id=suffix=>ids.get('sc2_ui_coop_fenix_topbar_'+suffix);
- save('fenix-filigree',allDefs,[
-  slice(id('filigree_topcorner'),[0,0,35,32],[0,0,32,32],true),slice(id('filigree_topcorner'),[0,0,35,32],[96,0,32,32]),
-  slice(id('filigree_bottomcorner'),[53,16,32,32],[0,96,32,32],true),slice(id('filigree_bottomcorner'),[53,16,32,32],[96,96,32,32]),
-  slice(id('filigree_top'),[40,0,8,4],[32,0,64,4]),slice(id('filigree_bottom'),[40,0,8,5],[32,123,64,5]),
-  slice(id('filigree_topcorner'),[33,26,2,6],[0,32,2,64]),slice(id('filigree_topcorner'),[33,26,2,6],[126,32,2,64])
- ].join(''));
+ // These co-op overlays ship with alpha <=36/255 for the game's additive
+ // composition. Raise only coverage for normal UI compositing; retain RGB.
+ const trimAlpha='<filter id="trim-alpha" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncA type="linear" slope="5"/></feComponentTransfer></filter>';
+ save('fenix-filigree',allDefs+trimAlpha,'<g filter="url(#trim-alpha)">'+[
+  // Whole authored corners, uniformly scaled: no top half or cropped foot.
+  slice(id('filigree_topcorner'),[0,0,35,63],[0,0,17.5,31.5],true),slice(id('filigree_topcorner'),[0,0,35,63],[110.5,0,17.5,31.5]),
+  slice(id('filigree_bottomcorner'),[0,0,85,48],[0,109.9294118,32,18.0705882],true),slice(id('filigree_bottomcorner'),[0,0,85,48],[96,109.9294118,32,18.0705882]),
+  slice(id('filigree_top'),[40,0,8,4],[17.5,0,93,2]),slice(id('filigree_bottom'),[40,0,8,5],[32,126.1176471,64,1.8823529]),
+  slice(id('filigree_topcorner'),[33,26,2,6],[0,31.5,1,78.4294118]),slice(id('filigree_topcorner'),[33,26,2,6],[127,31.5,1,78.4294118])
+ ].join('')+'</g>');
  // A single central nexus and the game's paired thin lines, never a stretched icon.
  const underline=ids.get('sc2_ui_ingame_storymode_panel_faction_purifier_underline');
  save('fenix-divider',allDefs,[slice(id('filigree_topcorner'),[0,0,35,32],[0,0,18,16],true),slice(id('filigree_topcorner'),[0,0,35,32],[494,0,18,16]),slice(id('filigree_top'),[40,0,8,4],[18,0,476,2]),slice(underline,[132,7,94,20],[209,0,94,16])].join(''),512,16);

@@ -340,7 +340,12 @@ internal sealed class CompanionContext : ApplicationContext
             lock (store.Gate) Volatile.Write(ref desktopLanguage, store.Data.Settings.Language);
             return Results.Ok(new { language = request.Language });
         });
-        web.MapPost("/api/appearance", (GraphicalStyleRequest request) => Results.Ok(request.Apply(store)));
+        web.MapPost("/api/appearance", (GraphicalStyleRequest request) =>
+        {
+            var result = request.Apply(store);
+            RefreshDashboardTheme();
+            return Results.Ok(result);
+        });
         web.MapPost("/api/player-nicknames", (PlayerNicknamesRequest request) =>
         {
             store.SetPlayerNicknames(request.Id, request.Nicknames, request.Append);
@@ -431,6 +436,23 @@ internal sealed class CompanionContext : ApplicationContext
     {
         lock (store.Gate) return store.Data.Matches.OrderByDescending(m => m.Time).SelectMany(m => m.Players).FirstOrDefault(p => p.Id == id)?.Name ?? store.Data.OwnLocalNames.Where(p => p.Id == id).OrderByDescending(p => p.ObservedAt).FirstOrDefault()?.Name ?? store.Data.Marks.GetValueOrDefault(id)?.Name ?? (store.Data.Settings.SelfIds.Contains(id) ? "" : throw new ArgumentException("Player was not found."));
     }
+    private void RefreshDashboardTheme()
+    {
+        if (shutdown.IsCancellationRequested || dispatch.IsDisposed) return;
+        try
+        {
+            dispatch.BeginInvoke((Action)(() =>
+            {
+                if (shutdown.IsCancellationRequested || dashboard is null || dashboard.IsDisposed) return;
+                string style;
+                // Read on dispatch so overlapping requests cannot apply an older queued value.
+                lock (store.Gate) style = store.Data.Settings.GraphicalStyle;
+                dashboard.SetGraphicalStyle(style);
+            }));
+        }
+        catch (InvalidOperationException) { /* Shutdown may dispose dispatch after the initial check. */ }
+    }
+
     private void Open()
     {
         if (shutdown.IsCancellationRequested || dispatch.IsDisposed) return;
@@ -439,7 +461,9 @@ internal sealed class CompanionContext : ApplicationContext
         {
             string language;
             language = Volatile.Read(ref desktopLanguage);
-            var window = new DashboardWindow(url, language);
+            string style;
+            lock (store.Gate) style = store.Data.Settings.GraphicalStyle;
+            var window = new DashboardWindow(url, language, graphicalStyle: style);
             Volatile.Write(ref dashboard, window);
             window.CloseRequested += (_, _) => ExitThread();
             window.FormClosed += (_, _) =>

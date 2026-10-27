@@ -7,6 +7,7 @@ internal static class DashboardWindowTests
 {
     internal static void Run(Action<bool, string> assert)
     {
+        DashboardCaptionPaletteTests.Run(assert);
         CheckPlacementPreferences(assert);
         assert(Program.ResolveDataDirectory("D:/Example/Companion", null) == Path.Combine("D:/Example/Companion", "data"),
             "single-instance discovery and storage share the default data directory");
@@ -144,7 +145,10 @@ internal static class DashboardWindowTests
         // Caption/text colors support setting, not reading (Get returns E_INVALIDARG).
         assert(DashboardWindow.ApplyNativeTheme(handle, false),
             "Windows accepts the native dark caption, background color and readable title text");
-        assert(DashboardWindow.ApplyNativeTheme(handle, true),
+        window.SetGraphicalStyle("nerazim");
+        assert(DashboardWindow.ApplyNativeTheme(handle, false, "nerazim"),
+            "Windows accepts the selected native caption palette on an existing unshown handle");
+        assert(DashboardWindow.ApplyNativeTheme(handle, true, "nerazim"),
             "Windows accepts restoring default caption colors for high contrast");
         assert(!window.Visible && !window.Status.Ready && window.Status.RuntimeVersion is null &&
             window.FormBorderStyle == FormBorderStyle.Sizable && window.MaximizeBox && window.MinimizeBox &&

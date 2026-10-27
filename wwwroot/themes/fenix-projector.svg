@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="220" viewBox="0 0 200 220">
+ <defs><linearGradient id="beam" x2="0" y2="1"><stop stop-color="#f2c883" stop-opacity="0"/><stop offset="1" stop-color="#f2c883" stop-opacity=".13"/></linearGradient><radialGradient id="core"><stop stop-color="#fff0c4" stop-opacity=".7"/><stop offset=".2" stop-color="#e8ad47" stop-opacity=".3"/><stop offset="1" stop-color="#e8ad47" stop-opacity="0"/></radialGradient></defs>
+ <path d="M39 124L83 189H117L161 124" fill="url(#beam)"/>
+ <g fill="none" stroke="#e4b66c" stroke-width=".7">
+  <circle cx="100" cy="87" r="73" stroke-opacity=".32"/>
+  <circle cx="100" cy="87" r="79" stroke-opacity=".16" stroke-dasharray="1 6"/>
+  <path d="M29 64A75 75 0 0 1 72 17 M128 17A75 75 0 0 1 171 64 M171 110A75 75 0 0 1 128 157 M72 157A75 75 0 0 1 29 110" stroke-opacity=".75" stroke-width="1.4"/>
+  <path d="M100 4V12 M100 162V170 M17 87H25 M175 87H183 M38 25L44 31 M156 143L162 149 M38 149L44 143 M156 31L162 25" stroke-opacity=".6"/>
+  <ellipse cx="100" cy="189" rx="53" ry="9" stroke-opacity=".65"/>
+  <ellipse cx="100" cy="189" rx="39" ry="5" stroke-opacity=".45"/>
+  <path d="M47 189V194L63 203H137L153 194V189 M72 209H128" stroke-opacity=".32"/>
+ </g>
+ <ellipse cx="100" cy="187" rx="42" ry="11" fill="url(#core)"/>
+ <path d="M93 187H107" stroke="#ffdc8b" stroke-width="1.2" stroke-opacity=".8"/>
+</svg>

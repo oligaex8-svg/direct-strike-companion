@@ -1,0 +1,11 @@
+/* Finish the actual console face under its complete native rim. A rectangular
+   host background previously left black steps under each native shoulder. */
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .work-console{background:none!important}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .work-console::after{
+ content:''!important;position:absolute;pointer-events:none;z-index:-1;
+ inset:calc(0px - var(--shell-frame-size));top:calc(0px - var(--shell-frame-size) - var(--skin-shell-rise));
+ border:1px solid transparent;border-image:none;box-sizing:content-box;width:auto;height:auto;transform:none;
+ background:linear-gradient(180deg,var(--shell-header) 20px,var(--shell-well) var(--shell-head-size))!important;
+ clip-path:var(--shell38-backing-outline)
+}
+@media(forced-colors:active){:root[data-native-console]:not([data-graphical-style=fenix]) .work-console::after{display:none!important}}

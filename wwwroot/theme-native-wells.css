@@ -1,0 +1,21 @@
+/* Inset casing has one material owner. Complete own-console turns replace the
+   flat prototype frames; their source-adjacent rails meet without a second rim.
+   Paint stays inside existing padding/outside into existing gutters. */
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card)::before{
+ border-image:var(--skin-well37-image) var(--skin-well37-slice) / var(--skin-well37-paint) / var(--skin-well37-outset) stretch!important;
+ inset:0!important;mask-image:none!important;filter:drop-shadow(0 2px 2px #0009);
+}
+/* A table's scroll clip is the real edge. Its native casing paints inward. */
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .work-console .table-wrap::before{
+ inset:0!important;border-image-width:24px!important;border-image-outset:0!important;filter:none;
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.sidebar nav,.sidebar .sidebar-bottom,dialog,dialog#player-dialog){
+ border-image:var(--skin-well37-image) var(--skin-well37-slice) / var(--skin-well37-paint) / var(--skin-well37-outset) stretch!important;
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.sidebar nav,.sidebar .sidebar-bottom){
+ border-image-width:var(--skin-well37-compact-paint)!important;border-image-outset:var(--skin-well37-compact-outset)!important;
+}
+@media(forced-colors:active){
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card)::before{display:none!important;filter:none}
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.sidebar nav,.sidebar .sidebar-bottom,dialog,dialog#player-dialog){border-image:none!important;border-color:CanvasText!important}
+}

@@ -1,0 +1,11 @@
+/* One stepped compositor transform addresses both atlas coordinates atomically. */
+.theme-vfx-layer{position:absolute;z-index:0;pointer-events:none!important;user-select:none;contain:paint;overflow:hidden}
+.vfx-loop-window{position:absolute;left:0;top:0;width:var(--loop-width);height:var(--loop-height);overflow:hidden;transform-origin:top left}
+.theme-vfx-layer .vfx-loop-poster{position:absolute;inset:0;width:var(--loop-width);height:var(--loop-height);max-width:none;border:0;box-shadow:none}
+.vfx-loop-x,.vfx-loop-y{position:absolute;left:0;top:0;width:var(--loop-atlas-width);height:var(--loop-atlas-height)}
+.theme-vfx-layer[data-vfx-active=true] .vfx-loop-x{will-change:transform}
+.theme-vfx-layer .vfx-loop-atlas{position:absolute;left:0;top:0;width:var(--loop-atlas-width);height:var(--loop-atlas-height);max-width:none;max-height:none;border:0;box-shadow:none}
+.theme-vfx-layer:not([data-vfx-has-frame=true]) .vfx-loop-x{visibility:hidden}
+.theme-vfx-layer[data-vfx-has-frame=true] .vfx-loop-poster{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.theme-vfx-layer .vfx-loop-x{visibility:hidden}.theme-vfx-layer[data-vfx-has-frame=true] .vfx-loop-poster{visibility:visible}}
+@media(forced-colors:active){.theme-vfx-layer{display:none!important}}

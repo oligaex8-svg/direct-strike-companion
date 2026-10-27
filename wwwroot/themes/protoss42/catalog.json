@@ -1,0 +1,63 @@
+{
+  "version": 45,
+  "frames": 312,
+  "columns": 16,
+  "rows": 20,
+  "tile": [
+    246,
+    276
+  ],
+  "duration": 13000,
+  "crop": {
+    "left": 5,
+    "top": 51,
+    "width": 246,
+    "height": 276
+  },
+  "atlas": "/themes/protoss42/pylon-atlas.webp",
+  "poster": "/themes/protoss42/pylon-poster.webp",
+  "atlasSHA256": "bd846ddb8dcc2576b66426e83fa00d55f63dffa616f8f4c1c56a706aac599362",
+  "posterSHA256": "8c64e96c576e8fcfb0a572eb65bd5a6241421f28759d2af8ff2d6a15f08883cf",
+  "source": {
+    "sourceModelSHA256": "c129f33bcf1d70b41a93a2513bdd61394a3f370627d6ca2a1eea6601d2ccf788",
+    "frames": 312,
+    "width": 256,
+    "height": 352,
+    "rawWidth": 512,
+    "rawHeight": 704,
+    "duration": 13000,
+    "nativeSequence": "Stand",
+    "blender": "5.2.3 LTS",
+    "meshVertices": 1153,
+    "triangles": 1354,
+    "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local45-pylon\\rgba-8e7b504b05",
+    "fingerprint": "7a15d27fc3ae3af902c3fc8b84922b07e3c58dca4fdfe253209e042e11e0a334",
+    "controllers": {
+      "crystal": {
+        "bone": "Ref_Turret",
+        "nativeDegreesPerSecond": 27.9492,
+        "loopTurns": 1
+      },
+      "outerArms": {
+        "bone": "Ref_TurretZ",
+        "nativeDegreesPerSecond": 54.8437,
+        "loopTurns": 2
+      }
+    },
+    "effectiveRates": {
+      "crystal": 27.692307692307693,
+      "outerArms": 55.38461538461539
+    },
+    "effects": [
+      "native glow billboard emitter",
+      "native specular map",
+      "alpha-correct crystal with native vertex normals",
+      "native vertex normals and alpha mask, stable reflection",
+      "radiance bloom with soft alpha",
+      "animated native power grid",
+      "occasional native-texture warp transfer"
+    ]
+  },
+  "decodedMiB": 82.880859375,
+  "provenance": "Native Blizzard SC2 Pylon mesh, UVs, DDS textures and Stand bone tracks. Blender-authored lighting, camera and original SC2 power-field plane. Actor turret rotation, native glow-emitter reconstruction, specular/reflection textures and alpha-safe bloom. Offline rendering, not a generated approximation."
+}

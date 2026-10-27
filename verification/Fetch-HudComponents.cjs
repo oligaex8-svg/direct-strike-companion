@@ -6,13 +6,14 @@ const read=async(name,list)=>{const file=path.join(__dirname,name+'.json');if(fs
 const ui=(await read('ui-asset-catalog','ui')).items,consoles=(await read('console-asset-catalog','consoles')).items;
 const roles=['menubar_background','menubutton_normal','menubutton_hover','menubutton_pressed','menubutton_selected','chatbar_background','commandbutton_normal','commandbutton_highlighted','commandbutton_superhighlighted','controlgroupbutton_normal','controlgroupbutton_hover','controlgroupbutton_pressed','timer_background','helperbutton_background','tooltip_background','minimapbutton_normal','minimapbutton_hover','minimapbutton_selected'];
 const jobs=[];
-for(const family of ['defaultprotoss','defaultterran','defaultzerg','purifier','nerazim'])for(const role of roles){
+for(const family of new Set(require('../wwwroot/native-console-catalog.json').map(x=>x.family)))for(const role of roles){
  const name='ui_console_'+role+'_'+family,item=ui.find(x=>x.name.toLowerCase()===name);
  if(!item)throw Error('Archive lacks '+name);
  jobs.push({file:item.name+'.png',image:item.image,role,family});
 }
 const unitInfo=ui.find(x=>x.name==='ui_console_panel_unitinfo_nerazim');if(!unitInfo)throw Error('Archive lacks Nerazim unit-info rail');jobs.push({file:unitInfo.name+'.png',image:unitInfo.image,role:'unit-info panel rails',family:'nerazim'});
-for(const [style,name] of Object.entries({'protoss-nerazim':'sc2_ui_collection_huds_large_consoleprotoss_nerazim','fenix':'sc2_ui_collection_huds_large_fenix_consoleprotoss','classic-terran':'sc2_ui_collection_huds_large_consoleterran_classic','classic-protoss':'sc2_ui_collection_huds_large_consoleprotoss_classic','classic-zerg':'sc2_ui_collection_huds_large_consolezerg_classic'})){
+for(const {id:style,preview} of require('../wwwroot/native-console-catalog.json')){
+ const name='sc2_ui_collection_huds_large_'+preview;
  const item=consoles.find(x=>x.name===name);
  jobs.push({file:'console-'+style+'.png',image:item.image,role:'original HUD console render',family:style});
 }

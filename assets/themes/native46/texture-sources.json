@@ -1,0 +1,37 @@
+[
+  {
+    "sha256": "d38ad761cfb008d63f4f8fb2cb5cf1d8aa92463f6e6435cea32990ec17f91380",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/Textures/creep.dds",
+    "file": "creep.dds"
+  },
+  {
+    "sha256": "1e8f30b4a8b8087da180ec4e89c39dba71e0cf00be6f628e8251f01e884222ff",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/Textures/creepheight.dds",
+    "file": "creepheight.dds"
+  },
+  {
+    "sha256": "c4cc572b3863aa6854391dda5a49c465aa8210c4ce7dda11156f33c740cdc4b3",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/Textures/creepspecularmask.dds",
+    "file": "creepspecularmask.dds"
+  },
+  {
+    "sha256": "0e3ed838d71067ee8580530f4c48327f1b6fd8221e2a5ddd83c5d721f4a61a16",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/Textures/creeptexturedisplacement.dds",
+    "file": "creeptexturedisplacement.dds"
+  },
+  {
+    "sha256": "f06eca3dc4924fa51033f8e17f6cae95f5bebed43007c7dc3c9e804f7a915c43",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergeggcolor.dds",
+    "file": "zergeggcolor.dds"
+  },
+  {
+    "sha256": "ce98a836d096119c0ab2ce87483577476d82be426e2a0b66ab82f5b60beb9cbe",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergeggnormal.dds",
+    "file": "zergeggnormal.dds"
+  },
+  {
+    "sha256": "c6a3854d6a69e2ed9d0e588be1bb3a02be6215061dc04719e44227640ea6e7d4",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergeggspecular.dds",
+    "file": "zergeggspecular.dds"
+  }
+]

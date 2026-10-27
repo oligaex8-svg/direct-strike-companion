@@ -1,0 +1,1244 @@
+{
+  "version": 1,
+  "generatorSha256": "703f337e7f7be8cf667107caebbc79c941339d55bcfe39b04cf87924269c28bb",
+  "provenance": "Registered coloured/luminous pixels copied from existing companion console shell artwork; no invented light geometry; not a new native export.",
+  "themes": {
+    "protoss": {
+      "hue": [
+        175,
+        255
+      ],
+      "mode": "refraction",
+      "duration": 6400,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/protoss-console-shell-frame.png",
+      "sourceSha256": "f3f1f132abe41f05d0d921ad4d38ad36d72734d726d06c887ff9d079d89ca3bb",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/protoss-left.png",
+          "sha256": "a764ea530f8fed828ccd90c0eb9f329920beffb08bc857aa6286316c5e591600",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/protoss-center.png",
+          "sha256": "46f8c4069b4a7a00243c0130f3d7e677e2b7ad02eb750ff98783c31a89e10ba0",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/protoss-right.png",
+          "sha256": "ad05504c917327a3ac721f116aca7ab1cf573c189f5b807f7b9c6fa21da7918b",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 1330,
+          "centerX": 269.5,
+          "energy": 512.5667327046394
+        },
+        {
+          "pixels": 1330,
+          "centerX": 269.5,
+          "energy": 512.5667327046394
+        },
+        {
+          "pixels": 32,
+          "centerX": 39.5,
+          "energy": 11.960543617606163
+        },
+        {
+          "pixels": 32,
+          "centerX": 499.5,
+          "energy": 11.960543617606163
+        },
+        {
+          "pixels": 32,
+          "centerX": 39.5,
+          "energy": 11.960543617606163
+        },
+        {
+          "pixels": 32,
+          "centerX": 499.5,
+          "energy": 11.960543617606163
+        }
+      ]
+    },
+    "nerazim": {
+      "hue": [
+        95,
+        175
+      ],
+      "mode": "refraction",
+      "duration": 7200,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/nerazim-console-shell-frame.png",
+      "sourceSha256": "50486f84135a1e745af8976963982862ce873166ba001c6b45c8b72a3b7cbd08",
+      "width": 600,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/nerazim-left.png",
+          "sha256": "421eecad63d5bedf6d66ef6b7dc846e16fcc68e2263424b1f86daf0e4aa3d362",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/nerazim-right.png",
+          "sha256": "ba636f12d0288679b23b6463fae3be6cfeb86cf91830d8a4bddf7cba66a495ea",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 6,
+          "centerX": 29.166666666666668,
+          "energy": 4.022649869322777
+        },
+        {
+          "pixels": 6,
+          "centerX": 569.8333333333334,
+          "energy": 4.022649869322777
+        },
+        {
+          "pixels": 6,
+          "centerX": 29.166666666666668,
+          "energy": 4.022649869322777
+        },
+        {
+          "pixels": 6,
+          "centerX": 569.8333333333334,
+          "energy": 4.022649869322777
+        },
+        {
+          "pixels": 3,
+          "centerX": 39.666666666666664,
+          "energy": 2.611149847507477
+        },
+        {
+          "pixels": 3,
+          "centerX": 559.3333333333334,
+          "energy": 2.611149847507477
+        },
+        {
+          "pixels": 3,
+          "centerX": 39.666666666666664,
+          "energy": 2.611149847507477
+        },
+        {
+          "pixels": 3,
+          "centerX": 559.3333333333334,
+          "energy": 2.611149847507477
+        },
+        {
+          "pixels": 7,
+          "centerX": 30.428571428571427,
+          "energy": 1.5330006778240204
+        },
+        {
+          "pixels": 7,
+          "centerX": 568.5714285714286,
+          "energy": 1.5330006778240204
+        }
+      ]
+    },
+    "alarak": {
+      "hue": [
+        345,
+        45
+      ],
+      "minValue": 0.055,
+      "minSaturation": 0.16,
+      "mode": "ember",
+      "duration": 5100,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/alarak-console-shell-frame.png",
+      "sourceSha256": "00f5f2c3c2377309d254630c62be3410d0e6c7c7765433be193399326f7b33ae",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/alarak-left.png",
+          "sha256": "24e43e461270835822022921f69e9359dcb4de0186d01bc51cf54d16bef17cea",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/alarak-center.png",
+          "sha256": "e6ea6e628a47816b22da7ae011ad96ef089a1922d122100ebdfd115de6eb6004",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/alarak-right.png",
+          "sha256": "b42d962830aa674de05ffe60dbc28bd8c507e2797e4c67562c3a92d0f21ce626",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 1022,
+          "centerX": 11.720156555772995,
+          "energy": 414.2363814711571
+        },
+        {
+          "pixels": 1022,
+          "centerX": 527.279843444227,
+          "energy": 414.2363814711571
+        },
+        {
+          "pixels": 504,
+          "centerX": 269.5,
+          "energy": 109.52941274642944
+        },
+        {
+          "pixels": 504,
+          "centerX": 269.5,
+          "energy": 109.52941274642944
+        }
+      ]
+    },
+    "ihanrii": {
+      "hue": [
+        125,
+        190
+      ],
+      "mode": "indicators",
+      "duration": 4800,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/ihanrii-console-shell-frame.png",
+      "sourceSha256": "2c62b863707f7d3c161eed1faf26411201164cad1e68f363a5d7299349bafa0c",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/ihanrii-left.png",
+          "sha256": "b04662f36d092e9a80d4e43ba41733205fd23c88a307b7e7d22c07475385b077",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/ihanrii-right.png",
+          "sha256": "7eeafe2f9dca0121ab9243bac5030577bdaea6949d46dcf098ae7e1fcc76d24d",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 36,
+          "centerX": 16.583333333333332,
+          "energy": 18.514427304267883
+        },
+        {
+          "pixels": 36,
+          "centerX": 522.4166666666666,
+          "energy": 18.514427304267883
+        },
+        {
+          "pixels": 36,
+          "centerX": 16.583333333333332,
+          "energy": 18.514427304267883
+        },
+        {
+          "pixels": 36,
+          "centerX": 522.4166666666666,
+          "energy": 18.514427304267883
+        },
+        {
+          "pixels": 23,
+          "centerX": 5.782608695652174,
+          "energy": 10.916325986385345
+        },
+        {
+          "pixels": 23,
+          "centerX": 533.2173913043479,
+          "energy": 10.916325986385345
+        },
+        {
+          "pixels": 23,
+          "centerX": 5.782608695652174,
+          "energy": 10.916325986385345
+        },
+        {
+          "pixels": 23,
+          "centerX": 533.2173913043479,
+          "energy": 10.916325986385345
+        },
+        {
+          "pixels": 5,
+          "centerX": 80.4,
+          "energy": 1.388637475669384
+        },
+        {
+          "pixels": 5,
+          "centerX": 458.6,
+          "energy": 1.388637475669384
+        }
+      ]
+    },
+    "terran": {
+      "hue": [
+        85,
+        165
+      ],
+      "mode": "refraction",
+      "duration": 4400,
+      "selection": "material-reflection",
+      "source": "/themes/terran-console-shell-frame.png",
+      "sourceSha256": "5b42fe69c96e3230c774b0a2f4d3a819d58634b7cc1610ff3b021239314b31b7",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/terran-left.png",
+          "sha256": "416ad5bdc483f29c895da67bc26e80883570caeb0d8f7186849012695fbfb647",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/terran-center.png",
+          "sha256": "d6aec8d493074e988b6bae42ec73c4ce09c045bc7d3d899bb065da653d539c02",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/terran-right.png",
+          "sha256": "39ebbed7f2b2c476e98f77b3aeae5abc06e80289e8ab7b6ae6f1198d41f567f2",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 2748,
+          "centerX": 269.5,
+          "energy": 1852.0386064350605
+        },
+        {
+          "pixels": 428,
+          "centerX": 269.5,
+          "energy": 170.98289075493813
+        },
+        {
+          "pixels": 428,
+          "centerX": 269.5,
+          "energy": 170.98289075493813
+        },
+        {
+          "pixels": 242,
+          "centerX": 11.512396694214877,
+          "energy": 133.03416430950165
+        },
+        {
+          "pixels": 242,
+          "centerX": 527.4876033057851,
+          "energy": 133.03416430950165
+        },
+        {
+          "pixels": 23,
+          "centerX": 7.521739130434782,
+          "energy": 18.518592923879623
+        },
+        {
+          "pixels": 23,
+          "centerX": 531.4782608695652,
+          "energy": 18.518592923879623
+        },
+        {
+          "pixels": 23,
+          "centerX": 7.521739130434782,
+          "energy": 18.518592923879623
+        },
+        {
+          "pixels": 23,
+          "centerX": 531.4782608695652,
+          "energy": 18.518592923879623
+        },
+        {
+          "pixels": 66,
+          "centerX": 54.5,
+          "energy": 15.781186446547508
+        }
+      ]
+    },
+    "nova": {
+      "hue": [
+        140,
+        235
+      ],
+      "mode": "indicators",
+      "duration": 5700,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/nova-console-shell-frame.png",
+      "sourceSha256": "7ab09698ba635a80e8622cf8b669286aa5e566bee38606a5045f97cf2b04ed80",
+      "width": 550,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/nova-left.png",
+          "sha256": "eefd5d2051aaf2a9f35c915381be0885b51eb853dddccb2a4e0966a33ed213dd",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/nova-right.png",
+          "sha256": "1793001899b7d27e38b08a7776f8677dcf180ec698053b9cc3757195e38baa35",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 8,
+          "centerX": 16.5,
+          "energy": 3.802282005548477
+        },
+        {
+          "pixels": 8,
+          "centerX": 532.5,
+          "energy": 3.802282005548477
+        },
+        {
+          "pixels": 8,
+          "centerX": 16.5,
+          "energy": 3.802282005548477
+        },
+        {
+          "pixels": 8,
+          "centerX": 532.5,
+          "energy": 3.802282005548477
+        },
+        {
+          "pixels": 6,
+          "centerX": 17.5,
+          "energy": 1.240525245666504
+        },
+        {
+          "pixels": 6,
+          "centerX": 531.5,
+          "energy": 1.240525245666504
+        },
+        {
+          "pixels": 6,
+          "centerX": 17.5,
+          "energy": 1.240525245666504
+        },
+        {
+          "pixels": 6,
+          "centerX": 531.5,
+          "energy": 1.240525245666504
+        }
+      ]
+    },
+    "mira": {
+      "hue": [
+        15,
+        65
+      ],
+      "minValue": 0.07,
+      "minSaturation": 0.16,
+      "mode": "ember",
+      "duration": 6300,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/mira-console-shell-frame.png",
+      "sourceSha256": "1d8977de466f1d1e00f05fa5fce4f92955fa3b480f8bf26a0d777fdff62d503d",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/mira-left.png",
+          "sha256": "b9db8173bcab55de9f162003ca5ce6065543d8d39efe5cd39aad91f9ad2f54f7",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/mira-right.png",
+          "sha256": "437bf5ecff1fd24d442fc1238650548c7a18641772d73c108de15a09fde33f5f",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 22,
+          "centerX": 8.909090909090908,
+          "energy": 5.657143175601959
+        },
+        {
+          "pixels": 22,
+          "centerX": 530.0909090909091,
+          "energy": 5.657143175601959
+        },
+        {
+          "pixels": 18,
+          "centerX": 11,
+          "energy": 4.628571689128876
+        },
+        {
+          "pixels": 18,
+          "centerX": 528,
+          "energy": 4.628571689128876
+        },
+        {
+          "pixels": 6,
+          "centerX": 81.5,
+          "energy": 1.3237214982509613
+        },
+        {
+          "pixels": 6,
+          "centerX": 457.5,
+          "energy": 1.3237214982509613
+        },
+        {
+          "pixels": 6,
+          "centerX": 81.5,
+          "energy": 1.3237214982509613
+        },
+        {
+          "pixels": 6,
+          "centerX": 457.5,
+          "energy": 1.3237214982509613
+        },
+        {
+          "pixels": 6,
+          "centerX": 29.166666666666668,
+          "energy": 0.8039216101169586
+        },
+        {
+          "pixels": 6,
+          "centerX": 509.8333333333333,
+          "energy": 0.8039216101169586
+        }
+      ]
+    },
+    "machined": {
+      "hue": [
+        20,
+        65
+      ],
+      "minValue": 0.06,
+      "minSaturation": 0.16,
+      "mode": "ember",
+      "duration": 6100,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/machined-console-shell-frame.png",
+      "sourceSha256": "ca9fee9b74775686a04d5f3ac52606beda46c67efe857f9d162a3c743971b3d4",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/machined-left.png",
+          "sha256": "7cb4483513a453651eb3bf6a7ecebb19e13c64da9cd6c04b11b450525e701e21",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/machined-right.png",
+          "sha256": "023f7d02cfa674351d62c78e16c9582f484c29a2cc94d5bc605e51a09711c962",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 241,
+          "centerX": 37.85892116182573,
+          "energy": 64.33887284249067
+        },
+        {
+          "pixels": 241,
+          "centerX": 501.1410788381743,
+          "energy": 64.33887284249067
+        },
+        {
+          "pixels": 241,
+          "centerX": 37.85892116182573,
+          "energy": 64.33887284249067
+        },
+        {
+          "pixels": 241,
+          "centerX": 501.1410788381743,
+          "energy": 64.33887284249067
+        },
+        {
+          "pixels": 111,
+          "centerX": 94.09909909909909,
+          "energy": 26.36768475174904
+        },
+        {
+          "pixels": 111,
+          "centerX": 444.9009009009009,
+          "energy": 26.36768475174904
+        },
+        {
+          "pixels": 111,
+          "centerX": 94.09909909909909,
+          "energy": 26.36768475174904
+        },
+        {
+          "pixels": 111,
+          "centerX": 444.9009009009009,
+          "energy": 26.36768475174904
+        },
+        {
+          "pixels": 112,
+          "centerX": 141.71428571428572,
+          "energy": 22.968332059681416
+        },
+        {
+          "pixels": 112,
+          "centerX": 397.2857142857143,
+          "energy": 22.968332059681416
+        }
+      ]
+    },
+    "tyrador": {
+      "hue": [
+        170,
+        235
+      ],
+      "mode": "indicators",
+      "duration": 5900,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/tyrador-console-shell-frame.png",
+      "sourceSha256": "1d1afd778c83435c962fe7c8b084685b5574e15f36081ea528e0475607695aa5",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/tyrador-left.png",
+          "sha256": "dcf02159abfe92d188383dc722e50a169e866c5a9df3fe7cc1ae6b930a31dae1",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/tyrador-right.png",
+          "sha256": "a061f8d494dc138d56a8d2703f0ebab127bceb44b69728cec77602588eff9f1c",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 90,
+          "centerX": 54,
+          "energy": 47.98629006743431
+        },
+        {
+          "pixels": 90,
+          "centerX": 485,
+          "energy": 47.98629006743431
+        },
+        {
+          "pixels": 90,
+          "centerX": 54,
+          "energy": 47.98629006743431
+        },
+        {
+          "pixels": 90,
+          "centerX": 485,
+          "energy": 47.98629006743431
+        },
+        {
+          "pixels": 32,
+          "centerX": 59.5,
+          "energy": 11.043845117092133
+        },
+        {
+          "pixels": 32,
+          "centerX": 479.5,
+          "energy": 11.043845117092133
+        },
+        {
+          "pixels": 32,
+          "centerX": 59.5,
+          "energy": 11.043845117092133
+        },
+        {
+          "pixels": 32,
+          "centerX": 479.5,
+          "energy": 11.043845117092133
+        },
+        {
+          "pixels": 8,
+          "centerX": 17.5,
+          "energy": 0.8941774070262909
+        },
+        {
+          "pixels": 8,
+          "centerX": 521.5,
+          "energy": 0.8941774070262909
+        }
+      ]
+    },
+    "zerg": {
+      "hue": [
+        300,
+        40
+      ],
+      "mode": "tissue",
+      "duration": 8200,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/zerg-console-shell-frame.png",
+      "sourceSha256": "858aa8ec15f36d679fa93423a65e17c56c06fffbb8e39ee40f56a678b8922f32",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/zerg-left.png",
+          "sha256": "4df47becc910ee7b214494a456d130b4729e00c63d807a7a62f6a4764258f1be",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/zerg-right.png",
+          "sha256": "6e5cc373a668b876a604650568437af4efdad65358c6f8afbe97c2b066778672",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 175,
+          "centerX": 137.82857142857142,
+          "energy": 63.160278633236885
+        },
+        {
+          "pixels": 175,
+          "centerX": 401.1714285714286,
+          "energy": 63.160278633236885
+        },
+        {
+          "pixels": 175,
+          "centerX": 137.82857142857142,
+          "energy": 63.160278633236885
+        },
+        {
+          "pixels": 175,
+          "centerX": 401.1714285714286,
+          "energy": 63.160278633236885
+        },
+        {
+          "pixels": 201,
+          "centerX": 60.80597014925373,
+          "energy": 48.972617246210575
+        },
+        {
+          "pixels": 201,
+          "centerX": 478.1940298507463,
+          "energy": 48.972617246210575
+        },
+        {
+          "pixels": 201,
+          "centerX": 60.80597014925373,
+          "energy": 48.972617246210575
+        }
+      ]
+    },
+    "abathur": {
+      "hue": [
+        55,
+        115
+      ],
+      "mode": "tissue",
+      "duration": 7500,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/abathur-console-shell-frame.png",
+      "sourceSha256": "39021bbbb63b443cacf4ba452d191dce11292df28f4795f0c6e0f9d0037c3568",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/abathur-left.png",
+          "sha256": "e38fdc3553501a98761e8032570a345c0e196e442efa38b7bff2bf343092eae1",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/abathur-right.png",
+          "sha256": "e54224e7facab04161404ff740ddbab16b81d695c9fed9c70768fa59652d8402",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 25,
+          "centerX": 56.72,
+          "energy": 8.263324327766895
+        },
+        {
+          "pixels": 25,
+          "centerX": 482.28,
+          "energy": 8.263324327766895
+        },
+        {
+          "pixels": 25,
+          "centerX": 56.72,
+          "energy": 8.263324327766895
+        },
+        {
+          "pixels": 25,
+          "centerX": 482.28,
+          "energy": 8.263324327766895
+        },
+        {
+          "pixels": 5,
+          "centerX": 52.2,
+          "energy": 0.6597766950726509
+        },
+        {
+          "pixels": 5,
+          "centerX": 486.8,
+          "energy": 0.6597766950726509
+        },
+        {
+          "pixels": 5,
+          "centerX": 52.2,
+          "energy": 0.6597766950726509
+        }
+      ]
+    },
+    "dehaka": {
+      "hue": [
+        15,
+        75
+      ],
+      "mode": "tissue",
+      "duration": 9100,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/dehaka-console-shell-frame.png",
+      "sourceSha256": "97b6a9a0f47d3ca2997cd464fe96e3b3b7b9762d408b6a0a17be909dc4af84e2",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/dehaka-left.png",
+          "sha256": "44dbb855e0883d4a33bcd9ec59b1532e5a33e2b9e45f43feeaa37377ce47317f",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/dehaka-right.png",
+          "sha256": "bdd0342d220d62576d43bdeb55771beca0db583e08cb1824a08405b2413daaa9",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 15,
+          "centerX": 155.66666666666666,
+          "energy": 3.773955374956131
+        },
+        {
+          "pixels": 15,
+          "centerX": 383.3333333333333,
+          "energy": 3.773955374956131
+        },
+        {
+          "pixels": 15,
+          "centerX": 155.66666666666666,
+          "energy": 3.773955374956131
+        },
+        {
+          "pixels": 15,
+          "centerX": 383.3333333333333,
+          "energy": 3.773955374956131
+        }
+      ]
+    },
+    "cerberus": {
+      "hue": [
+        50,
+        180
+      ],
+      "mode": "tissue",
+      "duration": 7900,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/cerberus-console-shell-frame.png",
+      "sourceSha256": "6b47677d7cc1f750a1bdbc52a7e5330551552743007f9b439066a012b6ec3da4",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/cerberus-left.png",
+          "sha256": "03804cd9e5ecd4c294687679322bdcf118fc1c63b929036d7c3717ce8d18065b",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/cerberus-right.png",
+          "sha256": "a0f974d8481fc7c3406bc78fe08cf04d48e051d8bdcc538b8be467109c52f38c",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 42,
+          "centerX": 9.166666666666666,
+          "energy": 12.691754184663296
+        },
+        {
+          "pixels": 42,
+          "centerX": 529.8333333333334,
+          "energy": 12.691754184663296
+        },
+        {
+          "pixels": 42,
+          "centerX": 9.166666666666666,
+          "energy": 12.691754184663296
+        },
+        {
+          "pixels": 42,
+          "centerX": 529.8333333333334,
+          "energy": 12.691754184663296
+        },
+        {
+          "pixels": 7,
+          "centerX": 22.428571428571427,
+          "energy": 1.9311824887990952
+        },
+        {
+          "pixels": 7,
+          "centerX": 516.5714285714286,
+          "energy": 1.9311824887990952
+        },
+        {
+          "pixels": 7,
+          "centerX": 22.428571428571427,
+          "energy": 1.9311824887990952
+        }
+      ]
+    },
+    "mecha": {
+      "hue": [
+        20,
+        65
+      ],
+      "mode": "refraction",
+      "duration": 5600,
+      "selection": "material-reflection",
+      "source": "/themes/mecha-console-shell-frame.png",
+      "sourceSha256": "0412e55462b502ed608561d51179d9253061f21ffae7d049f9641b17a7ee61a4",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/mecha-left.png",
+          "sha256": "3a60ab12c871735d176f68f4efd01736d675d871cb28fc11b4106fe1953958bd",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/mecha-center.png",
+          "sha256": "8a1c581d78d67c886f17d10049abe38a62a65971cee9b27f379ba97032c03b30",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/mecha-right.png",
+          "sha256": "1045b656bea206d5e8e9bb69228bdf1a927eb8fc6ccfb2387b838af77b02ab86",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 648,
+          "centerX": 9.160493827160494,
+          "energy": 472.2481897473335
+        },
+        {
+          "pixels": 648,
+          "centerX": 529.8395061728395,
+          "energy": 472.2481897473335
+        },
+        {
+          "pixels": 372,
+          "centerX": 269.5,
+          "energy": 282.3850718140602
+        },
+        {
+          "pixels": 372,
+          "centerX": 269.5,
+          "energy": 282.3850718140602
+        },
+        {
+          "pixels": 32,
+          "centerX": 19.09375,
+          "energy": 25.583930283784866
+        },
+        {
+          "pixels": 32,
+          "centerX": 519.90625,
+          "energy": 25.583930283784866
+        },
+        {
+          "pixels": 32,
+          "centerX": 19.09375,
+          "energy": 25.583930283784866
+        },
+        {
+          "pixels": 32,
+          "centerX": 519.90625,
+          "energy": 25.583930283784866
+        },
+        {
+          "pixels": 40,
+          "centerX": 60.2,
+          "energy": 17.389254808425903
+        },
+        {
+          "pixels": 40,
+          "centerX": 478.8,
+          "energy": 17.389254808425903
+        }
+      ]
+    },
+    "arcade": {
+      "hue": [
+        265,
+        335
+      ],
+      "mode": "indicators",
+      "duration": 4600,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/arcade-console-shell-frame.png",
+      "sourceSha256": "1a9f5fb4c49a08ae7e96bcae9e0ee0020f61ac8f18977ef652903972c6ecee01",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/arcade-left.png",
+          "sha256": "026883e0f4cc4506d633093b720026e040a76f96578d1d90ace3d208fa1b8b9a",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/arcade-center.png",
+          "sha256": "17db86e034992682e3e759d73d482781c8a82183f652a2826c33c57b564f65c7",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/arcade-right.png",
+          "sha256": "0bea07873e30a8f829f11d937f8fafe835a2223b0eb8afa13208740752900482",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 722,
+          "centerX": 269.5,
+          "energy": 329.6878329515457
+        },
+        {
+          "pixels": 722,
+          "centerX": 269.5,
+          "energy": 329.6878329515457
+        },
+        {
+          "pixels": 79,
+          "centerX": 14.949367088607595,
+          "energy": 44.38305030763149
+        },
+        {
+          "pixels": 79,
+          "centerX": 524.0506329113924,
+          "energy": 44.38305030763149
+        },
+        {
+          "pixels": 79,
+          "centerX": 14.949367088607595,
+          "energy": 44.38305030763149
+        },
+        {
+          "pixels": 79,
+          "centerX": 524.0506329113924,
+          "energy": 44.38305030763149
+        },
+        {
+          "pixels": 37,
+          "centerX": 53.62162162162162,
+          "energy": 26.99115289747715
+        },
+        {
+          "pixels": 37,
+          "centerX": 485.3783783783784,
+          "energy": 26.99115289747715
+        },
+        {
+          "pixels": 37,
+          "centerX": 53.62162162162162,
+          "energy": 26.99115289747715
+        },
+        {
+          "pixels": 37,
+          "centerX": 485.3783783783784,
+          "energy": 26.99115289747715
+        }
+      ]
+    },
+    "classic-terran": {
+      "hue": [
+        345,
+        35
+      ],
+      "mode": "refraction",
+      "duration": 5200,
+      "selection": "material-reflection",
+      "source": "/themes/classic-terran-console-shell-frame.png",
+      "sourceSha256": "e8bc43afdb2a36061f7a028fbf7324aba2ba6820df7d8ac525bcc856453f8856",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/classic-terran-left.png",
+          "sha256": "433c41702556dd7c4096ccbd959eb0cb0df0cdd8beb027a68bef99972eb2884c",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/classic-terran-center.png",
+          "sha256": "9e2dab17962c2f7b71b1729516cdaf81f37dcee6ddf51633459176fef3faed45",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/classic-terran-right.png",
+          "sha256": "29c3d108be95f7840f56646c517a3fd62f935aa28cd85d352feeb09d709aed4d",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 748,
+          "centerX": 269.5,
+          "energy": 489.5930946469307
+        },
+        {
+          "pixels": 748,
+          "centerX": 269.5,
+          "energy": 489.5930946469307
+        },
+        {
+          "pixels": 744,
+          "centerX": 269.5,
+          "energy": 431.44372752308846
+        },
+        {
+          "pixels": 744,
+          "centerX": 269.5,
+          "energy": 431.44372752308846
+        },
+        {
+          "pixels": 528,
+          "centerX": 269.5,
+          "energy": 289.9197649806738
+        },
+        {
+          "pixels": 528,
+          "centerX": 269.5,
+          "energy": 289.9197649806738
+        },
+        {
+          "pixels": 209,
+          "centerX": 89.08133971291866,
+          "energy": 184.01275153458118
+        },
+        {
+          "pixels": 209,
+          "centerX": 449.91866028708137,
+          "energy": 184.01275153458118
+        },
+        {
+          "pixels": 209,
+          "centerX": 89.08133971291866,
+          "energy": 184.01275153458118
+        },
+        {
+          "pixels": 209,
+          "centerX": 449.91866028708137,
+          "energy": 184.01275153458118
+        }
+      ]
+    },
+    "classic-protoss": {
+      "hue": [
+        165,
+        240
+      ],
+      "mode": "refraction",
+      "duration": 7100,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/classic-protoss-console-shell-frame.png",
+      "sourceSha256": "cefcc49432bcabbcf2e9899a976365d74a2f295d7df4675784245e66fb16702b",
+      "width": 540,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/classic-protoss-left.png",
+          "sha256": "76a67461c7b466c824c5d521af17094bb299ab8d6cd7dfca7d73b26fc7af1207",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/classic-protoss-right.png",
+          "sha256": "e143f732e70236f305d8b527bb408cd49fd7695b80098af26c4be03dfe3658c1",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 24,
+          "centerX": 7,
+          "energy": 3.1833908557891846
+        },
+        {
+          "pixels": 24,
+          "centerX": 532,
+          "energy": 3.1833908557891846
+        }
+      ]
+    },
+    "classic-zerg": {
+      "hue": [
+        340,
+        45
+      ],
+      "mode": "tissue",
+      "duration": 8800,
+      "selection": "chromatic-source-inset",
+      "source": "/themes/classic-zerg-console-shell-frame.png",
+      "sourceSha256": "8f046f07860e2e836c078cbbe4407275b3463111c6b7972f3bd04757f1d4a7aa",
+      "width": 456,
+      "height": 272,
+      "layers": [
+        {
+          "src": "/themes/native-motion36/classic-zerg-left.png",
+          "sha256": "4ffa93fc5d4238135d22a895a312825147ed22116baa459e16601d26a2db624c",
+          "phase": 0
+        },
+        {
+          "src": "/themes/native-motion36/classic-zerg-center.png",
+          "sha256": "4759eab03c6e877e7002edfb48ead637aaa3c0f3a98dc11aee2783af566eae6d",
+          "phase": 0.3333333333333333
+        },
+        {
+          "src": "/themes/native-motion36/classic-zerg-right.png",
+          "sha256": "2e9d768a51955708967bc5d551c2875e79050a233154440733806f082661580f",
+          "phase": 0.6666666666666666
+        }
+      ],
+      "components": [
+        {
+          "pixels": 8372,
+          "centerX": 64.16316292403249,
+          "energy": 6058.892559304833
+        },
+        {
+          "pixels": 8372,
+          "centerX": 390.83683707596754,
+          "energy": 6058.892559304833
+        },
+        {
+          "pixels": 103,
+          "centerX": 100.25242718446601,
+          "energy": 54.3140564262867
+        },
+        {
+          "pixels": 103,
+          "centerX": 354.747572815534,
+          "energy": 54.3140564262867
+        },
+        {
+          "pixels": 103,
+          "centerX": 100.25242718446601,
+          "energy": 54.3140564262867
+        },
+        {
+          "pixels": 103,
+          "centerX": 354.747572815534,
+          "energy": 54.3140564262867
+        },
+        {
+          "pixels": 224,
+          "centerX": 227.5,
+          "energy": 47.988059401512146
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1604 @@
+[
+  {
+    "id": "protoss",
+    "source": "wwwroot/themes/protoss-game-frame.png",
+    "sourceHash": "a405a3ba8e6db8f5bf3b4817af7b49e2318cb3157037d8bcb35407413b48fa31",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original protoss SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-protoss.png",
+    "hash": "4982e509b1a2f602a82735d37b4b633eaadbaed022c7e0c9a62be085a0443f33",
+    "dimensions": [
+      988,
+      988
+    ],
+    "sourceOpaqueBounds": [
+      24,
+      18,
+      999,
+      1001
+    ],
+    "uniformTrim": 18,
+    "removedTailPixels": 25576,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      302,
+      302,
+      302,
+      302
+    ],
+    "paint": [
+      69.029,
+      69.029,
+      69.029,
+      69.029
+    ],
+    "scale": 0.2285728476821192,
+    "outset": [
+      6.057,
+      8.114,
+      6.057,
+      9.029
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 9,
+        "end": 43,
+        "pixels": 35
+      },
+      "vertical": {
+        "start": 22,
+        "end": 53,
+        "pixels": 32
+      },
+      "bottom": {
+        "start": 9,
+        "end": 20,
+        "pixels": 12
+      },
+      "right": {
+        "start": 18,
+        "end": 48,
+        "pixels": 31
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 7.314
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9664,
+      "maxAdjacentChannelDifference": 160,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 44.86885,
+      "outset": [
+        3.3370500000000005,
+        4.674100000000001,
+        3.3370500000000005,
+        5.2688500000000005
+      ]
+    }
+  },
+  {
+    "id": "nerazim",
+    "source": "wwwroot/themes/nerazim-game-frame.png",
+    "sourceHash": "42ed0f695bcdc7edf83e74a62ab30f71a2af9958b2cac75064528cfcb6a22ecb",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original protoss SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-nerazim.png",
+    "hash": "c18e4616f3c4051f95cf3b35c63b902a51899749908f0e233b22bbc751c9bbbd",
+    "dimensions": [
+      988,
+      988
+    ],
+    "sourceOpaqueBounds": [
+      24,
+      18,
+      999,
+      1001
+    ],
+    "uniformTrim": 18,
+    "removedTailPixels": 25576,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      302,
+      302,
+      302,
+      302
+    ],
+    "paint": [
+      69.029,
+      69.029,
+      69.029,
+      69.029
+    ],
+    "scale": 0.2285728476821192,
+    "outset": [
+      6.057,
+      8.114,
+      6.057,
+      9.029
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 9,
+        "end": 43,
+        "pixels": 35
+      },
+      "vertical": {
+        "start": 22,
+        "end": 53,
+        "pixels": 32
+      },
+      "bottom": {
+        "start": 9,
+        "end": 20,
+        "pixels": 12
+      },
+      "right": {
+        "start": 18,
+        "end": 48,
+        "pixels": 31
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 7.314
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9664,
+      "maxAdjacentChannelDifference": 160,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 44.86885,
+      "outset": [
+        3.3370500000000005,
+        4.674100000000001,
+        3.3370500000000005,
+        5.2688500000000005
+      ]
+    }
+  },
+  {
+    "id": "alarak",
+    "source": "wwwroot/themes/alarak-game-frame.png",
+    "sourceHash": "a777c634151abf3834d6fe927fdacb2973bcd192c61c701b651698016bf9c1cb",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original protoss SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-alarak.png",
+    "hash": "2094db20e1eb5245e307f78fcb742d428bc3faafa0f7b42f9591211595f3fd0c",
+    "dimensions": [
+      988,
+      988
+    ],
+    "sourceOpaqueBounds": [
+      24,
+      18,
+      999,
+      1001
+    ],
+    "uniformTrim": 18,
+    "removedTailPixels": 25576,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      302,
+      302,
+      302,
+      302
+    ],
+    "paint": [
+      69.029,
+      69.029,
+      69.029,
+      69.029
+    ],
+    "scale": 0.2285728476821192,
+    "outset": [
+      6.057,
+      8.114,
+      6.057,
+      9.029
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 9,
+        "end": 43,
+        "pixels": 35
+      },
+      "vertical": {
+        "start": 22,
+        "end": 53,
+        "pixels": 32
+      },
+      "bottom": {
+        "start": 9,
+        "end": 20,
+        "pixels": 12
+      },
+      "right": {
+        "start": 18,
+        "end": 48,
+        "pixels": 31
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 7.314
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9664,
+      "maxAdjacentChannelDifference": 160,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 44.86885,
+      "outset": [
+        3.3370500000000005,
+        4.674100000000001,
+        3.3370500000000005,
+        5.2688500000000005
+      ]
+    }
+  },
+  {
+    "id": "ihanrii",
+    "source": "wwwroot/themes/ihanrii-game-frame.png",
+    "sourceHash": "5f45e7c906ec7d6b1a0cc07525409a856f6d15500a7ad7fe4e2830ac968a22e2",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original protoss SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-ihanrii.png",
+    "hash": "6316375cae8049fa5442cab08695606316ecd896cec336f538009d7a008071da",
+    "dimensions": [
+      988,
+      988
+    ],
+    "sourceOpaqueBounds": [
+      24,
+      18,
+      999,
+      1001
+    ],
+    "uniformTrim": 18,
+    "removedTailPixels": 25576,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      302,
+      302,
+      302,
+      302
+    ],
+    "paint": [
+      69.029,
+      69.029,
+      69.029,
+      69.029
+    ],
+    "scale": 0.2285728476821192,
+    "outset": [
+      6.057,
+      8.114,
+      6.057,
+      9.029
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 9,
+        "end": 43,
+        "pixels": 35
+      },
+      "vertical": {
+        "start": 22,
+        "end": 53,
+        "pixels": 32
+      },
+      "bottom": {
+        "start": 9,
+        "end": 20,
+        "pixels": 12
+      },
+      "right": {
+        "start": 18,
+        "end": 48,
+        "pixels": 31
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 7.314
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9664,
+      "maxAdjacentChannelDifference": 160,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 44.86885,
+      "outset": [
+        3.3370500000000005,
+        4.674100000000001,
+        3.3370500000000005,
+        5.2688500000000005
+      ]
+    }
+  },
+  {
+    "id": "terran",
+    "source": "wwwroot/themes/terran-game-frame.png",
+    "sourceHash": "11581945a88c40a8f752450a1a79d0222ed2167c8f86f29486177be4867a6d3b",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original terran SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-terran.png",
+    "hash": "9eed632c3a076e9dc982f1b72016cf41eea298a926e450e95603a7d784384386",
+    "dimensions": [
+      980,
+      980
+    ],
+    "sourceOpaqueBounds": [
+      39,
+      28,
+      984,
+      1001
+    ],
+    "uniformTrim": 22,
+    "removedTailPixels": 26545,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      298,
+      298,
+      298,
+      298
+    ],
+    "paint": [
+      79.467,
+      79.467,
+      79.467,
+      79.467
+    ],
+    "scale": 0.2666677852348993,
+    "outset": [
+      7.2,
+      9.067,
+      4,
+      9.333
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 12,
+        "end": 41,
+        "pixels": 30
+      },
+      "vertical": {
+        "start": 20,
+        "end": 40,
+        "pixels": 21
+      },
+      "bottom": {
+        "start": 0,
+        "end": 10,
+        "pixels": 11
+      },
+      "right": {
+        "start": 19,
+        "end": 39,
+        "pixels": 21
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 5.6
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9536,
+      "maxAdjacentChannelDifference": 134,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 51.65355,
+      "outset": [
+        4.08,
+        5.29355,
+        2,
+        5.46645
+      ]
+    }
+  },
+  {
+    "id": "nova",
+    "source": "wwwroot/themes/nova-game-frame.png",
+    "sourceHash": "75f9274f4d7f1cc55e3bee9b3432c5a13c75a5fe28e592ec5b0315ed911a4bf3",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original terran SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-nova.png",
+    "hash": "b5334bdbb5b3ddf37219baa8ca100998580310839bbc22c4f900b4a2a5c40710",
+    "dimensions": [
+      980,
+      980
+    ],
+    "sourceOpaqueBounds": [
+      39,
+      28,
+      984,
+      1001
+    ],
+    "uniformTrim": 22,
+    "removedTailPixels": 26545,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      298,
+      298,
+      298,
+      298
+    ],
+    "paint": [
+      79.467,
+      79.467,
+      79.467,
+      79.467
+    ],
+    "scale": 0.2666677852348993,
+    "outset": [
+      7.2,
+      9.067,
+      4,
+      9.333
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 12,
+        "end": 41,
+        "pixels": 30
+      },
+      "vertical": {
+        "start": 20,
+        "end": 40,
+        "pixels": 21
+      },
+      "bottom": {
+        "start": 0,
+        "end": 10,
+        "pixels": 11
+      },
+      "right": {
+        "start": 19,
+        "end": 39,
+        "pixels": 21
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 5.6
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9536,
+      "maxAdjacentChannelDifference": 134,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 51.65355,
+      "outset": [
+        4.08,
+        5.29355,
+        2,
+        5.46645
+      ]
+    }
+  },
+  {
+    "id": "mira",
+    "source": "assets/themes/art32/mira-inset-atlas-v1.png",
+    "sourceHash": "4fbe9e8e75c39f35c73b93cc8b05ea1e56c44a7799391b3cd7970755c3d4081b",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-mira.png",
+    "hash": "4fbe9e8e75c39f35c73b93cc8b05ea1e56c44a7799391b3cd7970755c3d4081b",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      10,
+      43,
+      1588,
+      954
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      47.407,
+      47.407,
+      47.407,
+      47.407
+    ],
+    "scale": 0.14814687499999998,
+    "outset": [
+      15.852,
+      7.852,
+      14.074,
+      8.741
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 80,
+        "end": 119,
+        "pixels": 40
+      },
+      "vertical": {
+        "start": 32,
+        "end": 80,
+        "pixels": 49
+      },
+      "bottom": {
+        "start": 68,
+        "end": 100,
+        "pixels": 33
+      },
+      "right": {
+        "start": 26,
+        "end": 79,
+        "pixels": 54
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 5.926,
+      "vertical": 7.259
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 30.814549999999997,
+      "outset": [
+        9.703800000000001,
+        4.5038,
+        8.5481,
+        5.08165
+      ]
+    }
+  },
+  {
+    "id": "machined",
+    "source": "assets/themes/art32/machined-inset-atlas-v1.png",
+    "sourceHash": "b3462ca6064003292b7d18829c13139a97f13ff3ad00e054710176c840534ca1",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-machined.png",
+    "hash": "b3462ca6064003292b7d18829c13139a97f13ff3ad00e054710176c840534ca1",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      10,
+      15,
+      1588,
+      968
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      46.545,
+      46.545,
+      46.545,
+      46.545
+    ],
+    "scale": 0.14545312500000002,
+    "outset": [
+      14.618,
+      7.345,
+      13.018,
+      7.2
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 73,
+        "end": 108,
+        "pixels": 36
+      },
+      "vertical": {
+        "start": 22,
+        "end": 76,
+        "pixels": 55
+      },
+      "bottom": {
+        "start": 62,
+        "end": 97,
+        "pixels": 36
+      },
+      "right": {
+        "start": 23,
+        "end": 77,
+        "pixels": 55
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 5.236,
+      "vertical": 8
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 30.254250000000003,
+      "outset": [
+        8.901700000000002,
+        4.17425,
+        7.861700000000001,
+        4.08
+      ]
+    }
+  },
+  {
+    "id": "tyrador",
+    "source": "wwwroot/themes/tyrador-game-frame.png",
+    "sourceHash": "f8ee3cc7af0aa5f5b60a0202b68002e3c90cc780c361b1f86f9392751cb3fed2",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original terran SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-tyrador.png",
+    "hash": "8bd8595dd97e1735f6b5839a9a2c5cb30de28e2b7a87649d7c1b946b1d56ec2e",
+    "dimensions": [
+      980,
+      980
+    ],
+    "sourceOpaqueBounds": [
+      39,
+      28,
+      984,
+      1001
+    ],
+    "uniformTrim": 22,
+    "removedTailPixels": 26545,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      298,
+      298,
+      298,
+      298
+    ],
+    "paint": [
+      79.467,
+      79.467,
+      79.467,
+      79.467
+    ],
+    "scale": 0.2666677852348993,
+    "outset": [
+      7.2,
+      9.067,
+      4,
+      9.333
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 12,
+        "end": 41,
+        "pixels": 30
+      },
+      "vertical": {
+        "start": 20,
+        "end": 40,
+        "pixels": 21
+      },
+      "bottom": {
+        "start": 0,
+        "end": 10,
+        "pixels": 11
+      },
+      "right": {
+        "start": 19,
+        "end": 39,
+        "pixels": 21
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 5.6
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9536,
+      "maxAdjacentChannelDifference": 134,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 51.65355,
+      "outset": [
+        4.08,
+        5.29355,
+        2,
+        5.46645
+      ]
+    }
+  },
+  {
+    "id": "zerg",
+    "source": "assets/themes/art32/zerg-inset-atlas-v1.png",
+    "sourceHash": "263ed29ea7ef137f3def2ae82378c5f90b05145bbb5ba7e83695901716ccd65d",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-zerg.png",
+    "hash": "263ed29ea7ef137f3def2ae82378c5f90b05145bbb5ba7e83695901716ccd65d",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      21,
+      49,
+      1580,
+      942
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      34.133,
+      34.133,
+      34.133,
+      34.133
+    ],
+    "scale": 0.10666562500000001,
+    "outset": [
+      14.773,
+      8.16,
+      14.773,
+      8.373
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 101,
+        "end": 146,
+        "pixels": 46
+      },
+      "vertical": {
+        "start": 41,
+        "end": 115,
+        "pixels": 75
+      },
+      "bottom": {
+        "start": 101,
+        "end": 144,
+        "pixels": 44
+      },
+      "right": {
+        "start": 39,
+        "end": 113,
+        "pixels": 75
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 4.907,
+      "vertical": 8
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 22.186450000000004,
+      "outset": [
+        9.00245,
+        4.704000000000001,
+        9.00245,
+        4.8424499999999995
+      ]
+    }
+  },
+  {
+    "id": "abathur",
+    "source": "wwwroot/themes/abathur-game-frame.png",
+    "sourceHash": "fba0f0f2bb562f8e1acd87088dd0d96a5a8d4e0848dd66e149436005558a6196",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original zerg SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-abathur.png",
+    "hash": "c5dd00bc835fa74476454b4c1f96d1223a2e41a865184a38ff4716cd3e8348df",
+    "dimensions": [
+      994,
+      994
+    ],
+    "sourceOpaqueBounds": [
+      19,
+      20,
+      992,
+      1008
+    ],
+    "uniformTrim": 15,
+    "removedTailPixels": 56637,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      305,
+      305,
+      305,
+      305
+    ],
+    "paint": [
+      78.71,
+      78.71,
+      78.71,
+      78.71
+    ],
+    "scale": 0.2580655737704918,
+    "outset": [
+      11.742,
+      10.452,
+      6.323,
+      9.936
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 30,
+        "end": 43,
+        "pixels": 14
+      },
+      "vertical": {
+        "start": 23,
+        "end": 44,
+        "pixels": 22
+      },
+      "bottom": {
+        "start": 9,
+        "end": 39,
+        "pixels": 31
+      },
+      "right": {
+        "start": 25,
+        "end": 45,
+        "pixels": 21
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 3.613,
+      "vertical": 5.677
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9760,
+      "maxAdjacentChannelDifference": 129,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 51.1615,
+      "outset": [
+        7.032300000000001,
+        6.1938,
+        3.5099500000000003,
+        5.8584
+      ]
+    }
+  },
+  {
+    "id": "dehaka",
+    "source": "assets/themes/art32/dehaka-inset-atlas-v1.png",
+    "sourceHash": "40c493c03c7e9f7ce9bab59369dfb6a9775700616bb1632d6011c6976a1362b5",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-dehaka.png",
+    "hash": "40c493c03c7e9f7ce9bab59369dfb6a9775700616bb1632d6011c6976a1362b5",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      7,
+      34,
+      1592,
+      967
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      88.276,
+      88.276,
+      88.276,
+      88.276
+    ],
+    "scale": 0.2758625,
+    "outset": [
+      26.069,
+      12.828,
+      26.069,
+      13.103
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 80,
+        "end": 102,
+        "pixels": 23
+      },
+      "vertical": {
+        "start": 33,
+        "end": 61,
+        "pixels": 29
+      },
+      "bottom": {
+        "start": 80,
+        "end": 101,
+        "pixels": 22
+      },
+      "right": {
+        "start": 32,
+        "end": 60,
+        "pixels": 29
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 6.345,
+      "vertical": 8
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.5286450073255093,
+      "paint": 46.66666666666666,
+      "outset": [
+        13.666666666666664,
+        6.666878124669596,
+        13.666666666666664,
+        6.8122555016841115
+      ]
+    }
+  },
+  {
+    "id": "cerberus",
+    "source": "assets/themes/art32/cerberus-inset-atlas-v1.png",
+    "sourceHash": "9b5d7a249395abd45a1382d718d9ef4ddafd1377d33c419d57ea0da694a7d07a",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-cerberus.png",
+    "hash": "9b5d7a249395abd45a1382d718d9ef4ddafd1377d33c419d57ea0da694a7d07a",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      11,
+      12,
+      1590,
+      978
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      73.143,
+      73.143,
+      73.143,
+      73.143
+    ],
+    "scale": 0.228571875,
+    "outset": [
+      21.371,
+      9.943,
+      15.886,
+      10.171
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 76,
+        "end": 100,
+        "pixels": 25
+      },
+      "vertical": {
+        "start": 27,
+        "end": 61,
+        "pixels": 35
+      },
+      "bottom": {
+        "start": 52,
+        "end": 75,
+        "pixels": 24
+      },
+      "right": {
+        "start": 26,
+        "end": 60,
+        "pixels": 35
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 5.714,
+      "vertical": 8
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.4785146904009953,
+      "paint": 35,
+      "outset": [
+        10.31227868695569,
+        4.8438128050531155,
+        7.68762561010623,
+        4.952914154464542
+      ]
+    }
+  },
+  {
+    "id": "mecha",
+    "source": "assets/themes/art32/mecha-inset-atlas-v1.png",
+    "sourceHash": "de2db35e7b6063fae6cd2c87fea301eb5965811a906a1aff4487ee044e9d0214",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-mecha.png",
+    "hash": "de2db35e7b6063fae6cd2c87fea301eb5965811a906a1aff4487ee044e9d0214",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      19,
+      49,
+      1580,
+      942
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      60.952,
+      60.952,
+      60.952,
+      60.952
+    ],
+    "scale": 0.190475,
+    "outset": [
+      19.809,
+      10.095,
+      19.428,
+      10.095
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 83,
+        "end": 118,
+        "pixels": 36
+      },
+      "vertical": {
+        "start": 32,
+        "end": 73,
+        "pixels": 42
+      },
+      "bottom": {
+        "start": 81,
+        "end": 114,
+        "pixels": 34
+      },
+      "right": {
+        "start": 32,
+        "end": 73,
+        "pixels": 42
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 6.857,
+      "vertical": 8
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 39.6188,
+      "outset": [
+        12.27585,
+        5.96175,
+        12.0282,
+        5.96175
+      ]
+    }
+  },
+  {
+    "id": "arcade",
+    "source": "wwwroot/themes/arcade-game-frame.png",
+    "sourceHash": "a9e1b0f6c6078e288275cc25c834c3b809ace7411c84d89fd2713bc091b79190",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original terran SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-arcade.png",
+    "hash": "21430600b6b987dba86e005781233d443db148259b433ec1f6d98456cdbba465",
+    "dimensions": [
+      980,
+      980
+    ],
+    "sourceOpaqueBounds": [
+      39,
+      28,
+      984,
+      1001
+    ],
+    "uniformTrim": 22,
+    "removedTailPixels": 26545,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      298,
+      298,
+      298,
+      298
+    ],
+    "paint": [
+      79.467,
+      79.467,
+      79.467,
+      79.467
+    ],
+    "scale": 0.2666677852348993,
+    "outset": [
+      7.2,
+      9.067,
+      4,
+      9.333
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 12,
+        "end": 41,
+        "pixels": 30
+      },
+      "vertical": {
+        "start": 20,
+        "end": 40,
+        "pixels": 21
+      },
+      "bottom": {
+        "start": 0,
+        "end": 10,
+        "pixels": 11
+      },
+      "right": {
+        "start": 19,
+        "end": 39,
+        "pixels": 21
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 5.6
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9536,
+      "maxAdjacentChannelDifference": 134,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 51.65355,
+      "outset": [
+        4.08,
+        5.29355,
+        2,
+        5.46645
+      ]
+    }
+  },
+  {
+    "id": "classic-terran",
+    "source": "wwwroot/themes/classic-terran-game-frame.png",
+    "sourceHash": "11581945a88c40a8f752450a1a79d0222ed2167c8f86f29486177be4867a6d3b",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original terran SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-classic-terran.png",
+    "hash": "9eed632c3a076e9dc982f1b72016cf41eea298a926e450e95603a7d784384386",
+    "dimensions": [
+      980,
+      980
+    ],
+    "sourceOpaqueBounds": [
+      39,
+      28,
+      984,
+      1001
+    ],
+    "uniformTrim": 22,
+    "removedTailPixels": 26545,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      298,
+      298,
+      298,
+      298
+    ],
+    "paint": [
+      79.467,
+      79.467,
+      79.467,
+      79.467
+    ],
+    "scale": 0.2666677852348993,
+    "outset": [
+      7.2,
+      9.067,
+      4,
+      9.333
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 12,
+        "end": 41,
+        "pixels": 30
+      },
+      "vertical": {
+        "start": 20,
+        "end": 40,
+        "pixels": 21
+      },
+      "bottom": {
+        "start": 0,
+        "end": 10,
+        "pixels": 11
+      },
+      "right": {
+        "start": 19,
+        "end": 39,
+        "pixels": 21
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 5.6
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9536,
+      "maxAdjacentChannelDifference": 134,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 51.65355,
+      "outset": [
+        4.08,
+        5.29355,
+        2,
+        5.46645
+      ]
+    }
+  },
+  {
+    "id": "classic-protoss",
+    "source": "wwwroot/themes/classic-protoss-game-frame.png",
+    "sourceHash": "a405a3ba8e6db8f5bf3b4817af7b49e2318cb3157037d8bcb35407413b48fa31",
+    "sourceDimensions": [
+      1024,
+      1024
+    ],
+    "sourceKind": "original-sc2-race-frame-existing-flavour-adaptation",
+    "adaptation": "Original protoss SC2 race frame geometry with existing flavour adaptation; uniformly trimmed external margin and removed alpha<128 export tails; no new paint, status buttons or SVG wrapper",
+    "url": "/themes/motion37/well-classic-protoss.png",
+    "hash": "4982e509b1a2f602a82735d37b4b633eaadbaed022c7e0c9a62be085a0443f33",
+    "dimensions": [
+      988,
+      988
+    ],
+    "sourceOpaqueBounds": [
+      24,
+      18,
+      999,
+      1001
+    ],
+    "uniformTrim": 18,
+    "removedTailPixels": 25576,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": false,
+    "slice": [
+      302,
+      302,
+      302,
+      302
+    ],
+    "paint": [
+      69.029,
+      69.029,
+      69.029,
+      69.029
+    ],
+    "scale": 0.2285728476821192,
+    "outset": [
+      6.057,
+      8.114,
+      6.057,
+      9.029
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 9,
+        "end": 43,
+        "pixels": 35
+      },
+      "vertical": {
+        "start": 22,
+        "end": 53,
+        "pixels": 32
+      },
+      "bottom": {
+        "start": 9,
+        "end": 20,
+        "pixels": 12
+      },
+      "right": {
+        "start": 18,
+        "end": 48,
+        "pixels": 31
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 8,
+      "vertical": 7.314
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 9664,
+      "maxAdjacentChannelDifference": 160,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 44.86885,
+      "outset": [
+        3.3370500000000005,
+        4.674100000000001,
+        3.3370500000000005,
+        5.2688500000000005
+      ]
+    }
+  },
+  {
+    "id": "classic-zerg",
+    "source": "assets/themes/art32/classic-zerg-inset-atlas-v1.png",
+    "sourceHash": "e02d14516a65e0e3d264dc4657b13e1a22dd9bcc1267bfa163fc75166a18fb88",
+    "sourceDimensions": [
+      1600,
+      1000
+    ],
+    "sourceKind": "existing-authored-detailed-art32-frame",
+    "adaptation": "Byte-identical existing detailed image-authored inset atlas; SC2-matched companion artwork, not native game export",
+    "url": "/themes/motion37/well-classic-zerg.png",
+    "hash": "e02d14516a65e0e3d264dc4657b13e1a22dd9bcc1267bfa163fc75166a18fb88",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "sourceOpaqueBounds": [
+      6,
+      7,
+      1594,
+      982
+    ],
+    "uniformTrim": 0,
+    "removedTailPixels": 0,
+    "originalOpaqueCornersPreserved": true,
+    "byteIdenticalToSource": true,
+    "slice": [
+      320,
+      320,
+      320,
+      320
+    ],
+    "paint": [
+      48.302,
+      48.302,
+      48.302,
+      48.302
+    ],
+    "scale": 0.15094375,
+    "outset": [
+      10.642,
+      8.679,
+      8.83,
+      8.528
+    ],
+    "center": "transparent",
+    "profiles": {
+      "horizontal": {
+        "start": 44,
+        "end": 80,
+        "pixels": 37
+      },
+      "vertical": {
+        "start": 30,
+        "end": 81,
+        "pixels": 52
+      },
+      "bottom": {
+        "start": 32,
+        "end": 76,
+        "pixels": 45
+      },
+      "right": {
+        "start": 31,
+        "end": 83,
+        "pixels": 53
+      }
+    },
+    "visibleMaterialThickness": {
+      "horizontal": 5.585,
+      "vertical": 7.849
+    },
+    "joinVerification": {
+      "allFourCorners": true,
+      "comparedComponents": 10240,
+      "maxAdjacentChannelDifference": 0,
+      "interpretation": "Measured existing atlas transitions; adjacent textured pixels need not match. No reconstructed joins introduced."
+    },
+    "compact": {
+      "factor": 0.65,
+      "paint": 31.3963,
+      "outset": [
+        6.3172999999999995,
+        5.04135,
+        5.1395,
+        4.943200000000001
+      ]
+    }
+  }
+]

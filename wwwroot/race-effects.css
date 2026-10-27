@@ -1,0 +1,12 @@
+[data-race46-relative]{position:relative!important}
+.race46-lamp,.race46-bio{display:block;position:absolute;inset:0;margin:0;padding:0;border:0;pointer-events:none!important;user-select:none;z-index:3;contain:style}
+.race46-lamp[hidden],.race46-bio[hidden]{display:none!important}
+i.race46-lamp>i.race46-lamp{position:absolute;display:block;inset:4px 4px auto auto;width:14px;height:14px;opacity:.15;background:url('/themes/race46/terran-lamp.webp') center/100% no-repeat;mix-blend-mode:screen;pointer-events:none}
+i.race46-lamp>i.race46-lamp:last-child{inset:auto auto 4px 4px}
+.race46-vein{display:block;position:absolute;margin:0;padding:0;border-style:solid;border-color:transparent;background:none;pointer-events:none;opacity:.18;box-sizing:border-box;mix-blend-mode:normal}
+/* Soft native optical flare, clipped by the channel mask to the actual rim. */
+.native45-spark::after{top:2px;right:6px;width:54px;height:10px;background:url('/themes/race46/protoss-beam.webp') center/100% 100% no-repeat;border-radius:0;opacity:.85}
+:root[data-graphical-style=zerg] .sidebar[data-native45-host]::after{visibility:hidden!important}
+:root[data-graphical-style=zerg] .appearance-effects-stage[data-native45-preview]{background:radial-gradient(ellipse at 50% 90%,#28202d,#0b0f12 72%)!important}
+@media(prefers-reduced-motion:reduce){.race46-bio>.race46-vein{opacity:.24!important}i.race46-lamp>i.race46-lamp{opacity:.3!important}}
+@media(forced-colors:active){.race46-lamp,.race46-bio{display:none!important}}

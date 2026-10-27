@@ -1,0 +1,54 @@
+/* Character and race identity is paint, never a different information layout.
+   Original SC2 scenes/controls complement authored, connected inner bezels. */
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .work-console{
+ background:linear-gradient(90deg,var(--shell-header) calc(100% - 260px),transparent 100%) left top / 100% 150px no-repeat,linear-gradient(180deg,#070c1233,#070c12 150px) left top / 100% 160px no-repeat,var(--identity-scene) right top / auto 320px no-repeat,var(--identity-field) right top / 480px 240px no-repeat,linear-gradient(180deg,var(--shell-header),var(--shell-well) 200px)!important
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .sidebar{
+ background:linear-gradient(180deg,var(--shell-header),#080d14dd 65%,#080d14),var(--identity-field) right center / 480px 240px repeat-y!important
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-results,.profile-region,.profile-average-grid,.live-team-group,.pick-opponent,.combat-card,.mark-card,.sounds-assigned,.sounds-recordings){
+ background-repeat:no-repeat!important;background-position:0 0,0 0,right top,0 0!important;background-size:auto,auto,auto min(100%,240px),auto!important
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-results,.profile-region,.live-lobby .live-team-group,.table-wrap,.profile-average-grid,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card)::before{
+ border-image-source:var(--identity-frame);border-image-slice:32;border-image-width:24px;mask-image:none
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .work-console :is(.profile-results,.profile-region,.profile-average-grid,.table-wrap)::before{border-image-width:20px}
+/* Complete rounded/ribbed/forged corner contours also shape the menu housing;
+   every clickable SC2 control retains its own original state artwork. */
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.sidebar nav,.sidebar .sidebar-bottom){border-image:var(--identity-frame) 32 / 22px / 0 stretch}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .page-head h1{text-shadow:0 2px 5px #0009}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-favourite-top,.profile-region h3,.live-team-head,.profile-best-heading,.profile-section-heading,.pick-section-head,.sounds-results-head){
+ background:linear-gradient(90deg,#070b11dd,color-mix(in srgb,var(--identity-dark) 70%,transparent)),linear-gradient(180deg,var(--identity-metal),var(--identity-dark))!important;
+ /* The real bottom border supplies the divider; a second inset rail doubles it. */
+ box-shadow:inset 0 1px color-mix(in srgb,var(--identity-light) 20%,transparent)
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.toolbar,.live-overview-tools){
+ background:linear-gradient(90deg,var(--interior-well),#09101ae8),var(--identity-field) right center / 480px 240px no-repeat!important
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-region,.live-team-group,.pick-opponent)::after{
+ content:'';position:absolute;inset:9px;pointer-events:none;background:radial-gradient(ellipse at right top,color-mix(in srgb,var(--identity-energy) 13%,transparent),transparent 68%);opacity:0
+}
+:root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-region,.live-team-group,.pick-opponent):is(:hover,:focus-within)::after{opacity:1}
+/* Native scenery sits in the unused desktop gap, at its original aspect ratio.
+   Smaller windows leave that area clear instead of covering menu controls. */
+@media(min-width:751px) and (min-height:1000px){
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .sidebar::after{
+  content:'';display:block;position:absolute;z-index:0;pointer-events:none;left:14px;right:14px;top:auto;bottom:164px;width:auto;height:230px;border:0;border-image:none;transform:none;
+  background:var(--identity-scene) center / contain no-repeat,var(--identity-field) right center / auto 230px no-repeat;
+  mask-image:linear-gradient(transparent,#fff 25%,#fff 75%,transparent);opacity:.64
+ }
+ :root[data-native-console][data-graphical-style=arcade]:not([data-graphical-style=default]) .sidebar::after{
+  background:url('/themes/identity-native-ui_console_flavor_joystick_ball_arcadecabinetpurple.png') center bottom 136px / 58px 58px no-repeat,url('/themes/identity-native-ui_console_flavor_joystick_stick_arcadecabinetpurple.png') center bottom 84px / 6px 68px no-repeat,url('/themes/identity-native-ui_console_flavor_joystick_base_arcadecabinetpurple.png') center bottom 60px / 70px 70px no-repeat,var(--identity-field) right center / auto 230px no-repeat
+ }
+}
+/* Theme choices show their actual inner contour and etched surface. */
+/* The selector provides the preview skin's tokens without changing the root. */
+:root #settings-dialog .appearance-choice:not([data-style-preview=default]):not([data-style-preview=fenix]) .appearance-thumbnail{background:var(--identity-preview-field) right center / 150px 75px no-repeat,var(--identity-preview-dark);border-image:var(--identity-preview-frame) 32 / 7px / 0 stretch;box-shadow:none}
+:root #settings-dialog .appearance-choice:not([data-style-preview=default]):not([data-style-preview=fenix]) .appearance-thumbnail i{opacity:0}
+@media(forced-colors:active){
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) .page-head h1{text-shadow:none}
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.work-console,.sidebar,.toolbar,.live-overview-tools,.profile-favourite-top,.profile-region h3,.live-team-head,.profile-best-heading,.profile-section-heading,.pick-section-head,.sounds-results-head){background:Canvas!important;box-shadow:none;text-shadow:none}
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.sidebar nav,.sidebar .sidebar-bottom){border-image:none!important;border-color:CanvasText}
+ :root[data-native-console]:not([data-graphical-style=default]):not([data-graphical-style=fenix]) :is(.sidebar,.profile-commanders,.profile-region,.live-team-group,.pick-opponent)::after{display:none}
+ :root #settings-dialog .appearance-choice:not([data-style-preview=default]):not([data-style-preview=fenix]) .appearance-thumbnail{background:Canvas!important;border-image:none}
+}

@@ -1,0 +1,56 @@
+/* Fixed shoulders attach to a repeating straight rail. Their proportions never
+   depend on window width. The information surface begins below the ornaments. */
+:root[data-native-console]{--table-head:#4b5864}
+:root[data-native-console] main{padding-top:48px}
+:root[data-native-console] .work-console{--shell-frame-size:8px;--shell-frame-paint:8px;border-image:var(--work-frame) 32 / 8px / 0 round}
+:root[data-native-console] .work-console:before{content:'';position:absolute;pointer-events:none;z-index:1;top:-44px;left:-8px;right:-8px;width:auto;height:64px;background-image:var(--native-header-left),var(--native-header-right),var(--native-header-rail);background-size:auto 64px,auto 64px,calc(100% - 328px) 64px;background-position:left top,right top,left var(--native-header-join,142px) top;background-repeat:no-repeat}
+:root[data-graphical-style=classic-zerg]{--native-header-join:159px;--native-header-join-compact:139px}
+:root[data-native-console]:not([data-graphical-style=default]) .work-console>.page-head{padding:20px 10px 10px;min-height:68px;background:linear-gradient(180deg,var(--shell-header) 20px,var(--shell-well));border:0}
+:root[data-native-console]:not([data-graphical-style=default]) .work-console>.page-head:after{content:none}
+:root[data-native-console] .workspace{padding:8px 10px 10px}
+/* Retire the old full-sidebar overlay: it duplicated a second, differently
+   sliced frame over the brand, language field and navigation bank. */
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar:before,:root[data-native-console]:not([data-graphical-style=default]) .sidebar:after{content:none}
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar{border:0;border-right:1px solid var(--shell-edge);border-image:none;padding:12px 10px;background:linear-gradient(90deg,var(--shell-header),var(--shell-well) 72%);box-shadow:4px 0 14px #0005}
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar>.brand{min-height:54px;padding:6px 8px;border:1px solid transparent;border-image:var(--hud-nav-normal) 9 fill / 5px / 0 stretch;background:var(--shell-well);gap:6px}
+:root[data-native-console] .brand:before{content:none}
+/* An information well and a command rack use the same material but keep their
+   own insets. Portrait slots remain square; text buttons use menu states. */
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-overview,.live-lobby .live-team-group,.sidebar){border-image-slice:32;border-image-repeat:round}
+:root[data-native-console] :is(.profile-favourite-main,.profile-best-grid,.native-command-deck){border-image-slice:32;border-image-repeat:round}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-overview,.live-lobby .live-team-group){border-width:6px;border-image-width:6px;padding:6px}
+/* Keep one closed information well per group. Nested commander rectangles
+   used perspective console corners where a plain shared surface belongs. */
+:root[data-native-console] .personal-profile :is(.profile-favourite-main,.profile-best-grid){border:0;border-image:none;background:none}
+:root[data-native-console]:not([data-graphical-style=default]) .personal-profile .profile-favourite-top{margin:0;border:0;border-image:none;background:none;padding:0 0 6px}
+:root[data-native-console] :is(.profile-favourite-main,.profile-best-grid).native-command-deck{width:100%;padding:2px;border-width:3px}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-region h3,.live-team-head h3){background:var(--shell-header);border:1px solid var(--shell-edge);padding:4px 8px;margin:0 0 6px;box-shadow:inset 0 1px #ffffff0a}
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar .nav{border-image-repeat:round}
+:root[data-native-console] .appearance-thumbnail{background:var(--native-header-left) left top/auto 32px no-repeat,var(--shell-panel)}
+:root[data-native-console] .live-team-group:before{content:none}
+:root[data-native-console]:not([data-graphical-style=default]) .live-team-group .live-team-head{border:0;border-image:none;background:none;padding:2px 4px 5px;box-shadow:0 1px var(--nerazim-team-colour,var(--line))}
+:root[data-native-console] .live-lobby .native-command-deck{width:max-content;min-height:0;border-width:3px;border-image-width:3px;gap:3px;padding:1px;flex-wrap:nowrap}
+:root[data-native-console] .live-lobby .native-command-deck .commander-portrait{width:22px;height:22px;padding:2px}
+:root[data-native-console]:not([data-graphical-style=default]) .live-lobby .live-slot{padding:4px}
+:root[data-native-console] .live-lobby .live-rating-stats{font-size:11px;line-height:1.3}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.mark-button,.replay-quick-list,.filter,.button.ghost){border-image:none}
+:root[data-native-console]:not([data-graphical-style=default]) .button:not(.ghost):hover{border-image-source:var(--hud-nav-hover)}
+:root[data-native-console]:not([data-graphical-style=default]) .button:not(.ghost):active{border-image-source:var(--hud-nav-pressed)}
+@media(max-width:750px){
+ :root[data-native-console] main{padding-top:36px}
+ :root[data-native-console]:not([data-graphical-style=default]) .sidebar{border-right:0;border-bottom:1px solid var(--shell-edge)}
+ :root[data-native-console] .work-console:before{top:-36px;height:56px;background-size:auto 56px,auto 56px,calc(100% - 287px) 56px;background-position:left top,right top,left var(--native-header-join-compact,124px) top}
+ :root[data-native-console]:not([data-graphical-style=default]) .work-console>.page-head{padding-top:22px;min-height:72px}
+ :root[data-native-console] .live-lobby .native-command-deck{border-width:2px;border-image-width:2px;padding:0}
+ :root[data-native-console] .live-lobby .native-command-deck .commander-portrait{width:20px;height:20px;padding:2px}
+}
+@media(forced-colors:active){:root[data-native-console] .work-console:before{display:none}:root[data-native-console] .work-console{border-image:none;border:1px solid CanvasText}}
+@media(max-width:450px){
+ :root[data-native-console] .toolbar .sort-controls{display:grid;grid-template-columns:minmax(0,1fr) auto}
+ :root[data-native-console] .toolbar .sort-controls select{grid-column:1/-1;grid-row:2;width:100%}
+ :root .pick-controls{grid-template-columns:minmax(0,1fr)}
+ :root[data-native-console] .profile-favourite-main{display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px;align-items:center}
+ :root[data-native-console] .profile-favourite-name{min-width:0}
+ :root[data-native-console] .profile-favourite-rate{grid-column:1/-1;display:block;min-width:0;width:100%;max-width:100%;box-sizing:border-box;margin:0;text-align:right}
+ :root[data-native-console] .profile-favourite-rate>span{display:block;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+}

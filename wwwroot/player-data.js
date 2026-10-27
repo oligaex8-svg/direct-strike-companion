@@ -19,15 +19,25 @@ function buildPlayerEncounterRows(matches,players,selfIds) {
    if (!row) {row={against:empty(),together:empty(),encounters:0};counts.set(player.id,row);}
    const stats=player.team===me.team ? row.together : row.against;
    row.encounters++;stats.games++;
-   if (outcome===null) stats.unknown++;
-   else if (outcome) stats.wins++;
-   else stats.losses++;
+   const result=outcome===null?'unknown':outcome?'wins':'losses';
+   stats[result]++;
+   if(match.source==='site'){
+    stats.site??={games:0,wins:0,losses:0,unknown:0};
+    stats.site.games++;stats.site[result]++;
+   }
   }
  }
  return players.map(player=>{
   const row=counts.get(player.id);
   // Copy stats as well, so duplicate metadata rows do not share mutable totals.
-  const finish=stats=>({...stats,winRate:stats.wins+stats.losses ? 100*stats.wins/(stats.wins+stats.losses) : null});
+  const finish=stats=>({...stats,...(stats.site?{site:{...stats.site}}:{}),winRate:stats.wins+stats.losses ? 100*stats.wins/(stats.wins+stats.losses) : null});
   return {...player,against:finish(row?.against||empty()),together:finish(row?.together||empty()),encounters:row?.encounters||0};
  });
+}
+
+// Teammate-risk comparisons retain their replay-only baseline and sample.
+function replayEncounterStats(stats){
+ if(!stats?.site)return stats;
+ const games=stats.games-stats.site.games,wins=stats.wins-stats.site.wins,losses=stats.losses-stats.site.losses,unknown=stats.unknown-stats.site.unknown;
+ return {games,wins,losses,unknown,winRate:wins+losses?100*wins/(wins+losses):null};
 }

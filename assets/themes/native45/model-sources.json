@@ -1,0 +1,12 @@
+[
+  {
+    "sha256": "d9a161552ae16c27a011fd4d1132cb76c31d395cd286ac107332269d0b2800a2",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/SensorTower/SensorTower.m3",
+    "file": "SensorTower.m3"
+  },
+  {
+    "sha256": "3001804906998e440c8622163c4b52c5e3d6db1dd7b67f5eb5ccb87795d882d1",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Terran/TechLab/TechLab.m3",
+    "file": "TechLab.m3"
+  }
+]

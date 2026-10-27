@@ -1,0 +1,293 @@
+{
+  "success": true,
+  "authored": {
+    "scope": "New code-native artwork; not SC2 exports",
+    "frameDimensions": [
+      160,
+      100
+    ],
+    "frameSlice": 32,
+    "profiles": [
+      {
+        "id": "protoss",
+        "kind": "temple",
+        "scene": "artanis",
+        "frame": "themes/protoss-identity-frame.svg",
+        "field": "themes/protoss-identity-field.svg"
+      },
+      {
+        "id": "nerazim",
+        "kind": "glaive",
+        "scene": "vorazun",
+        "frame": "themes/nerazim-identity-frame.svg",
+        "field": "themes/nerazim-identity-field.svg"
+      },
+      {
+        "id": "alarak",
+        "kind": "blade",
+        "scene": "alarak",
+        "frame": "themes/alarak-identity-frame.svg",
+        "field": "themes/alarak-identity-field.svg"
+      },
+      {
+        "id": "ihanrii",
+        "kind": "stone",
+        "scene": null,
+        "frame": "themes/ihanrii-identity-frame.svg",
+        "field": "themes/ihanrii-identity-field.svg"
+      },
+      {
+        "id": "terran",
+        "kind": "military",
+        "scene": "raynor",
+        "frame": "themes/terran-identity-frame.svg",
+        "field": "themes/terran-identity-field.svg"
+      },
+      {
+        "id": "nova",
+        "kind": "covert",
+        "scene": "nova",
+        "frame": "themes/nova-identity-frame.svg",
+        "field": "themes/nova-identity-field.svg"
+      },
+      {
+        "id": "mira",
+        "kind": "scrap",
+        "scene": "hanandhorner",
+        "frame": "themes/mira-identity-frame.svg",
+        "field": "themes/mira-identity-field.svg"
+      },
+      {
+        "id": "machined",
+        "kind": "foundry",
+        "scene": "swann",
+        "frame": "themes/machined-identity-frame.svg",
+        "field": "themes/machined-identity-field.svg"
+      },
+      {
+        "id": "tyrador",
+        "kind": "ceramic",
+        "scene": null,
+        "frame": "themes/tyrador-identity-frame.svg",
+        "field": "themes/tyrador-identity-field.svg"
+      },
+      {
+        "id": "zerg",
+        "kind": "hive",
+        "scene": "kerrigan",
+        "frame": "themes/zerg-identity-frame.svg",
+        "field": "themes/zerg-identity-field.svg"
+      },
+      {
+        "id": "abathur",
+        "kind": "evolution",
+        "scene": "abathur",
+        "frame": "themes/abathur-identity-frame.svg",
+        "field": "themes/abathur-identity-field.svg"
+      },
+      {
+        "id": "dehaka",
+        "kind": "primal",
+        "scene": "dehaka",
+        "frame": "themes/dehaka-identity-frame.svg",
+        "field": "themes/dehaka-identity-field.svg"
+      },
+      {
+        "id": "cerberus",
+        "kind": "infested",
+        "scene": null,
+        "frame": "themes/cerberus-identity-frame.svg",
+        "field": "themes/cerberus-identity-field.svg"
+      },
+      {
+        "id": "mecha",
+        "kind": "simulant",
+        "scene": null,
+        "frame": "themes/mecha-identity-frame.svg",
+        "field": "themes/mecha-identity-field.svg"
+      },
+      {
+        "id": "arcade",
+        "kind": "cabinet",
+        "scene": null,
+        "frame": "themes/arcade-identity-frame.svg",
+        "field": "themes/arcade-identity-field.svg"
+      },
+      {
+        "id": "classic-terran",
+        "kind": "classic-steel",
+        "scene": null,
+        "frame": "themes/classic-terran-identity-frame.svg",
+        "field": "themes/classic-terran-identity-field.svg"
+      },
+      {
+        "id": "classic-protoss",
+        "kind": "classic-gold",
+        "scene": null,
+        "frame": "themes/classic-protoss-identity-frame.svg",
+        "field": "themes/classic-protoss-identity-field.svg"
+      },
+      {
+        "id": "classic-zerg",
+        "kind": "classic-chitin",
+        "scene": null,
+        "frame": "themes/classic-zerg-identity-frame.svg",
+        "field": "themes/classic-zerg-identity-field.svg"
+      }
+    ],
+    "importedFrames": {
+      "source": "assets/themes/art32/imported-frames.json",
+      "ids": [
+        "zerg",
+        "mecha",
+        "machined",
+        "mira",
+        "cerberus",
+        "dehaka",
+        "classic-zerg"
+      ],
+      "scope": "Authored SC2-matched inset artwork; no native outer-frame/control replacement"
+    }
+  },
+  "native": {
+    "scope": "Original SC2 PNGs, copied byte-for-byte",
+    "index": "https://raw.githubusercontent.com/sc2-arcade-watcher/asset-explorer/main/site/list/ui.json",
+    "assets": [
+      {
+        "name": "sc2_ui_coop_detail_background_artanis",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_artanis.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_artanis.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_artanis.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "720c0bbe859a8cd156b68d910746d4c89652b209938e730e3f179790f55965b5"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_vorazun",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_vorazun.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_vorazun.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_vorazun.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "7ba419eee48c406d21fbcdde4572465b0f2bfaee1008459f6f9ef0bf1aaf9e31"
+      },
+      {
+        "name": "ui_console_flavor_crystal_forged",
+        "source": "assets/themes/identity-native/ui_console_flavor_crystal_forged.png",
+        "runtime": "themes/identity-native-ui_console_flavor_crystal_forged.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_flavor_crystal_forged.png",
+        "width": 24,
+        "height": 26,
+        "sha256": "5be5b5c30d06cff96f9ed48622ead1a0ec107ddf2bd458d99cb630903216c29b"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_alarak",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_alarak.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_alarak.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_alarak.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "1851f5245bae122cbe2c3c48c827b44174ba3715ba462f654f54c90f6c21a371"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_raynor",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_raynor.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_raynor.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_raynor.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "2a0f01418e2f61e2544940436db1bc1e5f8ed1d622e7134dbf431d63774e84e6"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_nova",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_nova.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_nova.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_nova.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "09c8ac476e115b56b344149c7a827f32f3bcaad8a5bd94e7b5414d9be40b4bc0"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_hanandhorner",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_hanandhorner.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_hanandhorner.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_hanandhorner.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "e31d35a5bda8977be20a611087cd95589dd62f2ae102dc2e2475e6d78199764e"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_swann",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_swann.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_swann.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_swann.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "6908bc5a0414ddd97a9a9557db204d5390ae439718d059c1dd4299608c9c0454"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_kerrigan",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_kerrigan.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_kerrigan.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_kerrigan.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "ca9ffa29a3fb11823f916b3d7369088df77503149bdc071f375f841bcb339036"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_abathur",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_abathur.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_abathur.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_abathur.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "ceeef77ada67a57d04f378fced32d97f392c610881314bc2ab98bfa94c888f01"
+      },
+      {
+        "name": "sc2_ui_coop_detail_background_dehaka",
+        "source": "assets/themes/identity-native/sc2_ui_coop_detail_background_dehaka.png",
+        "runtime": "themes/identity-native-sc2_ui_coop_detail_background_dehaka.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_detail_background_dehaka.png",
+        "width": 230,
+        "height": 282,
+        "sha256": "a4cfe176112c94b551836662f5d83e48d6d9aea747d955a7b0ad59566086f32e"
+      },
+      {
+        "name": "ui_console_flavor_ringlight_simulant",
+        "source": "assets/themes/identity-native/ui_console_flavor_ringlight_simulant.png",
+        "runtime": "themes/identity-native-ui_console_flavor_ringlight_simulant.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_flavor_ringlight_simulant.png",
+        "width": 26,
+        "height": 26,
+        "sha256": "3cc88bb307e0e78b5117a6dddf4dc8df3e09546550cd44f4d6223acccb4f4c2d"
+      },
+      {
+        "name": "ui_console_flavor_joystick_base_arcadecabinetpurple",
+        "source": "assets/themes/identity-native/ui_console_flavor_joystick_base_arcadecabinetpurple.png",
+        "runtime": "themes/identity-native-ui_console_flavor_joystick_base_arcadecabinetpurple.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_flavor_joystick_base_arcadecabinetpurple.png",
+        "width": 40,
+        "height": 40,
+        "sha256": "5806624204d65716aa1fb1ede018e4760b0c8041aa240c56dab674d0edce6bc5"
+      },
+      {
+        "name": "ui_console_flavor_joystick_stick_arcadecabinetpurple",
+        "source": "assets/themes/identity-native/ui_console_flavor_joystick_stick_arcadecabinetpurple.png",
+        "runtime": "themes/identity-native-ui_console_flavor_joystick_stick_arcadecabinetpurple.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_flavor_joystick_stick_arcadecabinetpurple.png",
+        "width": 8,
+        "height": 1,
+        "sha256": "902df5311ea935ad695f6524ba986f9e84254806eb6a9886063fc035dc4fbf11"
+      },
+      {
+        "name": "ui_console_flavor_joystick_ball_arcadecabinetpurple",
+        "source": "assets/themes/identity-native/ui_console_flavor_joystick_ball_arcadecabinetpurple.png",
+        "runtime": "themes/identity-native-ui_console_flavor_joystick_ball_arcadecabinetpurple.png",
+        "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_flavor_joystick_ball_arcadecabinetpurple.png",
+        "width": 40,
+        "height": 40,
+        "sha256": "c72ed0334da86448b69a3a8a0a5d7faea2c6023b7d304821f829a1f128392537"
+      }
+    ]
+  }
+}

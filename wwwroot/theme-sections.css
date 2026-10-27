@@ -1,0 +1,92 @@
+/* Original composition, with three reading levels: console, section, data.
+   Full faction armour stays on the console; inner wells use their own skin art. */
+.profile-average-heading{display:none}
+:root[data-native-console]{
+ --section-well:color-mix(in srgb,var(--shell-panel) 38%,var(--shell-well));
+ --section-head:color-mix(in srgb,var(--shell-panel) 86%,var(--shell-light));
+ --section-divider:color-mix(in srgb,var(--shell-edge) 60%,var(--shell-well));
+ --section-ink:var(--text);
+ --table-head:color-mix(in srgb,var(--shell-panel) 68%,#5c6b78)
+}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-overview,.live-lobby .live-team-group){
+ padding:10px 12px;border-image:var(--native-info-frame) 32 / 12px / 0 stretch;
+ background:linear-gradient(180deg,var(--section-well),var(--shell-well) 125px) padding-box;
+ box-shadow:0 5px 14px #0005,inset 0 1px #ffffff08
+}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-main-grid{gap:16px}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-favourite-main{padding:10px 0}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-best-heading,.profile-region h3,.profile-section-heading,.profile-average-heading,.pick-section-head,.sounds-results-head,.live-team-head){
+ position:relative;isolation:isolate;min-width:0;box-sizing:border-box;
+ padding:7px 10px 12px;border:0;border-image:none;border-bottom:1px solid var(--section-divider);
+ background:linear-gradient(180deg,var(--section-head),var(--section-well));
+ box-shadow:inset 0 1px #ffffff0b,0 2px 5px #0003;color:var(--section-ink)
+}
+/* Native ornaments keep their proportions in a text-free lower heading lip. */
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-favourite-top,.profile-best-heading,.profile-region h3,.profile-section-heading,.profile-average-heading,.pick-section-head,.sounds-results-head,.live-team-head)::after{
+ content:'';position:absolute;pointer-events:none;left:auto;top:auto;right:10px;bottom:-5px;transform:none;opacity:1;border:0;
+ width:min(42%,180px);height:14px;background:var(--theme-section-detail) right center / contain no-repeat
+}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-favourite-top{margin:0 0 2px}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-best-heading{margin:12px 0 4px}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-best-card{
+ padding:8px 4px;border-bottom:1px solid var(--section-divider);background:none
+}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-best-card:last-child{border-bottom:0}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-best-card:hover{background:color-mix(in srgb,var(--shell-panel) 72%,var(--shell-well))}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-last-played{
+ margin-top:4px;padding:10px 4px 2px;border-top:1px solid var(--section-divider);background-image:none
+}
+:root[data-native-console]:not([data-graphical-style=default]) .personal-profile .profile-results{
+ padding:2px 2px 12px;border:0;border-image:none;border-bottom:1px solid var(--section-divider);background:none;box-shadow:none
+}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-region-grid{gap:14px}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-region{padding:0 0 10px;border-color:var(--section-divider)}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-region h3{display:block;width:auto;max-width:none;margin:0 0 10px;font-weight:600}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-account{padding:0 4px}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-region:last-child{padding-bottom:2px}
+:root[data-native-console]:not([data-graphical-style=default]) .live-lobby .live-team-group .live-team-head{
+ padding:7px 10px 12px;margin:0 0 8px;
+ background:linear-gradient(180deg,var(--section-head),var(--section-well));
+ box-shadow:inset 0 1px #ffffff0b,0 2px 5px #0003;border-bottom:1px solid var(--nerazim-team-colour,var(--section-divider))
+}
+:root[data-native-console]:not([data-graphical-style=default]) .personal-profile>.profile-average-grid{
+ margin:14px 0 16px;gap:0;border:8px solid transparent;border-image:var(--native-info-frame) 32 / 11px / 0 stretch;
+ padding:2px 4px 4px;background:var(--section-well) padding-box;box-shadow:0 4px 12px #0005
+}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-average-heading{
+ display:flex;grid-column:1/-1;align-items:center;margin:0 0 4px
+}
+:root[data-native-console] .profile-average-heading h3{margin:0;font-size:13px;font-weight:600}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-average-grid section{padding:10px 12px;border-color:var(--section-divider)}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-average-grid section>span{min-height:0;margin-bottom:8px}
+:root[data-native-console]:not([data-graphical-style=default]) .profile-section-heading{margin:0 0 10px}
+:root[data-native-console]:not([data-graphical-style=default]) .table-wrap{
+ border:6px solid transparent;border-image:var(--native-info-frame) 32 / 10px / 0 stretch;
+ padding:2px;background:var(--shell-well);box-shadow:0 5px 14px #0005
+}
+:root[data-native-console] .table-wrap thead th{background:color-mix(in srgb,var(--shell-panel) 68%,#5c6b78);border-bottom-color:var(--shell-edge)}
+:root[data-native-console] .table-wrap tbody tr:hover>td{background:var(--row-hover)}
+:root[data-native-console] .work-console>.page-head{
+ position:relative;padding-left:14px;padding-right:14px;
+ box-shadow:inset 0 -1px color-mix(in srgb,var(--shell-edge) 50%,transparent),0 5px 12px #0002
+}
+:root[data-native-console]:not([data-graphical-style=default]) .work-console>.page-head::after{
+ content:'';position:absolute;pointer-events:none;left:50%;right:auto;top:auto;bottom:-5px;transform:translateX(-50%);
+ width:min(42%,240px);height:12px;background:var(--theme-section-detail) center / contain no-repeat
+}
+:root[data-native-console] .profile-disclosure{border-color:var(--section-divider);background:var(--section-well)}
+:root[data-native-console] .profile-disclosure>summary{padding:10px 12px}
+:root[data-native-console] .toolbar{box-shadow:inset 0 1px #ffffff09,0 3px 8px #0004}
+/* A few pixels separate the existing navigation groups without changing order. */
+:root[data-native-console] .sidebar .nav:is([data-view=players],[data-view=picks],[data-view=marks]){margin-top:4px}
+@media(max-width:750px){
+ :root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-overview,.live-lobby .live-team-group){padding:9px 10px}
+ :root[data-native-console]:not([data-graphical-style=default]) .profile-average-grid section{padding:9px 8px}
+ :root[data-native-console]:not([data-graphical-style=default]) .profile-average-grid section>span{min-height:2.5em;margin-bottom:4px}
+ :root[data-native-console] .sidebar .nav:is([data-view=players],[data-view=picks],[data-view=marks]){margin-top:0}
+}
+@media(forced-colors:active){
+ :root[data-native-console] :is(.profile-commanders,.profile-overview,.live-team-group,.profile-average-grid,.table-wrap){border-image:none;border-color:CanvasText;background:Canvas;box-shadow:none}
+ :root[data-native-console] :is(.profile-favourite-top,.profile-best-heading,.profile-region h3,.profile-section-heading,.profile-average-heading,.pick-section-head,.sounds-results-head,.live-team-head)::after{display:none}
+ :root[data-native-console] .work-console>.page-head::after{display:none}
+}

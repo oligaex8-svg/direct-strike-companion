@@ -9,7 +9,7 @@ const time=s=>new Date(s).toLocaleTimeString(typeof interfaceLocale==='function'
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,6000);}
 async function api(path,data){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),path.startsWith('state')?8000:30000);try{const response=await fetch('/api/'+path,{signal:controller.signal,method:data===undefined?'GET':'POST',headers:{'X-DS-Companion':'1',...(data===undefined?{}:{'Content-Type':'application/json'})},body:data===undefined?undefined:JSON.stringify(data)});const text=await response.text();let result;try{result=text?JSON.parse(text):null;}catch{throw new Error('Unexpected response from the companion.');}if(!response.ok)throw new Error(result?.error||'Request failed.');return result;}catch(error){if(error.name==='AbortError')throw new Error('Companion request timed out. Saved replays are retained.');throw error;}finally{clearTimeout(timer);}}
 function renderImportProgress(disconnected=false){
- const panel=$('import-progress'),button=$('import'),p=state?.importProgress;
+ const panel=$('import-progress'),button=$('import'),p=state?.importProgress;window.DSEquipmentActivity?.update({busy:!!state?.busy||!!p?.busy,paused:!!p?.paused,disconnected,error:p?.phase==='Error'});
  if(disconnected){button.disabled=true;button.textContent='Reopen app';panel.hidden=true;return;}
  button.disabled=!!state?.busy;button.textContent=state?.busy?'Analysing…':p?.paused?'Resume analysis':'Scan replays';
  panel.hidden=!p||(!p.busy&&!p.paused&&p.phase!=='Interrupted'&&p.phase!=='Error'&&p.phase!=='Deferred');if(panel.hidden)return;
@@ -41,7 +41,8 @@ async function refresh(){
   if(changed){
    const matches=visibleMatches();commanderProfiles=buildCommanderProfiles(matches);buildCombatCache(matches,state.library.settings.selfIds);
    const matchupData=siteMatchupData(matches,state.library.settings.selfIds);pickMatchups=buildPickMatchups(matchupData.matches,matchupData.selfIds);
-   playerRows=buildPlayerEncounterRows(matches,state.library.players,state.library.settings.selfIds);playerIndex=new Map(playerRows.map(p=>[p.id,p]));
+   const encounterMatches=linkSiteEncounterMatches(matchupData.matches,state.library.players);
+   playerRows=buildPlayerEncounterRows(encounterMatches,state.library.players,state.library.settings.selfIds);playerIndex=new Map(playerRows.map(p=>[p.id,p]));
   }
   if(typeof syncLiveTeammates==='function')syncLiveTeammates(state.lobby||{});
   render(changed);void maintainAutomaticData();
@@ -85,7 +86,8 @@ async function listenForLiveUpdates(){
  }
 }
 function render(updateLibrary=true){if(!state)return;const lib=state.library;const s=stats(visibleMatches(),null,lib.settings.selfIds);$('overall-rate').textContent=rate(s.winRate);$('overall-games').textContent=num(s.games);$('overall-marks').textContent=lib.marks.length;$('overall-detail').textContent=`${s.wins} wins · ${s.losses} losses`;$('unknown-detail').textContent=`${'3v3 Commanders'}${s.unknown?' · '+s.unknown+' undecided':''}`;$('player-count').textContent=num(lib.players.length);$('replay-count').textContent=num(lib.matches.length);$('mark-count').textContent=lib.marks.length;$('friend-count').textContent=lib.marks.filter(mark=>markList(mark)==='friends').length;renderImportProgress();$('replay-status').textContent=state.replayStatus;$('live-status').textContent=state.lobby.liveStatus;$('ocr-status').textContent=state.lobby.ocrStatus;$('screen-watch').checked=lib.settings.screenWatch;$('roster-list').innerHTML=state.lobby.roster.map(n=>`<span class="roster-chip">${esc(n)}</span>`).join('');$('alerts').innerHTML=state.lobby.alerts.length?state.lobby.alerts.slice(0,5).map(a=>`<div class="alert-item"><strong>${esc(a.names.join(', '))}</strong><p>${esc(a.message)}</p><small>${time(a.time)} · ${esc(a.source)}</small></div>`).join(''):'<p class="muted">No enabled-list names detected yet.</p>';if(updateLibrary||view==='lobby'||view==='sounds')renderLibrary();}
-function statCell(s){return `<span class="stat">${rate(s.winRate)}</span><div class="sample">${s.wins}W / ${s.losses}L${s.unknown?' · '+s.unknown+'?':''}</div>`;}
+function encounterSourceLabel(s){const replay=s?.games-s?.site?.games,site=s?.site?.games;return site?`${num(replay)} ${replay===1?'replay':'replays'} · ${num(site)} ${site===1?'site game':'site games'}`:'';}
+function statCell(s){return `<span class="stat">${rate(s.winRate)}</span><div class="sample">${s.wins}W / ${s.losses}L${s.unknown?' · '+s.unknown+'?':''}</div>${s.site?.games?`<div class="sample encounter-source">${encounterSourceLabel(s).split(' · ').map(part=>`<span class="encounter-source-part">${esc(part)}</span>`).join(' · ')}</div>`:''}`;}
 function mostPlayedCell(id){const profile=commanderProfiles.get(id),most=profile?.mostPlayed;return most?`<div class="most-played-cell">${commanderPortrait(most.commander,'medium')}<div><span class="commander-name">${esc(commanderName(most.commander))}</span><div class="sample">${most.games} ${most.games===1?'game':'games'} · ${Math.round(100*most.games/profile.total)}%</div></div></div>`:'<span class="muted">No replay available</span>';}
 function regionRating(p,region){return ownGroupFor(p.id)?ownRegionalRating(p.id,region):p.ratings?.[region==='EU'?'eu':'americas']||siteRating(p.id,region);}
 function ratingCell(p,region){return automaticRatingCell(p,region);}
@@ -104,6 +106,12 @@ function syncLobbyPageActions(){
  }
  host.hidden=!inLobby;
 }
+let libraryContentSnapshot=null;
+function setLibraryContent(html){
+ const target=$('library-content'),previous=libraryContentSnapshot;
+ if(previous&&previous.target===target&&previous.view===view&&previous.html===html&&previous.anchor?.parentNode===target)return false;
+ target.innerHTML=html;libraryContentSnapshot={target,view,html,anchor:target.firstElementChild};return true;
+}
 function renderLibraryContent(){
  if(!state?.library)return;
  document.querySelectorAll('.sidebar .nav').forEach(nav=>{if(nav.dataset.view===view)nav.setAttribute('aria-current','page');else nav.removeAttribute('aria-current');});
@@ -119,11 +127,11 @@ function renderLibraryContent(){
  $('section-title').textContent=titles[view];$('section-copy').textContent=descriptions[view];
 if(view==='lobby'){updateLiveLobby(content);return;}
 if(view==='sounds'){updateSoundsPage(content);return;}
-if(view==='stats'){content.innerHTML=renderCombatStats();return;}
-if(view==='profile'){content.innerHTML=renderMyProfile();return;}
+if(view==='stats'){setLibraryContent(renderCombatStats());return;}
+if(view==='profile'){setLibraryContent(renderMyProfile());return;}
 if(view==='picks'){refreshPickAdvisor(content);return;}
 if(view==='players'||view==='friends')updatePlayerDirectory(content,view==='friends'?visibleFriends():visiblePlayers(),JSON.stringify([view,query,view==='players'?markedOnly:false,mode,currentSort('players')]));
-else if(view==='matches')content.innerHTML=renderReplayHistory();
+else if(view==='matches')setLibraryContent(renderReplayHistory());
 else renderPlayerLists();
 content.querySelector('.error-list')?.remove();if(state.library.errors.length)content.insertAdjacentHTML('beforeend',`<details class="error-list"><summary class="muted">${state.library.errors.length} recent replay import issues</summary><ul>${state.library.errors.map(e=>`<li>${esc(e)}</li>`).join('')}</ul></details>`);
 }
@@ -142,7 +150,7 @@ function showPlayer(id,preserveDraft=false){
  ${profileCommanderShowcase(rows,id)}
  <p class="muted">Commander highlights use this account’s imported 3v3 Commanders games.</p>
  ${state.library.settings.selfIds.includes(id)?'':renderLikelyPicks(id)}
- <div class="detail-stats">${[['Your win rate against',p.against],['Your win rate together',p.together]].map(([label,s])=>`<div class="detail-stat"><span>${label}</span><strong>${rate(s.winRate)}</strong><small>${s.wins} wins · ${s.losses} losses · ${s.games} games${s.unknown?' · '+s.unknown+' undecided':''}</small></div>`).join('')}</div>
+ <div class="detail-stats">${[['Your win rate against',p.against],['Your win rate together',p.together]].map(([label,s])=>`<div class="detail-stat"><span>${label}</span><strong>${rate(s.winRate)}</strong><small>${s.wins} wins · ${s.losses} losses · ${s.games} games${s.unknown?' · '+s.unknown+' undecided':''}</small>${s.site?.games?`<small>${encounterSourceLabel(s)}</small>`:''}</div>`).join('')}</div>
  ${latest?`<h3 class="field-label">THEIR LAST GAME</h3><div class="last-game-stats">${tag(lastResult)}<span>${num(latest.player.apm)} APM</span><span>${formatCombat(combatValue(latest,'UnitKills'),'UnitKills')} enemy kills</span><span>${formatCombat(combatValue(latest,'CombatDeaths'),'CombatDeaths')} combat losses</span><span>${formatCombat(combatValue(latest,'MineralsKilledArmy'),'MineralsKilledArmy')} army mineral value killed</span></div>`:''}
  ${regionalRatingCards(p)}
  ${rows.length?`<h3 class="field-label">THEIR REPLAY AVERAGES</h3>${combatCards(rows)}<button class="rating-button" data-combat-id="${esc(id)}">View all replay averages</button>${profileDisclosure('player-commanders','Performance by commander',combatCommanderTable(rows,id),opened)}${profileDisclosure('player-metrics','All replay averages, gas and economy',combatDetails(rows)+combatExplanation(),opened)}<h3 class="field-label">THEIR RECENT GAMES</h3>${profileRecentGames(rows)}`:''}

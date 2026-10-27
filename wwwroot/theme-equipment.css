@@ -1,0 +1,16 @@
+/* Paint-only physical equipment. Native layout, frames and portrait pixels own
+   their existing boxes; these inert phrasing elements never reserve flow space. */
+:root .theme-equipment-host{position:relative!important}
+:root .theme-equipment-layer,:root .theme-equipment-layer>i{all:initial;position:absolute;display:block;box-sizing:border-box;pointer-events:none!important;user-select:none;font-size:0;line-height:0;border:0;background-color:transparent;box-shadow:none;outline:0;margin:0;padding:0;min-width:0;min-height:0;max-width:none;max-height:none;contain:paint}
+:root .theme-equipment-layer{z-index:3;overflow:hidden;isolation:isolate}
+:root .theme-equipment-layer[hidden]{display:none!important}
+:root .theme-equipment-layer>.equipment-window{left:0;top:0;width:var(--equipment-width);height:var(--equipment-height);transform-origin:top left;overflow:hidden;contain:paint}
+:root .equipment-window>.equipment-poster,:root .equipment-window>.equipment-clock{all:initial;position:absolute;display:block;left:0;top:0;margin:0;padding:0;border:0;pointer-events:none!important;background-repeat:no-repeat;background-position:0 0;background-size:100% 100%;max-width:none;max-height:none}
+:root .equipment-window>.equipment-poster{width:var(--equipment-width);height:var(--equipment-height)}
+:root .equipment-window>.equipment-clock{width:var(--equipment-atlas-width);height:var(--equipment-atlas-height);visibility:hidden}
+:root .theme-equipment-layer[data-equipment-played=true] .equipment-clock{visibility:visible}
+:root .theme-equipment-layer[data-equipment-played=true] .equipment-poster{visibility:hidden}
+:root .theme-equipment-layer[data-equipment-active=true] .equipment-clock{will-change:transform}
+:root .theme-equipment-layer[data-equipment-role=socket]{mask-image:linear-gradient(#000 0 0),linear-gradient(#000 0 0);mask-repeat:no-repeat;mask-size:100% 100%,var(--equipment-hole-width) var(--equipment-hole-height);mask-position:0 0,var(--equipment-hole-left) var(--equipment-hole-top);mask-composite:exclude}
+@media(prefers-reduced-motion:reduce){:root .theme-equipment-layer[data-equipment-played] .equipment-clock{visibility:hidden}:root .theme-equipment-layer .equipment-poster,:root .theme-equipment-layer[data-equipment-played] .equipment-poster{visibility:visible}}
+@media(forced-colors:active){:root .theme-equipment-layer{display:none!important}}

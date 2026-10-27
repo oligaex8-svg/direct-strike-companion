@@ -1,0 +1,862 @@
+[
+  {
+    "id": "protoss",
+    "focusX": 352,
+    "focusY": 155,
+    "sourceUrl": "/themes/protoss-identity-field.svg",
+    "sourceHash": "bf9798814961ee8ee3508b08e7e03bf1c12fe5594ab3bef3a935ff30d24d71f6",
+    "baseUrl": "/themes/motion37/field-protoss-base.svg",
+    "baseHash": "0ade13a80fbc6b6a97ca43300fb6632bfc00fe1fea12d464ccd46a40c194a91f",
+    "foregroundUrl": "/themes/motion37/field-protoss-foreground.svg",
+    "foregroundHash": "e2d4724d3087d4aadfaf7ed9daca40c2189fe13c05b1a005449106d97f1edcab",
+    "names": [
+      "crystal-left-refraction",
+      "crystal-right-refraction"
+    ],
+    "features": [
+      {
+        "name": "crystal-left-refraction",
+        "feature": "crystal left refraction",
+        "duration": 6700,
+        "phase": 0,
+        "origin": [
+          352,
+          155
+        ]
+      },
+      {
+        "name": "crystal-right-refraction",
+        "feature": "crystal right refraction",
+        "duration": 5300,
+        "phase": 1900,
+        "origin": [
+          352,
+          155
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "nerazim",
+    "focusX": 382,
+    "focusY": 126,
+    "sourceUrl": "/themes/nerazim-identity-field.svg",
+    "sourceHash": "764b97d8320409384691a50b60fdc7571a97ce0e4c6bf8f8454cb6b841f4c3e3",
+    "baseUrl": "/themes/motion37/field-nerazim-base.svg",
+    "baseHash": "344e4cfa9174edada8fc33911dceb6a4b51612f8d5ed1797a696e13ea2eec1a5",
+    "foregroundUrl": "/themes/motion37/field-nerazim-foreground.svg",
+    "foregroundHash": "a98f5833749abe41a58ddc9b697acb5503ef4fa0479b473dd3c5efbd2291f972",
+    "names": [
+      "void-glaive-resonance",
+      "crescent-inner-void"
+    ],
+    "features": [
+      {
+        "name": "void-glaive-resonance",
+        "feature": "void glaive resonance",
+        "duration": 7800,
+        "phase": 0,
+        "origin": [
+          382,
+          126
+        ]
+      },
+      {
+        "name": "crescent-inner-void",
+        "feature": "crescent inner void",
+        "duration": 9700,
+        "phase": 2300,
+        "origin": [
+          420,
+          88
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "alarak",
+    "focusX": 346,
+    "focusY": 179,
+    "sourceUrl": "/themes/alarak-identity-field.svg",
+    "sourceHash": "f4ba747f3f34983d25f951dc516b8bee5d17229b28b6e23748401de1f23f5b95",
+    "baseUrl": "/themes/motion37/field-alarak-base.svg",
+    "baseHash": "86e9cc6caedea7e975180308acf3d03a481580e3145acbabad59e45f34400153",
+    "foregroundUrl": "/themes/motion37/field-alarak-foreground.svg",
+    "foregroundHash": "c12fb9be07c8419a4b593fb72cfe72de290f5fccc8412cb19856c676907fedc1",
+    "names": [
+      "blade-hot-facet",
+      "secondary-blade-facet"
+    ],
+    "features": [
+      {
+        "name": "blade-hot-facet",
+        "feature": "blade hot facet",
+        "duration": 4700,
+        "phase": 0,
+        "origin": [
+          346,
+          179
+        ]
+      },
+      {
+        "name": "secondary-blade-facet",
+        "feature": "secondary blade facet",
+        "duration": 6300,
+        "phase": 2400,
+        "origin": [
+          441,
+          177
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "ihanrii",
+    "focusX": 365.5,
+    "focusY": 154.5,
+    "sourceUrl": "/themes/ihanrii-identity-field.svg",
+    "sourceHash": "18118ecdc8433e411d62ef9bbaf9084ab2638e9686a59b3841829803cd8a5973",
+    "baseUrl": "/themes/motion37/field-ihanrii-base.svg",
+    "baseHash": "806a8f0a27687f0e079c2549d9343615378426db24a8a2baafda95893ee35a6f",
+    "foregroundUrl": "/themes/motion37/field-ihanrii-foreground.svg",
+    "foregroundHash": "53de5ead5a301aae52f0154517aee0a3086686e89b2967472e15faa49d305730",
+    "names": [
+      "square-inlay-0",
+      "square-inlay-1"
+    ],
+    "features": [
+      {
+        "name": "square-inlay-0",
+        "feature": "square inlay 0",
+        "duration": 5400,
+        "phase": 0,
+        "origin": [
+          365.5,
+          154.5
+        ]
+      },
+      {
+        "name": "square-inlay-1",
+        "feature": "square inlay 1",
+        "duration": 7100,
+        "phase": 1700,
+        "origin": [
+          428.5,
+          67.5
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "terran",
+    "focusX": 300,
+    "focusY": 157,
+    "sourceUrl": "/themes/terran-identity-field.svg",
+    "sourceHash": "97dd56a91cc475dd64dbc6ce44aa75eb71c6b1125bbaddc95c4d62d1db63411a",
+    "baseUrl": "/themes/motion37/field-terran-base.svg",
+    "baseHash": "4155af0f9322a945b8b298c23b3daa66b14d35a1ccf9a5473df6fbe80ef47990",
+    "foregroundUrl": "/themes/motion37/field-terran-foreground.svg",
+    "foregroundHash": "008cbf3818da0ac7866a717f6fcf3a5f0240c52b231696e82f8fdebf784e44c7",
+    "names": [
+      "embedded-bend-0",
+      "embedded-bend-1",
+      "embedded-bend-2",
+      "embedded-bend-3",
+      "embedded-bend-4"
+    ],
+    "features": [
+      {
+        "name": "embedded-bend-0",
+        "feature": "embedded bend 0",
+        "duration": 3900,
+        "phase": 0,
+        "origin": [
+          288,
+          157
+        ]
+      },
+      {
+        "name": "embedded-bend-1",
+        "feature": "embedded bend 1",
+        "duration": 4510,
+        "phase": 670,
+        "origin": [
+          326,
+          143
+        ]
+      },
+      {
+        "name": "embedded-bend-2",
+        "feature": "embedded bend 2",
+        "duration": 5120,
+        "phase": 1340,
+        "origin": [
+          364,
+          129
+        ]
+      },
+      {
+        "name": "embedded-bend-3",
+        "feature": "embedded bend 3",
+        "duration": 5730,
+        "phase": 2010,
+        "origin": [
+          402,
+          115
+        ]
+      },
+      {
+        "name": "embedded-bend-4",
+        "feature": "embedded bend 4",
+        "duration": 6340,
+        "phase": 2680,
+        "origin": [
+          440,
+          101
+        ]
+      }
+    ],
+    "extractedShapes": 5
+  },
+  {
+    "id": "nova",
+    "focusX": 397,
+    "focusY": 94,
+    "sourceUrl": "/themes/nova-identity-field.svg",
+    "sourceHash": "8618b723009b54360b74ddec6397be4ac36ea1addeec00b405926bf5ae0d9d5b",
+    "baseUrl": "/themes/motion37/field-nova-base.svg",
+    "baseHash": "c9f830e14f875a3ceccb7c8a9841aaed9a91d9ba1df060cf56e2583f2f5672ff",
+    "foregroundUrl": "/themes/motion37/field-nova-foreground.svg",
+    "foregroundHash": "b2af7ac6e68c5c9d6e74cf578abeb219e474394e88e94418041f3c178a570a43",
+    "names": [
+      "optical-lens-focus",
+      "optical-pupil-track"
+    ],
+    "features": [
+      {
+        "name": "optical-lens-focus",
+        "feature": "optical lens focus",
+        "duration": 8900,
+        "phase": 0,
+        "origin": [
+          397,
+          94
+        ]
+      },
+      {
+        "name": "optical-pupil-track",
+        "feature": "optical pupil track",
+        "duration": 6100,
+        "phase": 0,
+        "origin": [
+          397,
+          94
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "mira",
+    "focusX": 420,
+    "focusY": 145,
+    "sourceUrl": "/themes/mira-identity-field.svg",
+    "sourceHash": "cee1f22126ee4fa7a32440696cabaaabfc31e831a38f7992c93385fc3264455f",
+    "baseUrl": "/themes/motion37/field-mira-base.svg",
+    "baseHash": "e61879e97b19adbbeebdab6b9017b6709759ba213bf83808bcfa7090775c56b9",
+    "foregroundUrl": "/themes/motion37/field-mira-foreground.svg",
+    "foregroundHash": "655cda277f5ba800c97f25a6336a47c112396d71e09b04bfb157d780c9572c9b",
+    "names": [
+      "patched-slot-ember"
+    ],
+    "features": [
+      {
+        "name": "patched-slot-ember",
+        "feature": "patched slot ember",
+        "duration": 6500,
+        "phase": 0,
+        "origin": [
+          430,
+          145
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "machined",
+    "focusX": 420,
+    "focusY": 133,
+    "sourceUrl": "/themes/machined-identity-field.svg",
+    "sourceHash": "ee8d7f5e4911fac0a16dd0d1a9ab4a7fc90a9ebee829d3f886664d8744abc2c6",
+    "baseUrl": "/themes/motion37/field-machined-base.svg",
+    "baseHash": "b18d6deb52ecff9ab64d64cd34a71e687c30312a705c92f4632a03a65db360b2",
+    "foregroundUrl": "/themes/motion37/field-machined-foreground.svg",
+    "foregroundHash": "311f4dc99085237113d7974ae1bc7847c2cf43d8f3fe4082235d29fe0767f466",
+    "names": [
+      "heated-joint-convection"
+    ],
+    "features": [
+      {
+        "name": "heated-joint-convection",
+        "feature": "heated joint convection",
+        "duration": 7200,
+        "phase": 0,
+        "origin": [
+          434,
+          133
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "tyrador",
+    "focusX": 340,
+    "focusY": 80,
+    "sourceUrl": "/themes/tyrador-identity-field.svg",
+    "sourceHash": "06d30daa6649d21062c811697dd9ed90dab101b513f9a4948d5d839d5ab2c8b6",
+    "baseUrl": "/themes/motion37/field-tyrador-base.svg",
+    "baseHash": "392250a862194b743eb5899cbd082b0cad3ecbd27073a2eaf982721700e24d39",
+    "foregroundUrl": "/themes/motion37/field-tyrador-foreground.svg",
+    "foregroundHash": "1c5308ed602d3521d4ba6b10a05008adc2545b9c98c803149b729e3a332f4c31",
+    "names": [
+      "upper-conduit-refraction",
+      "lower-conduit-refraction"
+    ],
+    "features": [
+      {
+        "name": "upper-conduit-refraction",
+        "feature": "upper conduit refraction",
+        "duration": 9100,
+        "phase": 0,
+        "origin": [
+          340,
+          80
+        ]
+      },
+      {
+        "name": "lower-conduit-refraction",
+        "feature": "lower conduit refraction",
+        "duration": 7100,
+        "phase": 2600,
+        "origin": [
+          410,
+          200
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "zerg",
+    "focusX": 415,
+    "focusY": 119,
+    "sourceUrl": "/themes/zerg-identity-field.svg",
+    "sourceHash": "dd71c8dd50c4afe9faf6cf9096af92fbbc5f4f7d8620636709c3a10a738b6cff",
+    "baseUrl": "/themes/motion37/field-zerg-base.svg",
+    "baseHash": "ce21d13175934f563a6f3515d876a654da248f3eb116e7cdd2b94a5ef157f577",
+    "foregroundUrl": "/themes/motion37/field-zerg-foreground.svg",
+    "foregroundHash": "cb497d6a08aa7a8b0dd595b311c5089e7c58e28e0051e1e04f2dc1d28d8227c0",
+    "names": [
+      "living-junction-0"
+    ],
+    "features": [
+      {
+        "name": "living-junction-0",
+        "feature": "living junction 0",
+        "duration": 8300,
+        "phase": 0,
+        "origin": [
+          415,
+          119
+        ]
+      }
+    ],
+    "extractedShapes": 2
+  },
+  {
+    "id": "abathur",
+    "focusX": 306,
+    "focusY": 35,
+    "sourceUrl": "/themes/abathur-identity-field.svg",
+    "sourceHash": "b1f78404c83fbc155a56c9627dbb76d1f5ea3c0226a35a24f7ab504928b58863",
+    "baseUrl": "/themes/motion37/field-abathur-base.svg",
+    "baseHash": "5d55ad62e5985322be4075dc80504b799af50e1e3c1cda4083524612b3025a1e",
+    "foregroundUrl": "/themes/motion37/field-abathur-foreground.svg",
+    "foregroundHash": "582ac747192961615eb7b2c7fc35db7ca5b645bc82bc221e0e7f114e541fe15c",
+    "names": [
+      "sac-compression-0",
+      "sac-fluid-0",
+      "sac-compression-1",
+      "sac-fluid-1",
+      "sac-compression-2",
+      "sac-fluid-2",
+      "sac-compression-3",
+      "sac-fluid-3",
+      "sac-compression-4",
+      "sac-fluid-4",
+      "sac-compression-5",
+      "sac-fluid-5",
+      "sac-compression-6",
+      "sac-fluid-6"
+    ],
+    "features": [
+      {
+        "name": "sac-compression-0",
+        "feature": "sac compression 0",
+        "duration": 7200,
+        "phase": 0,
+        "origin": [
+          306,
+          35
+        ]
+      },
+      {
+        "name": "sac-fluid-0",
+        "feature": "sac fluid 0",
+        "duration": 6100,
+        "phase": 0,
+        "origin": [
+          306,
+          35
+        ]
+      },
+      {
+        "name": "sac-compression-1",
+        "feature": "sac compression 1",
+        "duration": 7570,
+        "phase": 950,
+        "origin": [
+          363,
+          35
+        ]
+      },
+      {
+        "name": "sac-fluid-1",
+        "feature": "sac fluid 1",
+        "duration": 6510,
+        "phase": 1100,
+        "origin": [
+          363,
+          35
+        ]
+      },
+      {
+        "name": "sac-compression-2",
+        "feature": "sac compression 2",
+        "duration": 7940,
+        "phase": 1900,
+        "origin": [
+          420,
+          35
+        ]
+      },
+      {
+        "name": "sac-fluid-2",
+        "feature": "sac fluid 2",
+        "duration": 6920,
+        "phase": 2200,
+        "origin": [
+          420,
+          35
+        ]
+      },
+      {
+        "name": "sac-compression-3",
+        "feature": "sac compression 3",
+        "duration": 8310,
+        "phase": 2850,
+        "origin": [
+          306,
+          108
+        ]
+      },
+      {
+        "name": "sac-fluid-3",
+        "feature": "sac fluid 3",
+        "duration": 7330,
+        "phase": 3300,
+        "origin": [
+          306,
+          108
+        ]
+      },
+      {
+        "name": "sac-compression-4",
+        "feature": "sac compression 4",
+        "duration": 8680,
+        "phase": 3800,
+        "origin": [
+          363,
+          108
+        ]
+      },
+      {
+        "name": "sac-fluid-4",
+        "feature": "sac fluid 4",
+        "duration": 7740,
+        "phase": 4400,
+        "origin": [
+          363,
+          108
+        ]
+      },
+      {
+        "name": "sac-compression-5",
+        "feature": "sac compression 5",
+        "duration": 9050,
+        "phase": 4750,
+        "origin": [
+          420,
+          108
+        ]
+      },
+      {
+        "name": "sac-fluid-5",
+        "feature": "sac fluid 5",
+        "duration": 8150,
+        "phase": 5500,
+        "origin": [
+          420,
+          108
+        ]
+      },
+      {
+        "name": "sac-compression-6",
+        "feature": "sac compression 6",
+        "duration": 9420,
+        "phase": 5700,
+        "origin": [
+          306,
+          181
+        ]
+      },
+      {
+        "name": "sac-fluid-6",
+        "feature": "sac fluid 6",
+        "duration": 8560,
+        "phase": 6600,
+        "origin": [
+          306,
+          181
+        ]
+      }
+    ],
+    "extractedShapes": 7
+  },
+  {
+    "id": "dehaka",
+    "focusX": 325,
+    "focusY": 112,
+    "sourceUrl": "/themes/dehaka-identity-field.svg",
+    "sourceHash": "03a22e35b2677ebb9fba4f63d52a65ea75eca712737fedcae3d5b5f71f744cbf",
+    "baseUrl": "/themes/motion37/field-dehaka-base.svg",
+    "baseHash": "df0b4e0860910c5bc08d319cc690be471ca1fb0af529901e29484731f267dcf5",
+    "foregroundUrl": "/themes/motion37/field-dehaka-foreground.svg",
+    "foregroundHash": "1fb3ed9bf7a52a4ae7a7937b7c438c80fd1ca26506c70d1810e8a4218c43c46f",
+    "names": [
+      "root-flexure"
+    ],
+    "features": [
+      {
+        "name": "root-flexure",
+        "feature": "root flexure",
+        "duration": 11300,
+        "phase": 0,
+        "origin": [
+          325,
+          112
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "cerberus",
+    "focusX": 420,
+    "focusY": 123,
+    "sourceUrl": "/themes/cerberus-identity-field.svg",
+    "sourceHash": "6e4613df1f621d805569a51449a5d95c5cd80c5c3feb12c6e54d889967226072",
+    "baseUrl": "/themes/motion37/field-cerberus-base.svg",
+    "baseHash": "9ce1296dc2207dfd32a44b8bd24664a6bcebd4124dcac0f2c258e1e263c0a595",
+    "foregroundUrl": "/themes/motion37/field-cerberus-foreground.svg",
+    "foregroundHash": "009776f3e51a9675528ce16fda4fd5fb0e5e3a899bc803e48ec1ece6feffc732",
+    "names": [
+      "living-junction-0"
+    ],
+    "features": [
+      {
+        "name": "living-junction-0",
+        "feature": "living junction 0",
+        "duration": 8300,
+        "phase": 0,
+        "origin": [
+          438,
+          123
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "mecha",
+    "focusX": 409,
+    "focusY": 132,
+    "sourceUrl": "/themes/mecha-identity-field.svg",
+    "sourceHash": "e9291959bf4a37c3521671810aa190670642d3fc571dada8ad702c2c7c8ad5eb",
+    "baseUrl": "/themes/motion37/field-mecha-base.svg",
+    "baseHash": "01d82cd8250ab11337f1ac583351bdafd41cad57b6614e6bae25b1498e5a152c",
+    "foregroundUrl": "/themes/motion37/field-mecha-foreground.svg",
+    "foregroundHash": "87fd7eb5117dc123c4919f733057697db0b90dcc92937e2adca8c7d0e6f700c0",
+    "names": [
+      "recessed-insert-0",
+      "recessed-insert-1",
+      "amber-joint-pressure"
+    ],
+    "features": [
+      {
+        "name": "recessed-insert-0",
+        "feature": "recessed insert 0",
+        "duration": 4300,
+        "phase": 0,
+        "origin": [
+          341,
+          62
+        ]
+      },
+      {
+        "name": "recessed-insert-1",
+        "feature": "recessed insert 1",
+        "duration": 5600,
+        "phase": 1300,
+        "origin": [
+          360,
+          178
+        ]
+      },
+      {
+        "name": "amber-joint-pressure",
+        "feature": "amber joint pressure",
+        "duration": 7600,
+        "phase": 2100,
+        "origin": [
+          409,
+          132
+        ]
+      }
+    ],
+    "extractedShapes": 3
+  },
+  {
+    "id": "arcade",
+    "focusX": 363,
+    "focusY": 78,
+    "sourceUrl": "/themes/arcade-identity-field.svg",
+    "sourceHash": "d16ba56aca5ed04eed020f567b37f04b4f355c358bed8d760ee48a0e2bd7562f",
+    "baseUrl": "/themes/motion37/field-arcade-base.svg",
+    "baseHash": "02d626df6883c53872bb65eaba11d25f2cba6f7a9879d3ba3f4965ed1ea9717e",
+    "foregroundUrl": "/themes/motion37/field-arcade-foreground.svg",
+    "foregroundHash": "a27ff62f267c1ee55010b587ca4f2f60986fe316c00ec68269e998e1dd35c05c",
+    "names": [
+      "matrix-cell-charge-0",
+      "matrix-cell-charge-1",
+      "matrix-cell-charge-2",
+      "matrix-cell-charge-3"
+    ],
+    "features": [
+      {
+        "name": "matrix-cell-charge-0",
+        "feature": "matrix cell charge 0",
+        "duration": 3400,
+        "phase": 0,
+        "origin": [
+          363,
+          78
+        ]
+      },
+      {
+        "name": "matrix-cell-charge-1",
+        "feature": "matrix cell charge 1",
+        "duration": 3830,
+        "phase": 870,
+        "origin": [
+          414,
+          102
+        ]
+      },
+      {
+        "name": "matrix-cell-charge-2",
+        "feature": "matrix cell charge 2",
+        "duration": 4260,
+        "phase": 1740,
+        "origin": [
+          414,
+          150
+        ]
+      },
+      {
+        "name": "matrix-cell-charge-3",
+        "feature": "matrix cell charge 3",
+        "duration": 4690,
+        "phase": 2610,
+        "origin": [
+          363,
+          174
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "classic-terran",
+    "focusX": 300,
+    "focusY": 157,
+    "sourceUrl": "/themes/classic-terran-identity-field.svg",
+    "sourceHash": "34a8ea3e8c33cad36197da9219217a99ccb0fcf814ba56b6f4011e73960bdb64",
+    "baseUrl": "/themes/motion37/field-classic-terran-base.svg",
+    "baseHash": "4155af0f9322a945b8b298c23b3daa66b14d35a1ccf9a5473df6fbe80ef47990",
+    "foregroundUrl": "/themes/motion37/field-classic-terran-foreground.svg",
+    "foregroundHash": "29998310320d55c8bf720db7debac3ed343d82a6e27d2d4fadd6a9ed96c911ef",
+    "names": [
+      "embedded-bend-0",
+      "embedded-bend-1",
+      "embedded-bend-2",
+      "embedded-bend-3",
+      "embedded-bend-4"
+    ],
+    "features": [
+      {
+        "name": "embedded-bend-0",
+        "feature": "embedded bend 0",
+        "duration": 3900,
+        "phase": 0,
+        "origin": [
+          288,
+          157
+        ]
+      },
+      {
+        "name": "embedded-bend-1",
+        "feature": "embedded bend 1",
+        "duration": 4510,
+        "phase": 670,
+        "origin": [
+          326,
+          149.33333333333334
+        ]
+      },
+      {
+        "name": "embedded-bend-2",
+        "feature": "embedded bend 2",
+        "duration": 5120,
+        "phase": 1340,
+        "origin": [
+          364,
+          141.66666666666666
+        ]
+      },
+      {
+        "name": "embedded-bend-3",
+        "feature": "embedded bend 3",
+        "duration": 5730,
+        "phase": 2010,
+        "origin": [
+          402,
+          134
+        ]
+      },
+      {
+        "name": "embedded-bend-4",
+        "feature": "embedded bend 4",
+        "duration": 6340,
+        "phase": 2680,
+        "origin": [
+          440,
+          126.33333333333333
+        ]
+      }
+    ],
+    "extractedShapes": 5
+  },
+  {
+    "id": "classic-protoss",
+    "focusX": 352,
+    "focusY": 155,
+    "sourceUrl": "/themes/classic-protoss-identity-field.svg",
+    "sourceHash": "d3afdf42d4ce926b8ef0a367d1bdc4b77494ab0678e8b5c7989a26a8c294eb2f",
+    "baseUrl": "/themes/motion37/field-classic-protoss-base.svg",
+    "baseHash": "13a8d4f5f4bc85d2a9604d1ae154fb5763674b5ee704c768ea84520cde170631",
+    "foregroundUrl": "/themes/motion37/field-classic-protoss-foreground.svg",
+    "foregroundHash": "ff4d80949162210582f6e3f8ecbeb18b539c87a0245fe63b496e55680a9b28b0",
+    "names": [
+      "crystal-left-refraction",
+      "crystal-right-refraction"
+    ],
+    "features": [
+      {
+        "name": "crystal-left-refraction",
+        "feature": "crystal left refraction",
+        "duration": 8100,
+        "phase": 0,
+        "origin": [
+          352,
+          155
+        ]
+      },
+      {
+        "name": "crystal-right-refraction",
+        "feature": "crystal right refraction",
+        "duration": 5300,
+        "phase": 1900,
+        "origin": [
+          352,
+          155
+        ]
+      }
+    ],
+    "extractedShapes": 1
+  },
+  {
+    "id": "classic-zerg",
+    "focusX": 346,
+    "focusY": 109,
+    "sourceUrl": "/themes/classic-zerg-identity-field.svg",
+    "sourceHash": "9db0ae51f8db621cf2f84513386dad01d7df9a39d23b039b25ac25489cf5a57e",
+    "baseUrl": "/themes/motion37/field-classic-zerg-base.svg",
+    "baseHash": "4a376573606d664bc24286d2c1cf788593c24f7c555db3e38c8f8de7298bdd2b",
+    "foregroundUrl": "/themes/motion37/field-classic-zerg-foreground.svg",
+    "foregroundHash": "ed286814f7e5db4f8561952dcac9296bbe1b090dc0ed7d1bb113f6f680b07784",
+    "names": [
+      "living-junction-0",
+      "living-junction-1"
+    ],
+    "features": [
+      {
+        "name": "living-junction-0",
+        "feature": "living junction 0",
+        "duration": 8300,
+        "phase": 0,
+        "origin": [
+          346,
+          109
+        ]
+      },
+      {
+        "name": "living-junction-1",
+        "feature": "living junction 1",
+        "duration": 9700,
+        "phase": 1700,
+        "origin": [
+          450,
+          132
+        ]
+      }
+    ],
+    "extractedShapes": 2
+  }
+]

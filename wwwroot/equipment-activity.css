@@ -1,0 +1,13 @@
+/* Light remains registered to the original animated equipment, not data. */
+.equipment51-optics{position:absolute;display:block;inset:0;margin:0;padding:0;border:0;pointer-events:none!important;mix-blend-mode:screen;opacity:.38;transition:opacity 180ms cubic-bezier(.23,1,.32,1)}
+.equipment51-optics[hidden]{display:none!important}
+.equipment51-optics>i{position:absolute;display:block;inset:0;margin:0;padding:0;border:0;background-repeat:no-repeat;background-size:100% 100%;pointer-events:none}
+.equipment51-optics[data-equipment-mode=busy]{opacity:.85}
+.equipment51-optics[data-equipment-mode=paused]{opacity:.16}
+.equipment51-optics[data-equipment-mode=disconnected],.equipment51-optics[data-equipment-mode=error]{opacity:.1}
+:root[data-graphical-style=terran] :is(.campaign48-scene[data-campaign48-scope=sidebar],.terran50-instrument[data-terran50-scope=sidebar]){filter:drop-shadow(0 5px 4px #0009)}
+@media(prefers-reduced-motion:reduce){.equipment51-optics{display:none!important;transition:none}}
+@media(forced-colors:active){.equipment51-optics{display:none!important}}
+/* Older material previews must not paint a second casing through a full
+   campaign model. The existing preview canvas border remains unchanged. */
+:root[data-campaign48-scene] .appearance-effects-stage::before{content:none!important}

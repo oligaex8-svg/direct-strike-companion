@@ -1,0 +1,7 @@
+/* Original campaign machinery, once in each utility bay; no control repaint. */
+.terran50-instrument{position:absolute;display:block;inset:auto;z-index:0;margin:0;padding:0;border:0;overflow:hidden;contain:paint;transform-origin:0 0;pointer-events:none!important;user-select:none}
+.terran50-instrument[hidden],.terran50-poster[hidden],.terran50-viewport[hidden]{display:none!important}
+.terran50-poster,.terran50-viewport{position:absolute;display:block;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;max-width:none}
+.terran50-viewport{overflow:hidden;contain:paint}
+.terran50-atlas{position:absolute;display:block;left:0;top:0;margin:0;padding:0;border:0;background-repeat:no-repeat}
+@media(forced-colors:active){.terran50-instrument{display:none!important}}

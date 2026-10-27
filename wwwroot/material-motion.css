@@ -1,0 +1,9 @@
+/* Raster material stays in the existing frame. No added layout or field art. */
+:root .material-motion38{position:absolute;display:block;pointer-events:none!important;user-select:none;box-sizing:border-box;border:0;margin:0;padding:0;background:none;overflow:visible;z-index:3;contain:style}
+:root .material-motion38[hidden]{display:none!important}
+:root .material-patch38{position:absolute;display:block;overflow:hidden;transform-origin:0 0;border:0;padding:0;margin:0;background:none;pointer-events:none;contain:paint}
+:root .material-atlas38{position:absolute;display:block;left:0;top:0;border:0;padding:0;margin:0;background-repeat:no-repeat;pointer-events:none}
+/* The existing Settings demonstration uses the same complete well and mapping. */
+:root .appearance-effects-stage[data-material-preview]::before{content:'';position:absolute;box-sizing:border-box;inset:8px;border:1px solid transparent;background:none;transform:none;pointer-events:none;z-index:1;border-image:var(--skin-well37-image) var(--skin-well37-slice) / var(--skin-well37-paint) / 0 stretch}
+@media(prefers-reduced-motion:reduce){:root .material-motion38{display:none!important}}
+@media(forced-colors:active){:root .material-motion38,:root .appearance-effects-stage[data-material-preview]::before{display:none!important}}

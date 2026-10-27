@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
+ <defs>
+  <pattern id="cells" width="36" height="20.784" patternUnits="userSpaceOnUse">
+   <path d="M6 0H18L24 10.392 18 20.784H6L0 10.392Z M18 0L24-10.392H36L42 0 36 10.392H24Z M18 20.784L24 10.392H36L42 20.784 36 31.176H24Z" fill="none" stroke="#c5a467" stroke-opacity=".17" stroke-width=".65"/>
+   <circle cx="6" cy="0" r=".7" fill="#f4c677" fill-opacity=".19"/>
+  </pattern>
+  <linearGradient id="fade"><stop stop-color="white" stop-opacity="0"/><stop offset=".3" stop-color="white" stop-opacity=".3"/><stop offset=".75" stop-color="white" stop-opacity=".85"/><stop offset="1" stop-color="white" stop-opacity=".3"/></linearGradient>
+  <linearGradient id="height" x2="0" y2="1"><stop stop-color="white" stop-opacity=".75"/><stop offset=".6" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#d5a045" stop-opacity=".10"/><stop offset="1" stop-color="#d5a045" stop-opacity="0"/></radialGradient>
+  <mask id="horizontal"><rect width="480" height="240" fill="url(#fade)"/></mask>
+  <mask id="vertical"><rect width="480" height="240" fill="url(#height)"/></mask>
+ </defs>
+ <g mask="url(#horizontal)"><g mask="url(#vertical)">
+  <ellipse cx="340" cy="92" rx="165" ry="110" fill="url(#light)"/>
+  <rect width="480" height="240" fill="url(#cells)"/>
+  <g fill="#d6a549" fill-opacity=".055" stroke="#edc479" stroke-opacity=".20" stroke-width=".7">
+   <path d="M276 41.568H288L294 51.96 288 62.352H276L270 51.96Z"/>
+   <path d="M366 72.744H378L384 83.136 378 93.528H366L360 83.136Z"/>
+   <path d="M330 135.096H342L348 145.488 342 155.88H330L324 145.488Z"/>
+  </g>
+  <g fill="none" stroke="#dcb873" stroke-opacity=".18" stroke-width=".7">
+   <path d="M180 31.176H246L258 51.96H324L342 20.784H402 M252 124.704H294L306 103.92H360L384 145.488H450 M180 187.056H258L270 166.272H312"/>
+   <path d="M180 34.176H244L256 54.96H322 M308 106.92H358L382 148.488H432" stroke-opacity=".07"/>
+   <circle cx="180" cy="31.176" r="2.5"/><circle cx="402" cy="20.784" r="2.5"/>
+   <circle cx="252" cy="124.704" r="2.5"/><circle cx="450" cy="145.488" r="2.5"/>
+  </g>
+ </g></g>
+</svg>

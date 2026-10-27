@@ -76,3 +76,38 @@ function siteMatchupData(matches,selfIds){
  }
  return {matches:output,selfIds};
 }
+
+// Link the already validated, deduplicated siteMatchupData rows to the directory.
+// A website profile is not a Battle.net ID. Only a unique regional binding may
+// project its shared-game evidence onto an existing native player row.
+function encounterProfileFor(id){
+ const native=/^([12])-S2-\d+-\d+$/.exec(id||'');if(!native)return null;
+ const region=native[1]==='2'?'EU':'Americas';
+ const selected=typeof ownRatingSlot==='function'?ownRatingSlot(id,region)?.rating:state?.library?.ratings?.[id]?.[region==='EU'?'eu':'americas'];
+ // Automatic nickname searches display ratings, but cannot establish that two
+ // accounts played together. Only a stored, user-selected link supplies proof.
+ if(!selected?.profileId||selected.automatic||selected.region&&selected.region!==region)return null;
+ return {profileId:String(selected.profileId),region};
+}
+function linkSiteEncounterMatches(matches,players){
+ const bindings=new Map();
+ const anchors=matches.filter(match=>match.source==='site').flatMap(match=>match.players.map(player=>player.id).filter(id=>/^[12]-S2-\d+-\d+$/.test(id||'')));
+ for(const id of new Set([...players.map(player=>player.id),...anchors])){
+  if(!/^[12]-S2-\d+-\d+$/.test(id||''))continue;
+  const profile=encounterProfileFor(id);
+  if(!profile||!['EU','Americas'].includes(profile.region)||!/^\d+$/.test(profile.profileId||''))continue;
+  const key=siteIdentityKey(profile);
+  bindings.set(key,bindings.has(key)&&bindings.get(key)!==id?null:id);
+ }
+ return matches.map(match=>{
+  if(match.source!=='site')return match;
+  // The selected own participant has already been converted to a native ID by
+  // siteMatchupData. Validate its reverse binding too, not just opponents.
+  const own=match.players.filter(player=>/^[12]-S2-\d+-\d+$/.test(player.id||''));
+  if(!own.length||own.some(player=>{const profile=encounterProfileFor(player.id);return !profile||bindings.get(siteIdentityKey(profile))!==player.id;}))return null;
+  const linked=match.players.map(player=>bindings.get(player.id)?{...player,id:bindings.get(player.id)}:player);
+  // Never collapse two participants onto one account, even with a bad binding.
+  if(new Set(linked.map(player=>player.id)).size!==linked.length)return null;
+  return {...match,players:linked};
+ }).filter(Boolean);
+}

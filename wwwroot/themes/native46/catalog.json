@@ -1,0 +1,86 @@
+{
+  "version": 46,
+  "objects": {
+    "egg": {
+      "frames": 166,
+      "columns": 16,
+      "rows": 11,
+      "tile": [
+        223,
+        263
+      ],
+      "duration": 6916.666666666667,
+      "atlas": "/themes/native46/egg-atlas.webp",
+      "poster": "/themes/native46/egg-poster.webp",
+      "decodedMiB": 39.37615966796875,
+      "atlasSHA256": "fa61ad4fdf86065be15d150df29bfb57c2fba5325d5d90fff15a44ae57eaa34b",
+      "posterSHA256": "11602eefce9e44984cfcfbbc05ea6b4570ac2c043a38fdc3fc88da897a6ee05c",
+      "crop": {
+        "left": 16,
+        "top": 50,
+        "width": 223,
+        "height": 263
+      },
+      "source": {
+        "device": "egg",
+        "frames": 166,
+        "width": 256,
+        "height": 320,
+        "duration": 6916.666666666667,
+        "sourceSHA256": "b95079c305903c10f18631b133e9f42e684416d48820e7d57740fc650c10433f",
+        "sourceModelSHA256": "b95079c305903c10f18631b133e9f42e684416d48820e7d57740fc650c10433f",
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local46-zerg\\egg\\frames-84f46488d5b0",
+        "fingerprint": "84f46488d5b055863bbb8b64e266feaf0312be3f8ba4c7a54b55b6a47b563ddf",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 2300
+        },
+        "provenance": {
+          "geometry": "Unchanged Blizzard campaign SC2 egg mesh, native four-influence skin weights, corner normals and UVs",
+          "animation": "Native Stand bone location/quaternion/scale and emissive tracks only; no authored deformation; original blended skin evaluated by an identity-bind armature palette; three Stand cycles",
+          "presentation": "Authored fixed camera, lights, organic PBR translation and tint for native emissive alpha mask; no added geometry or particles",
+          "deformationMethod": "native weighted linear skinning via baked matrix palette",
+          "maxPaletteDecompositionError": 1.899094357327158e-7,
+          "maxBlenderSkinDeformationError": 8.971687092477304e-8,
+          "validatedSkinFrames": [
+            1,
+            28,
+            55
+          ],
+          "creep": {
+            "enabled": true,
+            "textures": [
+              "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\assets\\themes\\native46\\textures\\creep.png",
+              "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\assets\\themes\\native46\\textures\\creepheight.png",
+              "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\assets\\themes\\native46\\textures\\creepspecularmask.png"
+            ],
+            "geometry": "authored ground footprint with native-height irregular feather and subtle growth",
+            "surface": "native grayscale creep with authored purple engine-material tint, native height bump and specular wetness; no emission",
+            "animation": "authored slow reflectance pulse from one native egg emissive-envelope cycle per output loop"
+          }
+        },
+        "frameCount": 166,
+        "fps": 24,
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "meshVertices": 663,
+        "triangles": 1112,
+        "authoredDeformation": false,
+        "nativeCycles": 3,
+        "creep": {
+          "enabled": true,
+          "textures": [
+            "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\assets\\themes\\native46\\textures\\creep.png",
+            "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\assets\\themes\\native46\\textures\\creepheight.png",
+            "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\assets\\themes\\native46\\textures\\creepspecularmask.png"
+          ],
+          "geometry": "authored ground footprint with native-height irregular feather and subtle growth",
+          "surface": "native grayscale creep with authored purple engine-material tint, native height bump and specular wetness; no emission",
+          "animation": "authored slow reflectance pulse from one native egg emissive-envelope cycle per output loop"
+        },
+        "nativeSkinInfluences": 4
+      }
+    }
+  }
+}

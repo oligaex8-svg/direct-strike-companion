@@ -1,0 +1,5 @@
+'use strict';
+const fs=require('fs'),path=require('path'),sharp=require(require.resolve('sharp',{paths:['C:/Users/Admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules']}));
+sharp.concurrency(1);sharp.cache({memory:16,files:0});
+const ids=['nerazim','alarak','ihanrii','nova','mira','machined','tyrador','abathur','dehaka','cerberus','mecha','arcade','classic-terran','classic-protoss','classic-zerg'];
+(async()=>{const layers=[];for(const [i,id] of ids.entries()){const img=await sharp(path.join(__dirname,'local54-characters',id,id+'-pilot-a.png')).resize(240,240).png().toBuffer();layers.push({input:img,left:i%5*256+8,top:Math.floor(i/5)*276});layers.push({input:Buffer.from('<svg width="256" height="32"><text x="12" y="22" fill="#dbe6ed" font-family="Segoe UI" font-size="16">'+id+'</text></svg>'),left:i%5*256,top:Math.floor(i/5)*276+240});}await sharp({create:{width:1280,height:828,channels:4,background:'#10161e'}}).composite(layers).png().toFile(path.join(__dirname,'local54-characters','all-pilots.png'));console.log('All fifteen original-model pilots assembled.');})().catch(e=>{console.error(e);process.exitCode=1;});

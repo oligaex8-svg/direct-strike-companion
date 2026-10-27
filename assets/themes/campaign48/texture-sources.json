@@ -1,0 +1,491 @@
+[
+  {
+    "pngSHA256": "1966e5479ed190ce309aa0b556dc790242624f2517211d41deafee3d845c8189",
+    "file": "black.dds",
+    "reference": "Assets/Textures/Black.dds",
+    "png": "textures/black.png",
+    "sha256": "52d45217a6de2002c80954cef6199c34240eabad81c464044c61e0587f25b996",
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/black.dds"
+  },
+  {
+    "reference": "Assets/Textures/Central_Core_Dif.dds",
+    "png": "textures/central_core_dif.png",
+    "pngSHA256": "72f6a8040f5a41001ded5453e0663467aa4547a671143906076a99dc9f9aeee3",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/central_core_dif.dds",
+    "sha256": "8f1a93d72b02d581392de7b810751e7836b45ceef912ca4d88d721ca7400983f",
+    "file": "central_core_dif.dds"
+  },
+  {
+    "reference": "Assets/Textures/Central_Core_Emis.dds",
+    "png": "textures/central_core_emis.png",
+    "pngSHA256": "eb0242c63c65ae5305fd9aabbe1379d4a81802a2d38fdda06e0a026e1767f48e",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/central_core_emis.dds",
+    "sha256": "266b5e4dbc35db086b42b41f93213cb2ca85e5650ff11d8797c1d23510341548",
+    "file": "central_core_emis.dds"
+  },
+  {
+    "reference": "Assets/Textures/Central_Core_Norm.dds",
+    "png": "textures/central_core_norm.png",
+    "pngSHA256": "8a5abab90faa3036412e9ffe415e7e4c55ed7d51c7ee247e5968c05fcab07a21",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/central_core_norm.dds",
+    "sha256": "7a4c27c83bd59b828f6d26ebc660f4868ad7af67a412c1d74675bc3ab9bbefe4",
+    "file": "central_core_norm.dds"
+  },
+  {
+    "reference": "Assets/Textures/Central_Core_Spec.dds",
+    "png": "textures/central_core_spec.png",
+    "pngSHA256": "372a2b649719272c68604bbe4eb4a5e06a72406c417762b97bc0337bcac2e70c",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/central_core_spec.dds",
+    "sha256": "d15328700e6e5e9b83c5e07623628e267c3551e9484381129216ca43961cfbb8",
+    "file": "central_core_spec.dds"
+  },
+  {
+    "pngSHA256": "6852dc5f38f158031be5f5f19bcfc4b9c2ec35997e07aa4d62c19b7946fbd731",
+    "file": "genericglow_black.dds",
+    "reference": "Assets/Textures/GenericGlow_Black.dds",
+    "png": "textures/genericglow_black.png",
+    "sha256": "ee48005a7c86dfdd317d403deddf61f0f1c23b4825f7663f062ec49cb0d13766",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/genericglow_black.dds"
+  },
+  {
+    "pngSHA256": "1fa30c3648576430e10ad645ae8fcaad51401c49cd903e4396070402f04d915c",
+    "file": "glow_green3.dds",
+    "reference": "Assets/Textures/Glow_Green3.dds",
+    "png": "textures/glow_green3.png",
+    "sha256": "23bf7ecd87212c661a6e9410667f299504ea6ad709f4690fe73f87fcb5819ee2",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/glow_green3.dds"
+  },
+  {
+    "pngSHA256": "5d939a3b88bd62e7f02b7b255221c8482322ada497dcf00eb19e12f50bb1bbbf",
+    "file": "green.dds",
+    "reference": "Assets/Textures/Green.dds",
+    "png": "textures/green.png",
+    "sha256": "76897b1feb20d0eb4a060d98f85b8a8c22689556f5659a0b12e12dec6962dd04",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/green.dds"
+  },
+  {
+    "pngSHA256": "78a5347bc2bb53cad5d132a03e89ca4ed2486057b5b01c496349a2346256b39c",
+    "file": "hyperionbridgereflection.dds",
+    "reference": "Assets/Textures/HyperionBridgeReflection.dds",
+    "png": "textures/hyperionbridgereflection.png",
+    "sha256": "ff39017bebfec951ca7f45b4fc11c3eb11648287d406330847931097ea780d6e",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hyperionbridgereflection.dds"
+  },
+  {
+    "pngSHA256": "dac00be74cefddbee25fc260f14aaea4debe93c0ba927a36c1491d89275bc3b1",
+    "file": "leviathan_corner1_spec.dds",
+    "reference": "Assets/Textures/Leviathan_corner1_spec.dds",
+    "png": "textures/leviathan_corner1_spec.png",
+    "sha256": "d2ee74fdb521b95050b910e018e4d7e7339c62dc9ddff45e9edcb44a1aa435ca",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/leviathan_corner1_spec.dds"
+  },
+  {
+    "pngSHA256": "70d6aac0110cca38c0140a36e54baae6d285da0d2976bb67521f1fc2cb4514bc",
+    "file": "leviathan_corneradd1_diff.dds",
+    "reference": "Assets/Textures/Leviathan_corneradd1_diff.dds",
+    "png": "textures/leviathan_corneradd1_diff.png",
+    "sha256": "411e8ae9711c24323d39f0cfdca30f9e9da789e480069349db30488cf3004736",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/leviathan_corneradd1_diff.dds"
+  },
+  {
+    "pngSHA256": "eaed1db2dc3240c95f406a84b2bad9700bc62f40da0f74916b0a7f977fd1f10f",
+    "file": "leviathan_corneradd1_nm.dds",
+    "reference": "Assets/Textures/Leviathan_corneradd1_nm.dds",
+    "png": "textures/leviathan_corneradd1_nm.png",
+    "sha256": "1b6012166e6f84b230cad7e112bc931a3532d126269ff7aebe6780ce5085ae60",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/leviathan_corneradd1_nm.dds"
+  },
+  {
+    "pngSHA256": "91a053fc46d3b4e568087e754ac1711a0fdb0988c7682231a03f61567136a37c",
+    "file": "nukeicon4a_green.dds",
+    "reference": "Assets/Textures/NukeIcon4a_Green.dds",
+    "png": "textures/nukeicon4a_green.png",
+    "sha256": "f6a98dddc4ccc6f0f526f52a6db2c603a708ce7a1f9abbb410f08e9d4d854be2",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/nukeicon4a_green.dds"
+  },
+  {
+    "pngSHA256": "7ef9481daf94b943b5bac7b7cc06d54a5e9764456f0c08f8cdc730734f2ad37e",
+    "file": "ping2c_green.dds",
+    "reference": "Assets/Textures/Ping2c_Green.dds",
+    "png": "textures/ping2c_green.png",
+    "sha256": "d5905a1e6e2be597775735aa353a35dfbbfee8aee95d461fd449c91e1a862036",
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/ping2c_green.dds"
+  },
+  {
+    "pngSHA256": "dec6b7ccce246ceae03334c87def8082c2f333629aa5ec371a6efd8acaf86892",
+    "file": "ping2c_green2.dds",
+    "reference": "Assets/Textures/Ping2c_Green2.dds",
+    "png": "textures/ping2c_green2.png",
+    "sha256": "d76f7b189f841678a9e3a102ab4bd7375bc3d54e0a1f7a880b1ca63aaa04040f",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/ping2c_green2.dds"
+  },
+  {
+    "pngSHA256": "c299fd3e389860935dc91c427160a010e7c61fd88c06aacd089ed1e99c9cbb02",
+    "file": "readout3_green.dds",
+    "reference": "Assets/Textures/Readout3_Green.dds",
+    "png": "textures/readout3_green.png",
+    "sha256": "9bca4fb08e7fb9943037179802abeeeeaef8951a54950fc3d7a4e1ba2d35bd2d",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/readout3_green.dds"
+  },
+  {
+    "sha256": "974be050ff225f397a1042a565beb30acd4ea42eefedd0b819e2ac82f6ccce00",
+    "pngSHA256": "7392c720437791934429267c31918c3aacbd9a6fc34460b668fa57332818eaf5",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/reflection_armory.dds",
+    "reference": "Assets/Textures/Reflection_Armory.dds",
+    "file": "reflection_armory.dds",
+    "png": "textures/reflection_armory.png"
+  },
+  {
+    "pngSHA256": "fac98e3c2be84f0b6b77153dba09fdc4c699fd96d07df715085a44f19cc07ec2",
+    "file": "reflection_bridge.dds",
+    "reference": "Assets/Textures/Reflection_Bridge.dds",
+    "png": "textures/reflection_bridge.png",
+    "sha256": "7781bb8b15b9586cefd7d1cb3415d36c6b09e08f87506475510dbb0bf78f75c3",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/reflection_bridge.dds"
+  },
+  {
+    "pngSHA256": "9e0cdef4d58d4030687febd4c6c3cd1d334d575932c14b952229da33e2822d07",
+    "file": "reflection_hyperionbridge.dds",
+    "reference": "Assets/Textures/Reflection_HyperionBridge.dds",
+    "png": "textures/reflection_hyperionbridge.png",
+    "sha256": "c4d70bd64d9b71214aae890ea4b4fbdc2ca46593d02f04e3c12e17ed7ec01ce3",
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/reflection_hyperionbridge.dds"
+  },
+  {
+    "pngSHA256": "bf16e51aa7d907666982827f08d4706e6294dfbe2cdf585391c6b32fae44c8f5",
+    "file": "smx1_leviathanbakedlighting_charset.dds",
+    "reference": "Assets/Textures/SMX1_LeviathanBakedLighting_CharSet.dds",
+    "png": "textures/smx1_leviathanbakedlighting_charset.png",
+    "sha256": "3ea6f1e3719e9ad904a54e68dffcde94ab6af8c6879027ed823b743e5b638f69",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/smx1_leviathanbakedlighting_charset.dds"
+  },
+  {
+    "reference": "Assets/Textures/SMX2_ArmyRoom_Reflection_DefaultMediumBlur.dds",
+    "png": "textures/smx2_armyroom_reflection_defaultmediumblur.png",
+    "pngSHA256": "4f999abf69b622418357c796359c7c5a24d760bc3b0360e44e8ba7bdd5faa116",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/smx2_armyroom_reflection_defaultmediumblur.dds",
+    "sha256": "6f672c91f9e2598eb071a9314765b51b7eb792e4c49a9d12c8e6599c442a805a",
+    "file": "smx2_armyroom_reflection_defaultmediumblur.dds"
+  },
+  {
+    "pngSHA256": "f4bc1df5e062b78a3a859e6c658c501c92e7082a13fae70dfe0e5c53666a548e",
+    "file": "smx2_shiproom_corelock_diff.dds",
+    "reference": "Assets/Textures/SMX2_ShipRoom_CoreLock_Diff.dds",
+    "png": "textures/smx2_shiproom_corelock_diff.png",
+    "sha256": "6498be4ac6cd85cfeda54af9e9afb491f44e5ea320a4331e5791fa187d3b8f29",
+    "archivePath": "campaigns/void.sc2campaign/base.sc2assets/Assets/Textures/smx2_shiproom_corelock_diff.dds"
+  },
+  {
+    "sha256": "ab7059a36fc0ecaec2ed8ec3a12faa99349a864bc4d37bc24e3bc745bb39f3b7",
+    "pngSHA256": "545af169ed27eaaf07d979383c7b8490a837440c5c71bac4ff15adefd2153cc0",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_armory_lcd_dirt.dds",
+    "reference": "Assets/Textures/SM_Armory_LCD_Dirt.dds",
+    "file": "sm_armory_lcd_dirt.dds",
+    "png": "textures/sm_armory_lcd_dirt.png"
+  },
+  {
+    "sha256": "c6d9a6a6c866db66c64e989e5521abaff3432a86109d84efa356bc3e255f93fd",
+    "pngSHA256": "52fd486ff5e184b5c3ba35f6ae8f8bf983d6851b46164f3a7846ddc994406abe",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/sm_armory_lcd_dirt2.dds",
+    "reference": "Assets/Textures/SM_Armory_LCD_Dirt2.dds",
+    "file": "sm_armory_lcd_dirt2.dds",
+    "png": "textures/sm_armory_lcd_dirt2.png"
+  },
+  {
+    "pngSHA256": "25537a197049e1bc88ec36feea02affc8da061599133cb37b0a3690e1d75edcb",
+    "file": "sm_commscreen_wide.dds",
+    "reference": "Assets/Textures/SM_CommScreen_Wide.dds",
+    "png": "textures/sm_commscreen_wide.png",
+    "sha256": "dc0d9c63ece3da85e64851d34df02064e2e05c73e9d5d6931baf871536bcba3d",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_commscreen_wide.dds"
+  },
+  {
+    "pngSHA256": "453d666ff7b222a412447933e43b41acdcb25e05cd4bedae3fdb9e52a46e4ef5",
+    "file": "sm_hb_all_screens_diff.dds",
+    "reference": "Assets/Textures/SM_HB_all_screens_diff.dds",
+    "png": "textures/sm_hb_all_screens_diff.png",
+    "sha256": "8966d6e0ae8e8481945758ffdb8f44f5a1d8a991f27e8511afad057af4859995",
+    "archivePath": "mods/liberty.sc2mod/enus.sc2assets/Assets/Textures/sm_hb_all_screens_diff.dds"
+  },
+  {
+    "pngSHA256": "f1e1e3d36563d3efa541e383c110905a0d6b0abe3db921e229fdcc29b22aaeb4",
+    "file": "sm_lcdprops_bcvideo01_flipb_green.dds",
+    "reference": "Assets/Textures/SM_LCDProps_bcvideo01_FlipB_Green.dds",
+    "png": "textures/sm_lcdprops_bcvideo01_flipb_green.png",
+    "sha256": "7a7367f807eb067de00320a8b6e9672fee14aa967362fbe1d0d5e4cb36a2755d",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_lcdprops_bcvideo01_flipb_green.dds"
+  },
+  {
+    "pngSHA256": "ebbe226c842ff7f5ca490e7a6618a63a1938d7b5d6547a4f3be99c6275c944a4",
+    "file": "sm_hb_console_emis.dds",
+    "reference": "Assets/Textures/SM_hb_console_emis.dds",
+    "png": "textures/sm_hb_console_emis.png",
+    "sha256": "fdedd47ecfb6c952821edb485f7ee03d3690a01f3c662b2a48f497fdf9d30aaf",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_console_emis.dds"
+  },
+  {
+    "pngSHA256": "faa3a111d1c77984746b79c7af05ac62f063cd9bbc6e0481544ed6b37da679d2",
+    "file": "sm_hb_console_norm.dds",
+    "reference": "Assets/Textures/SM_hb_console_norm.dds",
+    "png": "textures/sm_hb_console_norm.png",
+    "sha256": "9212ed81067cdc1c9c7a996e22bbf5ac670baa706bc0df372ebd971fbda365b1",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_console_norm.dds"
+  },
+  {
+    "pngSHA256": "26bdf5328b6a8fd8f7b252f17498291519c71e27b261322ae1602b536a81e191",
+    "file": "sm_hb_normbend_norm.dds",
+    "reference": "Assets/Textures/SM_hb_normBend_norm.dds",
+    "png": "textures/sm_hb_normbend_norm.png",
+    "sha256": "1100555ee6bf693af919223fcd3846d724bab5e2e6ad8b1a0e5370f164b65a5d",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_normbend_norm.dds"
+  },
+  {
+    "pngSHA256": "2b220e3003a65869f09a78b35125fc74378826348bc487ff2c4a1618b7bd10ac",
+    "file": "starcompass1_green.dds",
+    "reference": "Assets/Textures/starcompass1_green.dds",
+    "png": "textures/starcompass1_green.png",
+    "sha256": "824be1651b81e3b48ce9aad23e39d19815a3acec7f1e2ba4e9bbcc7f65cb0c70",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/starcompass1_green.dds"
+  },
+  {
+    "pngSHA256": "cc0289630ab94d1f4d33fc68653ed3bd380a2b07fe8e27df861995dc844c4ea1",
+    "file": "starmapreadoutalpha.dds",
+    "reference": "Assets/Textures/StarMapReadoutAlpha.dds",
+    "png": "textures/starmapreadoutalpha.png",
+    "sha256": "76c7966041b24ffb30f7633611c0dc54766c9e8b0fda76eddf235f4a20dbccec",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/starmapreadoutalpha.dds"
+  },
+  {
+    "pngSHA256": "a38e4c134d5847aa2712fb5e981c73f4d7bb9a80565189c5d44fc19a53bca66d",
+    "file": "static2.dds",
+    "reference": "Assets/Textures/Static2.dds",
+    "png": "textures/static2.png",
+    "sha256": "f0b6b164a3b857826b0256aa8649369a03c0f1adc925a3604ea019f7d499aa18",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/static2.dds"
+  },
+  {
+    "sha256": "2841fe79903c67acd4e8687be867ec7eba58139bba52357f378e39283dcbadc8",
+    "pngSHA256": "4a8be9f86795df95020ff0a630ac69c7ce340257c0bd29db68ce72030ce03690",
+    "archivePath": "campaigns/liberty.sc2campaign/enus.sc2assets/Assets/Textures/t1_sm_armory_console_diff.dds",
+    "reference": "Assets/Textures/T1_SM_Armory_Console_diff.dds",
+    "file": "t1_sm_armory_console_diff.dds",
+    "png": "textures/t1_sm_armory_console_diff.png"
+  },
+  {
+    "sha256": "91437f914899b60790508bc425d9b4d317de152b19491a740bbf1a0b3876b2a5",
+    "pngSHA256": "44e499ec1fbc8c469b03a4ae51aeb67f8ee2d7a13ebf95d04f8a80aeb8b740e0",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/t1_sm_armory_console_norm.dds",
+    "reference": "Assets/Textures/T1_SM_Armory_Console_norm.dds",
+    "file": "t1_sm_armory_console_norm.dds",
+    "png": "textures/t1_sm_armory_console_norm.png"
+  },
+  {
+    "sha256": "d559a7031ba959e6e98585c9405586fbc9e067fdbb261988e70ba1ff69a51fef",
+    "pngSHA256": "da568b62741c464cc87c1747e6a533dc93f614a3cd1af447b860c827947921f3",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/t1_sm_armory_console_spec.dds",
+    "reference": "Assets/Textures/T1_SM_Armory_Console_spec.dds",
+    "file": "t1_sm_armory_console_spec.dds",
+    "png": "textures/t1_sm_armory_console_spec.png"
+  },
+  {
+    "sha256": "cf35f9a0280f073a49b67ff7192a497e4fb98c907896a20940f35c679e870297",
+    "pngSHA256": "2d1f4fc686145c9b8058dd3dd7c4dfdc3b6fdcdffe593150f426b1a3a8e71313",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/t1_sm_armory_env.dds",
+    "reference": "Assets/Textures/T1_SM_Armory_env.dds",
+    "file": "t1_sm_armory_env.dds",
+    "png": "textures/t1_sm_armory_env.png"
+  },
+  {
+    "sha256": "dd121cbf10ff5682c36968c37e2e33140c62f91854a72ea2ffcba209b7e5258a",
+    "pngSHA256": "b09af0a2304f79648ee8a5619b9bdd8ae205fd0e0952d62f19f4fc1cec695bae",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/t1_sm_consolecap.dds",
+    "reference": "Assets/Textures/T1_SM_ConsoleCap.dds",
+    "file": "t1_sm_consolecap.dds",
+    "png": "textures/t1_sm_consolecap.png"
+  },
+  {
+    "sha256": "3700ca2591b619472fcfc5a72a817e57b32db741c32be93d4c4124be7b3ab01c",
+    "pngSHA256": "0675ba7c28a0c26cf3d67cf5c1c1e32298a3657eacdf7b2222821e8c3cfeba1d",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/t1_sm_consolecap_nm.dds",
+    "reference": "Assets/Textures/T1_SM_ConsoleCap_nm.dds",
+    "file": "t1_sm_consolecap_nm.dds",
+    "png": "textures/t1_sm_consolecap_nm.png"
+  },
+  {
+    "pngSHA256": "acb055ce382fb4aeed81e5466368029fa2d2ae0a1ae2cf4914b826c6b5c539fc",
+    "file": "t1_sm_hb_console_diff.dds",
+    "reference": "Assets/Textures/T1_SM_hb_console_diff.dds",
+    "png": "textures/t1_sm_hb_console_diff.png",
+    "sha256": "4dbb153b27fb503574d68fa3b8aca946bee41bb96face4c731c4fcc762da196b",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_hb_console_diff.dds"
+  },
+  {
+    "pngSHA256": "bbad954b021bbf9e0a64f886c371cb50b9094ecd4ae620ac822b8e0a6fbae050",
+    "file": "t1_sm_hb_console_spec.dds",
+    "reference": "Assets/Textures/T1_SM_hb_console_spec.dds",
+    "png": "textures/t1_sm_hb_console_spec.png",
+    "sha256": "6028635c6b7098078b8a6bcf0799ebb266fdfbfc0b4d0217c4cdd789e1aee593",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_hb_console_spec.dds"
+  },
+  {
+    "pngSHA256": "5497fbc935288f164fcc7c6d85fcd9e2c6602ad24161587831d5d678e86841f0",
+    "file": "t1_sm_hb_starmaptable_diff.dds",
+    "reference": "Assets/Textures/T1_sm_hb_StarmapTable_Diff.dds",
+    "png": "textures/t1_sm_hb_starmaptable_diff.png",
+    "sha256": "00db3e050e051f46008760fae6e9a620bbe575982a325acd806b0a19fa970e52",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_hb_starmaptable_diff.dds"
+  },
+  {
+    "pngSHA256": "b065e9c082e6b64b3ae51cea86450dfb4a117bc13f5c903d26279ac33709fe22",
+    "file": "t1_sm_hb_starmaptable_spec.dds",
+    "reference": "Assets/Textures/T1_sm_hb_StarmapTable_Spec.dds",
+    "png": "textures/t1_sm_hb_starmaptable_spec.png",
+    "sha256": "b4b8ef25aa17f69c50ca0529a0395d2928c0bbe6786f07cfeeb33256cd3c23fb",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_hb_starmaptable_spec.dds"
+  },
+  {
+    "pngSHA256": "b8e23049385b200e7900a48709e3d4914b9281324018d8c66909870b79045b38",
+    "file": "vespenegeyser00_specular.dds",
+    "reference": "Assets/Textures/VespeneGeyser00_Specular.dds",
+    "png": "textures/vespenegeyser00_specular.png",
+    "sha256": "3674220a87254247b44043f83a0c4eccb01c18d7f6929bf40fa1a1d9bb99c2af",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/vespenegeyser00_specular.dds"
+  },
+  {
+    "pngSHA256": "476dd780494d839eb4518f70ec37df350c48fc5edef1198178dbcfbd357b79ce",
+    "file": "sm_eyespechighlight_cubic.dds",
+    "reference": "Assets/Textures/sm_eyespechighlight_cubic.dds",
+    "png": "textures/sm_eyespechighlight_cubic.png",
+    "sha256": "0863b8c6dc3f14052555c4adca1906922ccadfe4549d389f87f370fc72e71883",
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/sm_eyespechighlight_cubic.dds"
+  },
+  {
+    "pngSHA256": "ce05cca11bfb1e9c1bc0b010b247f5921584c7987554ab67043cb3abd9f62dc4",
+    "file": "sm_hb_starmaptable_emiss.dds",
+    "reference": "Assets/Textures/sm_hb_StarmapTable_Emiss.dds",
+    "png": "textures/sm_hb_starmaptable_emiss.png",
+    "sha256": "3a7e8ec7695c18feacca8566812615859af16f9bbe8d4bc56b6c9d89d609e7b9",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_starmaptable_emiss.dds"
+  },
+  {
+    "pngSHA256": "fa28679bb1fee9fd8232e85489f50e08a7dcc15e62923159babc7ec6ac5aa558",
+    "file": "sm_hb_starmaptable_norm.dds",
+    "reference": "Assets/Textures/sm_hb_StarmapTable_norm.dds",
+    "png": "textures/sm_hb_starmaptable_norm.png",
+    "sha256": "da11c028cb5a8d74178f028086e7e54779785c4563cc40e90a44d2d25e344b33",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_starmaptable_norm.dds"
+  },
+  {
+    "pngSHA256": "be3623ec6edd7b0414bd4e8307a7fcf409ff1b514c8aa1323077c010605178e4",
+    "file": "sm_hb_starmaptop_diff.dds",
+    "reference": "Assets/Textures/sm_hb_StarmapTop_Diff.dds",
+    "png": "textures/sm_hb_starmaptop_diff.png",
+    "sha256": "b7b5041c3cd341696c69a312cc265a8e69ef4d14c3c02e337ed187d23092c046",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_starmaptop_diff.dds"
+  },
+  {
+    "pngSHA256": "bbdc97bd7257aa814019de6bcfeffd1492f7cb34aee4281bbe991e38cf574fd3",
+    "file": "sm_hb_starmaptop_norm.dds",
+    "reference": "Assets/Textures/sm_hb_StarmapTop_norm.dds",
+    "png": "textures/sm_hb_starmaptop_norm.png",
+    "sha256": "66735bc0f2f8b6b4c0b72e7bd4686c4ea8ff59dc53628b596cc7f163edca0a46",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_hb_starmaptop_norm.dds"
+  },
+  {
+    "pngSHA256": "250d15c5f8f3c9ee358fd64ebd57f3c870f37b5e3b9b755bb600861035c75cff",
+    "file": "sm_vo_bridgebuttonpanel_diff.dds",
+    "reference": "Assets/Textures/sm_vo_BridgeButtonPanel_diff.dds",
+    "png": "textures/sm_vo_bridgebuttonpanel_diff.png",
+    "sha256": "49489b686be63df2c81ea877d358a469f9d525af6b842d34d4db203e8d7ed4a0",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_bridgebuttonpanel_diff.dds"
+  },
+  {
+    "pngSHA256": "836e06c70676043dcb95eb14625c89efd1ce734fd527c8d1048d7f21ecc72f72",
+    "file": "sm_vo_bridgebuttonpanel_spec.dds",
+    "reference": "Assets/Textures/sm_vo_BridgeButtonPanel_spec.dds",
+    "png": "textures/sm_vo_bridgebuttonpanel_spec.png",
+    "sha256": "10b11e5ff7d907709658bdf28cbad9c040496224bf16f56e955b343945049a0d",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_bridgebuttonpanel_spec.dds"
+  },
+  {
+    "pngSHA256": "452a7490ecb01b3fedb6af465d5fa36fbe1e9644524bfabf29e75c11226d68a7",
+    "file": "sm_vo_bridgebutton_diff.dds",
+    "reference": "Assets/Textures/sm_vo_BridgeButton_Diff.dds",
+    "png": "textures/sm_vo_bridgebutton_diff.png",
+    "sha256": "14c7186515ec76b7be49197242851a07d142c9d7c940093ffa34980e5476ea51",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_bridgebutton_diff.dds"
+  },
+  {
+    "pngSHA256": "b8ed07b70e5b7daa129c411543d5661e574f642896f6fb80105670834bb19c23",
+    "file": "sm_vo_bridgebutton_spec.dds",
+    "reference": "Assets/Textures/sm_vo_BridgeButton_spec.dds",
+    "png": "textures/sm_vo_bridgebutton_spec.png",
+    "sha256": "a799d61946b77031bf958365a991d26562e279b910a650061dfa010bfe6b7adc",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_bridgebutton_spec.dds"
+  },
+  {
+    "pngSHA256": "2f1c484f4f8817d56dd417d2ce687779ef666bebe65b37a29fbcb04178a1bd67",
+    "file": "sm_vo_buttonpanel_norm.dds",
+    "reference": "Assets/Textures/sm_vo_ButtonPanel_norm.dds",
+    "png": "textures/sm_vo_buttonpanel_norm.png",
+    "sha256": "c09fb2ebf58211b18b989900f97060f4bdfcaf1a2d9c88d12732f76111c01b65",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_buttonpanel_norm.dds"
+  },
+  {
+    "pngSHA256": "b146842f81f4d64cdc2f4702a78d3a5d6b25dcc56f7d4442cc7a68b67001bfdb",
+    "file": "sm_vo_button_norm.dds",
+    "reference": "Assets/Textures/sm_vo_Button_Norm.dds",
+    "png": "textures/sm_vo_button_norm.png",
+    "sha256": "8499744b496eff50910606f510f39673943a7bf421e2c56ffa9574be68de2d7d",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_button_norm.dds"
+  },
+  {
+    "pngSHA256": "3ee087037e772d0996a8ddec8db29e1540ad07a06d5045b4666408ba9669cca0",
+    "file": "sm_vo_button_emis.dds",
+    "reference": "Assets/Textures/sm_vo_Button_emis.dds",
+    "png": "textures/sm_vo_button_emis.png",
+    "sha256": "64d97d0c17f0c1ef047b5cf9ac91d80c511b728ea6d4b7ef0b71601e8350530a",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_vo_button_emis.dds"
+  },
+  {
+    "pngSHA256": "2b220e3003a65869f09a78b35125fc74378826348bc487ff2c4a1618b7bd10ac",
+    "file": "starcompass1_green.dds",
+    "reference": "Assets/Textures/starcompass1_green.dds",
+    "png": "textures/starcompass1_green.png",
+    "sha256": "824be1651b81e3b48ce9aad23e39d19815a3acec7f1e2ba4e9bbcc7f65cb0c70",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/starcompass1_green.dds"
+  },
+  {
+    "reference": "Assets/Textures/zergeggcolor.dds",
+    "png": "textures/zergeggcolor.png",
+    "pngSHA256": "83ccb77bb42e925e123a72e7802639bcfaeb847205c9351126cf17104e71ac0a",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergeggcolor.dds",
+    "sha256": "f06eca3dc4924fa51033f8e17f6cae95f5bebed43007c7dc3c9e804f7a915c43",
+    "file": "zergeggcolor.dds"
+  },
+  {
+    "reference": "Assets/Textures/zergeggnormal.dds",
+    "png": "textures/zergeggnormal.png",
+    "pngSHA256": "33ec7c6901e9b5c1264ce4326d3f6ef749c6ae85b576358fbb095c6ea1d6c46c",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergeggnormal.dds",
+    "sha256": "ce98a836d096119c0ab2ce87483577476d82be426e2a0b66ab82f5b60beb9cbe",
+    "file": "zergeggnormal.dds"
+  },
+  {
+    "reference": "Assets/Textures/zergeggspecular.dds",
+    "png": "textures/zergeggspecular.png",
+    "pngSHA256": "b9cb60a0d377059bef7e9946bbfbb63fcf2b21f6affa7be64ded45706d6217c7",
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/zergeggspecular.dds",
+    "sha256": "c6a3854d6a69e2ed9d0e588be1bb3a02be6215061dc04719e44227640ea6e7d4",
+    "file": "zergeggspecular.dds"
+  },
+  {
+    "file": "Video_ArmoryScreen.ogv",
+    "png": "textures/video_armoryscreen.png",
+    "pngSHA256": "a44e5f582c3ed2ed543f664962081087763562655bbde3b0030b03321a4b0b4e",
+    "reference": "Assets/Textures/Video_ArmoryScreen.ogv",
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/Textures/video_armoryscreen.ogv",
+    "kind": "native movie; original stored separately, poster for texture completeness",
+    "sha256": "420fce1bb1b32014548932827d4aad665b9f067c0527e748b7f478cd1e8feba0"
+  }
+]

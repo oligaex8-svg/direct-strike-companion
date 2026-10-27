@@ -1,0 +1,11 @@
+:root .protoss-pylon42{display:block;position:absolute;z-index:0;transform-origin:0 0;overflow:hidden;contain:paint;pointer-events:none!important;margin:0;padding:0;border:0;user-select:none}
+:root .protoss-pylon42[hidden],:root .pylon-poster42[hidden],:root .pylon-viewport42[hidden]{display:none!important}
+:root .pylon-poster42,:root .pylon-viewport42{display:block;position:absolute;inset:0;width:100%;height:100%;max-width:none;border:0;margin:0;padding:0;pointer-events:none}
+:root .pylon-viewport42{overflow:hidden;contain:paint}
+:root .pylon-atlas42{display:block;position:absolute;left:0;top:0;background-repeat:no-repeat;border:0;margin:0;padding:0;pointer-events:none}
+:root .appearance-effects-stage[data-pylon42-preview]{background:radial-gradient(ellipse at 50% 85%,#10253c,#080d13 65%)!important}
+:root .appearance-effects-stage[data-pylon42-preview]::before{content:none!important}
+:root .appearance-effects-stage[data-pylon42-preview]>.material-motion38{display:none!important}
+@media(forced-colors:active){:root .protoss-pylon42{display:none!important}}
+
+:root[data-graphical-style=protoss] .sidebar[data-pylon42-host]::after{visibility:hidden!important}

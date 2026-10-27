@@ -1,0 +1,180 @@
+{
+  "scope": "Original SC2 in-game faction frame pieces",
+  "sources": [
+    {
+      "name": "ui_frame_big_base_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_base_protoss.png",
+      "width": 1280,
+      "height": 128,
+      "sha256": "91690603d498bac3f0fae9c5ad7f122071cf61702af91df83892130becf7a17b"
+    },
+    {
+      "name": "ui_frame_big_base_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_base_terran.png",
+      "width": 1280,
+      "height": 128,
+      "sha256": "ae91e323c4ddf458b759f268a6e41ee166023b619011e115057fe7bb639b8798"
+    },
+    {
+      "name": "ui_frame_big_base_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_base_zerg.png",
+      "width": 1280,
+      "height": 128,
+      "sha256": "7ec029a5fb79bc000a76614a0b23153daa0e591fea2084f539028c7e5e294ecf"
+    },
+    {
+      "name": "ui_frame_big_bottom_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_bottom_zerg.png",
+      "width": 957,
+      "height": 122,
+      "sha256": "8f1f54a9758fea64dd9138b2de437b91e3bbff609c1525c480bfb5c92f016914"
+    },
+    {
+      "name": "ui_frame_big_corner_bottomleft_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_bottomleft_protoss.png",
+      "width": 270,
+      "height": 241,
+      "sha256": "01437e5385e09eae11cf9dbe8cd2d230981d2cd2cb7fa8f7e0e293099fe7422f"
+    },
+    {
+      "name": "ui_frame_big_corner_bottomleft_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_bottomleft_terran.png",
+      "width": 273,
+      "height": 240,
+      "sha256": "ffb9dce94b33d5330c34eecf8e30dd31a847739f7cd7e6ef11b40d4f23055c73"
+    },
+    {
+      "name": "ui_frame_big_corner_bottomleft_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_bottomleft_zerg.png",
+      "width": 495,
+      "height": 320,
+      "sha256": "fb869c0ae590761df58a5daa1435b1ef5a49ee1d0b47c8f520f83786301dde3a"
+    },
+    {
+      "name": "ui_frame_big_corner_bottomright_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_bottomright_protoss.png",
+      "width": 270,
+      "height": 241,
+      "sha256": "0427634acda6fba91d5eca2517cb48f2896ef3ec3f1796182b45dd5c4489aa31"
+    },
+    {
+      "name": "ui_frame_big_corner_bottomright_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_bottomright_terran.png",
+      "width": 270,
+      "height": 240,
+      "sha256": "70a48b6b1a33b29be2bcb87b0e7fabeb9f702a0438c583db70f7630ff6f61f4e"
+    },
+    {
+      "name": "ui_frame_big_corner_bottomright_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_bottomright_zerg.png",
+      "width": 445,
+      "height": 300,
+      "sha256": "f002ecea3a971ea3224004959deca9519bb761637243619d4eb417f7744c73b0"
+    },
+    {
+      "name": "ui_frame_big_corner_topleft_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_topleft_protoss.png",
+      "width": 484,
+      "height": 354,
+      "sha256": "7b2a708c63477f0a42b338b31f3d3f39e41b0cd3228701d1936c82b212dbe4b2"
+    },
+    {
+      "name": "ui_frame_big_corner_topleft_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_topleft_terran.png",
+      "width": 484,
+      "height": 350,
+      "sha256": "8f3a59e500aaebbeb05a9dda97b28ddbc1022d010cccaa4c7ccbed4626be1029"
+    },
+    {
+      "name": "ui_frame_big_corner_topleft_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_topleft_zerg.png",
+      "width": 500,
+      "height": 400,
+      "sha256": "61f46d666b79517617a8e03700e96192c8f91194a1c3996a365f986a7ec7f46e"
+    },
+    {
+      "name": "ui_frame_big_corner_topright_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_topright_protoss.png",
+      "width": 484,
+      "height": 354,
+      "sha256": "9eff6cc5f08f572389062ccb943177a696929a5013fdd088c4b9cd540f507ee0"
+    },
+    {
+      "name": "ui_frame_big_corner_topright_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_topright_terran.png",
+      "width": 492,
+      "height": 350,
+      "sha256": "d58b659610bb483d8badebbab1a4929986a9e4b85d0d9e857a7e9df6d35136d8"
+    },
+    {
+      "name": "ui_frame_big_corner_topright_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_corner_topright_zerg.png",
+      "width": 429,
+      "height": 343,
+      "sha256": "4f6ef97123c510ed2272868a24b5869e26ef46dd905503b98f3197be7d8e7317"
+    },
+    {
+      "name": "ui_frame_big_innerline_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_innerline_protoss.png",
+      "width": 300,
+      "height": 30,
+      "sha256": "d28ff8b9aa9c05fc9b7e8ef15db11d9c9f5779587c3161cdabf7da294492d37d"
+    },
+    {
+      "name": "ui_frame_big_innerline_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_innerline_terran.png",
+      "width": 300,
+      "height": 30,
+      "sha256": "3516e6c68be18e2bc231b1f4b313365c97277b857f3c8b3464c0a1ab8693bd2e"
+    },
+    {
+      "name": "ui_frame_big_innerline_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_innerline_zerg.png",
+      "width": 300,
+      "height": 30,
+      "sha256": "65ec41998b31c9eee0eabf79fc87816083fd5f10e695941aec3b3c44a6684fe6"
+    },
+    {
+      "name": "ui_frame_big_left_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_left_zerg.png",
+      "width": 95,
+      "height": 908,
+      "sha256": "90f8c8611275b29b0041adb3b624e27de67fc0336e228992ea46ca9eeb297c81"
+    },
+    {
+      "name": "ui_frame_big_right_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_right_zerg.png",
+      "width": 104,
+      "height": 760,
+      "sha256": "2d940aefc1dfd0bbebb1c38e74d2f8fd80dd79088a1767401ff8e5fc5b470994"
+    },
+    {
+      "name": "ui_frame_big_top_protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_top_protoss.png",
+      "width": 717,
+      "height": 354,
+      "sha256": "79f2a60af27bcee2b4454300b85dcfefe508b3177efaa2f00f5c2f4c0310cd8a"
+    },
+    {
+      "name": "ui_frame_big_top_terran",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_top_terran.png",
+      "width": 844,
+      "height": 350,
+      "sha256": "592c91e3c5762012f44c5b00e374aa11c8773a3ac871a876a2eefa4cbbc7b701"
+    },
+    {
+      "name": "ui_frame_big_top_zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_frame_big_top_zerg.png",
+      "width": 950,
+      "height": 400,
+      "sha256": "9f6351950d289abc6d873f51d60c2461dd99dd7e5856ca1ad696eee64854e022"
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_purifier_outline",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_purifier_outline.png",
+      "width": 448,
+      "height": 388,
+      "sha256": "49a44f879bb8a4285f741e9d3ae139bf5a03ad885614c44fe48fc6d05f355958"
+    }
+  ]
+}

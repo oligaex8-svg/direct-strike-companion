@@ -1,0 +1,9 @@
+# Authored theme material fields — local.41
+
+Three new image-generated atlases follow the original SC2 console reference renders in assets/themes/console-*.png. They are companion-authored illustrations, not exported game animation or recovered geometric normals. The Classic references are SC2 classic-console renders, not proven direct SC1Remastered exports. No equipment35/local.39 art is reused.
+
+Each atlas has two columns and three rows. Build-ThemeSurfaces41.cjs reads actual dimensions, slices rounded row/column bounds with a two-pixel seam allowance, and retains native detail/aspect. Organic is1537×1023; the other two are1536×1024. Catalogue entries record source hashes, crop rectangles and output hashes. WebP fields contain original colour; normal PNG RGB encodes shading-derived normals (+Yup); mask PNG R encodes selected emission, G softness, B seamless per-theme four-octave flow. Maps are heuristics and source anatomy must be judged in the actual interface.
+
+Research direction: [Territory’s Killzone3 interface case study](https://territorystudio.com/project/killzone-3/) demonstrates a specific material/motion language grounded in its fictional world. [Native SC2 source inventory](../hud-sources.json) establishes the incumbent console materials. No third-party showcase graphics were copied. Native references contain small flavour sprites and static scenes, not eighteen large animated mechanisms; new surface artwork supplies the missing detail.
+
+The owner’s placement rule: dense material fields are restricted to header chrome, sidebar whitespace and the Settings demonstration. They must not sit behind reading text or repeat across information cards. Original frames stay connected and Default positions stay fixed. Fenix’s approved matrix/projector and Arcade’s original joystick remain their existing sources.

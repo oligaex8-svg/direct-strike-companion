@@ -1,0 +1,205 @@
+{
+  "scope": "Original SC2 per-skin decorative sources; catalog identities and source hashes retained; no recoloured substitutes",
+  "sources": [
+    {
+      "name": "console-abathur",
+      "file": "console-abathur.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolezerg_abathur.png",
+      "sha256": "da802870c376d403d19ea20c93c7fc8ac6f03c9a504dc809ac1c167fe2b33d01",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-arcade",
+      "file": "console-arcade.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolegeneric_arcadecabinetpurple.png",
+      "sha256": "9ce91ac5d717171798043c70a7db3bd80cdc4349b8209363bc2eb499b9065d20",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-classic-protoss",
+      "file": "console-classic-protoss.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleprotoss_classic.png",
+      "sha256": "56962fdfff918964c8b981f0092e81875d831d81e1c51a7d25e23376adb1d073",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-classic-terran",
+      "file": "console-classic-terran.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_classic.png",
+      "sha256": "97a8bac80a95c87ca906bb43ae69e31e062529b335f473a25c0cc0d2fc9745e1",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-classic-zerg",
+      "file": "console-classic-zerg.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolezerg_classic.png",
+      "sha256": "7616fdd62df2eb9b33731b5240096dbc5feefd50e8860f20ed715e1d2bfe4bf2",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-dehaka",
+      "file": "console-dehaka.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_dehaka_consolezerg.png",
+      "sha256": "6b8e89347bb7f363c48698a6512030da4908815fcc9148626befa17305b36432",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-machined",
+      "file": "console-machined.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_machined.png",
+      "sha256": "cb95a0c7c52677f11eb61f42cb5727e93c93cf6c8c3c4361bdc0c5a63e946ca0",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-mira",
+      "file": "console-mira.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_junker.png",
+      "sha256": "ad591aaadfb609aac98ce8bbba560d68de2a6f6462aeb0f49eb94137024fa248",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-nova",
+      "file": "console-nova.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_covertops.png",
+      "sha256": "c99ac766e5ab8a662868cd2f1886bc9f3afe79c85a8a4592b8314560fd6512cf",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-protoss",
+      "file": "console-protoss.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleskinprotossdefault.png",
+      "sha256": "213b70866ce20270534e437a54e195ed2b7965f67ce1da6df932bfc000ff3a98",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-terran",
+      "file": "console-terran.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleskinterrandefault.png",
+      "sha256": "7347d033b4c6f3db6bf552313ff384c0370cb00a46589d876832e7b186dfe397",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "console-zerg",
+      "file": "console-zerg.png",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleskinzergdefault.png",
+      "sha256": "5596733268047f8213d1843eef41e12d188b4450958c12d07973f5d743ffa2f1",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_bottomcorner",
+      "file": "sc2_ui_coop_fenix_topbar_filigree_bottomcorner.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_bottomcorner.png",
+      "sha256": "de22341802cdaefa1f5975c2d40f898e6b4f95af55bad76abc5ec1bbfdb66db5",
+      "width": 85,
+      "height": 48
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_top",
+      "file": "sc2_ui_coop_fenix_topbar_filigree_top.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_top.png",
+      "sha256": "a742603d185055c5f31bad6158b368acfa9ba01c372bcb6b40e3ec2e7dd53174",
+      "width": 60,
+      "height": 15
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_filigree_topcorner",
+      "file": "sc2_ui_coop_fenix_topbar_filigree_topcorner.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_filigree_topcorner.png",
+      "sha256": "f9dc4c450598bd0e56889ddb7cf1dab02b81ac3c316643a134fcb5b03d2760e7",
+      "width": 35,
+      "height": 63
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_purifier_underline",
+      "file": "sc2_ui_ingame_storymode_panel_faction_purifier_underline.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_purifier_underline.png",
+      "sha256": "d8a76c1b0f2a65dc4cab875863606b6eb6e05260e35baf35c10e6506dd003889",
+      "width": 359,
+      "height": 38
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_taldarim_outline",
+      "file": "sc2_ui_ingame_storymode_panel_faction_taldarim_outline.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_taldarim_outline.png",
+      "sha256": "eb7d03af7524a90e28652b704d6d8f767c242cdb7b27c6330775dca24c5b47af",
+      "width": 448,
+      "height": 388
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_taldarim_underline",
+      "file": "sc2_ui_ingame_storymode_panel_faction_taldarim_underline.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_taldarim_underline.png",
+      "sha256": "f8f708c45de53a1e80d0705a3ecbef6f7090c9b57767f493d06b5580649ca135",
+      "width": 359,
+      "height": 38
+    },
+    {
+      "name": "ui_console_panel_unitinfo_arcadecabinetpurple",
+      "file": "ui_console_panel_unitinfo_arcadecabinetpurple.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_arcadecabinetpurple.png",
+      "sha256": "e8768364f85f2ca72452470d8fa1cf3c688cc66db9357bb2ae8a0eefb713543d",
+      "width": 40,
+      "height": 300
+    },
+    {
+      "name": "ui_console_panel_unitinfo_cerberus",
+      "file": "ui_console_panel_unitinfo_cerberus.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_cerberus.png",
+      "sha256": "3d4d338cdd55d07d30ad9e88043b25f46ef892be20d4fc03256fd00576160677",
+      "width": 298,
+      "height": 300
+    },
+    {
+      "name": "ui_console_panel_unitinfo_forged",
+      "file": "ui_console_panel_unitinfo_forged.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_forged.png",
+      "sha256": "bd0c3c07a770d4874f072a6a4bea50ec29eeb9c4168fbbee12e8fd634bd069a0",
+      "width": 66,
+      "height": 300
+    },
+    {
+      "name": "ui_console_panel_unitinfo_ihanrii",
+      "file": "ui_console_panel_unitinfo_ihanrii.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_ihanrii.png",
+      "sha256": "ce8a7596b8855722e5524f9f9b293ccff1192d0b169c785fdd7c1f8dafdf04ec",
+      "width": 437,
+      "height": 300
+    },
+    {
+      "name": "ui_console_panel_unitinfo_nerazim",
+      "file": "ui_console_panel_unitinfo_nerazim.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_nerazim.png",
+      "sha256": "2911fa461a2da6672b5cc51980fc7c1ed3dc1a6b1955527cea21a4fa60e8f96a",
+      "width": 96,
+      "height": 300
+    },
+    {
+      "name": "ui_console_panel_unitinfo_simulant",
+      "file": "ui_console_panel_unitinfo_simulant.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_simulant.png",
+      "sha256": "8f4a5756b6dac6fc4ade2b26c67a864608b8daa7ec36865cbdcc12a73afcb0d0",
+      "width": 100,
+      "height": 300
+    },
+    {
+      "name": "ui_console_panel_unitinfo_tyrador",
+      "file": "ui_console_panel_unitinfo_tyrador.png",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_panel_unitinfo_tyrador.png",
+      "sha256": "7a3e21e2c0b41a4a91db6c5baf6b8be3a3df7b72fbf878c44ec1d8a6e6885f4d",
+      "width": 278,
+      "height": 300
+    }
+  ]
+}

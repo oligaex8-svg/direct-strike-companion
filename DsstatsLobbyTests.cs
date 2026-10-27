@@ -160,8 +160,12 @@ internal static class DsstatsLobbyTests
 
             var dispatched = searches.Select(call => call.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
             dispatched.Add(joined.Name);
-            searches[1].Completion.TrySetResult(Json(Search(searches[1].Name)));
-            joined.Completion.TrySetResult(Json(Search(joined.Name)));
+            // Response completion is earlier than publication into the store.
+            // Await both results before shutdown can cancel their continuations.
+            await ChangedAsync(store, SiteSyncService.NameLookupKey(searches[1].Name, "EU"),
+                () => searches[1].Completion.TrySetResult(Json(Search(searches[1].Name))));
+            await ChangedAsync(store, SiteSyncService.NameLookupKey(joined.Name, "EU"),
+                () => joined.Completion.TrySetResult(Json(Search(joined.Name))));
             for (var i = 0; i < 3; i++)
             {
                 var next = await handler.NextAsync();

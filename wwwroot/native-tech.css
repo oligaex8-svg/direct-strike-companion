@@ -1,0 +1,14 @@
+.native45-object,.native45-channel{display:block;position:absolute;inset:0;margin:0;padding:0;border:0;pointer-events:none!important;user-select:none;contain:style;z-index:3}
+.native45-object{inset:auto;transform-origin:0 0;overflow:hidden;contain:paint}
+.native45-object[hidden],.native45-channel[hidden],.native45-poster[hidden],.native45-viewport[hidden]{display:none!important}
+.native45-poster,.native45-viewport{position:absolute;display:block;inset:0;width:100%;height:100%;max-width:none;margin:0;padding:0;border:0}
+.native45-viewport{overflow:hidden;contain:paint}
+.native45-atlas{position:absolute;display:block;left:0;top:0;background-repeat:no-repeat;margin:0;padding:0;border:0}
+.native45-spark{position:absolute;display:block;left:0;top:0;width:14px;height:14px;background:url('/themes/protoss44/energy.webp') center/100% no-repeat;mix-blend-mode:screen;pointer-events:none;opacity:.95}
+.native45-spark::after{content:'';position:absolute;top:6px;right:7px;width:16px;height:2px;background:linear-gradient(90deg,transparent,#4bb9ff44,#b9ecffa0);border-radius:100%;opacity:.6}
+:root[data-graphical-style=terran] .page-head{position:relative}
+:root[data-graphical-style=terran] .sidebar[data-native45-host]::after{visibility:hidden!important}
+:root[data-graphical-style=terran] .appearance-effects-stage[data-native45-preview]{background:radial-gradient(ellipse at 50% 90%,#132621,#080e11 75%)!important}
+:root[data-graphical-style=terran] .appearance-effects-stage[data-native45-preview]>.material-motion38,:root[data-graphical-style=terran] .appearance-effects-stage[data-native45-preview]>.theme-surface41{display:none!important}
+@media(prefers-reduced-motion:reduce){.native45-channel{display:none!important}}
+@media(forced-colors:active){.native45-object,.native45-channel{display:none!important}}

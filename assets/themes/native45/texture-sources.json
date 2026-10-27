@@ -1,0 +1,72 @@
+[
+  {
+    "sha256": "b444a104b1083751dbfd5426de98bd37b17aa58d7358f2aa0ea2e43855558757",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/Textures/glow_red1.dds",
+    "file": "glow_red1.dds"
+  },
+  {
+    "sha256": "86b60eaee6b1dc158378a15cb7ec5913ee1078419970ae12ddf9980492892865",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/Textures/shockwave_blackring1.dds",
+    "file": "shockwave_blackring1.dds"
+  },
+  {
+    "sha256": "99855ea37c9c9c97c14b075e4695866d2ac71a99d27051be2b8df6d4667148ee",
+    "path": "mods/core.sc2mod/base.sc2assets/Assets/UI/Feedback/PylonRadius/PylonRadius.m3",
+    "file": "PylonRadius.m3"
+  },
+  {
+    "sha256": "9fc06a23070e1ea14c74f4e187320ccd7d1b24332e8c3539f3bcde1bdd497649",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Buildings/Protoss/PylonWarpIn/PylonWarpIn.m3",
+    "file": "PylonWarpIn.m3"
+  },
+  {
+    "sha256": "f13cc3143a61637185432112af1a2156e6886f0c8716dcd2e92484171c2d771e",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/blinkalpha2_inverted.dds",
+    "file": "blinkalpha2_inverted.dds"
+  },
+  {
+    "sha256": "9ca2bdc91a7bf98f4f0950a23bc6b27f50cba753125bd42c6305b4a98bbf90ed",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/blinkalphaadd2.dds",
+    "file": "blinkalphaadd2.dds"
+  },
+  {
+    "sha256": "fc3c0f6d893ce5c889fceba6e4eba63b0875d406722241a7929b9d767115915c",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_diffuse.dds",
+    "file": "sensortower_diffuse.dds"
+  },
+  {
+    "sha256": "42dcb1607e26de7684f0d5592130a0cdeab95cb81d3192f90dc6aa1396fca5c0",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_emissive.dds",
+    "file": "sensortower_emissive.dds"
+  },
+  {
+    "sha256": "1baf200f13c57ed95c2fe40e8f5ce5fc89a8dd9b26255d885e708e29a508c499",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_normal.dds",
+    "file": "sensortower_normal.dds"
+  },
+  {
+    "sha256": "5a56917cab618d940dcbe093cb2b18a43ceccddb80dbb07698a498f9a2c11107",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_splat.dds",
+    "file": "sensortower_splat.dds"
+  },
+  {
+    "sha256": "94d49565f950c8cc7b7f0c4ff15dbfbc598040b145b9bb1d2c4dd1a058a3ae47",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_diffuse.dds",
+    "file": "techlab_diffuse.dds"
+  },
+  {
+    "sha256": "b7b4a92e447a473a5105688bca3af888d8a162673d41a2667ecf828d3c6b545c",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_emissive.dds",
+    "file": "techlab_emissive.dds"
+  },
+  {
+    "sha256": "95d959ab9ca96ec9020a2487c4beaf50cc0b2ae992f12898182f43b1ee90b564",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_normal.dds",
+    "file": "techlab_normal.dds"
+  },
+  {
+    "sha256": "d8859f7cf34c36b28db66ab209c9aeb5b916a081b02b865a99e3b47941567eea",
+    "path": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/warpline4.dds",
+    "file": "warpline4.dds"
+  }
+]

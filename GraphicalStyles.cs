@@ -2,7 +2,7 @@ namespace DirectStrikeCompanion;
 
 internal static class GraphicalStyles
 {
-    internal static bool IsSupported(string? style) => style is "default" or "protoss" or "zerg" or "terran" or "fenix" or "classic-terran" or "classic-protoss" or "classic-zerg";
+    internal static bool IsSupported(string? style) => style is "default" or "protoss" or "nerazim" or "alarak" or "ihanrii" or "terran" or "nova" or "mira" or "machined" or "tyrador" or "zerg" or "abathur" or "dehaka" or "cerberus" or "mecha" or "fenix" or "arcade" or "classic-terran" or "classic-protoss" or "classic-zerg";
 
     // Old libraries have no appearance field; unknown saved values must not
     // prevent the companion from opening its existing library.

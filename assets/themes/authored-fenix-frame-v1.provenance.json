@@ -1,0 +1,14 @@
+{
+  "created": "2026-10-23",
+  "method": "Built-in image generation plus targeted edge cleanup",
+  "classification": "New artwork matched to native Purifier reference; not an original game export",
+  "source": "authored-fenix-frame-v1.png",
+  "sha256": "edb072406b7e9d8eaa15cfd58188a37256aeaa8407f0526a8fc3ff003459b694",
+  "styleReference": "console-fenix.png",
+  "layoutReference": {
+    "file": "local.13 Fenix shell atlas",
+    "sha256": "552d6964d677b2eccd4422ac68854857cb5bc5967e9cef4a1857f2d8b8e4b23b"
+  },
+  "prompts": "authored-fenix-frame-v1.prompt.txt",
+  "review": "Actual desktop and narrow browser render, full frame and enlarged joins"
+}

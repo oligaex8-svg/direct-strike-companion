@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "scope": "Authored rendered physical SC2/SC1-Remastered-inspired equipment component kits; native reference art unchanged",
+  "profiles": [
+    {
+      "id": "terran",
+      "source": "assets/themes/equipment35/terran-kit-v1.png",
+      "reference": "assets/themes/console-terran.png",
+      "motion": "fan",
+      "sha256": "d8791082767690b30c988502965dadada3b9f2ea7a5650caa368325ca6104b31",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-ed954c95-98e6-4d24-831d-139dba703815.png"
+    },
+    {
+      "id": "nova",
+      "source": "assets/themes/equipment35/nova-kit-v1.png",
+      "reference": "assets/themes/console-nova.png",
+      "motion": "optic",
+      "sha256": "ff86133dc04fbd0ca354de036e0a8833182aa9aab782a11562053b4c2f2fecd6",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-76bac5d1-916d-41e0-a0ce-9ff091ca9616.png"
+    },
+    {
+      "id": "classic-terran",
+      "source": "assets/themes/equipment35/classic-terran-kit-v1.png",
+      "reference": "assets/themes/console-classic-terran.png",
+      "motion": "fan",
+      "sha256": "a422541a507f6d100063b33f6612c62e3e6419957fe921dfc4e3d5e417130c13",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-ab572c76-d843-4a5a-99e4-7197a9e56423.png"
+    },
+    {
+      "id": "fenix",
+      "source": "assets/themes/equipment35/fenix-kit-v1.png",
+      "reference": "assets/themes/console-fenix.png",
+      "motion": "hologram",
+      "sha256": "fe240d8927ba59daec9334a0cde1146ceee488fd2b492fd70518ba0fcebb22d7",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-ba531b34-0610-4992-ba4c-89132f995d8d.png"
+    },
+    {
+      "id": "default",
+      "source": "assets/themes/equipment35/default-kit-v1.png",
+      "reference": "assets/themes/console-terran.png",
+      "motion": "fan",
+      "sha256": "454178b84c0a9c185d5592527d0992d3825223daaeec39279972f6adc8c29c49",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-90f80422-2078-4172-8e7c-21f87cee696c.png"
+    },
+    {
+      "id": "protoss",
+      "source": "assets/themes/equipment35/protoss-kit-v1.png",
+      "reference": "assets/themes/console-protoss.png",
+      "motion": "crystal",
+      "sha256": "9a68f580b5d1cf6a4f84a2dbf49b37a1e85b7b1b157d0dd0ad025ba5c4868ee1",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-7b770346-50d2-4da1-9338-9a8bf6372281.png"
+    },
+    {
+      "id": "nerazim",
+      "source": "assets/themes/equipment35/nerazim-kit-v1.png",
+      "reference": "assets/themes/console-nerazim.png",
+      "motion": "optic",
+      "sha256": "d1b7dbb3d7583915390716ffa80f37a9d3a7d5a54440cb65f4e7e98c92f84303",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-ec6960c9-811a-4a1b-8934-f7bf3ade8aa9.png"
+    },
+    {
+      "id": "alarak",
+      "source": "assets/themes/equipment35/alarak-kit-v1.png",
+      "reference": "assets/themes/console-alarak.png",
+      "motion": "plasma",
+      "sha256": "e3c7df30705efe2b863d6e07c371581e5e3aeb22a62103d8d6e3928f05b50517",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-89b1fbb0-27b5-424c-a2b3-9ab269125293.png"
+    },
+    {
+      "id": "ihanrii",
+      "source": "assets/themes/equipment35/ihanrii-kit-v1.png",
+      "reference": "assets/themes/console-ihanrii.png",
+      "motion": "crystal",
+      "sha256": "c3ea0990151d8691a2b5345c8844f0cb565793e9511454eb419fc868d4b6a0cf",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-5860d111-5c78-47f6-a033-bb37d40653ec.png"
+    },
+    {
+      "id": "mira",
+      "source": "assets/themes/equipment35/mira-kit-v1.png",
+      "reference": "assets/themes/console-mira.png",
+      "motion": "fan",
+      "sha256": "64cbf408360097e9fe58119c03d6ae25119d9ff1cb8be8590e69f3927c386111",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-3b3b1f94-6843-4e3f-98d4-6e6a1202f45e.png"
+    },
+    {
+      "id": "machined",
+      "source": "assets/themes/equipment35/machined-kit-v1.png",
+      "reference": "assets/themes/console-machined.png",
+      "motion": "fan",
+      "sha256": "28358a9e2072729f6e894c027f156c56f54815e62a56e96d8fb9075cf093881c",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-4269ac4a-9655-4c91-87dd-256dfc56a818.png"
+    },
+    {
+      "id": "tyrador",
+      "source": "assets/themes/equipment35/tyrador-kit-v1.png",
+      "reference": "assets/themes/console-tyrador.png",
+      "motion": "optic",
+      "sha256": "f50e129df3dd82e506a9b8f9509b2cc2b5a45aea68ba859b7002f165df808d59",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-b76a6256-4f6b-4430-873a-f1bb4cbed86a.png"
+    },
+    {
+      "id": "mecha",
+      "source": "assets/themes/equipment35/mecha-kit-v1.png",
+      "reference": "assets/themes/console-mecha.png",
+      "motion": "servo",
+      "sha256": "28b17cb6fa534a9111cd13ae002e8b2e42069df6ce800a4704d61ceac6e2fff0",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-e1350a19-4289-4222-ad11-a0233077aec6.png"
+    },
+    {
+      "id": "arcade",
+      "source": "assets/themes/equipment35/arcade-kit-v1.png",
+      "reference": "assets/themes/console-arcade.png",
+      "motion": "pixel",
+      "sha256": "5b40fea3b7753d9be311f30e7952e5f7f7eceb0c01c853114a8267840c884b14",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-5da1a54a-89d5-4418-b0a3-ab06a1dca7e9.png"
+    },
+    {
+      "id": "classic-protoss",
+      "source": "assets/themes/equipment35/classic-protoss-kit-v1.png",
+      "reference": "assets/themes/console-classic-protoss.png",
+      "motion": "crystal",
+      "sha256": "b895dae570ab099de118781b57d58130b766cd912c5d3ed0f71b24b56ad9b242",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-f7fa5a6d-d6d6-467b-8c1e-0c47afdfb5cf.png"
+    },
+    {
+      "id": "zerg",
+      "source": "assets/themes/equipment35/zerg-kit-v1.png",
+      "reference": "assets/themes/console-zerg.png",
+      "motion": "membrane",
+      "sha256": "7faacc1ea591345e94281ead889d810aa1d2ad8637b1f95f1a86085d60cfb675",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-08873260-ea76-4866-9803-223d8db6bb9e.png"
+    },
+    {
+      "id": "abathur",
+      "source": "assets/themes/equipment35/abathur-kit-v1.png",
+      "reference": "assets/themes/console-abathur.png",
+      "motion": "membrane",
+      "sha256": "b32c5f75be89066bc65783bf7ddfa61e794de188cc94dcb3ba39c29f2779e7e7",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-7c9bf46d-993c-4840-9c18-adf01f0852d4.png"
+    },
+    {
+      "id": "dehaka",
+      "source": "assets/themes/equipment35/dehaka-kit-v1.png",
+      "reference": "assets/themes/console-dehaka.png",
+      "motion": "membrane",
+      "sha256": "49038d9375ecb62530862c00505d61767ed0d1dee28e476fccce45b8f0971fc2",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-f9082e4a-23ed-469b-b99f-461e887be121.png"
+    },
+    {
+      "id": "cerberus",
+      "source": "assets/themes/equipment35/cerberus-kit-v1.png",
+      "reference": "assets/themes/console-cerberus.png",
+      "motion": "fan",
+      "sha256": "9de3e40e6e0f95708c88072bd503a236b41207db22877cc5d833ec11c8452ad7",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-f852167e-4893-4d4e-bc40-c98d5f1e1f60.png"
+    },
+    {
+      "id": "classic-zerg",
+      "source": "assets/themes/equipment35/classic-zerg-kit-v1.png",
+      "reference": "assets/themes/console-classic-zerg.png",
+      "motion": "membrane",
+      "sha256": "0b6f24af657ce6c2cac24b518c90904af636c131494bcddbac50802262ef5d6a",
+      "generatedSource": "C:/Users/Admin/.codex/generated_images/01a11248-d9fc-79e1-a16a-73b9633f8190/exec-45c5ae90-7087-48aa-b976-905db9d14a9a.png"
+    }
+  ]
+}

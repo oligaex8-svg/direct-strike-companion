@@ -1,0 +1,8 @@
+/* Decorations cannot contribute to scroll range or cover the reading well. */
+.native45-channel{overflow:clip;contain:paint;box-sizing:border-box;padding:12px;mask-image:linear-gradient(#fff,#fff),linear-gradient(#fff,#fff);mask-origin:content-box,border-box;mask-clip:content-box,border-box;mask-composite:exclude}
+:root .ui-rating-feedback{display:none!important}
+/* Own borders stay on the scroll viewport; descendants move with table rows. */
+:root[data-native-console] .table-wrap[data-stable-frame46]::before{content:none!important;display:none!important}
+.stable-scroll-frame46{display:block;position:absolute;box-sizing:border-box;margin:0;padding:0;border:1px solid transparent;background:none;pointer-events:none!important;user-select:none;z-index:10;contain:style}
+@media(forced-colors:active){.stable-scroll-frame46{display:none!important}}
+.stable-scroll-frame46[hidden]{display:none!important}

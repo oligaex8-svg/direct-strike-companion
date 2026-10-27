@@ -1,0 +1,107 @@
+{
+  "version": 50,
+  "device": "hyperion-armory",
+  "atlas": "/themes/terran50/armory-atlas.webp",
+  "poster": "/themes/terran50/armory-poster.webp",
+  "tile": [
+    273,
+    151
+  ],
+  "columns": 12,
+  "rows": 25,
+  "count": 293,
+  "duration": 9766.667,
+  "decodedMiB": 47.17597961425781,
+  "atlasSHA256": "7f3ff7dd2287cc07a65a372e8b22291502bf6b8061778a5f9388084720c5ab60",
+  "posterSHA256": "66b62360480c99dfe9da0050df59955aebd365f137a9531c1458bd7b4b6836b4",
+  "changedNativeScreenPixels": 1910,
+  "wholeObjectClearance": true,
+  "provenance": {
+    "device": "hyperion-armory",
+    "frames": 293,
+    "frameCount": 293,
+    "width": 320,
+    "height": 160,
+    "duration": 9766.667,
+    "rawWidth": 640,
+    "rawHeight": 320,
+    "supersample": 2,
+    "fps": 29.99999897610925,
+    "nativeDuration": 9766.667,
+    "nativeDurationScope": "Complete original Armory video duration; static skeletal Stand is recorded separately",
+    "nativeSequence": {
+      "name": "Stand",
+      "end": 4167,
+      "start": 0
+    },
+    "sourceSHA256": "cad4f16c230c0f66fc89968744e60d6a85f27ff4f2bac46333abc273a14fc0e5",
+    "sourceModelSHA256": "cad4f16c230c0f66fc89968744e60d6a85f27ff4f2bac46333abc273a14fc0e5",
+    "sourceParts": [
+      {
+        "model": "SM_HyperionArmoryConsole",
+        "sourceSHA256": "cad4f16c230c0f66fc89968744e60d6a85f27ff4f2bac46333abc273a14fc0e5"
+      }
+    ],
+    "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local48-campaign\\hyperion-armory\\frames-99f7223ea5c1",
+    "fingerprint": "99f7223ea5c1b986028f229164a3f0153bd34b4ee15491e1b47654a08bed7f52",
+    "provenance": {
+      "geometry": "Unchanged Blizzard campaign architecture mesh, all native skin weights, corner normals, UVs and standard/composite material bindings",
+      "animation": "Native selected sequence tracks only; no authored deformation or rotation",
+      "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+      "materialAdaptations": [
+        "Composite multiply layer adapted as native-mask base-color multiplication",
+        "Native cubic reflection layer not sampled; authored area lights provide reflected highlights",
+        "Original Video_ArmoryScreen.ogv sampled over its complete native duration and mapped through original console UVs; console geometry remains static"
+      ],
+      "skinMethod": "Original native hierarchy evaluated into identity-bind linear-skin palette",
+      "affinePalette": {
+        "enabled": false
+      },
+      "maxPaletteDecompositionError": 0,
+      "maxBlenderSkinError": 0,
+      "validatedSkinFrames": [
+        1,
+        97,
+        195
+      ],
+      "timing": "Exact native duration with downsampled poses",
+      "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+      "compoundTiming": null,
+      "stagingEvidence": null,
+      "creep": {
+        "enabled": false,
+        "reason": "not a nest device"
+      },
+      "nativeVideo": {
+        "file": "Video_ArmoryScreen.ogv",
+        "sha256": "420fce1bb1b32014548932827d4aad665b9f067c0527e748b7f478cd1e8feba0",
+        "duration": 9.766667,
+        "frames": 293,
+        "provenance": "Unchanged native Armory movie, uniformly sampled over complete duration; no invented screen graphics"
+      },
+      "adapterSHA256": "1a99bde0a5230e0b85d2f3b2a96952eb4a0556bb29c9198b0ad320c0b4e316dd",
+      "staticHousing": true
+    },
+    "static": false,
+    "closedNativeVisualTracks": true,
+    "cameraAngle": "a",
+    "unsupportedCases": [],
+    "sourceRole": "native campaign prop/station",
+    "compoundTiming": null,
+    "stagingEvidence": null,
+    "engineCapture": false,
+    "creep": {
+      "enabled": false,
+      "reason": "not a nest device"
+    },
+    "blender": "5.2.3 LTS",
+    "engine": "BLENDER_EEVEE",
+    "affinePalette": {
+      "enabled": false
+    },
+    "meshVertices": 2895,
+    "triangles": 3573,
+    "complete": true,
+    "mode": "full"
+  }
+}

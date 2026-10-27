@@ -11,6 +11,12 @@ function fixture(){
  return {context,state,id,name,run:code=>vm.runInContext(code,context),forecast:()=>vm.runInContext('liveLobbyForecast(state.lobby.rosterEntries)',context)};
 }
 function check(name,action){action(fixture());checks.push(name);}
+function panel(f){return f.run('renderLiveLobbyForecast(state.lobby.rosterEntries)');}
+function assertWaitingPanel(f,reason){
+ const html=panel(f);assert.doesNotMatch(html,/ hidden/);assert.match(html,/>Rating gain \/ loss</);
+ assert.equal((html.match(/data-rating-source=/g)||[]).length,2);assert.equal((html.match(/<strong>—<\/strong>/g)||[]).length,4);
+ assert.equal((html.match(/>Win</g)||[]).length,2);assert.equal((html.match(/>Loss</g)||[]).length,2);assert.match(html,reason);assert.doesNotMatch(html,/~[+-]\d/);
+}
 check('A complete observed lobby finds the configured own account by name and projects both outcomes per source',f=>{
  const value=f.forecast();assert.ok(value.dsr.win>0&&value.dsr.loss<0);assert.ok(value.dsstats.win>0&&value.dsstats.loss<0);assert.equal(value.dsstats.basis,'site-state');
  const html=f.run('renderLiveLobbyForecast(state.lobby.rosterEntries)');assert.match(html,/data-rating-source="dsr"/);assert.match(html,/data-rating-source="dsstats"/);assert.match(html,/>Win</);assert.match(html,/>Loss</);assert.doesNotMatch(html,/Baseline/);
@@ -47,6 +53,7 @@ check('Missing one dsstats rating leaves DSR available without fabricating the s
  const native=data.dsstats['name:EU:'+data.names[4].toLowerCase()].profiles[0].nativeId;
  for(const lookup of Object.values(f.state.library.dsstatsLookups))lookup.profiles=(lookup.profiles||[]).filter(profile=>profile.nativeId!==native);
  const value=f.forecast();assert.ok(value.dsr.win>0);assert.equal(value.dsstats,null);
+ const html=panel(f);assert.equal((html.match(/<strong>—<\/strong>/g)||[]).length,2);assert.match(html,/Waiting for all six dsstats ratings/);assert.match(html,/~\+/);
 });
 check('General DSR values create a separately labelled main projection instead of mixing into Commanders',f=>{
  const key='name:EU:'+f.name.toLowerCase();const ids=new Set(f.state.library.siteLookups[key].profiles.map(profile=>profile.profileId));
@@ -57,6 +64,7 @@ check('Missing one DSR player cannot produce a tiny default-2000 forecast',f=>{
  const name=f.state.lobby.rosterEntries[4].name,ids=new Set(f.state.library.siteLookups['name:EU:'+name.toLowerCase()].profiles.map(p=>p.profileId));
  for(const lookup of Object.values(f.state.library.siteLookups))for(const profile of lookup.profiles||[])if(ids.has(profile.profileId)){profile.rating=null;profile.estimatedRating=null;profile.searchRating=null;}
  f.state.library={...f.state.library};const value=f.forecast();assert.equal(value.dsr.win,null);assert.equal(value.dsr.status,'missing-ratings');assert.ok(value.dsstats.win>0);
+ const html=panel(f);assert.equal((html.match(/<strong>—<\/strong>/g)||[]).length,2);assert.match(html,/Waiting for all six DSR ratings/);assert.match(html,/~\+/);
 });
 check('Five-player lobbies wait; six unconfirmed display groups produce a labelled scenario without assigning teams',f=>{
  f.state.lobby.rosterEntries.pop();assert.match(f.forecast().reason,/six/);
@@ -74,11 +82,18 @@ check('A duplicate own-name row or an unresolved regional account is not guessed
 check('A new nickname can identify the unique exact own candidate without alias guessing',f=>{
  f.state.lobby.rosterEntries[0]={name:'NewOwnName',team:1,candidates:[{id:f.id,nameOnly:false}]};assert.equal(f.run('liveForecastOwnEntry(state.lobby.rosterEntries,"EU").id'),f.id);
 });
-check('Retained rosters show a reason, match-loaded keeps estimates, replay/disconnected/empty rosters suppress numbers',f=>{
- f.state.lobby.held=true;assert.match(f.forecast().reason,/fresh/);f.state.lobby.held=false;
+check('Permanent dual-site panel waits with a reason across held, off, replay, finished, disconnected and empty states',f=>{
+ f.state.lobby.held=true;assertWaitingPanel(f,/fresh lobby roster/);f.state.lobby.held=false;
  f.state.lobby.phase='match';assert.ok(f.forecast().dsr.win>0);
- for(const phase of ['replay','disconnected','finished']){f.state.lobby.phase=phase;assert.equal(f.forecast().hidden,true);}
- f.state.lobby.phase='pregame';f.state.lobby.rosterEntries=[];assert.equal(f.forecast().hidden,true);
+ for(const [phase,reason] of [['off',/watch is off/],['replay',/Replay viewing/],['disconnected',/client is unavailable/],['finished',/Match complete/],['waiting',/live lobby roster/]]){
+  f.state.lobby.phase=phase;assert.equal(f.forecast().hidden,true);assertWaitingPanel(f,reason);
+ }
+ f.state.lobby.phase='pregame';f.state.lobby.rosterEntries=[];assert.equal(f.forecast().hidden,true);assertWaitingPanel(f,/live lobby roster/);
+});
+check('Incomplete rosters, unresolved own accounts and partial teams retain both outcome labels',f=>{
+ f.state.lobby.rosterEntries.pop();assertWaitingPanel(f,/all six players/);
+ f=fixture();f.state.lobby.rosterEntries[0].name='Unknown';assertWaitingPanel(f,/account is not identified/);
+ f=fixture();f.state.lobby.rosterEntries.forEach(entry=>entry.team=0);f.state.lobby.rosterEntries[0].team=1;assertWaitingPanel(f,/complete lobby teams/);
 });
 check('Non-self live candidates may reuse the displayed name/region primary while own accounts stay exact-native',f=>{
  const other=f.state.lobby.rosterEntries[1],lookup=f.state.library.dsstatsLookups['name:EU:'+other.name.toLowerCase()];

@@ -1,0 +1,2069 @@
+{
+  "version": 54,
+  "provenance": "Original SC2 model geometry, skin/UVs and native tracks, reconstructed offline using documented native material adaptations; no generated surrounds or invented motion.",
+  "themes": {
+    "nerazim": "nerazim",
+    "alarak": "alarak",
+    "ihanrii": "ihanrii",
+    "nova": "nova",
+    "mira": "mira",
+    "machined": "machined",
+    "tyrador": "tyrador",
+    "abathur": "abathur",
+    "dehaka": "dehaka",
+    "cerberus": "cerberus",
+    "mecha": "mecha",
+    "arcade": "arcade",
+    "classic-terran": "classic-terran",
+    "classic-protoss": "classic-protoss",
+    "classic-zerg": "classic-zerg"
+  },
+  "objects": {
+    "nerazim": {
+      "atlas": "/themes/character54/nerazim-atlas.webp",
+      "poster": "/themes/character54/nerazim-poster.webp",
+      "tile": [
+        128,
+        234
+      ],
+      "columns": 25,
+      "rows": 16,
+      "count": 400,
+      "duration": 26667,
+      "title": "Dark Templar pylon",
+      "sourceModel": "Dark_Templar_Pylon",
+      "sourceModelSHA256": "8c35afb8ecf0790406a167453ce427778c3a7b6bd561d39b03fa99a395002a41",
+      "atlasSHA256": "d826bff8b3bb89a1d813beea8d1c0fa3a5e31a550fe92cbd7f7f13c5c86c1241",
+      "posterSHA256": "72bb3faf9fa75213a1d433614341202ec08e0ad3a78dfa097bfa3eb6ecfbb205",
+      "decodedMiB": 45.703125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 68,
+          "top": 14,
+          "width": 120,
+          "height": 226
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "nerazim",
+        "frames": 400,
+        "frameCount": 400,
+        "width": 384,
+        "height": 384,
+        "duration": 26667,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 14.99981250234372,
+        "nativeDuration": 26667,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 26667
+        },
+        "sourceSHA256": "8c35afb8ecf0790406a167453ce427778c3a7b6bd561d39b03fa99a395002a41",
+        "sourceModelSHA256": "8c35afb8ecf0790406a167453ce427778c3a7b6bd561d39b03fa99a395002a41",
+        "sourceParts": [
+          {
+            "model": "Dark_Templar_Pylon",
+            "sourceSHA256": "8c35afb8ecf0790406a167453ce427778c3a7b6bd561d39b03fa99a395002a41"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\nerazim\\frames-f040b91ef55c",
+        "fingerprint": "f040b91ef55c65b36565faf21f41c6185052ecb3ffdc119e5e7d09a82f23bc5d",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.09081567730754614,
+            "maxReconstructionError": 3.725290298461914e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 3.725290298461914e-7,
+          "maxBlenderSkinError": 8.89324798155487e-7,
+          "validatedSkinFrames": [
+            1,
+            133,
+            266
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.09081567730754614,
+          "maxReconstructionError": 3.725290298461914e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 2630,
+        "triangles": 2650,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "alarak": {
+      "atlas": "/themes/character54/alarak-atlas.webp",
+      "poster": "/themes/character54/alarak-poster.webp",
+      "tile": [
+        158,
+        236
+      ],
+      "columns": 43,
+      "rows": 5,
+      "count": 214,
+      "duration": 13333,
+      "title": "Tal’darim pylon",
+      "sourceModel": "Pylon_Taldarim",
+      "sourceModelSHA256": "bd72fc0d60beacaa5b84170cbce683470d4d95075f61b09c71812b4ad030df4f",
+      "atlasSHA256": "2173124c0f8b2d908aaa67311d53085d5f4f37e948677b995a0e7d8dbfe9e3f2",
+      "posterSHA256": "484660ccdb44a41bfcaef82f25a9dd6c694b2829ce5801084a9e9d740bfa712e",
+      "decodedMiB": 30.582122802734375,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 53,
+          "top": 14,
+          "width": 150,
+          "height": 228
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "alarak",
+        "frames": 214,
+        "frameCount": 214,
+        "width": 384,
+        "height": 384,
+        "duration": 13333,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 16.0504012600315,
+        "nativeDuration": 13333,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 13333
+        },
+        "sourceSHA256": "bd72fc0d60beacaa5b84170cbce683470d4d95075f61b09c71812b4ad030df4f",
+        "sourceModelSHA256": "bd72fc0d60beacaa5b84170cbce683470d4d95075f61b09c71812b4ad030df4f",
+        "sourceParts": [
+          {
+            "model": "Pylon_Taldarim",
+            "sourceSHA256": "bd72fc0d60beacaa5b84170cbce683470d4d95075f61b09c71812b4ad030df4f"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\alarak\\frames-b693bc28d413",
+        "fingerprint": "b693bc28d4134b89809bff35071f96b54c45e72f14d2ec08bd8159d9d9736ae3",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [
+            "Native cubic reflection layer not sampled; authored area lights provide reflected highlights",
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 3.3155083656311035e-7,
+            "maxReconstructionError": 3.5762786865234375e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 3.5762786865234375e-7,
+          "maxBlenderSkinError": 9.555351461101412e-7,
+          "validatedSkinFrames": [
+            1,
+            71,
+            142
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 3.3155083656311035e-7,
+          "maxReconstructionError": 3.5762786865234375e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 2546,
+        "triangles": 2830,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "ihanrii": {
+      "atlas": "/themes/character54/ihanrii-atlas.webp",
+      "poster": "/themes/character54/ihanrii-poster.webp",
+      "tile": [
+        164,
+        236
+      ],
+      "columns": 43,
+      "rows": 5,
+      "count": 214,
+      "duration": 13333,
+      "title": "Ihan-rii pylon",
+      "sourceModel": "Pylon_Ihanrii",
+      "sourceModelSHA256": "08704329b22fded759a38e3e9aa757aee53dd3f1b7b575e5fce4f25726b32292",
+      "atlasSHA256": "dd8089d02ef764b5439c100d748d2a512769fba6cb21644340a989300b8834b4",
+      "posterSHA256": "1da45f7b4f2d1f21f0a586066289bdf86757cf9173f5b2dc9c38b962504cafba",
+      "decodedMiB": 31.74346923828125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 50,
+          "top": 14,
+          "width": 156,
+          "height": 228
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "ihanrii",
+        "frames": 214,
+        "frameCount": 214,
+        "width": 384,
+        "height": 384,
+        "duration": 13333,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 16.0504012600315,
+        "nativeDuration": 13333,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 13333
+        },
+        "sourceSHA256": "08704329b22fded759a38e3e9aa757aee53dd3f1b7b575e5fce4f25726b32292",
+        "sourceModelSHA256": "08704329b22fded759a38e3e9aa757aee53dd3f1b7b575e5fce4f25726b32292",
+        "sourceParts": [
+          {
+            "model": "Pylon_Ihanrii",
+            "sourceSHA256": "08704329b22fded759a38e3e9aa757aee53dd3f1b7b575e5fce4f25726b32292"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\ihanrii\\frames-cf471253db30",
+        "fingerprint": "cf471253db308e72d962252332d822a08a4cd606959037d89df71e0283195e15",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [
+            "Native cubic reflection layer not sampled; authored area lights provide reflected highlights",
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 2.384185791015625e-7,
+            "maxReconstructionError": 3.5762786865234375e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 3.5762786865234375e-7,
+          "maxBlenderSkinError": 9.542562154880384e-7,
+          "validatedSkinFrames": [
+            1,
+            71,
+            142
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 2.384185791015625e-7,
+          "maxReconstructionError": 3.5762786865234375e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 2076,
+        "triangles": 1588,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "nova": {
+      "atlas": "/themes/character54/nova-atlas.webp",
+      "poster": "/themes/character54/nova-poster.webp",
+      "tile": [
+        106,
+        230
+      ],
+      "columns": 16,
+      "rows": 4,
+      "count": 64,
+      "duration": 4000,
+      "title": "Covert Ops sensor tower",
+      "sourceModel": "SensorTower_CovertOps",
+      "sourceModelSHA256": "a438681721ee9584549b92d62a6107abf0a830cdf897768defd090d1cf56831e",
+      "atlasSHA256": "e68610b849c67031e2eb747ed096995a8a28c7d549436ad5b52c33eed1a42a63",
+      "posterSHA256": "a67c01e8277cd7b6a196fb88d3a8f7a77d9d64c3f55a8ea78b969d9d5345ae64",
+      "decodedMiB": 5.9521484375,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 79,
+          "top": 20,
+          "width": 98,
+          "height": 222
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "nova",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 4000,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 16,
+        "nativeDuration": 4000,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 4000
+        },
+        "sourceSHA256": "a438681721ee9584549b92d62a6107abf0a830cdf897768defd090d1cf56831e",
+        "sourceModelSHA256": "a438681721ee9584549b92d62a6107abf0a830cdf897768defd090d1cf56831e",
+        "sourceParts": [
+          {
+            "model": "SensorTower_CovertOps",
+            "sourceSHA256": "a438681721ee9584549b92d62a6107abf0a830cdf897768defd090d1cf56831e"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\nova\\frames-2f7b5423e296",
+        "fingerprint": "2f7b5423e296aa8e040740b1f4963f9a42f870d64df96001cdce8f5a1f97b1ec",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.011352145520504564,
+            "maxReconstructionError": 4.76837158203125e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 4.76837158203125e-7,
+          "maxBlenderSkinError": 8.558185584852724e-7,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.011352145520504564,
+          "maxReconstructionError": 4.76837158203125e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 3278,
+        "triangles": 1940,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "mira": {
+      "atlas": "/themes/character54/mira-atlas.webp",
+      "poster": "/themes/character54/mira-poster.webp",
+      "tile": [
+        236,
+        174
+      ],
+      "columns": 9,
+      "rows": 12,
+      "count": 107,
+      "duration": 6667,
+      "title": "Horner and Han working tech lab",
+      "sourceModel": "TechLab_HornerHan_Coop",
+      "sourceModelSHA256": "1a809ff10369fe9648c2aeea0b13417a2634dc94692dfe1e88faf508bf0859e4",
+      "atlasSHA256": "3e22849f6e40b92db3300b9938a786d020240ab76b71f6f2ac730e7d9c76d97b",
+      "posterSHA256": "b0a0d194d7864668328389d7a463a51dfb9a047c725bd1de42f253507906ded4",
+      "decodedMiB": 16.9178466796875,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 45,
+          "width": 228,
+          "height": 166
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "mira",
+        "frames": 107,
+        "frameCount": 107,
+        "width": 384,
+        "height": 384,
+        "duration": 6667,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 16.049197540122993,
+        "nativeDuration": 6667,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Attached Work",
+          "start": 0,
+          "end": 6667
+        },
+        "sourceSHA256": "1a809ff10369fe9648c2aeea0b13417a2634dc94692dfe1e88faf508bf0859e4",
+        "sourceModelSHA256": "1a809ff10369fe9648c2aeea0b13417a2634dc94692dfe1e88faf508bf0859e4",
+        "sourceParts": [
+          {
+            "model": "TechLab_HornerHan_Coop",
+            "sourceSHA256": "1a809ff10369fe9648c2aeea0b13417a2634dc94692dfe1e88faf508bf0859e4"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\mira\\frames-e72342b1ae72",
+        "fingerprint": "e72342b1ae72e01884ccfeaa8b422d4b4c977b7eadf38db7dc6320b52cc83f55",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.0000010730796589086822,
+            "maxReconstructionError": 4.76837158203125e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 4.76837158203125e-7,
+          "maxBlenderSkinError": 0.000001020267174757939,
+          "validatedSkinFrames": [
+            1,
+            35,
+            71
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.0000010730796589086822,
+          "maxReconstructionError": 4.76837158203125e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 2718,
+        "triangles": 1950,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "machined": {
+      "atlas": "/themes/character54/machined-atlas.webp",
+      "poster": "/themes/character54/machined-poster.webp",
+      "tile": [
+        222,
+        236
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3333,
+      "title": "Working Terran factory",
+      "sourceModel": "Factory",
+      "sourceModelSHA256": "ec3a44ea2677b1e17c910b192daa955deaf71e92c5a57b711e2a2bf96c64e672",
+      "atlasSHA256": "7ae68f13d953da55c3f7151024b198d3292c9c725ba867a76c6cbf1c7cdd040b",
+      "posterSHA256": "cb7cf66527e49e6278684767a3848a05248c3970c732929a9934ff284c87dbb9",
+      "decodedMiB": 12.791015625,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 21,
+          "top": 14,
+          "width": 214,
+          "height": 228
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "machined",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3333,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 19.2019201920192,
+        "nativeDuration": 3333,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 3333
+        },
+        "sourceSHA256": "ec3a44ea2677b1e17c910b192daa955deaf71e92c5a57b711e2a2bf96c64e672",
+        "sourceModelSHA256": "ec3a44ea2677b1e17c910b192daa955deaf71e92c5a57b711e2a2bf96c64e672",
+        "sourceParts": [
+          {
+            "model": "Factory",
+            "sourceSHA256": "ec3a44ea2677b1e17c910b192daa955deaf71e92c5a57b711e2a2bf96c64e672"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\machined\\frames-3d674581c846",
+        "fingerprint": "3d674581c84606adb427501a1dd7184d76b4996fa820f3a968a57d62873303ba",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [
+              {
+                "sourceRegion": 2,
+                "sourceBatch": 0,
+                "materialReference": 10,
+                "materials": [
+                  {
+                    "reference": 10,
+                    "materialIndex": 0,
+                    "name": "Distortionwave"
+                  }
+                ],
+                "triangles": 220,
+                "vertices": 121,
+                "entireBatchOmitted": true,
+                "entireRegionOmitted": true
+              }
+            ],
+            "batchCount": 1,
+            "materialNames": [
+              "Distortionwave"
+            ],
+            "omittedRegionCount": 1,
+            "omittedRegionTriangles": 220,
+            "excludedOpticalPassTriangles": 220
+          },
+          "materialAdaptations": [
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 1.343519389629364,
+            "maxReconstructionError": 0.000030517578125,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 0.000030517578125,
+          "maxBlenderSkinError": 0.000005664636788614617,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 1.343519389629364,
+          "maxReconstructionError": 0.000030517578125,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 5992,
+        "triangles": 4025,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "tyrador": {
+      "atlas": "/themes/character54/tyrador-atlas.webp",
+      "poster": "/themes/character54/tyrador-poster.webp",
+      "tile": [
+        106,
+        228
+      ],
+      "columns": 43,
+      "rows": 5,
+      "count": 214,
+      "duration": 13334,
+      "title": "Tyrador sensor tower",
+      "sourceModel": "SensorTower_Silver",
+      "sourceModelSHA256": "ba675734b0425928310fc870e1f4a8b68def2611a4bbbc5de669d20e2210dbca",
+      "atlasSHA256": "a595e5cd501b552a1ef9d177c7c19e25d208866e614b5812bbec08eef8974fe0",
+      "posterSHA256": "7b76f3157a49ba334b33d846ce70ba3a5748a496c97b9e604d179fb4ab9a48d6",
+      "decodedMiB": 19.821624755859375,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 79,
+          "top": 22,
+          "width": 98,
+          "height": 220
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "tyrador",
+        "frames": 214,
+        "frameCount": 214,
+        "width": 384,
+        "height": 384,
+        "duration": 13334,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 16.049197540122993,
+        "nativeDuration": 13334,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 13334
+        },
+        "sourceSHA256": "ba675734b0425928310fc870e1f4a8b68def2611a4bbbc5de669d20e2210dbca",
+        "sourceModelSHA256": "ba675734b0425928310fc870e1f4a8b68def2611a4bbbc5de669d20e2210dbca",
+        "sourceParts": [
+          {
+            "model": "SensorTower_Silver",
+            "sourceSHA256": "ba675734b0425928310fc870e1f4a8b68def2611a4bbbc5de669d20e2210dbca"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\tyrador\\frames-fe8bc82ba3d8",
+        "fingerprint": "fe8bc82ba3d8677176133934ea09e8f43dd8c76acac15b1d04684106846ad6e5",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [
+            "Native cubic reflection layer not sampled; authored area lights provide reflected highlights",
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.06400674767792225,
+            "maxReconstructionError": 6.297935897237039e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 6.297935897237039e-7,
+          "maxBlenderSkinError": 0.0000014688796499565679,
+          "validatedSkinFrames": [
+            1,
+            71,
+            142
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.06400674767792225,
+          "maxReconstructionError": 6.297935897237039e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 5164,
+        "triangles": 5968,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "abathur": {
+      "atlas": "/themes/character54/abathur-atlas.webp",
+      "poster": "/themes/character54/abathur-poster.webp",
+      "tile": [
+        236,
+        154
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3334,
+      "title": "Working evolution chamber",
+      "sourceModel": "EvolutionChamber",
+      "sourceModelSHA256": "c2a786296a213c2590a331ae8b16f8778d438429cd298504a0bb5549b338ceed",
+      "atlasSHA256": "6a12e2a602d69f539a617c725d135e2e09b52121fc26b299f0dabf925e4f5680",
+      "posterSHA256": "ed98d7ed4c2f171d9b65d94e62b81fde23dc9187df04c4b755b4faee19fe7f09",
+      "decodedMiB": 8.873046875,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 55,
+          "width": 228,
+          "height": 146
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "abathur",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3334,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 19.19616076784643,
+        "nativeDuration": 3334,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 3334
+        },
+        "sourceSHA256": "c2a786296a213c2590a331ae8b16f8778d438429cd298504a0bb5549b338ceed",
+        "sourceModelSHA256": "c2a786296a213c2590a331ae8b16f8778d438429cd298504a0bb5549b338ceed",
+        "sourceParts": [
+          {
+            "model": "EvolutionChamber",
+            "sourceSHA256": "c2a786296a213c2590a331ae8b16f8778d438429cd298504a0bb5549b338ceed"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\abathur\\frames-2dc86ccdc142",
+        "fingerprint": "2dc86ccdc14238be76c9b09e95aba7384bab2b3ddf699e04a1b19783311205e3",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.000007899478077888489,
+            "maxReconstructionError": 4.172325134277344e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 4.172325134277344e-7,
+          "maxBlenderSkinError": 0.0000010772725410223154,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": true,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.000007899478077888489,
+          "maxReconstructionError": 4.172325134277344e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 1762,
+        "triangles": 2739,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "dehaka": {
+      "atlas": "/themes/character54/dehaka-atlas.webp",
+      "poster": "/themes/character54/dehaka-poster.webp",
+      "tile": [
+        214,
+        236
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3333,
+      "title": "Primal barracks",
+      "sourceModel": "Dehaka_Primal_Barracks_Coop",
+      "sourceModelSHA256": "46c3bf7f163d38dad8262883068351fae234e13446dbe0533b2fec0a359018e6",
+      "atlasSHA256": "b24d5bdf40f9f48b8bd81a37b0656a91d7e5b6271abe44792945225f3b610ca8",
+      "posterSHA256": "5f9b79212de90887c0db4e0ae0096787fcf5d2860272e66b35bcba602925a7dc",
+      "decodedMiB": 12.330078125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 25,
+          "top": 14,
+          "width": 206,
+          "height": 228
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "dehaka",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3333,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 19.2019201920192,
+        "nativeDuration": 3333,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand",
+          "start": 0,
+          "end": 3333
+        },
+        "sourceSHA256": "46c3bf7f163d38dad8262883068351fae234e13446dbe0533b2fec0a359018e6",
+        "sourceModelSHA256": "46c3bf7f163d38dad8262883068351fae234e13446dbe0533b2fec0a359018e6",
+        "sourceParts": [
+          {
+            "model": "Dehaka_Primal_Barracks_Coop",
+            "sourceSHA256": "46c3bf7f163d38dad8262883068351fae234e13446dbe0533b2fec0a359018e6"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\dehaka\\frames-9d2f31cc534e",
+        "fingerprint": "9d2f31cc534eca6d8739fe345a44911ceb6aba1c07fff8b772664bf380f68785",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.00004544854164123535,
+            "maxReconstructionError": 6.109476089477539e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 6.109476089477539e-7,
+          "maxBlenderSkinError": 0.0000017285346984863281,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": true,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.00004544854164123535,
+          "maxReconstructionError": 6.109476089477539e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 8575,
+        "triangles": 11044,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "cerberus": {
+      "atlas": "/themes/character54/cerberus-atlas.webp",
+      "poster": "/themes/character54/cerberus-poster.webp",
+      "tile": [
+        236,
+        166
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3334,
+      "title": "Cerberus evolution chamber",
+      "sourceModel": "EvolutionChamber_RCZ",
+      "sourceModelSHA256": "85f487bee51281b5578cb4674c62425497777ad1b244ad699e79a87a8f9244c1",
+      "atlasSHA256": "b939eab6a53741a43b2147d585978c5711554198ad86bbcb9d9b16c52fb5433a",
+      "posterSHA256": "cf4c958918ac298cb63fd9126c2919eb0b3780d31b1666a93f0dd69a7e8a8577",
+      "decodedMiB": 9.564453125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 49,
+          "width": 228,
+          "height": 158
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "cerberus",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3334,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 19.19616076784643,
+        "nativeDuration": 3334,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 3334
+        },
+        "sourceSHA256": "85f487bee51281b5578cb4674c62425497777ad1b244ad699e79a87a8f9244c1",
+        "sourceModelSHA256": "85f487bee51281b5578cb4674c62425497777ad1b244ad699e79a87a8f9244c1",
+        "sourceParts": [
+          {
+            "model": "EvolutionChamber_RCZ",
+            "sourceSHA256": "85f487bee51281b5578cb4674c62425497777ad1b244ad699e79a87a8f9244c1"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\cerberus\\frames-d24240e3580c",
+        "fingerprint": "d24240e3580c2bf89577f70f7d1cf3c1dd32ee89929ddf288b5e6fbd4cc1029c",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.00000796094536781311,
+            "maxReconstructionError": 5.960464477539062e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 5.960464477539062e-7,
+          "maxBlenderSkinError": 0.0000010339140386223277,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": true,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.00000796094536781311,
+          "maxReconstructionError": 5.960464477539062e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 5082,
+        "triangles": 6272,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "mecha": {
+      "atlas": "/themes/character54/mecha-atlas.webp",
+      "poster": "/themes/character54/mecha-poster.webp",
+      "tile": [
+        236,
+        158
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3334,
+      "title": "Mecha evolution chamber",
+      "sourceModel": "EvolutionChamber_Mecha",
+      "sourceModelSHA256": "8b6d2cdab95b60663d509829ed7b151b2b7754c089190d9e18c7c3fe10a509b9",
+      "atlasSHA256": "e53bf987d650b55ce09ad53370091c04a63cc0a669ec712c1af3c21c2cdaee20",
+      "posterSHA256": "9b1bcc5e7bbd94e9527da00ba2c665daa4dd061efd8f82a78996549702282bd5",
+      "decodedMiB": 9.103515625,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 53,
+          "width": 228,
+          "height": 150
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "mecha",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3334,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 19.19616076784643,
+        "nativeDuration": 3334,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 3334
+        },
+        "sourceSHA256": "8b6d2cdab95b60663d509829ed7b151b2b7754c089190d9e18c7c3fe10a509b9",
+        "sourceModelSHA256": "8b6d2cdab95b60663d509829ed7b151b2b7754c089190d9e18c7c3fe10a509b9",
+        "sourceParts": [
+          {
+            "model": "EvolutionChamber_Mecha",
+            "sourceSHA256": "8b6d2cdab95b60663d509829ed7b151b2b7754c089190d9e18c7c3fe10a509b9"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\mecha\\frames-9ab849c5dc80",
+        "fingerprint": "9ab849c5dc80373bff931edf437740716815093cf7f7221f48be09c16115d185",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.00000796094536781311,
+            "maxReconstructionError": 5.960464477539062e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 5.960464477539062e-7,
+          "maxBlenderSkinError": 7.324720313091189e-7,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": true,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.00000796094536781311,
+          "maxReconstructionError": 5.960464477539062e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 3305,
+        "triangles": 3555,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "arcade": {
+      "atlas": "/themes/character54/arcade-atlas.webp",
+      "poster": "/themes/character54/arcade-poster.webp",
+      "tile": [
+        150,
+        236
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 1000,
+      "title": "Mar Sara jukebox",
+      "sourceModel": "SM_MarSaraBarJukebox",
+      "sourceModelSHA256": "d88bce678c78bd66ed82eec28a96d0e45d471d55cbce2f9177fa4f10198aef12",
+      "atlasSHA256": "e83041fd92a85126abf4daf3c46a5c8a8556cd4333785e601e997d496afd515a",
+      "posterSHA256": "2fe852ab0b5e460191606ed6ccf589eaf1611c9e82050056311b31973642adaa",
+      "decodedMiB": 8.642578125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 57,
+          "top": 14,
+          "width": 142,
+          "height": 228
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "arcade",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 1000,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 64,
+        "nativeDuration": 1000,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Work",
+          "start": 0,
+          "end": 1000
+        },
+        "sourceSHA256": "d88bce678c78bd66ed82eec28a96d0e45d471d55cbce2f9177fa4f10198aef12",
+        "sourceModelSHA256": "d88bce678c78bd66ed82eec28a96d0e45d471d55cbce2f9177fa4f10198aef12",
+        "sourceParts": [
+          {
+            "model": "SM_MarSaraBarJukebox",
+            "sourceSHA256": "d88bce678c78bd66ed82eec28a96d0e45d471d55cbce2f9177fa4f10198aef12"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\arcade\\frames-7b64de0a61cb",
+        "fingerprint": "7b64de0a61cb9eb4f788cb2f5273657c346fe53b923620753d6fc1ee746a3166",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [
+              {
+                "sourceRegion": 3,
+                "sourceBatch": 28,
+                "materialReference": 6,
+                "materials": [
+                  {
+                    "reference": 5,
+                    "materialIndex": 0,
+                    "name": "Standard_24"
+                  }
+                ],
+                "triangles": 24,
+                "vertices": 28,
+                "entireBatchOmitted": false,
+                "entireRegionOmitted": false
+              }
+            ],
+            "batchCount": 1,
+            "materialNames": [
+              "Standard_24"
+            ],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 24
+          },
+          "materialAdaptations": [
+            "Composite multiply layer adapted as native-mask base-color multiplication",
+            "Native cubic reflection layer not sampled; authored area lights provide reflected highlights",
+            "Native flipbook frame tracks sampled as declared atlas cells; UV row orientation uses the native flipped-V mesh convention",
+            "SC2 additive/alpha surfaces adapted to texture-alpha and radiance-weighted transparent PBR for portable RGBA",
+            "UV source 9 for Assets/Textures/T1_SM_mb_e.dds adapted to mesh UV0; campaign projection coordinates unavailable"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 3.203749656677246e-7,
+            "maxReconstructionError": 2.384185791015625e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 2.384185791015625e-7,
+          "maxBlenderSkinError": 6.743495761743046e-7,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 0,
+            "layer": "layer_alpha1",
+            "uvSource": 9
+          },
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 6,
+            "layer": "layer_diff",
+            "uvSource": 9
+          },
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 7,
+            "layer": "layer_emis1",
+            "uvSource": 9
+          },
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 8,
+            "layer": "layer_emis1",
+            "uvSource": 9
+          }
+        ],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 3.203749656677246e-7,
+          "maxReconstructionError": 2.384185791015625e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 11278,
+        "triangles": 11535,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "classic-terran": {
+      "atlas": "/themes/character54/classic-terran-atlas.webp",
+      "poster": "/themes/character54/classic-terran-poster.webp",
+      "tile": [
+        236,
+        188
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3333,
+      "title": "Remastered command center",
+      "sourceModel": "CommandCenter_Remastered",
+      "sourceModelSHA256": "92ff73a7b4717c7b570bb71b3104c0a73be8f944549795e51d53d03f5f2fbc6c",
+      "atlasSHA256": "e8e1e2b36ff6a48d37e22b56eea2ff6e96f6392661eb6f6055e3a562f79a19bd",
+      "posterSHA256": "773f278e36f613fb1ab81bfd3fdd01fbba05e05049ee435a4bfa620cb6d6d968",
+      "decodedMiB": 10.83203125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 38,
+          "width": 228,
+          "height": 180
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "classic-terran",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3333,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 19.2019201920192,
+        "nativeDuration": 3333,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 3333
+        },
+        "sourceSHA256": "92ff73a7b4717c7b570bb71b3104c0a73be8f944549795e51d53d03f5f2fbc6c",
+        "sourceModelSHA256": "92ff73a7b4717c7b570bb71b3104c0a73be8f944549795e51d53d03f5f2fbc6c",
+        "sourceParts": [
+          {
+            "model": "CommandCenter_Remastered",
+            "sourceSHA256": "92ff73a7b4717c7b570bb71b3104c0a73be8f944549795e51d53d03f5f2fbc6c"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\classic-terran\\frames-a105cf3379e6",
+        "fingerprint": "a105cf3379e613e9a4a462d494a65b1c7aeb5f7f14979a54267d090ec801a4ff",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [
+              {
+                "sourceRegion": 1,
+                "sourceBatch": 0,
+                "materialReference": 4,
+                "materials": [
+                  {
+                    "reference": 4,
+                    "materialIndex": 0,
+                    "name": "Distortionwave"
+                  }
+                ],
+                "triangles": 220,
+                "vertices": 121,
+                "entireBatchOmitted": true,
+                "entireRegionOmitted": true
+              }
+            ],
+            "batchCount": 1,
+            "materialNames": [
+              "Distortionwave"
+            ],
+            "omittedRegionCount": 1,
+            "omittedRegionTriangles": 220,
+            "excludedOpticalPassTriangles": 220
+          },
+          "materialAdaptations": [
+            "Native cubic reflection layer not sampled; authored area lights provide reflected highlights"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.039838767843320966,
+            "maxReconstructionError": 5.587123723671539e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 5.587123723671539e-7,
+          "maxBlenderSkinError": 9.902267292640298e-7,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.039838767843320966,
+          "maxReconstructionError": 5.587123723671539e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 15776,
+        "triangles": 12376,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "classic-protoss": {
+      "atlas": "/themes/character54/classic-protoss-atlas.webp",
+      "poster": "/themes/character54/classic-protoss-poster.webp",
+      "tile": [
+        236,
+        196
+      ],
+      "columns": 3,
+      "rows": 29,
+      "count": 86,
+      "duration": 5334,
+      "title": "Remastered nexus",
+      "sourceModel": "Nexus_Remastered",
+      "sourceModelSHA256": "9d3f4972beb3aa1f00efdad42febae0bbcd6a75f1986a2284b6ae73ab5a993f1",
+      "atlasSHA256": "eca9515c9efd16b9bbdca030b51581ce8e2940fb134b468f5016f07b2816b93c",
+      "posterSHA256": "2170036ff6f311b6be36cdd75a008ef23c6bc35bb5f8f561aa3ba7796b62f6b9",
+      "decodedMiB": 15.35137939453125,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 34,
+          "width": 228,
+          "height": 188
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "classic-protoss",
+        "frames": 86,
+        "frameCount": 86,
+        "width": 384,
+        "height": 384,
+        "duration": 5334,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 16.122984626921635,
+        "nativeDuration": 5334,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 5334
+        },
+        "sourceSHA256": "9d3f4972beb3aa1f00efdad42febae0bbcd6a75f1986a2284b6ae73ab5a993f1",
+        "sourceModelSHA256": "9d3f4972beb3aa1f00efdad42febae0bbcd6a75f1986a2284b6ae73ab5a993f1",
+        "sourceParts": [
+          {
+            "model": "Nexus_Remastered",
+            "sourceSHA256": "9d3f4972beb3aa1f00efdad42febae0bbcd6a75f1986a2284b6ae73ab5a993f1"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\classic-protoss\\frames-57d77a6d8ba8",
+        "fingerprint": "57d77a6d8ba89b909218ef8016f8e69fa620189d27d59910dec0af9f74d90d1f",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.026729282923042774,
+            "maxReconstructionError": 3.5762786865234375e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 3.5762786865234375e-7,
+          "maxBlenderSkinError": 0,
+          "validatedSkinFrames": [
+            1,
+            28,
+            57
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": true,
+        "cameraAngle": "a",
+        "unsupportedCases": [],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.026729282923042774,
+          "maxReconstructionError": 3.5762786865234375e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 5884,
+        "triangles": 8344,
+        "complete": true,
+        "mode": "full"
+      }
+    },
+    "classic-zerg": {
+      "atlas": "/themes/character54/classic-zerg-atlas.webp",
+      "poster": "/themes/character54/classic-zerg-poster.webp",
+      "tile": [
+        236,
+        222
+      ],
+      "columns": 8,
+      "rows": 8,
+      "count": 64,
+      "duration": 3000,
+      "title": "Remastered hatchery",
+      "sourceModel": "Hatchery_Remastered",
+      "sourceModelSHA256": "71b246bf98be89f142c509aebc3cd341656ffb9639e77f84c2d45502c11d1548",
+      "atlasSHA256": "89a486f6e16b0c847f3d6e69a700686b915144bde76ac739cc24548bfe5d640d",
+      "posterSHA256": "61badf6775251c53f6d48d3d14172fb4624bc086da693b110b4bb1ec4972c95c",
+      "decodedMiB": 12.791015625,
+      "alphaUnion": {
+        "sampledSize": [
+          256,
+          256
+        ],
+        "crop": {
+          "left": 14,
+          "top": 21,
+          "width": 228,
+          "height": 214
+        },
+        "padding": 4,
+        "threshold": "all nonzero alpha in every native frame"
+      },
+      "source": {
+        "device": "classic-zerg",
+        "frames": 64,
+        "frameCount": 64,
+        "width": 384,
+        "height": 384,
+        "duration": 3000,
+        "rawWidth": 768,
+        "rawHeight": 768,
+        "supersample": 2,
+        "fps": 21.333333333333332,
+        "nativeDuration": 3000,
+        "nativeDurationScope": "original native clip",
+        "nativeSequence": {
+          "name": "Stand Work",
+          "start": 0,
+          "end": 3000
+        },
+        "sourceSHA256": "71b246bf98be89f142c509aebc3cd341656ffb9639e77f84c2d45502c11d1548",
+        "sourceModelSHA256": "71b246bf98be89f142c509aebc3cd341656ffb9639e77f84c2d45502c11d1548",
+        "sourceParts": [
+          {
+            "model": "Hatchery_Remastered",
+            "sourceSHA256": "71b246bf98be89f142c509aebc3cd341656ffb9639e77f84c2d45502c11d1548"
+          }
+        ],
+        "framesDir": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\local54-characters\\classic-zerg\\frames-457dec52c5a8",
+        "fingerprint": "457dec52c5a8524f4372e9df211b8eebd54d517cd4eef59f1db572b0e96e0736",
+        "provenance": {
+          "geometry": "Original selected Blizzard SC2 model with all opaque/emissive standard/composite batches, original UVs, corner normals and skin weights; type-2 environmental-refraction exclusions enumerated separately",
+          "animation": "Full original selected sequence at native duration; no retiming, authored transforms or fabricated motion",
+          "presentation": "Authored fixed-camera profiles, lights and Blender PBR translation; no authored geometry or movement",
+          "excludedScreenSpaceDisplacement": {
+            "rationale": "Native type-2 screen-space environmental refraction cannot sample a surrounding game scene in an isolated transparent RGBA sprite; only these optical passes are omitted",
+            "batches": [],
+            "batchCount": 0,
+            "materialNames": [],
+            "omittedRegionCount": 0,
+            "omittedRegionTriangles": 0,
+            "excludedOpticalPassTriangles": 0
+          },
+          "materialAdaptations": [
+            "Native cubic reflection layer not sampled; authored area lights provide reflected highlights"
+          ],
+          "skinMethod": "Exact two-factor SVD native affine palette: translation*U*signed-scale carrier, identity-rest Vt child, weights on child",
+          "affinePalette": {
+            "enabled": true,
+            "prototypeOnly": true,
+            "maxSourceSingleTRSError": 0.35335149616003036,
+            "maxReconstructionError": 4.172325134277344e-7,
+            "properRotationDeterminants": true,
+            "quaternionHemisphereContinuity": true,
+            "pairedAxisGaugeContinuity": true
+          },
+          "maxPaletteDecompositionError": 4.172325134277344e-7,
+          "maxBlenderSkinError": 0.000002132480599880018,
+          "validatedSkinFrames": [
+            1,
+            21,
+            42
+          ],
+          "timing": "Exact native duration with downsampled poses",
+          "capture": "Offline reconstruction from actual native campaign M3s; not an engine capture",
+          "compoundTiming": null,
+          "stagingEvidence": null,
+          "creep": {
+            "enabled": false,
+            "reason": "not a nest device"
+          }
+        },
+        "static": false,
+        "closedNativeVisualTracks": false,
+        "cameraAngle": "a",
+        "unsupportedCases": [
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 6,
+            "layer": "layer_envi",
+            "uvSource": 7
+          },
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 7,
+            "layer": "layer_envi",
+            "uvSource": 7
+          },
+          {
+            "case": "non-mesh UV source requires renderer adaptation",
+            "material": 8,
+            "layer": "layer_envi",
+            "uvSource": 7
+          }
+        ],
+        "sourceRole": "native campaign prop/station",
+        "compoundTiming": null,
+        "stagingEvidence": null,
+        "engineCapture": false,
+        "creep": {
+          "enabled": false,
+          "reason": "not a nest device"
+        },
+        "blender": "5.2.3 LTS",
+        "engine": "BLENDER_EEVEE",
+        "affinePalette": {
+          "enabled": true,
+          "prototypeOnly": true,
+          "maxSourceSingleTRSError": 0.35335149616003036,
+          "maxReconstructionError": 4.172325134277344e-7,
+          "properRotationDeterminants": true,
+          "quaternionHemisphereContinuity": true,
+          "pairedAxisGaugeContinuity": true
+        },
+        "meshVertices": 20166,
+        "triangles": 27988,
+        "complete": true,
+        "mode": "full"
+      }
+    }
+  }
+}

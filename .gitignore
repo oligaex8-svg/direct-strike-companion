@@ -4,6 +4,7 @@
 !/*.ps1
 !/*.csproj
 !/README.md
+!/DESIGN.md
 !/global.json
 !/packages.lock.json
 !/.gitignore
@@ -18,6 +19,7 @@
 !/verification/*.cjs
 !/verification/*.ps1
 !/verification/*.targets
+!/verification/*.py
 !/verification/fixtures/
 **/bin/
 **/obj/
@@ -31,3 +33,8 @@
 **/*.SC2Replay
 **/*token*.json
 **/*credentials*
+# Keep original-model extraction/render workspaces local. Ship runtime atlases
+# under wwwroot; retain provenance and authoring scripts in the source repo.
+/assets/themes/*/*
+!/assets/themes/*/*.md
+!/assets/themes/*/*sources.json

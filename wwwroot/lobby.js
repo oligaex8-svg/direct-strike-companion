@@ -203,7 +203,7 @@ document.addEventListener('click',async event=>{
 document.addEventListener('click',()=>{notificationSoundPointerActive=false;queueNotificationSoundRefresh();});
 
 function lobbyTeammateComparison(player,baseline){
- const together=player?.together;
+ const together=typeof replayEncounterStats==='function'?replayEncounterStats(player?.together):player?.together;
  if(!together||!baseline)return null;
  const valid=s=>[s.wins,s.losses].every(n=>Number.isInteger(n)&&n>=0)&&s.wins+s.losses>0;
  if(!valid(together)||!valid(baseline))return null;
@@ -514,7 +514,7 @@ function liveLobbyHistoryCells(summary,previewId=null,siteProfile=null){
    return `<span class="live-favourite" title="${esc(label)}">${commanderPortrait(commander,'medium')}<strong>${num(item.games)}</strong></span>`;
   }).join('');
  }
- return `<div class="live-recent-games"><span class="live-history-label">Recent games</span><div class="live-hero-strip">${recentIcons||empty('No replay or site history')}</div></div><div class="live-favourites"><span class="live-history-label">Most played${favourites.length?' · <span>Pick estimate</span>':''}</span><div class="live-hero-strip">${favouriteIcons||empty('No known commander pick history.')}</div></div>`;
+ return `<div class="live-recent-games"><span class="live-history-label">Recent games</span><div class="live-hero-strip native-command-deck">${recentIcons||empty('No replay or site history')}</div></div><div class="live-favourites"><span class="live-history-label"${favourites.length?' title="Historical pick frequency; current commander unknown."':''}>Most played</span><div class="live-hero-strip native-command-deck">${favouriteIcons||empty('No known commander pick history.')}</div></div>`;
 }
 
 function liveLobbyAdditionalRating(id,name,region,detail=false){

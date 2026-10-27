@@ -1,0 +1,48 @@
+{
+  "source": "Original SC2 Purifier co-op and story-mode UI textures",
+  "archive": "https://asset-explorer.sc2arcade.com/",
+  "sources": [
+    {
+      "name": "sc2_ui_coop_fenix_topbar_bar_full",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_bar_full.png",
+      "width": 72,
+      "height": 5,
+      "sha256": "e99789968b5271a09693a33e51ead54d2e7bb5f121a2ecceabc7ce0018ea8b12"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_bar_half",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_bar_half.png",
+      "width": 36,
+      "height": 4,
+      "sha256": "52707000307faa22cc33a6a66279e7951657b5bdd637ff1aba08c6859f05bf0a"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_gradient",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_gradient.png",
+      "width": 372,
+      "height": 36,
+      "sha256": "1cdbc6cf24ad5553125bd0c16ad0acdef19091761ced6937785aa2addccac030"
+    },
+    {
+      "name": "sc2_ui_coop_fenix_topbar_button_hover",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_coop_fenix_topbar_button_hover.png",
+      "width": 80,
+      "height": 80,
+      "sha256": "682fffe7568c7ba6c11be97126139027eb81a8a2480f59c5d7919c3f4b6214a6"
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_purifier_hover",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_purifier_hover.png",
+      "width": 248,
+      "height": 320,
+      "sha256": "50f7f95b92b0b02ecd20c869b953090453e0a2c7818ae70ccb1f1812c2568aeb"
+    },
+    {
+      "name": "sc2_ui_ingame_storymode_panel_faction_purifier_categoryicon",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/sc2_ui_ingame_storymode_panel_faction_purifier_categoryicon.png",
+      "width": 52,
+      "height": 68,
+      "sha256": "6d02cc3a41b1b55b01da35303b93c2a6b9884755acfa2c77eb2860a3f31db656"
+    }
+  ]
+}

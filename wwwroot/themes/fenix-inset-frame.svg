@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="64" viewBox="0 0 96 64">
+  <!-- Authored Purifier information-well bezel. Transparent centre, 16px corners.
+       A dark upper lip and lower reflected edge make the glass read as recessed. -->
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#302f29"/>
+      <stop offset=".38" stop-color="#1b2429"/>
+      <stop offset=".82" stop-color="#263036"/>
+      <stop offset="1" stop-color="#5d5949"/>
+    </linearGradient>
+  </defs>
+  <path d="M7 1H89L95 7V57L89 63H7L1 57V7Z M9 6L6 9V55L9 58H87L90 55V9L87 6Z" fill="url(#metal)" fill-rule="evenodd"/>
+  <path d="M7 1.5H89L94.5 7V57L89 62.5H7L1.5 57V7Z" fill="none" stroke="#8e8165" stroke-opacity=".64"/>
+  <path d="M6 55V9L9 6H87L90 9" fill="none" stroke="#03090e" stroke-width="2"/>
+  <path d="M6 55L9 58H87L90 55V9" fill="none" stroke="#afa17d" stroke-opacity=".7"/>
+  <path d="M16 3.5H80" stroke="#c4a66b" stroke-opacity=".5"/>
+  <path d="M4 12V8L8 4H12 M84 4H88L92 8V12 M4 52V56L8 60H12 M84 60H88L92 56V52" fill="none" stroke="#c6b28a" stroke-opacity=".65"/>
+  <path d="M8 8L11 5 M85 5L88 8 M8 56L11 59 M85 59L88 56" stroke="#e8ca87" stroke-opacity=".38"/>
+</svg>

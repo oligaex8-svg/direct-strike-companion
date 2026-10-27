@@ -1,0 +1,10 @@
+$ErrorActionPreference='Stop'
+$taskRoot=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'));$taskOut=Join-Path $taskRoot 'assets/themes/native46';New-Item -ItemType Directory -Path $taskOut -Force|Out-Null
+[Reflection.Assembly]::LoadFrom((Join-Path $PSScriptRoot 'russian-sound-work/CascLib.Managed.dll'))|Out-Null
+[CASCLib.CASCConfig]::LoadFlags=[CASCLib.LoadFlags]::None;[CASCLib.CASCConfig]::ValidateData=$true;$taskStorage=$null
+try{$taskStorage=[CASCLib.CASCHandler]::OpenLocalStorage('C:/Program Files (x86)/StarCraft II','s2',$null);$taskStorage.Root.LoadListFile($null,$null);$null=$taskStorage.Root.SetFlags([CASCLib.LocaleFlags]::enUS,$false,$false)
+ $taskNames=@([CASCLib.CASCFile]::Files.Values|ForEach-Object {$_.FullName}|Where-Object {$_ -match '(?i)\.m3$' -and $_ -match '(?i)(egg|evolutionchamber|evolutionpit|incubator|hyperionlab|zerglab)' -and $_ -match '(?i)base.sc2assets/' }|Sort-Object -Unique);$taskNames|ConvertTo-Json|Set-Content (Join-Path $taskOut 'campaign-model-index.json')
+ $taskSelected=@($taskNames|Where-Object {$_ -match '(?i)^mods/liberty.sc2mod/base.sc2assets/Assets/(Units|Buildings)/Zerg/(Egg|EvolutionChamber)/[^/]+\.m3$' -or $_ -match '(?i)^campaigns/swarm.sc2campaign/base.sc2assets/Assets/StoryModeCharacters/Zerg/(SMX1_EggRoomZerglingEgg|SMX1_EggMonsterT1)/[^/]+\.m3$'})
+ $taskRecords=@();foreach($taskName in $taskSelected){$taskIn=$taskStorage.OpenFile($taskName);try{$taskDest=Join-Path $taskOut ([IO.Path]::GetFileName($taskName));$taskFile=[IO.File]::Create($taskDest);try{$taskIn.CopyTo($taskFile)}finally{$taskFile.Dispose()};$taskRecords+=@{path=$taskName;file=[IO.Path]::GetFileName($taskName);sha256=(Get-FileHash $taskDest).Hash.ToLowerInvariant()}}finally{$taskIn.Dispose()}}
+ $taskRecords|ConvertTo-Json|Set-Content (Join-Path $taskOut 'model-sources.json');$taskSelected|ConvertTo-Json -Compress
+}finally{if($taskStorage){$taskMaps=[CASCLib.CASCHandlerBase].GetField('DataStreams',[Reflection.BindingFlags]'NonPublic,Instance').GetValue($taskStorage);foreach($taskMap in $taskMaps.Values){$taskMap.Dispose()};$taskMaps.Clear()}}

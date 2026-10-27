@@ -1,0 +1,10 @@
+/* Existing information geometry and native frames remain the owners. */
+:root [data-surface41-host]{isolation:isolate}
+:root .theme-surface41{display:block;position:absolute;z-index:-1;pointer-events:none!important;user-select:none;overflow:hidden;contain:strict;background-position:right center;background-size:cover;margin:0;padding:0;border:0;mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent)}
+:root .theme-surface41[hidden],:root .surface41-canvas[hidden]{display:none!important}
+:root .surface41-canvas{display:block;position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;pointer-events:none}
+:root .appearance-effects-stage[data-surface41-preview]{background:#080d13!important}
+:root .appearance-effects-stage[data-surface41-preview]::before{content:none!important}
+:root .appearance-effects-stage[data-surface41-preview]>.material-motion38{display:none!important}
+:root .appearance-effects-stage[data-surface41-preview]>.theme-surface41{z-index:0;mask-image:none}
+@media(forced-colors:active){:root[data-surface41]{--identity-field:none!important}:root .theme-surface41{display:none!important}}

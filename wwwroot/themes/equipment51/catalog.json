@@ -1,0 +1,90 @@
+{
+  "version": 51,
+  "provenance": "Source-registered optical bloom and vascular sheen extracted from native rendered equipment pixels. Authored channel selection, blur, intensity and timing; not a claim of an SC2 engine emissive pass. Original model geometry, UVs and animation unchanged.",
+  "entries": {
+    "map": {
+      "theme": "terran",
+      "source": "/themes/campaign48/hyperion-station-atlas.webp",
+      "sourceSHA256": "46c5727f74284f39312c3ef0cfe1f9ba268156d8dc7e7d1d071f28ea0c9f4c7c",
+      "image": "/themes/equipment51/map.webp",
+      "imageSHA256": "f14dda5846e4ae18db44fb42b9572a25c5660620b0738302de37ce0506299e2e",
+      "sourceTile": [
+        320,
+        210
+      ],
+      "tile": [
+        160,
+        105
+      ],
+      "columns": 16,
+      "rows": 29,
+      "frames": 450,
+      "period": 4600,
+      "selectedSourcePixels": 3658281,
+      "decodedMiB": 29.736328125
+    },
+    "console": {
+      "theme": "terran",
+      "source": "/themes/terran50/armory-atlas.webp",
+      "sourceSHA256": "7f3ff7dd2287cc07a65a372e8b22291502bf6b8061778a5f9388084720c5ab60",
+      "image": "/themes/equipment51/console.webp",
+      "imageSHA256": "5ee05852162d5fe0e85dae44b35ff0af8e08acbe22179c1dd05e16527f2ab8a1",
+      "sourceTile": [
+        273,
+        151
+      ],
+      "tile": [
+        137,
+        76
+      ],
+      "columns": 12,
+      "rows": 25,
+      "frames": 293,
+      "period": 3500,
+      "selectedSourcePixels": 113384,
+      "decodedMiB": 11.91558837890625
+    },
+    "crystal": {
+      "theme": "protoss",
+      "source": "/themes/protoss42/pylon-atlas.webp",
+      "sourceSHA256": "bd846ddb8dcc2576b66426e83fa00d55f63dffa616f8f4c1c56a706aac599362",
+      "image": "/themes/equipment51/crystal.webp",
+      "imageSHA256": "ec3e996fb40bb98d52bcbed83d8c11e8071a8af1cd68b444dbe1534cb37528ed",
+      "sourceTile": [
+        246,
+        276
+      ],
+      "tile": [
+        123,
+        138
+      ],
+      "columns": 16,
+      "rows": 20,
+      "frames": 312,
+      "period": 6400,
+      "selectedSourcePixels": 6277211,
+      "decodedMiB": 20.72021484375
+    },
+    "tissue": {
+      "theme": "zerg",
+      "source": "/themes/campaign48/leviathan-nest-atlas.webp",
+      "sourceSHA256": "dcb623dfdeec49ce7096bb6a96fd5f2768782d455e09eda4ab6eb1067b8ec806",
+      "image": "/themes/equipment51/tissue.webp",
+      "imageSHA256": "c922cb4dbb2a00075d79726dfbd3ad562dbc2369118323eccc0091820d5e1165",
+      "sourceTile": [
+        233,
+        164
+      ],
+      "tile": [
+        117,
+        82
+      ],
+      "columns": 16,
+      "rows": 18,
+      "frames": 276,
+      "period": 4200,
+      "selectedSourcePixels": 887358,
+      "decodedMiB": 10.540283203125
+    }
+  }
+}

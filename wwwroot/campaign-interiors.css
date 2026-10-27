@@ -1,0 +1,11 @@
+.campaign48-scene{display:block;position:absolute;inset:auto;z-index:0;transform-origin:0 0;overflow:hidden;contain:paint;pointer-events:none!important;user-select:none;margin:0;padding:0;border:0}
+.campaign48-scene[hidden],.campaign48-poster[hidden],.campaign48-viewport[hidden]{display:none!important}
+.campaign48-poster,.campaign48-viewport{display:block;position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;padding:0;border:0;pointer-events:none}
+.campaign48-viewport{overflow:hidden;contain:paint}
+.campaign48-atlas{display:block;position:absolute;left:0;top:0;margin:0;padding:0;border:0;background-repeat:no-repeat}
+.sidebar[data-campaign48-host]::after{visibility:hidden!important}
+:root[data-campaign48-scene] .appearance-effects-stage>.material-motion38,:root[data-campaign48-scene] .appearance-effects-stage>.theme-surface41{display:none!important}
+@media(forced-colors:active){.campaign48-scene{display:none!important}}
+/* Campaign stations meet the existing utility casing instead of floating in
+   the center of unused space. Its controls remain above the four-pixel joint. */
+:root[data-campaign48-scene] .sidebar>.sidebar-bottom{position:relative;z-index:1}

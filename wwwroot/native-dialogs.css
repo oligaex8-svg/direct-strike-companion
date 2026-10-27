@@ -1,0 +1,65 @@
+/* Dialogs use a closed menu perimeter, independently of the open console deck. */
+:root dialog,:root dialog#player-dialog{
+ --dialog-padding:18px;border:10px solid var(--line);border-image:none;
+ padding:0;border-radius:0;background:var(--surface);overflow:hidden;
+ width:calc(100% - 24px);max-height:calc(100dvh - 24px)
+}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog,:root[data-graphical-style]:not([data-graphical-style=default]) dialog#player-dialog{
+ border-color:transparent;border-image:var(--hud-nav-normal) 9 / 8px / 0 stretch;
+ background:var(--shell-well)
+}
+:root dialog::before,:root dialog::after,
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog::after,
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog .dialog-head::after{content:none;display:none}
+:root dialog>.dialog-head,
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ padding:10px var(--dialog-padding);border:0;border-image:none;
+ border-bottom:1px solid var(--line);background:var(--shell-header,var(--surface));min-width:0
+}
+:root dialog>.dialog-head h2{min-width:0;overflow-wrap:anywhere}
+:root dialog>.dialog-head .close{
+ position:static;inset:auto;transform:none;clip-path:none;flex:0 0 40px;
+ width:40px;height:40px;display:grid;place-items:center;padding:0;
+ border:1px solid var(--line);border-image:none;border-radius:0;
+ background:var(--surface);color:var(--text);line-height:1;font-size:24px
+}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head .close{border-color:transparent;border-image:var(--hud-nav-normal) 9 fill / 5px / 0 stretch;background:var(--shell-well)}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head .close:hover{border-image-source:var(--hud-nav-hover)}
+:root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head .close:active{border-image-source:var(--hud-nav-pressed)}
+:root dialog>.dialog-body{padding:14px var(--dialog-padding) var(--dialog-padding);min-height:0;overflow:auto}
+:root[data-graphical-style]:not([data-graphical-style=default]) #settings-language{min-width:160px;min-height:38px;padding:10px 32px 10px 16px;border:1px solid transparent;border-image:var(--hud-field-frame) 24 / 11px / 0 repeat;border-radius:0;background:var(--shell-well);color:var(--text)}
+/* The thumbnail belongs to the option, never to the currently active theme. */
+:root #settings-dialog .appearance-choice:not([data-style-preview=default]) .appearance-thumbnail{
+ height:64px;padding:0;border:0;border-image:none;border-radius:0;box-shadow:none;
+ background:var(--native-preview) center/contain no-repeat
+}
+:root #settings-dialog .appearance-choice:not([data-style-preview=default]) .appearance-thumbnail i{display:none}
+@media(max-width:520px){
+ :root dialog,:root dialog#player-dialog{--dialog-padding:12px;border-width:8px}
+ :root .appearance-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+ :root #settings-dialog .appearance-choice:not([data-style-preview=default]) .appearance-thumbnail{height:58px}
+}
+@media(forced-colors:active){
+ :root dialog,:root[data-graphical-style]:not([data-graphical-style=default]) dialog,
+ :root dialog>.dialog-head .close,:root[data-graphical-style]:not([data-graphical-style=default]) dialog>.dialog-head .close{border:1px solid CanvasText;border-image:none;background:Canvas;color:CanvasText}
+}
+:root .appearance-choice[data-style-preview=protoss]{--native-preview:url('/themes/protoss-native-preview.png')}
+:root .appearance-choice[data-style-preview=nerazim]{--native-preview:url('/themes/nerazim-native-preview.png')}
+:root .appearance-choice[data-style-preview=alarak]{--native-preview:url('/themes/alarak-native-preview.png')}
+:root .appearance-choice[data-style-preview=ihanrii]{--native-preview:url('/themes/ihanrii-native-preview.png')}
+:root .appearance-choice[data-style-preview=terran]{--native-preview:url('/themes/terran-native-preview.png')}
+:root .appearance-choice[data-style-preview=nova]{--native-preview:url('/themes/nova-native-preview.png')}
+:root .appearance-choice[data-style-preview=mira]{--native-preview:url('/themes/mira-native-preview.png')}
+:root .appearance-choice[data-style-preview=machined]{--native-preview:url('/themes/machined-native-preview.png')}
+:root .appearance-choice[data-style-preview=tyrador]{--native-preview:url('/themes/tyrador-native-preview.png')}
+:root .appearance-choice[data-style-preview=zerg]{--native-preview:url('/themes/zerg-native-preview.png')}
+:root .appearance-choice[data-style-preview=abathur]{--native-preview:url('/themes/abathur-native-preview.png')}
+:root .appearance-choice[data-style-preview=dehaka]{--native-preview:url('/themes/dehaka-native-preview.png')}
+:root .appearance-choice[data-style-preview=cerberus]{--native-preview:url('/themes/cerberus-native-preview.png')}
+:root .appearance-choice[data-style-preview=mecha]{--native-preview:url('/themes/mecha-native-preview.png')}
+:root .appearance-choice[data-style-preview=fenix]{--native-preview:url('/themes/fenix-native-preview.png')}
+:root .appearance-choice[data-style-preview=arcade]{--native-preview:url('/themes/arcade-native-preview.png')}
+:root .appearance-choice[data-style-preview=classic-terran]{--native-preview:url('/themes/classic-terran-native-preview.png')}
+:root .appearance-choice[data-style-preview=classic-protoss]{--native-preview:url('/themes/classic-protoss-native-preview.png')}
+:root .appearance-choice[data-style-preview=classic-zerg]{--native-preview:url('/themes/classic-zerg-native-preview.png')}

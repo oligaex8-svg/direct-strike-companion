@@ -1,0 +1,20 @@
+/* Rails occupy existing whitespace; numbers, controls and measured boxes stay put. */
+.ui-meter-host,.ui-rating-host{position:relative}
+.ui-data-rail{position:absolute;display:block;pointer-events:none;left:0;right:0;bottom:-3px;height:3px;background:color-mix(in srgb,currentColor 15%,transparent);border-radius:1px;overflow:hidden}
+.ui-data-rail>i{position:absolute;inset:0;display:block;background:currentColor;opacity:.8;transform-origin:left center}
+.ui-rating-feedback{position:absolute;pointer-events:none;inset:-2px -4px;border:1px solid currentColor;border-radius:3px;background:color-mix(in srgb,currentColor 14%,transparent);opacity:0}
+/* Native wells answer pointer hover with light, without shifting their content.
+   Match the existing Purifier feedback timing; keyboard focus stays immediate. */
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ :root[data-native-console]:not([data-graphical-style=fenix]) :is(.profile-commanders,.profile-region,.live-team-group,.pick-opponent)::after{transition:opacity 160ms ease}
+ :root[data-native-console] :is(.profile-commanders,.profile-region,.live-team-group,.pick-opponent):focus-within::after{transition:none}
+}
+/* Keep pointer hit rectangles stationary: lifting a hovered control can move
+   its lower edge away from the pointer and repeatedly enter/leave itself.
+   Native hover/pressed artwork supplies feedback without changing geometry. */
+@media(hover:hover) and (pointer:fine) and (forced-colors:none){
+ :root[data-ui-motion-input=pointer] :is(.nav,.button,.filter,.rating-button,.profile-text-action,.replay-open,.mark-button,.appearance-choice){transition:color 120ms ease,border-color 120ms ease;transform:none}
+}
+:root[data-ui-motion-input=keyboard] :is(.nav,.button,.filter,.rating-button,.profile-text-action,.replay-open,.mark-button,.appearance-choice){transition:none;transform:none}
+@media(prefers-reduced-motion:reduce){.ui-rating-feedback{display:none}}
+@media(forced-colors:active){.ui-data-rail,.ui-rating-feedback{display:none}}

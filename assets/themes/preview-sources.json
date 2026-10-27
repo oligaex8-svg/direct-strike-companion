@@ -1,0 +1,293 @@
+{
+  "scope": "Actual synthetic-data interface captures; per-asset version identifies updates; approved five themes preserved",
+  "version": "1.1.7-local.54",
+  "viewport": {
+    "width": 1000,
+    "height": 1000
+  },
+  "generator": "verification/Refresh-SurfacePreviews41.cjs",
+  "assets": [
+    {
+      "theme": "default",
+      "path": "wwwroot/themes/previews/default.webp",
+      "width": 600,
+      "height": 323,
+      "sha256": "1568d4b4db87a4f1df885cfdeeb0f203f4a2b989e47da2ae93346224f57d6f4a"
+    },
+    {
+      "theme": "fenix",
+      "path": "wwwroot/themes/previews/fenix.webp",
+      "width": 600,
+      "height": 323,
+      "sha256": "2c1321ffcc0ee4cbfc865a858ae5986712c36f38ee71ef6a5365808f0fdc32e4"
+    },
+    {
+      "theme": "terran",
+      "path": "wwwroot/themes/previews/terran.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "6a9bec06491bb8a5488abfcd4c493d410d023b2d2c1587b3694e89d5d6c36fd2",
+      "version": "1.1.7-local.51",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Equipment51Previews.cjs",
+      "scope": "Actual interface; registered native equipment effects and Default geometry, no new controls/frames"
+    },
+    {
+      "theme": "nova",
+      "path": "wwwroot/themes/previews/nova.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "14cc3df5a74b76679c7e7141a1f190caec9e7c380e5aea8ec406b2f61d64ee8b",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "SensorTower_CovertOps"
+    },
+    {
+      "theme": "mira",
+      "path": "wwwroot/themes/previews/mira.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "43129dc64806432da26d04090e1ef2341d85802b8a7719e6f150beb6786f4ca7",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "TechLab_HornerHan_Coop"
+    },
+    {
+      "theme": "machined",
+      "path": "wwwroot/themes/previews/machined.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "e5977bd60e5d00e5e9fa79fc0d237c1c3c4720ec920533764db35a8161d11013",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Factory"
+    },
+    {
+      "theme": "tyrador",
+      "path": "wwwroot/themes/previews/tyrador.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "d7549312ac8d3add84f2d12b3dbf819556f17e9a680341fc6a2a1d90c19cf8ee",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "SensorTower_Silver"
+    },
+    {
+      "theme": "classic-terran",
+      "path": "wwwroot/themes/previews/classic-terran.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "a4189abd27c1357e03ce3c7c4d50a6f4964d446f5f095610893046e30f3309f8",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "CommandCenter_Remastered"
+    },
+    {
+      "theme": "protoss",
+      "path": "wwwroot/themes/previews/protoss.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "36880e7402e2b6adde4a0d73e8809f200e6c9b1a79c7c41abbfd49fbd7e95df2",
+      "sourceVersion": "1.1.7-local.43",
+      "generator": "verification/Refresh-Equipment51Previews.cjs",
+      "version": "1.1.7-local.51",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "scope": "Actual interface; registered native equipment effects and Default geometry, no new controls/frames"
+    },
+    {
+      "theme": "nerazim",
+      "path": "wwwroot/themes/previews/nerazim.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "7afd05407c7e7f596244bfcf64a2c98835d41af2d58942911aa4a3dd73839f5d",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Dark_Templar_Pylon"
+    },
+    {
+      "theme": "alarak",
+      "path": "wwwroot/themes/previews/alarak.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "7c299941aab7626fa4e8d53022e56199d0024cfc1f3a8826001ee518cb9d8d90",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Pylon_Taldarim"
+    },
+    {
+      "theme": "ihanrii",
+      "path": "wwwroot/themes/previews/ihanrii.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "0634d677fa622403c9ce7fc54128c3aa34858783ca4aae5a6690115be84e7182",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Pylon_Ihanrii"
+    },
+    {
+      "theme": "classic-protoss",
+      "path": "wwwroot/themes/previews/classic-protoss.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "87199dc2c5bff873f89d7ffbfad66fe6fab4a21fdedaeca2aa7deb2125c4fc48",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Nexus_Remastered"
+    },
+    {
+      "theme": "arcade",
+      "path": "wwwroot/themes/previews/arcade.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "c890f5ee469aae69638cffdb799c9b484efb8d1562c5756281082625d0b52008",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "SM_MarSaraBarJukebox"
+    },
+    {
+      "theme": "zerg",
+      "path": "wwwroot/themes/previews/zerg.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "f90a7fd7500bd6c94bd805713db18d3d8be357cfa5dd51be74b9311e705c975c",
+      "version": "1.1.7-local.51",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Equipment51Previews.cjs",
+      "scope": "Actual interface; registered native equipment effects and Default geometry, no new controls/frames"
+    },
+    {
+      "theme": "abathur",
+      "path": "wwwroot/themes/previews/abathur.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "d22da0b5e8e88c7d3fc04386f1fd9f550818bab13288c5e2f87d6f6077dd3b65",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "EvolutionChamber"
+    },
+    {
+      "theme": "dehaka",
+      "path": "wwwroot/themes/previews/dehaka.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "5c54318dda2e0c26fc50790b499f3d46bb61f5caae8f5a9f83fbac6c4e9867c3",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Dehaka_Primal_Barracks_Coop"
+    },
+    {
+      "theme": "cerberus",
+      "path": "wwwroot/themes/previews/cerberus.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "3d37dece88c75ad2fb50b9578fc63f96d6c00316b29f1237c25ea164cc2b746d",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "EvolutionChamber_RCZ"
+    },
+    {
+      "theme": "mecha",
+      "path": "wwwroot/themes/previews/mecha.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "8bf044db12aa800e64d2fd446fcfc0dff10454fa7cc81f3fe0d76b0cd632b6fd",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "EvolutionChamber_Mecha"
+    },
+    {
+      "theme": "classic-zerg",
+      "path": "wwwroot/themes/previews/classic-zerg.webp",
+      "width": 600,
+      "height": 375,
+      "sha256": "dccc9fdc7ae00e645b8e2e4b26ccff5c92adfd06d419c0ce2d120add9db27b5e",
+      "version": "1.1.7-local.54",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "generator": "verification/Refresh-Character54Previews.cjs",
+      "scope": "Actual synthetic-data interface with unique original native SC2 model and native animation; Default geometry",
+      "sourceModel": "Hatchery_Remastered"
+    }
+  ]
+}

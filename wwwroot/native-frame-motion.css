@@ -1,0 +1,19 @@
+/* Exact border-image registration; no new frame or layout box. */
+:root .native-frame-light36{
+ display:block;position:absolute;box-sizing:border-box;margin:0;padding:0;
+ border-style:solid;border-color:transparent;outline:0;background:none;
+ pointer-events:none!important;user-select:none;z-index:2;opacity:0;
+ mix-blend-mode:screen;transform:none;contain:style;
+}
+:root .native-frame-light36[hidden]{display:none!important}
+/* Existing Settings stage, same original shell image and nine-slice mapping.
+   Scale is uniform for the fixed source turns; only straight rails extend. */
+:root .appearance-effects-stage[data-native-frame-preview]::before{
+ content:'';position:absolute;pointer-events:none;box-sizing:border-box;
+ inset:8px;border:1px solid transparent;background:none;transform:none;z-index:1;
+ border-image:var(--skin-shell-frame) var(--skin-shell-slice) /
+ calc(var(--skin-shell-y) * .32 * 1px) calc(var(--skin-shell-x) * .32 * 1px)
+ calc(var(--skin-shell-bottom) * .32 * 1px) calc(var(--skin-shell-left) * .32 * 1px) / 0 stretch;
+}
+@media(prefers-reduced-motion:reduce){:root .native-frame-light36{display:none!important}}
+@media(forced-colors:active){:root .native-frame-light36,:root .appearance-effects-stage[data-native-frame-preview]::before{display:none!important}}

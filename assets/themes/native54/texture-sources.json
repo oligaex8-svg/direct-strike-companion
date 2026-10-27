@@ -1,0 +1,802 @@
+[
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/armorreflect_rainbow.dds",
+    "png": "textures/armorreflect_rainbow.png",
+    "sha256": "3691e495696652d722781f3f60896e5b3645051a9c9fa6e76da135271c301f20",
+    "file": "armorreflect_rainbow.dds",
+    "reference": "Assets/Textures/ArmorReflect_Rainbow.dds",
+    "pngSHA256": "bb59a26e4731e578105ecd58e6d534fbea396bce86e614da36307271c3cb626b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/building_greebles_rcz_diff.dds",
+    "png": "textures/building_greebles_rcz_diff.png",
+    "sha256": "53d72cd2a969c5c0a496f138dc3070a8d9dfe138a137a4fa9f872a4bde98ff03",
+    "file": "building_greebles_rcz_diff.dds",
+    "reference": "Assets/Textures/Building_Greebles_RCZ_Diff.dds",
+    "pngSHA256": "e2f5f23f161167d771e0c63677bd333a3b9bf4729895eafef8f568211ff9a418"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/building_greebles_rcz_emis.dds",
+    "png": "textures/building_greebles_rcz_emis.png",
+    "sha256": "0188be1318695a3f5cf786035a552c9771836608f70b5a58a54d077852af2b8d",
+    "file": "building_greebles_rcz_emis.dds",
+    "reference": "Assets/Textures/Building_Greebles_RCZ_Emis.dds",
+    "pngSHA256": "0e671f2b07f531d84bfa31fab10837ecc0bd864f528302c0b98d702d293cea2f"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/building_greebles_rcz_norm_test.dds",
+    "png": "textures/building_greebles_rcz_norm_test.png",
+    "sha256": "44f43dc1c5e560ba47fc7f0a36607466765fb9c6f416152e6840b99366b33a1a",
+    "file": "building_greebles_rcz_norm_test.dds",
+    "reference": "Assets/Textures/Building_Greebles_RCZ_Norm_Test.dds",
+    "pngSHA256": "d2fea37bf26263c45e826bc9a6be04244924e848609ab2a1e95e8a0057ea57a1"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/building_greebles_rcz_spec.dds",
+    "png": "textures/building_greebles_rcz_spec.png",
+    "sha256": "772e7803d36345f7b89b9fffa84252ad8ce5b70c951bc72495852a05042c1bf3",
+    "file": "building_greebles_rcz_spec.dds",
+    "reference": "Assets/Textures/Building_Greebles_RCZ_Spec.dds",
+    "pngSHA256": "e890030358cb2632c707bb0df1db557049a39c1b135e99e8ff17c075a713bfb4"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/commandcenter_remastered_diff.dds",
+    "png": "textures/commandcenter_remastered_diff.png",
+    "sha256": "ac0419a32c9f56bd76bd58a526e50ae185e77006d85c1ed7a07dd67e42c4f572",
+    "file": "commandcenter_remastered_diff.dds",
+    "reference": "Assets/Textures/CommandCenter_Remastered_Diff.dds",
+    "pngSHA256": "6a7bd5d1b81290e572fdcf17d67b9496978dd24f475d403f1277c5981ad2c5fc"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/commandcenter_remastered_emis.dds",
+    "png": "textures/commandcenter_remastered_emis.png",
+    "sha256": "3800113094ec01f4d4ae0eb76fd0147e099da568f4dbd383fb906926a3efc96d",
+    "file": "commandcenter_remastered_emis.dds",
+    "reference": "Assets/Textures/CommandCenter_Remastered_Emis.dds",
+    "pngSHA256": "929e2ac80d3265371f23c763161e56bf3e89a6c45f2b3bce7e87326edb6c6354"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/commandcenter_remastered_norm.dds",
+    "png": "textures/commandcenter_remastered_norm.png",
+    "sha256": "dd3fbf4e05ccb837c1c865f68f20edb1d3e64f45a9ab2a8701c8082fb426c2d0",
+    "file": "commandcenter_remastered_norm.dds",
+    "reference": "Assets/Textures/CommandCenter_Remastered_Norm.dds",
+    "pngSHA256": "8673f4cf448491750f9b997b80c13b3ad397cd96a43d24e80bde08967c48f9f2"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_02_diff.dds",
+    "png": "textures/dark_templar_pylon_02_diff.png",
+    "sha256": "d41989d6d6d0fa5b04d58f701ae3fb49a4e105df8613bbf117f6caa6d5ccaa8d",
+    "file": "dark_templar_pylon_02_diff.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_02_Diff.dds",
+    "pngSHA256": "0573f81248481dace75fffaa7f2b7164bd9f420d0a983f0c48b5022b11230f37"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_02_emis.dds",
+    "png": "textures/dark_templar_pylon_02_emis.png",
+    "sha256": "d0e50b0525ab4d6d51909339fa8f3fc4deebaac8c91f3b7f41f67253b63bb8ad",
+    "file": "dark_templar_pylon_02_emis.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_02_Emis.dds",
+    "pngSHA256": "9e8f3d1e346a18c46903078e4714001e66802474fdea6f758cccc787c302f01b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_02_norm.dds",
+    "png": "textures/dark_templar_pylon_02_norm.png",
+    "sha256": "3406429cd3acefeb91511b5c23ff8f480e41a3b0e59acdc12f428d9f67687d20",
+    "file": "dark_templar_pylon_02_norm.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_02_Norm.dds",
+    "pngSHA256": "3514211d4a08e14f538bdb15f93394c1df1076dde9fa3a41aba2d0428a751e09"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_02_spec.dds",
+    "png": "textures/dark_templar_pylon_02_spec.png",
+    "sha256": "2685193f8f63a79fb5a5fee61e0b215a8086d631dbf1a5373a5588532d36c448",
+    "file": "dark_templar_pylon_02_spec.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_02_Spec.dds",
+    "pngSHA256": "62a594cf6a66d71450fda3a2cc837327a088219ea0cec0f12a3ed32c100e8e0b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_diff.dds",
+    "png": "textures/dark_templar_pylon_diff.png",
+    "sha256": "cfdf3571a14367ddc63ff8f33fcd5944f64828256992d9b7d2aa73977b83ecc0",
+    "file": "dark_templar_pylon_diff.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_Diff.dds",
+    "pngSHA256": "9e4264ca4348c9a1a63372deb724f968d197e6288fbd4f9ac611d52fb8457149"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_emis.dds",
+    "png": "textures/dark_templar_pylon_emis.png",
+    "sha256": "0416e4d71b23f10e0d2df7e96df61cd36c11c0d40e12c6efc9196cd15eb027ba",
+    "file": "dark_templar_pylon_emis.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_Emis.dds",
+    "pngSHA256": "f0653b1eac4f80341a0e6f6f26080ed2ffd7f92b0ddc7714cf6119de32708c9f"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_norm.dds",
+    "png": "textures/dark_templar_pylon_norm.png",
+    "sha256": "d89d017f42044debcaf2c4446a70d4490348261d6278b3e87ade60565022d213",
+    "file": "dark_templar_pylon_norm.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_Norm.dds",
+    "pngSHA256": "394e86e19868b863a205c357a0a1a2984876af963c2a52aedf90f9b1982956cf"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dark_templar_pylon_spec.dds",
+    "png": "textures/dark_templar_pylon_spec.png",
+    "sha256": "bf11dbdc2618dc90ebcf66e79b018eaa2c96e3b60b031f9b56d2ec3d2aa1a6db",
+    "file": "dark_templar_pylon_spec.dds",
+    "reference": "Assets/Textures/Dark_Templar_Pylon_Spec.dds",
+    "pngSHA256": "4cb29531fa35169f7105256a58e0389b18ccde7a383a1454fb2926d64e5f5f0f"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/envirotest9.dds",
+    "png": "textures/envirotest9.png",
+    "sha256": "10b730f69faf032e8dc12431bd6b5952a678805bc47159bf66bf483ac2a9b569",
+    "file": "envirotest9.dds",
+    "reference": "Assets/Textures/EnviroTest9.dds",
+    "pngSHA256": "67e6e50af35f74e3ff5ca85444082e1f3598a9f2d86a7ea9220b1da6128be7e6"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_diffuse.dds",
+    "png": "textures/evolutionchamber_diffuse.png",
+    "sha256": "1e8aa27774ddba14fce687448ebf111d36202ae9a67c823956b020d093608757",
+    "file": "evolutionchamber_diffuse.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Diffuse.dds",
+    "pngSHA256": "385c64a15e872b8f65a64033ac771e0438ad40803995c3c62fa290320051bf63"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_mecha_diff.dds",
+    "png": "textures/evolutionchamber_mecha_diff.png",
+    "sha256": "6d66d6b553dff6ff4393fdde3d75447bf8dd1994d463d8533fecd6c91b92b041",
+    "file": "evolutionchamber_mecha_diff.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Mecha_Diff.dds",
+    "pngSHA256": "d11e05d7f53885f6ade26c0e973716272c389e2424ab3d73864e7ad3db31d98d"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_mecha_emis.dds",
+    "png": "textures/evolutionchamber_mecha_emis.png",
+    "sha256": "546821670a496df3eb518da8c08390783fa8c619cfc4dd21474634ca21c75f58",
+    "file": "evolutionchamber_mecha_emis.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Mecha_Emis.dds",
+    "pngSHA256": "276d4b086aecae6934fda6cda2fd66103b13431fac6d7014f846da6931ffb264"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_mecha_norm.dds",
+    "png": "textures/evolutionchamber_mecha_norm.png",
+    "sha256": "81e6abc758eff355ae8de12307bf9a2273158f2ce5ed823aaf460c0fdfa38b84",
+    "file": "evolutionchamber_mecha_norm.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Mecha_Norm.dds",
+    "pngSHA256": "f662e1004eb508f1705d2d52069f911dff172d540308e369d9b465d6118a7833"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_mecha_spec.dds",
+    "png": "textures/evolutionchamber_mecha_spec.png",
+    "sha256": "ad54c102a11d7393824bf15c1a9b9ccd7403287415fccad9ae15484f3c76e832",
+    "file": "evolutionchamber_mecha_spec.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Mecha_Spec.dds",
+    "pngSHA256": "ae723237b8f7bb27098ad21a64eb40dd0e178d8b3cadbca0c67cfc781b62d702"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_normal.dds",
+    "png": "textures/evolutionchamber_normal.png",
+    "sha256": "c781797628d21cc8a78b51b022d7c2acafc3e762344e7f6b1a3f7c73bf4293ac",
+    "file": "evolutionchamber_normal.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Normal.dds",
+    "pngSHA256": "4d51bd455cebc63d6ac37a3502ba578e1af1f33ea26234e0f51152f3314ad36b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_rcz_diffuse.dds",
+    "png": "textures/evolutionchamber_rcz_diffuse.png",
+    "sha256": "80502e2b5ce9c2b4573fcb7bd9741dc5a0f7eef811a01689dbda06d40e1a2d75",
+    "file": "evolutionchamber_rcz_diffuse.dds",
+    "reference": "Assets/Textures/EvolutionChamber_RCZ_Diffuse.dds",
+    "pngSHA256": "cad97c9f9e9a14feca99eb7878e1822edcbb2081b9e1887b7f217dc6c5b1ab16"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/evolutionchamber_specular.dds",
+    "png": "textures/evolutionchamber_specular.png",
+    "sha256": "0f7f1e6bbb8944625fcd8f06a6da9afabf5eb6a0804f4ceb8c96e2b330177c44",
+    "file": "evolutionchamber_specular.dds",
+    "reference": "Assets/Textures/EvolutionChamber_Specular.dds",
+    "pngSHA256": "a6479c3885029cba3116232b79335faba9141f5a8880b8855fcfeea4b27c4a22"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/factory_diffuse.dds",
+    "png": "textures/factory_diffuse.png",
+    "sha256": "62f9762d2ca0aaff1e05bacdcf9721ebe426a86a9ed2a7e52ef04fc4a9ba336c",
+    "file": "factory_diffuse.dds",
+    "reference": "Assets/Textures/Factory_Diffuse.dds",
+    "pngSHA256": "25c0a7b18c1368ae15edbf0131d4f671915740f4cceaca5105fe3c34a9eb57a4"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/factory_emissive.dds",
+    "png": "textures/factory_emissive.png",
+    "sha256": "1a2703550a371aac7676724a356c2ba6fe859e673992289ac4a8b4f3cbcb184e",
+    "file": "factory_emissive.dds",
+    "reference": "Assets/Textures/Factory_Emissive.dds",
+    "pngSHA256": "ff98abbff6c114f8473aee56416e0843ccdcf4645b8f1ab1794de5e75169ab59"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/factory_normal.dds",
+    "png": "textures/factory_normal.png",
+    "sha256": "cee830bc132d7c992f1b1121dc169520c7ed57bee0b63be85d61199fbbec767e",
+    "file": "factory_normal.dds",
+    "reference": "Assets/Textures/Factory_Normal.dds",
+    "pngSHA256": "46c0dd4198a5fcd4485561da51ff862b5a64733ec73b6b8e3631edba2f15d669"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/glow_blue3.dds",
+    "png": "textures/glow_blue3.png",
+    "sha256": "5bf2191cbb72f4f1ba07e580864dff53d59bc1bc6429e645c01d8b0fd526dc29",
+    "file": "glow_blue3.dds",
+    "reference": "Assets/Textures/Glow_Blue3.dds",
+    "pngSHA256": "66788d76dd0bb393c538f5c3c0004136cd535200f343dfc62435667953ef79d3"
+  },
+  {
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/glow_haze1.dds",
+    "png": "textures/glow_haze1.png",
+    "sha256": "3481a6a6120cb599c2c126d6146e4afd0a80d0016f7c048e4138b06bf52ebcac",
+    "file": "glow_haze1.dds",
+    "reference": "Assets/Textures/Glow_Haze1.dds",
+    "pngSHA256": "a1824cebb69f428e62e585fbae958c3818ac2cefe64bea8e5b8603dea50f54a9"
+  },
+  {
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/glow_red1.dds",
+    "png": "textures/glow_red1.png",
+    "sha256": "b444a104b1083751dbfd5426de98bd37b17aa58d7358f2aa0ea2e43855558757",
+    "file": "glow_red1.dds",
+    "reference": "Assets/Textures/Glow_Red1.dds",
+    "pngSHA256": "175ce6777fd966098ba843780be4ae31d31af9852ed57b05728488167c5d61d0"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hatcherymorph_diffuse.dds",
+    "png": "textures/hatcherymorph_diffuse.png",
+    "sha256": "1fc73336144a5ed836df3603773a52ba9da25a5918a79caa66b7c59df626d07c",
+    "file": "hatcherymorph_diffuse.dds",
+    "reference": "Assets/Textures/HatcheryMorph_Diffuse.dds",
+    "pngSHA256": "936dfa60a3ec58fa6f6bad44acdfc186865d1113efdcafd0321c40d8352f23c2"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hatcherymorph_normal.dds",
+    "png": "textures/hatcherymorph_normal.png",
+    "sha256": "bd287e085136f255edc6d0455458a20f55378d946b1648d2d789c4e210802877",
+    "file": "hatcherymorph_normal.dds",
+    "reference": "Assets/Textures/HatcheryMorph_Normal.dds",
+    "pngSHA256": "71c124e3ebbd7fcd805f53b60c3f5003c1e768c24643ee6c85741a5ff2d0b774"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hatcherymorph_specular.dds",
+    "png": "textures/hatcherymorph_specular.png",
+    "sha256": "44a677309220d9f1d3a2f855114aca50eefbf788258d9d329a0b79ae7be8b411",
+    "file": "hatcherymorph_specular.dds",
+    "reference": "Assets/Textures/HatcheryMorph_Specular.dds",
+    "pngSHA256": "76f028edb2f52ac6b1c9213f5522331c652c49a35b9b2cb4e901e4a8df78e455"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hatchery_remastered_diff.dds",
+    "png": "textures/hatchery_remastered_diff.png",
+    "sha256": "0fffd87fe43dee85058ba56ed6582c816f8fdb1141997542ce3b71c9c3493e81",
+    "file": "hatchery_remastered_diff.dds",
+    "reference": "Assets/Textures/Hatchery_Remastered_Diff.dds",
+    "pngSHA256": "d5c35f199528ba68acf42618f4c056155a7e257508ae85ec97e204c544149253"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hatchery_remastered_norm.dds",
+    "png": "textures/hatchery_remastered_norm.png",
+    "sha256": "5f781fb7204926fe46b8adbb36c0cd2a14ac459588c409edf6f81be78bedbbfe",
+    "file": "hatchery_remastered_norm.dds",
+    "reference": "Assets/Textures/Hatchery_Remastered_Norm.dds",
+    "pngSHA256": "bcd43cdc1162218a2f45738362008bb1b76d92aeb9cd051711fb258e7ecefb50"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hatchery_remastered_spec.dds",
+    "png": "textures/hatchery_remastered_spec.png",
+    "sha256": "4df85fd55b35929005a0830d7613f9c808dd722a9bd342558bcfeec649c6e5f9",
+    "file": "hatchery_remastered_spec.dds",
+    "reference": "Assets/Textures/Hatchery_Remastered_Spec.dds",
+    "pngSHA256": "d5f15bfe87eb670c7e21ff0a56b7c4bc73dae61a11f67a3e45db8884587edd9c"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hive_remastered_diff.dds",
+    "png": "textures/hive_remastered_diff.png",
+    "sha256": "020e816694bf2718717c27197375b9039f624ef12b624318ede5dbb49762c6ba",
+    "file": "hive_remastered_diff.dds",
+    "reference": "Assets/Textures/Hive_Remastered_Diff.dds",
+    "pngSHA256": "357f437ae0e4a10aa74d9aa980838c988e070e06445f879f678c15cdc61927d3"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hive_remastered_norm.dds",
+    "png": "textures/hive_remastered_norm.png",
+    "sha256": "1c823143a7a94709b54035cfa5ef40d2dee6d47b0700190db2333689c3a8f616",
+    "file": "hive_remastered_norm.dds",
+    "reference": "Assets/Textures/Hive_Remastered_Norm.dds",
+    "pngSHA256": "e1a6a74879b58d53852f42003d65f321aaa4fa65582b6128e329568b709acc62"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/hive_remastered_spec.dds",
+    "png": "textures/hive_remastered_spec.png",
+    "sha256": "80ae5ca5c769a38345ec432bb8c57071e0670a114d7ac27b63f3f5cf2bcb4b47",
+    "file": "hive_remastered_spec.dds",
+    "reference": "Assets/Textures/Hive_Remastered_Spec.dds",
+    "pngSHA256": "ca536d1d18f49804e6bdac325da5ba765f1589a694d76586cbc0020e8f30f7c2"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/lair_remastered_diff.dds",
+    "png": "textures/lair_remastered_diff.png",
+    "sha256": "067d42603549f4ff9efcbaab44bcc1ede79e06ac1ea6103a6579d352f6adc829",
+    "file": "lair_remastered_diff.dds",
+    "reference": "Assets/Textures/Lair_Remastered_Diff.dds",
+    "pngSHA256": "adfea2d9fc3ff04e8580f25b997d4f83016073e3163d5b468732637f088dad29"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/lair_remastered_norm.dds",
+    "png": "textures/lair_remastered_norm.png",
+    "sha256": "b4b1708ccc5c980f571336e3b474e141923cc790a2fb23f4c5e7de05b38ddb13",
+    "file": "lair_remastered_norm.dds",
+    "reference": "Assets/Textures/Lair_Remastered_Norm.dds",
+    "pngSHA256": "0402be1a78ff6d9095a20fa999cd30bac631b11ac7883fd3cf3c294174873b1f"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/lair_remastered_spec.dds",
+    "png": "textures/lair_remastered_spec.png",
+    "sha256": "0a08520b47fc39148cb46cb6dfc3ee00e81f6e79955d26816184224f05388f69",
+    "file": "lair_remastered_spec.dds",
+    "reference": "Assets/Textures/Lair_Remastered_Spec.dds",
+    "pngSHA256": "36eda03eb43585ac728b43b4bdb7c21a433e1d079a633f3766b80e77fa5c3533"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/marsarabar_jukeboxcolorlightstga.dds",
+    "png": "textures/marsarabar_jukeboxcolorlightstga.png",
+    "sha256": "fb6e5b3ef4cd09d0dc9d0865d55b70bbceb5bb3229b7886f546ea4e300742a16",
+    "file": "marsarabar_jukeboxcolorlightstga.dds",
+    "reference": "Assets/Textures/MarSaraBar_jukeboxColorLightstga.dds",
+    "pngSHA256": "44a05859beb265304bf99c46f3f2f1aa46146bd457f5f7e71551680d86d396a5"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/nexus_remastered_diff.dds",
+    "png": "textures/nexus_remastered_diff.png",
+    "sha256": "d9df5058c0f949e0251ada4054daed9c7451565434c7e600982d25afb55a344d",
+    "file": "nexus_remastered_diff.dds",
+    "reference": "Assets/Textures/Nexus_Remastered_Diff.dds",
+    "pngSHA256": "68d9d2074bbf647213c31df626308bc2fd2c370c6f9ffb8e8cad0440f44df418"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/nexus_remastered_emis.dds",
+    "png": "textures/nexus_remastered_emis.png",
+    "sha256": "f8eb0535d4e6766105ea947a50181fca16b67d0e59cd1a0b5c7a051b5a66b216",
+    "file": "nexus_remastered_emis.dds",
+    "reference": "Assets/Textures/Nexus_Remastered_Emis.dds",
+    "pngSHA256": "530c8ba62ce9c6425a30b40b981973e9f4129b430e07b03c7fae5edf851869f1"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/nexus_remastered_norm.dds",
+    "png": "textures/nexus_remastered_norm.png",
+    "sha256": "06285fbd6498ae3ab28794385c2064fec29556f95e8341caf2359393b7215ef9",
+    "file": "nexus_remastered_norm.dds",
+    "reference": "Assets/Textures/Nexus_Remastered_Norm.dds",
+    "pngSHA256": "840ff372d76dd481f76ddb9a18270451c7e848fe51e6422bb831ae27a6f3603d"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/nexus_remastered_spec.dds",
+    "png": "textures/nexus_remastered_spec.png",
+    "sha256": "a4db016e4930344b3d0ae997de9472266f5f070c130476344eb48ae25e7fc610",
+    "file": "nexus_remastered_spec.dds",
+    "reference": "Assets/Textures/Nexus_Remastered_Spec.dds",
+    "pngSHA256": "b55253f21fe65dd07e2188200552804f15821197ee64985c230968e629101616"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pbrreflect_lastimpact_cubic_envio.dds",
+    "png": "textures/pbrreflect_lastimpact_cubic_envio.png",
+    "sha256": "d8eba22f663f0236de74f3c2324e1d688a33ce9c9ad3ba66bd3bda83e3903754",
+    "file": "pbrreflect_lastimpact_cubic_envio.dds",
+    "reference": "Assets/Textures/PBRReflect_LastImpact_Cubic_Envio.dds",
+    "pngSHA256": "2d07917bb622a03b2c67e7becff8a30e11864fb83fb501983387fb1fb6a45f2b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_ihanrii_diff.dds",
+    "png": "textures/pylon_ihanrii_diff.png",
+    "sha256": "ea19061c53dd2df48ce1cf46ca653c3da2b33354bba74affe48746b28a25c84c",
+    "file": "pylon_ihanrii_diff.dds",
+    "reference": "Assets/Textures/Pylon_Ihanrii_Diff.dds",
+    "pngSHA256": "022ce839b8acd3355f05f1b32bbfd971115fda45ffbe7c796e8b53868570b4bd"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_ihanrii_emis.dds",
+    "png": "textures/pylon_ihanrii_emis.png",
+    "sha256": "4973b9f959f3a221967b26f2d90634b55dd3739ac31d2b98b6e141dd973bfaf8",
+    "file": "pylon_ihanrii_emis.dds",
+    "reference": "Assets/Textures/Pylon_Ihanrii_Emis.dds",
+    "pngSHA256": "8af81ff9baae65dc3c01733b71670f80a32044bbaaa63d3ca65ab86c32f77950"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_ihanrii_envio.dds",
+    "png": "textures/pylon_ihanrii_envio.png",
+    "sha256": "547a1c56e838b9a0c2025f7d489e6936c89ee72819e735dba6846195df7cd202",
+    "file": "pylon_ihanrii_envio.dds",
+    "reference": "Assets/Textures/Pylon_Ihanrii_Envio.dds",
+    "pngSHA256": "43cf678872863df449e55aaf8c11b0c86467038b43522e9daf69c98a69545388"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_ihanrii_norm.dds",
+    "png": "textures/pylon_ihanrii_norm.png",
+    "sha256": "fe226492f72dbba91e0180977fc0cc6744738f1e432102e034ba222dd43ffc9c",
+    "file": "pylon_ihanrii_norm.dds",
+    "reference": "Assets/Textures/Pylon_Ihanrii_Norm.dds",
+    "pngSHA256": "f051ebff86c539e91c230084bdac7a03870d00670cabe9592ce7109fb0cdce82"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_ihanrii_spec.dds",
+    "png": "textures/pylon_ihanrii_spec.png",
+    "sha256": "064db7f32d8265a3496b45164793e8370206fc72a3a397431e8b5f8fa35e1508",
+    "file": "pylon_ihanrii_spec.dds",
+    "reference": "Assets/Textures/Pylon_Ihanrii_Spec.dds",
+    "pngSHA256": "6f44f1a84a7da7a3dd181166105671890704f1b5edbfaef97482c3e77b59edf8"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_normal.dds",
+    "png": "textures/pylon_normal.png",
+    "sha256": "6a939dbcfeaba8052eec8757a5143bc31ad3df10008ec37f2d41ba100400bcd8",
+    "file": "pylon_normal.dds",
+    "reference": "Assets/Textures/Pylon_Normal.dds",
+    "pngSHA256": "07e5e00bdfe5fe976d46ea3dfa4216c5e03a75c220c70c61402b676f73108beb"
+  },
+  {
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/reflection_marsarabar.dds",
+    "png": "textures/reflection_marsarabar.png",
+    "sha256": "38ed89163d034453ff9ce723f457c8a5096bda3f3ef108584edb8cf4e7a966b0",
+    "file": "reflection_marsarabar.dds",
+    "reference": "Assets/Textures/Reflection_MarSaraBar.dds",
+    "pngSHA256": "dc2ef17b943a264ca02e7032d6099fdcfdada1ceccc947b183e57f63649e0cc5"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/reflection_silver.dds",
+    "png": "textures/reflection_silver.png",
+    "sha256": "b5b0107ec784282a23578d9f2b50522dd6ef019fb28c2b3401c5789f79db7d5f",
+    "file": "reflection_silver.dds",
+    "reference": "Assets/Textures/Reflection_Silver.dds",
+    "pngSHA256": "72b88e3be76bf1d1eaa40a4e9792c1b539437f38d79082cbdf8601d85bab9787"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/reflection_silver_blue.dds",
+    "png": "textures/reflection_silver_blue.png",
+    "sha256": "86c6ca6bf3eb1cfd91b1ad1f666f9f6e2620422b9412a34c49f61f1edfd98596",
+    "file": "reflection_silver_blue.dds",
+    "reference": "Assets/Textures/Reflection_Silver_Blue.dds",
+    "pngSHA256": "1a56527ef18af84d52fefe403ad119ef1eb5d97e3b2bf583033a61e20018f379"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxwindow_dirt.dds",
+    "png": "textures/sm_mb_jukeboxwindow_dirt.png",
+    "sha256": "cce92cfb4e9804ec4aceb2422fe521e5050a855bf717a9fb9a63fcfe160cc83d",
+    "file": "sm_mb_jukeboxwindow_dirt.dds",
+    "reference": "Assets/Textures/SM_mb_JukeboxWindow_dirt.dds",
+    "pngSHA256": "ca9e7e5d10b409bb5031bd7309053c7ee4333a0761a90ed039e412d234da1b44"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxinterior_norm.dds",
+    "png": "textures/sm_mb_jukeboxinterior_norm.png",
+    "sha256": "be64bb56e7e0b359751db652f5053e28131490fa2a7c102a20b3dc5e2e95cefd",
+    "file": "sm_mb_jukeboxinterior_norm.dds",
+    "reference": "Assets/Textures/SM_mb_Jukeboxinterior_Norm.dds",
+    "pngSHA256": "09b5ba80c849b7f6fa027290ebb853c9c1c4d85d21173f6a74f7e1d6e46e4615"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxinterior_alpha.dds",
+    "png": "textures/sm_mb_jukeboxinterior_alpha.png",
+    "sha256": "eb9437f0e8db49cecf5c22ba564a35b2bdbaf9e75ad9af4f56947c684bc7398e",
+    "file": "sm_mb_jukeboxinterior_alpha.dds",
+    "reference": "Assets/Textures/SM_mb_Jukeboxinterior_alpha.dds",
+    "pngSHA256": "b2153e8326566cb223fb5c8b799da529652f4b391889622678f18ba616b8a121"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxfront_norm.dds",
+    "png": "textures/sm_mb_jukeboxfront_norm.png",
+    "sha256": "6e802b328d032046ee97c18389b6317271822846915fd9425d191257db567a7c",
+    "file": "sm_mb_jukeboxfront_norm.dds",
+    "reference": "Assets/Textures/SM_mb_jukeboxfront_Norm.dds",
+    "pngSHA256": "4723e18b640786165ab3ee6913a509befccf200939a3afd4e5dcd5383ddb694e"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxfront_emis.dds",
+    "png": "textures/sm_mb_jukeboxfront_emis.png",
+    "sha256": "6f43313bb5f6cc8537b1e2477865caf8b6dda66675865e7749bceac1dcdd88f4",
+    "file": "sm_mb_jukeboxfront_emis.dds",
+    "reference": "Assets/Textures/SM_mb_jukeboxfront_emis.dds",
+    "pngSHA256": "8cc71adb2ca22af2814862bfdc6eb9edebcff5322b901161d5388a346c1454d1"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxfront_spec.dds",
+    "png": "textures/sm_mb_jukeboxfront_spec.png",
+    "sha256": "3d2ee3ebfe05ec367f503861f3750dde24c7e349c84cb1e680ce5dde2ce6ae1d",
+    "file": "sm_mb_jukeboxfront_spec.dds",
+    "reference": "Assets/Textures/SM_mb_jukeboxfront_spec.dds",
+    "pngSHA256": "e58bfc015f445c0b0231ebd855662e86df3d33cea4937516fa6c53a9dc5e88b9"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_jukeboxglass_diff.dds",
+    "png": "textures/sm_mb_jukeboxglass_diff.png",
+    "sha256": "a3556afea77ab67be605958ecef430c2bf941386f098ee17dd16051620967176",
+    "file": "sm_mb_jukeboxglass_diff.dds",
+    "reference": "Assets/Textures/SM_mb_jukeboxglass_Diff.dds",
+    "pngSHA256": "e7799bac784ff5948d6d2cb77ed735489fd8dfb27a4f5caa9faeeb84dd2d4820"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_covertops_diff.dds",
+    "png": "textures/sensortower_covertops_diff.png",
+    "sha256": "af01bf3a1206499d825e2a0c9badffa90cef099151bbc762ff0d300175bdc929",
+    "file": "sensortower_covertops_diff.dds",
+    "reference": "Assets/Textures/SensorTower_CovertOps_Diff.dds",
+    "pngSHA256": "3ac8fd46f6c3ca482a5e0a0262c3e05174bd187b11c62e0f73a28de7771086a2"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_covertops_emis.dds",
+    "png": "textures/sensortower_covertops_emis.png",
+    "sha256": "160dafe39cea34596049ae5811cd603359c9c2b510630b0442d9bba48307f7e7",
+    "file": "sensortower_covertops_emis.dds",
+    "reference": "Assets/Textures/SensorTower_CovertOps_Emis.dds",
+    "pngSHA256": "a1b233d7e61300dd094deeb04080747b9b926b13e77f3763bc1ca2c1ed8eafd6"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_normal.dds",
+    "png": "textures/sensortower_normal.png",
+    "sha256": "1baf200f13c57ed95c2fe40e8f5ce5fc89a8dd9b26255d885e708e29a508c499",
+    "file": "sensortower_normal.dds",
+    "reference": "Assets/Textures/SensorTower_Normal.dds",
+    "pngSHA256": "780e200b5a5ffc50cdd586e30712c51c326a4633d1c6e42068024ec1a02d30ff"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_silver_diffuse.dds",
+    "png": "textures/sensortower_silver_diffuse.png",
+    "sha256": "24807fddee36f68a7e600de03bb04dff9d808021fb4d835143d1170024dbcf59",
+    "file": "sensortower_silver_diffuse.dds",
+    "reference": "Assets/Textures/SensorTower_Silver_Diffuse.dds",
+    "pngSHA256": "aa6f186037fd6b023921ea7420c007e3921c38040ea9649a483a9b102af70f6b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_silver_emissive.dds",
+    "png": "textures/sensortower_silver_emissive.png",
+    "sha256": "c03f6d5c0b9e29720f8e3eb7d7e07a4d0acca02db7cf63d4a86f333ab748253d",
+    "file": "sensortower_silver_emissive.dds",
+    "reference": "Assets/Textures/SensorTower_Silver_Emissive.dds",
+    "pngSHA256": "b98bb2594975d06fae7dc78c311d6f1b38d6a27a63128907403d4ed40b2be3a8"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_silver_normal.dds",
+    "png": "textures/sensortower_silver_normal.png",
+    "sha256": "5c2ee0b41d6bbd89b04a0fef597f8ac110f88542c5a5477b9d4d0556624134b5",
+    "file": "sensortower_silver_normal.dds",
+    "reference": "Assets/Textures/SensorTower_Silver_Normal.dds",
+    "pngSHA256": "608b4d750c27c4f198b7951efc4e0ca18e27db4fcd7eff9ca48f29f3a9831d9d"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sensortower_silver_specular.dds",
+    "png": "textures/sensortower_silver_specular.png",
+    "sha256": "c367108e17e7ef3cefe667fc863e1cd3729153bbcdd9b5c3bac1718e1b19cec7",
+    "file": "sensortower_silver_specular.dds",
+    "reference": "Assets/Textures/SensorTower_Silver_Specular.dds",
+    "pngSHA256": "9e576999ccee54d2a5034e9be7a7f29a6fb76ee19f9bd12b3934e737e239242b"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/enus.sc2assets/Assets/Textures/t1_sm_mb_coolerjukebox_d.dds",
+    "png": "textures/t1_sm_mb_coolerjukebox_d.png",
+    "sha256": "8c812f2abcb87be5639905e90139df5e0427efcdf7b5d49951a917d508edc04d",
+    "file": "t1_sm_mb_coolerjukebox_d.dds",
+    "reference": "Assets/Textures/T1_SM_mb_CoolerJukebox_d.dds",
+    "pngSHA256": "48013d72657ee0c8025fac91ef6d92b3f2bb93b88cb0341f242b31c1d75cf9c5"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_jukeboxinterior_diff.dds",
+    "png": "textures/t1_sm_mb_jukeboxinterior_diff.png",
+    "sha256": "413d56241c5ef3fab099675460c3b534121ae84340f6e954519ef8b7e9c7729a",
+    "file": "t1_sm_mb_jukeboxinterior_diff.dds",
+    "reference": "Assets/Textures/T1_SM_mb_Jukeboxinterior_Diff.dds",
+    "pngSHA256": "326b9e0e60ab0accf94643a047055c7f20b1eb1258bb1c3bf15f3c818849e409"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_jukeboxinterior_ao.dds",
+    "png": "textures/t1_sm_mb_jukeboxinterior_ao.png",
+    "sha256": "5504d408a04cb974db7c3ad2b2f297da7a1d18383daccd226939867afced4cd9",
+    "file": "t1_sm_mb_jukeboxinterior_ao.dds",
+    "reference": "Assets/Textures/T1_SM_mb_Jukeboxinterior_ao.dds",
+    "pngSHA256": "e29e68100dc34f499726ee5e580dc6e67d4324c292e4b9dd6969110c11c3392c"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_songtitles_emis.dds",
+    "png": "textures/t1_sm_mb_songtitles_emis.png",
+    "sha256": "020e616c3c59c5c3005a5a80db563b40e0ba4c5b162e7a23046a0470ebf2b80e",
+    "file": "t1_sm_mb_songtitles_emis.dds",
+    "reference": "Assets/Textures/T1_SM_mb_SongTitles_emis.dds",
+    "pngSHA256": "a8b5cfc06c82bbb4a7f294d33ee16998dc8259fdffb15520968ddeaf9c61d3ef"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_e.dds",
+    "png": "textures/t1_sm_mb_e.png",
+    "sha256": "44bdce4cd4bee4053df25b5adbe9913ceb1cdd88d55492c887505fd83631180c",
+    "file": "t1_sm_mb_e.dds",
+    "reference": "Assets/Textures/T1_SM_mb_e.dds",
+    "pngSHA256": "4857ae926501cfe4fd898513bc610d1a599ea5294aed330986b8e82f21dc0796"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_equalizer_emis.dds",
+    "png": "textures/t1_sm_mb_equalizer_emis.png",
+    "sha256": "33c86ecf6657d6c97e8546673f08006c10a702a00361a6dbc40014f1ecd97da2",
+    "file": "t1_sm_mb_equalizer_emis.dds",
+    "reference": "Assets/Textures/T1_SM_mb_equalizer_emis.dds",
+    "pngSHA256": "007c696227e1e1b89cdbdbf8cbd76a6769238d1a8b8090ee050de3870ec6f382"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_equalizer_grunge_diff.dds",
+    "png": "textures/t1_sm_mb_equalizer_grunge_diff.png",
+    "sha256": "3026b3bcb2566ec0fe274966a904382701dea643e74184c044682c4dbee2526a",
+    "file": "t1_sm_mb_equalizer_grunge_diff.dds",
+    "reference": "Assets/Textures/T1_SM_mb_equalizer_grunge_diff.dds",
+    "pngSHA256": "a86243d52601c5c8de9e149c69640c507b55f125f203a483bb28f433a6767198"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_equalizer_outline_diff.dds",
+    "png": "textures/t1_sm_mb_equalizer_outline_diff.png",
+    "sha256": "99b78bbb2002915465996bd15ed09579094f45d84fb186825c891e51afb4df31",
+    "file": "t1_sm_mb_equalizer_outline_diff.dds",
+    "reference": "Assets/Textures/T1_SM_mb_equalizer_outline_diff.dds",
+    "pngSHA256": "211cb76c30cc33ca88304eece05cd6cc2218e51528bc4834f3b840fafcd81852"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_jukeboxfront_diff.dds",
+    "png": "textures/t1_sm_mb_jukeboxfront_diff.png",
+    "sha256": "10df9f446c999d812ef2536967f321a48317a99b0594ea0c20e0347813d6133b",
+    "file": "t1_sm_mb_jukeboxfront_diff.dds",
+    "reference": "Assets/Textures/T1_SM_mb_jukeboxfront_Diff.dds",
+    "pngSHA256": "e8d4aa05b4cc76f417be4f4016aaa27f70d153441f9b6246288b2a4a1cfec563"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_jukeboxglass_spec.dds",
+    "png": "textures/t1_sm_mb_jukeboxglass_spec.png",
+    "sha256": "e58aa1aeb742e019cf6bc148d6c5593dbc94354c826c9460f1fdb4f16b55da53",
+    "file": "t1_sm_mb_jukeboxglass_spec.dds",
+    "reference": "Assets/Textures/T1_SM_mb_jukeboxglass_spec.dds",
+    "pngSHA256": "995e51a315284823c02ab2047fc15b0e1b7cfd1cc27de9e8545ea0aba6cadee8"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_jukebox_interior01_diff.dds",
+    "png": "textures/t1_sm_mb_jukebox_interior01_diff.png",
+    "sha256": "065ff1a9f54ed062d215384dbfd62984e93e9bfe25613cd63c194b4b6c6cc62b",
+    "file": "t1_sm_mb_jukebox_interior01_diff.dds",
+    "reference": "Assets/Textures/T1_sm_mb_Jukebox_Interior01_Diff.dds",
+    "pngSHA256": "5e2fd0c507851f28b87e7d6393e677b7e095fdbaa458afa853b138e8d895c366"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_jukebox_interior02_diff.dds",
+    "png": "textures/t1_sm_mb_jukebox_interior02_diff.png",
+    "sha256": "85305b7508bf975de441e2ccf9717fd0f4bf97ac8a9c764b3b45c79d2d9f49bc",
+    "file": "t1_sm_mb_jukebox_interior02_diff.dds",
+    "reference": "Assets/Textures/T1_sm_mb_Jukebox_Interior02_Diff.dds",
+    "pngSHA256": "d76f7d7ff23bd12fdde16233cae8c7ba203a89409335bd5b0ab607e39c7ccb2f"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_coolerjukebox_spec.dds",
+    "png": "textures/t1_sm_mb_coolerjukebox_spec.png",
+    "sha256": "c6014f18b1c9e85a20a6e7b1d5698904a2436b8a33fa719d8106541fdb900277",
+    "file": "t1_sm_mb_coolerjukebox_spec.dds",
+    "reference": "Assets/Textures/T1_sm_mb_coolerjukebox_spec.dds",
+    "pngSHA256": "802df7cd436b23c7e11fa68e0b025da7f1391d3f9411bb8edaa02d94400a263f"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/t1_sm_mb_songplate_diff.dds",
+    "png": "textures/t1_sm_mb_songplate_diff.png",
+    "sha256": "e86c323d49a41ca4f72c2c58a62c84178f4c675187018b09c81cffac5f56e709",
+    "file": "t1_sm_mb_songplate_diff.dds",
+    "reference": "Assets/Textures/T1_sm_mb_songplate_Diff.dds",
+    "pngSHA256": "3f54bca0fa887f56d584d86c7b21eec77c0164e94319f38f5eb1afdff4397a88"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_hornerhan_coop_diff.dds",
+    "png": "textures/techlab_hornerhan_coop_diff.png",
+    "sha256": "3178eb3c01f955ce76f685c9cbe56bb02c76715b2a75eee9b385ceeaa2e0e00b",
+    "file": "techlab_hornerhan_coop_diff.dds",
+    "reference": "Assets/Textures/TechLab_HornerHan_Coop_Diff.dds",
+    "pngSHA256": "95e64358d7db0d400ceaca4f76368719ac69695a685f78c6c0fc1e40786cc3d3"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_hornerhan_coop_emiss.dds",
+    "png": "textures/techlab_hornerhan_coop_emiss.png",
+    "sha256": "c86115c930f2a8f94fbe8005bcedc121f87478136e7b602f77d8eb0c13175c96",
+    "file": "techlab_hornerhan_coop_emiss.dds",
+    "reference": "Assets/Textures/TechLab_HornerHan_Coop_Emiss.dds",
+    "pngSHA256": "3163dee2c8fb5b9f0543506f119c520e6b7b634953f343ec6ad9b4112b44b316"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_hornerhan_coop_norm.dds",
+    "png": "textures/techlab_hornerhan_coop_norm.png",
+    "sha256": "a94b46d51835a92ce573a96c1e0e433a9834b0cc812ba77fd8b38e6b993a3240",
+    "file": "techlab_hornerhan_coop_norm.dds",
+    "reference": "Assets/Textures/TechLab_HornerHan_Coop_Norm.dds",
+    "pngSHA256": "221fd0b96a4d5210a5700e0cc447baebc371ada645daceb16e101f3bbd21d504"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/techlab_hornerhan_coop_spec.dds",
+    "png": "textures/techlab_hornerhan_coop_spec.png",
+    "sha256": "6ea60210a02c55b54344d75565534bd66d0f02988bf4c6c642b036845e75527f",
+    "file": "techlab_hornerhan_coop_spec.dds",
+    "reference": "Assets/Textures/TechLab_HornerHan_Coop_Spec.dds",
+    "pngSHA256": "95849b556dd0d33ad5fecdde352f6e46fbf9fcee66cdf904f53c8c576ef571bb"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_primal_barracks_coop_diff.dds",
+    "png": "textures/dehaka_primal_barracks_coop_diff.png",
+    "sha256": "e7461b4a9f8ade6f70b89fdbb73f9b69eaa32b06a0599da51c979a96d6f52e47",
+    "file": "dehaka_primal_barracks_coop_diff.dds",
+    "reference": "Assets/Textures/dehaka_primal_barracks_coop_diff.dds",
+    "pngSHA256": "9d8f98a9f0c3aa0ee826d347f9ba9a45d8ea778d33b7bb04dbc714cfc4e0606a"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_primal_barracks_coop_emis.dds",
+    "png": "textures/dehaka_primal_barracks_coop_emis.png",
+    "sha256": "9899e755de5d6f5385be6ad3c7eaeae4a747884cfae29b6a1a2c22535e7fb84e",
+    "file": "dehaka_primal_barracks_coop_emis.dds",
+    "reference": "Assets/Textures/dehaka_primal_barracks_coop_emis.dds",
+    "pngSHA256": "e6bee5b1dd3e29f0d52f531418d2347bbce7360edc98d5026dee40a1b37388f9"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_primal_barracks_coop_norm.dds",
+    "png": "textures/dehaka_primal_barracks_coop_norm.png",
+    "sha256": "468e4941e4d5b2971c3e67d22537728473b0049db2165e8dda721baa2c3eb22d",
+    "file": "dehaka_primal_barracks_coop_norm.dds",
+    "reference": "Assets/Textures/dehaka_primal_barracks_coop_norm.dds",
+    "pngSHA256": "0190086cf3ef5a408b99bb68a15fec23eeaf13a0ae03104eeb2ef01502e123ce"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/dehaka_primal_barracks_coop_spec.dds",
+    "png": "textures/dehaka_primal_barracks_coop_spec.png",
+    "sha256": "5457e9fd0d739d13193c89873ffb92037668667898f48020e1df4f46a17eb8a4",
+    "file": "dehaka_primal_barracks_coop_spec.dds",
+    "reference": "Assets/Textures/dehaka_primal_barracks_coop_spec.dds",
+    "pngSHA256": "bb5cea63ef2ff0680e2671fc1f465c88c1222a0a3662f23f846712bdeedb77b9"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_taldarim_diff.dds",
+    "png": "textures/pylon_taldarim_diff.png",
+    "sha256": "f4a593417cd90b25b5435db0bc25a1be30812bfb3dbc5313decb3628b1e0ea06",
+    "file": "pylon_taldarim_diff.dds",
+    "reference": "Assets/Textures/pylon_taldarim_diff.dds",
+    "pngSHA256": "01e38af15605d091bf8de9df13290d5018ea08d5da821a1c3765771d1e303f42"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_taldarim_emis.dds",
+    "png": "textures/pylon_taldarim_emis.png",
+    "sha256": "d21ac9a0ddc36478dc6c3c903a79ac5c4e42068081e3dff868db31c1647a06da",
+    "file": "pylon_taldarim_emis.dds",
+    "reference": "Assets/Textures/pylon_taldarim_emis.dds",
+    "pngSHA256": "30e485cbfab567730649f5a3d1b5a86f4adde61e69741b835989f4f9e22f6116"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/pylon_taldarim_spec.dds",
+    "png": "textures/pylon_taldarim_spec.png",
+    "sha256": "ca799c4af21e027c82e742d805e048e85931fef2933955e52582a99deeef6e56",
+    "file": "pylon_taldarim_spec.dds",
+    "reference": "Assets/Textures/pylon_taldarim_spec.dds",
+    "pngSHA256": "f5b0dfe7b07a163e704c321e9095a2ecc7ff78cae2140e3f863cbda6cc826505"
+  },
+  {
+    "archivePath": "mods/core.sc2mod/base.sc2assets/Assets/Textures/sm_hb_window_norm.dds",
+    "png": "textures/sm_hb_window_norm.png",
+    "sha256": "2aa5a3263b472d1391688988022df5fc2eea78112a87dc0da89dbad99110dd82",
+    "file": "sm_hb_window_norm.dds",
+    "reference": "Assets/Textures/sm_hb_window_norm.dds",
+    "pngSHA256": "e3c5647259b4dc81787dace196947d11465b40a022879c934e299dc4774a8803"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_coolerjukebox_n.dds",
+    "png": "textures/sm_mb_coolerjukebox_n.png",
+    "sha256": "c6c4750570c0ada1696d45316e981b780fd5d4799d52afc60b0235b5e2e5cb2b",
+    "file": "sm_mb_coolerjukebox_n.dds",
+    "reference": "Assets/Textures/sm_mb_coolerjukebox_n.dds",
+    "pngSHA256": "37328db95b92642a252a6b3aa205a53399227cec705e47012d921b59f9574e0c"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Textures/sm_mb_songplate_norm.dds",
+    "png": "textures/sm_mb_songplate_norm.png",
+    "sha256": "3944280e2572cdd7b3b2b4f745a64c0290032988482657d39fa58ccb25a5f90a",
+    "file": "sm_mb_songplate_norm.dds",
+    "reference": "Assets/Textures/sm_mb_songplate_Norm.dds",
+    "pngSHA256": "63a3349827400be39b8562b7ee37e1b877ac3c09ea45c2f9764f723a7aca8c93"
+  }
+]

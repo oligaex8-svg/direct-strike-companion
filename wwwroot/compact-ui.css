@@ -373,3 +373,7 @@ dialog>.dialog-head{padding:10px var(--dialog-padding);gap:10px}
 }
 @media(max-width:420px){.profile-overview{grid-template-columns:minmax(0,1fr)}.profile-best-grid{grid-template-columns:minmax(0,1fr)}.sounds-assigned{display:block}.sounds-assigned>.button{margin-top:8px;max-width:none}}
 @media(pointer:coarse){.button,.filter,.mark-button,.sidebar .nav,.sounds-language button,.sounds-recording-choice,.sounds-target,.page-tools>summary{min-height:44px}.toolbar input,.toolbar select{min-height:44px}}
+
+/* Keep native end caps and translated captions clear in the narrow layout. */
+.profile-favourite-rate>span{display:block;max-width:90px;white-space:normal;overflow-wrap:normal;line-height:1.25}
+@container(max-width:390px){.pick-controls{grid-template-columns:minmax(0,1fr)}}

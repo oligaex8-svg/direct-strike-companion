@@ -3,6 +3,46 @@
   "archive": "https://asset-explorer.sc2arcade.com/",
   "sources": [
     {
+      "file": "console-abathur.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consolezerg_abathur.png",
+      "role": "original HUD console render",
+      "family": "abathur",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolezerg_abathur.png",
+      "sha256": "da802870c376d403d19ea20c93c7fc8ac6f03c9a504dc809ac1c167fe2b33d01",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-alarak.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleprotoss_forged.png",
+      "role": "original HUD console render",
+      "family": "alarak",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleprotoss_forged.png",
+      "sha256": "31ef2459ac953040eeda0a8c04faa354bacd95980829063be3bc152091068cbb",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-arcade.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consolegeneric_arcadecabinetpurple.png",
+      "role": "original HUD console render",
+      "family": "arcade",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolegeneric_arcadecabinetpurple.png",
+      "sha256": "9ce91ac5d717171798043c70a7db3bd80cdc4349b8209363bc2eb499b9065d20",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-cerberus.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consolezerg_cerberus.png",
+      "role": "original HUD console render",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolezerg_cerberus.png",
+      "sha256": "9b8ec8369f464a92c2e3b99684af4da17d27d52d6823f1299db6437079002b46",
+      "width": 992,
+      "height": 316
+    },
+    {
       "file": "console-classic-protoss.png",
       "image": "consoles-png/sc2_ui_collection_huds_large_consoleprotoss_classic.png",
       "role": "original HUD console render",
@@ -33,6 +73,16 @@
       "height": 316
     },
     {
+      "file": "console-dehaka.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_dehaka_consolezerg.png",
+      "role": "original HUD console render",
+      "family": "dehaka",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_dehaka_consolezerg.png",
+      "sha256": "6b8e89347bb7f363c48698a6512030da4908815fcc9148626befa17305b36432",
+      "width": 992,
+      "height": 316
+    },
+    {
       "file": "console-fenix.png",
       "image": "consoles-png/sc2_ui_collection_huds_large_fenix_consoleprotoss.png",
       "role": "original HUD console render",
@@ -43,14 +93,124 @@
       "height": 316
     },
     {
-      "file": "console-protoss-nerazim.png",
+      "file": "console-ihanrii.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleprotoss_ihanrii.png",
+      "role": "original HUD console render",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleprotoss_ihanrii.png",
+      "sha256": "9810ad749cddcc1d0b48073e768a425290462e4b17778ba224703f88608e516c",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-machined.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleterran_machined.png",
+      "role": "original HUD console render",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_machined.png",
+      "sha256": "cb95a0c7c52677f11eb61f42cb5727e93c93cf6c8c3c4361bdc0c5a63e946ca0",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-mecha.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consolezerg_mecha.png",
+      "role": "original HUD console render",
+      "family": "mecha",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consolezerg_mecha.png",
+      "sha256": "a936d766bf6f823b5ead00f5f712aed8d946551d095b8fb7085e9c48d81bfa68",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-mira.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleterran_junker.png",
+      "role": "original HUD console render",
+      "family": "mira",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_junker.png",
+      "sha256": "ad591aaadfb609aac98ce8bbba560d68de2a6f6462aeb0f49eb94137024fa248",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-nerazim.png",
       "image": "consoles-png/sc2_ui_collection_huds_large_consoleprotoss_nerazim.png",
       "role": "original HUD console render",
-      "family": "protoss-nerazim",
+      "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleprotoss_nerazim.png",
       "sha256": "7101b4599e51457a4e4bc2dd7c0506c586a7a27540f7e34aad03f89329568612",
       "width": 992,
       "height": 316
+    },
+    {
+      "file": "console-nova.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleterran_covertops.png",
+      "role": "original HUD console render",
+      "family": "nova",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_covertops.png",
+      "sha256": "c99ac766e5ab8a662868cd2f1886bc9f3afe79c85a8a4592b8314560fd6512cf",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-protoss.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleskinprotossdefault.png",
+      "role": "original HUD console render",
+      "family": "protoss",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleskinprotossdefault.png",
+      "sha256": "213b70866ce20270534e437a54e195ed2b7965f67ce1da6df932bfc000ff3a98",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-terran.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleskinterrandefault.png",
+      "role": "original HUD console render",
+      "family": "terran",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleskinterrandefault.png",
+      "sha256": "7347d033b4c6f3db6bf552313ff384c0370cb00a46589d876832e7b186dfe397",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-tyrador.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleterran_tyrador.png",
+      "role": "original HUD console render",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleterran_tyrador.png",
+      "sha256": "04038aaf0168ec9e99afa69bed1213f6c04861579d2b972449c4178364f919a0",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "console-zerg.png",
+      "image": "consoles-png/sc2_ui_collection_huds_large_consoleskinzergdefault.png",
+      "role": "original HUD console render",
+      "family": "zerg",
+      "url": "https://dist.sc2arcade.com/star-assets/consoles-png/sc2_ui_collection_huds_large_consoleskinzergdefault.png",
+      "sha256": "5596733268047f8213d1843eef41e12d188b4450958c12d07973f5d743ffa2f1",
+      "width": 992,
+      "height": 316
+    },
+    {
+      "file": "ui_console_chatbar_background_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_chatbar_background_arcadecabinetpurple.png",
+      "role": "chatbar_background",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_arcadecabinetpurple.png",
+      "sha256": "8406140293ab5a14c49fb24800684ceed3941a100cf51ba360418236ce41034c",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_cerberus.png",
+      "image": "ui-png/ui_console_chatbar_background_cerberus.png",
+      "role": "chatbar_background",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_cerberus.png",
+      "sha256": "30fcc0e7fc81a159b728c2ac69d53cfc468d624979166369d0a864a50a580ea7",
+      "width": 216,
+      "height": 320
     },
     {
       "file": "ui_console_chatbar_background_defaultprotoss.png",
@@ -83,12 +243,72 @@
       "height": 320
     },
     {
+      "file": "ui_console_chatbar_background_evolved.png",
+      "image": "ui-png/ui_console_chatbar_background_evolved.png",
+      "role": "chatbar_background",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_evolved.png",
+      "sha256": "0d8bd3bb3b769c13e8776999eb09d91a545ccc94a7be76b1191fa3ffa68c4c5b",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_forged.png",
+      "image": "ui-png/ui_console_chatbar_background_forged.png",
+      "role": "chatbar_background",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_forged.png",
+      "sha256": "ca3908cc2d20c47423d41542fe003c48cdd8307e7bf3e8e0fcc2e15285a6d0e7",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_ihanrii.png",
+      "image": "ui-png/ui_console_chatbar_background_ihanrii.png",
+      "role": "chatbar_background",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_ihanrii.png",
+      "sha256": "8eac766240dec50ba49fc57314a0ec8f85ffb0a45e20b6a7d344cb179d08ad9d",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_machined.png",
+      "image": "ui-png/ui_console_chatbar_background_machined.png",
+      "role": "chatbar_background",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_machined.png",
+      "sha256": "76a41bfe87a935b1f48b7cccd54748973cbd5a8a40e62112d16b86dd80ba72ea",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_mirasmarauders.png",
+      "image": "ui-png/ui_console_chatbar_background_mirasmarauders.png",
+      "role": "chatbar_background",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_mirasmarauders.png",
+      "sha256": "85a9a8b24fc99648564e6331d972bb599748fcf703d77f3f69c70d2323d31650",
+      "width": 216,
+      "height": 320
+    },
+    {
       "file": "ui_console_chatbar_background_nerazim.png",
       "image": "ui-png/ui_console_chatbar_background_nerazim.png",
       "role": "chatbar_background",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_nerazim.png",
       "sha256": "680ff0ea569e4c84205c809903159999af13c3d2210d065913e122c454cf4a47",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_primal.png",
+      "image": "ui-png/ui_console_chatbar_background_primal.png",
+      "role": "chatbar_background",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_primal.png",
+      "sha256": "02c9ab64f723b97c9daeafa145a460ad0165a682027a7b6f0aad9983cde9a4af",
       "width": 216,
       "height": 320
     },
@@ -101,6 +321,56 @@
       "sha256": "68dab914c7c76beea3d76cae5c56682c9c3531357d02561a8529e647f2f72b02",
       "width": 216,
       "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_simulant.png",
+      "image": "ui-png/ui_console_chatbar_background_simulant.png",
+      "role": "chatbar_background",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_simulant.png",
+      "sha256": "f4957d7ec1ad40a2882df2a254ce476b17a78ea8bb1f63f3faf2524c0a867b01",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_specialforces.png",
+      "image": "ui-png/ui_console_chatbar_background_specialforces.png",
+      "role": "chatbar_background",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_specialforces.png",
+      "sha256": "4bd5512ca099506b7b392970b0040fa161216a044ca42d8c21c35bf5287cc0f7",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_chatbar_background_tyrador.png",
+      "image": "ui-png/ui_console_chatbar_background_tyrador.png",
+      "role": "chatbar_background",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_chatbar_background_tyrador.png",
+      "sha256": "38a58f81b9216feb3ad5284b2c4267a9a516a56f6262603041a63083ff79c1cd",
+      "width": 216,
+      "height": 320
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_arcadecabinetpurple.png",
+      "role": "commandbutton_highlighted",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_arcadecabinetpurple.png",
+      "sha256": "2a4ebabad250895235bbb75ea6f7688fd1d493c046ed3a37eab2c2af62430225",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_cerberus.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_cerberus.png",
+      "role": "commandbutton_highlighted",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_cerberus.png",
+      "sha256": "a18e60e7788d72eab5bb697cc507d6b5780ce22f445cbf5e053d09c6f5c64f01",
+      "width": 76,
+      "height": 76
     },
     {
       "file": "ui_console_commandbutton_highlighted_defaultprotoss.png",
@@ -133,6 +403,56 @@
       "height": 76
     },
     {
+      "file": "ui_console_commandbutton_highlighted_evolved.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_evolved.png",
+      "role": "commandbutton_highlighted",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_evolved.png",
+      "sha256": "74dac47f8fc41f50dc4e5614f71cc06e4eed83723868c59859e868e61c5b6535",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_forged.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_forged.png",
+      "role": "commandbutton_highlighted",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_forged.png",
+      "sha256": "e86e1edf0592c2c9d37c38b88adb4e1ffb6adeec9ccbe9ceee4a52c4704daef8",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_ihanrii.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_ihanrii.png",
+      "role": "commandbutton_highlighted",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_ihanrii.png",
+      "sha256": "a4b0302e51927fbade85156bb75e1db1c15165e8482f767957661bf88671641e",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_machined.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_machined.png",
+      "role": "commandbutton_highlighted",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_machined.png",
+      "sha256": "1d2750f7fa5bc0f68b50f51ae9d46e1cdd6433745048ff8ac0ec02ac0982496b",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_mirasmarauders.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_mirasmarauders.png",
+      "role": "commandbutton_highlighted",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_mirasmarauders.png",
+      "sha256": "c9f40e05c0670182d29b7f0f11967d5700d5f18f9c4079d73ad8a4c2dbff7163",
+      "width": 76,
+      "height": 76
+    },
+    {
       "file": "ui_console_commandbutton_highlighted_nerazim.png",
       "image": "ui-png/ui_console_commandbutton_highlighted_nerazim.png",
       "role": "commandbutton_highlighted",
@@ -143,12 +463,72 @@
       "height": 76
     },
     {
+      "file": "ui_console_commandbutton_highlighted_primal.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_primal.png",
+      "role": "commandbutton_highlighted",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_primal.png",
+      "sha256": "2105a212bf2b724f699e9b4b9bb11a7c9b8e1ec06d6784d322b972cc1a32eac3",
+      "width": 76,
+      "height": 76
+    },
+    {
       "file": "ui_console_commandbutton_highlighted_purifier.png",
       "image": "ui-png/ui_console_commandbutton_highlighted_purifier.png",
       "role": "commandbutton_highlighted",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_purifier.png",
       "sha256": "62dcbe3e2eb5446ff5a54197380375a4df9b8133b79b67489207ef63abced4ec",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_simulant.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_simulant.png",
+      "role": "commandbutton_highlighted",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_simulant.png",
+      "sha256": "f145f1c521f5b2c45dfa3ad1da6b2d3eb6a1163fff177bc2d01b104cab1a1e86",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_specialforces.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_specialforces.png",
+      "role": "commandbutton_highlighted",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_specialforces.png",
+      "sha256": "f504134935f049d352bd393d86085d749982fa8d88ea8241334be08178e83bac",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_highlighted_tyrador.png",
+      "image": "ui-png/ui_console_commandbutton_highlighted_tyrador.png",
+      "role": "commandbutton_highlighted",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_highlighted_tyrador.png",
+      "sha256": "cde4c68fcffe59e56ae692c563cdc9e97d64d92ffab5e75d8b2c86a66de2fc85",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_commandbutton_normal_arcadecabinetpurple.png",
+      "role": "commandbutton_normal",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_arcadecabinetpurple.png",
+      "sha256": "111d8c3952846675c2e062cac0719227aadae28128c84a8b7b94864c989deaad",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_cerberus.png",
+      "image": "ui-png/ui_console_commandbutton_normal_cerberus.png",
+      "role": "commandbutton_normal",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_cerberus.png",
+      "sha256": "489dc3151d54017e86effc3253ff4c7583989be09e3e9259f4486d9feb364f21",
       "width": 76,
       "height": 76
     },
@@ -183,6 +563,56 @@
       "height": 76
     },
     {
+      "file": "ui_console_commandbutton_normal_evolved.png",
+      "image": "ui-png/ui_console_commandbutton_normal_evolved.png",
+      "role": "commandbutton_normal",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_evolved.png",
+      "sha256": "f86fdc898959ad5735f6d31562b3fb159e198f89df36c35a1f5353bbc2b684c2",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_forged.png",
+      "image": "ui-png/ui_console_commandbutton_normal_forged.png",
+      "role": "commandbutton_normal",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_forged.png",
+      "sha256": "0ae6f2481a493907e87e6da1568b987244c3874dd29c2cc5dd415bb70064f4fe",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_ihanrii.png",
+      "image": "ui-png/ui_console_commandbutton_normal_ihanrii.png",
+      "role": "commandbutton_normal",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_ihanrii.png",
+      "sha256": "d01eb1c35c612b998fad033fee8ee3065b92732164a3a930f6141ca23fd249ab",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_machined.png",
+      "image": "ui-png/ui_console_commandbutton_normal_machined.png",
+      "role": "commandbutton_normal",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_machined.png",
+      "sha256": "4e186c908bfaf7e3af68dfaecb32ad7e0cb22035d809ceedf22acfb7a84e4ab6",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_mirasmarauders.png",
+      "image": "ui-png/ui_console_commandbutton_normal_mirasmarauders.png",
+      "role": "commandbutton_normal",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_mirasmarauders.png",
+      "sha256": "e75d753b105c588e40bb931a6b5906eb46a2edd1192bc1554649397b4913ba08",
+      "width": 76,
+      "height": 76
+    },
+    {
       "file": "ui_console_commandbutton_normal_nerazim.png",
       "image": "ui-png/ui_console_commandbutton_normal_nerazim.png",
       "role": "commandbutton_normal",
@@ -193,12 +623,72 @@
       "height": 76
     },
     {
+      "file": "ui_console_commandbutton_normal_primal.png",
+      "image": "ui-png/ui_console_commandbutton_normal_primal.png",
+      "role": "commandbutton_normal",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_primal.png",
+      "sha256": "4110ddfa9ac532460043edb24c9fe6933b312fe2f4d5eaca2b7eb9ec3946d716",
+      "width": 76,
+      "height": 76
+    },
+    {
       "file": "ui_console_commandbutton_normal_purifier.png",
       "image": "ui-png/ui_console_commandbutton_normal_purifier.png",
       "role": "commandbutton_normal",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_purifier.png",
       "sha256": "c0c3b9b74b864c23024d4d1ae6fd9395b536655bcb018d79916016c0c542c6bc",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_simulant.png",
+      "image": "ui-png/ui_console_commandbutton_normal_simulant.png",
+      "role": "commandbutton_normal",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_simulant.png",
+      "sha256": "cfe1759b34ca980040f338f8884847503b0c944541395940538ceb67254085c8",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_specialforces.png",
+      "image": "ui-png/ui_console_commandbutton_normal_specialforces.png",
+      "role": "commandbutton_normal",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_specialforces.png",
+      "sha256": "0ae5c1fb35f1c841407bb254ac184339dc87ef6ea470bc218578441f99603862",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_normal_tyrador.png",
+      "image": "ui-png/ui_console_commandbutton_normal_tyrador.png",
+      "role": "commandbutton_normal",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_normal_tyrador.png",
+      "sha256": "c4b7488185a7b33fdb10501231210a3cb0a0313603e70b48985e246a9a720907",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_arcadecabinetpurple.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_arcadecabinetpurple.png",
+      "sha256": "17a8351fec44a22d9ae0ee303fa4434a4681757ea40801bc1a46bb903af0ec59",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_cerberus.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_cerberus.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_cerberus.png",
+      "sha256": "ae41a3082501f3702661f2dd8a4a8795e3deecdda07cc290c8ccc488e797f5ec",
       "width": 76,
       "height": 76
     },
@@ -233,12 +723,72 @@
       "height": 76
     },
     {
+      "file": "ui_console_commandbutton_superhighlighted_evolved.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_evolved.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_evolved.png",
+      "sha256": "080a7e23a0703ff7ca42f733e41011acd8bbb452ab54a9948cde2457ae1f186d",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_forged.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_forged.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_forged.png",
+      "sha256": "90299e3a38a576fc56be124bc0c1ab81654af1b7d4264ee1fce66f5028f4a59f",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_ihanrii.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_ihanrii.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_ihanrii.png",
+      "sha256": "2aecc07f293bc9f6bbe9ad7ed643ec51e75921e8c438e75734e6acf9bd1d554f",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_machined.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_machined.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_machined.png",
+      "sha256": "ab3152f3a6a5388dd8b79dec340ca9f344758014447df6ecba1893cf744b0447",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_mirasmarauders.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_mirasmarauders.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_mirasmarauders.png",
+      "sha256": "385eb2ecf7e7b636782525227c81668804d85f8e8954be3ffaaf7245a2fcba50",
+      "width": 76,
+      "height": 76
+    },
+    {
       "file": "ui_console_commandbutton_superhighlighted_nerazim.png",
       "image": "ui-png/ui_console_commandbutton_superhighlighted_nerazim.png",
       "role": "commandbutton_superhighlighted",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_nerazim.png",
       "sha256": "b83280125833eb5590759ea857d02f11ee6119a5d64ad6bc3c6c9c67bf7a9e1c",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_primal.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_primal.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_primal.png",
+      "sha256": "a5e33fbc55e482534b02fe3a7da42eafbd4dc7a332c7dc84a1d3d6a5c14f8286",
       "width": 76,
       "height": 76
     },
@@ -251,6 +801,56 @@
       "sha256": "4c37ac36745d2428c8a909630a1473512024fe3ac466e2352df1c56d62736522",
       "width": 76,
       "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_simulant.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_simulant.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_simulant.png",
+      "sha256": "76ca2a570ca6cd94787986daab87d667c136d7a4df039de7c9704a62f49cda3d",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_specialforces.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_specialforces.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_specialforces.png",
+      "sha256": "7404f6db7ea9705fcbf665b70bb0de541690c8430519783845201c9a39069ed4",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_commandbutton_superhighlighted_tyrador.png",
+      "image": "ui-png/ui_console_commandbutton_superhighlighted_tyrador.png",
+      "role": "commandbutton_superhighlighted",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_commandbutton_superhighlighted_tyrador.png",
+      "sha256": "0a011d9bf09a4118349de35f12c2048536c5d97816a46372ce761971b8d6c5fa",
+      "width": 76,
+      "height": 76
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_arcadecabinetpurple.png",
+      "role": "controlgroupbutton_hover",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_arcadecabinetpurple.png",
+      "sha256": "dfcafe5ba0780247c725a3212ff1e08831d9d03511e21f5b0ce36c375769b5fd",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_cerberus.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_cerberus.png",
+      "role": "controlgroupbutton_hover",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_cerberus.png",
+      "sha256": "ceb314c32dd1ee3569cb28aecea76eecd193813cd0850fce3bcbe573021a9d20",
+      "width": 82,
+      "height": 64
     },
     {
       "file": "ui_console_controlgroupbutton_hover_defaultprotoss.png",
@@ -283,6 +883,56 @@
       "height": 64
     },
     {
+      "file": "ui_console_controlgroupbutton_hover_evolved.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_evolved.png",
+      "role": "controlgroupbutton_hover",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_evolved.png",
+      "sha256": "951ce1306eddcccbb90418a0d7c07e7bea93986d40e5558b69aae4baa475210e",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_forged.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_forged.png",
+      "role": "controlgroupbutton_hover",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_forged.png",
+      "sha256": "7be9bcb82f6d2bce34e768e4fbed79edbb4108a09162b456e740a57dc53563d3",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_ihanrii.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_ihanrii.png",
+      "role": "controlgroupbutton_hover",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_ihanrii.png",
+      "sha256": "c77fad628d9fa04ced6171b0ebda86411d2e3f30d2213b4a9965c287dc04edb6",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_machined.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_machined.png",
+      "role": "controlgroupbutton_hover",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_machined.png",
+      "sha256": "ef5c74f549e7eb25e07ccaf651bdee5c0c27f07a8d05726720f20589013f5465",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_mirasmarauders.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_mirasmarauders.png",
+      "role": "controlgroupbutton_hover",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_mirasmarauders.png",
+      "sha256": "1e143095b4b8c34bc20d94c4dbc509c234ed13737d7416c959b4a4ef8a1e6bb9",
+      "width": 82,
+      "height": 64
+    },
+    {
       "file": "ui_console_controlgroupbutton_hover_nerazim.png",
       "image": "ui-png/ui_console_controlgroupbutton_hover_nerazim.png",
       "role": "controlgroupbutton_hover",
@@ -293,12 +943,72 @@
       "height": 64
     },
     {
+      "file": "ui_console_controlgroupbutton_hover_primal.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_primal.png",
+      "role": "controlgroupbutton_hover",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_primal.png",
+      "sha256": "b9d829bb81c7a82ab56f75f839b1e34218ce97fb8e5b3c5b57a8aaeb94d5e3e8",
+      "width": 82,
+      "height": 64
+    },
+    {
       "file": "ui_console_controlgroupbutton_hover_purifier.png",
       "image": "ui-png/ui_console_controlgroupbutton_hover_purifier.png",
       "role": "controlgroupbutton_hover",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_purifier.png",
       "sha256": "270a795b0a2c75eaadd6d272a9cc332cbb523fdb756fcdbc8894e51cd5d970cf",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_simulant.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_simulant.png",
+      "role": "controlgroupbutton_hover",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_simulant.png",
+      "sha256": "e227e5046ae31dd9b8c10b3b4c1a9cb957cea90a8d3ef926da851de0cee3a03a",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_specialforces.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_specialforces.png",
+      "role": "controlgroupbutton_hover",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_specialforces.png",
+      "sha256": "6d69bb833083fdd31a3b36ae7a052b9be9321e04ee4fe685da501678469e3f5b",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_hover_tyrador.png",
+      "image": "ui-png/ui_console_controlgroupbutton_hover_tyrador.png",
+      "role": "controlgroupbutton_hover",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_hover_tyrador.png",
+      "sha256": "732a7f56b128d8bc7d07a1973f1107fd15665664d402f5d22f76cd055d2e298c",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_arcadecabinetpurple.png",
+      "role": "controlgroupbutton_normal",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_arcadecabinetpurple.png",
+      "sha256": "bf6a7293d7b795a6b6080e1f67116e45016b349182df9c8827f3eb005fe43bc4",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_cerberus.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_cerberus.png",
+      "role": "controlgroupbutton_normal",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_cerberus.png",
+      "sha256": "dd4ef1150d2d9630de307dceae7338b42554be5cfacecd6cfd905e29e9f196c2",
       "width": 82,
       "height": 64
     },
@@ -333,6 +1043,56 @@
       "height": 64
     },
     {
+      "file": "ui_console_controlgroupbutton_normal_evolved.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_evolved.png",
+      "role": "controlgroupbutton_normal",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_evolved.png",
+      "sha256": "855b07159adb01b0dba3afee99bed9bd1c4a5ea1241e2dbae9ccaa068faa6410",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_forged.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_forged.png",
+      "role": "controlgroupbutton_normal",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_forged.png",
+      "sha256": "700931b55b3b7ddd736cc08755d66bdfa6c055b7a7c01f236075e66d5eb230b0",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_ihanrii.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_ihanrii.png",
+      "role": "controlgroupbutton_normal",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_ihanrii.png",
+      "sha256": "df67b28a3e8f62e25480f619d18b315b7e0a8145d8a909ffa704de6d5034610e",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_machined.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_machined.png",
+      "role": "controlgroupbutton_normal",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_machined.png",
+      "sha256": "08cae7f5cd2a0f0732460e87ee99d0430436a8bf4ce1603438c3dc5c19ea3434",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_mirasmarauders.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_mirasmarauders.png",
+      "role": "controlgroupbutton_normal",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_mirasmarauders.png",
+      "sha256": "b310ae2d623165ea1644bb751e78dc57f685dc9ede628d914f31ee5714b3c99b",
+      "width": 82,
+      "height": 64
+    },
+    {
       "file": "ui_console_controlgroupbutton_normal_nerazim.png",
       "image": "ui-png/ui_console_controlgroupbutton_normal_nerazim.png",
       "role": "controlgroupbutton_normal",
@@ -343,12 +1103,72 @@
       "height": 64
     },
     {
+      "file": "ui_console_controlgroupbutton_normal_primal.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_primal.png",
+      "role": "controlgroupbutton_normal",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_primal.png",
+      "sha256": "8bf72a32179a59a9da8f12a2715bb5d2d43c9e9b88d4c3827cb2f32042dfa712",
+      "width": 82,
+      "height": 64
+    },
+    {
       "file": "ui_console_controlgroupbutton_normal_purifier.png",
       "image": "ui-png/ui_console_controlgroupbutton_normal_purifier.png",
       "role": "controlgroupbutton_normal",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_purifier.png",
       "sha256": "153afc8a464da100bcd0672120ec062b44afe41adf19bcb520b7afb2409d1a92",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_simulant.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_simulant.png",
+      "role": "controlgroupbutton_normal",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_simulant.png",
+      "sha256": "452d800eaff5bf6451585a755f8baaa82869da16e576a5495db8c889dc6594c1",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_specialforces.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_specialforces.png",
+      "role": "controlgroupbutton_normal",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_specialforces.png",
+      "sha256": "422f5708220c837ce157b2b9248a5dc9a3bfa6e876efcf0e09eee5179506404b",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_normal_tyrador.png",
+      "image": "ui-png/ui_console_controlgroupbutton_normal_tyrador.png",
+      "role": "controlgroupbutton_normal",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_normal_tyrador.png",
+      "sha256": "f7ca5722b84ad1081278cd2b9239da8e7821be2671985844dce193b89779dc8a",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_arcadecabinetpurple.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_arcadecabinetpurple.png",
+      "sha256": "4eb6b437a04b3ce71ec9f3f7d600d6f59bcd50e4607599f7a6da100a5fd79d97",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_cerberus.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_cerberus.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_cerberus.png",
+      "sha256": "273a0c758705d697b06f4c0cf80ef5198e61ada2295b89ddbcd957bab9ccba61",
       "width": 82,
       "height": 64
     },
@@ -383,12 +1203,72 @@
       "height": 64
     },
     {
+      "file": "ui_console_controlgroupbutton_pressed_evolved.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_evolved.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_evolved.png",
+      "sha256": "24021fc1fcaa1826f6002940766e07402190a4ba1473729dd84ad0ac21b6fa5d",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_forged.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_forged.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_forged.png",
+      "sha256": "f12afe3f07e13c241ee5ec105fa11a319102d6beb802a66b015b4880230d06d2",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_ihanrii.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_ihanrii.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_ihanrii.png",
+      "sha256": "8b19f2a9f6300f5d8948005636f3f5a090f5504065842054f09c28b87da173e1",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_machined.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_machined.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_machined.png",
+      "sha256": "fedef97f948fd291f7b81fa7d3cc2c98797f662d59a9f8b0fa7f995bfae480e1",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_mirasmarauders.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_mirasmarauders.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_mirasmarauders.png",
+      "sha256": "4acb6077c1e381b28da805e3211aa571ef2ef2b59666b744fdce0f932c45cb48",
+      "width": 82,
+      "height": 64
+    },
+    {
       "file": "ui_console_controlgroupbutton_pressed_nerazim.png",
       "image": "ui-png/ui_console_controlgroupbutton_pressed_nerazim.png",
       "role": "controlgroupbutton_pressed",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_nerazim.png",
       "sha256": "27931d7e330c86e23ea84d94f6c747acfc533b3af9ed5e9cf449a2d5164dd614",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_primal.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_primal.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_primal.png",
+      "sha256": "2c3523f905043988b24835174d04492b3133111adfce51282a7f0789b3bf4568",
       "width": 82,
       "height": 64
     },
@@ -401,6 +1281,56 @@
       "sha256": "a7368854b792e6de8fabbe3fc87c77a4f6f64c830171cb8d44c273e0c16aef3c",
       "width": 82,
       "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_simulant.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_simulant.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_simulant.png",
+      "sha256": "efcf80f57e2d0ead71c28b9c30b81b7d154034db65830d80a7f5a63389f02e3c",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_specialforces.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_specialforces.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_specialforces.png",
+      "sha256": "77f5d8ccea1e30b72b4848c945fe6562214c115f0fae24e7b0eb4f61c7f1241a",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_controlgroupbutton_pressed_tyrador.png",
+      "image": "ui-png/ui_console_controlgroupbutton_pressed_tyrador.png",
+      "role": "controlgroupbutton_pressed",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_controlgroupbutton_pressed_tyrador.png",
+      "sha256": "53cc97796e8e80bba1cad841423660f50e546a967aa30e2814ea3b087ec1050d",
+      "width": 82,
+      "height": 64
+    },
+    {
+      "file": "ui_console_helperbutton_background_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_helperbutton_background_arcadecabinetpurple.png",
+      "role": "helperbutton_background",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_arcadecabinetpurple.png",
+      "sha256": "8dff595c3732818ec66e6da28ff4030045f4d88d033cc8fa3d7a0f57ce535c73",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_cerberus.png",
+      "image": "ui-png/ui_console_helperbutton_background_cerberus.png",
+      "role": "helperbutton_background",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_cerberus.png",
+      "sha256": "0130c1b543a03dd2a84598d6eb85fa7490ec55f153e3e12eb7f61de59c255341",
+      "width": 92,
+      "height": 62
     },
     {
       "file": "ui_console_helperbutton_background_defaultprotoss.png",
@@ -433,12 +1363,72 @@
       "height": 62
     },
     {
+      "file": "ui_console_helperbutton_background_evolved.png",
+      "image": "ui-png/ui_console_helperbutton_background_evolved.png",
+      "role": "helperbutton_background",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_evolved.png",
+      "sha256": "a6583fb0dd9d9651c49eba7e64a3787c83202f75df293aea4a5c15831a2df0f7",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_forged.png",
+      "image": "ui-png/ui_console_helperbutton_background_forged.png",
+      "role": "helperbutton_background",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_forged.png",
+      "sha256": "47eb8470ac2b5c832abd0a6d216f0b9e94b15ac7f4134687d3aa50ae0258c14e",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_ihanrii.png",
+      "image": "ui-png/ui_console_helperbutton_background_ihanrii.png",
+      "role": "helperbutton_background",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_ihanrii.png",
+      "sha256": "0a18795c0c2961fb42763465d506864ff522fe2b859f47abf9babe7542a611e0",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_machined.png",
+      "image": "ui-png/ui_console_helperbutton_background_machined.png",
+      "role": "helperbutton_background",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_machined.png",
+      "sha256": "2e58669d7fc4c466fb74aee62140d7f2b28c3588565e7de028bd3c37f58c5e26",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_mirasmarauders.png",
+      "image": "ui-png/ui_console_helperbutton_background_mirasmarauders.png",
+      "role": "helperbutton_background",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_mirasmarauders.png",
+      "sha256": "9251a2afadc766ed47a13b0c62fd425145ac81767746f2dabcb02c729611c036",
+      "width": 92,
+      "height": 62
+    },
+    {
       "file": "ui_console_helperbutton_background_nerazim.png",
       "image": "ui-png/ui_console_helperbutton_background_nerazim.png",
       "role": "helperbutton_background",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_nerazim.png",
       "sha256": "58695a433de9e2adaf959bc74758312d2a440cf477993e8d56cd257ec6437ddb",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_primal.png",
+      "image": "ui-png/ui_console_helperbutton_background_primal.png",
+      "role": "helperbutton_background",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_primal.png",
+      "sha256": "a6583fb0dd9d9651c49eba7e64a3787c83202f75df293aea4a5c15831a2df0f7",
       "width": 92,
       "height": 62
     },
@@ -451,6 +1441,56 @@
       "sha256": "04c4b12881394b794f4f1726ccfff6ec74ab6cd0fc9da056981dd5fcd6c50235",
       "width": 92,
       "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_simulant.png",
+      "image": "ui-png/ui_console_helperbutton_background_simulant.png",
+      "role": "helperbutton_background",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_simulant.png",
+      "sha256": "9f27dd4298e3c12c094d6055fb60bcad718ebe028536f6111f598ea714ddf181",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_specialforces.png",
+      "image": "ui-png/ui_console_helperbutton_background_specialforces.png",
+      "role": "helperbutton_background",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_specialforces.png",
+      "sha256": "44448c04051c754ceab0b231300efb0ce4158674f3103cf79a9f1cd160215ae4",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_helperbutton_background_tyrador.png",
+      "image": "ui-png/ui_console_helperbutton_background_tyrador.png",
+      "role": "helperbutton_background",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_helperbutton_background_tyrador.png",
+      "sha256": "c7fbf8df47a6a1c2429be61255e5455077c93ce9366057e6deb4850c917d4d32",
+      "width": 92,
+      "height": 62
+    },
+    {
+      "file": "ui_console_menubar_background_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_menubar_background_arcadecabinetpurple.png",
+      "role": "menubar_background",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_arcadecabinetpurple.png",
+      "sha256": "262007bd0aec0a39a5dc341953d87a4f79d416520f092cbc4619813b8c7daac6",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_cerberus.png",
+      "image": "ui-png/ui_console_menubar_background_cerberus.png",
+      "role": "menubar_background",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_cerberus.png",
+      "sha256": "788730dad77b4b2bd99f35f0557c115b030f4cdc52c2078b4e2e5a27be198985",
+      "width": 241,
+      "height": 56
     },
     {
       "file": "ui_console_menubar_background_defaultprotoss.png",
@@ -483,12 +1523,72 @@
       "height": 56
     },
     {
+      "file": "ui_console_menubar_background_evolved.png",
+      "image": "ui-png/ui_console_menubar_background_evolved.png",
+      "role": "menubar_background",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_evolved.png",
+      "sha256": "fe8d87251979fb3b342be46010a4c75094ddb7fcc925936d45c5e36ea7401fb0",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_forged.png",
+      "image": "ui-png/ui_console_menubar_background_forged.png",
+      "role": "menubar_background",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_forged.png",
+      "sha256": "1ac758d175f423bc4db68fbc9fa3d22c9c9beb0beeebae89ebe31d1f6917e754",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_ihanrii.png",
+      "image": "ui-png/ui_console_menubar_background_ihanrii.png",
+      "role": "menubar_background",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_ihanrii.png",
+      "sha256": "9f967c9701350f3209952db4d8275d85ca627ec076fb3ee8f6acc25f044a8f3a",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_machined.png",
+      "image": "ui-png/ui_console_menubar_background_machined.png",
+      "role": "menubar_background",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_machined.png",
+      "sha256": "9f81bcd3152ce5c69d160503c97ee02a4fd2560dd91ce1f1c6bd760d84dc5d30",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_mirasmarauders.png",
+      "image": "ui-png/ui_console_menubar_background_mirasmarauders.png",
+      "role": "menubar_background",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_mirasmarauders.png",
+      "sha256": "56724c81c298c209937f815e3c1f6283f5f8d9030ea9cd351f9c09fee0d1b16d",
+      "width": 241,
+      "height": 56
+    },
+    {
       "file": "ui_console_menubar_background_nerazim.png",
       "image": "ui-png/ui_console_menubar_background_nerazim.png",
       "role": "menubar_background",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_nerazim.png",
       "sha256": "6ede9a47eb71ffa2905617b30475f41d1b991693a9f94c7f37e62adee75904b4",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_primal.png",
+      "image": "ui-png/ui_console_menubar_background_primal.png",
+      "role": "menubar_background",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_primal.png",
+      "sha256": "29bd4e309568f47b25b6b5b2e42501f4f4285628e0298fd016de492e6086cc15",
       "width": 241,
       "height": 56
     },
@@ -501,6 +1601,56 @@
       "sha256": "c3c75e650ba414ac24bd39861a7794cced52c34df09eaf4da73fcd67a3da5d12",
       "width": 241,
       "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_simulant.png",
+      "image": "ui-png/ui_console_menubar_background_simulant.png",
+      "role": "menubar_background",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_simulant.png",
+      "sha256": "597e7d3470747ff45012e45cdf399ad88053e1796340780d332f98368b2c8b84",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_specialforces.png",
+      "image": "ui-png/ui_console_menubar_background_specialforces.png",
+      "role": "menubar_background",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_specialforces.png",
+      "sha256": "be1b713640582dae6347ebd7c70c98d1ea71b452afd542f6e9376337cbbb9726",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubar_background_tyrador.png",
+      "image": "ui-png/ui_console_menubar_background_tyrador.png",
+      "role": "menubar_background",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubar_background_tyrador.png",
+      "sha256": "f03fc52bb5bd813935d563353d95b840f60c107fbbc0186a34a247e7b5327bf2",
+      "width": 241,
+      "height": 56
+    },
+    {
+      "file": "ui_console_menubutton_hover_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_menubutton_hover_arcadecabinetpurple.png",
+      "role": "menubutton_hover",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_arcadecabinetpurple.png",
+      "sha256": "3ca30368c06facb53fc34fc9038db23471b5ac39a6a678abec62e5aec05d9a4c",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_cerberus.png",
+      "image": "ui-png/ui_console_menubutton_hover_cerberus.png",
+      "role": "menubutton_hover",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_cerberus.png",
+      "sha256": "4ca2d6174e5c128bb093c44c7e8abc1fd6826036030c10cc260112e30f1d3dab",
+      "width": 40,
+      "height": 40
     },
     {
       "file": "ui_console_menubutton_hover_defaultprotoss.png",
@@ -533,6 +1683,56 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_hover_evolved.png",
+      "image": "ui-png/ui_console_menubutton_hover_evolved.png",
+      "role": "menubutton_hover",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_evolved.png",
+      "sha256": "0499fb90965f2f392dbe4db8fd98e6a261fac81fabae5cf8fea9a42ed46232e6",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_forged.png",
+      "image": "ui-png/ui_console_menubutton_hover_forged.png",
+      "role": "menubutton_hover",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_forged.png",
+      "sha256": "2155ff982a0148517d8a81a6feb5b1523553e25fb362f6372b56077e612cb627",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_ihanrii.png",
+      "image": "ui-png/ui_console_menubutton_hover_ihanrii.png",
+      "role": "menubutton_hover",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_ihanrii.png",
+      "sha256": "0aae901224d366e697b4dca5e5baf879c0aafc93efc27a2ada447f93bde77867",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_machined.png",
+      "image": "ui-png/ui_console_menubutton_hover_machined.png",
+      "role": "menubutton_hover",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_machined.png",
+      "sha256": "a8e897cf88db702ddb7dc0c300a006b98614acbd5ef32dc008482222d3b0ed41",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_mirasmarauders.png",
+      "image": "ui-png/ui_console_menubutton_hover_mirasmarauders.png",
+      "role": "menubutton_hover",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_mirasmarauders.png",
+      "sha256": "62dfc698c3e6e45b74f6a7570009f04a7c232f750ae076e1e849ec3c668ba049",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_hover_nerazim.png",
       "image": "ui-png/ui_console_menubutton_hover_nerazim.png",
       "role": "menubutton_hover",
@@ -543,12 +1743,72 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_hover_primal.png",
+      "image": "ui-png/ui_console_menubutton_hover_primal.png",
+      "role": "menubutton_hover",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_primal.png",
+      "sha256": "73e9c0b8c33916959b2aa7ffb98aa54fec3a446da33d7b6793a5a1ca4d7f3821",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_hover_purifier.png",
       "image": "ui-png/ui_console_menubutton_hover_purifier.png",
       "role": "menubutton_hover",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_purifier.png",
       "sha256": "1316d1d57a6194d2e05eb2e6df63faf71e8ae4713bb990580fce3043cef79b81",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_simulant.png",
+      "image": "ui-png/ui_console_menubutton_hover_simulant.png",
+      "role": "menubutton_hover",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_simulant.png",
+      "sha256": "24645578d7d66c876529255136a882a48911e605db35a2bd1ab972ee09a0649b",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_specialforces.png",
+      "image": "ui-png/ui_console_menubutton_hover_specialforces.png",
+      "role": "menubutton_hover",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_specialforces.png",
+      "sha256": "1dc2f8570aea98450311e4e6ce55b61876d20c8b4a299db9ad0b512a07ee752d",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_hover_tyrador.png",
+      "image": "ui-png/ui_console_menubutton_hover_tyrador.png",
+      "role": "menubutton_hover",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_hover_tyrador.png",
+      "sha256": "ceb6201b659c264706d81963b23e80adbf58854397ab14c29c2e08f7005d5b11",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_menubutton_normal_arcadecabinetpurple.png",
+      "role": "menubutton_normal",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_arcadecabinetpurple.png",
+      "sha256": "d0283e9a88771fcba8915377805bbf27c9f4aeaff0cb6808a37c02a39f5420b5",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_cerberus.png",
+      "image": "ui-png/ui_console_menubutton_normal_cerberus.png",
+      "role": "menubutton_normal",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_cerberus.png",
+      "sha256": "99ab995fb3e126ba3687a44ae06b9a2cdb61b33d533ec2ae6112f868429aa29a",
       "width": 40,
       "height": 40
     },
@@ -583,6 +1843,56 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_normal_evolved.png",
+      "image": "ui-png/ui_console_menubutton_normal_evolved.png",
+      "role": "menubutton_normal",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_evolved.png",
+      "sha256": "cd4b335beb796ff964c82e7254e87f720563cdb5c84a4678618bed8f271b7d71",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_forged.png",
+      "image": "ui-png/ui_console_menubutton_normal_forged.png",
+      "role": "menubutton_normal",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_forged.png",
+      "sha256": "6a1d3dcfc60f3f47fbc51fe4558a836a38702d24d86cac8c963e3edabfd0b5f3",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_ihanrii.png",
+      "image": "ui-png/ui_console_menubutton_normal_ihanrii.png",
+      "role": "menubutton_normal",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_ihanrii.png",
+      "sha256": "ec2ff9b7eb1e49bbb156b028eeb83d0facbe9ee8a50ac97fdf68f17fa7ff857e",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_machined.png",
+      "image": "ui-png/ui_console_menubutton_normal_machined.png",
+      "role": "menubutton_normal",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_machined.png",
+      "sha256": "0363aa9dba55536e6ebaec13d32093445622785d4495725068533e28dfdb0d36",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_mirasmarauders.png",
+      "image": "ui-png/ui_console_menubutton_normal_mirasmarauders.png",
+      "role": "menubutton_normal",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_mirasmarauders.png",
+      "sha256": "2cc549ee0b99da68ccfec12298eb94f0c425e31e6d3e8b59022b9fd8cb0b54f1",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_normal_nerazim.png",
       "image": "ui-png/ui_console_menubutton_normal_nerazim.png",
       "role": "menubutton_normal",
@@ -593,12 +1903,72 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_normal_primal.png",
+      "image": "ui-png/ui_console_menubutton_normal_primal.png",
+      "role": "menubutton_normal",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_primal.png",
+      "sha256": "b985a783a72be1ae7b5ed9291e93bcd8a4a206d06e50009c0378b0bcad0c0339",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_normal_purifier.png",
       "image": "ui-png/ui_console_menubutton_normal_purifier.png",
       "role": "menubutton_normal",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_purifier.png",
       "sha256": "c30a1cd2fe0baa70eeffa25b9fbf0121a73bb5cc954111ace273a0ccc40e6219",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_simulant.png",
+      "image": "ui-png/ui_console_menubutton_normal_simulant.png",
+      "role": "menubutton_normal",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_simulant.png",
+      "sha256": "9a962ffce34beb0c82eb30ff30358e457caf3e021697083d8935b490458d2f33",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_specialforces.png",
+      "image": "ui-png/ui_console_menubutton_normal_specialforces.png",
+      "role": "menubutton_normal",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_specialforces.png",
+      "sha256": "370835d1807146117155e13495593761b5239d3bf34512ddb2597cfa7754c9f9",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_normal_tyrador.png",
+      "image": "ui-png/ui_console_menubutton_normal_tyrador.png",
+      "role": "menubutton_normal",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_normal_tyrador.png",
+      "sha256": "2b6aecb2b5000f70cdd06b7d1d9a42491098c93a720a740850117d76e04a9f0c",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_menubutton_pressed_arcadecabinetpurple.png",
+      "role": "menubutton_pressed",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_arcadecabinetpurple.png",
+      "sha256": "2945020a843f6d63d8472196564f6aef64045fd135b68c5b1be9bb3efc19a140",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_cerberus.png",
+      "image": "ui-png/ui_console_menubutton_pressed_cerberus.png",
+      "role": "menubutton_pressed",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_cerberus.png",
+      "sha256": "caaffce43d675d715a0aed86c8125475cbfbd6c3536cddf2c5754a971d3a9909",
       "width": 40,
       "height": 40
     },
@@ -633,6 +2003,56 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_pressed_evolved.png",
+      "image": "ui-png/ui_console_menubutton_pressed_evolved.png",
+      "role": "menubutton_pressed",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_evolved.png",
+      "sha256": "79c5c22e1b0b7aff0f938157e80f18aac71470859e75d8e5c893e5e8d18f01a7",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_forged.png",
+      "image": "ui-png/ui_console_menubutton_pressed_forged.png",
+      "role": "menubutton_pressed",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_forged.png",
+      "sha256": "0c66528d693f50520861b38f69b858d8b4f44f03a3ba0eb255f622aa439e3584",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_ihanrii.png",
+      "image": "ui-png/ui_console_menubutton_pressed_ihanrii.png",
+      "role": "menubutton_pressed",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_ihanrii.png",
+      "sha256": "cbf4663c8a6fce502ae7e2fd14b62907613272c5b5b6b68fcf1be9bca04f182b",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_machined.png",
+      "image": "ui-png/ui_console_menubutton_pressed_machined.png",
+      "role": "menubutton_pressed",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_machined.png",
+      "sha256": "55dcd4fd39374a4d01e4dc420691bb81452386f62e1e7c5d741d8323cde53a07",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_mirasmarauders.png",
+      "image": "ui-png/ui_console_menubutton_pressed_mirasmarauders.png",
+      "role": "menubutton_pressed",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_mirasmarauders.png",
+      "sha256": "e1c9f90f5ebd1f80eaca196130820310f7d1114932c7c7a33c48193cb8b2cf63",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_pressed_nerazim.png",
       "image": "ui-png/ui_console_menubutton_pressed_nerazim.png",
       "role": "menubutton_pressed",
@@ -643,12 +2063,72 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_pressed_primal.png",
+      "image": "ui-png/ui_console_menubutton_pressed_primal.png",
+      "role": "menubutton_pressed",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_primal.png",
+      "sha256": "60ac99dc61e987cf93c7653a57c222afe6038713debf71ab16f94b300a4d77e2",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_pressed_purifier.png",
       "image": "ui-png/ui_console_menubutton_pressed_purifier.png",
       "role": "menubutton_pressed",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_purifier.png",
       "sha256": "bf0a0f4d8c9929cd056ccea751c88011c9efbb8fd30032bedf51e309e2927fc4",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_simulant.png",
+      "image": "ui-png/ui_console_menubutton_pressed_simulant.png",
+      "role": "menubutton_pressed",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_simulant.png",
+      "sha256": "51edb6acb15bdca711236b1d13c521b5a5c50c48d3a47860d4ca231cefe4be89",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_specialforces.png",
+      "image": "ui-png/ui_console_menubutton_pressed_specialforces.png",
+      "role": "menubutton_pressed",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_specialforces.png",
+      "sha256": "1b28c438a23a7cd3968de0a6f4c219316abe5a549d996ee9b1fdc9ecdb4436aa",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_pressed_tyrador.png",
+      "image": "ui-png/ui_console_menubutton_pressed_tyrador.png",
+      "role": "menubutton_pressed",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_pressed_tyrador.png",
+      "sha256": "c3cfbe089bceca97f157f5082969338f96b2b1fb12ee3a88828211147f7d8990",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_menubutton_selected_arcadecabinetpurple.png",
+      "role": "menubutton_selected",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_arcadecabinetpurple.png",
+      "sha256": "55e84a57e4803a1f2b8df7af20b699e18b3f7a1582877def4a552a71c71e70b2",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_cerberus.png",
+      "image": "ui-png/ui_console_menubutton_selected_cerberus.png",
+      "role": "menubutton_selected",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_cerberus.png",
+      "sha256": "4251bdc36927675ea5b47e0d437c8ec4c6983b4bcdb953736593b8f4922363a5",
       "width": 40,
       "height": 40
     },
@@ -683,12 +2163,72 @@
       "height": 40
     },
     {
+      "file": "ui_console_menubutton_selected_evolved.png",
+      "image": "ui-png/ui_console_menubutton_selected_evolved.png",
+      "role": "menubutton_selected",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_evolved.png",
+      "sha256": "ebebde67ce8f0b8bdbfd5a249dce620b955cb197a908a92ff86ce73b0f34677c",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_forged.png",
+      "image": "ui-png/ui_console_menubutton_selected_forged.png",
+      "role": "menubutton_selected",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_forged.png",
+      "sha256": "afcd77f5bfc9305a59641acba55d5f30450a1f7fca0b0a0bca5c6f8cb3ae76b0",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_ihanrii.png",
+      "image": "ui-png/ui_console_menubutton_selected_ihanrii.png",
+      "role": "menubutton_selected",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_ihanrii.png",
+      "sha256": "95893b8f1e71f8074b37e0e270b39b7396d822898894cb0f5abe74e044dbd329",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_machined.png",
+      "image": "ui-png/ui_console_menubutton_selected_machined.png",
+      "role": "menubutton_selected",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_machined.png",
+      "sha256": "f41054f4e6ee9ee64c2f6f32abd0386bc23512ae6546e0d72067e8c7cef4a597",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_mirasmarauders.png",
+      "image": "ui-png/ui_console_menubutton_selected_mirasmarauders.png",
+      "role": "menubutton_selected",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_mirasmarauders.png",
+      "sha256": "c78af2c0815f8646e1022aae869b546693c4274fab7fdeb35f4bd7c45c445c50",
+      "width": 40,
+      "height": 40
+    },
+    {
       "file": "ui_console_menubutton_selected_nerazim.png",
       "image": "ui-png/ui_console_menubutton_selected_nerazim.png",
       "role": "menubutton_selected",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_nerazim.png",
       "sha256": "2896814af770e9b62d9893fc9b1b13d9837a14feec85bf03cc3d072af3ac8644",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_primal.png",
+      "image": "ui-png/ui_console_menubutton_selected_primal.png",
+      "role": "menubutton_selected",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_primal.png",
+      "sha256": "21495df1b4629caeacf907f1db3e0e0676ca2f3650dbbea36267df3829a21ace",
       "width": 40,
       "height": 40
     },
@@ -701,6 +2241,56 @@
       "sha256": "2870917e62ea04e6a50a6879f2d2946eee93d03b99470d4ff9f538bff33ef6d5",
       "width": 40,
       "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_simulant.png",
+      "image": "ui-png/ui_console_menubutton_selected_simulant.png",
+      "role": "menubutton_selected",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_simulant.png",
+      "sha256": "d7a545925b59c245bf59ffaf67edf5b3eef6eef533f04eb152cd8b9d02954572",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_specialforces.png",
+      "image": "ui-png/ui_console_menubutton_selected_specialforces.png",
+      "role": "menubutton_selected",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_specialforces.png",
+      "sha256": "c4a4c94c48a346e22493356ced806852c3ccd5eaf0fdac61aa505304806c0d2c",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_menubutton_selected_tyrador.png",
+      "image": "ui-png/ui_console_menubutton_selected_tyrador.png",
+      "role": "menubutton_selected",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_menubutton_selected_tyrador.png",
+      "sha256": "713333111f3242ce6bc29c0cc5f8df48dd21c565751b79f1f6b66b798889d1be",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_arcadecabinetpurple.png",
+      "role": "minimapbutton_hover",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_arcadecabinetpurple.png",
+      "sha256": "52d41591807d17d9880309843f8545c21bd5c4aec0355cab66fb03891345a98e",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_cerberus.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_cerberus.png",
+      "role": "minimapbutton_hover",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_cerberus.png",
+      "sha256": "0c3dae544aadb15b3aae11601024836fd820ada7d357af6d2cf50af787c02ad9",
+      "width": 42,
+      "height": 42
     },
     {
       "file": "ui_console_minimapbutton_hover_defaultprotoss.png",
@@ -733,6 +2323,56 @@
       "height": 42
     },
     {
+      "file": "ui_console_minimapbutton_hover_evolved.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_evolved.png",
+      "role": "minimapbutton_hover",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_evolved.png",
+      "sha256": "9ee07a90fe0fc0ff58bf8badc04d2fa50696da4070f6c80713675c5e4fc6c688",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_forged.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_forged.png",
+      "role": "minimapbutton_hover",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_forged.png",
+      "sha256": "41b7a970a42a33f6a7d2e341a910fb73ba4e94011aeaa974bbcd41a10e813bb3",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_ihanrii.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_ihanrii.png",
+      "role": "minimapbutton_hover",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_ihanrii.png",
+      "sha256": "7e17e65f7d2e38a80a7fa6e0e55fd0bc8c644907e99d3aa3cf5dad458d9a8de1",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_machined.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_machined.png",
+      "role": "minimapbutton_hover",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_machined.png",
+      "sha256": "4657339fae7abe8526510a42a9693241dda61e40354c8b5c742f327edcf469e6",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_mirasmarauders.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_mirasmarauders.png",
+      "role": "minimapbutton_hover",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_mirasmarauders.png",
+      "sha256": "d2e8d79e923ecf89a6be59c85a3ef5164cb99d549b0ef0b4b3ccf0a67df5e9d8",
+      "width": 42,
+      "height": 42
+    },
+    {
       "file": "ui_console_minimapbutton_hover_nerazim.png",
       "image": "ui-png/ui_console_minimapbutton_hover_nerazim.png",
       "role": "minimapbutton_hover",
@@ -743,12 +2383,72 @@
       "height": 42
     },
     {
+      "file": "ui_console_minimapbutton_hover_primal.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_primal.png",
+      "role": "minimapbutton_hover",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_primal.png",
+      "sha256": "f3b774434323bcd521f73f239390130dbdfaff62680276914530b50afbbdcbf1",
+      "width": 42,
+      "height": 42
+    },
+    {
       "file": "ui_console_minimapbutton_hover_purifier.png",
       "image": "ui-png/ui_console_minimapbutton_hover_purifier.png",
       "role": "minimapbutton_hover",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_purifier.png",
       "sha256": "c034fb18b2ab952d13ce6808d357d5f0d7c6f5a5e77d19d0f66474f5e0cd1d0b",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_simulant.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_simulant.png",
+      "role": "minimapbutton_hover",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_simulant.png",
+      "sha256": "e3e80d5de22e92d8755e40a2eb0a1a29c4e31f19045543aa07f5e19330e5af6e",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_specialforces.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_specialforces.png",
+      "role": "minimapbutton_hover",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_specialforces.png",
+      "sha256": "5875460cd57ec9dc39c039b6aa7b2600aab57005bbb77c3bd1f4d0fbe47eb580",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_hover_tyrador.png",
+      "image": "ui-png/ui_console_minimapbutton_hover_tyrador.png",
+      "role": "minimapbutton_hover",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_hover_tyrador.png",
+      "sha256": "69d2c9f8f7bb6599f263a1be790f5ebeb9d1de4410a8bc0c144b1c19aa9b0c54",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_arcadecabinetpurple.png",
+      "role": "minimapbutton_normal",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_arcadecabinetpurple.png",
+      "sha256": "52d41591807d17d9880309843f8545c21bd5c4aec0355cab66fb03891345a98e",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_cerberus.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_cerberus.png",
+      "role": "minimapbutton_normal",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_cerberus.png",
+      "sha256": "4b2f2b2f078611dca6110ff59b718c4aaeed8398644af9e5785849321ebcdb2e",
       "width": 42,
       "height": 42
     },
@@ -783,6 +2483,56 @@
       "height": 42
     },
     {
+      "file": "ui_console_minimapbutton_normal_evolved.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_evolved.png",
+      "role": "minimapbutton_normal",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_evolved.png",
+      "sha256": "5cc8c645c1ab0aa779f47dfd75cf0fa323890100ee5376866b5b15791ca8b107",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_forged.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_forged.png",
+      "role": "minimapbutton_normal",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_forged.png",
+      "sha256": "f444b3c38f07450873def5696fa79d5a1e7d64d7ecf3fff36cb89bb255f04c9f",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_ihanrii.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_ihanrii.png",
+      "role": "minimapbutton_normal",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_ihanrii.png",
+      "sha256": "68100a1277ad31030bfd3070dd70a6049cec5f7948ebc1ebc0aa452862d66012",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_machined.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_machined.png",
+      "role": "minimapbutton_normal",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_machined.png",
+      "sha256": "80905e285255b3cdd491104118b8cbc43be93c94edf36b29c3122b6deee6a50d",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_mirasmarauders.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_mirasmarauders.png",
+      "role": "minimapbutton_normal",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_mirasmarauders.png",
+      "sha256": "9128194d385ddfb51daaad8b61642c7b334f55ea0b2b0dbeaf8a28258a0877dc",
+      "width": 42,
+      "height": 42
+    },
+    {
       "file": "ui_console_minimapbutton_normal_nerazim.png",
       "image": "ui-png/ui_console_minimapbutton_normal_nerazim.png",
       "role": "minimapbutton_normal",
@@ -793,12 +2543,72 @@
       "height": 42
     },
     {
+      "file": "ui_console_minimapbutton_normal_primal.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_primal.png",
+      "role": "minimapbutton_normal",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_primal.png",
+      "sha256": "b4a7b83e045f517eafe96e9a7b89a823189663829f4b92a262b440edfb4e94a6",
+      "width": 42,
+      "height": 42
+    },
+    {
       "file": "ui_console_minimapbutton_normal_purifier.png",
       "image": "ui-png/ui_console_minimapbutton_normal_purifier.png",
       "role": "minimapbutton_normal",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_purifier.png",
       "sha256": "bb0fe37da86552ee870744a5515f47923b9d23006315bb0da4ec7d0178ea9da7",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_simulant.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_simulant.png",
+      "role": "minimapbutton_normal",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_simulant.png",
+      "sha256": "16be33b5bd6b5323d1416961def886cee2e9bb0e45781ef97e096c8ead054893",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_specialforces.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_specialforces.png",
+      "role": "minimapbutton_normal",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_specialforces.png",
+      "sha256": "f4a21809d76f03a8a67475597e5e0451266139efa8fb1ff576c2c7df1892462a",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_normal_tyrador.png",
+      "image": "ui-png/ui_console_minimapbutton_normal_tyrador.png",
+      "role": "minimapbutton_normal",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_normal_tyrador.png",
+      "sha256": "24a65bdec08edec6be42ccf4339e2080fbad5b0114b27b85f6e5b6163abc6fb8",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_arcadecabinetpurple.png",
+      "role": "minimapbutton_selected",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_arcadecabinetpurple.png",
+      "sha256": "52d41591807d17d9880309843f8545c21bd5c4aec0355cab66fb03891345a98e",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_cerberus.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_cerberus.png",
+      "role": "minimapbutton_selected",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_cerberus.png",
+      "sha256": "c53cdf6d947f8a458587db447346f37205e754ebfe575e503783ec4725814479",
       "width": 42,
       "height": 42
     },
@@ -833,12 +2643,72 @@
       "height": 42
     },
     {
+      "file": "ui_console_minimapbutton_selected_evolved.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_evolved.png",
+      "role": "minimapbutton_selected",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_evolved.png",
+      "sha256": "4112a8092c69dd82fe6dc419b591b51bf43e706cbdd54391472b36ac40fc4999",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_forged.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_forged.png",
+      "role": "minimapbutton_selected",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_forged.png",
+      "sha256": "59b80c0983136bc5045b749617b047b5a7cb90ccf5c216a0fcee115b308f16a6",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_ihanrii.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_ihanrii.png",
+      "role": "minimapbutton_selected",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_ihanrii.png",
+      "sha256": "164b1d178325fa329010eeed64d6a107d5a5eba4ca49516e3c74e4d103f63544",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_machined.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_machined.png",
+      "role": "minimapbutton_selected",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_machined.png",
+      "sha256": "5e6ea2e1222c18e274eab09ed797a54b695a30235b62e6ca7bdb391b0011a63f",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_mirasmarauders.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_mirasmarauders.png",
+      "role": "minimapbutton_selected",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_mirasmarauders.png",
+      "sha256": "d72c9ea1fcd4e0faacc1993045dbbe79a952769742c78efdcb2be5fbf2528061",
+      "width": 42,
+      "height": 42
+    },
+    {
       "file": "ui_console_minimapbutton_selected_nerazim.png",
       "image": "ui-png/ui_console_minimapbutton_selected_nerazim.png",
       "role": "minimapbutton_selected",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_nerazim.png",
       "sha256": "278dd2d2ff2099ba7277a9668f9f8e3cb0da181faac37286d1e6cb802f0e161d",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_primal.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_primal.png",
+      "role": "minimapbutton_selected",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_primal.png",
+      "sha256": "5364c37a7baf5cb3760ac3b5f860201ab90b778e8dbc16969701b471b1129eb1",
       "width": 42,
       "height": 42
     },
@@ -853,6 +2723,36 @@
       "height": 42
     },
     {
+      "file": "ui_console_minimapbutton_selected_simulant.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_simulant.png",
+      "role": "minimapbutton_selected",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_simulant.png",
+      "sha256": "03326c83d1080a3c6943facbd5fbdd641163c00f4a04b43fc887e586ccca58d3",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_specialforces.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_specialforces.png",
+      "role": "minimapbutton_selected",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_specialforces.png",
+      "sha256": "8e53dc36d4d72b0c5ee8e136ab2dd5b05049edb7b1979bc899eb4bddd32adea9",
+      "width": 42,
+      "height": 42
+    },
+    {
+      "file": "ui_console_minimapbutton_selected_tyrador.png",
+      "image": "ui-png/ui_console_minimapbutton_selected_tyrador.png",
+      "role": "minimapbutton_selected",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_minimapbutton_selected_tyrador.png",
+      "sha256": "e4209c94c351b5e91833c23e6c2fc0d83642dca530020ae7993b7f18ad80174c",
+      "width": 42,
+      "height": 42
+    },
+    {
       "file": "ui_console_panel_unitinfo_nerazim.png",
       "image": "ui-png/ui_console_panel_unitinfo_nerazim.png",
       "role": "unit-info panel rails",
@@ -861,6 +2761,26 @@
       "sha256": "2911fa461a2da6672b5cc51980fc7c1ed3dc1a6b1955527cea21a4fa60e8f96a",
       "width": 96,
       "height": 300
+    },
+    {
+      "file": "ui_console_timer_background_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_timer_background_arcadecabinetpurple.png",
+      "role": "timer_background",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_arcadecabinetpurple.png",
+      "sha256": "6104680b81bd07a6ed34f8e759d4ef5820d2d55e2ddcc3ff5513349d0b229060",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_cerberus.png",
+      "image": "ui-png/ui_console_timer_background_cerberus.png",
+      "role": "timer_background",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_cerberus.png",
+      "sha256": "a6dde4d9a570c486e60955445c144a42c230966ca9bbd21ffa3db5f45757dedc",
+      "width": 88,
+      "height": 88
     },
     {
       "file": "ui_console_timer_background_defaultprotoss.png",
@@ -893,12 +2813,72 @@
       "height": 88
     },
     {
+      "file": "ui_console_timer_background_evolved.png",
+      "image": "ui-png/ui_console_timer_background_evolved.png",
+      "role": "timer_background",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_evolved.png",
+      "sha256": "9afe55e9e5c941e60c7fe143ded03fc72fd01fb0950060e468f6a6a1d23e7fa5",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_forged.png",
+      "image": "ui-png/ui_console_timer_background_forged.png",
+      "role": "timer_background",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_forged.png",
+      "sha256": "77076c79c9dca6eb915032ca0d0b3f0c2d3b1db8dafc0f8176dbb835bd9b7f7b",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_ihanrii.png",
+      "image": "ui-png/ui_console_timer_background_ihanrii.png",
+      "role": "timer_background",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_ihanrii.png",
+      "sha256": "dbd3654036c00fd1b299aeba1f2afadcb3fc1b93197012c0bf00b72a6927e92e",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_machined.png",
+      "image": "ui-png/ui_console_timer_background_machined.png",
+      "role": "timer_background",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_machined.png",
+      "sha256": "5fa4d3d9dc687e6edee26f0d78246d84a19c9178db6efb227746816a62e0eb25",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_mirasmarauders.png",
+      "image": "ui-png/ui_console_timer_background_mirasmarauders.png",
+      "role": "timer_background",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_mirasmarauders.png",
+      "sha256": "b89d598d9ae63b152a510b63f1d5348d4007d4fb4d3fd6b5c23a2ca92eb65bbf",
+      "width": 88,
+      "height": 88
+    },
+    {
       "file": "ui_console_timer_background_nerazim.png",
       "image": "ui-png/ui_console_timer_background_nerazim.png",
       "role": "timer_background",
       "family": "nerazim",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_nerazim.png",
       "sha256": "f12d6cd07e83c77e7eee67ab9cdf34ddcccb2e2b30fd8375fa4ca197504a1a11",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_primal.png",
+      "image": "ui-png/ui_console_timer_background_primal.png",
+      "role": "timer_background",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_primal.png",
+      "sha256": "9afe55e9e5c941e60c7fe143ded03fc72fd01fb0950060e468f6a6a1d23e7fa5",
       "width": 88,
       "height": 88
     },
@@ -911,6 +2891,56 @@
       "sha256": "fdd05607764ec4296d4ae166379cea5a1da4b463c85f2943256afe0d6b7e2a82",
       "width": 88,
       "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_simulant.png",
+      "image": "ui-png/ui_console_timer_background_simulant.png",
+      "role": "timer_background",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_simulant.png",
+      "sha256": "ab77a4ad42efd4d5f5dc7d07327fefd66692a8475467629201e3611413d82ebe",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_specialforces.png",
+      "image": "ui-png/ui_console_timer_background_specialforces.png",
+      "role": "timer_background",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_specialforces.png",
+      "sha256": "1dea1c8cded00b921df5ff7e48f4f54ce4418d05a2c0c3ddcda8b700b292ca29",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_timer_background_tyrador.png",
+      "image": "ui-png/ui_console_timer_background_tyrador.png",
+      "role": "timer_background",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_timer_background_tyrador.png",
+      "sha256": "a3628388aef9441c8c99baf7e5fe461e86da1b8c5cafc6e17a939b7a72c34065",
+      "width": 88,
+      "height": 88
+    },
+    {
+      "file": "ui_console_tooltip_background_arcadecabinetpurple.png",
+      "image": "ui-png/ui_console_tooltip_background_arcadecabinetpurple.png",
+      "role": "tooltip_background",
+      "family": "arcadecabinetpurple",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_arcadecabinetpurple.png",
+      "sha256": "2344090518b72af0b0c9498973532f5bfe97273a34a029d656d8d46ccd0549c5",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_cerberus.png",
+      "image": "ui-png/ui_console_tooltip_background_cerberus.png",
+      "role": "tooltip_background",
+      "family": "cerberus",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_cerberus.png",
+      "sha256": "f9c4a78c3a69e50643fac9bf140ee55b8b138e9a78b8b111e3269c9184d258b7",
+      "width": 64,
+      "height": 128
     },
     {
       "file": "ui_console_tooltip_background_defaultprotoss.png",
@@ -943,6 +2973,56 @@
       "height": 128
     },
     {
+      "file": "ui_console_tooltip_background_evolved.png",
+      "image": "ui-png/ui_console_tooltip_background_evolved.png",
+      "role": "tooltip_background",
+      "family": "evolved",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_evolved.png",
+      "sha256": "3b491eb7456c513ce4fb2823d78419d0a5704116344756ab95ca960a5e7fc85c",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_forged.png",
+      "image": "ui-png/ui_console_tooltip_background_forged.png",
+      "role": "tooltip_background",
+      "family": "forged",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_forged.png",
+      "sha256": "2e228ae7955ff8c6a0776fbb813df5bc9fff0a7d4b729407f7614758d7113583",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_ihanrii.png",
+      "image": "ui-png/ui_console_tooltip_background_ihanrii.png",
+      "role": "tooltip_background",
+      "family": "ihanrii",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_ihanrii.png",
+      "sha256": "94c66f3dbe5dd87acb617feef8ebeae529c75d2ac5355ef71e8721c78c264c7a",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_machined.png",
+      "image": "ui-png/ui_console_tooltip_background_machined.png",
+      "role": "tooltip_background",
+      "family": "machined",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_machined.png",
+      "sha256": "0438977b23318e75e94575c3a898b72d05e9b148226da9d39bc2779ae8520774",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_mirasmarauders.png",
+      "image": "ui-png/ui_console_tooltip_background_mirasmarauders.png",
+      "role": "tooltip_background",
+      "family": "mirasmarauders",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_mirasmarauders.png",
+      "sha256": "8553c048120e8874559e4fc70f999f4b6d1543d8ac8a921f24845f4a579c99b7",
+      "width": 64,
+      "height": 128
+    },
+    {
       "file": "ui_console_tooltip_background_nerazim.png",
       "image": "ui-png/ui_console_tooltip_background_nerazim.png",
       "role": "tooltip_background",
@@ -953,12 +3033,52 @@
       "height": 128
     },
     {
+      "file": "ui_console_tooltip_background_primal.png",
+      "image": "ui-png/ui_console_tooltip_background_primal.png",
+      "role": "tooltip_background",
+      "family": "primal",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_primal.png",
+      "sha256": "d6b9210ee1aa9fed72865a3bac63f253ddb375017a315b6e6d30f94c3e21d421",
+      "width": 64,
+      "height": 128
+    },
+    {
       "file": "ui_console_tooltip_background_purifier.png",
       "image": "ui-png/ui_console_tooltip_background_purifier.png",
       "role": "tooltip_background",
       "family": "purifier",
       "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_purifier.png",
       "sha256": "a4d5f36ce4e9b866e14ccbea867602a78a3ec3b7f6ac8e54376e605993e22913",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_simulant.png",
+      "image": "ui-png/ui_console_tooltip_background_simulant.png",
+      "role": "tooltip_background",
+      "family": "simulant",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_simulant.png",
+      "sha256": "aed1397d75e8390c525ea2fdbbce27c048eb160aceac31bc43e05dd842c7772b",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_specialforces.png",
+      "image": "ui-png/ui_console_tooltip_background_specialforces.png",
+      "role": "tooltip_background",
+      "family": "specialforces",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_specialforces.png",
+      "sha256": "ddd759799bb0225e1adf3f647f473401e92fa976f8b1233724980543db69ce2e",
+      "width": 64,
+      "height": 128
+    },
+    {
+      "file": "ui_console_tooltip_background_tyrador.png",
+      "image": "ui-png/ui_console_tooltip_background_tyrador.png",
+      "role": "tooltip_background",
+      "family": "tyrador",
+      "url": "https://dist.sc2arcade.com/star-assets/ui-png/ui_console_tooltip_background_tyrador.png",
+      "sha256": "de107047c024edcc560b1846b7cf1143fa4cc51a1a66e00971ec58b0d8c302c7",
       "width": 64,
       "height": 128
     }

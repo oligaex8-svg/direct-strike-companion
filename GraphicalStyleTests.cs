@@ -24,8 +24,12 @@ internal static class GraphicalStyleTests
             var preserved = WithoutAppearance(store.Data);
             int signals = 0;
             store.Changed += () => signals++;
-            foreach (var style in new[] { "default", "protoss", "zerg", "terran", "fenix", "classic-terran", "classic-protoss", "classic-zerg" })
+            var styles = new[] { "default", "protoss", "nerazim", "alarak", "ihanrii", "terran", "nova", "mira", "machined", "tyrador", "zerg", "abathur", "dehaka", "cerberus", "mecha", "fenix", "arcade", "classic-terran", "classic-protoss", "classic-zerg" };
+            foreach (var style in styles)
             {
+                assert(EmbeddedAssets.HasAsset($"themes/previews/{style}.webp") &&
+                    EmbeddedAssets.Serve($"themes/previews/{style}.webp") is Microsoft.AspNetCore.Http.IContentTypeHttpResult { ContentType: "image/webp" },
+                    "theme interface preview is bundled and served as WebP for offline use: " + style);
                 var before = store.Snapshot();
                 var response = JsonSerializer.SerializeToElement(new GraphicalStyleRequest(style).Apply(store), Store.Json);
                 var snapshot = store.Snapshot();
@@ -37,7 +41,7 @@ internal static class GraphicalStyleTests
                 assert(restored.Data.Settings.GraphicalStyle == style && WithoutAppearance(restored.Data) == preserved,
                     "appearance survives reload and preserves all other library data: " + style);
             }
-            assert(signals == 8, "successful appearance saves notify live dashboard subscribers");
+            assert(signals == styles.Length, "successful appearance saves notify live dashboard subscribers");
 
             var durable = File.ReadAllText(Path.Combine(directory, "library.json"));
             var version = store.Snapshot().Version;
@@ -46,7 +50,7 @@ internal static class GraphicalStyleTests
                 bool rejected = false;
                 try { new GraphicalStyleRequest(style).Apply(store); } catch (ArgumentException) { rejected = true; }
                 assert(rejected && store.Data.Settings.GraphicalStyle == "classic-zerg" && store.Snapshot().Version == version
-                    && File.ReadAllText(Path.Combine(directory, "library.json")) == durable && signals == 8,
+                    && File.ReadAllText(Path.Combine(directory, "library.json")) == durable && signals == styles.Length,
                     "invalid appearance request leaves memory disk and published state unchanged: " + (style ?? "null"));
             }
 

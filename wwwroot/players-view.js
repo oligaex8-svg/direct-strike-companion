@@ -18,6 +18,7 @@ function renderPlayerDirectory(players){
  return `${pager('top')}<div class="table-wrap player-table-scroll" role="region" aria-label="Player directory" tabindex="0"><table class="player-table"><thead><tr><th scope="col">PLAYER</th><th scope="col">MOST PLAYED</th><th scope="col" title="Your win rate against">AGAINST</th><th scope="col" title="Your win rate together">TOGETHER</th><th scope="col">EU RATING</th><th scope="col">AMERICAS RATING</th><th scope="col">LIST</th></tr></thead><tbody>${rows}</tbody></table></div>${pager('bottom')}`;
 }
 
+const directorySnapshots=new WeakMap();
 function updatePlayerDirectory(content,players,filterKey){
  const previous=content.querySelector('.player-table-scroll'),active=document.activeElement;
  const oldPage=previous?.dataset.page,oldFilter=previous?.dataset.filterKey;
@@ -25,9 +26,12 @@ function updatePlayerDirectory(content,players,filterKey){
   :active.dataset.player?{player:active.dataset.player}:active.dataset.mark?{mark:active.dataset.mark}:active.dataset.rating?{rating:active.dataset.rating,region:active.dataset.region}
   :active.dataset.pageAction?{action:active.dataset.pageAction,location:active.closest('.directory-pager').dataset.directoryPager}:null:null;
  const scroll=previous?{top:previous.scrollTop,left:previous.scrollLeft}:null;
- content.innerHTML=renderPlayerDirectory(players);
+ const html=renderPlayerDirectory(players),snapshot=directorySnapshots.get(content);
+ if(snapshot?.html===html&&snapshot.filterKey===filterKey&&snapshot.table?.parentNode===content)return;
+ content.innerHTML=html;
  const table=content.querySelector('.player-table-scroll');if(!table)return;
  table.dataset.page=String(playerPage);table.dataset.filterKey=filterKey;
+ directorySnapshots.set(content,{html,filterKey,table});
  if(scroll){table.scrollLeft=scroll.left;if(oldPage===String(playerPage)&&oldFilter===filterKey)table.scrollTop=scroll.top;}
  if(focus){
   const replacement=focus.table?table:focus.action?content.querySelector(`[data-directory-pager="${focus.location}"] [data-page-action="${focus.action}"]:not(:disabled)`)

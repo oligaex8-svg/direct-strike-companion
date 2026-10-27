@@ -1,0 +1,22 @@
+[
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Doodads/StarShipAdun_Vent/StarShipAdun_Vent_00.m3",
+    "sha256": "7903341621d5e4bcbc71d97ff72d89f714ed74075c6b6610ae234be3d7172f33",
+    "file": "StarShipAdun_Vent_00.m3"
+  },
+  {
+    "archivePath": "mods/liberty.sc2mod/base.sc2assets/Assets/Doodads/StarShipAdun_Vent/StarShipAdun_Vent_01.m3",
+    "sha256": "29891437ac1c77774680133ed193b274eca04be10c82c56d8eda97ea7d012afb",
+    "file": "StarShipAdun_Vent_01.m3"
+  },
+  {
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/StoryModeSets/Terran/SM_HyperionMedLabCryotube_A/SM_HyperionMedLabCryotube_A.m3",
+    "sha256": "f4007c3defc7e9eb4725eedcf917cefe2de598106fce3adbf16c6e5d3385603e",
+    "file": "SM_HyperionMedLabCryotube_A.m3"
+  },
+  {
+    "archivePath": "campaigns/liberty.sc2campaign/base.sc2assets/Assets/StoryModeSets/Terran/SM_HyperionMedLabCryotube_B/SM_HyperionMedLabCryotube_B.m3",
+    "sha256": "cd7938ffef823c0823efc9deef3f69f4089971fc0cf3accb62cb74677fc18b11",
+    "file": "SM_HyperionMedLabCryotube_B.m3"
+  }
+]

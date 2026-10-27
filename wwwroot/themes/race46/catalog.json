@@ -1,0 +1,45 @@
+{
+  "version": 46,
+  "sources": [
+    {
+      "role": "native Terran structure lamp",
+      "path": "assets/themes/native45/textures/glow_red1.png",
+      "sha256": "175ce6777fd966098ba843780be4ae31d31af9852ed57b05728488167c5d61d0"
+    },
+    {
+      "role": "native Protoss warp-energy beam",
+      "path": "assets/themes/protoss42/textures/warpline4.png",
+      "sha256": "8745838a705a0fe6a69d5451026781b188d944263ab6ec081ae24c8d4cf6b439"
+    },
+    {
+      "role": "native Zerg creep tissue color and height",
+      "path": "assets/themes/native46/textures/creep.png",
+      "sha256": "665f0c105c7d4968631a2cfc41166cc80b6bf1d23c3421f2021bc3ca656a4359",
+      "heightSHA256": "def10dac12423ffaa3367dc25489688e81e9edf08853ee093a502fd145ead45e"
+    }
+  ],
+  "bio": {
+    "shell": {
+      "source": "/themes/zerg-console-shell-frame.png",
+      "sha256": "858aa8ec15f36d679fa93423a65e17c56c06fffbb8e39ee40f56a678b8922f32",
+      "layers": [
+        "/themes/race46/zerg-shell-0.png",
+        "/themes/race46/zerg-shell-1.png",
+        "/themes/race46/zerg-shell-2.png"
+      ],
+      "width": 540,
+      "height": 272
+    },
+    "well": {
+      "source": "/themes/motion37/well-zerg.png",
+      "sha256": "263ed29ea7ef137f3def2ae82378c5f90b05145bbb5ba7e83695901716ccd65d",
+      "layers": [
+        "/themes/race46/zerg-well-0.png",
+        "/themes/race46/zerg-well-1.png",
+        "/themes/race46/zerg-well-2.png"
+      ],
+      "width": 1600,
+      "height": 1000
+    }
+  }
+}

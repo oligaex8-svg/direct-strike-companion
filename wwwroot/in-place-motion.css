@@ -1,0 +1,23 @@
+/* Motion belongs to existing scenery and projection surfaces, never data slots. */
+:root .inplace-surface,:root .inplace-object{position:absolute;display:block;box-sizing:border-box;margin:0;padding:0;border:0;pointer-events:none!important;user-select:none;overflow:hidden;contain:paint}
+:root .inplace-surface{inset:0;z-index:-1}
+:root .inplace-surface>svg,:root .inplace-object>svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
+:root[data-graphical-style=fenix] .page-head:has(>.inplace-surface){position:relative!important;isolation:isolate}
+:root .inplace-object{z-index:0;opacity:var(--native-object-opacity,.64)}
+:root .inplace-object[hidden],:root .inplace-surface[hidden]{display:none!important}
+:root .inplace-sigil{position:absolute;left:50%;top:8px;width:100px;height:129px;margin-left:-50px;transform-origin:50% 85%;filter:drop-shadow(0 0 7px #ffc56742)}
+:root .inplace-sigil>img,:root .inplace-sigil>i{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+:root .inplace-sigil>i{mask:url('/themes/fenix-purifier-sigil.png') center/100% 100% no-repeat;background:radial-gradient(ellipse at 50% 54%,#fff1bfba,transparent 27%),radial-gradient(ellipse at 50% 43%,#fdb64180,transparent 55%);mix-blend-mode:screen}
+:root[data-graphical-style=fenix] .sidebar[data-inplace-object=fenix]::after{visibility:hidden}
+:root[data-graphical-style=arcade] .sidebar[data-inplace-object=arcade]::after{background:var(--identity-field) right center/auto 230px no-repeat!important}
+:root .inplace-joystick-arm{position:absolute;inset:0;transform-origin:50% calc(100% - 90px)}
+:root .inplace-joystick-arm>img,:root .inplace-joystick-base{position:absolute;left:50%;object-fit:contain;pointer-events:none}
+:root .inplace-joystick-ball{width:58px;height:58px;margin-left:-29px;bottom:136px}
+:root .inplace-joystick-stick{width:6px;height:68px;margin-left:-3px;bottom:84px}
+:root .inplace-joystick-base{width:70px;height:70px;margin-left:-35px;bottom:60px}
+:root .appearance-effects-stage{background:var(--identity-field,none) right center/480px 240px no-repeat,linear-gradient(145deg,var(--shell-header,#142636),#080d13)}
+:root[data-graphical-style=fenix] .appearance-effects-stage{isolation:isolate;background:var(--purifier-matrix) right center/480px 240px repeat,linear-gradient(145deg,#202b26,#080d13)}
+:root .appearance-effects-stage .inplace-object{left:calc(65% - 72px)!important;top:0!important;right:auto!important;bottom:auto!important;width:144px!important;height:144px!important;--native-object-opacity:.85;transform:scale(.83);transform-origin:center top}
+@media(forced-colors:active){:root .inplace-surface,:root .inplace-object{display:none!important}:root .sidebar[data-inplace-object]::after{visibility:visible}}
+
+:root .appearance-effects-stage .inplace-sigil{width:82px;height:106px;margin-left:-41px;top:6px}

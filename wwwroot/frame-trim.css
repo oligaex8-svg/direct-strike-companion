@@ -1,0 +1,24 @@
+/* Full SC2 faction-panel armour. Paint changes only; original layout stays fixed.
+   Large native corner bands contain transparent wells, not solid boxed borders. */
+:root[data-native-console]{--game-frame-primary:120px;--game-frame-inset:15px}
+:root[data-native-console]:not([data-graphical-style=default]) .work-console{border-color:transparent;border-image:var(--game-frame) 320 / var(--game-frame-primary) / var(--game-frame-inset) stretch;background-clip:border-box}
+:root[data-native-console] .work-console:before{content:none}
+:root[data-native-console]:not([data-graphical-style=default]) .work-console>.page-head:after{content:none}
+:root[data-native-console] .sidebar nav{position:relative}
+:root[data-native-console] .sidebar nav:before{content:'';position:absolute;inset:-2px;pointer-events:none;border:1px solid transparent;border-image:var(--game-frame) 320 / 95px / 12px stretch}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-overview,.live-lobby .live-team-group){border-color:transparent;border-image:var(--game-frame) 320 / 95px / 8px stretch;background-clip:padding-box}
+:root[data-native-console]:not([data-graphical-style=default]) .table-wrap{border-color:transparent;border-image:var(--game-frame) 320 / 85px / 8px stretch}
+:root[data-native-console]:not([data-graphical-style=default]) :is(.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card){border-color:transparent;border-image:var(--native-info-frame) 32 / 10px / 2px round}
+:root[data-native-console]:not([data-graphical-style=default]) :is(dialog,dialog#player-dialog){border-color:transparent;border-image:var(--game-frame) 320 / 100px / 0 stretch}
+/* Short controls retain their own native control art; armour belongs to panels. */
+:root[data-native-console]:not([data-graphical-style=default]) .sidebar .sidebar-bottom{border-image:var(--game-frame) 320 / 80px / 5px stretch}
+@media(max-width:750px){
+ :root[data-native-console]{--game-frame-primary:95px;--game-frame-inset:9px}
+ :root[data-native-console] .sidebar nav:before{border-image-width:60px;border-image-outset:4px}
+ :root[data-native-console]:not([data-graphical-style=default]) :is(.profile-commanders,.profile-overview,.live-lobby .live-team-group){border-image-width:85px;border-image-outset:6px}
+ :root[data-native-console]:not([data-graphical-style=default]) .table-wrap{border-image-width:75px;border-image-outset:5px}
+}
+@media(forced-colors:active){
+ :root[data-native-console] .sidebar nav:before{display:none}
+ :root[data-native-console]:not([data-graphical-style=default]) :is(.work-console,.profile-commanders,.profile-overview,.live-team-group,.table-wrap,.pick-opponent,.sounds-assigned,.sounds-recordings,.combat-card,.mark-card,dialog,dialog#player-dialog,.sidebar .sidebar-bottom){border-image:none;border-color:CanvasText}
+}
