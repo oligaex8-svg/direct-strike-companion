@@ -114,7 +114,10 @@ try {
     if($saved.settings.language -ne 'ru' -or $saved.marks.'test-friend'.note -ne 'Keep this saved friend' -or (Get-Content (Join-Path $run 'data/preservation.txt') -Raw).Trim() -ne 'saved data remains intact'){throw 'Saved fixture data changed.'}
     $hash=(Get-FileHash $target -Algorithm SHA256).Hash
     if($hash -ne $ExpectedSHA256){throw 'Installed hash differs from verified release.'}
-    $report=[pscustomobject]@{Success=$true;OriginalRelease=$OriginalRelease.IsPresent;SourceVersion=$sourceVersion;ExecutableName=[IO.Path]::GetFileName($target);InstalledVersion=$status.currentVersion;SHA256=$hash;RestartedApi=$url;SavedSettingsAndFriendPreserved=$true;Run=$run;VerifiedAt=[DateTime]::UtcNow.ToString('o')}
+    if($SourceExecutable){
+        Run-Checked (Get-Command node).Source @((Join-Path $PSScriptRoot 'Capture-InstalledUpdate.cjs'),$url,$ExpectedVersion,(Join-Path $PSScriptRoot "installed-update-$ExpectedVersion.png"))
+    }
+    $report=[pscustomobject]@{Success=$true;FullApplication=$OriginalRelease.IsPresent;OriginalRelease=($OriginalRelease.IsPresent -and !$SourceExecutable);SourceVersion=$sourceVersion;SourceKind=$(if($SourceExecutable){'Provided local build'}elseif($OriginalRelease){'Public 1.1.7'}else{'Updater harness'});ExecutableName=[IO.Path]::GetFileName($target);InstalledVersion=$status.currentVersion;SHA256=$hash;RestartedApi=$url;SavedSettingsAndFriendPreserved=$true;Run=$run;VerifiedAt=[DateTime]::UtcNow.ToString('o')}
     $report|ConvertTo-Json|Set-Content (Join-Path $PSScriptRoot ('portable-update-result'+$(if($SourceExecutable){'-'+$ExpectedVersion}elseif($OriginalRelease){'-original'})+'.json'))
     $report|ConvertTo-Json
 } finally {

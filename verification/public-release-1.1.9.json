@@ -1,0 +1,15 @@
+{
+  "Success": true,
+  "Anonymous": true,
+  "Version": "1.1.9",
+  "Download": "https://github.com/oligaex8-svg/direct-strike-companion/releases/latest/download/DirectStrikeCompanion.exe",
+  "Assets": [
+    "DirectStrikeCompanion.exe",
+    "DirectStrikeCompanion-win-x64.exe"
+  ],
+  "Bytes": 443845145,
+  "SHA256": "55457f66772e9a414ba7d578569c62e6c28301b75e9ad9bcfb1a9016d7b7bbe9",
+  "ProductVersion": "1.1.9+e0677defde0a3aef634cd65f1c1017cb615d1319",
+  "VerifiedAt": "2026-10-27T15:38:52.6062999Z",
+  "Workflow": "https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/40532300175"
+}

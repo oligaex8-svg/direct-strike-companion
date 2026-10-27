@@ -1,0 +1,14 @@
+{
+  "Success": true,
+  "OriginalRelease": false,
+  "SourceVersion": "1.1.8",
+  "ExecutableName": "DirectStrikeCompanion (2).exe",
+  "InstalledVersion": "1.1.9",
+  "SHA256": "55457F66772E9A414BA7D578569C62E6C28301B75E9AD9BCFB1A9016D7B7BBE9",
+  "RestartedApi": "http://127.0.0.1:50817",
+  "SavedSettingsAndFriendPreserved": true,
+  "Run": "D:\\300 Development Folder\\Tools\\DirectStrikeCompanion\\Support\\Development\\verification\\portable-update-4ac22037ae6a4f678a6615afb8eb6f15",
+  "VerifiedAt": "2026-10-27T15:40:09.4444022Z",
+  "FullApplication": true,
+  "SourceKind": "Locally repaired full application, 1.1.8-local.updater.1"
+}
