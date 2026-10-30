@@ -6,6 +6,12 @@ The repository is currently private. Downloads and in-app updates require author
 
 A local Windows companion for StarCraft II **3v3 Commanders**. The launcher is a standalone Windows executable with the runtime, dashboard, commander portraits, and OCR script bundled inside. No separate .NET installation is needed.
 
+## Screenshots
+
+The profile below uses fictional demonstration data. [View the full screenshot gallery](assets/screenshots/README.md) for the live lobby, player lists, postgame summary and different themes.
+
+![My profile in the Default theme](assets/screenshots/default-profile.png)
+
 This installation lives at `D:/300 Development Folder/Tools/DirectStrikeCompanion`; source and build tools live in `Support/Development`. The former `C:/Users/Admin/Projects/DirectStrikeCompanion` path remains a compatibility junction.
 
 ## Smaller package and source update — 30 October 2026

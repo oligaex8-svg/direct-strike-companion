@@ -3,6 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {chromium}=require(require.resolve('playwright',{paths:['C:/Users/Admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules']}));
 const fixture=require('./LocalPreviewFixture.cjs');
+const gallery=process.argv.includes('--gallery');
 const root=path.resolve(__dirname,'..'),web=path.join(root,'wwwroot'),out=path.join(__dirname,'packaged-theme-output');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
@@ -21,12 +22,15 @@ async function run(){
  assert.equal(tests.success,true,'Run packaged --self-test --dashboard-only first');
  const manifest=tests.assets,styles=['default',...read(path.join(web,'native-console-catalog.json')).map(item=>item.id)];
  assert.equal(styles.length,20);assert.equal(new Set(styles).size,20);
- const sample=fixture('default','en'),errors=[],requests=[],verified=new Map();
- const report={success:false,buildSha256:build.SHA256,scope:'Packaged asset hashes, synthetic local data, 20 themes',themes:[],screenshots:[],errors};
+ const aliases={TKnight:'CommanderOne',Vanea:'NovaPilot',BlackJoker:'IronGuard',aumka:'Aster',Kthulhu:'StarForge',BlueMage:'VoidRunner',Expend:'DEMO',IPVGI:'DEMO'};
+ const sample=gallery?JSON.parse(JSON.stringify(fixture('default','en'),(_key,value)=>typeof value==='string'?(aliases[value]||value):value)):fixture('default','en');
+ if(gallery)sample.library.ratingChanges=Object.fromEntries(sample.library.matches.map(match=>[match.hash,match.players.map(player=>({playerId:player.id,status:'unavailable',detail:'Historical rating changes are not included in demonstration data'}))]));
+ const errors=[],requests=[],verified=new Map();
+ const report={success:false,buildSha256:build.SHA256,scope:gallery?'Packaged asset hashes, fictional gallery data, four featured themes':'Packaged asset hashes, synthetic local data, 20 themes',themes:[],screenshots:[],errors};
  fs.mkdirSync(out,{recursive:true});let browser;
  try{
   browser=await chromium.launch({channel:'msedge',headless:true,args:['--disable-gpu']});
-  const page=await browser.newPage({viewport:{width:1600,height:1000}});page.setDefaultTimeout(15000);
+  const page=await browser.newPage({viewport:{width:1600,height:1000},reducedMotion:gallery?'reduce':'no-preference'});page.setDefaultTimeout(15000);
   page.on('pageerror',error=>errors.push('pageerror: '+error.message));
   page.on('console',message=>{if(message.type()==='error')errors.push('console: '+message.text());});
   page.on('requestfailed',request=>errors.push('request failed: '+request.url()+' '+request.failure()?.errorText));
@@ -55,7 +59,7 @@ async function run(){
   await page.waitForFunction(()=>!!state?.library);await page.evaluate(()=>document.fonts.ready);
   await page.bringToFront();await page.evaluate(()=>window.dispatchEvent(new Event('focus')));
   let baseline;
-  for(const id of styles){
+  for(const id of (gallery?[]:styles)){
    sample.library.settings.graphicalStyle=id;
    await page.evaluate(async id=>{state.library.settings.graphicalStyle=id;applyGraphicalStyle(id);scrollTo(0,0);await document.fonts.ready;await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);},id);
    assert.equal(await page.locator('html').getAttribute('data-graphical-style'),id);
@@ -77,11 +81,37 @@ async function run(){
    await page.locator('#settings-dialog').evaluate(el=>el.close());
    report.themes.push({id,geometry:current,effectsPreview:id==='default'?'disabled':'clicked'});
   }
+  if(gallery){
+   const galleryOut=path.join(root,'assets','screenshots');fs.mkdirSync(galleryOut,{recursive:true});
+   report.gallery=[];
+   const shots=[
+    {file:'default-profile.png',theme:'default',view:'profile'},
+    {file:'fenix-lobby.png',theme:'fenix',view:'lobby'},
+    {file:'terran-players.png',theme:'terran',view:'players'},
+    {file:'zerg-players.png',theme:'zerg',view:'players'},
+    {file:'default-postgame.png',theme:'default',view:'matches',dialog:'match'}
+   ];
+   for(const shot of shots){
+    await page.emulateMedia({reducedMotion:shot.theme==='terran'?'no-preference':'reduce'});
+    await page.evaluate(()=>document.querySelectorAll('dialog[open]').forEach(el=>el.close()));
+    sample.library.settings.graphicalStyle=shot.theme;
+    await page.evaluate(theme=>{state.library.settings.graphicalStyle=theme;applyGraphicalStyle(theme);},shot.theme);
+    await page.locator('nav .nav[data-view="'+shot.view+'"]').click();
+    if(shot.dialog==='match')await page.evaluate(hash=>showMatch(hash),sample.library.matches[0].hash);
+    await page.evaluate(async()=>{scrollTo(0,0);await document.fonts.ready;await Promise.race([Promise.all([...document.images].filter(img=>{const r=img.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;}).map(img=>img.decode().catch(()=>{}))),new Promise(resolve=>setTimeout(resolve,5000))]);await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);});
+    await page.waitForLoadState('networkidle');
+    const body=await page.locator('body').innerText();
+    for(const name of Object.keys(aliases))assert.ok(!body.includes(name),'Gallery contains only demonstration names: '+name);
+    assert.deepEqual(await page.locator('img').evaluateAll(images=>images.filter(img=>{const r=img.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth&&(!img.complete||img.naturalWidth===0);}).map(img=>({src:img.getAttribute('src'),loading:img.loading}))),[],'Visible gallery images load');
+    await page.screenshot({path:path.join(galleryOut,shot.file),animations:'disabled'});
+    report.gallery.push(shot);
+   }
+  }
   await page.waitForLoadState('networkidle');
   assert.deepEqual(errors,[],'No browser, network or packaged asset errors');
   report.success=true;report.verifiedAssets=verified.size;report.assetRequests=requests.length;
  }catch(error){report.error=error.stack;throw error;}
  finally{if(browser)await browser.close();fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');}
- console.log(JSON.stringify({success:true,themes:report.themes.length,verifiedAssets:report.verifiedAssets,screenshots:report.screenshots.length}));
+ console.log(JSON.stringify({success:true,themes:report.themes.length,verifiedAssets:report.verifiedAssets,screenshots:report.screenshots.length,gallery:report.gallery?.length||0}));
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
