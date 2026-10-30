@@ -1,5 +1,8 @@
+param([string]$Version)
 $ErrorActionPreference='Stop'
 $taskRoot=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+if(!$Version){$Version=([xml](Get-Content (Join-Path $taskRoot 'DirectStrikeCompanion.csproj') -Raw)).Project.PropertyGroup.Version+'-local'}
+if($Version -notmatch '^\d+\.\d+\.\d+-[0-9A-Za-z.-]+$'){throw 'Local preview requires a prerelease version.'}
 $env:DOTNET_ROOT=[IO.Path]::GetFullPath((Join-Path $taskRoot '../BuildRuntime/dotnet'))
 $env:DOTNET_CLI_TELEMETRY_OPTOUT='1'
 $env:DOTNET_NOLOGO='1'
@@ -13,7 +16,7 @@ if(Get-Process -Name DirectStrikeCompanion -ErrorAction SilentlyContinue | Where
 }
 & $dotnet restore (Join-Path $taskRoot 'DirectStrikeCompanion.csproj') -r win-x64 --locked-mode -p:RestoreDisableParallel=true -m:1
 if($LASTEXITCODE -ne 0){throw 'Local restore failed.'}
-& $dotnet publish (Join-Path $taskRoot 'DirectStrikeCompanion.csproj') -c Release -r win-x64 --self-contained true --no-restore -o $output -m:1 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=embedded -p:Version=1.1.7-local.54 -p:UseSharedCompilation=false
+& $dotnet publish (Join-Path $taskRoot 'DirectStrikeCompanion.csproj') -c Release -r win-x64 --self-contained true --no-restore -o $output -m:1 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=embedded "-p:Version=$Version" -p:UseSharedCompilation=false
 if($LASTEXITCODE -ne 0){throw 'Local publish failed.'}
 $exe=Join-Path $output 'DirectStrikeCompanion.exe'
 [pscustomobject]@{Success=$true;Scope='Local unpublished build; installed EXE unchanged';Path=$exe;SHA256=(Get-FileHash $exe -Algorithm SHA256).Hash;Version=(Get-Item $exe).VersionInfo.ProductVersion}|ConvertTo-Json|Set-Content (Join-Path $PSScriptRoot 'native-local-build.json')

@@ -5,11 +5,11 @@ using s2protocol.NET.Models;
 
 namespace DirectStrikeCompanion;
 
-public sealed record CombatStats(Dictionary<string, double?> Values, int? LastSampleLoop = null, int UnresolvedDeaths = 0, ReplayImpactDetail? Impact = null);
+public sealed record CombatStats(Dictionary<string, double?> Values, int? LastSampleLoop = null, int UnresolvedDeaths = 0, ReplayImpactDetail? Impact = null, int? ScorePlayerId = null);
 
 public static class CombatStatsExtractor
 {
-    public const int CurrentVersion = 2;
+    public const int CurrentVersion = 6;
     // Pinned s2protocol.NET 0.9.6: declared integer properties are the raw stat payload;
     // inherited PlayerId/Gameloop/EventId/Bits/EventType are deliberately excluded.
     // FoodMade/FoodUsed retain protocol fixed-point units (4096 = one supply).
@@ -19,7 +19,8 @@ public static class CombatStatsExtractor
     private const double LoopsPerSecond = 22.4;
     internal enum UnitEventKind { Born, Init, OwnerChange, TypeChange, Died }
     internal readonly record struct UnitEvent(int Loop, int Index, int Recycle, UnitEventKind Kind, int Owner = 0, int? Killer = null,
-        string? UnitType = null, int? KillerIndex = null, int? KillerRecycle = null);
+        string? UnitType = null, int? KillerIndex = null, int? KillerRecycle = null,
+        int? CreatorIndex = null, int? CreatorRecycle = null, int? Controller = null);
     internal readonly record struct ActualPlayer(string Id, int Team);
     internal sealed class DeathCounts
     {
@@ -28,8 +29,39 @@ public static class CombatStatsExtractor
         internal int UnattributedDeaths;
         internal Dictionary<string, ImpactCounts> Units = new(StringComparer.Ordinal);
         internal Dictionary<string, ImpactCounts> Opponents = new(StringComparer.Ordinal);
+        internal Dictionary<string, GroupCounts> Groups = new(StringComparer.Ordinal);
     }
     internal sealed class ImpactCounts { internal int Kills; internal int Losses; }
+    internal sealed class GroupCounts
+    {
+        internal int DirectKills, SummonKills, DirectLosses, SummonLosses, SummonsProduced;
+        internal HashSet<string> Children = new(StringComparer.Ordinal);
+        internal BreakdownCounts? Breakdown;
+        internal int BreakdownNodeCount;
+        internal bool BreakdownTruncated;
+    }
+    internal sealed class BreakdownCounts(string name)
+    {
+        internal string Name = name;
+        internal int DirectKills, DirectLosses, SummonsProduced;
+        internal Dictionary<string, BreakdownCounts> Children = new(StringComparer.Ordinal);
+    }
+    private sealed class UnitLineage
+    {
+        internal int Owner;
+        internal string Name = "Unknown";
+        internal (int Index, int Recycle)? Parent;
+        internal bool OwnerChanged, InvalidCreator;
+    }
+    private static bool ExcludedCreator(string name) => name is "Unknown" or "SCV" or "Probe" or "Drone" or "MULE" ||
+        name.StartsWith("Worker", StringComparison.Ordinal) || name.StartsWith("SCV", StringComparison.Ordinal) ||
+        name.StartsWith("Dummy", StringComparison.Ordinal) || name.EndsWith("Dummy", StringComparison.Ordinal) ||
+        name.StartsWith("StagingAreaFootprint", StringComparison.Ordinal) ||
+        name.Contains("Placeholder", StringComparison.Ordinal) || name.Contains("Cocoon", StringComparison.Ordinal) ||
+        name.Contains("Egg", StringComparison.Ordinal) || name.Contains("Wreckage", StringComparison.Ordinal) ||
+        name.Contains("Construction", StringComparison.Ordinal) || name is "Larva" or "DroneBurrowed" or "DroneFull" ||
+        name is "DroneStetmann" or "DehakaDrone" or "TrooperMengsk" or "TrooperMengskImproved" or "TrooperMengskFlamethrower" or "TrooperMengskAA";
+
     internal sealed record DeathSummary(Dictionary<string, DeathCounts> Players, int UnresolvedDeaths);
 
     public static IReadOnlyDictionary<string, CombatStats> Extract(Sc2Replay replay, DirectStrikeReplay parsed)
@@ -70,7 +102,7 @@ public static class CombatStatsExtractor
             var impact = eligible && tracker != null && trackerId.HasValue
                 ? ReplayImpactExtractor.Extract(tracker.SPlayerStatsEvents.Where(s => s.PlayerId == trackerId.Value), player.Spawns, counts)
                 : null;
-            result.Add(id, new(values, sample?.Gameloop, deaths?.UnresolvedDeaths ?? 0, impact));
+            result.Add(id, new(values, sample?.Gameloop, deaths?.UnresolvedDeaths ?? 0, impact, trackerId));
         }
         return result;
     }
@@ -100,9 +132,9 @@ public static class CombatStatsExtractor
 
     private static IEnumerable<UnitEvent> UnitEvents(TrackerEvents tracker)
     {
-        foreach (var e in tracker.SUnitBornEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.Born, e.UpkeepPlayerId, UnitType: e.UnitTypeName);
-        foreach (var e in tracker.SUnitInitEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.Init, e.UpkeepPlayerId, UnitType: e.UnitTypeName);
-        foreach (var e in tracker.SUnitOwnerChangeEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.OwnerChange, e.UpkeepPlayerId);
+        foreach (var e in tracker.SUnitBornEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.Born, e.UpkeepPlayerId, UnitType: e.UnitTypeName, CreatorIndex: e.CreatorUnitTagIndex, CreatorRecycle: e.CreatorUnitTagRecycle, Controller: e.ControlPlayerId);
+        foreach (var e in tracker.SUnitInitEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.Init, e.UpkeepPlayerId, UnitType: e.UnitTypeName, Controller: e.ControlPlayerId);
+        foreach (var e in tracker.SUnitOwnerChangeEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.OwnerChange, e.UpkeepPlayerId, Controller: e.ControlPlayerId);
         foreach (var e in tracker.SUnitTypeChangeEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.TypeChange, UnitType: e.UnitTypeName);
         foreach (var e in tracker.SUnitDiedEvents) yield return new(e.Gameloop, e.UnitTagIndex, e.UnitTagRecycle, UnitEventKind.Died, Killer: e.KillerPlayerId,
             KillerIndex: e.KillerUnitTagIndex, KillerRecycle: e.KillerUnitTagRecycle);
@@ -115,9 +147,12 @@ public static class CombatStatsExtractor
     {
         var counts = actual.Values.Select(p => p.Id).Distinct(StringComparer.Ordinal).ToDictionary(id => id, _ => new DeathCounts(), StringComparer.Ordinal);
         var owners = new Dictionary<(int Index, int Recycle), int>();
+        var controllers = new Dictionary<(int Index, int Recycle), int>();
         var types = new Dictionary<(int Index, int Recycle), string>();
         var died = new HashSet<(int Index, int Recycle)>();
         int unresolved = 0;
+        var lineage = new Dictionary<(int Index, int Recycle), UnitLineage>();
+        var contributions = new List<(string Player, string Name, (int Index, int Recycle)? Tag, bool Kill)>();
         // The model separates event collections. At a tied loop establish births,
         // then ownership changes, then deaths; later-loop changes never affect deaths.
         foreach (var e in events.OrderBy(e => e.Loop).ThenBy(e => e.Kind == UnitEventKind.Died ? 3 : e.Kind == UnitEventKind.TypeChange ? 2 : e.Kind == UnitEventKind.OwnerChange ? 1 : 0))
@@ -127,6 +162,28 @@ public static class CombatStatsExtractor
             if (e.Kind != UnitEventKind.Died)
             {
                 if (died.Contains(tag)) continue;
+                if (e.Kind is UnitEventKind.Born or UnitEventKind.Init)
+                {
+                    if (!lineage.TryGetValue(tag, out var node)) lineage[tag] = node = new UnitLineage { Owner = e.Owner, Name = ReplayImpactExtractor.UnitName(e.UnitType) };
+                    else if (node.Owner != e.Owner) node.OwnerChanged = true;
+                    if (node.Name == "Unknown") node.Name = ReplayImpactExtractor.UnitName(e.UnitType);
+                    if (e.Kind == UnitEventKind.Born && e.CreatorIndex.HasValue && e.CreatorRecycle.HasValue)
+                    {
+                        var parentTag = (e.CreatorIndex.Value, e.CreatorRecycle.Value);
+                        if (parentTag != tag && lineage.TryGetValue(parentTag, out var parent) && parent.Owner == node.Owner && actual.ContainsKey(node.Owner))
+                        {
+                            if (node.Parent.HasValue && node.Parent.Value != parentTag) node.InvalidCreator = true;
+                            else node.Parent = parentTag;
+                        }
+                        else node.InvalidCreator = true;
+                    }
+                }
+                else if (e.Kind == UnitEventKind.OwnerChange && lineage.TryGetValue(tag, out var changed) && changed.Owner != e.Owner) changed.OwnerChanged = true;
+                if (e.Kind is UnitEventKind.Born or UnitEventKind.Init or UnitEventKind.OwnerChange)
+                {
+                    if (e.Controller.HasValue) controllers[tag] = e.Controller.Value;
+                    else controllers.Remove(tag);
+                }
                 if (e.Kind == UnitEventKind.OwnerChange) owners[tag] = e.Owner;
                 else if (e.Kind != UnitEventKind.TypeChange) owners.TryAdd(tag, e.Owner); // Init+Born of one tag is one unit.
                 if (e.Kind == UnitEventKind.TypeChange) types[tag] = ReplayImpactExtractor.UnitName(e.UnitType);
@@ -138,6 +195,8 @@ public static class CombatStatsExtractor
                 continue;
             }
             if (!died.Add(tag)) continue;
+            // Pickup removals are tracker deaths too, but not combat kills/losses.
+            if (types.GetValueOrDefault(tag) == "BiomassItem") continue;
             if (!owners.TryGetValue(tag, out int owner) || !actual.TryGetValue(owner, out var victim)) { unresolved++; continue; }
             if (!e.Killer.HasValue || !actual.TryGetValue(e.Killer.Value, out var killer)) { counts[victim.Id].UnattributedDeaths++; continue; }
             if (killer.Id == victim.Id) continue;
@@ -145,19 +204,112 @@ public static class CombatStatsExtractor
             if (killer.Team == victim.Team) continue;
             counts[killer.Id].Kills++;
             counts[victim.Id].CombatDeaths++;
-            // A killer player ID proves the last hit, but only the exact tag and
-            // ownership join proves which of that player's units made it.
+            // The death names the credited human and exact source tag. A controlled
+            // enemy can retain its original upkeep owner (e.g. a dominated Archon).
+            // Accept its recorded controller too; never use controller IDs to infer
+            // victim ownership, teams, a summoner, or the controlling ability.
             string killerType = "Unknown";
+            (int Index, int Recycle)? validKillerTag = null;
             if (e.KillerIndex.HasValue && e.KillerRecycle.HasValue)
             {
                 var killerTag = (e.KillerIndex.Value, e.KillerRecycle.Value);
-                if (owners.TryGetValue(killerTag, out int killerOwner) && killerOwner == e.Killer.Value)
+                if ((owners.TryGetValue(killerTag, out int killerOwner) && killerOwner == e.Killer.Value) ||
+                    (controllers.TryGetValue(killerTag, out int controller) && controller == e.Killer.Value))
+                {
                     killerType = types.GetValueOrDefault(killerTag, "Unknown");
+                    validKillerTag = killerTag;
+                }
             }
             Add(counts[killer.Id].Units, killerType, true);
             Add(counts[victim.Id].Units, types.GetValueOrDefault(tag, "Unknown"), false);
+            contributions.Add((killer.Id, killerType, validKillerTag, true));
+            contributions.Add((victim.Id, types.GetValueOrDefault(tag, "Unknown"), tag, false));
             Add(counts[killer.Id].Opponents, victim.Id, true);
             Add(counts[victim.Id].Opponents, killer.Id, false);
+        }
+        // Resolve stable same-owner creator chains. A dead creator remains in the
+        // lineage for on-death spawns; workers and staging units are excluded.
+        (string Name, bool Summon, (int Index, int Recycle)? Root, List<string> Path) Group((int Index, int Recycle)? tag, string player, string fallback)
+        {
+            if (!tag.HasValue || !lineage.TryGetValue(tag.Value, out var child) || child.OwnerChanged ||
+                !actual.TryGetValue(child.Owner, out var owner) || owner.Id != player) return (fallback, false, tag, [fallback]);
+            var seen = new HashSet<(int, int)> { tag.Value };
+            var current = child;
+            var rootTag = tag.Value;
+            var path = new List<string> { child.Name };
+            if (ExcludedCreator(child.Name)) return (fallback, false, tag, [fallback]);
+            bool linked = false;
+            while (true)
+            {
+                if (current.OwnerChanged || current.InvalidCreator) return (fallback, false, tag, [fallback]);
+                if (current.Parent is not { } parentTag) break;
+                if (!seen.Add(parentTag) || !lineage.TryGetValue(parentTag, out var parent) ||
+                    parent.OwnerChanged || parent.Owner != child.Owner) return (fallback, false, tag, [fallback]);
+                // A placed combat unit is a root, not a summon of its worker.
+                if (ExcludedCreator(parent.Name)) break;
+                current = parent;
+                rootTag = parentTag;
+                path.Add(parent.Name);
+                linked = true;
+            }
+            path.Reverse();
+            return linked ? (current.Name, true, rootTag, path) : (fallback, false, tag, [fallback]);
+        }
+        // Bound nested output; explicit Other leaves retain all contribution
+        // when the exact type path exceeds depth or node limits.
+        List<BreakdownCounts> Nodes(GroupCounts group, string rootName, List<string> path)
+        {
+            group.Breakdown ??= new BreakdownCounts(rootName);
+            if (group.BreakdownNodeCount == 0) group.BreakdownNodeCount = 1;
+            var nodes = new List<BreakdownCounts> { group.Breakdown };
+            var current = group.Breakdown;
+            for (int index = 1; index < path.Count; index++)
+            {
+                string name = path[index];
+                bool overflow = index >= 8 || (!current.Children.ContainsKey(name) && group.BreakdownNodeCount >= 128);
+                if (overflow) { name = "Other"; group.BreakdownTruncated = true; }
+                if (!current.Children.TryGetValue(name, out var next))
+                {
+                    next = new BreakdownCounts(name);
+                    current.Children[name] = next;
+                    group.BreakdownNodeCount++;
+                }
+                nodes.Add(next);
+                current = next;
+                if (overflow) break;
+            }
+            return nodes;
+        }
+        var familyRoots = new HashSet<(int Index, int Recycle)>();
+        foreach (var (tag, node) in lineage)
+        {
+            if (!actual.TryGetValue(node.Owner, out var owner)) continue;
+            var family = Group(tag, owner.Id, node.Name);
+            if (family.Summon && family.Root.HasValue) familyRoots.Add(family.Root.Value);
+        }
+        foreach (var item in contributions)
+        {
+            var group = Group(item.Tag, item.Player, item.Name);
+            if (!group.Summon && item.Tag.HasValue && familyRoots.Contains(item.Tag.Value) && lineage.TryGetValue(item.Tag.Value, out var root))
+                group = (root.Name, false, item.Tag, [root.Name]);
+            if (!counts[item.Player].Groups.TryGetValue(group.Name, out var value)) counts[item.Player].Groups[group.Name] = value = new();
+            if (item.Kill) { if (group.Summon) value.SummonKills++; else value.DirectKills++; }
+            else { if (group.Summon) value.SummonLosses++; else value.DirectLosses++; }
+            if (group.Summon && item.Name != group.Name) value.Children.Add(item.Name);
+            var node = Nodes(value, group.Name, group.Path)[^1];
+            if (item.Kill) node.DirectKills++; else node.DirectLosses++;
+        }
+        foreach (var (tag, node) in lineage)
+        {
+            if (!actual.TryGetValue(node.Owner, out var owner)) continue;
+            var group = Group(tag, owner.Id, node.Name);
+            if (!group.Summon) continue;
+            if (!counts[owner.Id].Groups.TryGetValue(group.Name, out var value)) counts[owner.Id].Groups[group.Name] = value = new();
+            value.SummonsProduced++;
+            if (node.Name != group.Name) value.Children.Add(node.Name);
+            var nodes = Nodes(value, group.Name, group.Path);
+            for (int index = 0; index < nodes.Count - 1; index++) nodes[index].SummonsProduced++;
+            if (nodes.Count < group.Path.Count) nodes[^1].SummonsProduced++;
         }
         return new(counts, unresolved);
     }

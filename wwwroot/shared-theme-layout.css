@@ -1914,3 +1914,24 @@ html:where([data-native-console])[lang=ru] .page-head h1{font-family:'Segoe UI',
 @media(forced-colors:active){:root:where([data-native-console]) dialog,:root:where([data-native-console]) dialog>.dialog-head .close{border-width:1px!important;border-style:solid!important}
 }
 :where(:root[data-native-console]) .profile-average-heading{display:none!important}
+
+/* Battle report overview uses the same compact geometry in every console skin. */
+:root[data-native-console] #match-dialog .match-player{padding:10px 12px!important;margin-bottom:8px!important}
+:root[data-native-console] #match-dialog .match-player-heading .commander-portrait{width:48px!important;height:48px!important}
+:root[data-native-console] #match-dialog .match-player-rating-line{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto!important;gap:6px 10px!important;margin-top:8px!important}
+:root[data-native-console] #match-dialog .match-player-rating-line>.replay-compact-change{grid-column:1/-1!important;display:flex!important;flex-direction:row!important;align-items:center!important;flex-wrap:wrap!important;gap:6px 14px!important;margin:0!important}
+:root[data-native-console] #match-dialog .match-player-stats{margin-top:8px!important;gap:8px!important;font-size:.7rem!important}
+:root[data-native-console] #match-dialog .match-primary-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+:root[data-native-console] #match-dialog .match-player-stats strong{margin-top:3px!important;font-size:.85rem!important}
+:root[data-native-console] #match-dialog .match-team{padding-top:6px!important}
+:root[data-native-console] #match-dialog .match-team>h3{margin:3px 0 8px!important}
+:root[data-native-console] #match-dialog .battle-report-button{font:inherit!important;font-size:.75rem!important;padding:7px 10px!important}
+:root[data-native-console] #match-dialog .match-guides .replay-impact-guide{margin:0!important;padding:0!important}
+@media(max-width:500px){:root[data-native-console] #match-dialog .match-player-rating-line{grid-template-columns:1fr 1fr!important}:root[data-native-console] #match-dialog .match-player-heading .replay-quick-lists{flex-basis:100%!important;margin-left:0!important}}
+
+/* Keep the expanded five-metric combat row compact across Default and themed cards. */
+@media (min-width:800px){
+ :root #match-dialog .match-player .match-primary-stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.8fr) minmax(0,1fr) minmax(0,1fr)!important;column-gap:8px!important}
+}
+
+#match-dialog .match-primary-stats>span{display:flex;flex-direction:column;justify-content:space-between}

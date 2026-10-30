@@ -1,0 +1,3 @@
+.unit-badge{display:inline-flex;align-items:center;gap:8px;min-width:0;vertical-align:middle}.unit-badge>span:last-child{min-width:0;overflow-wrap:anywhere}
+.unit-icon{position:relative;display:inline-grid;place-items:center;flex:none;width:24px;height:24px;overflow:hidden;border:1px solid var(--line);border-radius:4px;background:var(--raised)}
+.unit-icon-large{width:36px;height:36px}.unit-icon svg{width:70%;height:70%;fill:var(--muted);opacity:.75}.unit-icon img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;background:var(--raised)}

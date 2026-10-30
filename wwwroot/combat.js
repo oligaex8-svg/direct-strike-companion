@@ -21,6 +21,7 @@ function showMatch(hash){
  const ratingOpen=new Set(same?[...content.querySelectorAll('[data-replay-rating-details][open]')].map(node=>node.dataset.replayRatingDetails):[]);
  matchSelection=hash;const match=visibleMatches().find(m=>m.hash===hash);if(!match)return;
  $('match-title').textContent=date(match.time)+' · '+time(match.time);content.innerHTML=replayMatchDetails(match);
+ content.querySelectorAll('.match-player-rating-line [data-impact-match]').forEach(score=>{const button=document.createElement('button');button.type='button';button.className='battle-report-button';button.dataset.impactMatch=score.dataset.impactMatch;button.dataset.impactId=score.dataset.impactId;button.setAttribute('aria-haspopup','dialog');button.textContent='Battle report';const actions=document.createElement('div');actions.className='match-impact-actions';score.replaceWith(actions);actions.append(score,button);});
  if(periodsOpen&&content.querySelector('.middle-periods'))content.querySelector('.middle-periods').open=true;
  if(impactOpen&&content.querySelector('[data-replay-impact-guide]'))content.querySelector('[data-replay-impact-guide]').open=true;
  if(changesOpen&&content.querySelector('[data-replay-change-guide]'))content.querySelector('[data-replay-change-guide]').open=true;

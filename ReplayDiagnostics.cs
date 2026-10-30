@@ -53,6 +53,15 @@ internal static class ReplayDiagnostics
             static bool IsCollection(PropertyInfo property) => property.PropertyType != typeof(string) && typeof(IEnumerable).IsAssignableFrom(property.PropertyType);
             object Counts(object? events) => events?.GetType().GetProperties().Where(IsCollection).ToDictionary(p => p.Name, p => ((IEnumerable?)p.GetValue(events))?.Cast<object>().Count() ?? 0) ?? [];
             object EventSamples(object? events) => events?.GetType().GetProperties().Where(IsCollection).ToDictionary(p => p.Name, p => ((IEnumerable?)p.GetValue(events))?.Cast<object>().Take(2).Select(Scalars).ToList() ?? []) ?? [];
+            // Aggregate every decoded event, not just the first two records of
+            // BaseGameEvents, when investigating unsupported measurements.
+            object[] EventTypes(object? events) => events == null ? [] : events.GetType().GetProperties().Where(IsCollection)
+                .SelectMany(p => ((IEnumerable?)p.GetValue(events))?.Cast<object>() ?? [])
+                .GroupBy(e => e.GetType()).OrderBy(g => g.Key.Name)
+                .Select(g => (object)new { type = g.Key.Name, count = g.Count(),
+                    fields = g.Key.GetProperties().Where(p => p.CanRead && p.GetIndexParameters().Length == 0)
+                        .Select(p => new { name = p.Name, type = p.PropertyType.Name }),
+                    samples = g.Take(2).Select(Scalars) }).ToArray();
             File.WriteAllText(output, JsonSerializer.Serialize(new
             {
                 success = true,
@@ -66,6 +75,8 @@ internal static class ReplayDiagnostics
                 gameCounts = Counts(replay.GameEvents),
                 trackerSamples = EventSamples(tracker),
                 gameSamples = EventSamples(replay.GameEvents),
+                gameEventTypes = EventTypes(replay.GameEvents),
+                metadata = replay.Metadata,
                 unitTypes = tracker?.SUnitBornEvents.GroupBy(e => e.UnitTypeName).OrderByDescending(g => g.Count()).Take(20).Select(g => new { type = g.Key, count = g.Count() }),
                 ownerCounts = tracker?.SUnitBornEvents.GroupBy(e => new { e.ControlPlayerId, e.UpkeepPlayerId }).Select(g => new { g.Key, count = g.Count() }),
                 killerCounts = tracker?.SUnitDiedEvents.GroupBy(e => e.KillerPlayerId).Select(g => new { playerId = g.Key, count = g.Count() }),

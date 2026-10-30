@@ -8,7 +8,7 @@ function replayImpactScores(match){
  if(players.length!==6||players.some(player=>typeof player?.id!=='string'||!player.id.trim())||scores.size!==6)return scores;
  const teams=[players.filter(player=>player.team===1),players.filter(player=>player.team===2)];
  if(teams.some(team=>team.length!==3))return scores;
- const metrics=[{key:'MineralsKilledArmy',weight:0.75},{key:'UnitKills',weight:0.25}];
+ const metrics=[{key:'DamageDealt',weight:40},{key:'DamageTaken',weight:20},{key:'MineralsKilledArmy',weight:30},{key:'UnitKills',weight:10}];
  for(const team of teams){
   const channels=metrics.map(metric=>{
    const values=team.map(player=>player.combat?.values?.[metric.key]);
@@ -24,7 +24,7 @@ function replayImpactScores(match){
   const status=usable.length?'ready':channels.every(channel=>channel.complete&&channel.total===0)?'no-combat':'missing';
   team.forEach((player,index)=>{
    const components=usable.map(channel=>({key:channel.key,weight:channel.weight/weight,share:(channel.values[index]/channel.scale)/channel.denominator*100,value:channel.values[index],total:channel.total}));
-   scores.set(player.id,{value:components.length?components.reduce((sum,component)=>sum+component.weight*component.share,0):null,status,components});
+   scores.set(player.id,{value:components.length?components.reduce((sum,component)=>sum+component.weight*component.share,0):null,status,components,partial:channels.some(channel=>!channel.complete)});
   });
  }
  return scores;

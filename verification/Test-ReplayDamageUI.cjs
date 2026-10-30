@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+let refreshed=0;
+const context=vm.createContext({esc:String,interfaceLocale:()=> 'en',document:{addEventListener(){},querySelectorAll(){return [];}},clearTimeout(){},setTimeout(){},refresh:async()=>{refreshed++;},api:async()=>({hash:'replay',busy:false,phase:'partial',completed:3})});
+vm.runInContext(fs.readFileSync('wwwroot/replay-damage.js','utf8'),context);
+const partial={hash:'replay',damage:{players:[{},{},{}]}},complete={hash:'replay',damage:{players:[{},{},{},{},{},{}]}};
+assert.match(context.replayDamageControls(partial),/3\/6 players measured/);
+assert.match(context.replayDamageControls(partial),/Continue measurement/);
+assert.match(context.replayDamageControls({hash:'replay'}),/Measure damage · SC2/);
+vm.runInContext("replayDamageState={hash:'replay',phase:'partial'}",context);
+assert.match(context.replayDamageControls(partial),/other team; its damage remains unavailable/);
+assert.match(context.replayDamageControls(complete),/Previously verified damage totals remain included/);
+context.interfaceLocale=()=> 'ru';assert.match(context.replayDamageControls(partial),/полностью измеренной команды/);
+vm.runInContext("replayDamageState={hash:'replay',busy:true}",context);
+context.pollReplayDamage().then(()=>{assert.equal(refreshed,1);console.log(JSON.stringify({success:true,checks:7,scope:'Measurement coverage, retry copy, localization and partial-result refresh'}));}).catch(error=>{console.error(error);process.exitCode=1;});

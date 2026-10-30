@@ -21,6 +21,10 @@
 !/verification/*.targets
 !/verification/*.py
 !/verification/PortableUpdateHarness.cs
+!/verification/AttributionProbe/
+/verification/AttributionProbe/*
+!/verification/AttributionProbe/Program.cs
+!/verification/AttributionProbe/AttributionProbe.csproj
 !/verification/fixtures/
 **/bin/
 **/obj/
@@ -34,6 +38,12 @@
 **/*.SC2Replay
 **/*token*.json
 **/*credentials*
+# Machine-specific replay experiments and owner-library capture helpers stay local.
+/verification/Capture-LiveDamage.*
+/verification/Probe-Replay*.py
+/verification/Probe-ReplayDamage.ps1
+/verification/Start-LocalDamageReview.ps1
+/verification/Start-NativeDamageProbe.ps1
 # Keep original-model extraction/render workspaces local. Ship runtime atlases
 # under wwwroot; retain provenance and authoring scripts in the source repo.
 /assets/themes/*/*

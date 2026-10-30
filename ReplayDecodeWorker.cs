@@ -56,6 +56,7 @@ internal sealed class ReplayDecodeWorker : IAsyncDisposable
     internal async Task<ReplayDecodeResult> DecodeAsync(ReplayDecodeRequest request, CancellationToken ct = default)
     {
         using var linked = CancellationTokenSource.CreateLinkedTokenSource(ct, lifetime.Token);
+        using var heavyLease = await ReplayHeavyWork.AcquireAsync(linked.Token).ConfigureAwait(false);
         await serial.WaitAsync(linked.Token).ConfigureAwait(false);
         try
         {

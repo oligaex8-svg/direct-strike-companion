@@ -44,7 +44,7 @@ check('A complete all-zero metric drops without penalizing the usable metric',()
  }
 });
 check('No combat differs from missing evidence and neither fabricates an equal share',()=>{
- const zero=game([0,0,0],[0,0,0]);for(const result of score(zero).values()){assert.equal(result.value,null);assert.equal(result.status,'no-combat');assert.equal(result.components.length,0);}
+ const zero=game([0,0,0],[0,0,0]);zero.players.forEach(p=>Object.assign(p.combat.values,{DamageDealt:0,DamageTaken:0}));for(const result of score(zero).values()){assert.equal(result.value,null);assert.equal(result.status,'no-combat');assert.equal(result.components.length,0);}
  for(const match of [game([null,null,null],[null,null,null]),game([0,0,0],[0,null,0]),game([-1,0,0],[0,0,0])]){
   for(const result of score(match).values()){assert.equal(result.value,null);assert.equal(result.status,'missing');assert.equal(result.components.length,0);}
  }
@@ -59,4 +59,13 @@ check('Frozen input is unchanged and outputs are fresh for each call',()=>{
  const match=freeze(game()),before=JSON.stringify(match),first=score(match);first.get('p0').components[0].weight=99;first.get('p0').value=-1;
  const second=score(match);assert.equal(JSON.stringify(match),before);close(second.get('p0').value,25);assert.equal(second.get('p0').components[0].weight,0.75);
 });
+check('Measured damage changes impact and all four shares normalize to100',()=>{
+ const m=game([100,100,100],[10,10,10]);m.players.forEach((p,i)=>Object.assign(p.combat.values,{DamageDealt:i%3===0?900:0,DamageTaken:i%3===1?900:0}));
+ const values=score(m);close(values.get('p0').value,40+40/3);close(values.get('p1').value,20+40/3);close(values.get('p2').value,40/3);assert.equal(values.get('p0').partial,false);
+ close([...values.values()].slice(0,3).reduce((sum,r)=>sum+r.value,0),100);
+});
+check('Partial teammate damage is excluded for everyone rather than assumed zero',()=>{
+ const m=game();m.players[0].combat.values.DamageDealt=10000;const before=score(game()),after=score(m);close(after.get('p0').value,before.get('p0').value);assert.ok(after.get('p0').partial);assert.ok(after.get('p0').components.every(c=>c.key!=='DamageDealt'));
+});
+check('Complete measured zero damage channels are not marked incomplete',()=>{const m=game();m.players.forEach(p=>Object.assign(p.combat.values,{DamageDealt:0,DamageTaken:0}));assert.equal(score(m).get('p0').partial,false);});
 console.log(JSON.stringify({passed:checks.length,checks},null,2));

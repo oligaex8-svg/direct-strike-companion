@@ -3,7 +3,7 @@ using System.Text.Json;
 namespace DirectStrikeCompanion;
 
 public sealed record ReplayPlayer(string Id, string Name, int Team, string Commander, string Result, double Apm, int Killed, int Lost, CombatStats? Combat = null, string? ClanTag = null);
-public sealed record Match(string Hash, string Path, string Title, string Mode, DateTime Time, double Seconds, int Winner, List<ReplayPlayer> Players, int StatsVersion = 0, MatchEconomy? Economy = null, int ClanVersion = 0);
+public sealed record Match(string Hash, string Path, string Title, string Mode, DateTime Time, double Seconds, int Winner, List<ReplayPlayer> Players, int StatsVersion = 0, MatchEconomy? Economy = null, int ClanVersion = 0, ReplayDamageEvidence? Damage = null);
 public enum ReplayImportResult { Ignored, Added, Refreshed, Duplicate }
 public sealed record LibrarySnapshot(string Version, JsonElement? Library);
 public sealed record Mark(string Id, string Name, string Note, DateTime Updated, string List = "blocked");
@@ -343,7 +343,8 @@ public sealed partial class Store
                 var player = refreshed == null ? p : p with { Apm = refreshed.Apm, Killed = refreshed.Killed, Lost = refreshed.Lost, Combat = refreshed.Combat };
                 return enrichClan ? player with { ClanTag = clans!.GetValueOrDefault(p.Id) ?? p.ClanTag } : player;
             }).ToList();
-            Data.Matches[index] = existing with { Players = players, StatsVersion = enrichCombat ? incoming.StatsVersion : existing.StatsVersion, Path = enrichCombat || enrichEconomy ? incoming.Path : existing.Path, Economy = enrichEconomy ? incoming.Economy : existing.Economy, ClanVersion = enrichClan ? incoming.ClanVersion : existing.ClanVersion };
+            Data.Matches[index] = existing with { Players = players, StatsVersion = enrichCombat ? incoming.StatsVersion : existing.StatsVersion, Path = (enrichCombat || enrichEconomy) && incoming.Hash == existing.Hash ? incoming.Path : existing.Path, Economy = enrichEconomy ? incoming.Economy : existing.Economy, ClanVersion = enrichClan ? incoming.ClanVersion : existing.ClanVersion };
+            if (existing.Damage != null) Data.Matches[index] = WithReplayDamage(Data.Matches[index], existing.Damage);
             AdvanceVersion();
             return ReplayImportResult.Refreshed;
         }

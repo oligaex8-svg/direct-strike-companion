@@ -6,16 +6,25 @@ namespace DirectStrikeCompanion;
 
 public sealed record ReplayImpactDetail(int Version, List<ReplayImpactSample> Samples, List<ReplayImpactWave> Waves,
     List<ReplayImpactUnit> Units, List<ReplayImpactOpponent> Opponents,
-    bool SamplesTruncated = false, bool WavesTruncated = false, bool UnitsTruncated = false);
+    bool SamplesTruncated = false, bool WavesTruncated = false, bool UnitsTruncated = false,
+    List<ReplayImpactUnitGroup>? UnitGroups = null);
 public sealed record ReplayImpactSample(double Seconds, double? ArmyKilled, double? ArmyLost, double? ArmyValue, double? IncomeRate);
 public sealed record ReplayImpactWave(double Seconds, List<ReplayImpactUnitCount> Units, double? ArmyValue);
 public sealed record ReplayImpactUnitCount(string Name, int Count);
-public sealed record ReplayImpactUnit(string Name, int Kills, int Losses);
+public sealed record ReplayImpactUnit(string Name, int Kills, int Losses,
+    double? DamageDealt = null, double? DamageTaken = null, double? ArmyValueKilled = null);
+public sealed record ReplayImpactUnitGroup(string Name, int Kills, int Losses, int DirectKills, int SummonKills,
+    int DirectLosses, int SummonLosses, int SummonsProduced, List<string> Children,
+    double? DamageDealt = null, double? DamageTaken = null, double? ArmyValueKilled = null,
+    ReplayImpactUnitNode? Breakdown = null, bool BreakdownTruncated = false);
+public sealed record ReplayImpactUnitNode(string Name, int Kills, int Losses, int DirectKills, int DirectLosses,
+    int SummonsProduced, List<ReplayImpactUnitNode> Children,
+    double? DamageDealt = null, double? DamageTaken = null, double? ArmyValueKilled = null);
 public sealed record ReplayImpactOpponent(string PlayerId, int Kills, int Losses);
 
 internal static class ReplayImpactExtractor
 {
-    internal const int CurrentVersion = 1;
+    internal const int CurrentVersion = 3;
     internal const int MaxSamples = 121, MaxWaves = 120, MaxUnits = 60, MaxWaveUnits = 40;
     private const double LoopsPerSecond = 22.4;
     private const string Other = "Other";
@@ -57,10 +66,40 @@ internal static class ReplayImpactExtractor
             kept.Add(new(Other, remaining.Sum(u => u.Kills), remaining.Sum(u => u.Losses)));
             units = kept;
         }
+        var groups = (deaths?.Groups ?? []).Select(pair => new ReplayImpactUnitGroup(pair.Key,
+            pair.Value.DirectKills + pair.Value.SummonKills, pair.Value.DirectLosses + pair.Value.SummonLosses,
+            pair.Value.DirectKills, pair.Value.SummonKills, pair.Value.DirectLosses, pair.Value.SummonLosses,
+            pair.Value.SummonsProduced, pair.Value.Children.OrderBy(name => name, StringComparer.Ordinal).ToList(),
+            Breakdown: pair.Value.Breakdown == null ? null : MakeBreakdown(pair.Value.Breakdown), BreakdownTruncated: pair.Value.BreakdownTruncated))
+            .OrderByDescending(group => (long)group.Kills + group.Losses).ThenBy(group => group.Name, StringComparer.Ordinal).ToList();
+        if (groups.Count > MaxUnits)
+        {
+            var kept = groups.Where(group => group.Name != Other).Take(MaxUnits - 1).ToList();
+            var names = kept.Select(group => group.Name).ToHashSet(StringComparer.Ordinal);
+            var rest = groups.Where(group => !names.Contains(group.Name)).ToList();
+            kept.Add(new(Other, rest.Sum(group => group.Kills), rest.Sum(group => group.Losses),
+                rest.Sum(group => group.DirectKills), rest.Sum(group => group.SummonKills),
+                rest.Sum(group => group.DirectLosses), rest.Sum(group => group.SummonLosses),
+                rest.Sum(group => group.SummonsProduced), rest.SelectMany(group => group.Children).Distinct(StringComparer.Ordinal).OrderBy(name => name, StringComparer.Ordinal).ToList(),
+                Breakdown: new ReplayImpactUnitNode(Other, rest.Sum(group => group.Kills), rest.Sum(group => group.Losses),
+                    rest.Sum(group => group.DirectKills), rest.Sum(group => group.DirectLosses), rest.Sum(group => group.SummonsProduced),
+                    [new ReplayImpactUnitNode(Other, rest.Sum(group => group.SummonKills), rest.Sum(group => group.SummonLosses),
+                        rest.Sum(group => group.SummonKills), rest.Sum(group => group.SummonLosses), 0, [])]),
+                BreakdownTruncated: true));
+            groups = kept;
+        }
         var opponents = (deaths?.Opponents ?? []).OrderBy(p => p.Key, StringComparer.Ordinal)
             .Select(p => new ReplayImpactOpponent(p.Key, p.Value.Kills, p.Value.Losses)).ToList();
         return new(CurrentVersion, Downsample(samples, MaxSamples), Downsample(waves, MaxWaves), units, opponents,
-            samples.Count > MaxSamples, wavesTruncated || waves.Count > MaxWaves, unitsTruncated);
+            samples.Count > MaxSamples, wavesTruncated || waves.Count > MaxWaves, unitsTruncated, groups);
+    }
+
+    private static ReplayImpactUnitNode MakeBreakdown(CombatStatsExtractor.BreakdownCounts source)
+    {
+        var children = source.Children.Values.OrderBy(child => child.Name, StringComparer.Ordinal).Select(MakeBreakdown).ToList();
+        return new(source.Name, source.DirectKills + children.Sum(child => child.Kills),
+            source.DirectLosses + children.Sum(child => child.Losses), source.DirectKills, source.DirectLosses,
+            source.SummonsProduced, children);
     }
 
     private static List<ReplayImpactUnitCount> CapComposition(List<ReplayImpactUnitCount> units)

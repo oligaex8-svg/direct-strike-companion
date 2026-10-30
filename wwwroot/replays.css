@@ -91,3 +91,26 @@
 }
 @media(max-width:500px){.match-player-rating-line{grid-template-columns:1fr 1fr}.match-player-rating-line>.replay-compact-change{flex-direction:column;align-items:flex-start;gap:2px}.match-player-heading .replay-quick-lists{flex-basis:100%;margin-left:0}.match-player{padding:12px}.match-player-stats{gap:10px}}
 @media(pointer:coarse){.replay-player .player-name{min-height:28px}}
+
+/* Match overview keeps the comparison visible; secondary evidence expands in place. */
+#match-dialog .match-context{margin:0 0 6px;font-size:.78rem}
+.match-guides{display:flex;flex-wrap:wrap;gap:0 20px;margin-bottom:10px}
+.match-guides .replay-impact-guide{margin:0;padding:0;font-size:.75rem}
+.match-guides summary{padding:6px 0;cursor:pointer}
+.match-guides details[open]{flex-basis:100%}
+#match-dialog .match-team-grid{gap:12px}
+#match-dialog .match-team{padding-top:6px;min-width:0}
+#match-dialog .match-team>h3{margin:3px 0 8px}
+#match-dialog .match-player{padding:10px 12px;margin-bottom:8px}
+#match-dialog .match-player-heading .commander-portrait{width:48px;height:48px;flex:none}
+#match-dialog .match-player-rating-line{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:6px 10px;margin-top:8px}
+.match-impact-actions{display:flex;align-items:center;gap:8px}
+#match-dialog .match-player-rating-line>.replay-compact-change{grid-column:1/-1;display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:6px 14px;margin:0}
+#match-dialog .match-player-stats{margin-top:8px;gap:8px;font-size:.7rem}
+#match-dialog .match-primary-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+#match-dialog .match-player-stats strong{margin-top:3px;font-size:.85rem}
+#match-dialog .replay-rating-evidence{margin-top:8px;padding-top:6px}
+#match-dialog .replay-rating-evidence>summary{font-size:.75rem;min-height:22px}
+#match-dialog .gas-timings{margin-top:8px}
+#match-dialog .replay-quick-lists button{padding:4px 7px}
+@media(max-width:500px){#match-dialog .match-player-rating-line{grid-template-columns:1fr 1fr}#match-dialog .match-impact-actions{grid-column:1/-1;justify-content:space-between}#match-dialog .match-player-heading .replay-quick-lists{flex-basis:100%;margin-left:0}}

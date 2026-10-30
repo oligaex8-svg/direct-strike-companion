@@ -92,15 +92,15 @@ function replayMiddlePreview(match){
  return `<div class="replay-middle-preview"><div class="replay-middle-labels"><span class="team-1"><span>Team 1</span> <strong>${replayClock(replayTeamSeconds(match,1))}</strong></span><span>Middle control</span><span class="team-2"><span>Team 2</span> <strong>${replayClock(replayTeamSeconds(match,2))}</strong></span></div>${timeline}<div class="replay-middle-axis"><span>0:00</span><span>${replayClock(match.seconds)}</span></div></div>`;
 }
 function replayImpactCell(player,scores,hash=''){
- const result=scores.get(player.id),ready=typeof result?.value==='number'&&Number.isFinite(result.value),partial=ready&&result.components.length===1;
+ const result=scores.get(player.id),ready=typeof result?.value==='number'&&Number.isFinite(result.value),partial=ready&&result.partial;
  const titles={missing:'Impact unavailable: incomplete combat data','no-combat':'Impact unavailable: no recorded combat',unsupported:'Impact requires a complete 3v3 roster'};
- const title=ready?partial?'Custom combat share; one usable metric':'Custom combat share within this team':titles[result?.status]||titles.missing;
+ const title=ready?partial?'Custom combat share; incomplete measurements':'Custom combat share within this team':titles[result?.status]||titles.missing;
  const value=ready?new Intl.NumberFormat(typeof interfaceLocale==='function'?interfaceLocale():'en-GB',{minimumFractionDigits:1,maximumFractionDigits:1}).format(result.value)+'%':'—';
  const content=`<span class="replay-impact-label">Impact</span><strong>${value}${partial?'<sup>*</sup>':''}</strong>`;
  return hash?`<button type="button" class="replay-impact-score" data-impact-match="${esc(hash)}" data-impact-id="${esc(player.id)}" aria-haspopup="dialog" title="View impact breakdown">${content}</button>`:`<span class="replay-impact-score" title="${esc(title)}">${content}</span>`;
 }
 function replayImpactGuide(){
- return `<details class="replay-impact-guide" data-replay-impact-guide><summary>Impact calculation</summary><p>Custom combat share within each team. Equal contributions are 33.3% each.</p><p><strong>75% army mineral value killed + 25% enemy kills.</strong></p><p>Each metric is divided by its team total, then the weighted shares are combined. Percentages are rounded to one decimal.</p><p>Only metrics recorded for all three teammates with a positive total are used. * marks one usable metric; — means no usable combat data. Support effects are not measured.</p></details>`;
+ return `<details class="replay-impact-guide" data-replay-impact-guide><summary>Impact calculation</summary><p>Custom combat share within each team. Equal contributions are 33.3% each.</p><p><strong>40% damage dealt + 20% damage received + 30% army mineral value killed + 10% enemy kills.</strong></p><p>Each metric is divided by its team total, then the weighted shares are combined. Percentages are rounded to one decimal.</p><p>Only metrics recorded for all three teammates with a positive total are used. Missing channels are excluded and remaining weights renormalized. Without damage: 75% army value + 25% kills. * marks incomplete measurements; — means no usable combat data. Losses, APM and shared control are not individual contribution.</p></details>`;
 }
 function replayTeams(match){
  const impact=typeof replayImpactScores==='function'?replayImpactScores(match):new Map();
@@ -148,13 +148,15 @@ function replayMiddleDetails(match){
 function replayMatchDetails(match){
  const impact=typeof replayImpactScores==='function'?replayImpactScores(match):new Map();
  const dsstatsChanges=replayDsstatsChanges(match);
- return `<p class="muted">3v3 Commanders · ${replayClock(match.seconds)} · Recorded teams and gas timings</p>${replayChangeGuide()}${replayImpactGuide()}<div class="match-team-grid">${[1,2].map(team=>`<section class="match-team team-${team}"><h3>${esc(replayTeamName(match,team))}${match.winner===team?' · won':''}</h3>${match.players.filter(player=>player.team===team).map(player=>{
+ return `<p class="muted match-context">3v3 Commanders · ${replayClock(match.seconds)} · Recorded teams and gas timings</p><div class="match-guides">${replayChangeGuide()}${replayImpactGuide()}</div>${typeof replayDamagePanel==='function'?replayDamagePanel(match):''}<div class="match-team-grid">${[1,2].map(team=>`<section class="match-team team-${team}"><h3>${esc(replayTeamName(match,team))}${match.winner===team?' · won':''}</h3>${match.players.filter(player=>player.team===team).map(player=>{
   const row={match,player},economy=replayPlayerEconomy(match,player.id);
   return `<article class="match-player"><div class="match-player-heading">${commanderPortrait(player.commander,'medium')}<div class="match-player-identity"><div class="replay-name-line"><button type="button" class="player-name" data-player="${esc(player.id)}">${esc(replayPlayerName(player))}</button></div><span class="meta">${esc(commanderName(player.commander))}${state.library.settings.selfIds.includes(player.id)?' · you':''}</span></div>${replayQuickListButtons(player)}</div>
    <div class="match-player-rating-line">${replayPlayerRating(player,true)}${replayImpactCell(player,impact,match.hash)}${replayChangeSummary(match,player.id,dsstatsChanges)}</div>
+   <div class="match-player-stats match-primary-stats">${[['Enemy kills','UnitKills'],['Combat losses','CombatDeaths'],['Army minerals killed','MineralsKilledArmy'],['Damage dealt','DamageDealt'],['Damage received','DamageTaken']].map(([label,key])=>`<span>${label}<strong>${formatCombat(combatValue(row,key),key)}</strong></span>`).join('')}</div>
+   <details class="replay-rating-evidence" data-replay-rating-details="${esc(player.id)}"><summary>More statistics</summary>
    <div class="gas-timings" aria-label="Gas timings for ${esc(replayPlayerName(player))}">${replayGasChips(match,player)}</div>
-   <div class="match-player-stats">${[['Enemy kills','UnitKills'],['Combat losses','CombatDeaths'],['Army minerals killed','MineralsKilledArmy'],['Scans','ScanCount']].map(([label,key])=>`<span>${label}<strong>${formatCombat(combatValue(row,key),key)}</strong></span>`).join('')}<span>Middle held while active<strong>${replayClock(economy?.middleHeldSeconds)}</strong></span><span>Middle bonus · estimated<strong>${economy?.estimatedMiddleMinerals===null||economy?.estimatedMiddleMinerals===undefined?'—':num(economy.estimatedMiddleMinerals)+' minerals'}</strong></span></div>
-   <details class="replay-rating-evidence" data-replay-rating-details="${esc(player.id)}"><summary>Rating details</summary>${replayPlayerRating(player)}<p class="meta">Published ratings use 3v3 Commanders in the player region. Estimated labels identify the site estimate. ~ marks an estimated change.</p></details>
+   <div class="match-player-stats"><span>Scans<strong>${formatCombat(combatValue(row,'ScanCount'),'ScanCount')}</strong></span><span>Middle held while active<strong>${replayClock(economy?.middleHeldSeconds)}</strong></span><span>Middle bonus · estimated<strong>${economy?.estimatedMiddleMinerals===null||economy?.estimatedMiddleMinerals===undefined?'—':num(economy.estimatedMiddleMinerals)+' minerals'}</strong></span></div>
+   ${replayPlayerRating(player)}<p class="meta">Published ratings use 3v3 Commanders in the player region. Estimated labels identify the site estimate. ~ marks an estimated change.</p></details>
   </article>`;
  }).join('')}</section>`).join('')}</div>${replayMiddleDetails(match)}${combatExplanation()}`;
 }

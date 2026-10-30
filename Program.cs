@@ -19,6 +19,7 @@ internal static class Program
         if (args.Contains("--probe-clans")) { ReplayDiagnostics.RunClans(args); return; }
         if (args.Contains("--probe-summary")) { SummaryPerformanceTests.RunProbe(args); return; }
         if (args.Contains("--probe-replay")) { ReplayDiagnostics.Run(args); return; }
+        if (args.Contains("--probe-damage")) { ReplayDamageDiagnostics.RunAsync(args).GetAwaiter().GetResult(); return; }
         if (args.Contains("--probe-impact")) { ImpactDiagnostics.RunAsync(args).GetAwaiter().GetResult(); return; }
         if (args.Contains("--probe-site-profiles")) { SiteProfileDiagnostics.Run(); return; }
         if (args.Contains("--probe-dsstats")) { DsstatsDiagnostics.RunAsync().GetAwaiter().GetResult(); return; }
@@ -82,6 +83,7 @@ internal sealed class CompanionContext : ApplicationContext
     private readonly Control dispatch = new();
     private readonly CancellationTokenSource shutdown = new();
     private readonly CompanionBackgroundTasks background;
+    private ReplayDamageService? replayDamage;
     private readonly WebApplication web;
     private readonly ReplayService replay;
     private readonly Store store;
@@ -134,6 +136,7 @@ internal sealed class CompanionContext : ApplicationContext
         store.RefreshOwnAccounts(); store.Save();
         desktopLanguage = store.Data.Settings.Language;
         replay = new ReplayService(store);
+        replayDamage = new ReplayDamageService(store);
         var rating = new RatingService();
         var siteSync = new SiteSyncService(store, rating);
         var dsstats = new DsstatsService(store);
@@ -237,6 +240,13 @@ internal sealed class CompanionContext : ApplicationContext
             lock (store.Gate) lobbyPreferences = LobbyPreferencesRequest.FromSettings(store.Data.Settings);
             return new { library = snapshot.Library, libraryVersion = snapshot.Version, replayStatus = replay.Status, busy = importProgress.Busy, importProgress, lobby = lobby.Snapshot(), lobbyPreferences, softwareUpdate = releaseUpdater.Snapshot(), siteSync = siteSync.Snapshot(), dataPath = store.DirectoryPath };
         });
+        web.MapGet("/api/replay-damage/status", () => replayDamage.Snapshot());
+        web.MapPost("/api/replay-damage/{hash}/start", (string hash) =>
+        {
+            try { return replayDamage.Start(hash, shutdown.Token) ? Results.Ok(replayDamage.Snapshot()) : Results.Conflict(new { error = "Another replay damage analysis is running." }); }
+            catch (InvalidOperationException ex) { return Results.BadRequest(new { error = ex.Message }); }
+        });
+        web.MapPost("/api/replay-damage/cancel", () => { replayDamage.Cancel(); return Results.Ok(replayDamage.Snapshot()); });
         web.MapGet("/api/replay-impact/{hash}", (string hash) => store.ImpactDetails(hash) is { } detail ? Results.Ok(detail) : Results.NotFound());
         web.MapPost("/api/lobby/watch", () => { lobby.Watch(); return Results.Ok(lobby.Snapshot()); });
         web.MapGet("/api/live-state", () =>
@@ -514,6 +524,8 @@ internal sealed class CompanionContext : ApplicationContext
         // Unwind the tray menu's click/dismissal before removing its native owner.
         await Task.Yield();
         var drain = background.StopAsync(TimeSpan.FromSeconds(5));
+        replayDamage?.Cancel();
+        if (replayDamage != null) await replayDamage.Completion;
         try
         {
             tray.Dispose();

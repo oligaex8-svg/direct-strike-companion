@@ -1,0 +1,11 @@
+{
+  "archiveSHA256": "2CF9848CB9D2D99F6429B759A5449052705769555927FDA7C78BD35B7C58AD03",
+  "actorCatalog": "Base.SC2Data/GameData/ActorData.xml",
+  "actorCatalogSHA256": "CF98AA24CDAC0CA7B14DF5C57C87693EB50B894233B5F215072B588C0FAC9CB5",
+  "units": {
+    "HonorGuard": "Assets/Textures/btn-unit-protoss-zealot-aiur.dds",
+    "HornerAssaultDrone": "Assets/Textures/btn-unit-collection-interceptor-junker.dds",
+    "TychusRattlesnakeDeployRevitalizer": "Assets/Textures/btn-building-terran-tychushealingward.dds",
+    "TychusSiriusWarhoundTurret": "Assets/Textures/btn-building-terran-tychuswarhoundturret.dds"
+  }
+}

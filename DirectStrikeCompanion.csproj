@@ -40,6 +40,16 @@
   <ItemGroup Condition="'$(PublishSingleFile)' == 'true'">
     <Content Update="wwwroot\**;LobbyOcr.ps1;$(OcrCaptureHelperPath)" CopyToPublishDirectory="Never" />
   </ItemGroup>
+  <PropertyGroup Condition="'$(PublishSingleFile)' == 'true'">
+    <!-- Lossless runtime-supported compression; keep the self-contained runtime. -->
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Superseded animation systems, not loaded by index.html or current themes.
+         Retain their authoring sources, but do not ship inactive art/code. -->
+    <Content Remove="wwwroot\themes\loops\**;wwwroot\themes\equipment\**;wwwroot\themes\vfx\**;wwwroot\theme-loop-catalog.js;wwwroot\theme-equipment-catalog.js;wwwroot\theme-equipment.js;wwwroot\theme-vfx.js;wwwroot\theme-equipment.css;wwwroot\theme-vfx.css" />
+    <EmbeddedResource Remove="wwwroot\themes\loops\**;wwwroot\themes\equipment\**;wwwroot\themes\vfx\**;wwwroot\theme-loop-catalog.js;wwwroot\theme-equipment-catalog.js;wwwroot\theme-equipment.js;wwwroot\theme-vfx.js;wwwroot\theme-equipment.css;wwwroot\theme-vfx.css" />
+  </ItemGroup>
   <Target Name="BuildOcrCaptureHelper" BeforeTargets="PrepareForBuild"
           Inputs="$(MSBuildProjectDirectory)\OcrRuntime\DscCapture.cs;$(MSBuildProjectFullPath)"
           Outputs="$(OcrCaptureHelperPath)">
