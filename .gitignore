@@ -4,6 +4,8 @@
 !/*.ps1
 !/*.csproj
 !/README.md
+!/CHANGELOG.md
+!/DEVELOPMENT.md
 !/DESIGN.md
 !/global.json
 !/packages.lock.json
