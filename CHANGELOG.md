@@ -6,7 +6,7 @@ Updates to Direct Strike Companion, explained for players.
 
 **4 November 2026**
 
-- **Smaller app:** the executable is about 38% smaller without reducing artwork quality or removing themes.
+- **Smaller app:** the executable is about 37% smaller than version 1.1.9 without reducing artwork quality or removing themes.
 - **Clearer battle reports:** larger unit icons and a more compact layout make results easier to compare.
 - **Summoned units are easier to follow:** when a replay identifies the connection, spawned units appear beneath their summoner with their own contribution bars. This includes recorded chains of units that spawn other units.
 - **Damage contributes to Impact:** measured damage dealt and received now count toward a player's team contribution when complete team measurements are available.

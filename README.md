@@ -29,7 +29,7 @@ You do not need Git or a separate .NET installation. If the desktop window canno
 
 **Version 1.1.10: a smaller app and better battle reports**
 
-- The app file is about **38% smaller**, with the same artwork quality and themes.
+- The app file is about **37% smaller than version 1.1.9**, with the same artwork quality and themes.
 - Battle reports have larger unit icons, a more compact layout and clearer groups for summoned units.
 - Measured player damage contributes to Impact when the required team measurements are available.
 

@@ -4,6 +4,14 @@ The former README is preserved below for implementation details, verification ev
 
 For current user instructions, see [README](README.md). For readable update notes, see [What's new](CHANGELOG.md). Future technical milestones belong in this document.
 
+## Current release — 1.1.10, 4 November 2026
+
+Status: published at the owner's request, with the repository public again. [Release 1.1.10](https://github.com/oligaex8-svg/direct-strike-companion/releases/tag/v1.1.10) promotes the optimized stats build. Both executable download names contain the same 280,851,934-byte file, 36.72% smaller than the published 1.1.9 executable. The earlier 37.8% figure compares local stats builds and remains historical. Release source is commit `6ce62328728a7f5460da4b85745074758ce47929`.
+
+Acceptance: [GitHub build and all five release suites](https://github.com/oligaex8-svg/direct-strike-companion/actions/runs/41858778826) passed. Anonymous release discovery, the canonical download, its SHA-256 and the legacy updater asset redirect were verified. An isolated full 1.1.9 application named `DirectStrikeCompanion (2).exe` upgraded and restarted as 1.1.10 with its test settings, saved friend and data sentinel intact. That full-app test retained existing optional update credentials; anonymous access was checked separately. Local evidence: `verification/public-release-1.1.10.json`, `public-updater-route-1.1.10.json`, `portable-update-result-1.1.10.json` and `installed-update-1.1.10.png`.
+
+Owners: `DirectStrikeCompanion.csproj`, `Publish-Release.ps1`, `.github/workflows/release.yml`, `README.md` and `CHANGELOG.md`. Release metadata now handles multiple project property groups; GitHub release descriptions use the matching user-facing changelog section. Repository content screening found no tracked executables, replay libraries or credential-pattern matches. Next bounded check: an independent user-PC update; no further release is authorized by this record. Unit/ability damage limitations remain documented.
+
 ---
 
 # Direct Strike Companion
