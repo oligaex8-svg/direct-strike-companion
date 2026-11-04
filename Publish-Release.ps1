@@ -8,12 +8,17 @@ $taskRepoText=gh repo view --json nameWithOwner,isPrivate
 if ($LASTEXITCODE -ne 0) { throw 'Sign in with gh auth login before publishing.' }
 $taskRepo=$taskRepoText | ConvertFrom-Json
 $taskProject=[xml](Get-Content -LiteralPath DirectStrikeCompanion.csproj -Raw)
-if ($taskProject.Project.PropertyGroup.UpdateRepository -ne $taskRepo.nameWithOwner) { throw 'The repository does not match the configured update channel.' }
-if ([version]$Version -lt [version]$taskProject.Project.PropertyGroup.Version) { throw 'Release versions cannot go backwards.' }
+$taskVersionNodes=$taskProject.SelectNodes('/Project/PropertyGroup/Version')
+$taskRepositoryNodes=$taskProject.SelectNodes('/Project/PropertyGroup/UpdateRepository')
+if ($taskVersionNodes.Count -ne 1 -or $taskRepositoryNodes.Count -ne 1) { throw 'The project must declare exactly one release version and update repository.' }
+$taskProjectVersion=$taskVersionNodes[0].InnerText
+$taskProjectRepository=$taskRepositoryNodes[0].InnerText
+if ($taskProjectRepository -ne $taskRepo.nameWithOwner) { throw 'The repository does not match the configured update channel.' }
+if ([version]$Version -lt [version]$taskProjectVersion) { throw 'Release versions cannot go backwards.' }
 $taskTag='v'+$Version
 git show-ref --verify --quiet ('refs/tags/'+$taskTag)
 if ($LASTEXITCODE -eq 0) { throw 'This version tag already exists. Publish a new version.' }
-if ($taskProject.Project.PropertyGroup.Version -ne $Version) {
+if ($taskProjectVersion -ne $Version) {
     $taskText=[IO.File]::ReadAllText((Join-Path $PSScriptRoot 'DirectStrikeCompanion.csproj'))
     $taskText=[regex]::Replace($taskText,'<Version>[^<]+</Version>',('<Version>'+$Version+'</Version>'))
     [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'DirectStrikeCompanion.csproj'),$taskText)
