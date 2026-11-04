@@ -4,7 +4,7 @@ A Windows companion for StarCraft II **Direct Strike · 3v3 Commanders**. Check 
 
 [![Download for Windows](assets/download-windows.svg)](https://github.com/oligaex8-svg/direct-strike-companion/releases/latest/download/DirectStrikeCompanion.exe)
 
-**Latest released version: 1.1.9.** The repository is currently private, so downloads and in-app updates require authorized GitHub access.
+**Latest released version: 1.1.10.** Downloads and in-app updates are public. You do not need a GitHub account or token.
 
 ## What you can do
 
@@ -27,13 +27,13 @@ You do not need Git or a separate .NET installation. If the desktop window canno
 
 ## What's new
 
-**In testing: a smaller app and better battle reports**
+**Version 1.1.10: a smaller app and better battle reports**
 
 - The app file is about **38% smaller**, with the same artwork quality and themes.
 - Battle reports have larger unit icons, a more compact layout and clearer groups for summoned units.
 - Measured player damage contributes to Impact when the required team measurements are available.
 
-These changes are in the development build. The downloadable release is still **1.1.9**.
+These improvements are included in **1.1.10**, available through **Check for updates** or the download link above.
 
 [Read all update notes](CHANGELOG.md)
 

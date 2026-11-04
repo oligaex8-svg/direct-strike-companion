@@ -58,7 +58,14 @@ jobs:
           Copy-Item release/DirectStrikeCompanion.exe release/DirectStrikeCompanion-win-x64.exe
           # Keep the legacy asset for already-installed updaters. The main
           # user-facing download uses the same normal name as the running app.
-          gh release create $env:RELEASE_TAG release/DirectStrikeCompanion.exe release/DirectStrikeCompanion-win-x64.exe --verify-tag --title "Direct Strike Companion $env:RELEASE_VERSION" --generate-notes
+          $changelog = Get-Content CHANGELOG.md -Raw
+          $pattern = '(?ms)^## Version ' + [regex]::Escape($env:RELEASE_VERSION) + ' — (?<title>[^\r\n]+)\r?\n(?<body>.*?)(?=^## |\z)'
+          $notes = [regex]::Match($changelog, $pattern)
+          if (!$notes.Success) { throw 'Add user-friendly CHANGELOG notes for this version before publishing.' }
+          $notesPath = Join-Path $env:RUNNER_TEMP 'release-notes.md'
+          [IO.File]::WriteAllText($notesPath, $notes.Groups['body'].Value.Trim(), [Text.UTF8Encoding]::new($false))
+          $title = "Direct Strike Companion $env:RELEASE_VERSION — " + $notes.Groups['title'].Value
+          gh release create $env:RELEASE_TAG release/DirectStrikeCompanion.exe release/DirectStrikeCompanion-win-x64.exe --verify-tag --title $title --notes-file $notesPath
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
           $release = gh api "repos/$env:GH_REPO/releases/tags/$env:RELEASE_TAG" | ConvertFrom-Json
           if ($LASTEXITCODE -ne 0) { throw 'Could not verify the published release.' }

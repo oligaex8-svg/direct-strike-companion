@@ -2,9 +2,9 @@
 
 Updates to Direct Strike Companion, explained for players.
 
-## In testing — Smaller app and better battle reports
+## Version 1.1.10 — Smaller app and better battle reports
 
-**30 October 2026 · Development build; not yet available through the updater**
+**4 November 2026**
 
 - **Smaller app:** the executable is about 38% smaller without reducing artwork quality or removing themes.
 - **Clearer battle reports:** larger unit icons and a more compact layout make results easier to compare.
@@ -15,7 +15,7 @@ Updates to Direct Strike Companion, explained for players.
 
 Some replay information is still unavailable. Damage for individual units and abilities is not currently measured, and some kills have no identifiable source. The app shows these gaps instead of inventing values.
 
-The latest downloadable version remains **1.1.9**. These improvements will reach the updater when a new release is published.
+**How to update:** choose **Check for updates** in the app, then use the update button. Your replay library, settings and player lists are kept. Downloads and updates are public and do not require a GitHub token. If an older version cannot update, download the latest executable and replace the old copy in its existing folder, keeping your data folder.
 
 ## Version 1.1.9 — Updates work with downloaded filenames
 
@@ -33,7 +33,7 @@ If your older copy cannot install this fix automatically, download version 1.1.9
 
 - Made the update action easier to find and explained that the app restarts afterward.
 - Improved English and Russian update messages.
-- Clarified that public downloads do not require Git or a GitHub account. Access is still required while the repository is private.
+- Clarified that public downloads do not require Git or a GitHub account.
 
 ## Version 1.1.7 — More SC2-inspired themes
 
